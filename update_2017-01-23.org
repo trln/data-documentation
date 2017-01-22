@@ -1,0 +1,116 @@
+* There is no "data model" for this project. I don't have a draft of one for you. 
+** We are working toward a suite of data documentation, not a data model
+ We are dealing with at least 4 different types of data models (bold), with at least 3 transformation/mapping processes (marked by -->):
+
+  - *Original data sources* - MARC bib + attached record data, EAD, non-MARC shared record and ICE data XML feeds (each unique), digital collection data (mapping requirements may vary per collection). Each of these sources is defined/modeled differently
+  - --> Traject/other transformation process (partly, if not completely institution- and data-source-specific)-->
+  - *Argot* 
+  - --> centrally processed within Spofford -->
+  - *Solr schema*
+  - --> transformed within Solr -->
+  - *actual Solr index data fields upon which Argon data behavior with depend*
+
+ *We need a plan for documenting all of the above and more; a single/simple spreadsheet "data model" is not a good way to do this.*
+
+ Endeca data processing was similarly complex, but the nature of the system made it more difficult to clearly see/understand all the steps. 
+
+ The single spreadsheet "data model" approach taken with Endeca was ultimately insufficient. Its shortcomings included:
+  - spreadsheet was incomplete, and in some cases incorrect 
+  - spreadsheet data poorly structured for meeting the data needs of Endeca  maintenance, ongoing development, and staff/user training. The needs I am referring to here are laid out in [[Vision for a maintainable, usable suite of data documentation that meets ongoing project needs]]
+
+ The above factors meant that, in order to confidently know how any data was handled in Endea, one needed to: 
+  - use clunky Java Reference Implementation interface
+  - access and understand extract/transformation code, whether local or embedded in Endeca as Java MARC manipulator
+  - access and understand Endeca configuration and UI code
+
+ Experts in the code are not generally experts in the metadata and how it should work, and vice versa.
+
+ This made it extremely difficult to handle problem-solving, cross-training, succession-planning, and gathering broader input on data decisions affecting Endeca.
+
+** It's too early to be nailing down our data documentation in a formal, nice-to-look at way
+*** Data & Infrastructure Team chairs concur: Argon feature development should drive data decisionmaking, not the other way around
+ - The architecture of this project much greater flexibility for iterative development than we had with Endeca, which required much more overhead for dealing with any changes to data model than our approach will.
+ - No one feels expert enough with Solr + Blacklight+ all our data to pre-devise a set of data specifications/mappings from original data sources -> Argot -> Solr -> Argon.
+ - It's too early to nail down our data specifications, which is one reason why production of "a data model" as a piece of data documentation has not yet been produced
+
+
+
+* Status: Immediate project data needs and the data documentation to support them
+
+** Current priority: Get initial set of MARC bib (and attached item, holdings, order record) data from institutional ILSs into Solr to support for initial Argon development
+*** What this requires from data side: 
+**** Figure out ILS extract piece
+The smoothest/easiest path here (if possible) looks like: 
+ - Each institution figures out how to extract their MARC bib and necesary attached item, holdings, or order data into MARC binary or MARC-XML that maps attached-record data into locally-defined fields in the bib record
+   - Example: [[https://github.com/trln/extract_marcxml_for_argot_unc/blob/master/out.xml][UNC MARC-XML with attached item record data elements mapped into 999 91 fields]]
+ - For clarity, code maintenance, etc., Infrastructure and Data Team chairs recommend this step be a *pure/literal extract* of the ILS data, with all transformations/mappings/massagings of the data handled by subsequent scripts/processes.
+
+**** Figure out initial processes for transforming data extracted from ILS into Argot
+ - Each institution works on initial transformation of this data into Argot
+***** Definition of Argot format
+  - Argot is under intense development and will be throughout much of the development phase of this project, so more formal documentation of the Argot model outside the code is not currently a priority
+  - Initial version of Argot is directly based on the properties and dimensions currently defined in Endeca
+  - Blank Argot template with full record structure and all available fields is at: [[https://github.com/trln/proto-argot/blob/master/template.json][the proto-argot template]]
+  - [[https://github.com/trln/proto-argot/blob/master/argot_out.json][Example of bib record transformed to Argon]], with more on the way
+  - Template is ready for data team members to begin using as an initial data transformation model, and it is available for collective improvement/modification on Github
+***** Transformation of MARC to Argot
+  - We have a working start at this process. Initial design based on assumption that we would, as much as possible, like to a) have one set of instructions for the transformations/mappings we can all do the same way; and b) use institution-specific config files to handle locally-specific processing or overrides/exceptions to shared processing instructions
+    - [[https://github.com/trln/marc-to-argot][MARC to Argot transformer]] - has general transformation instructions and institution-specific configs
+    - Details of MARC transformations currently embedded [[https://github.com/trln/marc-to-argot][in the code]]
+
+* Challenge/blocker for all aspects of data work and documentation from start to finish
+This project has stated goals to, as much as possible, cooperate and share processes and code to minimize repeated work and complexity. 
+
+However, the project and staff working on it have no mandate to really agree on or enforce agreed-upon shared practices for their institutions in the future. So the basic working assumption those of us working on this have is: "Everybody's going to end up doing their own thing their own way."
+
+From the data side, because MARC bib and EAD are standard formats, much of our data transformation *code* and documentation could be shared/standardized, but we know important and significant parts of it will be highly localized. 
+
+Committing to shared/consistent data transformation practices where possible, and centralized documentation of cross-institutional data differences, would afford us some long-term benefits: 
+ - Most work necessary to implement changes required by changes to bibliographic standards would only need to be made once
+ - Ability of all players to understand (and contribute to solutions to) issues with shared records visible in their catalogs, but hosted in someone else's ILS
+ - Support troubleshooting data issues cross-institutionally
+ - Benefits for succession planning across institutions (avoiding the Derek Rodriguez or "what if Kristina leaves" situation) -- data expertise from other institutions can fill many gaps while there are vacancies at others, and the team could help new staff responsible for data extract/transformation get up to speed on all the post-extract parts. Each institution's main concern would be ensuring coverage for data extract processes.
+ - Much of what is discussed under [[Vision for a maintainable, usable suite of data documentation that meets ongoing project needs]]
+ - etc
+
+Organizing this collaborative work would require particular steps going forward: 
+ - transformation code designed with  main standard transformtion instructions and separate institutional override/localization configs
+ - all/most data documentation centrally hosted and structured/designed to reflect multi-institution practice
+
+If there is no committment to full ongoing collaboration on this, these extra (but not particularly onerous) steps are unnecessary, and some things can be simplified. In this case: 
+ - Luke and I are committed to sharing UNC's data extract and transformation code and documentation as models for other institutions to adapt/reference/copy
+ - The Argot format will be the one required point of agreement across institutions, and its documentation should be centralized.
+   - Argot is source-format independent, so the Argot documentation itself will not include mappings from MARC tags, EAD, Dublin Core into Argot. Those would vary per institution and need to be documented locally.
+   - UNC would commit to share its mappings from source data formats into Argot for other institutions to reference/adapt
+ - Documentation of the following data models and processes should also be documented centrally, and in such a way that this information can be easily mashed-up with local data documentation. 
+   1. Argot -> Solr ingest format processing/mapping done by Spofford
+   2. Solr schema data model (high level, declarative instructions for indexing the data)
+   3. (?) Solr schema -> Actual Solr/Lucene index fields that occurs during indexing
+   4. (? - potentially localized) Argon data model (what Solr index fields are displayed, how they are labeled, whether they are searchable, drive facets, etc) 
+
+Given what I hear off the record, I have moved forward assuming we do not have the committment to full collaboration on data. However, it would be good to have a decision on the record about how we want to move forward on this. 
+
+
+
+* Vision for a maintainable, usable suite of data documentation that meets ongoing project needs
+** further feature development
+- clear
+- complete
+- correct
+** issue resolution
+- collaborative
+- version controlled
+** maintenance
+- easy to update, current
+  - automate whatever can be automated (i.e. leverage extraction of human-readable documentation from code, config files)
+  - follow standards for data formatting and sharing
+- supports periodic review of data needs as original data source standards evolve
+** empowering library staff (and by extension, library users) to better understand how their catalog works
+- accessible
+- provides simple ways to arrive at answers to the common types of data questions that arise such as: 
+  - Public services staff: What does Publisher search actually search (MARC fields/subfields from the catalog record, metadata elements from digital collection record, etc)?
+  - Tech services/IT/metadata staff: If I record this data in a given MARC tag/subfield, or output it from a repository to given DC/MODS field, will it be searchable and/or displayed in the public catalog?
+  - Staff, superusers: I see this data in the ILS client/classic view/WorldCat/MARC-or-'librarian view', but I don't see it in the public catalog record. Why?
+  - Everyone: Why did this record come up in my search? or Why didn't this record come up in my search?
+  - Everyone: Why are my search results in this order?
+
