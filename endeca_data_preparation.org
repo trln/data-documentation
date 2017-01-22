@@ -15,11 +15,9 @@
 *** System primary key extracted from: serverc: /data/TRLN/config/pipeline/TRLN.record_spec.xml
 *** Filter value extracted from: serverc: /data/TRLN/config/pipeline/TRLN.record_filter.xml
 ** endeca_config_elements.txt: From the lists of Endeca dimensions and propties derived from the Endeca configuration files, create a unique list of Endeca element names from the config
-** Define which elements are searchable in which indexes, by extracting configuration from: serverc: /data/TRLN/config/pipeline/TRLN.recsearch_config.xml
-*** Indexing tab
-*** Elements not listed here are NOT INDEXED
-** Create full list of elements from config (ElementsConfig tab)
-* Identify list of elements from data model spreadsheet that are NOT in full list of Elements
+** endeca_indexing.tsv: Define which elements are searchable in which indexes, by extracting configuration from: serverc: /data/TRLN/config/pipeline/TRLN.recsearch_config.xml
+** endeca_indexed.tsv: derived from endeca_indexing.tsv via endeca_indexing_reduce.rb
+* Identify list of elements in endeca_dmod_elements.txt that are NOT in endeca_config_elements.txt
 | Data model element                   | Element list element or other note                                                                                                                                                                  |
 |--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Medical Subject: Topic               | In element list as Medical Subject                                                                                                                                                                  |
@@ -41,7 +39,7 @@
 | SerialHoldingsSummary                | In element list as Serial Holdings Summary                                                                                                                                                          |
 | Syndetics_ISBN                       | In element list as Syndetics ISBN                                                                                                                                                                   |
 | Table of Contents Vernacular Segment | In element list as Table of Contents Vernacular Segmented                                                                                                                                           |
-* Identify elements in list from config that are not in the data model spreadsheet (omitting the ones with minor name differences identified in previous comparison)
+* Identify elements in endeca_config_elements.txtthat are not in endeca_dmod_elements.txt (omitting the ones with minor name differences identified in previous comparison)
 | Element                | Notes                                                                                           |
 |------------------------+-------------------------------------------------------------------------------------------------|
 | Access                 | Drives "Access Facet" dimension in reference implementation                                     |
@@ -64,8 +62,11 @@
 | Titles Normalized      | Gets created automatically by Endeca process, so adding to data model was likely overlooked     |
 | Tracking Tag           | Unclear where this gets set/used                                                                |
 | Troubleshooting        | Unclear where this gets set/used                                                                |
-* Everything in data model spreadsheet but not config element list was either in config element list with slightly different name, deleted from data model but left in spreadsheet, or a special Segmented element, which we don't care about, as per the next step
-* *Thus we now consider the element list from the config to be the final, authoritative element list going forward*
+* Everything in endeca_dmod_elements.txt but not endeca_config_elements.txt was either
+** in endeca_config_elements.txt with slightly different name
+** deleted from data model but left in spreadsheet and formatted with strikethrough text
+** a special Segmented element, which we don't care about, as per the next step
+* *Thus we now consider endeca_config_elements.txt to be the final, authoritative element list going forward*
 * Create new Elements tab, duplicating ElementsConfig, for revision moving forward.
 * Remove elements with "Normalized" in the property/dimension name, since we assume Solr will be handling normalization. This results in removal of the following from the element list:
 - Authors Normalized
