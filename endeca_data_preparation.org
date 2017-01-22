@@ -10,7 +10,7 @@
 *** Call Number Range dimension defined in: ./data/TRLN/config/pipeline/LCC_NLM_full.xml:  <DIMENSION NAME="Call Number Range" SRC_TYPE="INTERNAL">
 *** Language dimension defined in: ./data/TRLN/config/pipeline/language_utf8.xml:  <DIMENSION NAME="Language" SRC_TYPE="INTERNAL">
 *** Data on facet refinement behavior extracted from: /data/TRLN/config/pipeline/TRLN.refinement_config.xml
-** Extract property information from /data/TRLN/config/pipeline/TRLN.prop_refs.xml
+** endeca_properties.tsv: Extract property information from /data/TRLN/config/pipeline/TRLN.prop_refs.xml
 *** Sortable data extracted from: serverc: /data/TRLN/config/pipeline/TRLN.record_sort_config.xml
 *** System primary key extracted from: serverc: /data/TRLN/config/pipeline/TRLN.record_spec.xml
 *** Filter value extracted from: serverc: /data/TRLN/config/pipeline/TRLN.record_filter.xml
