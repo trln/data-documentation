@@ -1,12 +1,12 @@
 #+TITLE: Preparation of Endeca-related data 
 
-* endeca_dmod_elements.tsv: unique elements from Endeca data model spreadsheet from the following tabs/columns (dmod_fields tab): 
+* endeca_dmod_elements.txt: list of unique elements from Endeca data model spreadsheet from the following tabs/columns (dmod_fields tab): 
 | Tab          | Column                |
 | Dimensions   | Endeca_Dimension_Name |
 | Properties   | Endeca_Property       |
 | EAD mappings | Endeca_Property       |
 * Notice that data model spreadsheet is not in full agreement with some things in the actual Endeca configuration and extract separate lists of elements and information about them from the Endeca config.
-** Extract dimension names and behavior from serverc: /data/TRLN/config/pipeline/Dimensions.xml, using top-level dimension nodes only.
+** endeca_dimensions.tsv: Extract dimension names and behavior from serverc: /data/TRLN/config/pipeline/Dimensions.xml, using top-level dimension nodes only.
 *** Call Number Range dimension defined in: ./data/TRLN/config/pipeline/LCC_NLM_full.xml:  <DIMENSION NAME="Call Number Range" SRC_TYPE="INTERNAL">
 *** Language dimension defined in: ./data/TRLN/config/pipeline/language_utf8.xml:  <DIMENSION NAME="Language" SRC_TYPE="INTERNAL">
 *** Data on facet refinement behavior extracted from: /data/TRLN/config/pipeline/TRLN.refinement_config.xml
