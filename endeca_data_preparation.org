@@ -1,0 +1,103 @@
+#+TITLE: Preparation of Endeca-related data 
+
+* endeca_dmod_elements.tsv: unique elements from Endeca data model spreadsheet from the following tabs/columns (dmod_fields tab): 
+| Tab          | Column                |
+| Dimensions   | Endeca_Dimension_Name |
+| Properties   | Endeca_Property       |
+| EAD mappings | Endeca_Property       |
+* Notice that data model spreadsheet is not in full agreement with some things in the actual Endeca configuration and extract separate lists of elements and information about them from the Endeca config.
+** Extract dimension names and behavior from serverc: /data/TRLN/config/pipeline/Dimensions.xml, using top-level dimension nodes only.
+*** Call Number Range dimension defined in: ./data/TRLN/config/pipeline/LCC_NLM_full.xml:  <DIMENSION NAME="Call Number Range" SRC_TYPE="INTERNAL">
+*** Language dimension defined in: ./data/TRLN/config/pipeline/language_utf8.xml:  <DIMENSION NAME="Language" SRC_TYPE="INTERNAL">
+*** Data on facet refinement behavior extracted from: /data/TRLN/config/pipeline/TRLN.refinement_config.xml
+** Extract property information from /data/TRLN/config/pipeline/TRLN.prop_refs.xml
+*** Sortable data extracted from: serverc: /data/TRLN/config/pipeline/TRLN.record_sort_config.xml
+*** System primary key extracted from: serverc: /data/TRLN/config/pipeline/TRLN.record_spec.xml
+*** Filter value extracted from: serverc: /data/TRLN/config/pipeline/TRLN.record_filter.xml
+** Define which elements are searchable in which indexes, by extracting configuration from: serverc: /data/TRLN/config/pipeline/TRLN.recsearch_config.xml
+*** Indexing tab
+*** Elements not listed here are NOT INDEXED
+** Create full list of elements from config (ElementsConfig tab)
+* Identify list of elements from data model spreadsheet that are NOT in full list of Elements
+| Data model element                   | Element list element or other note                                                                                                                                                                  |
+|--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Medical Subject: Topic               | In element list as Medical Subject                                                                                                                                                                  |
+| Subject: Genre                       | In element list as Genre                                                                                                                                                                            |
+| Subject: Region                      | In element list as Region                                                                                                                                                                           |
+| Subject: Time Period                 | In element list as Time Period                                                                                                                                                                      |
+| Subject: Topic                       | In element list as Subject                                                                                                                                                                          |
+| Access Restriction                   | In element list as Access Restrictions                                                                                                                                                              |
+| HoldingsNote                         | In element list as Holdings Note                                                                                                                                                                    |
+| ItemBarcode                          | Striked out in data model spreadsheet; Not found in config data; Assume not used                                                                                                                    |
+| ItemDueDate                          | In element list as Item Due Date                                                                                                                                                                    |
+| ItemNotes                            | In element list as Item Notes                                                                                                                                                                       |
+| ItemTypes                            | In element list as Item Types                                                                                                                                                                       |
+| Linking_ISSN                         | In element list as Linking ISSN                                                                                                                                                                     |
+| Location_property                    | In element list as Location property                                                                                                                                                                |
+| Main Author Vernacular Segment       | In element list as Main Author Vernacular Segmented                                                                                                                                                 |
+| None                                 | In data model spreadsheet as "999Class (a delimited list of classifications associated with items)" with note: "Class scheme used by TRLN Virtual Browse app, data not mapped to Endeca properties" |
+| Publisher Segmented                  | Did not find in config                                                                                                                                                                              |
+| SerialHoldingsSummary                | In element list as Serial Holdings Summary                                                                                                                                                          |
+| Syndetics_ISBN                       | In element list as Syndetics ISBN                                                                                                                                                                   |
+| Table of Contents Vernacular Segment | In element list as Table of Contents Vernacular Segmented                                                                                                                                           |
+* Identify elements in list from config that are not in the data model spreadsheet (omitting the ones with minor name differences identified in previous comparison)
+| Element                | Notes                                                                                           |
+|------------------------+-------------------------------------------------------------------------------------------------|
+| Access                 | Drives "Access Facet" dimension in reference implementation                                     |
+| Authors Normalized     | Gets created automatically by Endeca process, so adding to data model was likely overlooked     |
+| Class Schemes          | This is likely the None/999Class from the data model                                            |
+| Company                | Used for Duke digital collections. DC elements not consistently added to data model spreadsheet |
+| Digital Collection     | DC elements not consistently added to data model spreadsheet                                    |
+| ICE Chapter Author     | Syndetics/ICE elements not added to data model spreadsheet                                      |
+| ICE Chapter Title      | Syndetics/ICE elements not added to data model spreadsheet                                      |
+| Main Author Normalized | Gets created automatically by Endeca process, so adding to data model was likely overlooked     |
+| Main Title Normalized  | Gets created automatically by Endeca process, so adding to data model was likely overlooked     |
+| Notes Normalized       | Gets created automatically by Endeca process, so adding to data model was likely overlooked     |
+| Primary Source         | Drives Primary Source facet                                                                     |
+| Product                | Used for Duke digital collections. DC elements not consistently added to data model spreadsheet |
+| Publisher Normalized   | Gets created automatically by Endeca process, so adding to data model was likely overlooked     |
+| Repository URL         | DC elements not consistently added to data model spreadsheet                                    |
+| Series Normalized      | Gets created automatically by Endeca process, so adding to data model was likely overlooked     |
+| SharedRecordFlag       | Unclear where this gets set/used                                                                |
+| Thumbnail URL          | In production use by UNC, so not sure why it didn't get added to spreadsheet                    |
+| Titles Normalized      | Gets created automatically by Endeca process, so adding to data model was likely overlooked     |
+| Tracking Tag           | Unclear where this gets set/used                                                                |
+| Troubleshooting        | Unclear where this gets set/used                                                                |
+* Everything in data model spreadsheet but not config element list was either in config element list with slightly different name, deleted from data model but left in spreadsheet, or a special Segmented element, which we don't care about, as per the next step
+* *Thus we now consider the element list from the config to be the final, authoritative element list going forward*
+* Create new Elements tab, duplicating ElementsConfig, for revision moving forward.
+* Remove elements with "Normalized" in the property/dimension name, since we assume Solr will be handling normalization. This results in removal of the following from the element list:
+- Authors Normalized
+- Journal Title Normalized
+- Main Author Normalized
+- Main Title Normalized
+- Notes Normalized
+- Publisher Normalized
+- Series Normalized
+- Subjects Normalized
+- Titles Normalized
+* Remove elements with "Vernacular" (and "Vernacular Segmented") in the name, since we assume we are handling vernacular data very differently in Solr. The following are removed: 
+- Edition Vernacular
+- Edition Vernacular Segmented
+- Imprint Vernacular
+- Main Author Vernacular
+- Main Author Vernacular Segmented
+- Main Uniform Title Vernacular
+- Main Uniform Title Vernacular Segmented
+- Other Authors Vernacular Segmented
+- Other Titles Vernacular Segmented
+- Series Statement Vernacular
+- Series Statement Vernacular Segmented
+- Statement of Responsibility Vernacular
+- Statement of Responsibility Vernacular Segmented
+- Subjects Vernacular Segmented
+- Table of Contents Vernacular Segmented
+- Title Vernacular
+- Title Vernacular Segmented
+- Uniform Title Vernacular
+- Uniform Title Vernacular Segmented
+- Varying Titles Vernacular Segmented
+* Remove elements: Title1, Title2, Title3, Title4 on the assumption that we'll have better ways to deal with relevance ranking for short titles.
+* To Element tab, add column indicating whether we facet on the element, and whether it is searchable
+* Add column: Endeca dmod name, to facilitate matching MARC tags to elements they get mapped into
+Element name here is from the Endeca config, which, as we saw above, sometimes had elements named differently than the data model spreadsheet
