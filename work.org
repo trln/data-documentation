@@ -1,4 +1,6 @@
+#+TITLE: Data tasks
 #+OPTIONS pri:t todo:t ^:nil num:nil
+
 * INPROGRESS [#A] Get initial set of MARC bib (and attached item, holdings, order record) data from institutional ILSs into Solr to support for initial Argon development
   - State "INPROGRESS" from "TODO"       [2017-01-22 Sun 15:31]
 ** INPROGRESS [#A] Develop initial manual ILS extract processes
