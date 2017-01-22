@@ -67,39 +67,40 @@
 ** deleted from data model but left in spreadsheet and formatted with strikethrough text
 ** a special Segmented element, which we don't care about, as per the next step
 * *Thus we now consider endeca_config_elements.txt to be the final, authoritative element list going forward*
-* Create new Elements tab, duplicating ElementsConfig, for revision moving forward.
-* Remove elements with "Normalized" in the property/dimension name, since we assume Solr will be handling normalization. This results in removal of the following from the element list:
-- Authors Normalized
-- Journal Title Normalized
-- Main Author Normalized
-- Main Title Normalized
-- Notes Normalized
-- Publisher Normalized
-- Series Normalized
-- Subjects Normalized
-- Titles Normalized
-* Remove elements with "Vernacular" (and "Vernacular Segmented") in the name, since we assume we are handling vernacular data very differently in Solr. The following are removed: 
-- Edition Vernacular
-- Edition Vernacular Segmented
-- Imprint Vernacular
-- Main Author Vernacular
-- Main Author Vernacular Segmented
-- Main Uniform Title Vernacular
-- Main Uniform Title Vernacular Segmented
-- Other Authors Vernacular Segmented
-- Other Titles Vernacular Segmented
-- Series Statement Vernacular
-- Series Statement Vernacular Segmented
-- Statement of Responsibility Vernacular
-- Statement of Responsibility Vernacular Segmented
-- Subjects Vernacular Segmented
-- Table of Contents Vernacular Segmented
-- Title Vernacular
-- Title Vernacular Segmented
-- Uniform Title Vernacular
-- Uniform Title Vernacular Segmented
-- Varying Titles Vernacular Segmented
-* Remove elements: Title1, Title2, Title3, Title4 on the assumption that we'll have better ways to deal with relevance ranking for short titles.
+* endeca_final_elements.tsv is created, initially duplicating endeca_config_elements.txt
+** Remove elements with "Normalized" in the property/dimension name, since we assume Solr will be handling normalization. This results in removal of the following from endeca_final_elements.tsv:
+ - Authors Normalized
+ - Journal Title Normalized
+ - Main Author Normalized
+ - Main Title Normalized
+ - Notes Normalized
+ - Publisher Normalized
+ - Series Normalized
+ - Subjects Normalized
+ - Titles Normalized
+** Remove elements with "Vernacular" (and "Vernacular Segmented") in the name, since we assume we are handling vernacular data very differently in Solr. The following are removed from endeca_final_elements.tsv: 
+ - Edition Vernacular
+ - Edition Vernacular Segmented
+ - Imprint Vernacular
+ - Main Author Vernacular
+ - Main Author Vernacular Segmented
+ - Main Uniform Title Vernacular
+ - Main Uniform Title Vernacular Segmented
+ - Other Authors Vernacular Segmented
+ - Other Titles Vernacular Segmented
+ - Series Statement Vernacular
+ - Series Statement Vernacular Segmented
+ - Statement of Responsibility Vernacular
+ - Statement of Responsibility Vernacular Segmented
+ - Subjects Vernacular Segmented
+ - Table of Contents Vernacular Segmented
+ - Title Vernacular
+ - Title Vernacular Segmented
+ - Uniform Title Vernacular
+ - Uniform Title Vernacular Segmented
+ - Varying Titles Vernacular Segmented
+** Remove these elements from endeca_final_elements.tsv: Title1, Title2, Title3, Title4 on the assumption that we'll have better ways to deal with relevance ranking for short titles.
+** Add column mapping each config element name to an element in endeca_dmod_elements.txt, in order to facilitate future data merging from Endeca data model spreadsheet
 * To Element tab, add column indicating whether we facet on the element, and whether it is searchable
 * Add column: Endeca dmod name, to facilitate matching MARC tags to elements they get mapped into
 Element name here is from the Endeca config, which, as we saw above, sometimes had elements named differently than the data model spreadsheet
