@@ -1,0 +1,67 @@
+* INPROGRESS [#A] Get initial set of MARC bib (and attached item, holdings, order record) data from institutional ILSs into Solr to support for initial Argon development
+  - State "INPROGRESS" from "TODO"       [2017-01-22 Sun 15:31]
+** INPROGRESS [#A] Develop initial manual ILS extract processes
+     - State "INPROGRESS" from "WAIT"       [2017-01-22 Sun 15:29]
+
+"Initial manual ILS extract processes" means: 
+ - this is the first basic work of getting data out of the ILS in a format that can be transformed into Argot
+   - *Data & Infrastructure Implementation Team chair recommendation:* Each institution extracts their MARC bib and necesary attached item, holdings, or order data into *MARC binary* or *MARC-XML*, mapping attached-record data into locally-defined fields in the bib record. Example: [[https://github.com/trln/extract_marcxml_for_argot_unc/blob/master/out.xml][UNC MARC-XML with attached item record data elements mapped into 999 91 fields]]
+ - processes can be run manually, as they are intended to feed into other manual processes
+ - no need to worry about new/updated/deleted records or partial/delta/full updates -- just be able to get sets of records out of the ILS
+ - setting up the full, automated local processes for extracting/transforming local ILS data to Argot comes later
+ - *Data & Infrastructure Implementation Team chair recommendation:* For clarity and ease of code sharing and maintenance, etc, this step should be as close to a *pure/literal extract* of the ILS data as possible. All transformations/mappings/massagings of the data should be handled by subsequent scripts/processes.
+
+*Implications if recommendations embedded are not met*
+- Institution may not be able to share/re-use Traject-based MARC-to-Argot code easily or at all
+- If institution wants to use some other means to transform their ILS data to Argot, they should consider this step complete when they can:
+  - Extract their ILS data in the appropriate format(s) to serve as inputs for their local transformation to Argot
+
+*** INPROGRESS [#A] UNC ILS extract processes
+    - State "INPROGRESS" from "TODO"       [2017-01-22 Sun 15:38]
+ Code and example data lives at: [[https://github.com/trln/extract_marcxml_for_argot_unc]]
+**** DONE [#A] Extract Sierra bib data to MARC-XML
+     - State "DONE"       from "TODO"       [2017-01-22 Sun 16:03]
+**** DONE [#A] Include data from attached, unsuppressed item records
+     - State "DONE"       from "TODO"       [2017-01-22 Sun 16:03]
+**** INPROGRESS [#A] Include data from attached, unsuppressed holdings records
+     - State "INPROGRESS" from "TODO"       [2017-01-22 Sun 16:03]
+**** TODO [#A] Include data from attached, unsuppressed order records
+*** TODO [#A] Duke ILS extract processes
+*** TODO [#A] NCSU ILS extract processes
+*** TODO [#A] NCCU ILS extract processes
+
+** INPROGRESS [#A] Initial definition of Argot format
+   - State "INPROGRESS" from "TODO"       [2017-01-22 Sun 16:27]
+- Argot is under intense development and will be throughout much of the development phase of this project, so more formal documentation of the Argot model outside the code is not currently a priority
+- Initial version of Argot is directly based on the properties and dimensions currently defined in Endeca
+- Template is ready for data team members to begin using as an initial data transformation model, and it is available for collective improvement/modification on Github
+*** DONE [#A] Create Argot template showing structure of Argot record and available elements
+    - State "DONE"       from "TODO"       [2017-01-22 Sun 16:12]
+ - Blank Argot template with full record structure and all available fields is at: [[https://github.com/trln/proto-argot/blob/master/template.json][the proto-argot template]]
+*** INPROGRESS [#A] Add examples of records in Argot
+    - State "INPROGRESS" from "TODO"       [2017-01-22 Sun 16:12]
+    - [[https://github.com/trln/proto-argot/blob/master/argot_out.json][Example of bib record transformed to Argon]]
+    - More examples are needed
+*** TODO [#A] Add instructions/examples to Argot template
+*** TODO [#A] Create data mapping: Endeca data element -> Argot element 
+*** WAIT [#C] Create data mapping: MARC bib -> Argot element
+    - State "WAIT"       from "TODO"       [2017-01-22 Sun 16:09] \\
+      Whether this should be done in a centralized way, or left completely to each institution, depends upon decision from Steering Committee or Advisory Team.
+
+** INPROGRESS [#A] Develop initial working transformation process for MARC to Argot
+   - State "INPROGRESS" from "TODO"       [2017-01-22 Sun 16:28]
+   - We have a working start at this process: [[https://github.com/trln/marc-to-argot][MARC to Argot transformer]] - has general transformation instructions and institution-specific configs
+     - Details of MARC transformations currently embedded [[https://github.com/trln/marc-to-argot][in the code]]
+     - Initial design based on UNC data and assumption that we would, as much as possible, like to:
+       - a) have one set of instructions for the transformations/mappings we can all do the same way; and
+       - b) use institution-specific config files to handle locally-specific processing or overrides/exceptions to shared processing instructions
+
+*** WAIT [#A] UNC MARC to Argot transformation
+    - State "WAIT"       from "INPROGRESS" [2017-01-22 Sun 16:35] \\
+      Adding logic to transform data from attached holdings and order records depends upon extract process producing that data.
+    - Currently it can transform  bib and attached item data
+    - Work on [[https://github.com/trln/marc-to-argot][MARC to Argot transformer]] has been based on UNC data so far [2017-01-22 Sun]
+    - State "INPROGRESS" from "TODO"       [2017-01-22 Sun 16:30]
+*** TODO [#A] Duke MARC to Argot transformation
+*** TODO [#A] NCSU MARC to Argot transformation
+*** TODO [#A] NCCU MARC to Argot transformation
