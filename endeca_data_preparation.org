@@ -16,7 +16,7 @@
 *** Filter value extracted from: serverc: /data/TRLN/config/pipeline/TRLN.record_filter.xml
 ** endeca_config_elements.txt: From the lists of Endeca dimensions and propties derived from the Endeca configuration files, create a unique list of Endeca element names from the config
 ** endeca_indexing.tsv: Define which elements are searchable in which indexes, by extracting configuration from: serverc: /data/TRLN/config/pipeline/TRLN.recsearch_config.xml
-** endeca_indexed.tsv: derived from endeca_indexing.tsv via endeca_indexing_reduce.rb
+** endeca_indexing_reduced.tsv: derived from endeca_indexing.tsv via endeca_indexing_reduce.rb
 * Identify list of elements in endeca_dmod_elements.txt that are NOT in endeca_config_elements.txt
 | Data model element                   | Element list element or other note                                                                                                                                                                  |
 |--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
