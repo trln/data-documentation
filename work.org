@@ -1,3 +1,4 @@
+#+OPTIONS pri:t todo:t ^:nil num:nil
 * INPROGRESS [#A] Get initial set of MARC bib (and attached item, holdings, order record) data from institutional ILSs into Solr to support for initial Argon development
   - State "INPROGRESS" from "TODO"       [2017-01-22 Sun 15:31]
 ** INPROGRESS [#A] Develop initial manual ILS extract processes
@@ -11,7 +12,7 @@
  - setting up the full, automated local processes for extracting/transforming local ILS data to Argot comes later
  - *Data & Infrastructure Implementation Team chair recommendation:* For clarity and ease of code sharing and maintenance, etc, this step should be as close to a *pure/literal extract* of the ILS data as possible. All transformations/mappings/massagings of the data should be handled by subsequent scripts/processes.
 
-*Implications if recommendations embedded are not met*
+*Implications if recommendations above are not met*
 - Institution may not be able to share/re-use Traject-based MARC-to-Argot code easily or at all
 - If institution wants to use some other means to transform their ILS data to Argot, they should consider this step complete when they can:
   - Extract their ILS data in the appropriate format(s) to serve as inputs for their local transformation to Argot
