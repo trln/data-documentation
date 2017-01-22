@@ -14,7 +14,7 @@ File.open('endeca_indexing.tsv', 'r').each_line { |ln|
   end
 }
 
- open('endeca_indexing_reduced.tsv', 'w') { |f|
+ open('_endeca_indexing_reduced.tsv', 'w') { |f|
    outlines.each { |ln|
      f.puts ln
    }
