@@ -14,6 +14,7 @@
 *** Sortable data extracted from: serverc: /data/TRLN/config/pipeline/TRLN.record_sort_config.xml
 *** System primary key extracted from: serverc: /data/TRLN/config/pipeline/TRLN.record_spec.xml
 *** Filter value extracted from: serverc: /data/TRLN/config/pipeline/TRLN.record_filter.xml
+** endeca_config_elements.txt: From the lists of Endeca dimensions and propties derived from the Endeca configuration files, create a unique list of Endeca element names from the config
 ** Define which elements are searchable in which indexes, by extracting configuration from: serverc: /data/TRLN/config/pipeline/TRLN.recsearch_config.xml
 *** Indexing tab
 *** Elements not listed here are NOT INDEXED
