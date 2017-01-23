@@ -166,10 +166,6 @@ Primary_URL	Primary URL
 FindingAid_URL	Finding Aid URL
 863HoldingsNote	SerialHoldingsSummary
 866HoldingsNote	SerialHoldingsSummary
-Title1	Title1
-Title2	Title2
-Title3	Title3
-Title4	Title4
 909	DateCataloged
 999CallNo	Call Number
 CallNoSort	Call Number sort
@@ -254,7 +250,6 @@ ItemCallNo	Call Number Range
 999Lib	Location
 999Lib	Location
 999Status	Availability
-n/a (calculated value)	New Titles
 BibCallNo	Call Number Range
 Source	Source
 008PubDate	Publication Year
