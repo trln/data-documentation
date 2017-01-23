@@ -37,7 +37,7 @@
  - It's too early to nail down our data specifications, which is one reason why production of "a data model" as a piece of data documentation has not yet been produced
 
 * Current data-related priorities & status
-See [[https://github.com/trln/data-documentation/blob/master/work.md][Work tracking page]].
+See [[https://github.com/trln/data-documentation/blob/master/work.org][Work tracking page]].
 
 * Challenge/blocker for all aspects of data work and documentation from start to finish
 This project has stated goals to, as much as possible, cooperate and share processes and code to minimize repeated work and complexity. 
