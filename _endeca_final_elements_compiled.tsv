@@ -7,7 +7,7 @@ Availability	Availability	yes	not indexed
 Biographical Sketch	Biographical Sketch	no	Keyword, Keyword_Brief
 Call Number	Call Number	no	not indexed
 Call Number Range	Call Number Range	yes	not indexed
-Call Number Sort	Call Number Sort	no	not indexed
+Call Number Sort	Call Number sort	no	not indexed
 Cartographic Data	Cartographic Data	no	Keyword
 Circulation Level	Circulation Level	no	not indexed
 Class Schemes	Class Schemes	no	not indexed
@@ -27,7 +27,7 @@ DocType	DocType	no	not indexed
 Donor	Donor	no	Keyword
 EAD Access Restrictions	EAD Access Restrictions	no	not indexed
 EAD Acquisitions Info	EAD Acquisitions Info	no	not indexed
-EAD Biographical History	EAD Biographical History	no	Keyword
+EAD Biographical History	EAD Biographical Note	no	Keyword
 EAD Element Flag	EAD Element Flag	no	not indexed
 EAD Element List	EAD Element List	no	not indexed
 EAD ID	EAD ID	no	Keyword
@@ -114,14 +114,14 @@ Serial Holdings Summary	SerialHoldingsSummary	no	not indexed
 Series	Series	no	not indexed
 Series ISSN	Series ISSN	no	ISBN
 Series Statement	Series Statement	no	Keyword, Keyword_Brief, Title
-Series Title Index	Series Title Index	no	Keyword, Keyword_Brief, Title
+Series Title Index	Series title index	no	Keyword, Keyword_Brief, Title
 SharedRecordFlag	SharedRecordFlag	no	not indexed
 Sound Recording Imprint	Sound Recording Imprint	no	Keyword, Keyword_Brief
 Source	Source	yes	not indexed
 Source of Acquisition	Source of Acquisition	no	not indexed
 Statement of Responsibility	Statement of Responsibility	no	Author, Keyword
 Statuses	Statuses	no	not indexed
-Subject	Subject: Subject	yes	not indexed
+Subject	Subject: Topic	yes	not indexed
 Subject Headings	Subject Headings	yes	Keyword, Keyword_Brief, Subject
 Subjects	Subjects	no	not indexed
 Subseries Linking	Subseries Linking	no	Keyword

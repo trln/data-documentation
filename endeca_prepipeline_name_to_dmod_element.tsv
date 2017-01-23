@@ -64,7 +64,7 @@ UPC	UPC
 502	Indexed Notes
 504	Indexed Notes
 505r	Table of Contents author index
-505	Table of Contents 
+505	Table of Contents
 506	Access Restriction
 507	Indexed Notes
 508	Production Credits
@@ -171,15 +171,12 @@ FindingAid_URL	Finding Aid URL
 CallNoSort	Call Number sort
 999Circ	Circulation Level
 999DocType	DocType
-999Barcode	ItemBarcode
-999ItemId	Item ID
 999ItemDueDate	ItemDueDate
 999ItemNote	ItemNotes
 999ItemType_orig	ItemTypes
 999Lib_orig	Libraries
 999Loc	Location_property
 999Status_orig	Statuses
-999Class	None
 LocalId	LocalId
 OtherLocalId	Other LocalId
 Rollup	Rollup
