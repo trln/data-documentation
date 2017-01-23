@@ -1,5 +1,12 @@
-**IMPORTANT WARNING!**: data files beginning with \_ are generated based on other data files. Do not edit them directly, or you will lose your edits.
-
-
-# [Details on prepration of Endeca-specific data documentation and what lives in the files](https://github.com/trln/data-documentation/blob/master/endeca_data_preparation.org)
+-   .tsv and .txt files: data documentation/mapping files
+    -   **IMPORTANT WARNING!**: data files beginning with \_ are generated based on other data files. Do not edit them directly, or you will lose your edits.
+-   .rb files: ruby scripts that:
+    -   extract data documentation/mapping files from code, config files, or other data sources
+    -   manipulate data documentation/mapping files &#x2013; combining, summarizing, etc.
+-   .org files - notes, textual documentation, tasks, etc.
+    -   [endeca\_data\_preparation.org](https://github.com/trln/data-documentation/blob/master/endeca_data_preparation.org) - Details on preparation of Endeca-specific data documentation and what lives in the files
+    -   [update\_2017-01-23.org](https://github.com/trln/data-documentation/blob/master/update_2017-01-23.org) - notes for Steering Committee meeting
+    -   [work.org](https://github.com/trln/data-documentation/blob/master/work.org) - task planning/tracking
+    -   [working\_notes.org](https://github.com/trln/data-documentation/blob/master/working_notes.org) - notes not otherwise organized &#x2013; best to ignore
+    -   [README.org](https://github.com/trln/data-documentation/blob/master/README.org) - generates README.md
 
