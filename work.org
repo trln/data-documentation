@@ -43,7 +43,7 @@
  - Blank Argot template with full record structure and all available fields is at: [[https://github.com/trln/proto-argot/blob/master/template.json][the proto-argot template]]
 *** INPROGRESS [#A] Add examples of records in Argot
     - State "INPROGRESS" from "TODO"       [2017-01-22 Sun 16:12]
-    - [[https://github.com/trln/proto-argot/blob/master/argot_out.json][Example of bib record transformed to Argon]]
+    - [[https://github.com/trln/proto-argot/blob/master/argot_out.json][Example of bib record transformed to Argot]]
     - More examples are needed
 *** INPROGRESS [#A] Add instructions/examples to Argot template
     - State "INPROGRESS" from "TODO"       [2017-01-22 Sun 22:39]
