@@ -35,8 +35,6 @@
  - The architecture of this project much greater flexibility for iterative development than we had with Endeca, which required much more overhead for dealing with any changes to data model than our approach will.
  - No one feels expert enough with Solr + Blacklight+ all our data to pre-devise a set of data specifications/mappings from original data sources -> Argot -> Solr -> Argon.
  - It's too early to nail down our data specifications, which is one reason why production of "a data model" as a piece of data documentation has not yet been produced
-** More information on these plans and status
-See below, though we probably will not get to this content in the 2017-01-23 Steering Committee meeting. 
 
 * Current data-related priorities & status
 See [[https://github.com/trln/data-documentation/blob/master/work.md][Work tracking page]].
@@ -84,7 +82,7 @@ Given what I hear off the record, I have moved forward assuming we do not have t
 ** maintenance
 - easy to update, current
   - automate whatever can be automated (i.e. leverage extraction of human-readable documentation from code, config files)
-  - follow standards for data formatting and sharing
+  - follow standards for open online data formatting and sharing
 - supports periodic review of data needs as original data source standards evolve
 ** empowering library staff (and by extension, library users) to better understand how their catalog works
 - accessible

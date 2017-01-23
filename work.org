@@ -72,3 +72,15 @@
 *** TODO [#A] Duke MARC to Argot transformation
 *** TODO [#A] NCSU MARC to Argot transformation
 *** TODO [#A] NCCU MARC to Argot transformation
+* INPROGRESS [#B] MARC bibliographic data mapping review
+** DONE Derive processable version of current MARC bibliographic standard from [[http://www.loc.gov/marc/bibliographic/ecbdlist.html]]
+   - State "DONE"       from "TODO"       [2017-01-18 Wed 22:54]
+   - Script: [[https://github.com/trln/data-documentation/blob/master/extract_marc_bib_spec.rb][extract_marc_bib_spec.rb]]
+   - MARC field file: [[https://github.com/trln/data-documentation/blob/master/_marc_bib_tags.tsv][_marc_bib_tags.tsv]]
+   - MARC subfield file: [[https://github.com/trln/data-documentation/blob/master/_marc_bib_subfields.tsv][_marc_bib_subfields.tsv]]
+** INPROGRESS use data in Endeca data model to create list of MARC bib tags/fields NOT mapped into current system
+   - State "INPROGRESS" from "TODO"       [2017-01-18 Wed 23:02]
+ - Caveat: some institutions have gone off the documented data model, so this will not be completely accurate until full review of existing institutional MARC mappings is done
+** TODO use data in Endeca data model to create list of MARC subfields in MARC tags/fields mapped into current system, which are not explicitly documented
+ - Caveat: some institutions have gone off the documented data model, so this will not be completely accurate until full review of existing institutional MARC mappings is done
+** TODO have metadata specialists review lists for data that should be included that isn't now

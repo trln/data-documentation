@@ -2,33 +2,41 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org135e7bd"><span class="todo INPROGRESS">INPROGRESS</span> <span class="priority">[A]</span> Get initial set of MARC bib (and attached item, holdings, order record) data from institutional ILSs into Solr to support for initial Argon development</a>
+<li><a href="#org917a61c"><span class="todo INPROGRESS">INPROGRESS</span> <span class="priority">[A]</span> Get initial set of MARC bib (and attached item, holdings, order record) data from institutional ILSs into Solr to support for initial Argon development</a>
 <ul>
-<li><a href="#orgf996bf0"><span class="todo INPROGRESS">INPROGRESS</span> <span class="priority">[A]</span> Develop initial manual ILS extract processes</a>
+<li><a href="#org46624f8"><span class="todo INPROGRESS">INPROGRESS</span> <span class="priority">[A]</span> Develop initial manual ILS extract processes</a>
 <ul>
-<li><a href="#org44f815d"><span class="todo INPROGRESS">INPROGRESS</span> <span class="priority">[A]</span> UNC ILS extract processes</a></li>
-<li><a href="#org4a49a8c"><span class="todo TODO">TODO</span> <span class="priority">[A]</span> Duke ILS extract processes</a></li>
-<li><a href="#orga88e057"><span class="todo TODO">TODO</span> <span class="priority">[A]</span> NCSU ILS extract processes</a></li>
-<li><a href="#orgeeb0f74"><span class="todo TODO">TODO</span> <span class="priority">[A]</span> NCCU ILS extract processes</a></li>
+<li><a href="#org145311f"><span class="todo INPROGRESS">INPROGRESS</span> <span class="priority">[A]</span> UNC ILS extract processes</a></li>
+<li><a href="#org5b81391"><span class="todo TODO">TODO</span> <span class="priority">[A]</span> Duke ILS extract processes</a></li>
+<li><a href="#org60f421d"><span class="todo TODO">TODO</span> <span class="priority">[A]</span> NCSU ILS extract processes</a></li>
+<li><a href="#org952c40e"><span class="todo TODO">TODO</span> <span class="priority">[A]</span> NCCU ILS extract processes</a></li>
 </ul>
 </li>
-<li><a href="#orgc1a8ac7"><span class="todo INPROGRESS">INPROGRESS</span> <span class="priority">[A]</span> Initial definition of Argot format</a>
+<li><a href="#orgc6b3573"><span class="todo INPROGRESS">INPROGRESS</span> <span class="priority">[A]</span> Initial definition of Argot format</a>
 <ul>
-<li><a href="#org78290f3"><span class="done DONE">DONE</span> <span class="priority">[A]</span> Create Argot template showing structure of Argot record and available elements</a></li>
-<li><a href="#org67ab6c5"><span class="todo INPROGRESS">INPROGRESS</span> <span class="priority">[A]</span> Add examples of records in Argot</a></li>
-<li><a href="#orgbf00eca"><span class="todo INPROGRESS">INPROGRESS</span> <span class="priority">[A]</span> Add instructions/examples to Argot template</a></li>
-<li><a href="#orgb551c26"><span class="todo WAIT">WAIT</span> <span class="priority">[B]</span> Create data mapping: Endeca data element -&gt; Argot element</a></li>
-<li><a href="#org6210132"><span class="todo WAIT">WAIT</span> <span class="priority">[C]</span> Create data mapping: MARC bib -&gt; Argot element</a></li>
+<li><a href="#org0283379"><span class="done DONE">DONE</span> <span class="priority">[A]</span> Create Argot template showing structure of Argot record and available elements</a></li>
+<li><a href="#org3868e13"><span class="todo INPROGRESS">INPROGRESS</span> <span class="priority">[A]</span> Add examples of records in Argot</a></li>
+<li><a href="#org6037be5"><span class="todo INPROGRESS">INPROGRESS</span> <span class="priority">[A]</span> Add instructions/examples to Argot template</a></li>
+<li><a href="#orge71f17e"><span class="todo WAIT">WAIT</span> <span class="priority">[B]</span> Create data mapping: Endeca data element -&gt; Argot element</a></li>
+<li><a href="#org18d3e7e"><span class="todo WAIT">WAIT</span> <span class="priority">[C]</span> Create data mapping: MARC bib -&gt; Argot element</a></li>
 </ul>
 </li>
-<li><a href="#orga1a90f7"><span class="todo INPROGRESS">INPROGRESS</span> <span class="priority">[A]</span> Develop initial working transformation process for MARC to Argot</a>
+<li><a href="#orgc691442"><span class="todo INPROGRESS">INPROGRESS</span> <span class="priority">[A]</span> Develop initial working transformation process for MARC to Argot</a>
 <ul>
-<li><a href="#orgc41b580"><span class="todo WAIT">WAIT</span> <span class="priority">[A]</span> UNC MARC to Argot transformation</a></li>
-<li><a href="#orge389134"><span class="todo TODO">TODO</span> <span class="priority">[A]</span> Duke MARC to Argot transformation</a></li>
-<li><a href="#orgff4bd7a"><span class="todo TODO">TODO</span> <span class="priority">[A]</span> NCSU MARC to Argot transformation</a></li>
-<li><a href="#orgb17ec8c"><span class="todo TODO">TODO</span> <span class="priority">[A]</span> NCCU MARC to Argot transformation</a></li>
+<li><a href="#orgcb8b068"><span class="todo WAIT">WAIT</span> <span class="priority">[A]</span> UNC MARC to Argot transformation</a></li>
+<li><a href="#org3838827"><span class="todo TODO">TODO</span> <span class="priority">[A]</span> Duke MARC to Argot transformation</a></li>
+<li><a href="#org5b07a07"><span class="todo TODO">TODO</span> <span class="priority">[A]</span> NCSU MARC to Argot transformation</a></li>
+<li><a href="#orgd701140"><span class="todo TODO">TODO</span> <span class="priority">[A]</span> NCCU MARC to Argot transformation</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a href="#orgb2aaf13"><span class="todo INPROGRESS">INPROGRESS</span> <span class="priority">[B]</span> MARC bibliographic data mapping review</a>
+<ul>
+<li><a href="#org172de0f"><span class="done DONE">DONE</span> Derive processable version of current MARC bibliographic standard from </a></li>
+<li><a href="#orgb18f3e1"><span class="todo INPROGRESS">INPROGRESS</span> use data in Endeca data model to create list of MARC bib tags/fields NOT mapped into current system</a></li>
+<li><a href="#org49793f4"><span class="todo TODO">TODO</span> use data in Endeca data model to create list of MARC subfields in MARC tags/fields mapped into current system, which are not explicitly documented</a></li>
+<li><a href="#orgb8dacd9"><span class="todo TODO">TODO</span> have metadata specialists review lists for data that should be included that isn't now</a></li>
 </ul>
 </li>
 </ul>
@@ -36,14 +44,14 @@
 </div>
 
 
-<a id="org135e7bd"></a>
+<a id="org917a61c"></a>
 
 # Get initial set of MARC bib (and attached item, holdings, order record) data from institutional ILSs into Solr to support for initial Argon development
 
 -   State "INPROGRESS" from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2017-01-22 Sun 15:31]</span></span>
 
 
-<a id="orgf996bf0"></a>
+<a id="org46624f8"></a>
 
 ## Develop initial manual ILS extract processes
 
@@ -65,7 +73,7 @@
     -   Extract their ILS data in the appropriate format(s) to serve as inputs for their local transformation to Argot
 
 
-<a id="org44f815d"></a>
+<a id="org145311f"></a>
 
 ### UNC ILS extract processes
 
@@ -88,22 +96,22 @@ Code and example data lives at: <https://github.com/trln/extract_marcxml_for_arg
 -   TODO [#A] Include data from attached, unsuppressed order records
 
 
-<a id="org4a49a8c"></a>
+<a id="org5b81391"></a>
 
 ### Duke ILS extract processes
 
 
-<a id="orga88e057"></a>
+<a id="org60f421d"></a>
 
 ### NCSU ILS extract processes
 
 
-<a id="orgeeb0f74"></a>
+<a id="org952c40e"></a>
 
 ### NCCU ILS extract processes
 
 
-<a id="orgc1a8ac7"></a>
+<a id="orgc6b3573"></a>
 
 ## Initial definition of Argot format
 
@@ -114,7 +122,7 @@ Code and example data lives at: <https://github.com/trln/extract_marcxml_for_arg
 -   Template is ready for data team members to begin using as an initial data transformation model, and it is available for collective improvement/modification on Github
 
 
-<a id="org78290f3"></a>
+<a id="org0283379"></a>
 
 ### Create Argot template showing structure of Argot record and available elements
 
@@ -123,7 +131,7 @@ Code and example data lives at: <https://github.com/trln/extract_marcxml_for_arg
 -   Blank Argot template with full record structure and all available fields is at: [the proto-argot template](https://github.com/trln/proto-argot/blob/master/template.json)
 
 
-<a id="org67ab6c5"></a>
+<a id="org3868e13"></a>
 
 ### Add examples of records in Argot
 
@@ -132,7 +140,7 @@ Code and example data lives at: <https://github.com/trln/extract_marcxml_for_arg
 -   More examples are needed
 
 
-<a id="orgbf00eca"></a>
+<a id="org6037be5"></a>
 
 ### Add instructions/examples to Argot template
 
@@ -140,7 +148,7 @@ Code and example data lives at: <https://github.com/trln/extract_marcxml_for_arg
 -   [template-updates branch version of proto-argot template](https://github.com/trln/proto-argot/blob/template-updates/template.json)
 
 
-<a id="orgb551c26"></a>
+<a id="orge71f17e"></a>
 
 ### Create data mapping: Endeca data element -> Argot element
 
@@ -148,7 +156,7 @@ Code and example data lives at: <https://github.com/trln/extract_marcxml_for_arg
     Let Argot template get slightly more settled before creating this.
 
 
-<a id="org6210132"></a>
+<a id="org18d3e7e"></a>
 
 ### Create data mapping: MARC bib -> Argot element
 
@@ -156,7 +164,7 @@ Code and example data lives at: <https://github.com/trln/extract_marcxml_for_arg
     Whether this should be done in a centralized way, or left completely to each institution, depends upon decision from Steering Committee or Advisory Team.
 
 
-<a id="orga1a90f7"></a>
+<a id="orgc691442"></a>
 
 ## Develop initial working transformation process for MARC to Argot
 
@@ -168,7 +176,7 @@ Code and example data lives at: <https://github.com/trln/extract_marcxml_for_arg
         -   b) use institution-specific config files to handle locally-specific processing or overrides/exceptions to shared processing instructions
 
 
-<a id="orgc41b580"></a>
+<a id="orgcb8b068"></a>
 
 ### UNC MARC to Argot transformation
 
@@ -179,17 +187,53 @@ Code and example data lives at: <https://github.com/trln/extract_marcxml_for_arg
 -   State "INPROGRESS" from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2017-01-22 Sun 16:30]</span></span>
 
 
-<a id="orge389134"></a>
+<a id="org3838827"></a>
 
 ### Duke MARC to Argot transformation
 
 
-<a id="orgff4bd7a"></a>
+<a id="org5b07a07"></a>
 
 ### NCSU MARC to Argot transformation
 
 
-<a id="orgb17ec8c"></a>
+<a id="orgd701140"></a>
 
 ### NCCU MARC to Argot transformation
+
+
+<a id="orgb2aaf13"></a>
+
+# MARC bibliographic data mapping review
+
+
+<a id="org172de0f"></a>
+
+## Derive processable version of current MARC bibliographic standard from <http://www.loc.gov/marc/bibliographic/ecbdlist.html>
+
+-   State "DONE"       from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2017-01-18 Wed 22:54]</span></span>
+-   Script: [extract\_marc\_bib\_spec.rb](https://github.com/trln/data-documentation/blob/master/extract_marc_bib_spec.rb)
+-   MARC field file: [\_marc\_bib\_tags.tsv](https://github.com/trln/data-documentation/blob/master/_marc_bib_tags.tsv)
+-   MARC subfield file: [\_marc\_bib\_subfields.tsv](https://github.com/trln/data-documentation/blob/master/_marc_bib_subfields.tsv)
+
+
+<a id="orgb18f3e1"></a>
+
+## use data in Endeca data model to create list of MARC bib tags/fields NOT mapped into current system
+
+-   State "INPROGRESS" from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2017-01-18 Wed 23:02]</span></span>
+
+-   Caveat: some institutions have gone off the documented data model, so this will not be completely accurate until full review of existing institutional MARC mappings is done
+
+
+<a id="org49793f4"></a>
+
+## use data in Endeca data model to create list of MARC subfields in MARC tags/fields mapped into current system, which are not explicitly documented
+
+-   Caveat: some institutions have gone off the documented data model, so this will not be completely accurate until full review of existing institutional MARC mappings is done
+
+
+<a id="orgb8dacd9"></a>
+
+## have metadata specialists review lists for data that should be included that isn't now
 
