@@ -1,4 +1,7 @@
-* There is no "data model" for this project. I don't have a draft of one for you. 
+#+TITLE: Update for 2017-01-23 Steering Committee meeting
+#+OPTIONS: ^:nil num:nil
+
+* There is no one "data model" for this project. I don't have a draft of one for you. 
 ** We are working toward a suite of data documentation, not a data model
  We are dealing with at least 4 different types of data models (bold), with at least 3 transformation/mapping processes (marked by -->):
 
@@ -28,35 +31,15 @@
  This made it extremely difficult to handle problem-solving, cross-training, succession-planning, and gathering broader input on data decisions affecting Endeca.
 
 ** It's too early to be nailing down our data documentation in a formal, nice-to-look at way
-*** Data & Infrastructure Team chairs concur: Argon feature development should drive data decisionmaking, not the other way around
+*Data & Infrastructure Team chairs concur: Argon feature development should drive data decisionmaking, not the other way around:*
  - The architecture of this project much greater flexibility for iterative development than we had with Endeca, which required much more overhead for dealing with any changes to data model than our approach will.
  - No one feels expert enough with Solr + Blacklight+ all our data to pre-devise a set of data specifications/mappings from original data sources -> Argot -> Solr -> Argon.
  - It's too early to nail down our data specifications, which is one reason why production of "a data model" as a piece of data documentation has not yet been produced
+** More information on these plans and status
+See below, though we probably will not get to this content in the 2017-01-23 Steering Committee meeting. 
 
-
-
-* Status: Immediate project data needs and the data documentation to support them
-
-** Current priority: Get initial set of MARC bib (and attached item, holdings, order record) data from institutional ILSs into Solr to support for initial Argon development
-*** What this requires from data side: 
-**** Figure out ILS extract piece
-The smoothest/easiest path here (if possible) looks like: 
- - Each institution figures out how to extract their MARC bib and necesary attached item, holdings, or order data into MARC binary or MARC-XML that maps attached-record data into locally-defined fields in the bib record
-   - Example: [[https://github.com/trln/extract_marcxml_for_argot_unc/blob/master/out.xml][UNC MARC-XML with attached item record data elements mapped into 999 91 fields]]
- - For clarity, code maintenance, etc., Infrastructure and Data Team chairs recommend this step be a *pure/literal extract* of the ILS data, with all transformations/mappings/massagings of the data handled by subsequent scripts/processes.
-
-**** Figure out initial processes for transforming data extracted from ILS into Argot
- - Each institution works on initial transformation of this data into Argot
-***** Definition of Argot format
-  - Argot is under intense development and will be throughout much of the development phase of this project, so more formal documentation of the Argot model outside the code is not currently a priority
-  - Initial version of Argot is directly based on the properties and dimensions currently defined in Endeca
-  - Blank Argot template with full record structure and all available fields is at: [[https://github.com/trln/proto-argot/blob/master/template.json][the proto-argot template]]
-  - [[https://github.com/trln/proto-argot/blob/master/argot_out.json][Example of bib record transformed to Argon]], with more on the way
-  - Template is ready for data team members to begin using as an initial data transformation model, and it is available for collective improvement/modification on Github
-***** Transformation of MARC to Argot
-  - We have a working start at this process. Initial design based on assumption that we would, as much as possible, like to a) have one set of instructions for the transformations/mappings we can all do the same way; and b) use institution-specific config files to handle locally-specific processing or overrides/exceptions to shared processing instructions
-    - [[https://github.com/trln/marc-to-argot][MARC to Argot transformer]] - has general transformation instructions and institution-specific configs
-    - Details of MARC transformations currently embedded [[https://github.com/trln/marc-to-argot][in the code]]
+* Current data-related priorities & status
+See [[https://github.com/trln/data-documentation/blob/master/work.md][Work tracking page]].
 
 * Challenge/blocker for all aspects of data work and documentation from start to finish
 This project has stated goals to, as much as possible, cooperate and share processes and code to minimize repeated work and complexity. 
@@ -89,8 +72,6 @@ If there is no committment to full ongoing collaboration on this, these extra (b
    4. (? - potentially localized) Argon data model (what Solr index fields are displayed, how they are labeled, whether they are searchable, drive facets, etc) 
 
 Given what I hear off the record, I have moved forward assuming we do not have the committment to full collaboration on data. However, it would be good to have a decision on the record about how we want to move forward on this. 
-
-
 
 * Vision for a maintainable, usable suite of data documentation that meets ongoing project needs
 ** further feature development
