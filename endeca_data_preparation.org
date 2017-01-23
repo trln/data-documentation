@@ -16,7 +16,7 @@
 *** Filter value extracted from: serverc: /data/TRLN/config/pipeline/TRLN.record_filter.xml
 ** endeca_config_elements.txt: From the lists of Endeca dimensions and propties derived from the Endeca configuration files, create a unique list of Endeca element names from the config
 ** endeca_indexing.tsv: Define which elements are searchable in which indexes, by extracting configuration from: serverc: /data/TRLN/config/pipeline/TRLN.recsearch_config.xml
-** endeca_indexing_reduced.tsv: derived from endeca_indexing.tsv via endeca_indexing_reduce.rb
+** _endeca_indexing_reduced.tsv: derived from endeca_indexing.tsv via endeca_indexing_reduce.rb
 * Identify list of elements in endeca_dmod_elements.txt that are NOT in endeca_config_elements.txt
 | Data model element                   | Element list element or other note                                                                                                                                                                  |
 |--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -101,6 +101,8 @@
  - Varying Titles Vernacular Segmented
 ** Remove these elements from endeca_final_elements.tsv: Title1, Title2, Title3, Title4 on the assumption that we'll have better ways to deal with relevance ranking for short titles.
 ** Add column mapping each config element name to an element in endeca_dmod_elements.txt, in order to facilitate future data merging from Endeca data model spreadsheet
-* To Element tab, add column indicating whether we facet on the element, and whether it is searchable
-* Add column: Endeca dmod name, to facilitate matching MARC tags to elements they get mapped into
-Element name here is from the Endeca config, which, as we saw above, sometimes had elements named differently than the data model spreadsheet
+* _endeca_final_elements_compiled.tsv is compiled by endeca_final_elements_compile.rb
+ - Adds whether we facet on each element (if yes, then it is a Dimension in Endeca)
+ - Adds column on searchability of each element
+* endeca_prepipeline_name_to_dmod_element.tsv: create mapping of Endeca pre-pipeline labels to Endeca data model element names 
+ - vernacular, segmented, and normalized-specific elements and prepipeline names removed. 

@@ -1,0 +1,269 @@
+Prepipeline Label	Endeca_Property
+008PubDate	PubDateSort
+020	ISBN
+Syndetics_ISBN	Syndetics_ISBN
+022	ISSN
+024	ISBN
+UPC	UPC
+028	Publisher Number
+100	Main Author
+110	Main Author
+111	Main Author
+130_journal	Journal Uniform Title
+130	Main Uniform Title
+210_journal	Journal Title Abbreviation
+210	Title Index
+240	Uniform Title
+242c	Other Author Translation
+242	Other Title Translation
+243	Collective Uniform Title
+245a_journal	Journal Title Index
+245c	Statement of Responsibility
+245	Main Title
+245sort	Title Sort
+246_journal	Journal Varying Title
+246	Varying Titles
+247_journal	Journal Varying Title
+247	Varying Titles
+250	Edition
+254	Musical Presentation
+255	Cartographic Data
+260b	Publisher
+260c	Published
+260	Imprint
+262b	Sound Recording Imprint
+262	Imprint
+264a1	Imprint
+264b1	Publisher
+264c1	Published
+264a0	Production Statement
+264b0	Producer
+264a2	Distribution Statement
+264b2	Distributor
+264a3	Manufacturer Statement
+264b3	Manufacturer
+264c4	Copyright
+264c4_display	Copyright Statement
+300	Material
+310	Current Frequency
+321	Former Frequency
+344	Material Details
+345	Material Details
+346	Material Details
+347	Material Details
+351	Organization
+362	Volumes
+440	Series Statement
+440x	Series ISSN
+440x	Series ISSN
+490	Series Statement
+490x	Series ISSN
+490x	Series ISSN
+500	Indexed Notes
+501	Indexed Notes
+502	Indexed Notes
+504	Indexed Notes
+505r	Table of Contents author index
+505	Table of Contents 
+506	Access Restriction
+507	Indexed Notes
+508	Production Credits
+510	Notes
+511	Performer Credits
+513	Notes
+514	Notes
+515	Notes
+516	Notes
+518	Notes
+520	Summary
+521	Notes
+522	Indexed Notes
+524	Notes
+525	Notes
+530	Other Format
+533i	Indexed Notes
+533d	Notes
+534	Indexed Notes
+535	Notes
+536	Indexed Notes
+538	System Details
+540	Notes
+541	Source of Acquisition
+541a	Indexed Notes
+544	Related Collections
+545	Biographical Sketch
+546	Notes
+547	Notes
+550	Notes
+555	Cumulative Indexes
+556	Notes
+561_indexed	Indexed Notes
+561_indexed	Indexed Notes
+565	Notes
+567	Notes
+580	Notes
+581	Indexed Notes
+585	Indexed Notes
+586	Indexed Notes
+588	Notes
+590_indexed	Indexed Notes
+590	Notes
+599	Most Recently Arrived
+600	Subjects
+610	Subjects
+611	Subjects
+630	Subjects
+650	Subjects
+651	Subjects
+653	Subjects
+690	Subjects
+691	Subjects
+695	Uncontrolled Subject
+Director	Director
+700a	Other Authors
+700t	Other Titles
+710a	Other Authors
+710t	Other Titles
+711a	Other Authors
+711t	Other Titles
+720	Uncontrolled Author
+730	Uniform Title
+740	Varying Titles
+752	Notes
+760	Main Series Linking
+762	Subseries Linking
+765	Translation of Linking
+765x	Linking_ISSN
+767	Translated as Linking
+767x	Linking_ISSN
+770	Has Supplement Linking
+772	Supplement to Linking
+773	Host Item Linking
+773x	Linking_ISSN
+774	Constituent Unit Linking
+774x	Linking_ISSN
+775	Other Edition
+780_journal	Journal Earlier Title
+780x	Linking_ISSN
+780	Earlier Title
+785_journal	Journal Later Title
+785x	Linking_ISSN
+785	Later Title
+790	Other Authors
+791	Other Authors
+Name_Title	Name Title
+800t	Series title index
+800	Series
+810t	Series title index
+810	Series
+811t	Series title index
+811	Series
+830t	Series title index
+830	Series
+852HoldingsNote	HoldingsNote
+Secondary_URL	Secondary URL
+Primary_URL	Primary URL
+FindingAid_URL	Finding Aid URL
+863HoldingsNote	SerialHoldingsSummary
+866HoldingsNote	SerialHoldingsSummary
+Title1	Title1
+Title2	Title2
+Title3	Title3
+Title4	Title4
+909	DateCataloged
+999CallNo	Call Number
+CallNoSort	Call Number sort
+999Circ	Circulation Level
+999DocType	DocType
+999Barcode	ItemBarcode
+999ItemId	Item ID
+999ItemDueDate	ItemDueDate
+999ItemNote	ItemNotes
+999ItemType_orig	ItemTypes
+999Lib_orig	Libraries
+999Loc	Location_property
+999Status_orig	Statuses
+999Class	None
+LocalId	LocalId
+OtherLocalId	Other LocalId
+Rollup	Rollup
+UniqueId	UniqueId
+OCLCNumber	OCLCNumber
+EAD ID	EAD ID
+Donor	Donor
+LocalNumbers	Local System Number
+EAD Access Restrictions	EAD Access Restrictions
+EAD Acquisitions Info	EAD Acquisitions Info
+EAD Biographical Note	EAD Biographical Note
+EAD ID	EAD ID
+EAD Overview	EAD Overview
+EAD Preferred Citation	EAD Preferred Citation
+EAD Scope Content	EAD Scope Content
+EAD Unit Title	EAD Unit Title
+EAD Use Restrictions	EAD Use Restrictions
+EAD Element Flag	EAD Element Flag
+EAD Element List	EAD Element List
+008BookFiction	Subject: Genre
+008Lang	Language
+008SerialType	Format
+100_Facet	Author
+110	Author
+111	Author
+600v	Subject: Genre
+610v	Subject: Genre
+611v	Subject: Genre
+630v	Subject: Genre
+650v	Subject: Genre
+651v	Subject: Genre
+655a	Subject: Genre
+690x	Subject: Genre
+600z	Subject: Region
+610z	Subject: Region
+611z	Subject: Region
+630z	Subject: Region
+650z	Subject: Region
+651a	Subject: Region
+651z	Subject: Region
+655z	Subject: Region
+600y	Subject: Time Period
+610y	Subject: Time Period
+611y	Subject: Time Period
+630y	Subject: Time Period
+650y	Subject: Time Period
+650a2	Medical Subject: Topic
+651y	Subject: Time Period
+600a	Subject: Topic
+650x2	Medical Subject: Topic
+600x	Subject: Topic
+610a	Subject: Topic
+610x	Subject: Topic
+611a	Subject: Topic
+611x	Subject: Topic
+630a	Subject: Topic
+630x	Subject: Topic
+650a	Subject: Topic
+650x	Subject: Topic
+651x	Subject: Topic
+700_facet	Author
+800a	Author
+810a	Author
+811a	Author
+995	Institution
+999ItemType	Format
+ItemCallNo	Call Number Range
+999Lib	Location
+999Lib	Location
+999Status	Availability
+n/a (calculated value)	New Titles
+BibCallNo	Call Number Range
+Source	Source
+008PubDate	Publication Year
+600	Subject Headings
+610	Subject Headings
+611	Subject Headings
+630	Subject Headings
+650	Subject Headings
+651	Subject Headings
+653	Subject Headings
+690	Subject Headings
+691	Subject Headings
