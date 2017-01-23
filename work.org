@@ -45,8 +45,12 @@
     - State "INPROGRESS" from "TODO"       [2017-01-22 Sun 16:12]
     - [[https://github.com/trln/proto-argot/blob/master/argot_out.json][Example of bib record transformed to Argon]]
     - More examples are needed
-*** TODO [#A] Add instructions/examples to Argot template
-*** TODO [#A] Create data mapping: Endeca data element -> Argot element 
+*** INPROGRESS [#A] Add instructions/examples to Argot template
+    - State "INPROGRESS" from "TODO"       [2017-01-22 Sun 22:39]
+    - [[https://github.com/trln/proto-argot/blob/template-updates/template.json][template-updates branch version of proto-argot template]]
+*** WAIT [#B] Create data mapping: Endeca data element -> Argot element 
+    - State "WAIT"       from "TODO"       [2017-01-22 Sun 22:40] \\
+      Let Argot template get slightly more settled before creating this.
 *** WAIT [#C] Create data mapping: MARC bib -> Argot element
     - State "WAIT"       from "TODO"       [2017-01-22 Sun 16:09] \\
       Whether this should be done in a centralized way, or left completely to each institution, depends upon decision from Steering Committee or Advisory Team.

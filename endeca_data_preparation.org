@@ -105,4 +105,5 @@
  - Adds whether we facet on each element (if yes, then it is a Dimension in Endeca)
  - Adds column on searchability of each element
 * endeca_prepipeline_name_to_dmod_element.tsv: create mapping of Endeca pre-pipeline labels to Endeca data model element names 
- - vernacular, segmented, and normalized-specific elements and prepipeline names removed. 
+ - vernacular, segmented, and normalized-specific elements and prepipeline names removed.
+* _endeca_prepipeline_name_to_element_info.tsv: compiled by endeca_prepipeline_name_to_element.rb
