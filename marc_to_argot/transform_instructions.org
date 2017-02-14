@@ -2,6 +2,9 @@ Initial data transformation instruction examples at:
 
 [[https://github.com/trln/data-documentation/blob/master/marc_to_argot/transform_instructions.csv]]
 
+A start at compiling records with examples of a lot of this data is at: 
+[[https://github.com/trln/data-tests-UNC]]
+
 * ID
 Thrown in late to provide a way to refer to specific transforms in notes
 * Argot Target
