@@ -32,6 +32,9 @@ Subfields in () have specific/weird handling (not covered by separate pattern ru
 Shorthand that I tried to keep consistent that hopefully makes sense to anyone but me.
 
 Hopefully the input/output examples help clarify.
+
+Some instructions refer to maps, which are at [[https://github.com/trln/data-documentation/tree/master/marc_to_argot/maps]]
+
 * Input
 The complete MARC field, in Millennium human-readable MARC dialect. 
 
