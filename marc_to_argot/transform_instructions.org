@@ -1,10 +1,14 @@
+Initial data transformation instruction examples at: 
+
+[[https://github.com/trln/data-documentation/blob/master/marc_to_argot/transform_instructions.csv]]
+
 * ID
 Thrown in late to provide a way to refer to specific transforms in notes
 * Argot Target
 Argot element the transformation will produce. I made up some new ones. Working on this highlighted some discussions we may need to have about best way to handle some things in Argot, mainly around search fields vs. display fields, which in many cases need to contain different values. 
 * MARC tag
  - . : applies to field with any MARC tag (used for patterns applied to certain subfield values). 
- - ![1768]11 - applies to any field except regex-y pattern (if a subfield is used the same across all fields except a handful -- example: $e in the X11 fields) -- not used in examples but potentially applicable
+ - ![1768]11 : applies to any field except regex-y pattern (if a subfield is used the same across all fields except a handful -- example: $e in the X11 fields) -- not used in examples but potentially applicable
 * Ind 1
  - . : applies to fields with any Ind 1 value
  - 0 : applies only to field with Ind 1 = 0
