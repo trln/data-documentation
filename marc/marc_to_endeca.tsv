@@ -1,0 +1,228 @@
+Endeca Element	MARC tag	ind1	ind2	MARC Further constraint	MARC Subfields	INST
+Access Restrictions	506	.	.	.	abcdefu	TRLN
+Author	100	.	.	.	abcdq	TRLN
+Author	110	.	.	.	abcdefg	TRLN
+Author	111	.	.	.	acdefnq	TRLN
+Author	700	.	.	.	abcdq	TRLN
+Author	800	.	.	.	abcdegq	TRLN
+Author	810	.	.	.	ab	TRLN
+Author	811	.	.	.	acd	TRLN
+Biographical Sketch	545	.	.	.	abu	TRLN
+Cartographic Data	255	.	.	.	abcdefg	TRLN
+Collective Uniform Title	243	.	.	.	adfklmnoprs	TRLN
+Constituent Unit Linking	774	.	.	.	abcdghikmnorstuwxyz	TRLN
+Copyright	264	.	4	.	c	TRLN
+Copyright Statement	264	.	4	.	c	TRLN
+Cumulative Indexes	555	.	.	.	abcdu	TRLN
+Current Frequency	310	.	.	.	ab	TRLN
+Director	700	.	.	4 = drt || e = director		TRLN
+Distribution Statement	264	.	2	.	abc	TRLN
+Distributor	264	.	2	.	b	TRLN
+Earlier Title	780	.	.	.	abcdghnkstxz	TRLN
+Edition	250	.	.	.	ab	TRLN
+Finding Aid URL	856	.	b012	3 = Finding aid	uyz3	TRLN
+Former Frequency	321	.	.	.	ab	TRLN
+Genre	600	.	12347	.	v	TRLN
+Genre	610	.	12347	.	v	TRLN
+Genre	611	.	12347	.	v	TRLN
+Genre	630	.	12347	.	v	TRLN
+Genre	650	.	12347	.	v	TRLN
+Genre	651	.	12347	.	v	TRLN
+Genre	655	.	12347	.	a	TRLN
+Genre	008	.	.	.	33-34	TRLN
+Genre	690	.	.	.	x	TRLN
+Has Supplement Linking	770	.	.	.	abcdghikmnorstuwxyz	TRLN
+Holdings Note	852	.	.	.		TRLN
+Host Item Linking	773	.	.	.	abdghikmnopqrstuwxyz	TRLN
+Imprint	264	.	1	.	abc	TRLN
+Imprint	260	.	.	.	abcefg	TRLN
+Imprint	262	.	.	.	abcde	TRLN
+Indexed Notes	500	.	.	.	a	TRLN
+Indexed Notes	501	.	.	.	a	TRLN
+Indexed Notes	502	.	.	.	a	TRLN
+Indexed Notes	504	.	.	.	a	TRLN
+Indexed Notes	507	.	.	.	ab	TRLN
+Indexed Notes	522	.	.	.	a	TRLN
+Indexed Notes	533	.	.	.	cf	TRLN
+Indexed Notes	534	.	.	.	abcefnpt	TRLN
+Indexed Notes	536	.	.	.	abcdefgh	TRLN
+Indexed Notes	541	.	.	.	a	TRLN
+Indexed Notes	561	.	.	.	a	TRLN
+Indexed Notes	563	.	.	.	a	TRLN
+Indexed Notes	581	.	.	.	a	TRLN
+Indexed Notes	585	.	.	.	a	TRLN
+Indexed Notes	586	.	.	.	a	TRLN
+Indexed Notes	590	.	.	.	a	TRLN
+ISBN	020	.	.	.	az	TRLN
+ISBN	024	.	.	.	a	TRLN
+ISSN	022	.	.	.	ayz	TRLN
+Journal Earlier Title	780	.	.	LDR/07 = s && 008/21 = [pP]	abcdghnkstxz	TRLN
+Journal Later Title	785	.	.	LDR/07 = s AND 008/21 = [pP]	abcdghikmnstxz	TRLN
+Journal Title Abbreviation	210	.	.	LDR/07 = s AND 008/21 = [pP]	ab	TRLN
+Journal Title Index	245	.	.	LDR/07 = s AND 008/21 = [pP]	abnp	TRLN
+Journal Uniform Title	130	.	.	LDR/07 = s AND 008/21 = [pP]	adfghklmnoprs	TRLN
+Journal Varying Title	247	.	.	LDR/07 = s AND 008/21 = [pP]	abfhnp	TRLN
+Journal Varying Title	246	.	.	LDR/07 = s AND 008/21 = [pP]	abhnp	TRLN
+Language	008	.	.	.	35-37	TRLN
+Later Title	785	.	.	.	abcdghikmnstxz	TRLN
+Linking ISSN	765	.	.	.	xz	TRLN
+Linking ISSN	767	.	.	.	xz	TRLN
+Linking ISSN	773	.	.	.	xz	TRLN
+Linking ISSN	774	.	.	.	xz	TRLN
+Linking ISSN	780	.	.	.	xz	TRLN
+Linking ISSN	785	.	.	.	xz	TRLN
+Main Author	100	.	.	.	abcdegq	TRLN
+Main Author	110	.	.	.	abcdefgn	TRLN
+Main Author	111	.	.	.	abcdefngq	TRLN
+Main Series Linking	760	.	.	.	abcdghimnostwxy	TRLN
+Main Title	245	.	.	.	abfghknps	TRLN
+Main Uniform Title	130	.	.	.	adfghklmnoprs	TRLN
+Manufacturer	264	.	3	.	b	TRLN
+Manufacturer Statement	264	.	3	.	abc	TRLN
+Material	300	.	.	.	abcefg	TRLN
+Material Details	344	.	.	.	abcdefgh3	TRLN
+Material Details	345	.	.	.	ab3	TRLN
+Material Details	346	.	.	.	ab3	TRLN
+Material Details	347	.	.	.	abcdef3	TRLN
+Medical Subject	650	.	2	.	x	TRLN
+Medical Subject	650	.	2	.	a	TRLN
+Most Recently Arrived	599	.	.	.	ab	TRLN
+Musical Presentation	254	.	.	.	a	TRLN
+Name Title	700	.	.	.	abcdejqu4fhiklmnoprstxg	TRLN
+Name Title	710	.	.	.	abceu4fhiklmoprstxdgn	TRLN
+Name Title	711	.	.	.	acdejqu4fhiklpstxgn	TRLN
+Notes	510	.	.	.	abcx	TRLN
+Notes	513	.	.	.	ab	TRLN
+Notes	514	.	.	.	abcdefghijkmuz	TRLN
+Notes	515	.	.	.	a	TRLN
+Notes	516	.	.	.	a	TRLN
+Notes	518	.	.	.	a	TRLN
+Notes	521	.	.	.	ab	TRLN
+Notes	524	.	.	.	a	TRLN
+Notes	525	.	.	.	a	TRLN
+Notes	533	.	.	.	abcdefmn	TRLN
+Notes	535	.	.	.	abdcdg	TRLN
+Notes	540	.	.	.	abu3	TRLN
+Notes	546	.	.	.	ab	TRLN
+Notes	547	.	.	.	a	TRLN
+Notes	550	.	.	.	a	TRLN
+Notes	556	.	.	.	a	TRLN
+Notes	565	.	.	.	abdce	TRLN
+Notes	567	.	.	.	a	TRLN
+Notes	580	.	.	.	a	TRLN
+Notes	588	.	.	.	a	TRLN
+Notes	590	.	.	.	a	TRLN
+Notes	752	.	.	.	abcd	TRLN
+Organization	351	.	.	.	a	TRLN
+Other Author Translation	242	.	.	.	c	TRLN
+Other Authors	700	.	.	.	abcdeq	TRLN
+Other Authors	710	.	.	.	abcde	TRLN
+Other Authors	711	.	.	.	abcdeq	TRLN
+Other Authors	790	.	.	.	a	TRLN
+Other Authors	791	.	.	.	ab	TRLN
+Other Edition	775	.	.	.	abdghint	TRLN
+Other Format	530	.	.	.	abcu	TRLN
+Other Title Translation	242	.	.	.	abhnp	TRLN
+Other Titles	700	.	.	.	fghijklmnoprst	TRLN
+Other Titles	710	.	.	.	fghklmnoprst	TRLN
+Other Titles	711	.	.	.	fghklmnpst	TRLN
+Performer Credits	511	.	.	.	a	TRLN
+Primary URL	856	.	b01	.	uyz3	TRLN
+Producer	264	.	0	.	b	TRLN
+Production Credits	508	.	.	.	a	TRLN
+Production Statement	264	.	0	.	abc	TRLN
+PubDateSort	008	.	.	.	10-Jul	TRLN
+Publication Year	008	.	.	.	10-Jul	TRLN
+Published	260	.	.	.	c	TRLN
+Published	264	.	1	.	c	TRLN
+Publisher	260	.	.	.	bf	TRLN
+Publisher	264	.	1	.	b	TRLN
+Publisher Number	028	.	.	.	ab	TRLN
+Region	600	.	12347	.	z	TRLN
+Region	610	.	12347	.	z	TRLN
+Region	611	.	12347	.	z	TRLN
+Region	630	.	12347	.	z	TRLN
+Region	650	.	12347	.	z	TRLN
+Region	651	.	12347	.	a	TRLN
+Region	651	.	12347	.	z	TRLN
+Region	655	.	12347	.	z	TRLN
+Related Collections	544	.	.	.	abcden	TRLN
+Secondary URL	856	.	28	.	uyz3	TRLN
+Series	800	.	.	.	abcdefhklmnopqrstv	TRLN
+Series	810	.	.	.	abcdefhklmnoprstv	TRLN
+Series	811	.	.	.	acdefhklnpqstv	TRLN
+Series	830	.	.	.	adfghklmnoprsv	TRLN
+Series ISSN	440	.	.	.	x	TRLN
+Series ISSN	490	.	.	.	x	TRLN
+Series Statement	440	.	.	.	anpvx	TRLN
+Series Statement	490	.	.	.	avx	TRLN
+Series Title Index	800	.	.	.	tnpfkl	TRLN
+Series Title Index	810	.	.	.	tnoprlsm	TRLN
+Series Title Index	811	.	.	.	tnpls	TRLN
+Series Title Index	830	.	.	.	ahnpv	TRLN
+Sound Recording Imprint	262	.	.	.	b	TRLN
+Source of Acquisition	541	.	.	.	abcdefhno	TRLN
+Statement of Responsibility	245	.	.	.	c	TRLN
+Subject	600	.	12347	.	a	TRLN
+Subject	600	.	12347	.	x	TRLN
+Subject	610	.	12347	.	a	TRLN
+Subject	610	.	12347	.	x	TRLN
+Subject	611	.	12347	.	a	TRLN
+Subject	611	.	12347	.	x	TRLN
+Subject	630	.	12347	.	a	TRLN
+Subject	630	.	12347	.	x	TRLN
+Subject	650	.	12347	.	a	TRLN
+Subject	650	.	12347	.	x	TRLN
+Subject	651	.	12347	.	x	TRLN
+Subject Headings	600	.	.	.	abcdefghijklmnopqrstvxyz	TRLN
+Subject Headings	610	.	.	.	abcdefghijklmnopqrstvxyz	TRLN
+Subject Headings	611	.	.	.	acdefghijklmnopqrstvxyz	TRLN
+Subject Headings	630	.	.	.	adfghklmnoprstvxyz	TRLN
+Subject Headings	650	.	.	.	abcdevxyz	TRLN
+Subject Headings	651	.	.	.	avxyz	TRLN
+Subject Headings	653	.	.	.	a	TRLN
+Subject Headings	690	.	.	.	ax	NCSU
+Subject Headings	690	.	.	.	a	Duke
+Subject Headings	691	.	.	.	abvxyz	TRLN
+Subject Headings	655	.	.	.	abvxyz	TRLN
+Subjects	600	.	.	.	abcdefghijklmnopqrstvxyz	TRLN
+Subjects	610	.	.	.	abcdefghijklmnopqrstvxyz	TRLN
+Subjects	611	.	.	.	acdefghijklmnopqrstvxyz	TRLN
+Subjects	630	.	.	.	adfghklmnoprstvxyz	TRLN
+Subjects	650	.	.	.	abcdevxyz	TRLN
+Subjects	651	.	.	.	avxyz	TRLN
+Subjects	653	.	.	.	a	TRLN
+Subjects	690	.	.	.	ax	NCSU
+Subjects	690	.	.	.	a	Duke
+Subjects	691	.	.	.	abvxyz	TRLN
+Subseries Linking	762	.	.	.	abcdghimnostwxy	TRLN
+Summary	520	.	.	.	abu	TRLN
+Supplement to Linking	772	.	.	.	abcdghikmnorstuwxyz	TRLN
+Syndetics ISBN	020	.	.	.	a	TRLN
+System Details	538	.	.	.	aiu	TRLN
+Table of Contents	505	.	.	.	agrt	TRLN
+Table of Contents author index	505	.	.	.	r	TRLN
+Time Period	600	.	12347	.	y	TRLN
+Time Period	610	.	12347	.	y	TRLN
+Time Period	611	.	12347	.	y	TRLN
+Time Period	630	.	12347	.	y	TRLN
+Time Period	650	.	12347	.	y	TRLN
+Time Period	651	.	12347	.	y	TRLN
+Title Index	210	.	.	.	ab	TRLN
+Title Sort	245	.	.	.	abfghknps	TRLN
+Translated as Linking	767	.	.	.	abcdghikmnorstuwxyz	TRLN
+Translation of Linking	765	.	.	.	abcdghikmnorstuwxyz	TRLN
+Uncontrolled Author	720	.	.	.	a	TRLN
+Uncontrolled Subject	695	.	.	.	a	TRLN
+Uniform Title	240	.	.	.	adfghklmnoprs	TRLN
+Uniform Title	730	.	.	.	adfghklmnoprst	TRLN
+UniqueId	907	.	.	.	a	UNC
+UPC	024	1	.	.	a	TRLN
+Varying Titles	246	.	.	.	abhnp	TRLN
+Varying Titles	247	.	.	.	abfhnp	TRLN
+Varying Titles	740	.	.	.	ahnp	TRLN
+Volumes	362	.	.	.	a	TRLN
+OCLCNumber	001	.	.	.		UNC
+Format	007	.	.	.	various codes may contribute to complex logic	TRLN
+Language	041	.	b	complex constraints specified in transformation code are met	adegj	UNC
+Call Number Range	050	.	.			
