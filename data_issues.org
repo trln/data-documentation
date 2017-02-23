@@ -1,0 +1,2 @@
+* mapping between simplified and traditional Chinese vernacular characters (at query time only)?
+* presence of Thumbnail URL must drive display of custom/local "book cover image"
