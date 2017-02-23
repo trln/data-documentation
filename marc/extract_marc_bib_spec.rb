@@ -10,7 +10,7 @@ end
 
 fields = data.split(/^$/)
 marcfields = ["MARC tag\tField name\tRepeatability\tOther note"]
-marcsfs = ["MARC tag\tSubfield delimiter\tSubfield name\tRepeatability\tOther note"]
+marcsfs = ["MARC tag\tField name\tField repeatability\tField note\tSubfield delimiter\tSubfield name\tSubfield repeatability\tSubfield note"]
 
 fields.each do |f|
   lines = f.split(/\n/)
@@ -71,10 +71,10 @@ fields.each do |f|
     if /\[.+\]/.match(ln)
       sfmore = /(\[.+\])/.match(ln)[1]
     else
-      sfmore = ''
+      sfmore = '.'
     end
 
-    marcsfs << "#{ftag}\t#{sfdelim}\t#{sfname}\t#{sfrep}\t#{sfmore}"
+    marcsfs << "#{ftag}\t#{fname}\t#{frep}\t#{fcontext}\t#{sfdelim}\t#{sfname}\t#{sfrep}\t#{sfmore}"
   }
 end
 
