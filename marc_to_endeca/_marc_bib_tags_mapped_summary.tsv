@@ -59,8 +59,8 @@ MARC tag	Field name	Repeatability	Other note	Endeca mappings
 100	MAIN ENTRY--PERSONAL NAME	NR	.	(TRLN): abcdq -> Author;;;(TRLN): abcdegq -> Main Author
 110	MAIN ENTRY--CORPORATE NAME	NR	.	(TRLN): abcdefg -> Author;;;(TRLN): abcdefgn -> Main Author
 111	MAIN ENTRY--MEETING NAME	NR	.	(TRLN): acdefnq -> Author;;;(TRLN): abcdefngq -> Main Author
-130	MAIN ENTRY--UNIFORM TITLE	NR	.	(TRLN): WHEN LDR/07 = s AND 008/21 = [pP], adfghklmnoprs -> Journal Uniform Title;;;(TRLN): adfghklmnoprs -> Main Uniform Title
-210	ABBREVIATED TITLE	R	.	(TRLN): WHEN LDR/07 = s AND 008/21 = [pP], ab -> Journal Title Abbreviation;;;(TRLN): ab -> Title Index
+130	MAIN ENTRY--UNIFORM TITLE	NR	.	(TRLN): adfghklmnoprs -> Main Uniform Title;;;(TRLN): WHEN LDR/07=s && 008/21=[pP], adfghklmnoprs -> Journal Uniform Title
+210	ABBREVIATED TITLE	R	.	(TRLN): ab -> Title Index;;;(TRLN): WHEN LDR/07=s && 008/21=[pP], ab -> Journal Title Abbreviation
 211	ACRONYM OR SHORTENED TITLE	R	[OBSOLETE]	not mapped to Endeca
 212	VARIANT ACCESS TITLE	R	[OBSOLETE]	not mapped to Endeca
 214	AUGMENTED TITLE	R	[OBSOLETE]	not mapped to Endeca
@@ -69,9 +69,9 @@ MARC tag	Field name	Repeatability	Other note	Endeca mappings
 241	ROMANIZED TITLE	NR	[OBSOLETE]	not mapped to Endeca
 242	TRANSLATION OF TITLE BY CATALOGING AGENCY	R	.	(TRLN): c -> Other Author Translation;;;(TRLN): abhnp -> Other Title Translation
 243	COLLECTIVE UNIFORM TITLE	NR	.	(TRLN): adfklmnoprs -> Collective Uniform Title
-245	TITLE STATEMENT	NR	.	(TRLN): WHEN LDR/07 = s AND 008/21 = [pP], abnp -> Journal Title Index;;;(TRLN): abfghknps -> Main Title;;;(TRLN): c -> Statement of Responsibility;;;(TRLN): abfghknps -> Title Sort
-246	VARYING FORM OF TITLE	R	.	(TRLN): WHEN LDR/07 = s AND 008/21 = [pP], abhnp -> Journal Varying Title;;;(TRLN): abhnp -> Varying Titles
-247	FORMER TITLE	R	.	(TRLN): WHEN LDR/07 = s AND 008/21 = [pP], abfhnp -> Journal Varying Title;;;(TRLN): abfhnp -> Varying Titles
+245	TITLE STATEMENT	NR	.	(TRLN): abfghknps -> Main Title;;;(TRLN): c -> Statement of Responsibility;;;(TRLN): abfghknps -> Title Sort;;;(TRLN): WHEN LDR/07=s && 008/21=[pP], abnp -> Journal Title Index
+246	VARYING FORM OF TITLE	R	.	(TRLN): abhnp -> Varying Titles;;;(TRLN): WHEN LDR/07=s && 008/21=[pP], abhnp -> Journal Varying Title
+247	FORMER TITLE	R	.	(TRLN): abfhnp -> Varying Titles;;;(TRLN): WHEN LDR/07=s && 008/21=[pP], abfhnp -> Journal Varying Title
 250	EDITION STATEMENT	R	.	(TRLN): ab -> Edition
 254	MUSICAL PRESENTATION STATEMENT	NR	.	(TRLN): a -> Musical Presentation
 255	CARTOGRAPHIC MATHEMATICAL DATA	R	.	(TRLN): abcdefg -> Cartographic Data
@@ -175,23 +175,23 @@ MARC tag	Field name	Repeatability	Other note	Endeca mappings
 584	ACCUMULATION AND FREQUENCY OF USE NOTE	R	.	not mapped to Endeca
 590	LOCAL NOTE		[OBSOLETE]	(TRLN): a -> Indexed Notes;;;(TRLN): a -> Notes
 590	RECEIPT DATE NOTE		[OBSOLETE]	(TRLN): a -> Indexed Notes;;;(TRLN): a -> Notes
-600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	(TRLN): WHEN i2=12347, v -> Genre;;;(TRLN): WHEN i2=12347, z -> Region;;;(TRLN): WHEN i2=12347, a -> Subject;;;(TRLN): WHEN i2=12347, x -> Subject;;;(TRLN): abcdefghijklmnopqrstvxyz -> Subject Headings;;;(TRLN): abcdefghijklmnopqrstvxyz -> Subjects;;;(TRLN): WHEN i2=12347, y -> Time Period
-610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	(TRLN): WHEN i2=12347, v -> Genre;;;(TRLN): WHEN i2=12347, z -> Region;;;(TRLN): WHEN i2=12347, a -> Subject;;;(TRLN): WHEN i2=12347, x -> Subject;;;(TRLN): abcdefghijklmnopqrstvxyz -> Subject Headings;;;(TRLN): abcdefghijklmnopqrstvxyz -> Subjects;;;(TRLN): WHEN i2=12347, y -> Time Period
-611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	(TRLN): WHEN i2=12347, v -> Genre;;;(TRLN): WHEN i2=12347, z -> Region;;;(TRLN): WHEN i2=12347, a -> Subject;;;(TRLN): WHEN i2=12347, x -> Subject;;;(TRLN): acdefghijklmnopqrstvxyz -> Subject Headings;;;(TRLN): acdefghijklmnopqrstvxyz -> Subjects;;;(TRLN): WHEN i2=12347, y -> Time Period
-630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	(TRLN): WHEN i2=12347, v -> Genre;;;(TRLN): WHEN i2=12347, z -> Region;;;(TRLN): WHEN i2=12347, a -> Subject;;;(TRLN): WHEN i2=12347, x -> Subject;;;(TRLN): adfghklmnoprstvxyz -> Subject Headings;;;(TRLN): adfghklmnoprstvxyz -> Subjects;;;(TRLN): WHEN i2=12347, y -> Time Period
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	(TRLN): WHEN i2=[12347], v -> Genre;;;(TRLN): WHEN i2=[12347], z -> Region;;;(TRLN): WHEN i2=[12347], a -> Subject;;;(TRLN): WHEN i2=[12347], x -> Subject;;;(TRLN): abcdefghijklmnopqrstvxyz -> Subject Headings;;;(TRLN): abcdefghijklmnopqrstvxyz -> Subjects;;;(TRLN): WHEN i2=[12347], y -> Time Period
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	(TRLN): WHEN i2=[12347], v -> Genre;;;(TRLN): WHEN i2=[12347], z -> Region;;;(TRLN): WHEN i2=[12347], a -> Subject;;;(TRLN): WHEN i2=[12347], x -> Subject;;;(TRLN): abcdefghijklmnopqrstvxyz -> Subject Headings;;;(TRLN): abcdefghijklmnopqrstvxyz -> Subjects;;;(TRLN): WHEN i2=[12347], y -> Time Period
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	(TRLN): WHEN i2=[12347], v -> Genre;;;(TRLN): WHEN i2=[12347], z -> Region;;;(TRLN): WHEN i2=[12347], a -> Subject;;;(TRLN): WHEN i2=[12347], x -> Subject;;;(TRLN): acdefghijklmnopqrstvxyz -> Subject Headings;;;(TRLN): acdefghijklmnopqrstvxyz -> Subjects;;;(TRLN): WHEN i2=[12347], y -> Time Period
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	(TRLN): WHEN i2=[12347], v -> Genre;;;(TRLN): WHEN i2=[12347], z -> Region;;;(TRLN): WHEN i2=[12347], a -> Subject;;;(TRLN): WHEN i2=[12347], x -> Subject;;;(TRLN): adfghklmnoprstvxyz -> Subject Headings;;;(TRLN): adfghklmnoprstvxyz -> Subjects;;;(TRLN): WHEN i2=[12347], y -> Time Period
 647	SUBJECT ADDED ENTRY--NAMED EVENT	R	.	not mapped to Endeca
 648	SUBJECT ADDED ENTRY--CHRONOLOGICAL TERM	R	.	not mapped to Endeca
-650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	(TRLN): WHEN i2=12347, v -> Genre;;;(TRLN): WHEN i2=2, x -> Medical Subject;;;(TRLN): WHEN i2=2, a -> Medical Subject;;;(TRLN): WHEN i2=12347, z -> Region;;;(TRLN): WHEN i2=12347, a -> Subject;;;(TRLN): WHEN i2=12347, x -> Subject;;;(TRLN): abcdevxyz -> Subject Headings;;;(TRLN): abcdevxyz -> Subjects;;;(TRLN): WHEN i2=12347, y -> Time Period
-651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	(TRLN): WHEN i2=12347, v -> Genre;;;(TRLN): WHEN i2=12347, a -> Region;;;(TRLN): WHEN i2=12347, z -> Region;;;(TRLN): WHEN i2=12347, x -> Subject;;;(TRLN): avxyz -> Subject Headings;;;(TRLN): avxyz -> Subjects;;;(TRLN): WHEN i2=12347, y -> Time Period
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	(TRLN): WHEN i2=[12347], v -> Genre;;;(TRLN): WHEN i2=2, x -> Medical Subject;;;(TRLN): WHEN i2=2, a -> Medical Subject;;;(TRLN): WHEN i2=[12347], z -> Region;;;(TRLN): WHEN i2=[12347], a -> Subject;;;(TRLN): WHEN i2=[12347], x -> Subject;;;(TRLN): abcdevxyz -> Subject Headings;;;(TRLN): abcdevxyz -> Subjects;;;(TRLN): WHEN i2=[12347], y -> Time Period
+651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	(TRLN): WHEN i2=[12347], v -> Genre;;;(TRLN): WHEN i2=[12347], a -> Region;;;(TRLN): WHEN i2=[12347], z -> Region;;;(TRLN): WHEN i2=[12347], x -> Subject;;;(TRLN): avxyz -> Subject Headings;;;(TRLN): avxyz -> Subjects;;;(TRLN): WHEN i2=[12347], y -> Time Period
 652	SUBJECT ADDED ENTRY--REVERSED GEOGRAPHIC		[OBSOLETE]	not mapped to Endeca
 653	INDEX TERM--UNCONTROLLED	R	.	(TRLN): a -> Subject Headings;;;(TRLN): a -> Subjects
 654	SUBJECT ADDED ENTRY--FACETED TOPICAL TERMS	R	.	not mapped to Endeca
-655	INDEX TERM--GENRE/FORM	R	.	(TRLN): WHEN i2=12347, a -> Genre;;;(TRLN): WHEN i2=12347, z -> Region;;;(TRLN): abvxyz -> Subject Headings
+655	INDEX TERM--GENRE/FORM	R	.	(TRLN): WHEN i2=[12347], a -> Genre;;;(TRLN): WHEN i2=[12347], z -> Region;;;(TRLN): abvxyz -> Subject Headings
 656	INDEX TERM--OCCUPATION	R	.	not mapped to Endeca
 657	INDEX TERM--FUNCTION	R	.	not mapped to Endeca
 658	INDEX TERM--CURRICULUM OBJECTIVE	R	.	not mapped to Endeca
 662	SUBJECT ADDED ENTRY--HIERARCHICAL PLACE NAME	R	.	not mapped to Endeca
-700	ADDED ENTRY--PERSONAL NAME	R	.	(TRLN): abcdq -> Author;;;(TRLN): WHEN 4 = drt || e = director,  -> Director;;;(TRLN): abcdejqu4fhiklmnoprstxg -> Name Title;;;(TRLN): abcdeq -> Other Authors;;;(TRLN): fghijklmnoprst -> Other Titles
+700	ADDED ENTRY--PERSONAL NAME	R	.	(TRLN): abcdq -> Author;;;(TRLN): abcdejqu4fhiklmnoprstxg -> Name Title;;;(TRLN): abcdeq -> Other Authors;;;(TRLN): fghijklmnoprst -> Other Titles;;;(TRLN): WHEN 4=drt || e=director,  -> Director
 705	ADDED ENTRY--PERSONAL NAME		[OBSOLETE]	not mapped to Endeca
 710	ADDED ENTRY--CORPORATE NAME	R	.	(TRLN): abceu4fhiklmoprstxdgn -> Name Title;;;(TRLN): abcde -> Other Authors;;;(TRLN): fghklmnoprst -> Other Titles
 711	ADDED ENTRY--MEETING NAME	R	.	(TRLN): acdejqu4fhiklpstxgn -> Name Title;;;(TRLN): abcdeq -> Other Authors;;;(TRLN): fghklmnpst -> Other Titles
@@ -215,8 +215,8 @@ MARC tag	Field name	Repeatability	Other note	Endeca mappings
 775	OTHER EDITION ENTRY	R	.	(TRLN): abdghint -> Other Edition
 776	ADDITIONAL PHYSICAL FORM ENTRY	R	.	not mapped to Endeca
 777	ISSUED WITH ENTRY	R	.	not mapped to Endeca
-780	PRECEDING ENTRY	R	.	(TRLN): abcdghnkstxz -> Earlier Title;;;(TRLN): WHEN LDR/07 = s && 008/21 = [pP], abcdghnkstxz -> Journal Earlier Title;;;(TRLN): xz -> Linking ISSN
-785	SUCCEEDING ENTRY	R	.	(TRLN): WHEN LDR/07 = s AND 008/21 = [pP], abcdghikmnstxz -> Journal Later Title;;;(TRLN): abcdghikmnstxz -> Later Title;;;(TRLN): xz -> Linking ISSN
+780	PRECEDING ENTRY	R	.	(TRLN): abcdghnkstxz -> Earlier Title;;;(TRLN): xz -> Linking ISSN;;;(TRLN): WHEN LDR/07=s && 008/21=[pP], abcdghnkstxz -> Journal Earlier Title
+785	SUCCEEDING ENTRY	R	.	(TRLN): abcdghikmnstxz -> Later Title;;;(TRLN): xz -> Linking ISSN;;;(TRLN): WHEN LDR/07=s && 008/21=[pP], abcdghikmnstxz -> Journal Later Title
 786	DATA SOURCE ENTRY	R	.	not mapped to Endeca
 787	OTHER RELATIONSHIP ENTRY	R	.	not mapped to Endeca
 800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	(TRLN): abcdegq -> Author;;;(TRLN): abcdefhklmnopqrstv -> Series;;;(TRLN): tnpfkl -> Series Title Index
@@ -235,7 +235,7 @@ MARC tag	Field name	Repeatability	Other note	Endeca mappings
 853	CAPTIONS AND PATTERN--BASIC BIBLIOGRAPHIC UNIT	R	.	not mapped to Endeca
 854	CAPTIONS AND PATTERN--SUPPLEMENTARY MATERIAL	R	.	not mapped to Endeca
 855	CAPTIONS AND PATTERN--INDEXES	R	.	not mapped to Endeca
-856	ELECTRONIC LOCATION AND ACCESS	R	.	(TRLN): WHEN i2=b012,  AND 3 = Finding aid, uyz3 -> Finding Aid URL;;;(TRLN): WHEN i2=b01, uyz3 -> Primary URL;;;(TRLN): WHEN i2=28, uyz3 -> Secondary URL
+856	ELECTRONIC LOCATION AND ACCESS	R	.	(TRLN): WHEN i2=[b01], uyz3 -> Primary URL;;;(TRLN): WHEN i2=[28], uyz3 -> Secondary URL;;;(TRLN): WHEN i2=[b012],  AND 3=Finding aid, uyz3 -> Finding Aid URL
 863	ENUMERATION AND CHRONOLOGY--BASIC BIBLIOGRAPHIC UNIT	R	.	not mapped to Endeca
 864	ENUMERATION AND CHRONOLOGY--SUPPLEMENTARY MATERIAL	R	.	not mapped to Endeca
 865	ENUMERATION AND CHRONOLOGY--INDEXES	R	.	not mapped to Endeca
