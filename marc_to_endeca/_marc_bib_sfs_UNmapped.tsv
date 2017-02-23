@@ -1,6 +1,5 @@
 MARC tag	Field name	Field repeatability	Field note	SF delimiter	SF name	SF repeatability	SF note	Subfield
 020	INTERNATIONAL STANDARD BOOK NUMBER	R	.	c	Terms of availability	NR	.	020c
-020	INTERNATIONAL STANDARD BOOK NUMBER	R	.	q	Qualifying information	R	.	020q
 020	INTERNATIONAL STANDARD BOOK NUMBER	R	.	6	Linkage	NR	.	0206
 020	INTERNATIONAL STANDARD BOOK NUMBER	R	.	8	Field link and sequence number	R	.	0208
 022	INTERNATIONAL STANDARD SERIAL NUMBER	R	.	l	ISSN-L	NR	.	022l

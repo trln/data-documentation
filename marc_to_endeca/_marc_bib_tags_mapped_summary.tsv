@@ -3,7 +3,7 @@ MARC tag	Field name	Repeatability	Other note	Endeca mappings
 003	CONTROL NUMBER IDENTIFIER	NR	.	not mapped to Endeca
 005	DATE AND TIME OF LATEST TRANSACTION	NR	.	not mapped to Endeca
 007	PHYSICAL DESCRIPTION FIXED FIELD--GENERAL INFORMATION	R	.	(TRLN): various codes may contribute to complex logic -> Format
-008	FIXED-LENGTH DATA ELEMENTS--GENERAL INFORMATION	NR	.	(TRLN): 33-34 -> Genre;;;(TRLN): 35-37 -> Language;;;(TRLN): 07-10 -> PubDateSort;;;(TRLN): 07-10 -> Publication Year
+008	FIXED-LENGTH DATA ELEMENTS--GENERAL INFORMATION	NR	.	(TRLN): 33-34 -> Genre;;;(TRLN): 35-37 -> Language;;;(TRLN): 10-Jul -> PubDateSort;;;(TRLN): 10-Jul -> Publication Year
 009	PHYSICAL DESCRIPTION FIXED-FIELD FOR ARCHIVAL COLLECTION		[OBSOLETE]	not mapped to Endeca
 010	LIBRARY OF CONGRESS CONTROL NUMBER	NR	.	not mapped to Endeca
 011	LINKING LIBRARY OF CONGRESS CONTROL NUMBER	NR	[OBSOLETE]	not mapped to Endeca
@@ -12,7 +12,7 @@ MARC tag	Field name	Repeatability	Other note	Endeca mappings
 016	NATIONAL BIBLIOGRAPHIC AGENCY CONTROL NUMBER	R	.	not mapped to Endeca
 017	COPYRIGHT OR LEGAL DEPOSIT NUMBER	R	.	not mapped to Endeca
 018	COPYRIGHT ARTICLE-FEE CODE	NR	.	not mapped to Endeca
-020	INTERNATIONAL STANDARD BOOK NUMBER	R	.	(TRLN): az -> ISBN;;;(TRLN): a -> Syndetics ISBN
+020	INTERNATIONAL STANDARD BOOK NUMBER	R	.	(TRLN-): az -> ISBN;;;(UNC): aqz -> ISBN;;;(TRLN): a -> Syndetics ISBN;;;(TRLN-): az -> Syndetics ISBN
 022	INTERNATIONAL STANDARD SERIAL NUMBER	R	.	(TRLN): ayz -> ISSN
 024	OTHER STANDARD IDENTIFIER	R	.	(TRLN): a -> ISBN;;;(TRLN): WHEN i1=1, a -> UPC
 025	OVERSEAS ACQUISITION NUMBER	R	.	not mapped to Endeca

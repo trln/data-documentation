@@ -38,6 +38,7 @@ Details on how MARC bibliographic fields and subfields are mapped into Endeca, f
 **** INST
  - Institution to which mapping rule applies
  - If TRLN, rule is taken from Endeca data model spreadsheet, where there were no notes about varying institutional practices
+ - If TRLN-, rule is taken from Endeca data model spreadsheet, where there were no notes about varying institutional practices, BUT there is at least one other institution-specific rule in the file that is different than the TRLN spreadsheet rule
 
 * Result/reference files *(DO NOT EDIT MANUALLY)*
 ** _marc_bib_tags_mapped_exploded.tsv
@@ -61,7 +62,11 @@ This affords:
      - According to TRLN data model spreadsheet, 024$a is mapped to UPC when 1st indicator is 1
 This affords: 
  - A more compact view for identifying unmapped MARC fields for decisionmaking about future mapping
-
+** _marc_bib_sfs_mapped.tsv
+ - One row per mapping rule per MARC subfield mapped into Endeca
+** _marc_bib_sfs_UNmapped.tsv
+ - Lists defined MARC subfields that are NOT mapped into Endeca
+ - Omits subfields from fields that are not mapped into Endeca at all
 * Scripts
 ** marc_map_list_gen.rb
  - Mashes up the .tsv files in [[https://github.com/trln/data-documentation/tree/master/marc][data-documentation/marc/] (re:current MARC standard) with marc_to_endeca.tsv (re:our mappings)

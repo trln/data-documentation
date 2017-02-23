@@ -1,7 +1,12 @@
 MARC tag	Field name	Field repeatability	Field note	SF delimiter	SF name	SF repeatability	SF note	Subfield	Endeca element	i1	i2	Other constraint	Institution
-020	INTERNATIONAL STANDARD BOOK NUMBER	R	.	a	International Standard Book Number	NR	.	020a	ISBN	.	.	.	TRLN
+020	INTERNATIONAL STANDARD BOOK NUMBER	R	.	a	International Standard Book Number	NR	.	020a	ISBN	.	.	.	TRLN-
+020	INTERNATIONAL STANDARD BOOK NUMBER	R	.	a	International Standard Book Number	NR	.	020a	ISBN	.	.	.	UNC
 020	INTERNATIONAL STANDARD BOOK NUMBER	R	.	a	International Standard Book Number	NR	.	020a	Syndetics ISBN	.	.	.	TRLN
-020	INTERNATIONAL STANDARD BOOK NUMBER	R	.	z	Canceled/invalid ISBN	R	.	020z	ISBN	.	.	.	TRLN
+020	INTERNATIONAL STANDARD BOOK NUMBER	R	.	a	International Standard Book Number	NR	.	020a	Syndetics ISBN	.	.	.	TRLN-
+020	INTERNATIONAL STANDARD BOOK NUMBER	R	.	q	Qualifying information	R	.	020q	ISBN	.	.	.	UNC
+020	INTERNATIONAL STANDARD BOOK NUMBER	R	.	z	Canceled/invalid ISBN	R	.	020z	ISBN	.	.	.	TRLN-
+020	INTERNATIONAL STANDARD BOOK NUMBER	R	.	z	Canceled/invalid ISBN	R	.	020z	ISBN	.	.	.	UNC
+020	INTERNATIONAL STANDARD BOOK NUMBER	R	.	z	Canceled/invalid ISBN	R	.	020z	Syndetics ISBN	.	.	.	TRLN-
 022	INTERNATIONAL STANDARD SERIAL NUMBER	R	.	a	International Standard Serial Number	NR	.	022a	ISSN	.	.	.	TRLN
 022	INTERNATIONAL STANDARD SERIAL NUMBER	R	.	y	Incorrect ISSN	R	.	022y	ISSN	.	.	.	TRLN
 022	INTERNATIONAL STANDARD SERIAL NUMBER	R	.	z	Canceled ISSN	R	.	022z	ISSN	.	.	.	TRLN
