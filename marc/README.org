@@ -8,13 +8,18 @@ Pulls data from http://www.loc.gov/marc/bibliographic/ecbdlist.html
 
 * Result/reference files *(DO NOT EDIT MANUALLY)*
 ** _marc_bib_tags.tsv
-List of all MARC fields, current and obsolete.
+List of all MARC fields, current and obsolete. Fields that have been renamed/redefined will display only latest name. 
 
-Fields that have been renamed/redefined will display only latest name. 
+This affords: 
+ - Identifying unmapped MARC fields for decisionmaking about future mapping
 ** _marc_bib_subfields.tsv
-List of all MARC subfields, current and obsolete.
+List of all MARC subfields, current and obsolete. Subfields that have been renamed/redefined will display only latest name. 
 
-Subfields that have been renamed/redefined will display only latest name. 
+This affords: 
+ - verifying, for instance, that subfield 3 is NEVER anything BUT "Materials specified" -- we can safely create a universal handler for $3 data
+ - mashing up with other data to produce list of unmapped subfields from mapped fields
+
+
 * Scripts
 ** extract_marc_bib_spec.rb
 Grabs LC MARC definition and produces the result/reference files
