@@ -51,6 +51,7 @@ fields.each do |f|
   if /(\[.+\])/.match(fielddata)
     fcontext = /(\[.+\])/.match(fielddata)[1]
   end
+  fcontext = '.' if fcontext == ''
   marcfields << "#{ftag}\t#{fname}\t#{frep}\t#{fcontext}"
 
   sfdata.each { |ln|
@@ -77,13 +78,13 @@ fields.each do |f|
   }
 end
 
-open('marc_bib_tags.tsv', 'w') { |f|
+open('_marc_bib_tags.tsv', 'w') { |f|
   marcfields.each { |mf|
     f.puts mf
   }
 }
 
-open('marc_bib_subfields.tsv', 'w') { |f|
+open('_marc_bib_subfields.tsv', 'w') { |f|
   marcsfs.each { |mf|
     f.puts mf
   }
