@@ -1,0 +1,60 @@
+* What's here? 
+Details on how MARC bibliographic fields and subfields are mapped into Endeca, for analysis and decisionmaking in relation to Argot/Argon
+* Input/data source files *(manually editable, with caveats)*
+*WARNINGS*
+ - You must make sure you have the latest version of the file before editing
+ - You must commit your changes after editing
+ - Scripts using the edited file(s) as input should be re-run and their results committed
+ - *YOU MUST FOLLOW THE FORMAT/CONVENTIONS EXACTLY WHEN EDITING* -- otherwise scripts will break and all data cascading from here will be trash
+** marc_to_endeca.tsv
+ - Mappings from MARC to Endeca elements (i.e. properties/dimensions).
+ - Initially derived from [[http://archive.trln.org/endeca/private/data-model/TRLN-Endeca-Mappings.xls][TRLN Endeca data model spreadsheet]]
+ - Modified and expected to continue to change
+*** Data dictionary
+**** Endeca Element
+ - The name of the Endeca property or dimension to which MARC data is mapped
+ - Name is taken from the internal Endeca configs, not spreadsheet
+ - Refer to /Element name/ column in [[https://github.com/trln/data-documentation/blob/master/endeca/_endeca_final_elements_compiled.tsv][_endeca_final_elements_compiled.tsv]] for full list of elements. Be *very* careful about spaces, underscores, typos. 
+**** MARC tag
+ - MARC field tag that is mapped to Endeca
+**** ind1
+ - 1st indicator values required for field to be mapped
+ - Conventions defined in /Ind 1/ section of https://github.com/trln/data-documentation/blob/master/marc_to_argot/transform_instructions.org
+
+**** ind2
+ - 2nd indicator values required for field to be mapped
+ - Conventions defined in /Ind 2/ section of https://github.com/trln/data-documentation/blob/master/marc_to_argot/transform_instructions.org
+
+**** MARC Further constraint
+ - Other requirements for field to be mapped
+ - Conventions defined in /FieldConstraint/ section of https://github.com/trln/data-documentation/blob/master/marc_to_argot/transform_instructions.org
+ - If constraint cannot be succinctly and clearly expressed following those conventions, enter a text string that will make sense if interpolated in the following phrase:
+   - When $string, field XXX is mapped to Endeca Element
+
+**** MARC Subfields
+ - subfields included in the mapping
+ - Conventions defined in /Subfield/ section of https://github.com/trln/data-documentation/blob/master/marc_to_argot/transform_instructions.org
+
+**** INST
+ - Institution to which mapping rule applies
+ - If TRLN, rule is taken from Endeca data model spreadsheet, where there were no notes about varying institutional practices
+
+* Result/reference files *(DO NOT EDIT MANUALLY)*
+** _marc_bib_tags.tsv
+List of all MARC fields, current and obsolete. Fields that have been renamed/redefined will display only latest name. 
+
+This affords: 
+ - Identifying unmapped MARC fields for decisionmaking about future mapping
+** _marc_bib_subfields.tsv
+List of all MARC subfields, current and obsolete. Subfields that have been renamed/redefined will display only latest name. 
+
+This affords: 
+ - verifying, for instance, that subfield 3 is NEVER anything BUT "Materials specified" -- we can safely create a universal handler for $3 data
+ - mashing up with other data to produce list of unmapped subfields from mapped fields
+
+
+* Scripts
+** extract_marc_bib_spec.rb
+Grabs LC MARC definition and produces the result/reference files
+
+Usage: ruby extract_marc_bib_spec.rb
