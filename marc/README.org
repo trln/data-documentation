@@ -1,0 +1,22 @@
+* What's here? 
+The files in this directory define the current MARC standard, as defined for programmatic consumption at:
+
+http://www.loc.gov/marc/bibliographic/ecbdlist.html
+
+* Input/data source files
+Pulls data from http://www.loc.gov/marc/bibliographic/ecbdlist.html
+
+* Result/reference files *(DO NOT EDIT MANUALLY)*
+** _marc_bib_tags.tsv
+List of all MARC fields, current and obsolete.
+
+Fields that have been renamed/redefined will display only latest name. 
+** _marc_bib_subfields.tsv
+List of all MARC subfields, current and obsolete.
+
+Subfields that have been renamed/redefined will display only latest name. 
+* Scripts
+** extract_marc_bib_spec.rb
+Grabs LC MARC definition and produces the result/reference files
+
+Usage: ruby extract_marc_bib_spec.rb
