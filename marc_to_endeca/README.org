@@ -40,21 +40,31 @@ Details on how MARC bibliographic fields and subfields are mapped into Endeca, f
  - If TRLN, rule is taken from Endeca data model spreadsheet, where there were no notes about varying institutional practices
 
 * Result/reference files *(DO NOT EDIT MANUALLY)*
-** _marc_bib_tags.tsv
-List of all MARC fields, current and obsolete. Fields that have been renamed/redefined will display only latest name. 
+** _marc_bib_tags_mapped_exploded.tsv
+ - Lists every MARC tag defined in the current standard, plus obsolete fields
+ - Specifies whether data from the tag is mapped into Endeca or not
+ - Where data from a tag is mapped a) to multiple elements; b) according to different constraints; or c) differently per institution, THEN one row is output for each mapping rule
 
 This affords: 
+ - Answering: "Is this MARC tag in Endeca?" (and mashing this up with other data to say whether and how it's indexed)
  - Identifying unmapped MARC fields for decisionmaking about future mapping
-** _marc_bib_subfields.tsv
-List of all MARC subfields, current and obsolete. Subfields that have been renamed/redefined will display only latest name. 
-
+** _marc_bib_tags_mapped_summary.tsv
+ - Lists every MARC tag defined in the current standard, plus obsolete fields
+ - Specifies whether data from the tag is mapped into Endeca or not
+ - One row per MARC tag, regardless of how many mapping rules apply. All mappings are summarized in /Endeca mappings/ column.
+   - Multiple mappings are separated by: ;;;
+   - Each mapping is prefaced by the relevant institution in parentheses
+   - This in the row for 024:
+     - (TRLN): a -> ISBN;;;(TRLN): WHEN i1=1, a -> UPC
+   - Would be read as:
+     - According to TRLN data model spreadsheet, 024$a is always mapped to ISBN
+     - According to TRLN data model spreadsheet, 024$a is mapped to UPC when 1st indicator is 1
 This affords: 
- - verifying, for instance, that subfield 3 is NEVER anything BUT "Materials specified" -- we can safely create a universal handler for $3 data
- - mashing up with other data to produce list of unmapped subfields from mapped fields
-
+ - A more compact view for identifying unmapped MARC fields for decisionmaking about future mapping
 
 * Scripts
-** extract_marc_bib_spec.rb
-Grabs LC MARC definition and produces the result/reference files
+** marc_map_list_gen.rb
+ - Mashes up the .tsv files in [[https://github.com/trln/data-documentation/tree/master/marc][data-documentation/marc/] (re:current MARC standard) with marc_to_endeca.tsv (re:our mappings)
+ - Produces all result/reference files beginning with _ in this directory
 
-Usage: ruby extract_marc_bib_spec.rb
+Usage: ruby marc_map_list_gen.rb
