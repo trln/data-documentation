@@ -5,8 +5,8 @@ MARC tag	Field name	Repeatability	Other note	Endeca element	subfields mapped	i1 
 007	PHYSICAL DESCRIPTION FIXED FIELD--GENERAL INFORMATION	R	.	Format	.	.	.	various codes may contribute to complex logic	TRLN
 008	FIXED-LENGTH DATA ELEMENTS--GENERAL INFORMATION	NR	.	Genre	.	.	.	33-34	TRLN
 008	FIXED-LENGTH DATA ELEMENTS--GENERAL INFORMATION	NR	.	Language	.	.	.	35-37	TRLN
-008	FIXED-LENGTH DATA ELEMENTS--GENERAL INFORMATION	NR	.	PubDateSort	.	.	.	10-Jul	TRLN
-008	FIXED-LENGTH DATA ELEMENTS--GENERAL INFORMATION	NR	.	Publication Year	.	.	.	10-Jul	TRLN
+008	FIXED-LENGTH DATA ELEMENTS--GENERAL INFORMATION	NR	.	PubDateSort	.	.	.	07-10	TRLN
+008	FIXED-LENGTH DATA ELEMENTS--GENERAL INFORMATION	NR	.	Publication Year	.	.	.	07-10	TRLN
 009	PHYSICAL DESCRIPTION FIXED-FIELD FOR ARCHIVAL COLLECTION		[OBSOLETE]	na	na	na	na	na	na
 010	LIBRARY OF CONGRESS CONTROL NUMBER	NR	.	na	na	na	na	na	na
 011	LINKING LIBRARY OF CONGRESS CONTROL NUMBER	NR	[OBSOLETE]	na	na	na	na	na	na
@@ -41,7 +41,7 @@ MARC tag	Field name	Repeatability	Other note	Endeca element	subfields mapped	i1 
 046	SPECIAL CODED DATES	R	.	na	na	na	na	na	na
 047	FORM OF MUSICAL COMPOSITION CODE	R	.	na	na	na	na	na	na
 048	NUMBER OF MUSICAL INSTRUMENTS OR VOICES CODE	R	.	na	na	na	na	na	na
-050	LIBRARY OF CONGRESS CALL NUMBER	R	.	Call Number Range	.	.	"a ""good LC#"" hasn't been extracted from elsewhere"	ab	UNC
+050	LIBRARY OF CONGRESS CALL NUMBER	R	.	Call Number Range	.	.	"a \""good LC#\"" hasn't been extracted from elsewhere"	ab	UNC
 051	LIBRARY OF CONGRESS COPY, ISSUE, OFFPRINT STATEMENT	R	.	na	na	na	na	na	na
 052	GEOGRAPHIC CLASSIFICATION	R	.	na	na	na	na	na	na
 055	CLASSIFICATION NUMBERS ASSIGNED IN CANADA	R	.	na	na	na	na	na	na
@@ -58,8 +58,8 @@ MARC tag	Field name	Repeatability	Other note	Endeca element	subfields mapped	i1 
 085	SYNTHESIZED CLASSIFICATION NUMBER COMPONENTS	R	.	na	na	na	na	na	na
 086	GOVERNMENT DOCUMENT CLASSIFICATION NUMBER	R	.	na	na	na	na	na	na
 088	REPORT NUMBER	R	.	na	na	na	na	na	na
-090	LOCAL CALL NUMBER		[OBSOLETE]	Call Number Range	.	.	"a ""good LC#"" hasn't been extracted from elsewhere, including 050"	.	UNC
-090	SHELF LOCATION		[OBSOLETE]	Call Number Range	.	.	"a ""good LC#"" hasn't been extracted from elsewhere, including 050"	.	UNC
+090	LOCAL CALL NUMBER		[OBSOLETE]	Call Number Range	.	.	"a \""good LC#\"" hasn't been extracted from elsewhere"	.	UNC
+090	SHELF LOCATION		[OBSOLETE]	Call Number Range	.	.	"a \""good LC#\"" hasn't been extracted from elsewhere"	.	UNC
 091	MICROFILM SHELF LOCATION		[OBSOLETE]	na	na	na	na	na	na
 100	MAIN ENTRY--PERSONAL NAME	NR	.	Author	.	.	.	abcdq	TRLN
 100	MAIN ENTRY--PERSONAL NAME	NR	.	Main Author	.	.	.	abcdegq	TRLN

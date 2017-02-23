@@ -12,8 +12,8 @@ ISBN	024	.	.	.	a	TRLN
 UPC	024	1	.	.	a	TRLN
 Publisher Number	028	.	.	.	ab	TRLN
 Language	041	.	b	complex constraints specified in transformation code are met	adegj	UNC
-Call Number Range	050	.	.	"a ""good LC#"" hasn't been extracted from elsewhere"	ab	UNC
-Call Number Range	090	.	.	"a ""good LC#"" hasn't been extracted from elsewhere, including 050"	.	UNC
+Call Number Range	050	.	.	"a \""good LC#\"" hasn't been extracted from elsewhere"	ab	UNC
+Call Number Range	090	.	.	"a \""good LC#\"" hasn't been extracted from elsewhere"	.	UNC
 Author	100	.	.	.	abcdq	TRLN
 Main Author	100	.	.	.	abcdegq	TRLN
 Author	110	.	.	.	abcdefg	TRLN

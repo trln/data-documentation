@@ -3,7 +3,7 @@ MARC tag	Field name	Repeatability	Other note	Endeca mappings
 003	CONTROL NUMBER IDENTIFIER	NR	.	not mapped to Endeca
 005	DATE AND TIME OF LATEST TRANSACTION	NR	.	not mapped to Endeca
 007	PHYSICAL DESCRIPTION FIXED FIELD--GENERAL INFORMATION	R	.	(TRLN): various codes may contribute to complex logic -> Format
-008	FIXED-LENGTH DATA ELEMENTS--GENERAL INFORMATION	NR	.	(TRLN): 33-34 -> Genre;;;(TRLN): 35-37 -> Language;;;(TRLN): 10-Jul -> PubDateSort;;;(TRLN): 10-Jul -> Publication Year
+008	FIXED-LENGTH DATA ELEMENTS--GENERAL INFORMATION	NR	.	(TRLN): 33-34 -> Genre;;;(TRLN): 35-37 -> Language;;;(TRLN): 07-10 -> PubDateSort;;;(TRLN): 07-10 -> Publication Year
 009	PHYSICAL DESCRIPTION FIXED-FIELD FOR ARCHIVAL COLLECTION		[OBSOLETE]	not mapped to Endeca
 010	LIBRARY OF CONGRESS CONTROL NUMBER	NR	.	not mapped to Endeca
 011	LINKING LIBRARY OF CONGRESS CONTROL NUMBER	NR	[OBSOLETE]	not mapped to Endeca
@@ -36,7 +36,7 @@ MARC tag	Field name	Repeatability	Other note	Endeca mappings
 046	SPECIAL CODED DATES	R	.	not mapped to Endeca
 047	FORM OF MUSICAL COMPOSITION CODE	R	.	not mapped to Endeca
 048	NUMBER OF MUSICAL INSTRUMENTS OR VOICES CODE	R	.	not mapped to Endeca
-050	LIBRARY OF CONGRESS CALL NUMBER	R	.	(UNC): WHEN "a ""good LC#"" hasn't been extracted from elsewhere", ab -> Call Number Range
+050	LIBRARY OF CONGRESS CALL NUMBER	R	.	(UNC): WHEN "a \""good LC#\"" hasn't been extracted from elsewhere", ab -> Call Number Range
 051	LIBRARY OF CONGRESS COPY, ISSUE, OFFPRINT STATEMENT	R	.	not mapped to Endeca
 052	GEOGRAPHIC CLASSIFICATION	R	.	not mapped to Endeca
 055	CLASSIFICATION NUMBERS ASSIGNED IN CANADA	R	.	not mapped to Endeca
@@ -53,8 +53,8 @@ MARC tag	Field name	Repeatability	Other note	Endeca mappings
 085	SYNTHESIZED CLASSIFICATION NUMBER COMPONENTS	R	.	not mapped to Endeca
 086	GOVERNMENT DOCUMENT CLASSIFICATION NUMBER	R	.	not mapped to Endeca
 088	REPORT NUMBER	R	.	not mapped to Endeca
-090	LOCAL CALL NUMBER		[OBSOLETE]	(UNC): WHEN "a ""good LC#"" hasn't been extracted from elsewhere, including 050", . -> Call Number Range
-090	SHELF LOCATION		[OBSOLETE]	(UNC): WHEN "a ""good LC#"" hasn't been extracted from elsewhere, including 050", . -> Call Number Range
+090	LOCAL CALL NUMBER		[OBSOLETE]	(UNC): WHEN "a \""good LC#\"" hasn't been extracted from elsewhere", . -> Call Number Range
+090	SHELF LOCATION		[OBSOLETE]	(UNC): WHEN "a \""good LC#\"" hasn't been extracted from elsewhere", . -> Call Number Range
 091	MICROFILM SHELF LOCATION		[OBSOLETE]	not mapped to Endeca
 100	MAIN ENTRY--PERSONAL NAME	NR	.	(TRLN): abcdq -> Author;;;(TRLN): abcdegq -> Main Author
 110	MAIN ENTRY--CORPORATE NAME	NR	.	(TRLN): abcdefg -> Author;;;(TRLN): abcdefgn -> Main Author
