@@ -1,5 +1,5 @@
 Sfmap = Struct.new(:ee, :tag, :sf, :i1, :i2, :constraint, :inst)
-sfsmapped = []
+mapped_sfs = []
 
 # {tag =>
 #   { summary => [string, string],
@@ -23,7 +23,7 @@ File.open('marc_to_endeca.tsv', 'r').each_line { |ln|
     inst = f[6]
 
     sfs.each_char { |sf|
-      sfsmapped << Sfmap.new(ee, tag, sf, i1, i2, constraint, inst)
+      mapped_sfs << Sfmap.new(ee, tag, sf, i1, i2, constraint, inst)
     }
 
     # create summary/verbose/one line tag mappings
@@ -56,17 +56,11 @@ File.open('marc_to_endeca.tsv', 'r').each_line { |ln|
   end
 }
 
-sfsmapped.each { |sf|
-#  puts "#{sf[:tag]} #{sf[:sf]}"
-}
-
-tag_mappings.each_pair { |t, i|
-#  puts "#{t}: #{i.to_s}"
-}
-
-
 tag_sum = File.open('_marc_bib_tags_mapped_summary.tsv', 'w')
 tag_expl = File.open('_marc_bib_tags_mapped_exploded.tsv', 'w')
+mapped_sf_out = File.open('_marc_bib_sfs_mapped.tsv', 'w')
+unmapped_sf_out = File.open('_marc_bib_sfs_UNmapped.tsv', 'w')
+
 
 # for each MARC tag listed in standard... 
 File.open('../marc/_marc_bib_tags.tsv', 'r').each_line { |ln|
@@ -99,5 +93,47 @@ File.open('../marc/_marc_bib_tags.tsv', 'r').each_line { |ln|
   tag_sum.puts summ_line.join("\t")
 }
 
+marc_sfs = {}
+mapped_sf_out.puts ("MARC tag\tField name\tField repeatability\tField note\tSF delimiter\tSF name\tSF repeatability\tSF note\tSubfield\tEndeca element\ti1\ti2\tOther constraint\tInstitution")
+unmapped_sf_out.puts ("MARC tag\tField name\tField repeatability\tField note\tSF delimiter\tSF name\tSF repeatability\tSF note\tSubfield")
+
+File.open('../marc/_marc_bib_subfields.tsv', 'r').each_line { |ln|
+  ln.chomp!
+  line = ln.split(/\t/)
+  ftag = line[0]
+  fname = line[1]
+  frep = line[2]
+  fnote = line[3]
+  sfdel = line[4]
+  sfname = line[5]
+  sfrep = line[6]
+  sfnote = line[7]
+  thesf = ftag + sfdel
+
+  next if ftag == 'MARC tag'
+  
+  if tag_mappings.has_key?(ftag)
+    mysfs = mapped_sfs.select { |sf| sf[:tag] == ftag && sf[:sf] == sfdel }
+    
+    if mysfs.size > 0
+      #Sfmap = Struct.new(:ee, :tag, :sf, :i1, :i2, :constraint, :inst)
+      mysfs.each { |sf|
+        out_line = line.clone
+        out_line << [thesf, sf[:ee], sf[:i1], sf[:i2], sf[:constraint], sf[:inst]]
+        out_line.flatten!
+        mapped_sf_out.puts out_line.join("\t")
+      }
+    else
+      out_line = line.clone
+      out_line << thesf
+      unmapped_sf_out.puts out_line.join("\t")
+    end
+  end
+
+}
+
+
 tag_sum.close
 tag_expl.close
+mapped_sf_out.close
+unmapped_sf_out.close

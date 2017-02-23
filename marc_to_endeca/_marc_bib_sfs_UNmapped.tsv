@@ -1,0 +1,590 @@
+MARC tag	Field name	Field repeatability	Field note	SF delimiter	SF name	SF repeatability	SF note	Subfield
+020	INTERNATIONAL STANDARD BOOK NUMBER	R	.	c	Terms of availability	NR	.	020c
+020	INTERNATIONAL STANDARD BOOK NUMBER	R	.	q	Qualifying information	R	.	020q
+020	INTERNATIONAL STANDARD BOOK NUMBER	R	.	6	Linkage	NR	.	0206
+020	INTERNATIONAL STANDARD BOOK NUMBER	R	.	8	Field link and sequence number	R	.	0208
+022	INTERNATIONAL STANDARD SERIAL NUMBER	R	.	l	ISSN-L	NR	.	022l
+022	INTERNATIONAL STANDARD SERIAL NUMBER	R	.	m	Canceled ISSN-L	R	.	022m
+022	INTERNATIONAL STANDARD SERIAL NUMBER	R	.	2	Source	NR	.	0222
+022	INTERNATIONAL STANDARD SERIAL NUMBER	R	.	6	Linkage	NR	.	0226
+022	INTERNATIONAL STANDARD SERIAL NUMBER	R	.	8	Field link and sequence number	R	.	0228
+024	OTHER STANDARD IDENTIFIER	R	.	c	Terms of availability	NR	.	024c
+024	OTHER STANDARD IDENTIFIER	R	.	d	Additional codes following the standard number or code	NR	.	024d
+024	OTHER STANDARD IDENTIFIER	R	.	q	Qualifying information	R	.	024q
+024	OTHER STANDARD IDENTIFIER	R	.	z	Canceled/invalid standard number or code	R	.	024z
+024	OTHER STANDARD IDENTIFIER	R	.	2	Source of number or code	NR	.	0242
+024	OTHER STANDARD IDENTIFIER	R	.	6	Linkage	NR	.	0246
+024	OTHER STANDARD IDENTIFIER	R	.	8	Field link and sequence number	R	.	0248
+028	PUBLISHER NUMBER OR DISTRIBUTOR NUMBER	R	.	q	Qualifying information	R	.	028q
+028	PUBLISHER NUMBER OR DISTRIBUTOR NUMBER	R	.	6	Linkage	NR	.	0286
+028	PUBLISHER NUMBER OR DISTRIBUTOR NUMBER	R	.	8	Field link and sequence number	R	.	0288
+041	LANGUAGE CODE	R	.	b	Language code of summary or abstract	R	.	041b
+041	LANGUAGE CODE	R	.	c	Languages of separate titles		[OBSOLETE]	041c
+041	LANGUAGE CODE	R	.	c	languages of available translation		[OBSOLETE]	041c
+041	LANGUAGE CODE	R	.	f	Language code of table of contents	R	.	041f
+041	LANGUAGE CODE	R	.	h	Language code of original and/or intermediate translations of text	R	[REDEFINED]	041h
+041	LANGUAGE CODE	R	.	h	Language code of original	R	.	041h
+041	LANGUAGE CODE	R	.	k	Language code of intermediate translations	R	.	041k
+041	LANGUAGE CODE	R	.	m	Language code of original accompanying materials other than librettos	R	.	041m
+041	LANGUAGE CODE	R	.	n	Language code of original libretto	R	.	041n
+041	LANGUAGE CODE	R	.	2	Source of code	NR	.	0412
+041	LANGUAGE CODE	R	.	6	Linkage	NR	.	0416
+041	LANGUAGE CODE	R	.	8	Field link and sequence number	R	.	0418
+050	LIBRARY OF CONGRESS CALL NUMBER	R	.	d	Supplementary class number		[OBSOLETE]	050d
+050	LIBRARY OF CONGRESS CALL NUMBER	R	.	3	Materials specified	NR	.	0503
+050	LIBRARY OF CONGRESS CALL NUMBER	R	.	6	Linkage	NR	.	0506
+050	LIBRARY OF CONGRESS CALL NUMBER	R	.	8	Field link and sequence number	R	.	0508
+090	LOCAL CALL NUMBER		[OBSOLETE]	a	Local class number	NR	.	090a
+090	LOCAL CALL NUMBER		[OBSOLETE]	b	Local Cutter number	NR	.	090b
+090	SHELF LOCATION		[OBSOLETE]	a	Shelf location	NR	.	090a
+100	MAIN ENTRY--PERSONAL NAME	NR	.	f	Date of a work	NR	.	100f
+100	MAIN ENTRY--PERSONAL NAME	NR	.	j	Attribution qualifier	R	.	100j
+100	MAIN ENTRY--PERSONAL NAME	NR	.	k	Form subheading	R	.	100k
+100	MAIN ENTRY--PERSONAL NAME	NR	.	l	Language of a work	NR	.	100l
+100	MAIN ENTRY--PERSONAL NAME	NR	.	n	Number of part/section of a work	R	.	100n
+100	MAIN ENTRY--PERSONAL NAME	NR	.	p	Name of part/section of a work	R	.	100p
+100	MAIN ENTRY--PERSONAL NAME	NR	.	t	Title of a work	NR	.	100t
+100	MAIN ENTRY--PERSONAL NAME	NR	.	u	Affiliation	NR	.	100u
+100	MAIN ENTRY--PERSONAL NAME	NR	.	0	Authority record control number or standard number	R	.	1000
+100	MAIN ENTRY--PERSONAL NAME	NR	.	4	Relator code	R	.	1004
+100	MAIN ENTRY--PERSONAL NAME	NR	.	6	Linkage	NR	.	1006
+100	MAIN ENTRY--PERSONAL NAME	NR	.	8	Field link and sequence number	R	.	1008
+110	MAIN ENTRY--CORPORATE NAME	NR	.	k	Form subheading	R	.	110k
+110	MAIN ENTRY--CORPORATE NAME	NR	.	l	Language of a work	NR	.	110l
+110	MAIN ENTRY--CORPORATE NAME	NR	.	p	Name of part/section of a work	R	.	110p
+110	MAIN ENTRY--CORPORATE NAME	NR	.	t	Title of a work	NR	.	110t
+110	MAIN ENTRY--CORPORATE NAME	NR	.	u	Affiliation	NR	.	110u
+110	MAIN ENTRY--CORPORATE NAME	NR	.	0	Authority record control number or standard number	R	.	1100
+110	MAIN ENTRY--CORPORATE NAME	NR	.	4	Relator code	R	.	1104
+110	MAIN ENTRY--CORPORATE NAME	NR	.	6	Linkage	NR	.	1106
+110	MAIN ENTRY--CORPORATE NAME	NR	.	8	Field link and sequence number	R	.	1108
+111	MAIN ENTRY--MEETING NAME	NR	.	j	Relator term	R	.	111j
+111	MAIN ENTRY--MEETING NAME	NR	.	k	Form subheading	R	.	111k
+111	MAIN ENTRY--MEETING NAME	NR	.	l	Language of a work	NR	.	111l
+111	MAIN ENTRY--MEETING NAME	NR	.	p	Name of part/section of a work	R	.	111p
+111	MAIN ENTRY--MEETING NAME	NR	.	t	Title of a work	NR	.	111t
+111	MAIN ENTRY--MEETING NAME	NR	.	u	Affiliation	NR	.	111u
+111	MAIN ENTRY--MEETING NAME	NR	.	0	Authority record control number or standard number	R	.	1110
+111	MAIN ENTRY--MEETING NAME	NR	.	4	Relator code	R	.	1114
+111	MAIN ENTRY--MEETING NAME	NR	.	6	Linkage	NR	.	1116
+111	MAIN ENTRY--MEETING NAME	NR	.	8	Field link and sequence number	R	.	1118
+130	MAIN ENTRY--UNIFORM TITLE	NR	.	t	Title of a work	NR	.	130t
+130	MAIN ENTRY--UNIFORM TITLE	NR	.	0	Authority record control number or standard number	R	.	1300
+130	MAIN ENTRY--UNIFORM TITLE	NR	.	6	Linkage	NR	.	1306
+130	MAIN ENTRY--UNIFORM TITLE	NR	.	8	Field link and sequence number	R	.	1308
+210	ABBREVIATED TITLE	R	.	2	Source	R	.	2102
+210	ABBREVIATED TITLE	R	.	6	Linkage	NR	.	2106
+210	ABBREVIATED TITLE	R	.	8	Field link and sequence number	R	.	2108
+240	UNIFORM TITLE	NR	.	0	Authority record control number or standard number	R	.	2400
+240	UNIFORM TITLE	NR	.	6	Linkage	NR	.	2406
+240	UNIFORM TITLE	NR	.	8	Field link and sequence number	R	.	2408
+242	TRANSLATION OF TITLE BY CATALOGING AGENCY	R	.	d	Designation of section		[OBSOLETE]	242d
+242	TRANSLATION OF TITLE BY CATALOGING AGENCY	R	.	e	Name of part/section		[OBSOLETE]	242e
+242	TRANSLATION OF TITLE BY CATALOGING AGENCY	R	.	y	Language code of translated title	NR	.	242y
+242	TRANSLATION OF TITLE BY CATALOGING AGENCY	R	.	6	Linkage	NR	.	2426
+242	TRANSLATION OF TITLE BY CATALOGING AGENCY	R	.	8	Field link and sequence number	R	.	2428
+243	COLLECTIVE UNIFORM TITLE	NR	.	g	Miscellaneous information	R	.	243g
+243	COLLECTIVE UNIFORM TITLE	NR	.	h	Medium	NR	.	243h
+243	COLLECTIVE UNIFORM TITLE	NR	.	6	Linkage	NR	.	2436
+243	COLLECTIVE UNIFORM TITLE	NR	.	8	Field link and sequence number	R	.	2438
+245	TITLE STATEMENT	NR	.	d	Designation of section		[OBSOLETE]	245d
+245	TITLE STATEMENT	NR	.	e	Name of part/section		[OBSOLETE]	245e
+245	TITLE STATEMENT	NR	.	6	Linkage	NR	.	2456
+245	TITLE STATEMENT	NR	.	8	Field link and sequence number	R	.	2458
+246	VARYING FORM OF TITLE	R	.	d	Designation of section		[OBSOLETE]	246d
+246	VARYING FORM OF TITLE	R	.	e	Name of part/section		[OBSOLETE]	246e
+246	VARYING FORM OF TITLE	R	.	f	Date or sequential designation	NR	.	246f
+246	VARYING FORM OF TITLE	R	.	g	Miscellaneous information	R	.	246g
+246	VARYING FORM OF TITLE	R	.	i	Display text	NR	.	246i
+246	VARYING FORM OF TITLE	R	.	5	Institution to which field applies	NR	.	2465
+246	VARYING FORM OF TITLE	R	.	6	Linkage	NR	.	2466
+246	VARYING FORM OF TITLE	R	.	8	Field link and sequence number	R	.	2468
+247	FORMER TITLE	R	.	d	Designation of section		[OBSOLETE]	247d
+247	FORMER TITLE	R	.	e	Name of part/section		[OBSOLETE]	247e
+247	FORMER TITLE	R	.	g	Miscellaneous information	R	.	247g
+247	FORMER TITLE	R	.	x	International Standard Serial Number	NR	.	247x
+247	FORMER TITLE	R	.	6	Linkage	NR	.	2476
+247	FORMER TITLE	R	.	8	Field link and sequence number	R	.	2478
+250	EDITION STATEMENT	R	.	3	Materials specified	NR	.	2503
+250	EDITION STATEMENT	R	.	6	Linkage	NR	.	2506
+250	EDITION STATEMENT	R	.	8	Field link and sequence number	R	.	2508
+254	MUSICAL PRESENTATION STATEMENT	NR	.	6	Linkage	NR	.	2546
+254	MUSICAL PRESENTATION STATEMENT	NR	.	8	Field link and sequence number	R	.	2548
+255	CARTOGRAPHIC MATHEMATICAL DATA	R	.	6	Linkage	NR	.	2556
+255	CARTOGRAPHIC MATHEMATICAL DATA	R	.	8	Field link and sequence number	R	.	2558
+262	IMPRINT STATEMENT FOR SOUND RECORDINGS	NR	[LOCAL]	k	Serial identification	NR	.	262k
+262	IMPRINT STATEMENT FOR SOUND RECORDINGS	NR	[LOCAL]	l	Matrix and/or take number	NR	.	262l
+262	IMPRINT STATEMENT FOR SOUND RECORDINGS	NR	[LOCAL]	6	Linkage	NR	.	2626
+262	IMPRINT STATEMENT FOR SOUND RECORDINGS	NR	[LOCAL]	8	Field link and sequence number	R	.	2628
+264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	6	Linkage	NR	.	2646
+264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	8	Field link and sequence number	R	.	2648
+264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	3	Materials specified	NR	.	2643
+264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	6	Linkage	NR	.	2646
+264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	8	Field link and sequence number	R	.	2648
+300	PHYSICAL DESCRIPTION	R	.	3	Materials specified	NR	.	3003
+300	PHYSICAL DESCRIPTION	R	.	6	Linkage	NR	.	3006
+300	PHYSICAL DESCRIPTION	R	.	8	Field link and sequence number	R	.	3008
+310	CURRENT PUBLICATION FREQUENCY	NR	.	6	Linkage	NR	.	3106
+310	CURRENT PUBLICATION FREQUENCY	NR	.	8	Field link and sequence number	R	.	3108
+344	SOUND CHARACTERISTICS	R	.	i	Bearing reference meridian	NR	.	344i
+344	SOUND CHARACTERISTICS	R	.	6	Linkage	NR	.	3446
+344	SOUND CHARACTERISTICS	R	.	8	Field link and sequence number	R	.	3448
+344	SOUND CHARACTERISTICS	R	.	0	Authority record control number or standard number	R	.	3440
+344	SOUND CHARACTERISTICS	R	.	2	Source	NR	.	3442
+344	SOUND CHARACTERISTICS	R	.	6	Linkage	NR	.	3446
+344	SOUND CHARACTERISTICS	R	.	8	Field link and sequence number	R	.	3448
+346	VIDEO CHARACTERISTICS	R	.	0	Authority record control number or standard number	R	.	3460
+346	VIDEO CHARACTERISTICS	R	.	2	Source	NR	.	3462
+346	VIDEO CHARACTERISTICS	R	.	6	Linkage	NR	.	3466
+346	VIDEO CHARACTERISTICS	R	.	8	Field link and sequence number	R	.	3468
+346	VIDEO CHARACTERISTICS	R	.	0	Authority record control number or standard number	R	.	3460
+346	VIDEO CHARACTERISTICS	R	.	2	Source	NR	.	3462
+346	VIDEO CHARACTERISTICS	R	.	6	Linkage	NR	.	3466
+346	VIDEO CHARACTERISTICS	R	.	8	Field link and sequence number	R	.	3468
+351	ORGANIZATION AND ARRANGEMENT OF MATERIALS	R	.	b	Arrangement	R	.	351b
+351	ORGANIZATION AND ARRANGEMENT OF MATERIALS	R	.	c	Hierarchical level	NR	.	351c
+351	ORGANIZATION AND ARRANGEMENT OF MATERIALS	R	.	3	Materials specified	NR	.	3513
+351	ORGANIZATION AND ARRANGEMENT OF MATERIALS	R	.	6	Linkage	NR	.	3516
+351	ORGANIZATION AND ARRANGEMENT OF MATERIALS	R	.	8	Field link and sequence number	R	.	3518
+362	DATES OF PUBLICATION AND/OR SEQUENTIAL DESIGNATION	R	.	z	Source of information	NR	.	362z
+362	DATES OF PUBLICATION AND/OR SEQUENTIAL DESIGNATION	R	.	6	Linkage	NR	.	3626
+362	DATES OF PUBLICATION AND/OR SEQUENTIAL DESIGNATION	R	.	8	Field link and sequence number	R	.	3628
+440	SERIES STATEMENT/ADDED ENTRY--TITLE	R	[OBSOLETE]	w	Bibliographic record control number	R	.	440w
+440	SERIES STATEMENT/ADDED ENTRY--TITLE	R	[OBSOLETE]	0	Authority record control number	R	.	4400
+440	SERIES STATEMENT/ADDED ENTRY--TITLE	R	[OBSOLETE]	6	Linkage	NR	.	4406
+440	SERIES STATEMENT/ADDED ENTRY--TITLE	R	[OBSOLETE]	8	Field link and sequence number	R	.	4408
+490	SERIES STATEMENT	R	.	l	Library of Congress call number	NR	.	490l
+490	SERIES STATEMENT	R	.	3	Materials specified	NR	.	4903
+490	SERIES STATEMENT	R	.	6	Linkage	NR	.	4906
+490	SERIES STATEMENT	R	.	8	Field link and sequence number	R	.	4908
+500	GENERAL NOTE	R	.	l	Library of Congress call number		[OBSOLETE]	500l
+500	GENERAL NOTE	R	.	x	International Standard Serial Number		[OBSOLETE]	500x
+500	GENERAL NOTE	R	.	z	Source of note information		[OBSOLETE]	500z
+500	GENERAL NOTE	R	.	3	Materials specified	NR	.	5003
+500	GENERAL NOTE	R	.	5	Institution to which field applies	NR	.	5005
+500	GENERAL NOTE	R	.	6	Linkage	NR	.	5006
+500	GENERAL NOTE	R	.	8	Field link and sequence number	R	.	5008
+501	WITH NOTE	R	.	5	Institution to which field applies	NR	.	5015
+501	WITH NOTE	R	.	6	Linkage	NR	.	5016
+501	WITH NOTE	R	.	8	Field link and sequence number	R	.	5018
+502	DISSERTATION NOTE	R	.	b	Degree type	NR	.	502b
+502	DISSERTATION NOTE	R	.	c	Name of granting institution	NR	.	502c
+502	DISSERTATION NOTE	R	.	d	Year of degree granted	NR	.	502d
+502	DISSERTATION NOTE	R	.	g	Miscellaneous information	R	.	502g
+502	DISSERTATION NOTE	R	.	o	Dissertation identifier	R	.	502o
+502	DISSERTATION NOTE	R	.	6	Linkage	NR	.	5026
+502	DISSERTATION NOTE	R	.	8	Field link and sequence number	R	.	5028
+504	BIBLIOGRAPHY, ETC. NOTE	R	.	b	Number of references	NR	.	504b
+504	BIBLIOGRAPHY, ETC. NOTE	R	.	6	Linkage	NR	.	5046
+504	BIBLIOGRAPHY, ETC. NOTE	R	.	8	Field link and sequence number	R	.	5048
+505	FORMATTED CONTENTS NOTE	R	.	u	Uniform Resource Identifier	R	.	505u
+505	FORMATTED CONTENTS NOTE	R	.	6	Linkage	NR	.	5056
+505	FORMATTED CONTENTS NOTE	R	.	8	Field link and sequence number	R	.	5058
+506	RESTRICTIONS ON ACCESS NOTE	R	.	2	Source of term	NR	.	5062
+506	RESTRICTIONS ON ACCESS NOTE	R	.	3	Materials specified	NR	.	5063
+506	RESTRICTIONS ON ACCESS NOTE	R	.	5	Institution to which field applies	NR	.	5065
+506	RESTRICTIONS ON ACCESS NOTE	R	.	6	Linkage	NR	.	5066
+506	RESTRICTIONS ON ACCESS NOTE	R	.	8	Field link and sequence number	R	.	5068
+507	SCALE NOTE FOR GRAPHIC MATERIAL	NR	.	6	Linkage	NR	.	5076
+507	SCALE NOTE FOR GRAPHIC MATERIAL	NR	.	8	Field link and sequence number	R	.	5078
+508	CREATION/PRODUCTION CREDITS NOTE	R	.	6	Linkage	NR	.	5086
+508	CREATION/PRODUCTION CREDITS NOTE	R	.	8	Field link and sequence number	R	.	5088
+510	CITATION/REFERENCES NOTE	R	.	u	Uniform Resource Identifier	R	.	510u
+510	CITATION/REFERENCES NOTE	R	.	3	Materials specified	NR	.	5103
+510	CITATION/REFERENCES NOTE	R	.	6	Linkage	NR	.	5106
+510	CITATION/REFERENCES NOTE	R	.	8	Field link and sequence number	R	.	5108
+511	PARTICIPANT OR PERFORMER NOTE	R	.	6	Linkage	NR	.	5116
+511	PARTICIPANT OR PERFORMER NOTE	R	.	8	Field link and sequence number	R	.	5118
+513	TYPE OF REPORT AND PERIOD COVERED NOTE	R	.	6	Linkage	NR	.	5136
+513	TYPE OF REPORT AND PERIOD COVERED NOTE	R	.	8	Field link and sequence number	R	.	5138
+514	DATA QUALITY NOTE	NR	.	6	Linkage	NR	.	5146
+514	DATA QUALITY NOTE	NR	.	8	Field link and sequence number	R	.	5148
+515	NUMBERING PECULIARITIES NOTE	R	.	z	Source of note information (NR)	NR	[OBSOLETE]	515z
+515	NUMBERING PECULIARITIES NOTE	R	.	6	Linkage	NR	.	5156
+515	NUMBERING PECULIARITIES NOTE	R	.	8	Field link and sequence number	R	.	5158
+516	TYPE OF COMPUTER FILE OR DATA NOTE	R	.	6	Linkage	NR	.	5166
+516	TYPE OF COMPUTER FILE OR DATA NOTE	R	.	8	Field link and sequence number	R	.	5168
+518	DATE/TIME AND PLACE OF AN EVENT NOTE	R	.	d	Date of event	R	.	518d
+518	DATE/TIME AND PLACE OF AN EVENT NOTE	R	.	o	Other event information	R	.	518o
+518	DATE/TIME AND PLACE OF AN EVENT NOTE	R	.	p	Place of event	R	.	518p
+518	DATE/TIME AND PLACE OF AN EVENT NOTE	R	.	0	Record control number	R	.	5180
+518	DATE/TIME AND PLACE OF AN EVENT NOTE	R	.	2	Source of term	R	.	5182
+518	DATE/TIME AND PLACE OF AN EVENT NOTE	R	.	3	Materials specified	NR	.	5183
+518	DATE/TIME AND PLACE OF AN EVENT NOTE	R	.	6	Linkage	NR	.	5186
+518	DATE/TIME AND PLACE OF AN EVENT NOTE	R	.	8	Field link and sequence number	R	.	5188
+520	SUMMARY, ETC.	R	.	c	Assigning agency	NR	.	520c
+520	SUMMARY, ETC.	R	.	z	Source of note information	NR	[OBSOLETE]	520z
+520	SUMMARY, ETC.	R	.	2	Source	NR	.	5202
+520	SUMMARY, ETC.	R	.	3	Materials specified	NR	.	5203
+520	SUMMARY, ETC.	R	.	6	Linkage	NR	.	5206
+520	SUMMARY, ETC.	R	.	8	Field link and sequence number	R	.	5208
+521	TARGET AUDIENCE NOTE	R	.	3	Materials specified	NR	.	5213
+521	TARGET AUDIENCE NOTE	R	.	6	Linkage	NR	.	5216
+521	TARGET AUDIENCE NOTE	R	.	8	Field link and sequence number	R	.	5218
+522	GEOGRAPHIC COVERAGE NOTE	R	.	6	Linkage	NR	.	5226
+522	GEOGRAPHIC COVERAGE NOTE	R	.	8	Field link and sequence number	R	.	5228
+524	PREFERRED CITATION OF DESCRIBED MATERIALS NOTE	R	.	2	Source of schema used	NR	.	5242
+524	PREFERRED CITATION OF DESCRIBED MATERIALS NOTE	R	.	3	Materials specified	NR	.	5243
+524	PREFERRED CITATION OF DESCRIBED MATERIALS NOTE	R	.	6	Linkage	NR	.	5246
+524	PREFERRED CITATION OF DESCRIBED MATERIALS NOTE	R	.	8	Field link and sequence number	R	.	5248
+525	SUPPLEMENT NOTE	R	.	z	Source of note information (NR)	NR	[OBSOLETE]	525z
+525	SUPPLEMENT NOTE	R	.	6	Linkage	NR	.	5256
+525	SUPPLEMENT NOTE	R	.	8	Field link and sequence number	R	.	5258
+530	ADDITIONAL PHYSICAL FORM AVAILABLE NOTE	R	.	d	Order number	NR	.	530d
+530	ADDITIONAL PHYSICAL FORM AVAILABLE NOTE	R	.	z	Source of note information (NR)	NR	[OBSOLETE]	530z
+530	ADDITIONAL PHYSICAL FORM AVAILABLE NOTE	R	.	3	Materials specified	NR	.	5303
+530	ADDITIONAL PHYSICAL FORM AVAILABLE NOTE	R	.	6	Linkage	NR	.	5306
+530	ADDITIONAL PHYSICAL FORM AVAILABLE NOTE	R	.	8	Field link and sequence number	R	.	5308
+533	REPRODUCTION NOTE	R	.	3	Materials specified	NR	.	5333
+533	REPRODUCTION NOTE	R	.	5	Institution to which field applies	NR	.	5335
+533	REPRODUCTION NOTE	R	.	6	Linkage	NR	.	5336
+533	REPRODUCTION NOTE	R	.	7	Fixed-length data elements of reproduction	NR	.	5337
+533	REPRODUCTION NOTE	R	.	8	Field link and sequence number	R	.	5338
+534	ORIGINAL VERSION NOTE	R	.	k	Key title of original	R	.	534k
+534	ORIGINAL VERSION NOTE	R	.	l	Location of original	NR	.	534l
+534	ORIGINAL VERSION NOTE	R	.	m	Material specific details	NR	.	534m
+534	ORIGINAL VERSION NOTE	R	.	o	Other resource identifier	R	.	534o
+534	ORIGINAL VERSION NOTE	R	.	x	International Standard Serial Number	R	.	534x
+534	ORIGINAL VERSION NOTE	R	.	z	International Standard Book Number	R	.	534z
+534	ORIGINAL VERSION NOTE	R	.	3	Materials specified	NR	.	5343
+534	ORIGINAL VERSION NOTE	R	.	6	Linkage	NR	.	5346
+534	ORIGINAL VERSION NOTE	R	.	8	Field link and sequence number	R	.	5348
+535	LOCATION OF ORIGINALS/DUPLICATES NOTE	R	.	3	Materials specified	NR	.	5353
+535	LOCATION OF ORIGINALS/DUPLICATES NOTE	R	.	6	Linkage	NR	.	5356
+535	LOCATION OF ORIGINALS/DUPLICATES NOTE	R	.	8	Field link and sequence number	R	.	5358
+536	FUNDING INFORMATION NOTE	R	.	6	Linkage	NR	.	5366
+536	FUNDING INFORMATION NOTE	R	.	8	Field link and sequence number	R	.	5368
+538	SYSTEM DETAILS NOTE	R	.	3	Materials specified 	NR	.	5383
+538	SYSTEM DETAILS NOTE	R	.	5	Institution to which field applies	NR	.	5385
+538	SYSTEM DETAILS NOTE	R	.	6	Linkage	NR	.	5386
+538	SYSTEM DETAILS NOTE	R	.	8	Field link and sequence number	R	.	5388
+540	TERMS GOVERNING USE AND REPRODUCTION NOTE	R	.	c	Authorization	NR	.	540c
+540	TERMS GOVERNING USE AND REPRODUCTION NOTE	R	.	d	Authorized users	NR	.	540d
+540	TERMS GOVERNING USE AND REPRODUCTION NOTE	R	.	5	Institution to which field applies	NR	.	5405
+540	TERMS GOVERNING USE AND REPRODUCTION NOTE	R	.	6	Linkage	NR	.	5406
+540	TERMS GOVERNING USE AND REPRODUCTION NOTE	R	.	8	Field link and sequence number	R	.	5408
+541	IMMEDIATE SOURCE OF ACQUISITION NOTE	R	.	3	Materials specified	NR	.	5413
+541	IMMEDIATE SOURCE OF ACQUISITION NOTE	R	.	5	Institution to which field applies	NR	.	5415
+541	IMMEDIATE SOURCE OF ACQUISITION NOTE	R	.	6	Linkage	NR	.	5416
+541	IMMEDIATE SOURCE OF ACQUISITION NOTE	R	.	8	Field link and sequence number	R	.	5418
+544	LOCATION OF OTHER ARCHIVAL MATERIALS NOTE	R	.	3	Materials specified	NR	.	5443
+544	LOCATION OF OTHER ARCHIVAL MATERIALS NOTE	R	.	6	Linkage	NR	.	5446
+544	LOCATION OF OTHER ARCHIVAL MATERIALS NOTE	R	.	8	Field link and sequence number	R	.	5448
+545	BIOGRAPHICAL OR HISTORICAL DATA	R	.	6	Linkage	NR	.	5456
+545	BIOGRAPHICAL OR HISTORICAL DATA	R	.	8	Field link and sequence number	R	.	5458
+546	LANGUAGE NOTE	R	.	z	Source of note information (NR)	NR	[OBSOLETE]	546z
+546	LANGUAGE NOTE	R	.	3	Materials specified	NR	.	5463
+546	LANGUAGE NOTE	R	.	6	Linkage	NR	.	5466
+546	LANGUAGE NOTE	R	.	8	Field link and sequence number	R	.	5468
+547	FORMER TITLE COMPLEXITY NOTE	R	.	z	Source of note information (NR)	NR	[OBSOLETE]	547z
+547	FORMER TITLE COMPLEXITY NOTE	R	.	6	Linkage	NR	.	5476
+547	FORMER TITLE COMPLEXITY NOTE	R	.	8	Field link and sequence number	R	.	5478
+550	ISSUING BODY NOTE	R	.	z	Source of note information (NR)	NR	[OBSOLETE]	550z
+550	ISSUING BODY NOTE	R	.	6	Linkage	NR	.	5506
+550	ISSUING BODY NOTE	R	.	8	Field link and sequence number	R	.	5508
+555	CUMULATIVE INDEX/FINDING AIDS NOTE	R	.	3	Materials specified	NR	.	5553
+555	CUMULATIVE INDEX/FINDING AIDS NOTE	R	.	6	Linkage	NR	.	5556
+555	CUMULATIVE INDEX/FINDING AIDS NOTE	R	.	8	Field link and sequence number	R	.	5558
+556	INFORMATION ABOUT DOCUMENTATION NOTE	R	.	z	International Standard Book Number	R	.	556z
+556	INFORMATION ABOUT DOCUMENTATION NOTE	R	.	6	Linkage	NR	.	5566
+556	INFORMATION ABOUT DOCUMENTATION NOTE	R	.	8	Field link and sequence number	R	.	5568
+561	OWNERSHIP AND CUSTODIAL HISTORY	R	.	b	Time of collation	NR	[OBSOLETE]	561b
+561	OWNERSHIP AND CUSTODIAL HISTORY	R	.	u	Uniform Resource Identifier	R	.	561u
+561	OWNERSHIP AND CUSTODIAL HISTORY	R	.	3	Materials specified	NR	.	5613
+561	OWNERSHIP AND CUSTODIAL HISTORY	R	.	5	Institution to which field applies	NR	.	5615
+561	OWNERSHIP AND CUSTODIAL HISTORY	R	.	6	Linkage	NR	.	5616
+561	OWNERSHIP AND CUSTODIAL HISTORY	R	.	8	Field link and sequence number	R	.	5618
+563	BINDING INFORMATION	R	.	u	Uniform Resource Identifier	R	.	563u
+563	BINDING INFORMATION	R	.	3	Materials specified	NR	.	5633
+563	BINDING INFORMATION	R	.	5	Institution to which field applies	NR	.	5635
+563	BINDING INFORMATION	R	.	6	Linkage	NR	.	5636
+563	BINDING INFORMATION	R	.	8	Field link and sequence number	R	.	5638
+565	CASE FILE CHARACTERISTICS NOTE	R	.	3	Materials specified	NR	.	5653
+565	CASE FILE CHARACTERISTICS NOTE	R	.	6	Linkage	NR	.	5656
+565	CASE FILE CHARACTERISTICS NOTE	R	.	8	Field link and sequence number	R	.	5658
+567	METHODOLOGY NOTE	R	.	6	Linkage	NR	.	5676
+567	METHODOLOGY NOTE	R	.	8	Field link and sequence number	R	.	5678
+580	LINKING ENTRY COMPLEXITY NOTE	R	.	z	Source of note information	NR	[OBSOLETE]	580z
+580	LINKING ENTRY COMPLEXITY NOTE	R	.	6	Linkage	NR	.	5806
+580	LINKING ENTRY COMPLEXITY NOTE	R	.	8	Field link and sequence number	R	.	5808
+581	PUBLICATIONS ABOUT DESCRIBED MATERIALS NOTE	R	.	z	International Standard Book Number	R	.	581z
+581	PUBLICATIONS ABOUT DESCRIBED MATERIALS NOTE	R	.	3	Materials specified	NR	.	5813
+581	PUBLICATIONS ABOUT DESCRIBED MATERIALS NOTE	R	.	6	Linkage	NR	.	5816
+581	PUBLICATIONS ABOUT DESCRIBED MATERIALS NOTE	R	.	8	Field link and sequence number	R	.	5818
+590	LOCAL NOTE		[OBSOLETE]	3	Materials specified	NR	.	5903
+590	LOCAL NOTE		[OBSOLETE]	5	Institution to which field applies	NR	.	5905
+590	LOCAL NOTE		[OBSOLETE]	6	Linkage	NR	.	5906
+590	LOCAL NOTE		[OBSOLETE]	8	Field link and sequence number	R	.	5908
+590	LOCAL NOTE		[OBSOLETE]	3	Materials specified	NR	.	5903
+590	LOCAL NOTE		[OBSOLETE]	6	Linkage	NR	.	5906
+590	LOCAL NOTE		[OBSOLETE]	8	Field link and sequence number	R	.	5908
+590	LOCAL NOTE		[OBSOLETE]	5	Institution to which field applies	NR	.	5905
+590	LOCAL NOTE		[OBSOLETE]	6	Linkage	NR	.	5906
+590	LOCAL NOTE		[OBSOLETE]	8	Field link and sequence number	R	.	5908
+590	RECEIPT DATE NOTE		[OBSOLETE]	b	Provenance	NR	.	590b
+590	RECEIPT DATE NOTE		[OBSOLETE]	d	Condition of individual reels	NR	.	590d
+590	RECEIPT DATE NOTE		[OBSOLETE]	d	Origin of safety copy	NR	.	590d
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	u	Affiliation	NR	.	600u
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	0	Authority record control number or standard number	R	.	6000
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	2	Source of heading or term	NR	.	6002
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	3	Materials specified	NR	.	6003
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	4	Relator code	R	.	6004
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	6	Linkage	NR	.	6006
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	8	Field link and sequence number	R	.	6008
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	u	Affiliation	NR	.	610u
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	0	Authority record control number or standard number	R	.	6100
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	2	Source of heading or term	NR	.	6102
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	3	Materials specified	NR	.	6103
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	4	Relator code	R	.	6104
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	6	Linkage	NR	.	6106
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	8	Field link and sequence number	R	.	6108
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	b	Number		[OBSOLETE]	611b
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	u	Affiliation	NR	.	611u
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	0	Authority record control number or standard number	R	.	6110
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	2	Source of heading or term	NR	.	6112
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	3	Materials specified	NR	.	6113
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	4	Relator code	R	.	6114
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	6	Linkage	NR	.	6116
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	8	Field link and sequence number	R	.	6118
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	e	Relator term	R	.	630e
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	0	Authority record control number or standard number	R	.	6300
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	2	Source of heading or term	NR	.	6302
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	3	Materials specified	NR	.	6303
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	4	Relator code	R	.	6304
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	6	Linkage	NR	.	6306
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	8	Field link and sequence number	R	.	6308
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	g	Miscellaneous information	R	.	650g
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	0	Authority record control number or standard number	R	.	6500
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	2	Source of heading or term	NR	.	6502
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	3	Materials specified	NR	.	6503
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	4	Relator code	R	.	6504
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	6	Linkage	NR	.	6506
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	8	Field link and sequence number	R	.	6508
+651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	b	Geographic name following place entry element	R	[OBSOLETE]	651b
+651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	e	Relator term	R	.	651e
+651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	g	Miscellaneous information	R	.	651g
+651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	0	Authority record control number or standard number	R	.	6510
+651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	2	Source of heading or term	NR	.	6512
+651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	3	Materials specified	NR	.	6513
+651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	4	Relator code	R	.	6514
+651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	6	Linkage	NR	.	6516
+651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	8	Field link and sequence number	R	.	6518
+653	INDEX TERM--UNCONTROLLED	R	.	6	Linkage	NR	.	6536
+653	INDEX TERM--UNCONTROLLED	R	.	8	Field link and sequence number	R	.	6538
+655	INDEX TERM--GENRE/FORM	R	.	c	Facet/hierarchy designation	R	.	655c
+655	INDEX TERM--GENRE/FORM	R	.	0	Authority record control number	R	.	6550
+655	INDEX TERM--GENRE/FORM	R	.	2	Source of term	NR	.	6552
+655	INDEX TERM--GENRE/FORM	R	.	3	Materials specified	NR	.	6553
+655	INDEX TERM--GENRE/FORM	R	.	5	Institution to which field applies	NR	.	6555
+655	INDEX TERM--GENRE/FORM	R	.	6	Linkage	NR	.	6556
+655	INDEX TERM--GENRE/FORM	R	.	8	Field link and sequence number	R	.	6558
+700	ADDED ENTRY--PERSONAL NAME	R	.	0	Authority record control number or standard number	R	.	7000
+700	ADDED ENTRY--PERSONAL NAME	R	.	3	Materials specified	NR	.	7003
+700	ADDED ENTRY--PERSONAL NAME	R	.	5	Institution to which field applies	NR	.	7005
+700	ADDED ENTRY--PERSONAL NAME	R	.	6	Linkage	NR	.	7006
+700	ADDED ENTRY--PERSONAL NAME	R	.	8	Field link and sequence number	R	.	7008
+710	ADDED ENTRY--CORPORATE NAME	R	.	0	Authority record control number or standard number	R	.	7100
+710	ADDED ENTRY--CORPORATE NAME	R	.	3	Materials specified	NR	.	7103
+710	ADDED ENTRY--CORPORATE NAME	R	.	5	Institution to which field applies	NR	.	7105
+710	ADDED ENTRY--CORPORATE NAME	R	.	6	Linkage	NR	.	7106
+710	ADDED ENTRY--CORPORATE NAME	R	.	8	Field link and sequence number	R	.	7108
+711	ADDED ENTRY--MEETING NAME	R	.	0	Authority record control number or standard number	R	.	7110
+711	ADDED ENTRY--MEETING NAME	R	.	3	Materials specified	NR	.	7113
+711	ADDED ENTRY--MEETING NAME	R	.	5	Institution to which field applies	NR	.	7115
+711	ADDED ENTRY--MEETING NAME	R	.	6	Linkage	NR	.	7116
+711	ADDED ENTRY--MEETING NAME	R	.	8	Field link and sequence number	R	.	7118
+720	ADDED ENTRY--UNCONTROLLED NAME	R	.	e	Relator term	R	.	720e
+720	ADDED ENTRY--UNCONTROLLED NAME	R	.	4	Relator code	R	.	7204
+720	ADDED ENTRY--UNCONTROLLED NAME	R	.	6	Linkage	NR	.	7206
+720	ADDED ENTRY--UNCONTROLLED NAME	R	.	8	Field link and sequence number	R	.	7208
+730	ADDED ENTRY--UNIFORM TITLE	R	.	i	Relationship information	R	.	730i
+730	ADDED ENTRY--UNIFORM TITLE	R	.	x	International Standard Serial Number	NR	.	730x
+730	ADDED ENTRY--UNIFORM TITLE	R	.	0	Authority record control number or standard number	R	.	7300
+730	ADDED ENTRY--UNIFORM TITLE	R	.	3	Materials specified	NR	.	7303
+730	ADDED ENTRY--UNIFORM TITLE	R	.	5	Institution to which field applies	NR	.	7305
+730	ADDED ENTRY--UNIFORM TITLE	R	.	6	Linkage	NR	.	7306
+730	ADDED ENTRY--UNIFORM TITLE	R	.	8	Field link and sequence number	R	.	7308
+740	ADDED ENTRY--UNCONTROLLED RELATED/ANALYTICAL TITLE	R	.	5	Institution to which field applies	NR	.	7405
+740	ADDED ENTRY--UNCONTROLLED RELATED/ANALYTICAL TITLE	R	.	6	Linkage	NR	.	7406
+740	ADDED ENTRY--UNCONTROLLED RELATED/ANALYTICAL TITLE	R	.	8	Field link and sequence number	R	.	7408
+752	ADDED ENTRY--HIERARCHICAL PLACE NAME	R	.	e	Relator term	R	.	752e
+752	ADDED ENTRY--HIERARCHICAL PLACE NAME	R	.	f	City subsection	R	.	752f
+752	ADDED ENTRY--HIERARCHICAL PLACE NAME	R	.	g	Other nonjurisdictional geographic region and feature	R	.	752g
+752	ADDED ENTRY--HIERARCHICAL PLACE NAME	R	.	h	Extraterrestrial area	R	.	752h
+752	ADDED ENTRY--HIERARCHICAL PLACE NAME	R	.	0	Authority record control number	R	.	7520
+752	ADDED ENTRY--HIERARCHICAL PLACE NAME	R	.	2	Source of heading or term	NR	.	7522
+752	ADDED ENTRY--HIERARCHICAL PLACE NAME	R	.	4	Relator code	R	.	7524
+752	ADDED ENTRY--HIERARCHICAL PLACE NAME	R	.	6	Linkage	NR	.	7526
+752	ADDED ENTRY--HIERARCHICAL PLACE NAME	R	.	8	Field link and sequence number	R	.	7528
+760	MAIN SERIES ENTRY	R	.	q	Parallel title (NR)	NR	[OBSOLETE]	760q
+760	MAIN SERIES ENTRY	R	.	4	Relationship code	R	.	7604
+760	MAIN SERIES ENTRY	R	.	6	Linkage	NR	.	7606
+760	MAIN SERIES ENTRY	R	.	7	Control subfield	NR	.	7607
+760	MAIN SERIES ENTRY	R	.	8	Field link and sequence number	R	.	7608
+762	SUBSERIES ENTRY	R	.	q	Parallel title (NR)	NR	[OBSOLETE]	762q
+762	SUBSERIES ENTRY	R	.	4	Relationship code	R	.	7624
+762	SUBSERIES ENTRY	R	.	6	Linkage	NR	.	7626
+762	SUBSERIES ENTRY	R	.	7	Control subfield	NR	.	7627
+762	SUBSERIES ENTRY	R	.	8	Field link and sequence number	R	.	7628
+765	ORIGINAL LANGUAGE ENTRY	R	.	q	Parallel title (NR)	NR	[OBSOLETE]	765q
+765	ORIGINAL LANGUAGE ENTRY	R	.	4	Relationship code	R	.	7654
+765	ORIGINAL LANGUAGE ENTRY	R	.	6	Linkage	NR	.	7656
+765	ORIGINAL LANGUAGE ENTRY	R	.	7	Control subfield	NR	.	7657
+765	ORIGINAL LANGUAGE ENTRY	R	.	8	Field link and sequence number	R	.	7658
+767	TRANSLATION ENTRY	R	.	q	Parallel title (NR)	NR	[OBSOLETE]	767q
+767	TRANSLATION ENTRY	R	.	4	Relationship code	R	.	7674
+767	TRANSLATION ENTRY	R	.	6	Linkage	NR	.	7676
+767	TRANSLATION ENTRY	R	.	7	Control subfield	NR	.	7677
+767	TRANSLATION ENTRY	R	.	8	Field link and sequence number	R	.	7678
+770	SUPPLEMENT/SPECIAL ISSUE ENTRY	R	.	q	Parallel title (NR)	NR	[OBSOLETE]	770q
+770	SUPPLEMENT/SPECIAL ISSUE ENTRY	R	.	4	Relationship code	R	.	7704
+770	SUPPLEMENT/SPECIAL ISSUE ENTRY	R	.	6	Linkage	NR	.	7706
+770	SUPPLEMENT/SPECIAL ISSUE ENTRY	R	.	7	Control subfield	NR	.	7707
+770	SUPPLEMENT/SPECIAL ISSUE ENTRY	R	.	8	Field link and sequence number	R	.	7708
+772	SUPPLEMENT PARENT ENTRY	R	.	q	Parallel title (NR)	NR	[OBSOLETE]	772q
+772	SUPPLEMENT PARENT ENTRY	R	.	4	Relationship code	R	.	7724
+772	SUPPLEMENT PARENT ENTRY	R	.	6	Linkage	NR	.	7726
+772	SUPPLEMENT PARENT ENTRY	R	.	7	Control subfield	NR	.	7727
+772	SUPPLEMENT PARENT ENTRY	R	.	8	Field link and sequence number	R	.	7728
+773	HOST ITEM ENTRY	R	.	3	Materials specified	NR	.	7733
+773	HOST ITEM ENTRY	R	.	4	Relationship code	R	.	7734
+773	HOST ITEM ENTRY	R	.	6	Linkage	NR	.	7736
+773	HOST ITEM ENTRY	R	.	7	Control subfield	NR	.	7737
+773	HOST ITEM ENTRY	R	.	8	Field link and sequence number	R	.	7738
+774	CONSTITUENT UNIT ENTRY	R	.	4	Relationship code	R	.	7744
+774	CONSTITUENT UNIT ENTRY	R	.	6	Linkage	NR	.	7746
+774	CONSTITUENT UNIT ENTRY	R	.	7	Control subfield	NR	.	7747
+774	CONSTITUENT UNIT ENTRY	R	.	8	Field link and sequence number	R	.	7748
+775	OTHER EDITION ENTRY	R	.	c	Qualifying information	NR	.	775c
+775	OTHER EDITION ENTRY	R	.	e	Language code	NR	.	775e
+775	OTHER EDITION ENTRY	R	.	f	Country code	NR	.	775f
+775	OTHER EDITION ENTRY	R	.	k	Series data for related item	R	.	775k
+775	OTHER EDITION ENTRY	R	.	m	Material-specific details	NR	.	775m
+775	OTHER EDITION ENTRY	R	.	o	Other item identifier	R	.	775o
+775	OTHER EDITION ENTRY	R	.	q	Parallel title (NR)	NR	[OBSOLETE]	775q
+775	OTHER EDITION ENTRY	R	.	r	Report number	R	.	775r
+775	OTHER EDITION ENTRY	R	.	s	Uniform title	NR	.	775s
+775	OTHER EDITION ENTRY	R	.	u	Standard Technical Report Number	NR	.	775u
+775	OTHER EDITION ENTRY	R	.	w	Record control number	R	.	775w
+775	OTHER EDITION ENTRY	R	.	x	International Standard Serial Number	NR	.	775x
+775	OTHER EDITION ENTRY	R	.	y	CODEN designation	NR	.	775y
+775	OTHER EDITION ENTRY	R	.	z	International Standard Book Number	R	.	775z
+775	OTHER EDITION ENTRY	R	.	4	Relationship code	R	.	7754
+775	OTHER EDITION ENTRY	R	.	6	Linkage	NR	.	7756
+775	OTHER EDITION ENTRY	R	.	7	Control subfield	NR	.	7757
+775	OTHER EDITION ENTRY	R	.	8	Field link and sequence number	R	.	7758
+780	PRECEDING ENTRY	R	.	i	Relationship information	R	.	780i
+780	PRECEDING ENTRY	R	.	m	Material-specific details	NR	.	780m
+780	PRECEDING ENTRY	R	.	o	Other item identifier	R	.	780o
+780	PRECEDING ENTRY	R	.	q	Parallel title (NR)	NR	[OBSOLETE]	780q
+780	PRECEDING ENTRY	R	.	r	Report number	R	.	780r
+780	PRECEDING ENTRY	R	.	u	Standard Technical Report Number	NR	.	780u
+780	PRECEDING ENTRY	R	.	w	Record control number	R	.	780w
+780	PRECEDING ENTRY	R	.	y	CODEN designation	NR	.	780y
+780	PRECEDING ENTRY	R	.	4	Relationship code	R	.	7804
+780	PRECEDING ENTRY	R	.	6	Linkage	NR	.	7806
+780	PRECEDING ENTRY	R	.	7	Control subfield	NR	.	7807
+780	PRECEDING ENTRY	R	.	8	Field link and sequence number	R	.	7808
+785	SUCCEEDING ENTRY	R	.	o	Other item identifier	R	.	785o
+785	SUCCEEDING ENTRY	R	.	q	Parallel title (NR)	NR	[OBSOLETE]	785q
+785	SUCCEEDING ENTRY	R	.	r	Report number	R	.	785r
+785	SUCCEEDING ENTRY	R	.	u	Standa rd Technical Report Number	NR	.	785u
+785	SUCCEEDING ENTRY	R	.	w	Record control number	R	.	785w
+785	SUCCEEDING ENTRY	R	.	y	CODEN designation	NR	.	785y
+785	SUCCEEDING ENTRY	R	.	4	Relationship code	R	.	7854
+785	SUCCEEDING ENTRY	R	.	6	Linkage	NR	.	7856
+785	SUCCEEDING ENTRY	R	.	7	Control subfield	NR	.	7857
+785	SUCCEEDING ENTRY	R	.	8	Field link and sequence number	R	.	7858
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	j	Attribution qualifier	R	.	800j
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	u	Affiliation	NR	.	800u
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	w	Bibliographic record control number	R	.	800w
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	x	International Standard Serial Number	NR	.	800x
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	0	Authority record control number or standard number	R	.	8000
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	3	Materials specified	NR	.	8003
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	4	Relator code	R	.	8004
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	5	Institution to which field applies	R	.	8005
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	6	Linkage	NR	.	8006
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	7	Control subfield	NR	.	8007
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	8	Field link and sequence number	R	.	8008
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	g	Miscellaneous information	R	.	810g
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	u	Affiliation	NR	.	810u
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	w	Bibliographic record control number	R	.	810w
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	x	International Standard Serial Number	NR	.	810x
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	0	Authority record control number or standard number	R	.	8100
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	3	Materials specified	NR	.	8103
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	4	Relator code	R	.	8104
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	5	Institution to which field applies	R	.	8105
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	6	Linkage	NR	.	8106
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	7	Control subfield	NR	.	8107
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	8	Field link and sequence number	R	.	8108
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	g	Miscellaneous information	R	.	811g
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	j	Relator term	R	.	811j
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	u	Affiliation	NR	.	811u
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	w	Bibliographic record control number	R	.	811w
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	x	International Standard Serial Number	NR	.	811x
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	0	Authority record control number or standard number	R	.	8110
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	3	Materials specified	NR	.	8113
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	4	Relator code	R	.	8114
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	5	Institution to which field applies	R	.	8115
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	6	Linkage	NR	.	8116
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	7	Control subfield	NR	.	8117
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	8	Field link and sequence number	R	.	8118
+830	SERIES ADDED ENTRY--UNIFORM TITLE	R	.	t	Title of a work	NR	.	830t
+830	SERIES ADDED ENTRY--UNIFORM TITLE	R	.	w	Bibliographic record control number	R	.	830w
+830	SERIES ADDED ENTRY--UNIFORM TITLE	R	.	x	International Standard Serial Number	NR	.	830x
+830	SERIES ADDED ENTRY--UNIFORM TITLE	R	.	0	Authority record control number or standard number	R	.	8300
+830	SERIES ADDED ENTRY--UNIFORM TITLE	R	.	3	Materials specified	NR	.	8303
+830	SERIES ADDED ENTRY--UNIFORM TITLE	R	.	5	Institution to which field applies	R	.	8305
+830	SERIES ADDED ENTRY--UNIFORM TITLE	R	.	6	Linkage	NR	.	8306
+830	SERIES ADDED ENTRY--UNIFORM TITLE	R	.	7	Control subfield	NR	.	8307
+830	SERIES ADDED ENTRY--UNIFORM TITLE	R	.	8	Field link and sequence number	R	.	8308
+852	LOCATION	R	.	a	Location	NR	.	852a
+852	LOCATION	R	.	b	Sublocation or collection	R	.	852b
+852	LOCATION	R	.	c	Shelving location	R	.	852c
+852	LOCATION	R	.	d	Former shelving location	R	.	852d
+852	LOCATION	R	.	e	Address	R	.	852e
+852	LOCATION	R	.	f	Coded location qualifier	R	.	852f
+852	LOCATION	R	.	g	Non-coded location qualifier	R	.	852g
+852	LOCATION	R	.	h	Classification part	NR	.	852h
+852	LOCATION	R	.	i	Item part	R	.	852i
+852	LOCATION	R	.	j	Shelving control number	NR	.	852j
+852	LOCATION	R	.	k	Call number prefix	R	.	852k
+852	LOCATION	R	.	l	Shelving form of title	NR	.	852l
+852	LOCATION	R	.	m	Call number suffix	R	.	852m
+852	LOCATION	R	.	n	Country code	NR	.	852n
+852	LOCATION	R	.	p	Piece designation	NR	.	852p
+852	LOCATION	R	.	q	Piece physical condition	NR	.	852q
+852	LOCATION	R	.	s	Copyright article-fee code	R	.	852s
+852	LOCATION	R	.	t	Copy number	NR	.	852t
+852	LOCATION	R	.	u	Uniform Resource Identifier 	R	.	852u
+852	LOCATION	R	.	x	Nonpublic note	R	.	852x
+852	LOCATION	R	.	z	Public note	R	.	852z
+852	LOCATION	R	.	2	Source of classification or shelving scheme	NR	.	8522
+852	LOCATION	R	.	3	Materials specified	NR	.	8523
+852	LOCATION	R	.	6	Linkage	NR	.	8526
+852	LOCATION	R	.	8	Sequence number	NR	.	8528
+856	ELECTRONIC LOCATION AND ACCESS	R	.	a	Host name	R	.	856a
+856	ELECTRONIC LOCATION AND ACCESS	R	.	b	Access number	R	.	856b
+856	ELECTRONIC LOCATION AND ACCESS	R	.	c	Compression information	R	.	856c
+856	ELECTRONIC LOCATION AND ACCESS	R	.	d	Path	R	.	856d
+856	ELECTRONIC LOCATION AND ACCESS	R	.	f	Electronic name	R	.	856f
+856	ELECTRONIC LOCATION AND ACCESS	R	.	g	Uniform Resource Name	R	[OBSOLETE]	856g
+856	ELECTRONIC LOCATION AND ACCESS	R	.	h	Processor of request	NR	.	856h
+856	ELECTRONIC LOCATION AND ACCESS	R	.	i	Instruction	R	.	856i
+856	ELECTRONIC LOCATION AND ACCESS	R	.	j	Bits per second	NR	.	856j
+856	ELECTRONIC LOCATION AND ACCESS	R	.	k	Password	NR	.	856k
+856	ELECTRONIC LOCATION AND ACCESS	R	.	l	Logon	NR	.	856l
+856	ELECTRONIC LOCATION AND ACCESS	R	.	m	Contact for access assistance	R	.	856m
+856	ELECTRONIC LOCATION AND ACCESS	R	.	n	Name of location of host	NR	.	856n
+856	ELECTRONIC LOCATION AND ACCESS	R	.	o	Operating system	NR	.	856o
+856	ELECTRONIC LOCATION AND ACCESS	R	.	p	Port	NR	.	856p
+856	ELECTRONIC LOCATION AND ACCESS	R	.	q	Electronic format type	NR	.	856q
+856	ELECTRONIC LOCATION AND ACCESS	R	.	r	Settings	NR	.	856r
+856	ELECTRONIC LOCATION AND ACCESS	R	.	s	File size	R	.	856s
+856	ELECTRONIC LOCATION AND ACCESS	R	.	t	Terminal emulation	R	.	856t
+856	ELECTRONIC LOCATION AND ACCESS	R	.	v	Hours access method available	R	.	856v
+856	ELECTRONIC LOCATION AND ACCESS	R	.	w	Record control number	R	.	856w
+856	ELECTRONIC LOCATION AND ACCESS	R	.	x	Nonpublic note	R	.	856x
+856	ELECTRONIC LOCATION AND ACCESS	R	.	2	Access method	NR	.	8562
+856	ELECTRONIC LOCATION AND ACCESS	R	.	6	Linkage	NR	.	8566
+856	ELECTRONIC LOCATION AND ACCESS	R	.	8	Field link and sequence number	R	.	8568
