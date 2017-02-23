@@ -13,14 +13,18 @@ Argot element the transformation will produce. I made up some new ones. Working 
  - . : applies to field with any MARC tag (used for patterns applied to certain subfield values). 
  - ![1768]11 : applies to any field except regex-y pattern (if a subfield is used the same across all fields except a handful -- example: $e in the X11 fields) -- not used in examples but potentially applicable
 * Ind 1
+ - b represents blank value for Ind 1
  - . : applies to fields with any Ind 1 value
  - 0 : applies only to field with Ind 1 = 0
  - !0 : applies to fields with any Ind 1 value EXCEPT 0
+ - [b07] : applies to fields where Ind 1 value is blank, 0, OR 7
+ - [^45] : applies to fields where Ind 1 value is NOT 4 OR 7
 * Ind 2
 Same conventions as Ind 1
 * FieldConstraint
 Defines subfields that must be (or not be) present, or values that certain subfields must have for the rule to apply. Below are examples of how to read conventions I used in the examples: 
 
+ - LDR/07=s && 008/21=[pP] : field is extracted only if record's LDR position 7 is 's' AND 008 position 21 is 'p' (case insensitive)
  - 4=drt || e=director : field must have $4 containing "drt" OR $e containing "director"
  - e : field must contain a $e
  - !t : field must NOT contain a $t
