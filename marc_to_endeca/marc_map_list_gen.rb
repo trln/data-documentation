@@ -69,7 +69,7 @@ tag_sum = File.open('_marc_bib_tags_mapped_summary.tsv', 'w')
 tag_expl = File.open('_marc_bib_tags_mapped_exploded.tsv', 'w')
 
 # for each MARC tag listed in standard... 
-File.open('_marc_bib_tags.tsv', 'r').each_line { |ln|
+File.open('../marc/_marc_bib_tags.tsv', 'r').each_line { |ln|
   ln.chomp!
   line = ln.split(/\t/)
   explosion = []
