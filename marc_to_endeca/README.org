@@ -1,7 +1,7 @@
 * Overview
 *HERE YOU WILL FIND* details on how MARC bibliographic fields and subfields are mapped into Endeca, for initial Argot/Argon data model analysis and decisionmaking
 
-Based on [[http://archive.trln.org/endeca/private/data-model/TRLN-Endeca-Mappings.xls][TRLN Endeca data model spreadsheet]] (with its known incompleteness/inaccuracies), and other data detailed in the [[https://github.com/trln/data-documentation/tree/master/marc][MARC]] and [[https://github.com/trln/data-documentation/tree/master/endeca][Endeca]] folders in this repository.
+This is all based on [[http://archive.trln.org/endeca/private/data-model/TRLN-Endeca-Mappings.xls][TRLN Endeca data model spreadsheet]] (with its known incompleteness/inaccuracies), and other data detailed in the [[https://github.com/trln/data-documentation/tree/master/marc][MARC]] and [[https://github.com/trln/data-documentation/tree/master/endeca][Endeca]] folders in this repository.
 
 *MOST IMPORTANT THING*
  - The .tsv (tab separated values) files beginning with '_' are for reference only
