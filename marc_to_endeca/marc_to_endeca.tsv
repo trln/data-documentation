@@ -1,231 +1,886 @@
-Endeca Element	MARC tag	ind1	ind2	MARC Further constraint	MARC Subfields	INST
-OCLCNumber	001	.	.	.	.	UNC
-Format	007	.	.	.	various codes may contribute to complex logic	TRLN
-Genre	008	.	.	.	33-34	TRLN
-Language	008	.	.	.	35-37	TRLN
-PubDateSort	008	.	.	.	07-10	TRLN
-Publication Year	008	.	.	.	07-10	TRLN
-ISBN	020	.	.	.	az	TRLN-
-ISBN	020	.	.	.	aqz	UNC
-Syndetics ISBN	020	.	.	.	a	TRLN
-Syndetics ISBN	020	.	.	.	az	TRLN-
-ISSN	022	.	.	.	ayz	TRLN
-ISBN	024	.	.	.	a	TRLN
-UPC	024	1	.	.	a	TRLN
-Publisher Number	028	.	.	.	ab	TRLN
-Author	100	.	.	.	abcdq	TRLN
-Main Author	100	.	.	.	abcdegq	TRLN
-Author	110	.	.	.	abcdefg	TRLN
-Main Author	110	.	.	.	abcdefgn	TRLN
-Author	111	.	.	.	acdefnq	TRLN
-Main Author	111	.	.	.	abcdefngq	TRLN
-Main Uniform Title	130	.	.	.	adfghklmnoprs	TRLN
-Title Index	210	.	.	.	ab	TRLN
-Uniform Title	240	.	.	.	adfghklmnoprs	TRLN
-Other Author Translation	242	.	.	.	c	TRLN
-Other Title Translation	242	.	.	.	abhnp	TRLN
-Collective Uniform Title	243	.	.	.	adfklmnoprs	TRLN
-Main Title	245	.	.	.	abfghknps	TRLN
-Statement of Responsibility	245	.	.	.	c	TRLN
-Title Sort	245	.	.	.	abfghknps	TRLN
-Varying Titles	246	.	.	.	abhnp	TRLN
-Varying Titles	247	.	.	.	abfhnp	TRLN
-Edition	250	.	.	.	ab	TRLN
-Musical Presentation	254	.	.	.	a	TRLN
-Cartographic Data	255	.	.	.	abcdefg	TRLN
-Imprint	260	.	.	.	abcefg	TRLN
-Published	260	.	.	.	c	TRLN
-Publisher	260	.	.	.	bf	TRLN
-Imprint	262	.	.	.	abcde	TRLN
-Sound Recording Imprint	262	.	.	.	b	TRLN
-Copyright	264	.	4	.	c	TRLN
-Copyright Statement	264	.	4	.	c	TRLN
-Distribution Statement	264	.	2	.	abc	TRLN
-Distributor	264	.	2	.	b	TRLN
-Imprint	264	.	1	.	abc	TRLN
-Manufacturer	264	.	3	.	b	TRLN
-Manufacturer Statement	264	.	3	.	abc	TRLN
-Producer	264	.	0	.	b	TRLN
-Production Statement	264	.	0	.	abc	TRLN
-Published	264	.	1	.	c	TRLN
-Publisher	264	.	1	.	b	TRLN
-Material	300	.	.	.	abcefg	TRLN
-Current Frequency	310	.	.	.	ab	TRLN
-Former Frequency	321	.	.	.	ab	TRLN
-Material Details	344	.	.	.	abcdefgh3	TRLN
-Material Details	345	.	.	.	ab3	TRLN
-Material Details	346	.	.	.	ab3	TRLN
-Material Details	347	.	.	.	abcdef3	TRLN
-Organization	351	.	.	.	a	TRLN
-Volumes	362	.	.	.	a	TRLN
-Series ISSN	440	.	.	.	x	TRLN
-Series Statement	440	.	.	.	anpvx	TRLN
-Series ISSN	490	.	.	.	x	TRLN
-Series Statement	490	.	.	.	avx	TRLN
-Indexed Notes	500	.	.	.	a	TRLN
-Indexed Notes	501	.	.	.	a	TRLN
-Indexed Notes	502	.	.	.	a	TRLN
-Indexed Notes	504	.	.	.	a	TRLN
-Table of Contents	505	.	.	.	agrt	TRLN
-Table of Contents author index	505	.	.	.	r	TRLN
-Access Restrictions	506	.	.	.	abcdefu	TRLN
-Indexed Notes	507	.	.	.	ab	TRLN
-Production Credits	508	.	.	.	a	TRLN
-Notes	510	.	.	.	abcx	TRLN
-Performer Credits	511	.	.	.	a	TRLN
-Notes	513	.	.	.	ab	TRLN
-Notes	514	.	.	.	abcdefghijkmuz	TRLN
-Notes	515	.	.	.	a	TRLN
-Notes	516	.	.	.	a	TRLN
-Notes	518	.	.	.	a	TRLN
-Summary	520	.	.	.	abu	TRLN
-Notes	521	.	.	.	ab	TRLN
-Indexed Notes	522	.	.	.	a	TRLN
-Notes	524	.	.	.	a	TRLN
-Notes	525	.	.	.	a	TRLN
-Other Format	530	.	.	.	abcu	TRLN
-Indexed Notes	533	.	.	.	cf	TRLN
-Notes	533	.	.	.	abcdefmn	TRLN
-Indexed Notes	534	.	.	.	abcefnpt	TRLN
-Notes	535	.	.	.	abdcdg	TRLN
-Indexed Notes	536	.	.	.	abcdefgh	TRLN
-System Details	538	.	.	.	aiu	TRLN
-Notes	540	.	.	.	abu3	TRLN
-Indexed Notes	541	.	.	.	a	TRLN
-Source of Acquisition	541	.	.	.	abcdefhno	TRLN
-Related Collections	544	.	.	.	abcden	TRLN
-Biographical Sketch	545	.	.	.	abu	TRLN
-Notes	546	.	.	.	ab	TRLN
-Notes	547	.	.	.	a	TRLN
-Notes	550	.	.	.	a	TRLN
-Cumulative Indexes	555	.	.	.	abcdu	TRLN
-Notes	556	.	.	.	a	TRLN
-Indexed Notes	561	.	.	.	a	TRLN
-Indexed Notes	563	.	.	.	a	TRLN
-Notes	565	.	.	.	abdce	TRLN
-Notes	567	.	.	.	a	TRLN
-Notes	580	.	.	.	a	TRLN
-Indexed Notes	581	.	.	.	a	TRLN
-Indexed Notes	585	.	.	.	a	TRLN
-Indexed Notes	586	.	.	.	a	TRLN
-Notes	588	.	.	.	a	TRLN
-Indexed Notes	590	.	.	.	a	TRLN
-Notes	590	.	.	.	a	TRLN
-Most Recently Arrived	599	.	.	.	ab	TRLN
-Genre	600	.	[12347]	.	v	TRLN
-Region	600	.	[12347]	.	z	TRLN
-Subject	600	.	[12347]	.	a	TRLN
-Subject	600	.	[12347]	.	x	TRLN
-Subject Headings	600	.	.	.	abcdefghijklmnopqrstvxyz	TRLN
-Subjects	600	.	.	.	abcdefghijklmnopqrstvxyz	TRLN
-Time Period	600	.	[12347]	.	y	TRLN
-Genre	610	.	[12347]	.	v	TRLN
-Region	610	.	[12347]	.	z	TRLN
-Subject	610	.	[12347]	.	a	TRLN
-Subject	610	.	[12347]	.	x	TRLN
-Subject Headings	610	.	.	.	abcdefghijklmnopqrstvxyz	TRLN
-Subjects	610	.	.	.	abcdefghijklmnopqrstvxyz	TRLN
-Time Period	610	.	[12347]	.	y	TRLN
-Genre	611	.	[12347]	.	v	TRLN
-Region	611	.	[12347]	.	z	TRLN
-Subject	611	.	[12347]	.	a	TRLN
-Subject	611	.	[12347]	.	x	TRLN
-Subject Headings	611	.	.	.	acdefghijklmnopqrstvxyz	TRLN
-Subjects	611	.	.	.	acdefghijklmnopqrstvxyz	TRLN
-Time Period	611	.	[12347]	.	y	TRLN
-Genre	630	.	[12347]	.	v	TRLN
-Region	630	.	[12347]	.	z	TRLN
-Subject	630	.	[12347]	.	a	TRLN
-Subject	630	.	[12347]	.	x	TRLN
-Subject Headings	630	.	.	.	adfghklmnoprstvxyz	TRLN
-Subjects	630	.	.	.	adfghklmnoprstvxyz	TRLN
-Time Period	630	.	[12347]	.	y	TRLN
-Genre	650	.	[12347]	.	v	TRLN
-Medical Subject	650	.	2	.	x	TRLN
-Medical Subject	650	.	2	.	a	TRLN
-Region	650	.	[12347]	.	z	TRLN
-Subject	650	.	[12347]	.	a	TRLN
-Subject	650	.	[12347]	.	x	TRLN
-Subject Headings	650	.	.	.	abcdevxyz	TRLN
-Subjects	650	.	.	.	abcdevxyz	TRLN
-Time Period	650	.	[12347]	.	y	TRLN
-Genre	651	.	[12347]	.	v	TRLN
-Region	651	.	[12347]	.	a	TRLN
-Region	651	.	[12347]	.	z	TRLN
-Subject	651	.	[12347]	.	x	TRLN
-Subject Headings	651	.	.	.	avxyz	TRLN
-Subjects	651	.	.	.	avxyz	TRLN
-Time Period	651	.	[12347]	.	y	TRLN
-Subject Headings	653	.	.	.	a	TRLN
-Subjects	653	.	.	.	a	TRLN
-Genre	655	.	[12347]	.	a	TRLN
-Region	655	.	[12347]	.	z	TRLN
-Subject Headings	655	.	.	.	abvxyz	TRLN
-Genre	690	.	.	.	x	TRLN
-Subject Headings	690	.	.	.	ax	NCSU
-Subject Headings	690	.	.	.	a	Duke
-Subjects	690	.	.	.	ax	NCSU
-Subjects	690	.	.	.	a	Duke
-Subject Headings	691	.	.	.	abvxyz	TRLN
-Subjects	691	.	.	.	abvxyz	TRLN
-Uncontrolled Subject	695	.	.	.	a	TRLN
-Author	700	.	.	.	abcdq	TRLN
-Name Title	700	.	.	.	abcdejqu4fhiklmnoprstxg	TRLN
-Other Authors	700	.	.	.	abcdeq	TRLN
-Other Titles	700	.	.	.	fghijklmnoprst	TRLN
-Name Title	710	.	.	.	abceu4fhiklmoprstxdgn	TRLN
-Other Authors	710	.	.	.	abcde	TRLN
-Other Titles	710	.	.	.	fghklmnoprst	TRLN
-Name Title	711	.	.	.	acdejqu4fhiklpstxgn	TRLN
-Other Authors	711	.	.	.	abcdeq	TRLN
-Other Titles	711	.	.	.	fghklmnpst	TRLN
-Uncontrolled Author	720	.	.	.	a	TRLN
-Uniform Title	730	.	.	.	adfghklmnoprst	TRLN
-Varying Titles	740	.	.	.	ahnp	TRLN
-Notes	752	.	.	.	abcd	TRLN
-Main Series Linking	760	.	.	.	abcdghimnostwxy	TRLN
-Subseries Linking	762	.	.	.	abcdghimnostwxy	TRLN
-Linking ISSN	765	.	.	.	xz	TRLN
-Translation of Linking	765	.	.	.	abcdghikmnorstuwxyz	TRLN
-Linking ISSN	767	.	.	.	xz	TRLN
-Translated as Linking	767	.	.	.	abcdghikmnorstuwxyz	TRLN
-Has Supplement Linking	770	.	.	.	abcdghikmnorstuwxyz	TRLN
-Supplement to Linking	772	.	.	.	abcdghikmnorstuwxyz	TRLN
-Host Item Linking	773	.	.	.	abdghikmnopqrstuwxyz	TRLN
-Linking ISSN	773	.	.	.	xz	TRLN
-Constituent Unit Linking	774	.	.	.	abcdghikmnorstuwxyz	TRLN
-Linking ISSN	774	.	.	.	xz	TRLN
-Other Edition	775	.	.	.	abdghint	TRLN
-Earlier Title	780	.	.	.	abcdghnkstxz	TRLN
-Linking ISSN	780	.	.	.	xz	TRLN
-Later Title	785	.	.	.	abcdghikmnstxz	TRLN
-Linking ISSN	785	.	.	.	xz	TRLN
-Other Authors	790	.	.	.	a	TRLN
-Other Authors	791	.	.	.	ab	TRLN
-Author	800	.	.	.	abcdegq	TRLN
-Series	800	.	.	.	abcdefhklmnopqrstv	TRLN
-Series Title Index	800	.	.	.	tnpfkl	TRLN
-Author	810	.	.	.	ab	TRLN
-Series	810	.	.	.	abcdefhklmnoprstv	TRLN
-Series Title Index	810	.	.	.	tnoprlsm	TRLN
-Author	811	.	.	.	acd	TRLN
-Series	811	.	.	.	acdefhklnpqstv	TRLN
-Series Title Index	811	.	.	.	tnpls	TRLN
-Series	830	.	.	.	adfghklmnoprsv	TRLN
-Series Title Index	830	.	.	.	ahnpv	TRLN
-Holdings Note	852	.	.	.		TRLN
-Primary URL	856	.	[b01]	.	uyz3	TRLN
-Secondary URL	856	.	[28]	.	uyz3	TRLN
-UniqueId	907	.	.	.	a	UNC
-Finding Aid URL	856	.	[b012]	3=Finding aid	uyz3	TRLN
-Director	700	.	.	4=drt || e=director		TRLN
-Call Number Range	050	.	.	a 'good' LC# hasn't been extracted from elsewhere	ab	UNC
-Call Number Range	090	.	.	a 'good' LC# hasn't been extracted from elsewhere	.	UNC
-Language	041	.	b	complex constraints specified in transformation code are met	adegj	UNC
-Journal Earlier Title	780	.	.	LDR/07=s && 008/21=[pP]	abcdghnkstxz	TRLN
-Journal Uniform Title	130	.	.	LDR/07=s && 008/21=[pP]	adfghklmnoprs	TRLN
-Journal Title Abbreviation	210	.	.	LDR/07=s && 008/21=[pP]	ab	TRLN
-Journal Title Index	245	.	.	LDR/07=s && 008/21=[pP]	abnp	TRLN
-Journal Varying Title	246	.	.	LDR/07=s && 008/21=[pP]	abhnp	TRLN
-Journal Varying Title	247	.	.	LDR/07=s && 008/21=[pP]	abfhnp	TRLN
-Journal Later Title	785	.	.	LDR/07=s && 008/21=[pP]	abcdghikmnstxz	TRLN
+MARC tag	ind1	ind2	MARC Further constraint	MARC Subfields	Endeca Element	INST	verified
+001	.	.	.	.	OCLCNumber	UNC	
+007	.	.	.	various codes may contribute to complex logic	Format	Duke	
+007	.	.	.	various codes may contribute to complex logic	Format	NCCU	
+007	.	.	.	various codes may contribute to complex logic	Format	NCSU	
+007	.	.	.	various codes may contribute to complex logic	Format	UNC	
+008	.	.	.	33-34	Genre	Duke	
+008	.	.	.	33-34	Genre	NCCU	
+008	.	.	.	33-34	Genre	NCSU	
+008	.	.	.	33-34	Genre	UNC	
+008	.	.	.	35-37	Language	Duke	
+008	.	.	.	35-37	Language	NCCU	
+008	.	.	.	35-37	Language	NCSU	
+008	.	.	.	35-37	Language	UNC	
+008	.	.	.	07-10	PubDateSort	Duke	
+008	.	.	.	07-10	PubDateSort	NCCU	
+008	.	.	.	07-10	PubDateSort	NCSU	
+008	.	.	.	07-10	PubDateSort	UNC	
+008	.	.	.	07-10	Publication Year	Duke	
+008	.	.	.	07-10	Publication Year	NCCU	
+008	.	.	.	07-10	Publication Year	NCSU	
+008	.	.	.	07-10	Publication Year	UNC	
+020	.	.	.	az	ISBN	Duke	
+020	.	.	.	az	ISBN	NCCU	
+020	.	.	.	az	ISBN	NCSU	
+020	.	.	.	aqz	ISBN	UNC	y
+020	.	.	.	a	Syndetics ISBN	Duke	
+020	.	.	.	a	Syndetics ISBN	NCCU	
+020	.	.	.	a	Syndetics ISBN	NCSU	
+020	.	.	.	az	Syndetics ISBN	UNC	y
+022	.	.	.	ayz	ISSN	Duke	
+022	.	.	.	ayz	ISSN	NCCU	
+022	.	.	.	ayz	ISSN	NCSU	
+022	.	.	.	ayz	ISSN	UNC	
+024	.	.	.	a	ISBN	Duke	
+024	.	.	.	a	ISBN	NCCU	
+024	.	.	.	a	ISBN	NCSU	
+024	.	.	.	a	ISBN	UNC	
+024	1	.	.	a	UPC	Duke	
+024	1	.	.	a	UPC	NCCU	
+024	1	.	.	a	UPC	NCSU	
+024	1	.	.	a	UPC	UNC	
+028	.	.	.	ab	Publisher Number	Duke	
+028	.	.	.	ab	Publisher Number	NCCU	
+028	.	.	.	ab	Publisher Number	NCSU	
+028	.	.	.	ab	Publisher Number	UNC	
+041	.	b	complex constraints specified in transformation code are met	adegj	Language	UNC	
+050	.	.	a 'good' LC# hasn't been extracted from elsewhere	ab	Call Number Range	UNC	
+090	.	.	a 'good' LC# hasn't been extracted from elsewhere	.	Call Number Range	UNC	
+100	.	.	.	abcdq	Author	Duke	
+100	.	.	.	abcdq	Author	NCCU	
+100	.	.	.	abcdq	Author	NCSU	
+100	.	.	.	abcdq	Author	UNC	
+100	.	.	.	abcdegq	Main Author	Duke	
+100	.	.	.	abcdegq	Main Author	NCCU	
+100	.	.	.	abcdegq	Main Author	NCSU	
+100	.	.	.	abcdegq	Main Author	UNC	
+110	.	.	.	abcdefg	Author	Duke	
+110	.	.	.	abcdefg	Author	NCCU	
+110	.	.	.	abcdefg	Author	NCSU	
+110	.	.	.	abcdefg	Author	UNC	
+110	.	.	.	abcdefgn	Main Author	Duke	
+110	.	.	.	abcdefgn	Main Author	NCCU	
+110	.	.	.	abcdefgn	Main Author	NCSU	
+110	.	.	.	abcdefgn	Main Author	UNC	
+111	.	.	.	acdefnq	Author	Duke	
+111	.	.	.	acdefnq	Author	NCCU	
+111	.	.	.	acdefnq	Author	NCSU	
+111	.	.	.	acdefnq	Author	UNC	
+111	.	.	.	abcdefngq	Main Author	Duke	
+111	.	.	.	abcdefngq	Main Author	NCCU	
+111	.	.	.	abcdefngq	Main Author	NCSU	
+111	.	.	.	abcdefngq	Main Author	UNC	
+130	.	.	LDR/07=s && 008/21=[pP]	adfghklmnoprs	Journal Uniform Title	Duke	
+130	.	.	LDR/07=s && 008/21=[pP]	adfghklmnoprs	Journal Uniform Title	NCCU	
+130	.	.	LDR/07=s && 008/21=[pP]	adfghklmnoprs	Journal Uniform Title	NCSU	
+130	.	.	LDR/07=s && 008/21=[pP]	adfghklmnoprs	Journal Uniform Title	UNC	
+130	.	.	.	adfghklmnoprs	Main Uniform Title	Duke	
+130	.	.	.	adfghklmnoprs	Main Uniform Title	NCCU	
+130	.	.	.	adfghklmnoprs	Main Uniform Title	NCSU	
+130	.	.	.	adfghklmnoprs	Main Uniform Title	UNC	
+210	.	.	LDR/07=s && 008/21=[pP]	ab	Journal Title Abbreviation	Duke	
+210	.	.	LDR/07=s && 008/21=[pP]	ab	Journal Title Abbreviation	NCCU	
+210	.	.	LDR/07=s && 008/21=[pP]	ab	Journal Title Abbreviation	NCSU	
+210	.	.	LDR/07=s && 008/21=[pP]	ab	Journal Title Abbreviation	UNC	
+210	.	.	.	ab	Title Index	Duke	
+210	.	.	.	ab	Title Index	NCCU	
+210	.	.	.	ab	Title Index	NCSU	
+210	.	.	.	ab	Title Index	UNC	
+240	.	.	.	adfghklmnoprs	Uniform Title	Duke	
+240	.	.	.	adfghklmnoprs	Uniform Title	NCCU	
+240	.	.	.	adfghklmnoprs	Uniform Title	NCSU	
+240	.	.	.	adfghklmnoprs	Uniform Title	UNC	
+242	.	.	.	c	Other Author Translation	Duke	
+242	.	.	.	c	Other Author Translation	NCCU	
+242	.	.	.	c	Other Author Translation	NCSU	
+242	.	.	.	c	Other Author Translation	UNC	
+242	.	.	.	abhnp	Other Title Translation	Duke	
+242	.	.	.	abhnp	Other Title Translation	NCCU	
+242	.	.	.	abhnp	Other Title Translation	NCSU	
+242	.	.	.	abhnp	Other Title Translation	UNC	
+243	.	.	.	adfklmnoprs	Collective Uniform Title	Duke	
+243	.	.	.	adfklmnoprs	Collective Uniform Title	NCCU	
+243	.	.	.	adfklmnoprs	Collective Uniform Title	NCSU	
+243	.	.	.	adfklmnoprs	Collective Uniform Title	UNC	
+245	.	.	LDR/07=s && 008/21=[pP]	abnp	Journal Title Index	Duke	
+245	.	.	LDR/07=s && 008/21=[pP]	abnp	Journal Title Index	NCCU	
+245	.	.	LDR/07=s && 008/21=[pP]	abnp	Journal Title Index	NCSU	
+245	.	.	LDR/07=s && 008/21=[pP]	abnp	Journal Title Index	UNC	
+245	.	.	.	abfghknps	Main Title	Duke	
+245	.	.	.	abfghknps	Main Title	NCCU	
+245	.	.	.	abfghknps	Main Title	NCSU	
+245	.	.	.	abfghknps	Main Title	UNC	
+245	.	.	.	c	Statement of Responsibility	Duke	
+245	.	.	.	c	Statement of Responsibility	NCCU	
+245	.	.	.	c	Statement of Responsibility	NCSU	
+245	.	.	.	c	Statement of Responsibility	UNC	
+245	.	.	.	abfghknps	Title Sort	Duke	
+245	.	.	.	abfghknps	Title Sort	NCCU	
+245	.	.	.	abfghknps	Title Sort	NCSU	
+245	.	.	.	abfghknps	Title Sort	UNC	
+246	.	.	LDR/07=s && 008/21=[pP]	abhnp	Journal Varying Title	Duke	
+246	.	.	LDR/07=s && 008/21=[pP]	abhnp	Journal Varying Title	NCCU	
+246	.	.	LDR/07=s && 008/21=[pP]	abhnp	Journal Varying Title	NCSU	
+246	.	.	LDR/07=s && 008/21=[pP]	abhnp	Journal Varying Title	UNC	
+246	.	.	.	abhnp	Varying Titles	Duke	
+246	.	.	.	abhnp	Varying Titles	NCCU	
+246	.	.	.	abhnp	Varying Titles	NCSU	
+246	.	.	.	abhnp	Varying Titles	UNC	
+247	.	.	LDR/07=s && 008/21=[pP]	abfhnp	Journal Varying Title	Duke	
+247	.	.	LDR/07=s && 008/21=[pP]	abfhnp	Journal Varying Title	NCCU	
+247	.	.	LDR/07=s && 008/21=[pP]	abfhnp	Journal Varying Title	NCSU	
+247	.	.	LDR/07=s && 008/21=[pP]	abfhnp	Journal Varying Title	UNC	
+247	.	.	.	abfhnp	Varying Titles	Duke	
+247	.	.	.	abfhnp	Varying Titles	NCCU	
+247	.	.	.	abfhnp	Varying Titles	NCSU	
+247	.	.	.	abfhnp	Varying Titles	UNC	
+250	.	.	.	ab	Edition	Duke	
+250	.	.	.	ab	Edition	NCCU	
+250	.	.	.	ab	Edition	NCSU	
+250	.	.	.	ab	Edition	UNC	
+254	.	.	.	a	Musical Presentation	Duke	
+254	.	.	.	a	Musical Presentation	NCCU	
+254	.	.	.	a	Musical Presentation	NCSU	
+254	.	.	.	a	Musical Presentation	UNC	
+255	.	.	.	abcdefg	Cartographic Data	Duke	
+255	.	.	.	abcdefg	Cartographic Data	NCCU	
+255	.	.	.	abcdefg	Cartographic Data	NCSU	
+255	.	.	.	abcdefg	Cartographic Data	UNC	
+260	.	.	.	abcefg	Imprint	Duke	
+260	.	.	.	abcefg	Imprint	NCCU	
+260	.	.	.	abcefg	Imprint	NCSU	
+260	.	.	.	abcefg	Imprint	UNC	
+260	.	.	.	c	Published	Duke	
+260	.	.	.	c	Published	NCCU	
+260	.	.	.	c	Published	NCSU	
+260	.	.	.	c	Published	UNC	
+260	.	.	.	bf	Publisher	Duke	
+260	.	.	.	bf	Publisher	NCCU	
+260	.	.	.	bf	Publisher	NCSU	
+260	.	.	.	bf	Publisher	UNC	
+262	.	.	.	abcde	Imprint	Duke	
+262	.	.	.	abcde	Imprint	NCCU	
+262	.	.	.	abcde	Imprint	NCSU	
+262	.	.	.	abcde	Imprint	UNC	
+262	.	.	.	b	Sound Recording Imprint	Duke	
+262	.	.	.	b	Sound Recording Imprint	NCCU	
+262	.	.	.	b	Sound Recording Imprint	NCSU	
+262	.	.	.	b	Sound Recording Imprint	UNC	
+264	.	4	.	c	Copyright	Duke	
+264	.	4	.	c	Copyright	NCCU	
+264	.	4	.	c	Copyright	NCSU	
+264	.	4	.	c	Copyright	UNC	
+264	.	4	.	c	Copyright Statement	Duke	
+264	.	4	.	c	Copyright Statement	NCCU	
+264	.	4	.	c	Copyright Statement	NCSU	
+264	.	4	.	c	Copyright Statement	UNC	
+264	.	2	.	abc	Distribution Statement	Duke	
+264	.	2	.	abc	Distribution Statement	NCCU	
+264	.	2	.	abc	Distribution Statement	NCSU	
+264	.	2	.	abc	Distribution Statement	UNC	
+264	.	2	.	b	Distributor	Duke	
+264	.	2	.	b	Distributor	NCCU	
+264	.	2	.	b	Distributor	NCSU	
+264	.	2	.	b	Distributor	UNC	
+264	.	1	.	abc	Imprint	Duke	
+264	.	1	.	abc	Imprint	NCCU	
+264	.	1	.	abc	Imprint	NCSU	
+264	.	1	.	abc	Imprint	UNC	
+264	.	3	.	b	Manufacturer	Duke	
+264	.	3	.	b	Manufacturer	NCCU	
+264	.	3	.	b	Manufacturer	NCSU	
+264	.	3	.	b	Manufacturer	UNC	
+264	.	3	.	abc	Manufacturer Statement	Duke	
+264	.	3	.	abc	Manufacturer Statement	NCCU	
+264	.	3	.	abc	Manufacturer Statement	NCSU	
+264	.	3	.	abc	Manufacturer Statement	UNC	
+264	.	0	.	b	Producer	Duke	
+264	.	0	.	b	Producer	NCCU	
+264	.	0	.	b	Producer	NCSU	
+264	.	0	.	b	Producer	UNC	
+264	.	0	.	abc	Production Statement	Duke	
+264	.	0	.	abc	Production Statement	NCCU	
+264	.	0	.	abc	Production Statement	NCSU	
+264	.	0	.	abc	Production Statement	UNC	
+264	.	1	.	c	Published	Duke	
+264	.	1	.	c	Published	NCCU	
+264	.	1	.	c	Published	NCSU	
+264	.	1	.	c	Published	UNC	
+264	.	1	.	b	Publisher	Duke	
+264	.	1	.	b	Publisher	NCCU	
+264	.	1	.	b	Publisher	NCSU	
+264	.	1	.	b	Publisher	UNC	
+300	.	.	.	abcefg	Material	Duke	
+300	.	.	.	abcefg	Material	NCCU	
+300	.	.	.	abcefg	Material	NCSU	
+300	.	.	.	abcefg	Material	UNC	
+310	.	.	.	ab	Current Frequency	Duke	
+310	.	.	.	ab	Current Frequency	NCCU	
+310	.	.	.	ab	Current Frequency	NCSU	
+310	.	.	.	ab	Current Frequency	UNC	
+321	.	.	.	ab	Former Frequency	Duke	
+321	.	.	.	ab	Former Frequency	NCCU	
+321	.	.	.	ab	Former Frequency	NCSU	
+321	.	.	.	ab	Former Frequency	UNC	
+344	.	.	.	abcdefgh3	Material Details	Duke	
+344	.	.	.	abcdefgh3	Material Details	NCCU	
+344	.	.	.	abcdefgh3	Material Details	NCSU	
+344	.	.	.	abcdefgh3	Material Details	UNC	
+345	.	.	.	ab3	Material Details	Duke	
+345	.	.	.	ab3	Material Details	NCCU	
+345	.	.	.	ab3	Material Details	NCSU	
+345	.	.	.	ab3	Material Details	UNC	
+346	.	.	.	ab3	Material Details	Duke	
+346	.	.	.	ab3	Material Details	NCCU	
+346	.	.	.	ab3	Material Details	NCSU	
+346	.	.	.	ab3	Material Details	UNC	
+347	.	.	.	abcdef3	Material Details	Duke	
+347	.	.	.	abcdef3	Material Details	NCCU	
+347	.	.	.	abcdef3	Material Details	NCSU	
+347	.	.	.	abcdef3	Material Details	UNC	
+351	.	.	.	a	Organization	Duke	
+351	.	.	.	a	Organization	NCCU	
+351	.	.	.	a	Organization	NCSU	
+351	.	.	.	a	Organization	UNC	
+362	.	.	.	a	Volumes	Duke	
+362	.	.	.	a	Volumes	NCCU	
+362	.	.	.	a	Volumes	NCSU	
+362	.	.	.	a	Volumes	UNC	
+440	.	.	.	x	Series ISSN	Duke	
+440	.	.	.	x	Series ISSN	NCCU	
+440	.	.	.	x	Series ISSN	NCSU	
+440	.	.	.	x	Series ISSN	UNC	
+440	.	.	.	anpvx	Series Statement	Duke	
+440	.	.	.	anpvx	Series Statement	NCCU	
+440	.	.	.	anpvx	Series Statement	NCSU	
+440	.	.	.	anpvx	Series Statement	UNC	
+490	.	.	.	x	Series ISSN	Duke	
+490	.	.	.	x	Series ISSN	NCCU	
+490	.	.	.	x	Series ISSN	NCSU	
+490	.	.	.	x	Series ISSN	UNC	
+490	.	.	.	avx	Series Statement	Duke	
+490	.	.	.	avx	Series Statement	NCCU	
+490	.	.	.	avx	Series Statement	NCSU	
+490	.	.	.	avx	Series Statement	UNC	
+500	.	.	.	a	Indexed Notes	Duke	
+500	.	.	.	a	Indexed Notes	NCCU	
+500	.	.	.	a	Indexed Notes	NCSU	
+500	.	.	.	a	Indexed Notes	UNC	
+501	.	.	.	a	Indexed Notes	Duke	
+501	.	.	.	a	Indexed Notes	NCCU	
+501	.	.	.	a	Indexed Notes	NCSU	
+501	.	.	.	a	Indexed Notes	UNC	
+502	.	.	.	a	Indexed Notes	Duke	
+502	.	.	.	a	Indexed Notes	NCCU	
+502	.	.	.	a	Indexed Notes	NCSU	
+502	.	.	.	a	Indexed Notes	UNC	
+504	.	.	.	a	Indexed Notes	Duke	
+504	.	.	.	a	Indexed Notes	NCCU	
+504	.	.	.	a	Indexed Notes	NCSU	
+504	.	.	.	a	Indexed Notes	UNC	
+505	.	.	.	agrt	Table of Contents	Duke	
+505	.	.	.	agrt	Table of Contents	NCCU	
+505	.	.	.	agrt	Table of Contents	NCSU	
+505	.	.	.	agrt	Table of Contents	UNC	
+505	.	.	.	r	Table of Contents author index	Duke	
+505	.	.	.	r	Table of Contents author index	NCCU	
+505	.	.	.	r	Table of Contents author index	NCSU	
+505	.	.	.	r	Table of Contents author index	UNC	
+506	.	.	.	abcdeu	Access Restrictions	Duke	
+506	.	.	.	abcdeu	Access Restrictions	NCSU	
+506	.	.	.	abcdefu	Access Restrictions	UNC	y
+507	.	.	.	ab	Indexed Notes	Duke	
+507	.	.	.	ab	Indexed Notes	NCCU	
+507	.	.	.	ab	Indexed Notes	NCSU	
+507	.	.	.	ab	Indexed Notes	UNC	
+508	.	.	.	a	Production Credits	Duke	
+508	.	.	.	a	Production Credits	NCCU	
+508	.	.	.	a	Production Credits	NCSU	
+508	.	.	.	a	Production Credits	UNC	
+510	.	.	.	abcx	Notes	Duke	
+510	.	.	.	abcx	Notes	NCCU	
+510	.	.	.	abcx	Notes	NCSU	
+510	.	.	.	abcx	Notes	UNC	
+511	.	.	.	a	Performer Credits	Duke	
+511	.	.	.	a	Performer Credits	NCCU	
+511	.	.	.	a	Performer Credits	NCSU	
+511	.	.	.	a	Performer Credits	UNC	
+513	.	.	.	ab	Notes	Duke	
+513	.	.	.	ab	Notes	NCCU	
+513	.	.	.	ab	Notes	NCSU	
+513	.	.	.	ab	Notes	UNC	
+514	.	.	.	abcdefghijkmuz	Notes	Duke	
+514	.	.	.	abcdefghijkmuz	Notes	NCCU	
+514	.	.	.	abcdefghijkmuz	Notes	NCSU	
+514	.	.	.	abcdefghijkmuz	Notes	UNC	
+515	.	.	.	a	Notes	Duke	
+515	.	.	.	a	Notes	NCCU	
+515	.	.	.	a	Notes	NCSU	
+515	.	.	.	a	Notes	UNC	
+516	.	.	.	a	Notes	Duke	
+516	.	.	.	a	Notes	NCCU	
+516	.	.	.	a	Notes	NCSU	
+516	.	.	.	a	Notes	UNC	
+518	.	.	.	a	Notes	Duke	
+518	.	.	.	a	Notes	NCCU	
+518	.	.	.	a	Notes	NCSU	
+518	.	.	.	a	Notes	UNC	
+520	.	.	.	abu	Summary	Duke	
+520	.	.	.	abu	Summary	NCCU	
+520	.	.	.	abu	Summary	NCSU	
+520	.	.	.	abu	Summary	UNC	
+521	.	.	.	ab	Notes	Duke	
+521	.	.	.	ab	Notes	NCCU	
+521	.	.	.	ab	Notes	NCSU	
+521	.	.	.	ab	Notes	UNC	
+522	.	.	.	a	Indexed Notes	Duke	
+522	.	.	.	a	Indexed Notes	NCCU	
+522	.	.	.	a	Indexed Notes	NCSU	
+522	.	.	.	a	Indexed Notes	UNC	
+524	.	.	.	a	Notes	Duke	
+524	.	.	.	a	Notes	NCCU	
+524	.	.	.	a	Notes	NCSU	
+524	.	.	.	a	Notes	UNC	
+525	.	.	.	a	Notes	Duke	
+525	.	.	.	a	Notes	NCCU	
+525	.	.	.	a	Notes	NCSU	
+525	.	.	.	a	Notes	UNC	
+530	.	.	.	abcu	Other Format	Duke	
+530	.	.	.	abcu	Other Format	NCCU	
+530	.	.	.	abcu	Other Format	NCSU	
+530	.	.	.	abcu	Other Format	UNC	
+533	.	.	.	cf	Indexed Notes	Duke	
+533	.	.	.	cf	Indexed Notes	NCCU	
+533	.	.	.	cf	Indexed Notes	NCSU	
+533	.	.	.	cf	Indexed Notes	UNC	
+533	.	.	.	abcdefmn	Notes	Duke	
+533	.	.	.	abcdefmn	Notes	NCCU	
+533	.	.	.	abcdefmn	Notes	NCSU	
+533	.	.	.	abcdefmn	Notes	UNC	
+534	.	.	.	abcefnpt	Indexed Notes	Duke	
+534	.	.	.	abcefnpt	Indexed Notes	NCCU	
+534	.	.	.	abcefnpt	Indexed Notes	NCSU	
+534	.	.	.	abcefnpt	Indexed Notes	UNC	
+535	.	.	.	abdcdg	Notes	Duke	
+535	.	.	.	abdcdg	Notes	NCCU	
+535	.	.	.	abdcdg	Notes	NCSU	
+535	.	.	.	abdcdg	Notes	UNC	
+536	.	.	.	abcdefgh	Indexed Notes	Duke	
+536	.	.	.	abcdefgh	Indexed Notes	NCCU	
+536	.	.	.	abcdefgh	Indexed Notes	NCSU	
+536	.	.	.	abcdefgh	Indexed Notes	UNC	
+538	.	.	.	aiu	System Details	Duke	
+538	.	.	.	aiu	System Details	NCCU	
+538	.	.	.	aiu	System Details	NCSU	
+538	.	.	.	aiu	System Details	UNC	
+540	.	.	.	abu3	Notes	Duke	
+540	.	.	.	abu3	Notes	NCCU	
+540	.	.	.	abu3	Notes	NCSU	
+540	.	.	.	abu3	Notes	UNC	
+541	.	.	.	a	Indexed Notes	Duke	
+541	.	.	.	a	Indexed Notes	NCCU	
+541	.	.	.	a	Indexed Notes	NCSU	
+541	.	.	.	a	Indexed Notes	UNC	
+541	.	.	.	abcdefhno	Source of Acquisition	Duke	
+541	.	.	.	abcdefhno	Source of Acquisition	NCCU	
+541	.	.	.	abcdefhno	Source of Acquisition	NCSU	
+541	.	.	.	abcdefhno	Source of Acquisition	UNC	
+544	.	.	.	abcden	Related Collections	Duke	
+544	.	.	.	abcden	Related Collections	NCCU	
+544	.	.	.	abcden	Related Collections	NCSU	
+544	.	.	.	abcden	Related Collections	UNC	
+545	.	.	.	abu	Biographical Sketch	Duke	
+545	.	.	.	abu	Biographical Sketch	NCCU	
+545	.	.	.	abu	Biographical Sketch	NCSU	
+545	.	.	.	abu	Biographical Sketch	UNC	
+546	.	.	.	ab	Notes	Duke	
+546	.	.	.	ab	Notes	NCCU	
+546	.	.	.	ab	Notes	NCSU	
+546	.	.	.	ab	Notes	UNC	
+547	.	.	.	a	Notes	Duke	
+547	.	.	.	a	Notes	NCCU	
+547	.	.	.	a	Notes	NCSU	
+547	.	.	.	a	Notes	UNC	
+550	.	.	.	a	Notes	Duke	
+550	.	.	.	a	Notes	NCCU	
+550	.	.	.	a	Notes	NCSU	
+550	.	.	.	a	Notes	UNC	
+555	.	.	.	abcdu	Cumulative Indexes	Duke	
+555	.	.	.	abcdu	Cumulative Indexes	NCCU	
+555	.	.	.	abcdu	Cumulative Indexes	NCSU	
+555	.	.	.	abcdu	Cumulative Indexes	UNC	
+556	.	.	.	a	Notes	Duke	
+556	.	.	.	a	Notes	NCCU	
+556	.	.	.	a	Notes	NCSU	
+556	.	.	.	a	Notes	UNC	
+561	.	.	.	a	Indexed Notes	Duke	
+561	.	.	.	a	Indexed Notes	NCCU	
+561	.	.	.	a	Indexed Notes	NCSU	
+561	.	.	.	a	Indexed Notes	UNC	
+563	.	.	.	a	Indexed Notes	Duke	
+563	.	.	.	a	Indexed Notes	NCCU	
+563	.	.	.	a	Indexed Notes	NCSU	
+563	.	.	.	a	Indexed Notes	UNC	
+565	.	.	.	abdce	Notes	Duke	
+565	.	.	.	abdce	Notes	NCCU	
+565	.	.	.	abdce	Notes	NCSU	
+565	.	.	.	abdce	Notes	UNC	
+567	.	.	.	a	Notes	Duke	
+567	.	.	.	a	Notes	NCCU	
+567	.	.	.	a	Notes	NCSU	
+567	.	.	.	a	Notes	UNC	
+580	.	.	.	a	Notes	Duke	
+580	.	.	.	a	Notes	NCCU	
+580	.	.	.	a	Notes	NCSU	
+580	.	.	.	a	Notes	UNC	
+581	.	.	.	a	Indexed Notes	Duke	
+581	.	.	.	a	Indexed Notes	NCCU	
+581	.	.	.	a	Indexed Notes	NCSU	
+581	.	.	.	a	Indexed Notes	UNC	
+585	.	.	.	a	Indexed Notes	Duke	
+585	.	.	.	a	Indexed Notes	NCCU	
+585	.	.	.	a	Indexed Notes	NCSU	
+585	.	.	.	a	Indexed Notes	UNC	
+586	.	.	.	a	Indexed Notes	Duke	
+586	.	.	.	a	Indexed Notes	NCCU	
+586	.	.	.	a	Indexed Notes	NCSU	
+586	.	.	.	a	Indexed Notes	UNC	
+588	.	.	.	a	Notes	Duke	
+588	.	.	.	a	Notes	NCCU	
+588	.	.	.	a	Notes	NCSU	
+588	.	.	.	a	Notes	UNC	
+590	.	.	.	a	Indexed Notes	Duke	
+590	.	.	.	a	Indexed Notes	NCCU	
+590	.	.	.	a	Indexed Notes	NCSU	
+590	.	.	.	a	Indexed Notes	UNC	
+590	.	.	.	a	Notes	Duke	
+590	.	.	.	a	Notes	NCCU	
+590	.	.	.	a	Notes	NCSU	
+590	.	.	.	a	Notes	UNC	
+599	.	.	.	ab	Most Recently Arrived	Duke	
+599	.	.	.	ab	Most Recently Arrived	NCCU	
+599	.	.	.	ab	Most Recently Arrived	NCSU	
+599	.	.	.	ab	Most Recently Arrived	UNC	
+600	.	[12347]	.	v	Genre	Duke	
+600	.	[12347]	.	v	Genre	NCCU	
+600	.	[12347]	.	v	Genre	NCSU	
+600	.	[12347]	.	v	Genre	UNC	
+600	.	[12347]	.	z	Region	Duke	
+600	.	[12347]	.	z	Region	NCCU	
+600	.	[12347]	.	z	Region	NCSU	
+600	.	[12347]	.	z	Region	UNC	
+600	.	[12347]	.	a	Subject	Duke	
+600	.	[12347]	.	x	Subject	Duke	
+600	.	[12347]	.	a	Subject	NCCU	
+600	.	[12347]	.	x	Subject	NCCU	
+600	.	[12347]	.	a	Subject	NCSU	
+600	.	[12347]	.	x	Subject	NCSU	
+600	.	[12347]	.	a	Subject	UNC	
+600	.	[12347]	.	x	Subject	UNC	
+600	.	.	.	abcdefghijklmnopqrstvxyz	Subject Headings	Duke	
+600	.	.	.	abcdefghijklmnopqrstvxyz	Subject Headings	NCCU	
+600	.	.	.	abcdefghijklmnopqrstvxyz	Subject Headings	NCSU	
+600	.	.	.	abcdefghijklmnopqrstvxyz	Subject Headings	UNC	
+600	.	.	.	abcdefghijklmnopqrstvxyz	Subjects	Duke	
+600	.	.	.	abcdefghijklmnopqrstvxyz	Subjects	NCCU	
+600	.	.	.	abcdefghijklmnopqrstvxyz	Subjects	NCSU	
+600	.	.	.	abcdefghijklmnopqrstvxyz	Subjects	UNC	
+600	.	[12347]	.	y	Time Period	Duke	
+600	.	[12347]	.	y	Time Period	NCCU	
+600	.	[12347]	.	y	Time Period	NCSU	
+600	.	[12347]	.	y	Time Period	UNC	
+610	.	[12347]	.	v	Genre	Duke	
+610	.	[12347]	.	v	Genre	NCCU	
+610	.	[12347]	.	v	Genre	NCSU	
+610	.	[12347]	.	v	Genre	UNC	
+610	.	[12347]	.	z	Region	Duke	
+610	.	[12347]	.	z	Region	NCCU	
+610	.	[12347]	.	z	Region	NCSU	
+610	.	[12347]	.	z	Region	UNC	
+610	.	[12347]	.	a	Subject	Duke	
+610	.	[12347]	.	x	Subject	Duke	
+610	.	[12347]	.	a	Subject	NCCU	
+610	.	[12347]	.	x	Subject	NCCU	
+610	.	[12347]	.	a	Subject	NCSU	
+610	.	[12347]	.	x	Subject	NCSU	
+610	.	[12347]	.	a	Subject	UNC	
+610	.	[12347]	.	x	Subject	UNC	
+610	.	.	.	abcdefghijklmnopqrstvxyz	Subject Headings	Duke	
+610	.	.	.	abcdefghijklmnopqrstvxyz	Subject Headings	NCCU	
+610	.	.	.	abcdefghijklmnopqrstvxyz	Subject Headings	NCSU	
+610	.	.	.	abcdefghijklmnopqrstvxyz	Subject Headings	UNC	
+610	.	.	.	abcdefghijklmnopqrstvxyz	Subjects	Duke	
+610	.	.	.	abcdefghijklmnopqrstvxyz	Subjects	NCCU	
+610	.	.	.	abcdefghijklmnopqrstvxyz	Subjects	NCSU	
+610	.	.	.	abcdefghijklmnopqrstvxyz	Subjects	UNC	
+610	.	[12347]	.	y	Time Period	Duke	
+610	.	[12347]	.	y	Time Period	NCCU	
+610	.	[12347]	.	y	Time Period	NCSU	
+610	.	[12347]	.	y	Time Period	UNC	
+611	.	[12347]	.	v	Genre	Duke	
+611	.	[12347]	.	v	Genre	NCCU	
+611	.	[12347]	.	v	Genre	NCSU	
+611	.	[12347]	.	v	Genre	UNC	
+611	.	[12347]	.	z	Region	Duke	
+611	.	[12347]	.	z	Region	NCCU	
+611	.	[12347]	.	z	Region	NCSU	
+611	.	[12347]	.	z	Region	UNC	
+611	.	[12347]	.	a	Subject	Duke	
+611	.	[12347]	.	x	Subject	Duke	
+611	.	[12347]	.	a	Subject	NCCU	
+611	.	[12347]	.	x	Subject	NCCU	
+611	.	[12347]	.	a	Subject	NCSU	
+611	.	[12347]	.	x	Subject	NCSU	
+611	.	[12347]	.	a	Subject	UNC	
+611	.	[12347]	.	x	Subject	UNC	
+611	.	.	.	acdefghijklmnopqrstvxyz	Subject Headings	Duke	
+611	.	.	.	acdefghijklmnopqrstvxyz	Subject Headings	NCCU	
+611	.	.	.	acdefghijklmnopqrstvxyz	Subject Headings	NCSU	
+611	.	.	.	acdefghijklmnopqrstvxyz	Subject Headings	UNC	
+611	.	.	.	acdefghijklmnopqrstvxyz	Subjects	Duke	
+611	.	.	.	acdefghijklmnopqrstvxyz	Subjects	NCCU	
+611	.	.	.	acdefghijklmnopqrstvxyz	Subjects	NCSU	
+611	.	.	.	acdefghijklmnopqrstvxyz	Subjects	UNC	
+611	.	[12347]	.	y	Time Period	Duke	
+611	.	[12347]	.	y	Time Period	NCCU	
+611	.	[12347]	.	y	Time Period	NCSU	
+611	.	[12347]	.	y	Time Period	UNC	
+630	.	[12347]	.	v	Genre	Duke	
+630	.	[12347]	.	v	Genre	NCCU	
+630	.	[12347]	.	v	Genre	NCSU	
+630	.	[12347]	.	v	Genre	UNC	
+630	.	[12347]	.	z	Region	Duke	
+630	.	[12347]	.	z	Region	NCCU	
+630	.	[12347]	.	z	Region	NCSU	
+630	.	[12347]	.	z	Region	UNC	
+630	.	[12347]	.	a	Subject	Duke	
+630	.	[12347]	.	x	Subject	Duke	
+630	.	[12347]	.	a	Subject	NCCU	
+630	.	[12347]	.	x	Subject	NCCU	
+630	.	[12347]	.	a	Subject	NCSU	
+630	.	[12347]	.	x	Subject	NCSU	
+630	.	[12347]	.	a	Subject	UNC	
+630	.	[12347]	.	x	Subject	UNC	
+630	.	.	.	adfghklmnoprstvxyz	Subject Headings	Duke	
+630	.	.	.	adfghklmnoprstvxyz	Subject Headings	NCCU	
+630	.	.	.	adfghklmnoprstvxyz	Subject Headings	NCSU	
+630	.	.	.	adfghklmnoprstvxyz	Subject Headings	UNC	
+630	.	.	.	adfghklmnoprstvxyz	Subjects	Duke	
+630	.	.	.	adfghklmnoprstvxyz	Subjects	NCCU	
+630	.	.	.	adfghklmnoprstvxyz	Subjects	NCSU	
+630	.	.	.	adfghklmnoprstvxyz	Subjects	UNC	
+630	.	[12347]	.	y	Time Period	Duke	
+630	.	[12347]	.	y	Time Period	NCCU	
+630	.	[12347]	.	y	Time Period	NCSU	
+630	.	[12347]	.	y	Time Period	UNC	
+650	.	[12347]	.	v	Genre	Duke	
+650	.	[12347]	.	v	Genre	NCCU	
+650	.	[12347]	.	v	Genre	NCSU	
+650	.	[12347]	.	v	Genre	UNC	
+650	.	2	.	x	Medical Subject	Duke	
+650	.	2	.	a	Medical Subject	Duke	
+650	.	2	.	x	Medical Subject	NCCU	
+650	.	2	.	a	Medical Subject	NCCU	
+650	.	2	.	x	Medical Subject	NCSU	
+650	.	2	.	a	Medical Subject	NCSU	
+650	.	2	.	x	Medical Subject	UNC	
+650	.	2	.	a	Medical Subject	UNC	
+650	.	[12347]	.	z	Region	Duke	
+650	.	[12347]	.	z	Region	NCCU	
+650	.	[12347]	.	z	Region	NCSU	
+650	.	[12347]	.	z	Region	UNC	
+650	.	[12347]	.	a	Subject	Duke	
+650	.	[12347]	.	x	Subject	Duke	
+650	.	[12347]	.	a	Subject	NCCU	
+650	.	[12347]	.	x	Subject	NCCU	
+650	.	[12347]	.	a	Subject	NCSU	
+650	.	[12347]	.	x	Subject	NCSU	
+650	.	[12347]	.	a	Subject	UNC	
+650	.	[12347]	.	x	Subject	UNC	
+650	.	.	.	abcdevxyz	Subject Headings	Duke	
+650	.	.	.	abcdevxyz	Subject Headings	NCCU	
+650	.	.	.	abcdevxyz	Subject Headings	NCSU	
+650	.	.	.	abcdevxyz	Subject Headings	UNC	
+650	.	.	.	abcdevxyz	Subjects	Duke	
+650	.	.	.	abcdevxyz	Subjects	NCCU	
+650	.	.	.	abcdevxyz	Subjects	NCSU	
+650	.	.	.	abcdevxyz	Subjects	UNC	
+650	.	[12347]	.	y	Time Period	Duke	
+650	.	[12347]	.	y	Time Period	NCCU	
+650	.	[12347]	.	y	Time Period	NCSU	
+650	.	[12347]	.	y	Time Period	UNC	
+651	.	[12347]	.	v	Genre	Duke	
+651	.	[12347]	.	v	Genre	NCCU	
+651	.	[12347]	.	v	Genre	NCSU	
+651	.	[12347]	.	v	Genre	UNC	
+651	.	[12347]	.	a	Region	Duke	
+651	.	[12347]	.	z	Region	Duke	
+651	.	[12347]	.	a	Region	NCCU	
+651	.	[12347]	.	z	Region	NCCU	
+651	.	[12347]	.	a	Region	NCSU	
+651	.	[12347]	.	z	Region	NCSU	
+651	.	[12347]	.	a	Region	UNC	
+651	.	[12347]	.	z	Region	UNC	
+651	.	[12347]	.	x	Subject	Duke	
+651	.	[12347]	.	x	Subject	NCCU	
+651	.	[12347]	.	x	Subject	NCSU	
+651	.	[12347]	.	x	Subject	UNC	
+651	.	.	.	avxyz	Subject Headings	Duke	
+651	.	.	.	avxyz	Subject Headings	NCCU	
+651	.	.	.	avxyz	Subject Headings	NCSU	
+651	.	.	.	avxyz	Subject Headings	UNC	
+651	.	.	.	avxyz	Subjects	Duke	
+651	.	.	.	avxyz	Subjects	NCCU	
+651	.	.	.	avxyz	Subjects	NCSU	
+651	.	.	.	avxyz	Subjects	UNC	
+651	.	[12347]	.	y	Time Period	Duke	
+651	.	[12347]	.	y	Time Period	NCCU	
+651	.	[12347]	.	y	Time Period	NCSU	
+651	.	[12347]	.	y	Time Period	UNC	
+653	.	.	.	a	Subject Headings	Duke	
+653	.	.	.	a	Subject Headings	NCCU	
+653	.	.	.	a	Subject Headings	NCSU	
+653	.	.	.	a	Subject Headings	UNC	
+653	.	.	.	a	Subjects	Duke	
+653	.	.	.	a	Subjects	NCCU	
+653	.	.	.	a	Subjects	NCSU	
+653	.	.	.	a	Subjects	UNC	
+655	.	[12347]	.	a	Genre	Duke	
+655	.	[12347]	.	a	Genre	NCCU	
+655	.	[12347]	.	a	Genre	NCSU	
+655	.	[12347]	.	a	Genre	UNC	
+655	.	[12347]	.	z	Region	Duke	
+655	.	[12347]	.	z	Region	NCCU	
+655	.	[12347]	.	z	Region	NCSU	
+655	.	[12347]	.	z	Region	UNC	
+655	.	.	.	abvxyz	Subject Headings	Duke	
+655	.	.	.	abvxyz	Subject Headings	NCCU	
+655	.	.	.	abvxyz	Subject Headings	NCSU	
+655	.	.	.	abvxyz	Subject Headings	UNC	
+690	.	.	.	x	Genre	Duke	
+690	.	.	.	x	Genre	NCCU	
+690	.	.	.	x	Genre	NCSU	
+690	.	.	.	x	Genre	UNC	
+690	.	.	.	a	Subject Headings	Duke	
+690	.	.	.	ax	Subject Headings	NCSU	
+690	.	.	.	a	Subjects	Duke	
+690	.	.	.	ax	Subjects	NCSU	
+691	.	.	.	abvxyz	Subject Headings	Duke	
+691	.	.	.	abvxyz	Subject Headings	NCCU	
+691	.	.	.	abvxyz	Subject Headings	NCSU	
+691	.	.	.	abvxyz	Subject Headings	UNC	
+691	.	.	.	abvxyz	Subjects	Duke	
+691	.	.	.	abvxyz	Subjects	NCCU	
+691	.	.	.	abvxyz	Subjects	NCSU	
+691	.	.	.	abvxyz	Subjects	UNC	
+695	.	.	.	a	Uncontrolled Subject	Duke	
+695	.	.	.	a	Uncontrolled Subject	NCCU	
+695	.	.	.	a	Uncontrolled Subject	NCSU	
+695	.	.	.	a	Uncontrolled Subject	UNC	
+700	.	.	.	abcdq	Author	Duke	
+700	.	.	.	abcdq	Author	NCCU	
+700	.	.	.	abcdq	Author	NCSU	
+700	.	.	.	abcdq	Author	UNC	
+700	.	.	4=drt || e=director		Director	Duke	
+700	.	.	4=drt || e=director		Director	NCCU	
+700	.	.	4=drt || e=director		Director	NCSU	
+700	.	.	4=drt || e=director		Director	UNC	
+700	.	.	.	abcdejqu4fhiklmnoprstxg	Name Title	Duke	
+700	.	.	.	abcdejqu4fhiklmnoprstxg	Name Title	NCCU	
+700	.	.	.	abcdejqu4fhiklmnoprstxg	Name Title	NCSU	
+700	.	.	.	abcdejqu4fhiklmnoprstxg	Name Title	UNC	
+700	.	.	.	abcdeq	Other Authors	Duke	
+700	.	.	.	abcdeq	Other Authors	NCCU	
+700	.	.	.	abcdeq	Other Authors	NCSU	
+700	.	.	.	abcdeq	Other Authors	UNC	
+700	.	.	.	fghijklmnoprst	Other Titles	Duke	
+700	.	.	.	fghijklmnoprst	Other Titles	NCCU	
+700	.	.	.	fghijklmnoprst	Other Titles	NCSU	
+700	.	.	.	fghijklmnoprst	Other Titles	UNC	
+710	.	.	.	abceu4fhiklmoprstxdgn	Name Title	Duke	
+710	.	.	.	abceu4fhiklmoprstxdgn	Name Title	NCCU	
+710	.	.	.	abceu4fhiklmoprstxdgn	Name Title	NCSU	
+710	.	.	.	abceu4fhiklmoprstxdgn	Name Title	UNC	
+710	.	.	.	abcde	Other Authors	Duke	
+710	.	.	.	abcde	Other Authors	NCCU	
+710	.	.	.	abcde	Other Authors	NCSU	
+710	.	.	.	abcde	Other Authors	UNC	
+710	.	.	.	fghklmnoprst	Other Titles	Duke	
+710	.	.	.	fghklmnoprst	Other Titles	NCCU	
+710	.	.	.	fghklmnoprst	Other Titles	NCSU	
+710	.	.	.	fghklmnoprst	Other Titles	UNC	
+711	.	.	.	acdejqu4fhiklpstxgn	Name Title	Duke	
+711	.	.	.	acdejqu4fhiklpstxgn	Name Title	NCCU	
+711	.	.	.	acdejqu4fhiklpstxgn	Name Title	NCSU	
+711	.	.	.	acdejqu4fhiklpstxgn	Name Title	UNC	
+711	.	.	.	abcdeq	Other Authors	Duke	
+711	.	.	.	abcdeq	Other Authors	NCCU	
+711	.	.	.	abcdeq	Other Authors	NCSU	
+711	.	.	.	abcdeq	Other Authors	UNC	
+711	.	.	.	fghklmnpst	Other Titles	Duke	
+711	.	.	.	fghklmnpst	Other Titles	NCCU	
+711	.	.	.	fghklmnpst	Other Titles	NCSU	
+711	.	.	.	fghklmnpst	Other Titles	UNC	
+720	.	.	.	a	Uncontrolled Author	Duke	
+720	.	.	.	a	Uncontrolled Author	NCCU	
+720	.	.	.	a	Uncontrolled Author	NCSU	
+720	.	.	.	a	Uncontrolled Author	UNC	
+730	.	.	.	adfghklmnoprst	Uniform Title	Duke	
+730	.	.	.	adfghklmnoprst	Uniform Title	NCCU	
+730	.	.	.	adfghklmnoprst	Uniform Title	NCSU	
+730	.	.	.	adfghklmnoprst	Uniform Title	UNC	
+740	.	.	.	ahnp	Varying Titles	Duke	
+740	.	.	.	ahnp	Varying Titles	NCCU	
+740	.	.	.	ahnp	Varying Titles	NCSU	
+740	.	.	.	ahnp	Varying Titles	UNC	
+752	.	.	.	abcd	Notes	Duke	
+752	.	.	.	abcd	Notes	NCCU	
+752	.	.	.	abcd	Notes	NCSU	
+752	.	.	.	abcd	Notes	UNC	
+760	.	.	.	abcdghimnostwxy	Main Series Linking	Duke	
+760	.	.	.	abcdghimnostwxy	Main Series Linking	NCCU	
+760	.	.	.	abcdghimnostwxy	Main Series Linking	NCSU	
+760	.	.	.	abcdghimnostwxy	Main Series Linking	UNC	
+762	.	.	.	abcdghimnostwxy	Subseries Linking	Duke	
+762	.	.	.	abcdghimnostwxy	Subseries Linking	NCCU	
+762	.	.	.	abcdghimnostwxy	Subseries Linking	NCSU	
+762	.	.	.	abcdghimnostwxy	Subseries Linking	UNC	
+765	.	.	.	xz	Linking ISSN	Duke	
+765	.	.	.	xz	Linking ISSN	NCCU	
+765	.	.	.	xz	Linking ISSN	NCSU	
+765	.	.	.	xz	Linking ISSN	UNC	
+765	.	.	.	abcdghikmnorstuwxyz	Translation of Linking	Duke	
+765	.	.	.	abcdghikmnorstuwxyz	Translation of Linking	NCCU	
+765	.	.	.	abcdghikmnorstuwxyz	Translation of Linking	NCSU	
+765	.	.	.	abcdghikmnorstuwxyz	Translation of Linking	UNC	
+767	.	.	.	xz	Linking ISSN	Duke	
+767	.	.	.	xz	Linking ISSN	NCCU	
+767	.	.	.	xz	Linking ISSN	NCSU	
+767	.	.	.	xz	Linking ISSN	UNC	
+767	.	.	.	abcdghikmnorstuwxyz	Translated as Linking	Duke	
+767	.	.	.	abcdghikmnorstuwxyz	Translated as Linking	NCCU	
+767	.	.	.	abcdghikmnorstuwxyz	Translated as Linking	NCSU	
+767	.	.	.	abcdghikmnorstuwxyz	Translated as Linking	UNC	
+770	.	.	.	abcdghikmnorstuwxyz	Has Supplement Linking	Duke	
+770	.	.	.	abcdghikmnorstuwxyz	Has Supplement Linking	NCCU	
+770	.	.	.	abcdghikmnorstuwxyz	Has Supplement Linking	NCSU	
+770	.	.	.	abcdghikmnorstuwxyz	Has Supplement Linking	UNC	
+772	.	.	.	abcdghikmnorstuwxyz	Supplement to Linking	Duke	
+772	.	.	.	abcdghikmnorstuwxyz	Supplement to Linking	NCCU	
+772	.	.	.	abcdghikmnorstuwxyz	Supplement to Linking	NCSU	
+772	.	.	.	abcdghikmnorstuwxyz	Supplement to Linking	UNC	
+773	.	.	.	abdghikmnopqrstuwxyz	Host Item Linking	Duke	
+773	.	.	.	abdghikmnopqrstuwxyz	Host Item Linking	NCCU	
+773	.	.	.	abdghikmnopqrstuwxyz	Host Item Linking	NCSU	
+773	.	.	.	abdghikmnopqrstuwxyz	Host Item Linking	UNC	
+773	.	.	.	xz	Linking ISSN	Duke	
+773	.	.	.	xz	Linking ISSN	NCCU	
+773	.	.	.	xz	Linking ISSN	NCSU	
+773	.	.	.	xz	Linking ISSN	UNC	
+774	.	.	.	abcdghikmnorstuwxyz	Constituent Unit Linking	Duke	
+774	.	.	.	abcdghikmnorstuwxyz	Constituent Unit Linking	NCCU	
+774	.	.	.	abcdghikmnorstuwxyz	Constituent Unit Linking	NCSU	
+774	.	.	.	abcdghikmnorstuwxyz	Constituent Unit Linking	UNC	
+774	.	.	.	xz	Linking ISSN	Duke	
+774	.	.	.	xz	Linking ISSN	NCCU	
+774	.	.	.	xz	Linking ISSN	NCSU	
+774	.	.	.	xz	Linking ISSN	UNC	
+775	.	.	.	abdghint	Other Edition	Duke	
+775	.	.	.	abdghint	Other Edition	NCCU	
+775	.	.	.	abdghint	Other Edition	NCSU	
+775	.	.	.	abdghint	Other Edition	UNC	
+780	.	.	.	abcdghnkstxz	Earlier Title	Duke	
+780	.	.	.	abcdghnkstxz	Earlier Title	NCCU	
+780	.	.	.	abcdghnkstxz	Earlier Title	NCSU	
+780	.	.	.	abcdghnkstxz	Earlier Title	UNC	
+780	.	.	LDR/07=s && 008/21=[pP]	abcdghnkstxz	Journal Earlier Title	Duke	
+780	.	.	LDR/07=s && 008/21=[pP]	abcdghnkstxz	Journal Earlier Title	NCCU	
+780	.	.	LDR/07=s && 008/21=[pP]	abcdghnkstxz	Journal Earlier Title	NCSU	
+780	.	.	LDR/07=s && 008/21=[pP]	abcdghnkstxz	Journal Earlier Title	UNC	
+780	.	.	.	xz	Linking ISSN	Duke	
+780	.	.	.	xz	Linking ISSN	NCCU	
+780	.	.	.	xz	Linking ISSN	NCSU	
+780	.	.	.	xz	Linking ISSN	UNC	
+785	.	.	LDR/07=s && 008/21=[pP]	abcdghikmnstxz	Journal Later Title	Duke	
+785	.	.	LDR/07=s && 008/21=[pP]	abcdghikmnstxz	Journal Later Title	NCCU	
+785	.	.	LDR/07=s && 008/21=[pP]	abcdghikmnstxz	Journal Later Title	NCSU	
+785	.	.	LDR/07=s && 008/21=[pP]	abcdghikmnstxz	Journal Later Title	UNC	
+785	.	.	.	abcdghikmnstxz	Later Title	Duke	
+785	.	.	.	abcdghikmnstxz	Later Title	NCCU	
+785	.	.	.	abcdghikmnstxz	Later Title	NCSU	
+785	.	.	.	abcdghikmnstxz	Later Title	UNC	
+785	.	.	.	xz	Linking ISSN	Duke	
+785	.	.	.	xz	Linking ISSN	NCCU	
+785	.	.	.	xz	Linking ISSN	NCSU	
+785	.	.	.	xz	Linking ISSN	UNC	
+790	.	.	.	a	Other Authors	Duke	
+790	.	.	.	a	Other Authors	NCCU	
+790	.	.	.	a	Other Authors	NCSU	
+790	.	.	.	a	Other Authors	UNC	
+791	.	.	.	ab	Other Authors	Duke	
+791	.	.	.	ab	Other Authors	NCCU	
+791	.	.	.	ab	Other Authors	NCSU	
+791	.	.	.	ab	Other Authors	UNC	
+800	.	.	.	abcdegq	Author	Duke	
+800	.	.	.	abcdegq	Author	NCCU	
+800	.	.	.	abcdegq	Author	NCSU	
+800	.	.	.	abcdegq	Author	UNC	
+800	.	.	.	abcdefhklmnopqrstv	Series	Duke	
+800	.	.	.	abcdefhklmnopqrstv	Series	NCCU	
+800	.	.	.	abcdefhklmnopqrstv	Series	NCSU	
+800	.	.	.	abcdefhklmnopqrstv	Series	UNC	
+800	.	.	.	tnpfkl	Series Title Index	Duke	
+800	.	.	.	tnpfkl	Series Title Index	NCCU	
+800	.	.	.	tnpfkl	Series Title Index	NCSU	
+800	.	.	.	tnpfkl	Series Title Index	UNC	
+810	.	.	.	ab	Author	Duke	
+810	.	.	.	ab	Author	NCCU	
+810	.	.	.	ab	Author	NCSU	
+810	.	.	.	ab	Author	UNC	
+810	.	.	.	abcdefhklmnoprstv	Series	Duke	
+810	.	.	.	abcdefhklmnoprstv	Series	NCCU	
+810	.	.	.	abcdefhklmnoprstv	Series	NCSU	
+810	.	.	.	abcdefhklmnoprstv	Series	UNC	
+810	.	.	.	tnoprlsm	Series Title Index	Duke	
+810	.	.	.	tnoprlsm	Series Title Index	NCCU	
+810	.	.	.	tnoprlsm	Series Title Index	NCSU	
+810	.	.	.	tnoprlsm	Series Title Index	UNC	
+811	.	.	.	acd	Author	Duke	
+811	.	.	.	acd	Author	NCCU	
+811	.	.	.	acd	Author	NCSU	
+811	.	.	.	acd	Author	UNC	
+811	.	.	.	acdefhklnpqstv	Series	Duke	
+811	.	.	.	acdefhklnpqstv	Series	NCCU	
+811	.	.	.	acdefhklnpqstv	Series	NCSU	
+811	.	.	.	acdefhklnpqstv	Series	UNC	
+811	.	.	.	tnpls	Series Title Index	Duke	
+811	.	.	.	tnpls	Series Title Index	NCCU	
+811	.	.	.	tnpls	Series Title Index	NCSU	
+811	.	.	.	tnpls	Series Title Index	UNC	
+830	.	.	.	adfghklmnoprsv	Series	Duke	
+830	.	.	.	adfghklmnoprsv	Series	NCCU	
+830	.	.	.	adfghklmnoprsv	Series	NCSU	
+830	.	.	.	adfghklmnoprsv	Series	UNC	
+830	.	.	.	ahnpv	Series Title Index	Duke	
+830	.	.	.	ahnpv	Series Title Index	NCCU	
+830	.	.	.	ahnpv	Series Title Index	NCSU	
+830	.	.	.	ahnpv	Series Title Index	UNC	
+852	.	.	.		Holdings Note	Duke	
+852	.	.	.		Holdings Note	NCCU	
+852	.	.	.		Holdings Note	NCSU	
+852	.	.	.		Holdings Note	UNC	
+856	.	[b012]	3=Finding aid	uyz3	Finding Aid URL	Duke	
+856	.	[b012]	3=Finding aid	uyz3	Finding Aid URL	NCCU	
+856	.	[b012]	3=Finding aid	uyz3	Finding Aid URL	NCSU	
+856	.	[b012]	3=Finding aid	uyz3	Finding Aid URL	UNC	
+856	.	[b01]	.	uyz3	Primary URL	Duke	
+856	.	[b01]	.	uyz3	Primary URL	NCCU	
+856	.	[b01]	.	uyz3	Primary URL	NCSU	
+856	.	[b01]	.	uyz3	Primary URL	UNC	
+856	.	[28]	.	uyz3	Secondary URL	Duke	
+856	.	[28]	.	uyz3	Secondary URL	NCCU	
+856	.	[28]	.	uyz3	Secondary URL	NCSU	
+856	.	[28]	.	uyz3	Secondary URL	UNC	
+907	.	.	.	a	UniqueId	UNC	
+506	.	.	.	abcdeu	Access Restrictions	NCCU	
