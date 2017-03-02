@@ -2,4 +2,5 @@
 ** mapping between simplified and traditional Chinese vernacular characters (at query time only)?
 ** presence of Thumbnail URL must drive display of custom/local "book cover image"
 * Field/element level / narrower issues
+** 100 -- can include $t (title data)
 ** 264 .0 -- only $c is core/required by RDA. Institutions should be aware that this field may contain only a date when choosing how to label this field. Examples: date only: UNCb7335865; full production statement: UNCb6573371
