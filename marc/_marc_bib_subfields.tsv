@@ -100,10 +100,10 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 031	MUSICAL INCIPITS INFORMATION	R	.	2	System code	NR	.
 031	MUSICAL INCIPITS INFORMATION	R	.	6	Linkage	NR	.
 031	MUSICAL INCIPITS INFORMATION	R	.	8	Field link and sequence number	R	.
-033	DATE/TIME AND PLACE OF AN EVENT	R	.	a	Postal registration number	NR	.
-033	DATE/TIME AND PLACE OF AN EVENT	R	.	b	Source (agency assigning number)	NR	.
-033	DATE/TIME AND PLACE OF AN EVENT	R	.	6	Linkage	NR	.
-033	DATE/TIME AND PLACE OF AN EVENT	R	.	8	Field link and sequence number	R	.
+032	POSTAL REGISTRATION NUMBER	R	.	a	Postal registration number	NR	.
+032	POSTAL REGISTRATION NUMBER	R	.	b	Source (agency assigning number)	NR	.
+032	POSTAL REGISTRATION NUMBER	R	.	6	Linkage	NR	.
+032	POSTAL REGISTRATION NUMBER	R	.	8	Field link and sequence number	R	.
 033	DATE/TIME AND PLACE OF AN EVENT	R	.	a	Formatted date/time	R	.
 033	DATE/TIME AND PLACE OF AN EVENT	R	.	b	Geographic classification area code	R	.
 033	DATE/TIME AND PLACE OF AN EVENT	R	.	c	Geographic classification subarea code	R	.
@@ -167,8 +167,8 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 040	CATALOGING SOURCE	NR	.	8	Field link and sequence number	R	.
 041	LANGUAGE CODE	R	.	a	Language code of text/sound track or separate title	R	.
 041	LANGUAGE CODE	R	.	b	Language code of summary or abstract	R	.
-041	LANGUAGE CODE	R	.	c	Languages of separate titles		[OBSOLETE]
-041	LANGUAGE CODE	R	.	c	languages of available translation		[OBSOLETE]
+041	LANGUAGE CODE	R	.	c	Languages of separate titles	.	[OBSOLETE]
+041	LANGUAGE CODE	R	.	c	languages of available translation	.	[OBSOLETE]
 041	LANGUAGE CODE	R	.	d	Language code of sung or spoken text	R	.
 041	LANGUAGE CODE	R	.	e	Language code of librettos	R	.
 041	LANGUAGE CODE	R	.	f	Language code of table of contents	R	.
@@ -225,7 +225,8 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 048	NUMBER OF MUSICAL INSTRUMENTS OR VOICES CODE	R	.	8	Field link and sequence number	R	.
 050	LIBRARY OF CONGRESS CALL NUMBER	R	.	a	Classification number	R	.
 050	LIBRARY OF CONGRESS CALL NUMBER	R	.	b	Item number	NR	.
-050	LIBRARY OF CONGRESS CALL NUMBER	R	.	d	Supplementary class number		[OBSOLETE]
+050	LIBRARY OF CONGRESS CALL NUMBER	R	.	d	Supplementary class number	.	[OBSOLETE]
+050	LIBRARY OF CONGRESS CALL NUMBER	R	.	0	Authority record control number or standard number	R	.
 050	LIBRARY OF CONGRESS CALL NUMBER	R	.	3	Materials specified	NR	.
 050	LIBRARY OF CONGRESS CALL NUMBER	R	.	6	Linkage	NR	.
 050	LIBRARY OF CONGRESS CALL NUMBER	R	.	8	Field link and sequence number	R	.
@@ -235,18 +236,21 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 051	LIBRARY OF CONGRESS COPY, ISSUE, OFFPRINT STATEMENT	R	.	8	Field link and sequence number	R	.
 052	GEOGRAPHIC CLASSIFICATION	R	.	a	Geographic classification area code	NR	.
 052	GEOGRAPHIC CLASSIFICATION	R	.	b	Geographic classification subarea code	R	.
-052	GEOGRAPHIC CLASSIFICATION	R	.	c	Subject		[OBSOLETE]
+052	GEOGRAPHIC CLASSIFICATION	R	.	c	Subject	.	[OBSOLETE]
 052	GEOGRAPHIC CLASSIFICATION	R	.	d	Populated place name	R	.
+052	GEOGRAPHIC CLASSIFICATION	R	.	0	Authority record control number or standard number	R	.
 052	GEOGRAPHIC CLASSIFICATION	R	.	2	Code source	NR	.
 052	GEOGRAPHIC CLASSIFICATION	R	.	6	Linkage	NR	.
 052	GEOGRAPHIC CLASSIFICATION	R	.	8	Field link and sequence number	R	.
 055	CLASSIFICATION NUMBERS ASSIGNED IN CANADA	R	.	a	Classification number	NR	.
 055	CLASSIFICATION NUMBERS ASSIGNED IN CANADA	R	.	b	Item number	NR	.
+055	CLASSIFICATION NUMBERS ASSIGNED IN CANADA	R	.	0	Authority record control number or standard number	R	.
 055	CLASSIFICATION NUMBERS ASSIGNED IN CANADA	R	.	2	Source of call/class number	NR	.
 055	CLASSIFICATION NUMBERS ASSIGNED IN CANADA	R	.	6	Linkage	NR	.
 055	CLASSIFICATION NUMBERS ASSIGNED IN CANADA	R	.	8	Field link and sequence number	R	.
 060	NATIONAL LIBRARY OF MEDICINE CALL NUMBER	R	.	a	Classification number	R	.
 060	NATIONAL LIBRARY OF MEDICINE CALL NUMBER	R	.	b	Item number	NR	.
+060	NATIONAL LIBRARY OF MEDICINE CALL NUMBER	R	.	0	Authority record control number or standard number	R	.
 060	NATIONAL LIBRARY OF MEDICINE CALL NUMBER	R	.	8	Field link and sequence number	R	.
 061	NATIONAL LIBRARY OF MEDICINE COPY STATEMENT	R	.	a	Classification number	R	.
 061	NATIONAL LIBRARY OF MEDICINE COPY STATEMENT	R	.	b	Item number	NR	.
@@ -257,6 +261,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 066	CHARACTER SETS PRESENT	NR	.	c	Alternate G0 or G1 character set	R	.
 070	NATIONAL AGRICULTURAL LIBRARY CALL NUMBER	R	.	a	Classification number	R	.
 070	NATIONAL AGRICULTURAL LIBRARY CALL NUMBER	R	.	b	Item number	NR	.
+070	NATIONAL AGRICULTURAL LIBRARY CALL NUMBER	R	.	0	Authority record control number or standard number	R	.
 070	NATIONAL AGRICULTURAL LIBRARY CALL NUMBER	R	.	8	Field link and sequence number	R	.
 071	NATIONAL AGRICULTURAL LIBRARY COPY STATEMENT	R	.	a	Classification number	R	.
 071	NATIONAL AGRICULTURAL LIBRARY COPY STATEMENT	R	.	b	Item number	NR	.
@@ -273,12 +278,13 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 080	UNIVERSAL DECIMAL CLASSIFICATION NUMBER	R	.	a	Universal Decimal Classification number	NR	.
 080	UNIVERSAL DECIMAL CLASSIFICATION NUMBER	R	.	b	Item number	NR	.
 080	UNIVERSAL DECIMAL CLASSIFICATION NUMBER	R	.	x	Common auxiliary subdivision	R	.
+080	UNIVERSAL DECIMAL CLASSIFICATION NUMBER	R	.	0	Authority record control number or standard number	R	.
 080	UNIVERSAL DECIMAL CLASSIFICATION NUMBER	R	.	2	Edition identifier	NR	.
 080	UNIVERSAL DECIMAL CLASSIFICATION NUMBER	R	.	6	Linkage	NR	.
 080	UNIVERSAL DECIMAL CLASSIFICATION NUMBER	R	.	8	Field link and sequence number	R	.
 082	DEWEY DECIMAL CLASSIFICATION NUMBER	R	.	a	Classification number	R	.
 082	DEWEY DECIMAL CLASSIFICATION NUMBER	R	.	b	Item number	NR	.
-082	DEWEY DECIMAL CLASSIFICATION NUMBER	R	.	b	DDC number--abridged NST version		[OBSOLETE]
+082	DEWEY DECIMAL CLASSIFICATION NUMBER	R	.	b	DDC number--abridged NST version	.	[OBSOLETE]
 082	DEWEY DECIMAL CLASSIFICATION NUMBER	R	.	m	Standard or optional designation	NR	.
 082	DEWEY DECIMAL CLASSIFICATION NUMBER	R	.	q	Assigning agency	NR	.
 082	DEWEY DECIMAL CLASSIFICATION NUMBER	R	.	2	Edition number	NR	.
@@ -293,12 +299,13 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 083	ADDITIONAL DEWEY DECIMAL CLASSIFICATION NUMBER	R	.	2	Edition number	NR	.
 083	ADDITIONAL DEWEY DECIMAL CLASSIFICATION NUMBER	R	.	6	Linkage	NR	.
 083	ADDITIONAL DEWEY DECIMAL CLASSIFICATION NUMBER	R	.	8	Field link and sequence number	R	.
-085	SYNTHESIZED CLASSIFICATION NUMBER COMPONENTS	R	.	a	Classification number	R	.
-085	SYNTHESIZED CLASSIFICATION NUMBER COMPONENTS	R	.	b	Item number	NR	.
-085	SYNTHESIZED CLASSIFICATION NUMBER COMPONENTS	R	.	q	Assigning agency	NR	.
-085	SYNTHESIZED CLASSIFICATION NUMBER COMPONENTS	R	.	2	Source of number	NR	.
-085	SYNTHESIZED CLASSIFICATION NUMBER COMPONENTS	R	.	6	Linkage	NR	.
-085	SYNTHESIZED CLASSIFICATION NUMBER COMPONENTS	R	.	8	Field link and sequence number	R	.
+084	OTHER CLASSIFICATION NUMBER	R	.	a	Classification number	R	.
+084	OTHER CLASSIFICATION NUMBER	R	.	b	Item number	NR	.
+084	OTHER CLASSIFICATION NUMBER	R	.	q	Assigning agency	NR	.
+084	OTHER CLASSIFICATION NUMBER	R	.	0	Authority record control number or standard number	R	.
+084	OTHER CLASSIFICATION NUMBER	R	.	2	Source of number	NR	.
+084	OTHER CLASSIFICATION NUMBER	R	.	6	Linkage	NR	.
+084	OTHER CLASSIFICATION NUMBER	R	.	8	Field link and sequence number	R	.
 085	SYNTHESIZED CLASSIFICATION NUMBER COMPONENTS	R	.	a	Number where instructions are found-single number or beginning number of span	R	.
 085	SYNTHESIZED CLASSIFICATION NUMBER COMPONENTS	R	.	b	Base number	R	.
 085	SYNTHESIZED CLASSIFICATION NUMBER COMPONENTS	R	.	c	Classification number-ending number of span	R	.
@@ -311,10 +318,12 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 085	SYNTHESIZED CLASSIFICATION NUMBER COMPONENTS	R	.	w	Table identification-Internal subarrangement or add table	R	.
 085	SYNTHESIZED CLASSIFICATION NUMBER COMPONENTS	R	.	y	Table sequence number for internal subarrangement or add table	R	.
 085	SYNTHESIZED CLASSIFICATION NUMBER COMPONENTS	R	.	z	Table identification	R	.
+085	SYNTHESIZED CLASSIFICATION NUMBER COMPONENTS	R	.	0	Authority record control number or standard number	R	.
 085	SYNTHESIZED CLASSIFICATION NUMBER COMPONENTS	R	.	6	Linkage	NR	.
 085	SYNTHESIZED CLASSIFICATION NUMBER COMPONENTS	R	.	8	Field link and sequence number	R	.
 086	GOVERNMENT DOCUMENT CLASSIFICATION NUMBER	R	.	a	Classification number	NR	.
 086	GOVERNMENT DOCUMENT CLASSIFICATION NUMBER	R	.	z	Canceled/invalid classification number	R	.
+086	GOVERNMENT DOCUMENT CLASSIFICATION NUMBER	R	.	0	Authority record control number or standard number	R	.
 086	GOVERNMENT DOCUMENT CLASSIFICATION NUMBER	R	.	2	Number source	NR	.
 086	GOVERNMENT DOCUMENT CLASSIFICATION NUMBER	R	.	6	Linkage	NR	.
 086	GOVERNMENT DOCUMENT CLASSIFICATION NUMBER	R	.	8	Field link and sequence number	R	.
@@ -322,10 +331,10 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 088	REPORT NUMBER	R	.	z	Canceled/invalid report number	R	.
 088	REPORT NUMBER	R	.	6	Linkage	NR	.
 088	REPORT NUMBER	R	.	8	Field link and sequence number	R	.
-090	LOCAL CALL NUMBER		[OBSOLETE]	a	Local class number	NR	.
-090	LOCAL CALL NUMBER		[OBSOLETE]	b	Local Cutter number	NR	.
-090	SHELF LOCATION		[OBSOLETE]	a	Shelf location	NR	.
-091	MICROFILM SHELF LOCATION		[OBSOLETE]	a	Microfilm shelf location	NR	.
+090	LOCAL CALL NUMBER	.	[OBSOLETE]	a	Local class number	NR	.
+090	LOCAL CALL NUMBER	.	[OBSOLETE]	b	Local Cutter number	NR	.
+090	SHELF LOCATION	.	[OBSOLETE]	a	Shelf location	NR	.
+091	MICROFILM SHELF LOCATION	.	[OBSOLETE]	a	Microfilm shelf location	NR	.
 100	MAIN ENTRY--PERSONAL NAME	NR	.	a	Personal name	NR	.
 100	MAIN ENTRY--PERSONAL NAME	NR	.	b	Numeration	NR	.
 100	MAIN ENTRY--PERSONAL NAME	NR	.	c	Titles and other words associated with a name	R	.
@@ -342,7 +351,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 100	MAIN ENTRY--PERSONAL NAME	NR	.	t	Title of a work	NR	.
 100	MAIN ENTRY--PERSONAL NAME	NR	.	u	Affiliation	NR	.
 100	MAIN ENTRY--PERSONAL NAME	NR	.	0	Authority record control number or standard number	R	.
-100	MAIN ENTRY--PERSONAL NAME	NR	.	4	Relator code	R	.
+100	MAIN ENTRY--PERSONAL NAME	NR	.	4	Relationship	R	.
 100	MAIN ENTRY--PERSONAL NAME	NR	.	6	Linkage	NR	.
 100	MAIN ENTRY--PERSONAL NAME	NR	.	8	Field link and sequence number	R	.
 110	MAIN ENTRY--CORPORATE NAME	NR	.	a	Corporate name or jurisdiction name as entry element	NR	.
@@ -359,11 +368,11 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 110	MAIN ENTRY--CORPORATE NAME	NR	.	t	Title of a work	NR	.
 110	MAIN ENTRY--CORPORATE NAME	NR	.	u	Affiliation	NR	.
 110	MAIN ENTRY--CORPORATE NAME	NR	.	0	Authority record control number or standard number	R	.
-110	MAIN ENTRY--CORPORATE NAME	NR	.	4	Relator code	R	.
+110	MAIN ENTRY--CORPORATE NAME	NR	.	4	Relationship	R	.
 110	MAIN ENTRY--CORPORATE NAME	NR	.	6	Linkage	NR	.
 110	MAIN ENTRY--CORPORATE NAME	NR	.	8	Field link and sequence number	R	.
 111	MAIN ENTRY--MEETING NAME	NR	.	a	Meeting name or jurisdiction name as entry element	NR	.
-111	MAIN ENTRY--MEETING NAME	NR	.	b	Number		[OBSOLETE]
+111	MAIN ENTRY--MEETING NAME	NR	.	b	Number	.	[OBSOLETE]
 111	MAIN ENTRY--MEETING NAME	NR	.	c	Location of meeting	R	.
 111	MAIN ENTRY--MEETING NAME	NR	.	d	Date of meeting	NR	.
 111	MAIN ENTRY--MEETING NAME	NR	.	e	Subordinate unit	R	.
@@ -378,7 +387,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 111	MAIN ENTRY--MEETING NAME	NR	.	t	Title of a work	NR	.
 111	MAIN ENTRY--MEETING NAME	NR	.	u	Affiliation	NR	.
 111	MAIN ENTRY--MEETING NAME	NR	.	0	Authority record control number or standard number	R	.
-111	MAIN ENTRY--MEETING NAME	NR	.	4	Relator code	R	.
+111	MAIN ENTRY--MEETING NAME	NR	.	4	Relationship	R	.
 111	MAIN ENTRY--MEETING NAME	NR	.	6	Linkage	NR	.
 111	MAIN ENTRY--MEETING NAME	NR	.	8	Field link and sequence number	R	.
 130	MAIN ENTRY--UNIFORM TITLE	NR	.	a	Uniform title	NR	.
@@ -434,8 +443,8 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 242	TRANSLATION OF TITLE BY CATALOGING AGENCY	R	.	a	Title	NR	.
 242	TRANSLATION OF TITLE BY CATALOGING AGENCY	R	.	b	Remainder of title	NR	.
 242	TRANSLATION OF TITLE BY CATALOGING AGENCY	R	.	c	Statement of responsibility, etc.	NR	.
-242	TRANSLATION OF TITLE BY CATALOGING AGENCY	R	.	d	Designation of section		[OBSOLETE]
-242	TRANSLATION OF TITLE BY CATALOGING AGENCY	R	.	e	Name of part/section		[OBSOLETE]
+242	TRANSLATION OF TITLE BY CATALOGING AGENCY	R	.	d	Designation of section	.	[OBSOLETE]
+242	TRANSLATION OF TITLE BY CATALOGING AGENCY	R	.	e	Name of part/section	.	[OBSOLETE]
 242	TRANSLATION OF TITLE BY CATALOGING AGENCY	R	.	h	Medium	NR	.
 242	TRANSLATION OF TITLE BY CATALOGING AGENCY	R	.	n	Number of part/section of a work	R	.
 242	TRANSLATION OF TITLE BY CATALOGING AGENCY	R	.	p	Name of part/section of a work	R	.
@@ -460,8 +469,8 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 245	TITLE STATEMENT	NR	.	a	Title	NR	.
 245	TITLE STATEMENT	NR	.	b	Remainder of title	NR	.
 245	TITLE STATEMENT	NR	.	c	Statement of responsibility, etc.	NR	.
-245	TITLE STATEMENT	NR	.	d	Designation of section		[OBSOLETE]
-245	TITLE STATEMENT	NR	.	e	Name of part/section		[OBSOLETE]
+245	TITLE STATEMENT	NR	.	d	Designation of section	.	[OBSOLETE]
+245	TITLE STATEMENT	NR	.	e	Name of part/section	.	[OBSOLETE]
 245	TITLE STATEMENT	NR	.	f	Inclusive dates	NR	.
 245	TITLE STATEMENT	NR	.	g	Bulk dates	NR	.
 245	TITLE STATEMENT	NR	.	h	Medium	NR	.
@@ -473,8 +482,8 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 245	TITLE STATEMENT	NR	.	8	Field link and sequence number	R	.
 246	VARYING FORM OF TITLE	R	.	a	Title proper/short title	NR	.
 246	VARYING FORM OF TITLE	R	.	b	Remainder of title	NR	.
-246	VARYING FORM OF TITLE	R	.	d	Designation of section		[OBSOLETE]
-246	VARYING FORM OF TITLE	R	.	e	Name of part/section		[OBSOLETE]
+246	VARYING FORM OF TITLE	R	.	d	Designation of section	.	[OBSOLETE]
+246	VARYING FORM OF TITLE	R	.	e	Name of part/section	.	[OBSOLETE]
 246	VARYING FORM OF TITLE	R	.	f	Date or sequential designation	NR	.
 246	VARYING FORM OF TITLE	R	.	g	Miscellaneous information	R	.
 246	VARYING FORM OF TITLE	R	.	h	Medium	NR	.
@@ -486,8 +495,8 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 246	VARYING FORM OF TITLE	R	.	8	Field link and sequence number	R	.
 247	FORMER TITLE	R	.	a	Title	NR	.
 247	FORMER TITLE	R	.	b	Remainder of title	NR	.
-247	FORMER TITLE	R	.	d	Designation of section		[OBSOLETE]
-247	FORMER TITLE	R	.	e	Name of part/section		[OBSOLETE]
+247	FORMER TITLE	R	.	d	Designation of section	.	[OBSOLETE]
+247	FORMER TITLE	R	.	e	Name of part/section	.	[OBSOLETE]
 247	FORMER TITLE	R	.	f	Date or sequential designation	NR	.
 247	FORMER TITLE	R	.	g	Miscellaneous information	R	.
 247	FORMER TITLE	R	.	h	Medium	NR	.
@@ -525,16 +534,16 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 258	PHILATELIC ISSUE DATE	R	.	b	Denomination	NR	.
 258	PHILATELIC ISSUE DATE	R	.	6	Linkage	NR	.
 258	PHILATELIC ISSUE DATE	R	.	8	Field link and sequence number	R	.
-261	IMPRINT STATEMENT FOR FILMS	NR	[LOCAL]	a	Place of publication, distribution, etc.	R	.
-261	IMPRINT STATEMENT FOR FILMS	NR	[LOCAL]	b	Name of publisher, distributor, etc.	R	.
-261	IMPRINT STATEMENT FOR FILMS	NR	[LOCAL]	c	Date of publication, distribution, etc.	R	.
-261	IMPRINT STATEMENT FOR FILMS	NR	[LOCAL]	d	Plate or publisher's number for music (Pre-AACR 2)	NR	[LOCAL]
-261	IMPRINT STATEMENT FOR FILMS	NR	[LOCAL]	e	Place of manufacture	R	.
-261	IMPRINT STATEMENT FOR FILMS	NR	[LOCAL]	f	Manufacturer	R	.
-261	IMPRINT STATEMENT FOR FILMS	NR	[LOCAL]	g	Date of manufacture	R	.
-261	IMPRINT STATEMENT FOR FILMS	NR	[LOCAL]	3	Materials specified	NR	.
-261	IMPRINT STATEMENT FOR FILMS	NR	[LOCAL]	6	Linkage	NR	.
-261	IMPRINT STATEMENT FOR FILMS	NR	[LOCAL]	8	Field link and sequence number	R	.
+260	PUBLICATION, DISTRIBUTION, ETC.	R	.	a	Place of publication, distribution, etc.	R	.
+260	PUBLICATION, DISTRIBUTION, ETC.	R	.	b	Name of publisher, distributor, etc.	R	.
+260	PUBLICATION, DISTRIBUTION, ETC.	R	.	c	Date of publication, distribution, etc.	R	.
+260	PUBLICATION, DISTRIBUTION, ETC.	R	.	d	Plate or publisher's number for music (Pre-AACR 2)	NR	[LOCAL]
+260	PUBLICATION, DISTRIBUTION, ETC.	R	.	e	Place of manufacture	R	.
+260	PUBLICATION, DISTRIBUTION, ETC.	R	.	f	Manufacturer	R	.
+260	PUBLICATION, DISTRIBUTION, ETC.	R	.	g	Date of manufacture	R	.
+260	PUBLICATION, DISTRIBUTION, ETC.	R	.	3	Materials specified	NR	.
+260	PUBLICATION, DISTRIBUTION, ETC.	R	.	6	Linkage	NR	.
+260	PUBLICATION, DISTRIBUTION, ETC.	R	.	8	Field link and sequence number	R	.
 261	IMPRINT STATEMENT FOR FILMS	NR	[LOCAL]	a	Producing company	R	.
 261	IMPRINT STATEMENT FOR FILMS	NR	[LOCAL]	b	Releasing company (primary distributor)	R	.
 261	IMPRINT STATEMENT FOR FILMS	NR	[LOCAL]	d	Date of production, release, etc.	R	.
@@ -549,9 +558,9 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 262	IMPRINT STATEMENT FOR SOUND RECORDINGS	NR	[LOCAL]	l	Matrix and/or take number	NR	.
 262	IMPRINT STATEMENT FOR SOUND RECORDINGS	NR	[LOCAL]	6	Linkage	NR	.
 262	IMPRINT STATEMENT FOR SOUND RECORDINGS	NR	[LOCAL]	8	Field link and sequence number	R	.
-264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	a	Projected publication date	NR	.
-264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	6	Linkage	NR	.
-264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	8	Field link and sequence number	R	.
+263	PROJECTED PUBLICATION DATE	NR	.	a	Projected publication date	NR	.
+263	PROJECTED PUBLICATION DATE	NR	.	6	Linkage	NR	.
+263	PROJECTED PUBLICATION DATE	NR	.	8	Field link and sequence number	R	.
 264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	a	Place of production, publication, distribution, manufacture	R	.
 264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	b	Name of producer, publisher, distributor, manufacturer	R	.
 264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	c	Date of production, publication, distribution, manufacture, or copyright notice	R	.
@@ -578,7 +587,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 270	ADDRESS	R	.	q	Title of contact person	R	.
 270	ADDRESS	R	.	r	Hours	R	.
 270	ADDRESS	R	.	z	Public note	R	.
-270	ADDRESS	R	.	4	Relator code	R	.
+270	ADDRESS	R	.	4	Relationship	R	.
 270	ADDRESS	R	.	6	Linkage	NR	.
 270	ADDRESS	R	.	8	Field link and sequence number	R	.
 300	PHYSICAL DESCRIPTION	R	.	a	Extent	R	.
@@ -590,24 +599,24 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 300	PHYSICAL DESCRIPTION	R	.	3	Materials specified	NR	.
 300	PHYSICAL DESCRIPTION	R	.	6	Linkage	NR	.
 300	PHYSICAL DESCRIPTION	R	.	8	Field link and sequence number	R	.
-301	PHYSICAL DESCRIPTION FOR FILMS		[OBSOLETE]	a	Extent of item	NR	.
-301	PHYSICAL DESCRIPTION FOR FILMS		[OBSOLETE]	b	Sound characteristics	NR	.
-301	PHYSICAL DESCRIPTION FOR FILMS		[OBSOLETE]	c	Color characteristics	NR	.
-301	PHYSICAL DESCRIPTION FOR FILMS		[OBSOLETE]	d	Dimensions	NR	.
-301	PHYSICAL DESCRIPTION FOR FILMS		[OBSOLETE]	e	Accompanying material	NR	.
-301	PHYSICAL DESCRIPTION FOR FILMS		[OBSOLETE]	f	Speed	NR	.
-302	PAGE OR ITEM COUNT		[OBSOLETE]	a	Page count	NR	.
-303	UNIT COUNT		[OBSOLETE]	a	Unit count	NR	.
-304	LINEAR FOOTAGE		[OBSOLETE]	a	Linear footage	NR	.
-305	PHYSICAL DESCRIPTION FOR SOUND RECORDINGS		[OBSOLETE]	a	Extent	NR	.
-305	PHYSICAL DESCRIPTION FOR SOUND RECORDINGS		[OBSOLETE]	b	Other physical details	NR	.
-305	PHYSICAL DESCRIPTION FOR SOUND RECORDINGS		[OBSOLETE]	c	Dimensions	NR	.
-305	PHYSICAL DESCRIPTION FOR SOUND RECORDINGS		[OBSOLETE]	d	Microgroove or standard	NR	.
-305	PHYSICAL DESCRIPTION FOR SOUND RECORDINGS		[OBSOLETE]	e	Stereophonic, monaural	NR	.
-305	PHYSICAL DESCRIPTION FOR SOUND RECORDINGS		[OBSOLETE]	f	Number of tracks	NR	.
-305	PHYSICAL DESCRIPTION FOR SOUND RECORDINGS		[OBSOLETE]	m	Serial identification	NR	.
-305	PHYSICAL DESCRIPTION FOR SOUND RECORDINGS		[OBSOLETE]	n	Matrix and/or take number	NR	.
-305	PHYSICAL DESCRIPTION FOR SOUND RECORDINGS		[OBSOLETE]	6	Linkage	NR	.
+301	PHYSICAL DESCRIPTION FOR FILMS	.	[OBSOLETE]	a	Extent of item	NR	.
+301	PHYSICAL DESCRIPTION FOR FILMS	.	[OBSOLETE]	b	Sound characteristics	NR	.
+301	PHYSICAL DESCRIPTION FOR FILMS	.	[OBSOLETE]	c	Color characteristics	NR	.
+301	PHYSICAL DESCRIPTION FOR FILMS	.	[OBSOLETE]	d	Dimensions	NR	.
+301	PHYSICAL DESCRIPTION FOR FILMS	.	[OBSOLETE]	e	Accompanying material	NR	.
+301	PHYSICAL DESCRIPTION FOR FILMS	.	[OBSOLETE]	f	Speed	NR	.
+302	PAGE OR ITEM COUNT	.	[OBSOLETE]	a	Page count	NR	.
+303	UNIT COUNT	.	[OBSOLETE]	a	Unit count	NR	.
+304	LINEAR FOOTAGE	.	[OBSOLETE]	a	Linear footage	NR	.
+305	PHYSICAL DESCRIPTION FOR SOUND RECORDINGS	.	[OBSOLETE]	a	Extent	NR	.
+305	PHYSICAL DESCRIPTION FOR SOUND RECORDINGS	.	[OBSOLETE]	b	Other physical details	NR	.
+305	PHYSICAL DESCRIPTION FOR SOUND RECORDINGS	.	[OBSOLETE]	c	Dimensions	NR	.
+305	PHYSICAL DESCRIPTION FOR SOUND RECORDINGS	.	[OBSOLETE]	d	Microgroove or standard	NR	.
+305	PHYSICAL DESCRIPTION FOR SOUND RECORDINGS	.	[OBSOLETE]	e	Stereophonic, monaural	NR	.
+305	PHYSICAL DESCRIPTION FOR SOUND RECORDINGS	.	[OBSOLETE]	f	Number of tracks	NR	.
+305	PHYSICAL DESCRIPTION FOR SOUND RECORDINGS	.	[OBSOLETE]	m	Serial identification	NR	.
+305	PHYSICAL DESCRIPTION FOR SOUND RECORDINGS	.	[OBSOLETE]	n	Matrix and/or take number	NR	.
+305	PHYSICAL DESCRIPTION FOR SOUND RECORDINGS	.	[OBSOLETE]	6	Linkage	NR	.
 306	PLAYING TIME	NR	.	a	Playing time	R	.
 306	PLAYING TIME	NR	.	6	Linkage	NR	.
 306	PLAYING TIME	NR	.	8	Field link and sequence number	R	.
@@ -615,13 +624,13 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 307	HOURS, ETC.	R	.	b	Additional information	NR	.
 307	HOURS, ETC.	R	.	6	Linkage	NR	.
 307	HOURS, ETC.	R	.	8	Field link and sequence number	R	.
-308	PHYSICAL DESCRIPTION FOR FILMS		[OBSOLETE]	a	Number of reels	NR	.
-308	PHYSICAL DESCRIPTION FOR FILMS		[OBSOLETE]	b	Footage	NR	.
-308	PHYSICAL DESCRIPTION FOR FILMS		[OBSOLETE]	c	Sound characteristics	NR	.
-308	PHYSICAL DESCRIPTION FOR FILMS		[OBSOLETE]	d	Color characteristics	NR	.
-308	PHYSICAL DESCRIPTION FOR FILMS		[OBSOLETE]	e	Width	NR	.
-308	PHYSICAL DESCRIPTION FOR FILMS		[OBSOLETE]	f	Presentation format	NR	.
-308	PHYSICAL DESCRIPTION FOR FILMS		[OBSOLETE]	6	Linkage	NR	.
+308	PHYSICAL DESCRIPTION FOR FILMS	.	[OBSOLETE]	a	Number of reels	NR	.
+308	PHYSICAL DESCRIPTION FOR FILMS	.	[OBSOLETE]	b	Footage	NR	.
+308	PHYSICAL DESCRIPTION FOR FILMS	.	[OBSOLETE]	c	Sound characteristics	NR	.
+308	PHYSICAL DESCRIPTION FOR FILMS	.	[OBSOLETE]	d	Color characteristics	NR	.
+308	PHYSICAL DESCRIPTION FOR FILMS	.	[OBSOLETE]	e	Width	NR	.
+308	PHYSICAL DESCRIPTION FOR FILMS	.	[OBSOLETE]	f	Presentation format	NR	.
+308	PHYSICAL DESCRIPTION FOR FILMS	.	[OBSOLETE]	6	Linkage	NR	.
 310	CURRENT PUBLICATION FREQUENCY	NR	.	a	Current publication frequency	NR	.
 310	CURRENT PUBLICATION FREQUENCY	NR	.	b	Date of current publication frequency	NR	.
 310	CURRENT PUBLICATION FREQUENCY	NR	.	6	Linkage	NR	.
@@ -629,37 +638,38 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 315	FREQUENCY	NR	[OBSOLETE]	a	Frequency	R	.
 315	FREQUENCY	NR	[OBSOLETE]	b	Dates of frequency	R	.
 315	FREQUENCY	NR	[OBSOLETE]	6	Linkage	NR	.
-340	PHYSICAL MEDIUM	R	.	a	Former publication frequency	NR	.
-340	PHYSICAL MEDIUM	R	.	b	Dates of former publication frequency	NR	.
-340	PHYSICAL MEDIUM	R	.	6	Linkage	NR	.
-340	PHYSICAL MEDIUM	R	.	8	Field link and sequence number	R	.
-340	PHYSICAL MEDIUM	R	.	a	Content type term	R	.
-340	PHYSICAL MEDIUM	R	.	b	Content type code	R	.
-340	PHYSICAL MEDIUM	R	.	0	Authority record control number or standard number	R	.
-340	PHYSICAL MEDIUM	R	.	2	Source	NR	.
-340	PHYSICAL MEDIUM	R	.	3	Materials specified	NR	.
-340	PHYSICAL MEDIUM	R	.	6	Linkage	NR	.
-340	PHYSICAL MEDIUM	R	.	8	Field link and sequence number	R	.
-340	PHYSICAL MEDIUM	R	.	a	Media type term	R	.
-340	PHYSICAL MEDIUM	R	.	b	Media type code	R	.
-340	PHYSICAL MEDIUM	R	.	0	Authority record control number or standard number	R	.
-340	PHYSICAL MEDIUM	R	.	2	Source	NR	.
-340	PHYSICAL MEDIUM	R	.	3	Materials specified	NR	.
-340	PHYSICAL MEDIUM	R	.	6	Linkage	NR	.
-340	PHYSICAL MEDIUM	R	.	8	Field link and sequence number	R	.
-340	PHYSICAL MEDIUM	R	.	a	Carrier type term	R	.
-340	PHYSICAL MEDIUM	R	.	b	Carrier type code	R	.
-340	PHYSICAL MEDIUM	R	.	0	Authority record control number or standard number	R	.
-340	PHYSICAL MEDIUM	R	.	2	Source	NR	.
-340	PHYSICAL MEDIUM	R	.	3	Materials specified	NR	.
-340	PHYSICAL MEDIUM	R	.	6	Linkage	NR	.
-340	PHYSICAL MEDIUM	R	.	8	Field link and sequence number	R	.
+321	FORMER PUBLICATION FREQUENCY	R	.	a	Former publication frequency	NR	.
+321	FORMER PUBLICATION FREQUENCY	R	.	b	Dates of former publication frequency	NR	.
+321	FORMER PUBLICATION FREQUENCY	R	.	6	Linkage	NR	.
+321	FORMER PUBLICATION FREQUENCY	R	.	8	Field link and sequence number	R	.
+336	CONTENT TYPE	R	.	a	Content type term	R	.
+336	CONTENT TYPE	R	.	b	Content type code	R	.
+336	CONTENT TYPE	R	.	0	Authority record control number or standard number	R	.
+336	CONTENT TYPE	R	.	2	Source	NR	.
+336	CONTENT TYPE	R	.	3	Materials specified	NR	.
+336	CONTENT TYPE	R	.	6	Linkage	NR	.
+336	CONTENT TYPE	R	.	8	Field link and sequence number	R	.
+337	MEDIA TYPE	R	.	a	Media type term	R	.
+337	MEDIA TYPE	R	.	b	Media type code	R	.
+337	MEDIA TYPE	R	.	0	Authority record control number or standard number	R	.
+337	MEDIA TYPE	R	.	2	Source	NR	.
+337	MEDIA TYPE	R	.	3	Materials specified	NR	.
+337	MEDIA TYPE	R	.	6	Linkage	NR	.
+337	MEDIA TYPE	R	.	8	Field link and sequence number	R	.
+338	CARRIER TYPE	R	.	a	Carrier type term	R	.
+338	CARRIER TYPE	R	.	b	Carrier type code	R	.
+338	CARRIER TYPE	R	.	0	Authority record control number or standard number	R	.
+338	CARRIER TYPE	R	.	2	Source	NR	.
+338	CARRIER TYPE	R	.	3	Materials specified	NR	.
+338	CARRIER TYPE	R	.	6	Linkage	NR	.
+338	CARRIER TYPE	R	.	8	Field link and sequence number	R	.
 340	PHYSICAL MEDIUM	R	.	a	Material base and configuration	R	.
 340	PHYSICAL MEDIUM	R	.	b	Dimensions	R	.
 340	PHYSICAL MEDIUM	R	.	c	Materials applied to surface	R	.
 340	PHYSICAL MEDIUM	R	.	d	Information recording technique	R	.
 340	PHYSICAL MEDIUM	R	.	e	Support	R	.
 340	PHYSICAL MEDIUM	R	.	f	Production rate/ratio	R	.
+340	PHYSICAL MEDIUM	R	.	g	Color content	R	.
 340	PHYSICAL MEDIUM	R	.	h	Location within medium	R	.
 340	PHYSICAL MEDIUM	R	.	i	Technical specifications of medium	R	.
 340	PHYSICAL MEDIUM	R	.	j	Generation	R	.
@@ -698,17 +708,17 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 342	GEOSPATIAL REFERENCE DATA	R	.	2	Reference method used	NR	.
 342	GEOSPATIAL REFERENCE DATA	R	.	6	Linkage	NR	.
 342	GEOSPATIAL REFERENCE DATA	R	.	8	Field link and sequence number	R	.
-344	SOUND CHARACTERISTICS	R	.	a	Planar coordinate encoding method	NR	.
-344	SOUND CHARACTERISTICS	R	.	b	Planar distance units	NR	.
-344	SOUND CHARACTERISTICS	R	.	c	Abscissa resolution	NR	.
-344	SOUND CHARACTERISTICS	R	.	d	Ordinate resolution	NR	.
-344	SOUND CHARACTERISTICS	R	.	e	Distance resolution	NR	.
-344	SOUND CHARACTERISTICS	R	.	f	Bearing resolution	NR	.
-344	SOUND CHARACTERISTICS	R	.	g	Bearing units	NR	.
-344	SOUND CHARACTERISTICS	R	.	h	Bearing reference direction	NR	.
-344	SOUND CHARACTERISTICS	R	.	i	Bearing reference meridian	NR	.
-344	SOUND CHARACTERISTICS	R	.	6	Linkage	NR	.
-344	SOUND CHARACTERISTICS	R	.	8	Field link and sequence number	R	.
+343	PLANAR COORDINATE DATA	R	.	a	Planar coordinate encoding method	NR	.
+343	PLANAR COORDINATE DATA	R	.	b	Planar distance units	NR	.
+343	PLANAR COORDINATE DATA	R	.	c	Abscissa resolution	NR	.
+343	PLANAR COORDINATE DATA	R	.	d	Ordinate resolution	NR	.
+343	PLANAR COORDINATE DATA	R	.	e	Distance resolution	NR	.
+343	PLANAR COORDINATE DATA	R	.	f	Bearing resolution	NR	.
+343	PLANAR COORDINATE DATA	R	.	g	Bearing units	NR	.
+343	PLANAR COORDINATE DATA	R	.	h	Bearing reference direction	NR	.
+343	PLANAR COORDINATE DATA	R	.	i	Bearing reference meridian	NR	.
+343	PLANAR COORDINATE DATA	R	.	6	Linkage	NR	.
+343	PLANAR COORDINATE DATA	R	.	8	Field link and sequence number	R	.
 344	SOUND CHARACTERISTICS	R	.	a	Type of recording	R	.
 344	SOUND CHARACTERISTICS	R	.	b	Recording medium	R	.
 344	SOUND CHARACTERISTICS	R	.	c	Playing speed	R	.
@@ -722,13 +732,13 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 344	SOUND CHARACTERISTICS	R	.	3	Materials specified	NR	.
 344	SOUND CHARACTERISTICS	R	.	6	Linkage	NR	.
 344	SOUND CHARACTERISTICS	R	.	8	Field link and sequence number	R	.
-346	VIDEO CHARACTERISTICS	R	.	a	Presentation format	R	.
-346	VIDEO CHARACTERISTICS	R	.	b	Projection speed	R	.
-346	VIDEO CHARACTERISTICS	R	.	0	Authority record control number or standard number	R	.
-346	VIDEO CHARACTERISTICS	R	.	2	Source	NR	.
-346	VIDEO CHARACTERISTICS	R	.	3	Materials specified	NR	.
-346	VIDEO CHARACTERISTICS	R	.	6	Linkage	NR	.
-346	VIDEO CHARACTERISTICS	R	.	8	Field link and sequence number	R	.
+345	PROJECTION CHARACTERISTICS OF MOVING IMAGE	R	.	a	Presentation format	R	.
+345	PROJECTION CHARACTERISTICS OF MOVING IMAGE	R	.	b	Projection speed	R	.
+345	PROJECTION CHARACTERISTICS OF MOVING IMAGE	R	.	0	Authority record control number or standard number	R	.
+345	PROJECTION CHARACTERISTICS OF MOVING IMAGE	R	.	2	Source	NR	.
+345	PROJECTION CHARACTERISTICS OF MOVING IMAGE	R	.	3	Materials specified	NR	.
+345	PROJECTION CHARACTERISTICS OF MOVING IMAGE	R	.	6	Linkage	NR	.
+345	PROJECTION CHARACTERISTICS OF MOVING IMAGE	R	.	8	Field link and sequence number	R	.
 346	VIDEO CHARACTERISTICS	R	.	a	Video format	R	.
 346	VIDEO CHARACTERISTICS	R	.	b	Broadcast standard	R	.
 346	VIDEO CHARACTERISTICS	R	.	0	Authority record control number or standard number	R	.
@@ -736,17 +746,17 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 346	VIDEO CHARACTERISTICS	R	.	3	Materials specified	NR	.
 346	VIDEO CHARACTERISTICS	R	.	6	Linkage	NR	.
 346	VIDEO CHARACTERISTICS	R	.	8	Field link and sequence number	R	.
-348	FORMAT OF NOTATED MUSIC	R	.	a	File type	R	.
-348	FORMAT OF NOTATED MUSIC	R	.	b	Encoding format	R	.
-348	FORMAT OF NOTATED MUSIC	R	.	c	File size	R	.
-348	FORMAT OF NOTATED MUSIC	R	.	d	Resolution	R	.
-348	FORMAT OF NOTATED MUSIC	R	.	e	Regional encoding	R	.
-348	FORMAT OF NOTATED MUSIC	R	.	f	Encoded bitrate	R	.
-348	FORMAT OF NOTATED MUSIC	R	.	0	Authority record control number or standard number	R	.
-348	FORMAT OF NOTATED MUSIC	R	.	2	Source	NR	.
-348	FORMAT OF NOTATED MUSIC	R	.	3	Materials specified	NR	.
-348	FORMAT OF NOTATED MUSIC	R	.	6	Linkage	NR	.
-348	FORMAT OF NOTATED MUSIC	R	.	8	Field link and sequence number	R	.
+347	DIGITAL FILE CHARACTERISTICS	R	.	a	File type	R	.
+347	DIGITAL FILE CHARACTERISTICS	R	.	b	Encoding format	R	.
+347	DIGITAL FILE CHARACTERISTICS	R	.	c	File size	R	.
+347	DIGITAL FILE CHARACTERISTICS	R	.	d	Resolution	R	.
+347	DIGITAL FILE CHARACTERISTICS	R	.	e	Regional encoding	R	.
+347	DIGITAL FILE CHARACTERISTICS	R	.	f	Encoded bitrate	R	.
+347	DIGITAL FILE CHARACTERISTICS	R	.	0	Authority record control number or standard number	R	.
+347	DIGITAL FILE CHARACTERISTICS	R	.	2	Source	NR	.
+347	DIGITAL FILE CHARACTERISTICS	R	.	3	Materials specified	NR	.
+347	DIGITAL FILE CHARACTERISTICS	R	.	6	Linkage	NR	.
+347	DIGITAL FILE CHARACTERISTICS	R	.	8	Field link and sequence number	R	.
 348	FORMAT OF NOTATED MUSIC	R	.	a	Format of notated music term	R	.
 348	FORMAT OF NOTATED MUSIC	R	.	b	Format of notated music code	R	.
 348	FORMAT OF NOTATED MUSIC	R	.	0	Authority record control number or standard number	R	.
@@ -791,7 +801,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 357	ORIGINATOR DISSEMINATION CONTROL	NR	.	g	Other restrictions	R	.
 357	ORIGINATOR DISSEMINATION CONTROL	NR	.	6	Linkage	NR	.
 357	ORIGINATOR DISSEMINATION CONTROL	NR	.	8	Field link and sequence number	R	.
-359	RENTAL PRICE		[OBSOLETE]	a	Rental price	NR	.
+359	RENTAL PRICE	.	[OBSOLETE]	a	Rental price	NR	.
 362	DATES OF PUBLICATION AND/OR SEQUENTIAL DESIGNATION	R	.	a	Dates of publication and/or sequential designation	NR	.
 362	DATES OF PUBLICATION AND/OR SEQUENTIAL DESIGNATION	R	.	z	Source of information	NR	.
 362	DATES OF PUBLICATION AND/OR SEQUENTIAL DESIGNATION	R	.	6	Linkage	NR	.
@@ -843,61 +853,64 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 366	TRADE AVAILABILITY INFORMATION	R	.	2	Source of availability status code	NR	.
 366	TRADE AVAILABILITY INFORMATION	R	.	6	Linkage	NR	.
 366	TRADE AVAILABILITY INFORMATION	R	.	8	Field link and sequence number	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	c	Associated country	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	f	Other associated place	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	g	Place of origin of work	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	s	Start period	NR	.
-385	AUDIENCE CHARACTERISTICS	R	.	t	End period	NR	.
-385	AUDIENCE CHARACTERISTICS	R	.	u	Uniform Resource Identifier	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	v	Source of information	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	0	Authority record control number or standard number	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	2	Source of term	NR	.
-385	AUDIENCE CHARACTERISTICS	R	.	6	Linkage	NR	.
-385	AUDIENCE CHARACTERISTICS	R	.	8	Field link and sequence number	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	a	Language code	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	l	Language term	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	0	Authority record control number or standard number	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	2	Source	NR	.
-385	AUDIENCE CHARACTERISTICS	R	.	6	Linkage	NR	.
-385	AUDIENCE CHARACTERISTICS	R	.	8	Field link and sequence number	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	a	Form of work	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	0	Record control number	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	2	Source of term	NR	.
-385	AUDIENCE CHARACTERISTICS	R	.	6	Linkage	NR	.
-385	AUDIENCE CHARACTERISTICS	R	.	8	Field link and sequence number	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	a	Other distinguishing characteristic	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	u	Uniform Resource Identifier	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	v	Source of information	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	0	Record control number	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	2	Source of term	NR	.
-385	AUDIENCE CHARACTERISTICS	R	.	6	Linkage	NR	.
-385	AUDIENCE CHARACTERISTICS	R	.	8	Field link and sequence number	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	a	Medium of performance	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	b	Soloist	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	d	Doubling instrument	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	e	Number of ensembles of the same type	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	n	Number of performers of the same medium	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	p	Alternative medium of performance	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	r	Total number of individuals performing alongside ensembles	NR	.
-385	AUDIENCE CHARACTERISTICS	R	.	s	Total number of performers	NR	.
-385	AUDIENCE CHARACTERISTICS	R	.	t	Total number of ensembles	NR	.
-385	AUDIENCE CHARACTERISTICS	R	.	v	Note	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	0	Record control number	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	2	Source of term	NR	.
-385	AUDIENCE CHARACTERISTICS	R	.	3	Materials specified	NR	.
-385	AUDIENCE CHARACTERISTICS	R	.	6	Linkage	NR	.
-385	AUDIENCE CHARACTERISTICS	R	.	8	Field link and sequence number	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	a	Serial number	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	b	Opus number	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	c	Thematic index number	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	d	Thematic index code	NR	.
-385	AUDIENCE CHARACTERISTICS	R	.	e	Publisher associated with opus number	NR	.
-385	AUDIENCE CHARACTERISTICS	R	.	2	Source	NR	.
-385	AUDIENCE CHARACTERISTICS	R	.	6	Linkage	NR	.
-385	AUDIENCE CHARACTERISTICS	R	.	8	Field link and sequence number	R	.
-385	AUDIENCE CHARACTERISTICS	R	.	a	Key	NR	.
-385	AUDIENCE CHARACTERISTICS	R	.	6	Linkage	NR	.
-385	AUDIENCE CHARACTERISTICS	R	.	8	Field link and sequence number	R	.
+370	ASSOCIATED PLACE	R	.	c	Associated country	R	.
+370	ASSOCIATED PLACE	R	.	f	Other associated place	R	.
+370	ASSOCIATED PLACE	R	.	g	Place of origin of work or expression	R	.
+370	ASSOCIATED PLACE	R	.	i		.	.
+370	ASSOCIATED PLACE	R	.	s	Start period	NR	.
+370	ASSOCIATED PLACE	R	.	t	End period	NR	.
+370	ASSOCIATED PLACE	R	.	u	Uniform Resource Identifier	R	.
+370	ASSOCIATED PLACE	R	.	v	Source of information	R	.
+370	ASSOCIATED PLACE	R	.	0	Authority record control number or standard number	R	.
+370	ASSOCIATED PLACE	R	.	2	Source of term	NR	.
+370	ASSOCIATED PLACE	R	.	3	Materials specified	NR	.
+370	ASSOCIATED PLACE	R	.	4	Relationship	R	.
+370	ASSOCIATED PLACE	R	.	6	Linkage	NR	.
+370	ASSOCIATED PLACE	R	.	8	Field link and sequence number	R	.
+377	ASSOCIATED LANGUAGE	R	.	a	Language code	R	.
+377	ASSOCIATED LANGUAGE	R	.	l	Language term	R	.
+377	ASSOCIATED LANGUAGE	R	.	0	Authority record control number or standard number	R	.
+377	ASSOCIATED LANGUAGE	R	.	2	Source	NR	.
+377	ASSOCIATED LANGUAGE	R	.	6	Linkage	NR	.
+377	ASSOCIATED LANGUAGE	R	.	8	Field link and sequence number	R	.
+380	FORM OF WORK	R	.	a	Form of work	R	.
+380	FORM OF WORK	R	.	0	Record control number	R	.
+380	FORM OF WORK	R	.	2	Source of term	NR	.
+380	FORM OF WORK	R	.	6	Linkage	NR	.
+380	FORM OF WORK	R	.	8	Field link and sequence number	R	.
+381	OTHER DISTINGUISHING CHARACTERISTICS OF WORK OR EXPRESSION	R	.	a	Other distinguishing characteristic	R	.
+381	OTHER DISTINGUISHING CHARACTERISTICS OF WORK OR EXPRESSION	R	.	u	Uniform Resource Identifier	R	.
+381	OTHER DISTINGUISHING CHARACTERISTICS OF WORK OR EXPRESSION	R	.	v	Source of information	R	.
+381	OTHER DISTINGUISHING CHARACTERISTICS OF WORK OR EXPRESSION	R	.	0	Record control number	R	.
+381	OTHER DISTINGUISHING CHARACTERISTICS OF WORK OR EXPRESSION	R	.	2	Source of term	NR	.
+381	OTHER DISTINGUISHING CHARACTERISTICS OF WORK OR EXPRESSION	R	.	6	Linkage	NR	.
+381	OTHER DISTINGUISHING CHARACTERISTICS OF WORK OR EXPRESSION	R	.	8	Field link and sequence number	R	.
+382	MEDIUM OF PERFORMANCE	R	.	a	Medium of performance	R	.
+382	MEDIUM OF PERFORMANCE	R	.	b	Soloist	R	.
+382	MEDIUM OF PERFORMANCE	R	.	d	Doubling instrument	R	.
+382	MEDIUM OF PERFORMANCE	R	.	e	Number of ensembles of the same type	R	.
+382	MEDIUM OF PERFORMANCE	R	.	n	Number of performers of the same medium	R	.
+382	MEDIUM OF PERFORMANCE	R	.	p	Alternative medium of performance	R	.
+382	MEDIUM OF PERFORMANCE	R	.	r	Total number of individuals performing alongside ensembles	NR	.
+382	MEDIUM OF PERFORMANCE	R	.	s	Total number of performers	NR	.
+382	MEDIUM OF PERFORMANCE	R	.	t	Total number of ensembles	NR	.
+382	MEDIUM OF PERFORMANCE	R	.	v	Note	R	.
+382	MEDIUM OF PERFORMANCE	R	.	0	Record control number	R	.
+382	MEDIUM OF PERFORMANCE	R	.	2	Source of term	NR	.
+382	MEDIUM OF PERFORMANCE	R	.	3	Materials specified	NR	.
+382	MEDIUM OF PERFORMANCE	R	.	6	Linkage	NR	.
+382	MEDIUM OF PERFORMANCE	R	.	8	Field link and sequence number	R	.
+383	NUMERIC DESIGNATION OF MUSICAL WORK	R	.	a	Serial number	R	.
+383	NUMERIC DESIGNATION OF MUSICAL WORK	R	.	b	Opus number	R	.
+383	NUMERIC DESIGNATION OF MUSICAL WORK	R	.	c	Thematic index number	R	.
+383	NUMERIC DESIGNATION OF MUSICAL WORK	R	.	d	Thematic index code	NR	.
+383	NUMERIC DESIGNATION OF MUSICAL WORK	R	.	e	Publisher associated with opus number	NR	.
+383	NUMERIC DESIGNATION OF MUSICAL WORK	R	.	2	Source	NR	.
+383	NUMERIC DESIGNATION OF MUSICAL WORK	R	.	6	Linkage	NR	.
+383	NUMERIC DESIGNATION OF MUSICAL WORK	R	.	8	Field link and sequence number	R	.
+384	KEY	NR	.	a	Key	NR	.
+384	KEY	NR	.	6	Linkage	NR	.
+384	KEY	NR	.	8	Field link and sequence number	R	.
 385	AUDIENCE CHARACTERISTICS	R	.	a	Audience term	R	.
 385	AUDIENCE CHARACTERISTICS	R	.	b	Audience code	R	.
 385	AUDIENCE CHARACTERISTICS	R	.	m	Demographic group term	NR	.
@@ -909,11 +922,13 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 385	AUDIENCE CHARACTERISTICS	R	.	8	Field link and sequence number	R	.
 386	CREATOR/CONTRIBUTOR CHARACTERISTICS	R	.	a	Creator/contributor term	R	.
 386	CREATOR/CONTRIBUTOR CHARACTERISTICS	R	.	b	Creator/contributor code	R	.
+386	CREATOR/CONTRIBUTOR CHARACTERISTICS	R	.	i	Relationship information	R	.
 386	CREATOR/CONTRIBUTOR CHARACTERISTICS	R	.	m	Demographic group term	NR	.
 386	CREATOR/CONTRIBUTOR CHARACTERISTICS	R	.	n	Demographic group code	NR	.
 386	CREATOR/CONTRIBUTOR CHARACTERISTICS	R	.	0	Authority record control number or standard number	R	.
 386	CREATOR/CONTRIBUTOR CHARACTERISTICS	R	.	2	Source	NR	.
 386	CREATOR/CONTRIBUTOR CHARACTERISTICS	R	.	3	Materials specified	NR	.
+386	CREATOR/CONTRIBUTOR CHARACTERISTICS	R	.	4	Relationship	R	.
 386	CREATOR/CONTRIBUTOR CHARACTERISTICS	R	.	6	Linkage	NR	.
 386	CREATOR/CONTRIBUTOR CHARACTERISTICS	R	.	8	Field link and sequence number	R	.
 388	TIME PERIOD OF CREATION	R	.	a	Time period of creation term	R	.
@@ -938,7 +953,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 400	SERIES STATEMENT/ADDED ENTRY--PERSONAL NAME 	R	[US-LOCAL]	u	Affiliation	NR	.
 400	SERIES STATEMENT/ADDED ENTRY--PERSONAL NAME 	R	[US-LOCAL]	v	Volume number/sequential designation 	NR	.
 400	SERIES STATEMENT/ADDED ENTRY--PERSONAL NAME 	R	[US-LOCAL]	x	International Standard Serial Number 	NR	.
-400	SERIES STATEMENT/ADDED ENTRY--PERSONAL NAME 	R	[US-LOCAL]	4	Relator code	R	.
+400	SERIES STATEMENT/ADDED ENTRY--PERSONAL NAME 	R	[US-LOCAL]	4	Relationship	R	.
 400	SERIES STATEMENT/ADDED ENTRY--PERSONAL NAME 	R	[US-LOCAL]	6	Linkage	NR	.
 400	SERIES STATEMENT/ADDED ENTRY--PERSONAL NAME 	R	[US-LOCAL]	8	Field link and sequence number 	R	.
 410	SERIES STATEMENT/ADDED ENTRY--CORPORATE NAME	R	[US-LOCAL]	a	Corporate name or jurisdiction name as entry element	NR	.
@@ -956,11 +971,11 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 410	SERIES STATEMENT/ADDED ENTRY--CORPORATE NAME	R	[US-LOCAL]	u	Affiliation	NR	.
 410	SERIES STATEMENT/ADDED ENTRY--CORPORATE NAME	R	[US-LOCAL]	v	Volume number/sequential designation 	NR	.
 410	SERIES STATEMENT/ADDED ENTRY--CORPORATE NAME	R	[US-LOCAL]	x	International Standard Serial Number	NR	.
-410	SERIES STATEMENT/ADDED ENTRY--CORPORATE NAME	R	[US-LOCAL]	4	Relator code	R	.
+410	SERIES STATEMENT/ADDED ENTRY--CORPORATE NAME	R	[US-LOCAL]	4	Relationship	R	.
 410	SERIES STATEMENT/ADDED ENTRY--CORPORATE NAME	R	[US-LOCAL]	6	Linkage	NR	.
 410	SERIES STATEMENT/ADDED ENTRY--CORPORATE NAME	R	[US-LOCAL]	8	Field link and sequence number	R	.
 411	SERIES STATEMENT/ADDED ENTRY--MEETING NAME	R	[US-LOCAL]	a	Meeting name or jurisdiction name as entry element	NR	.
-411	SERIES STATEMENT/ADDED ENTRY--MEETING NAME	R	[US-LOCAL]	b			[OBSOLETE]
+411	SERIES STATEMENT/ADDED ENTRY--MEETING NAME	R	[US-LOCAL]	b		.	[OBSOLETE]
 411	SERIES STATEMENT/ADDED ENTRY--MEETING NAME	R	[US-LOCAL]	c	Location of meeting	NR	.
 411	SERIES STATEMENT/ADDED ENTRY--MEETING NAME	R	[US-LOCAL]	d	Date of meeting	NR	.
 411	SERIES STATEMENT/ADDED ENTRY--MEETING NAME	R	[US-LOCAL]	e	Subordinate unit	R	.
@@ -975,7 +990,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 411	SERIES STATEMENT/ADDED ENTRY--MEETING NAME	R	[US-LOCAL]	u	Affiliation	NR	.
 411	SERIES STATEMENT/ADDED ENTRY--MEETING NAME	R	[US-LOCAL]	v	Volume number/sequential designation 	NR	.
 411	SERIES STATEMENT/ADDED ENTRY--MEETING NAME	R	[US-LOCAL]	x	International Standard Serial Number	NR	.
-411	SERIES STATEMENT/ADDED ENTRY--MEETING NAME	R	[US-LOCAL]	4	Relator code	R	.
+411	SERIES STATEMENT/ADDED ENTRY--MEETING NAME	R	[US-LOCAL]	4	Relationship	R	.
 411	SERIES STATEMENT/ADDED ENTRY--MEETING NAME	R	[US-LOCAL]	6	Linkage	NR	.
 411	SERIES STATEMENT/ADDED ENTRY--MEETING NAME	R	[US-LOCAL]	8	Field link and sequence number	R	.
 440	SERIES STATEMENT/ADDED ENTRY--TITLE	R	[OBSOLETE]	a	Title	NR	.
@@ -995,9 +1010,9 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 490	SERIES STATEMENT	R	.	6	Linkage	NR	.
 490	SERIES STATEMENT	R	.	8	Field link and sequence number	R	.
 500	GENERAL NOTE	R	.	a	General note	NR	.
-500	GENERAL NOTE	R	.	l	Library of Congress call number		[OBSOLETE]
-500	GENERAL NOTE	R	.	x	International Standard Serial Number		[OBSOLETE]
-500	GENERAL NOTE	R	.	z	Source of note information		[OBSOLETE]
+500	GENERAL NOTE	R	.	l	Library of Congress call number	.	[OBSOLETE]
+500	GENERAL NOTE	R	.	x	International Standard Serial Number	.	[OBSOLETE]
+500	GENERAL NOTE	R	.	z	Source of note information	.	[OBSOLETE]
 500	GENERAL NOTE	R	.	3	Materials specified	NR	.
 500	GENERAL NOTE	R	.	5	Institution to which field applies	NR	.
 500	GENERAL NOTE	R	.	6	Linkage	NR	.
@@ -1343,6 +1358,9 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 565	CASE FILE CHARACTERISTICS NOTE	R	.	6	Linkage	NR	.
 565	CASE FILE CHARACTERISTICS NOTE	R	.	8	Field link and sequence number	R	.
 567	METHODOLOGY NOTE	R	.	a	Methodology note	NR	.
+567	METHODOLOGY NOTE	R	.	b	Controlled term	R	.
+567	METHODOLOGY NOTE	R	.	0	Authority record control number or standard number	R	.
+567	METHODOLOGY NOTE	R	.	2	Source of term	NR	.
 567	METHODOLOGY NOTE	R	.	6	Linkage	NR	.
 567	METHODOLOGY NOTE	R	.	8	Field link and sequence number	R	.
 570	EDITOR NOTE	R	[OBSOLETE]	a	Editor note	NR	.
@@ -1386,24 +1404,24 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 584	ACCUMULATION AND FREQUENCY OF USE NOTE	R	.	5	Institution to which field applies	NR	.
 584	ACCUMULATION AND FREQUENCY OF USE NOTE	R	.	6	Linkage	NR	.
 584	ACCUMULATION AND FREQUENCY OF USE NOTE	R	.	8	Field link and sequence number	R	.
-590	LOCAL NOTE		[OBSOLETE]	a	Exhibitions note	NR	.
-590	LOCAL NOTE		[OBSOLETE]	3	Materials specified	NR	.
-590	LOCAL NOTE		[OBSOLETE]	5	Institution to which field applies	NR	.
-590	LOCAL NOTE		[OBSOLETE]	6	Linkage	NR	.
-590	LOCAL NOTE		[OBSOLETE]	8	Field link and sequence number	R	.
-590	LOCAL NOTE		[OBSOLETE]	a	Awards note	NR	.
-590	LOCAL NOTE		[OBSOLETE]	3	Materials specified	NR	.
-590	LOCAL NOTE		[OBSOLETE]	6	Linkage	NR	.
-590	LOCAL NOTE		[OBSOLETE]	8	Field link and sequence number	R	.
-590	LOCAL NOTE		[OBSOLETE]	a	Source of description note	NR	.
-590	LOCAL NOTE		[OBSOLETE]	5	Institution to which field applies	NR	.
-590	LOCAL NOTE		[OBSOLETE]	6	Linkage	NR	.
-590	LOCAL NOTE		[OBSOLETE]	8	Field link and sequence number	R	.
-590	LOCAL NOTE		[OBSOLETE]	a	Local note	NR	.
-590	RECEIPT DATE NOTE		[OBSOLETE]	a	Receipt date	NR	.
-590	RECEIPT DATE NOTE		[OBSOLETE]	b	Provenance	NR	.
-590	RECEIPT DATE NOTE		[OBSOLETE]	d	Condition of individual reels	NR	.
-590	RECEIPT DATE NOTE		[OBSOLETE]	d	Origin of safety copy	NR	.
+585	EXHIBITIONS NOTE	R	.	a	Exhibitions note	NR	.
+585	EXHIBITIONS NOTE	R	.	3	Materials specified	NR	.
+585	EXHIBITIONS NOTE	R	.	5	Institution to which field applies	NR	.
+585	EXHIBITIONS NOTE	R	.	6	Linkage	NR	.
+585	EXHIBITIONS NOTE	R	.	8	Field link and sequence number	R	.
+586	AWARDS NOTE	R	.	a	Awards note	NR	.
+586	AWARDS NOTE	R	.	3	Materials specified	NR	.
+586	AWARDS NOTE	R	.	6	Linkage	NR	.
+586	AWARDS NOTE	R	.	8	Field link and sequence number	R	.
+588	SOURCE OF DESCRIPTION NOTE	R	.	a	Source of description note	NR	.
+588	SOURCE OF DESCRIPTION NOTE	R	.	5	Institution to which field applies	NR	.
+588	SOURCE OF DESCRIPTION NOTE	R	.	6	Linkage	NR	.
+588	SOURCE OF DESCRIPTION NOTE	R	.	8	Field link and sequence number	R	.
+590	LOCAL NOTE	.	[OBSOLETE]	a	Local note	NR	.
+590	RECEIPT DATE NOTE	.	[OBSOLETE]	a	Receipt date	NR	.
+590	RECEIPT DATE NOTE	.	[OBSOLETE]	b	Provenance	NR	.
+590	RECEIPT DATE NOTE	.	[OBSOLETE]	d	Condition of individual reels	NR	.
+590	RECEIPT DATE NOTE	.	[OBSOLETE]	d	Origin of safety copy	NR	.
 600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	a	Personal name	NR	.
 600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	b	Numeration	NR	.
 600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	c	Titles and other words associated with a name	R	.
@@ -1431,7 +1449,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	0	Authority record control number or standard number	R	.
 600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	2	Source of heading or term	NR	.
 600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	3	Materials specified	NR	.
-600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	4	Relator code	R	.
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	4	Relationship	R	.
 600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	6	Linkage	NR	.
 600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	8	Field link and sequence number	R	.
 610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	a	Corporate name or jurisdiction name as entry element	NR	.
@@ -1459,11 +1477,11 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	0	Authority record control number or standard number	R	.
 610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	2	Source of heading or term	NR	.
 610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	3	Materials specified	NR	.
-610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	4	Relator code	R	.
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	4	Relationship	R	.
 610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	6	Linkage	NR	.
 610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	8	Field link and sequence number	R	.
 611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	a	Meeting name or jurisdiction name as entry element	NR	.
-611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	b	Number		[OBSOLETE]
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	b	Number	.	[OBSOLETE]
 611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	c	Location of meeting	R	.
 611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	d	Date of meeting	NR	.
 611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	e	Subordinate unit	R	.
@@ -1486,7 +1504,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	0	Authority record control number or standard number	R	.
 611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	2	Source of heading or term	NR	.
 611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	3	Materials specified	NR	.
-611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	4	Relator code	R	.
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	4	Relationship	R	.
 611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	6	Linkage	NR	.
 611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	8	Field link and sequence number	R	.
 630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	a	Uniform title	NR	.
@@ -1511,7 +1529,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	0	Authority record control number or standard number	R	.
 630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	2	Source of heading or term	NR	.
 630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	3	Materials specified	NR	.
-630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	4	Relator code	R	.
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	4	Relationship	R	.
 630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	6	Linkage	NR	.
 630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	8	Field link and sequence number	R	.
 647	SUBJECT ADDED ENTRY--NAMED EVENT	R	.	a	Named event	NR	.
@@ -1550,7 +1568,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	0	Authority record control number or standard number	R	.
 650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	2	Source of heading or term	NR	.
 650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	3	Materials specified	NR	.
-650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	4	Relator code	R	.
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	4	Relationship	R	.
 650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	6	Linkage	NR	.
 650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	8	Field link and sequence number	R	.
 651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	a	Geographic name	NR	.
@@ -1564,13 +1582,13 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	0	Authority record control number or standard number	R	.
 651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	2	Source of heading or term	NR	.
 651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	3	Materials specified	NR	.
-651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	4	Relator code	R	.
+651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	4	Relationship	R	.
 651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	6	Linkage	NR	.
 651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	8	Field link and sequence number	R	.
-652	SUBJECT ADDED ENTRY--REVERSED GEOGRAPHIC		[OBSOLETE]	a	Geographic name of place element	NR	.
-652	SUBJECT ADDED ENTRY--REVERSED GEOGRAPHIC		[OBSOLETE]	x	General subdivision	R	.
-652	SUBJECT ADDED ENTRY--REVERSED GEOGRAPHIC		[OBSOLETE]	y	Chronological subdivision	R	.
-652	SUBJECT ADDED ENTRY--REVERSED GEOGRAPHIC		[OBSOLETE]	z	Geographic subdivision	R	.
+652	SUBJECT ADDED ENTRY--REVERSED GEOGRAPHIC	.	[OBSOLETE]	a	Geographic name of place element	NR	.
+652	SUBJECT ADDED ENTRY--REVERSED GEOGRAPHIC	.	[OBSOLETE]	x	General subdivision	R	.
+652	SUBJECT ADDED ENTRY--REVERSED GEOGRAPHIC	.	[OBSOLETE]	y	Chronological subdivision	R	.
+652	SUBJECT ADDED ENTRY--REVERSED GEOGRAPHIC	.	[OBSOLETE]	z	Geographic subdivision	R	.
 653	INDEX TERM--UNCONTROLLED	R	.	a	Uncontrolled term	R	.
 653	INDEX TERM--UNCONTROLLED	R	.	6	Linkage	NR	.
 653	INDEX TERM--UNCONTROLLED	R	.	8	Field link and sequence number	R	.
@@ -1584,7 +1602,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 654	SUBJECT ADDED ENTRY--FACETED TOPICAL TERMS	R	.	0	Authority record control number	R	.
 654	SUBJECT ADDED ENTRY--FACETED TOPICAL TERMS	R	.	2	Source of heading or term	NR	.
 654	SUBJECT ADDED ENTRY--FACETED TOPICAL TERMS	R	.	3	Materials specified	NR	.
-654	SUBJECT ADDED ENTRY--FACETED TOPICAL TERMS	R	.	4	Relator code	R	.
+654	SUBJECT ADDED ENTRY--FACETED TOPICAL TERMS	R	.	4	Relationship	R	.
 654	SUBJECT ADDED ENTRY--FACETED TOPICAL TERMS	R	.	6	Linkage	NR	.
 654	SUBJECT ADDED ENTRY--FACETED TOPICAL TERMS	R	.	8	Field link and sequence number	R	.
 655	INDEX TERM--GENRE/FORM	R	.	a	Genre/form data or focus term	NR	.
@@ -1638,7 +1656,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 662	SUBJECT ADDED ENTRY--HIERARCHICAL PLACE NAME	R	.	h	Extraterrestrial area	R	.
 662	SUBJECT ADDED ENTRY--HIERARCHICAL PLACE NAME	R	.	0	Authority record control number	R	.
 662	SUBJECT ADDED ENTRY--HIERARCHICAL PLACE NAME	R	.	2	Source of heading or term	NR	.
-662	SUBJECT ADDED ENTRY--HIERARCHICAL PLACE NAME	R	.	4	Relator code	R	.
+662	SUBJECT ADDED ENTRY--HIERARCHICAL PLACE NAME	R	.	4	Relationship	R	.
 662	SUBJECT ADDED ENTRY--HIERARCHICAL PLACE NAME	R	.	6	Linkage	NR	.
 662	SUBJECT ADDED ENTRY--HIERARCHICAL PLACE NAME	R	.	8	Field link and sequence number	R	.
 700	ADDED ENTRY--PERSONAL NAME	R	.	a	Personal name	NR	.
@@ -1665,27 +1683,27 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 700	ADDED ENTRY--PERSONAL NAME	R	.	x	International Standard Serial Number	NR	.
 700	ADDED ENTRY--PERSONAL NAME	R	.	0	Authority record control number or standard number	R	.
 700	ADDED ENTRY--PERSONAL NAME	R	.	3	Materials specified	NR	.
-700	ADDED ENTRY--PERSONAL NAME	R	.	4	Relator code	R	.
+700	ADDED ENTRY--PERSONAL NAME	R	.	4	Relationship	R	.
 700	ADDED ENTRY--PERSONAL NAME	R	.	5	Institution to which field applies	NR	.
 700	ADDED ENTRY--PERSONAL NAME	R	.	6	Linkage	NR	.
 700	ADDED ENTRY--PERSONAL NAME	R	.	8	Field link and sequence number	R	.
-705	ADDED ENTRY--PERSONAL NAME		[OBSOLETE]	a	Personal name	NR	.
-705	ADDED ENTRY--PERSONAL NAME		[OBSOLETE]	b	Numeration	NR	.
-705	ADDED ENTRY--PERSONAL NAME		[OBSOLETE]	c	Titles and other words associated with a name	R	.
-705	ADDED ENTRY--PERSONAL NAME		[OBSOLETE]	d	Dates associated with a name	NR	.
-705	ADDED ENTRY--PERSONAL NAME		[OBSOLETE]	e	Relator term	R	.
-705	ADDED ENTRY--PERSONAL NAME		[OBSOLETE]	f	Date of a work	NR	.
-705	ADDED ENTRY--PERSONAL NAME		[OBSOLETE]	g	Miscellaneous information	R	.
-705	ADDED ENTRY--PERSONAL NAME		[OBSOLETE]	h	Medium	NR	.
-705	ADDED ENTRY--PERSONAL NAME		[OBSOLETE]	k	Form subheading	R	.
-705	ADDED ENTRY--PERSONAL NAME		[OBSOLETE]	l	Language of a work	NR	.
-705	ADDED ENTRY--PERSONAL NAME		[OBSOLETE]	m	Medium of performance for music	R	.
-705	ADDED ENTRY--PERSONAL NAME		[OBSOLETE]	n	Number of part/section of a work	R	.
-705	ADDED ENTRY--PERSONAL NAME		[OBSOLETE]	o	Arranged statement for music	NR	.
-705	ADDED ENTRY--PERSONAL NAME		[OBSOLETE]	p	Name of part/section of a work	R	.
-705	ADDED ENTRY--PERSONAL NAME		[OBSOLETE]	r	Key for music	NR	.
-705	ADDED ENTRY--PERSONAL NAME		[OBSOLETE]	s	Version	NR	.
-705	ADDED ENTRY--PERSONAL NAME		[OBSOLETE]	t	Title of a work	NR	.
+705	ADDED ENTRY--PERSONAL NAME	.	[OBSOLETE]	a	Personal name	NR	.
+705	ADDED ENTRY--PERSONAL NAME	.	[OBSOLETE]	b	Numeration	NR	.
+705	ADDED ENTRY--PERSONAL NAME	.	[OBSOLETE]	c	Titles and other words associated with a name	R	.
+705	ADDED ENTRY--PERSONAL NAME	.	[OBSOLETE]	d	Dates associated with a name	NR	.
+705	ADDED ENTRY--PERSONAL NAME	.	[OBSOLETE]	e	Relator term	R	.
+705	ADDED ENTRY--PERSONAL NAME	.	[OBSOLETE]	f	Date of a work	NR	.
+705	ADDED ENTRY--PERSONAL NAME	.	[OBSOLETE]	g	Miscellaneous information	R	.
+705	ADDED ENTRY--PERSONAL NAME	.	[OBSOLETE]	h	Medium	NR	.
+705	ADDED ENTRY--PERSONAL NAME	.	[OBSOLETE]	k	Form subheading	R	.
+705	ADDED ENTRY--PERSONAL NAME	.	[OBSOLETE]	l	Language of a work	NR	.
+705	ADDED ENTRY--PERSONAL NAME	.	[OBSOLETE]	m	Medium of performance for music	R	.
+705	ADDED ENTRY--PERSONAL NAME	.	[OBSOLETE]	n	Number of part/section of a work	R	.
+705	ADDED ENTRY--PERSONAL NAME	.	[OBSOLETE]	o	Arranged statement for music	NR	.
+705	ADDED ENTRY--PERSONAL NAME	.	[OBSOLETE]	p	Name of part/section of a work	R	.
+705	ADDED ENTRY--PERSONAL NAME	.	[OBSOLETE]	r	Key for music	NR	.
+705	ADDED ENTRY--PERSONAL NAME	.	[OBSOLETE]	s	Version	NR	.
+705	ADDED ENTRY--PERSONAL NAME	.	[OBSOLETE]	t	Title of a work	NR	.
 710	ADDED ENTRY--CORPORATE NAME	R	.	a	Corporate name or jurisdiction name as entry element	NR	.
 710	ADDED ENTRY--CORPORATE NAME	R	.	b	Subordinate unit	R	.
 710	ADDED ENTRY--CORPORATE NAME	R	.	c	Location of meeting	R	.
@@ -1708,12 +1726,12 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 710	ADDED ENTRY--CORPORATE NAME	R	.	x	International Standard Serial Number	NR	.
 710	ADDED ENTRY--CORPORATE NAME	R	.	0	Authority record control number or standard number	R	.
 710	ADDED ENTRY--CORPORATE NAME	R	.	3	Materials specified	NR	.
-710	ADDED ENTRY--CORPORATE NAME	R	.	4	Relator code	R	.
+710	ADDED ENTRY--CORPORATE NAME	R	.	4	Relationship	R	.
 710	ADDED ENTRY--CORPORATE NAME	R	.	5	Institution to which field applies	NR	.
 710	ADDED ENTRY--CORPORATE NAME	R	.	6	Linkage	NR	.
 710	ADDED ENTRY--CORPORATE NAME	R	.	8	Field link and sequence number	R	.
 711	ADDED ENTRY--MEETING NAME	R	.	a	Meeting name or jurisdiction name as entry element	NR	.
-711	ADDED ENTRY--MEETING NAME	R	.	b	Number		[OBSOLETE]
+711	ADDED ENTRY--MEETING NAME	R	.	b	Number	.	[OBSOLETE]
 711	ADDED ENTRY--MEETING NAME	R	.	c	Location of meeting	R	.
 711	ADDED ENTRY--MEETING NAME	R	.	d	Date of meeting	NR	.
 711	ADDED ENTRY--MEETING NAME	R	.	e	Subordinate unit	R	.
@@ -1733,29 +1751,29 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 711	ADDED ENTRY--MEETING NAME	R	.	x	International Standard Serial Number	NR	.
 711	ADDED ENTRY--MEETING NAME	R	.	0	Authority record control number or standard number	R	.
 711	ADDED ENTRY--MEETING NAME	R	.	3	Materials specified	NR	.
-711	ADDED ENTRY--MEETING NAME	R	.	4	Relator code	R	.
+711	ADDED ENTRY--MEETING NAME	R	.	4	Relationship	R	.
 711	ADDED ENTRY--MEETING NAME	R	.	5	Institution to which field applies	NR	.
 711	ADDED ENTRY--MEETING NAME	R	.	6	Linkage	NR	.
 711	ADDED ENTRY--MEETING NAME	R	.	8	Field link and sequence number	R	.
-715	ADDED ENTRY--CORPORATE NAME		[OBSOLETE]	a	Corporate name or jurisdiction name	NR	.
-715	ADDED ENTRY--CORPORATE NAME		[OBSOLETE]	b	Subordinate unit	R	.
-715	ADDED ENTRY--CORPORATE NAME		[OBSOLETE]	e	Relator term	R	.
-715	ADDED ENTRY--CORPORATE NAME		[OBSOLETE]	f	Date of a work	NR	.
-715	ADDED ENTRY--CORPORATE NAME		[OBSOLETE]	g	Miscellaneous information	R	.
-715	ADDED ENTRY--CORPORATE NAME		[OBSOLETE]	h	Medium	NR	.
-715	ADDED ENTRY--CORPORATE NAME		[OBSOLETE]	k	Form subheading	R	.
-715	ADDED ENTRY--CORPORATE NAME		[OBSOLETE]	l	Language of a work	NR	.
-715	ADDED ENTRY--CORPORATE NAME		[OBSOLETE]	m	Medium of performance for music	R	.
-715	ADDED ENTRY--CORPORATE NAME		[OBSOLETE]	n	Number of part/section/meeting	R	.
-715	ADDED ENTRY--CORPORATE NAME		[OBSOLETE]	o	Arranged statement for music	NR	.
-715	ADDED ENTRY--CORPORATE NAME		[OBSOLETE]	p	Name of part/section of a work	R	.
-715	ADDED ENTRY--CORPORATE NAME		[OBSOLETE]	r	Key for music	NR	.
-715	ADDED ENTRY--CORPORATE NAME		[OBSOLETE]	s	Version	NR	.
-715	ADDED ENTRY--CORPORATE NAME		[OBSOLETE]	t	Title of a work	NR	.
-715	ADDED ENTRY--CORPORATE NAME		[OBSOLETE]	u	Nonprinting information	NR	.
+715	ADDED ENTRY--CORPORATE NAME	.	[OBSOLETE]	a	Corporate name or jurisdiction name	NR	.
+715	ADDED ENTRY--CORPORATE NAME	.	[OBSOLETE]	b	Subordinate unit	R	.
+715	ADDED ENTRY--CORPORATE NAME	.	[OBSOLETE]	e	Relator term	R	.
+715	ADDED ENTRY--CORPORATE NAME	.	[OBSOLETE]	f	Date of a work	NR	.
+715	ADDED ENTRY--CORPORATE NAME	.	[OBSOLETE]	g	Miscellaneous information	R	.
+715	ADDED ENTRY--CORPORATE NAME	.	[OBSOLETE]	h	Medium	NR	.
+715	ADDED ENTRY--CORPORATE NAME	.	[OBSOLETE]	k	Form subheading	R	.
+715	ADDED ENTRY--CORPORATE NAME	.	[OBSOLETE]	l	Language of a work	NR	.
+715	ADDED ENTRY--CORPORATE NAME	.	[OBSOLETE]	m	Medium of performance for music	R	.
+715	ADDED ENTRY--CORPORATE NAME	.	[OBSOLETE]	n	Number of part/section/meeting	R	.
+715	ADDED ENTRY--CORPORATE NAME	.	[OBSOLETE]	o	Arranged statement for music	NR	.
+715	ADDED ENTRY--CORPORATE NAME	.	[OBSOLETE]	p	Name of part/section of a work	R	.
+715	ADDED ENTRY--CORPORATE NAME	.	[OBSOLETE]	r	Key for music	NR	.
+715	ADDED ENTRY--CORPORATE NAME	.	[OBSOLETE]	s	Version	NR	.
+715	ADDED ENTRY--CORPORATE NAME	.	[OBSOLETE]	t	Title of a work	NR	.
+715	ADDED ENTRY--CORPORATE NAME	.	[OBSOLETE]	u	Nonprinting information	NR	.
 720	ADDED ENTRY--UNCONTROLLED NAME	R	.	a	Name	NR	.
 720	ADDED ENTRY--UNCONTROLLED NAME	R	.	e	Relator term	R	.
-720	ADDED ENTRY--UNCONTROLLED NAME	R	.	4	Relator code	R	.
+720	ADDED ENTRY--UNCONTROLLED NAME	R	.	4	Relationship	R	.
 720	ADDED ENTRY--UNCONTROLLED NAME	R	.	6	Linkage	NR	.
 720	ADDED ENTRY--UNCONTROLLED NAME	R	.	8	Field link and sequence number	R	.
 730	ADDED ENTRY--UNIFORM TITLE	R	.	a	Uniform title	NR	.
@@ -1791,7 +1809,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 751	ADDED ENTRY--GEOGRAPHIC NAME	R	.	0	Authority record control number	R	.
 751	ADDED ENTRY--GEOGRAPHIC NAME	R	.	2	Source of heading or term	NR	.
 751	ADDED ENTRY--GEOGRAPHIC NAME	R	.	3	Materials specified	NR	.
-751	ADDED ENTRY--GEOGRAPHIC NAME	R	.	4	Relator code	R	.
+751	ADDED ENTRY--GEOGRAPHIC NAME	R	.	4	Relationship	R	.
 751	ADDED ENTRY--GEOGRAPHIC NAME	R	.	6	Linkage	NR	.
 751	ADDED ENTRY--GEOGRAPHIC NAME	R	.	8	Field link and sequence number	R	.
 752	ADDED ENTRY--HIERARCHICAL PLACE NAME	R	.	a	Country or larger entity	R	.
@@ -1804,7 +1822,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 752	ADDED ENTRY--HIERARCHICAL PLACE NAME	R	.	h	Extraterrestrial area	R	.
 752	ADDED ENTRY--HIERARCHICAL PLACE NAME	R	.	0	Authority record control number	R	.
 752	ADDED ENTRY--HIERARCHICAL PLACE NAME	R	.	2	Source of heading or term	NR	.
-752	ADDED ENTRY--HIERARCHICAL PLACE NAME	R	.	4	Relator code	R	.
+752	ADDED ENTRY--HIERARCHICAL PLACE NAME	R	.	4	Relationship	R	.
 752	ADDED ENTRY--HIERARCHICAL PLACE NAME	R	.	6	Linkage	NR	.
 752	ADDED ENTRY--HIERARCHICAL PLACE NAME	R	.	8	Field link and sequence number	R	.
 753	SYSTEM DETAILS ACCESS TO COMPUTER FILES	R	.	a	Make and model of machine	NR	.
@@ -1847,7 +1865,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 760	MAIN SERIES ENTRY	R	.	w	Record control number	R	.
 760	MAIN SERIES ENTRY	R	.	x	International Standard Serial Number	NR	.
 760	MAIN SERIES ENTRY	R	.	y	CODEN designation	NR	.
-760	MAIN SERIES ENTRY	R	.	4	Relationship code	R	.
+760	MAIN SERIES ENTRY	R	.	4	Relationship	R	.
 760	MAIN SERIES ENTRY	R	.	6	Linkage	NR	.
 760	MAIN SERIES ENTRY	R	.	7	Control subfield	NR	.
 760	MAIN SERIES ENTRY	R	.	8	Field link and sequence number	R	.
@@ -1867,7 +1885,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 762	SUBSERIES ENTRY	R	.	w	Record control number	R	.
 762	SUBSERIES ENTRY	R	.	x	International Standard Serial Number	NR	.
 762	SUBSERIES ENTRY	R	.	y	CODEN designation	NR	.
-762	SUBSERIES ENTRY	R	.	4	Relationship code	R	.
+762	SUBSERIES ENTRY	R	.	4	Relationship	R	.
 762	SUBSERIES ENTRY	R	.	6	Linkage	NR	.
 762	SUBSERIES ENTRY	R	.	7	Control subfield	NR	.
 762	SUBSERIES ENTRY	R	.	8	Field link and sequence number	R	.
@@ -1891,7 +1909,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 765	ORIGINAL LANGUAGE ENTRY	R	.	x	International Standard Serial Number	NR	.
 765	ORIGINAL LANGUAGE ENTRY	R	.	y	CODEN designation	NR	.
 765	ORIGINAL LANGUAGE ENTRY	R	.	z	International Standard Book Number	R	.
-765	ORIGINAL LANGUAGE ENTRY	R	.	4	Relationship code	R	.
+765	ORIGINAL LANGUAGE ENTRY	R	.	4	Relationship	R	.
 765	ORIGINAL LANGUAGE ENTRY	R	.	6	Linkage	NR	.
 765	ORIGINAL LANGUAGE ENTRY	R	.	7	Control subfield	NR	.
 765	ORIGINAL LANGUAGE ENTRY	R	.	8	Field link and sequence number	R	.
@@ -1915,7 +1933,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 767	TRANSLATION ENTRY	R	.	x	International Standard Serial Number	NR	.
 767	TRANSLATION ENTRY	R	.	y	CODEN designation	NR	.
 767	TRANSLATION ENTRY	R	.	z	International Standard Book Number	R	.
-767	TRANSLATION ENTRY	R	.	4	Relationship code	R	.
+767	TRANSLATION ENTRY	R	.	4	Relationship	R	.
 767	TRANSLATION ENTRY	R	.	6	Linkage	NR	.
 767	TRANSLATION ENTRY	R	.	7	Control subfield	NR	.
 767	TRANSLATION ENTRY	R	.	8	Field link and sequence number	R	.
@@ -1939,7 +1957,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 770	SUPPLEMENT/SPECIAL ISSUE ENTRY	R	.	x	International Standard Serial Number	NR	.
 770	SUPPLEMENT/SPECIAL ISSUE ENTRY	R	.	y	CODEN designation	NR	.
 770	SUPPLEMENT/SPECIAL ISSUE ENTRY	R	.	z	International Standard Book Number	R	.
-770	SUPPLEMENT/SPECIAL ISSUE ENTRY	R	.	4	Relationship code	R	.
+770	SUPPLEMENT/SPECIAL ISSUE ENTRY	R	.	4	Relationship	R	.
 770	SUPPLEMENT/SPECIAL ISSUE ENTRY	R	.	6	Linkage	NR	.
 770	SUPPLEMENT/SPECIAL ISSUE ENTRY	R	.	7	Control subfield	NR	.
 770	SUPPLEMENT/SPECIAL ISSUE ENTRY	R	.	8	Field link and sequence number	R	.
@@ -1963,7 +1981,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 772	SUPPLEMENT PARENT ENTRY	R	.	x	International Standard Serial Number	NR	.
 772	SUPPLEMENT PARENT ENTRY	R	.	y	CODEN designation	NR	.
 772	SUPPLEMENT PARENT ENTRY	R	.	z	International Stan dard Book Number	R	.
-772	SUPPLEMENT PARENT ENTRY	R	.	4	Relationship code	R	.
+772	SUPPLEMENT PARENT ENTRY	R	.	4	Relationship	R	.
 772	SUPPLEMENT PARENT ENTRY	R	.	6	Linkage	NR	.
 772	SUPPLEMENT PARENT ENTRY	R	.	7	Control subfield	NR	.
 772	SUPPLEMENT PARENT ENTRY	R	.	8	Field link and sequence number	R	.
@@ -1988,7 +2006,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 773	HOST ITEM ENTRY	R	.	y	CODEN designation	NR	.
 773	HOST ITEM ENTRY	R	.	z	International Standard Book Number	R	.
 773	HOST ITEM ENTRY	R	.	3	Materials specified	NR	.
-773	HOST ITEM ENTRY	R	.	4	Relationship code	R	.
+773	HOST ITEM ENTRY	R	.	4	Relationship	R	.
 773	HOST ITEM ENTRY	R	.	6	Linkage	NR	.
 773	HOST ITEM ENTRY	R	.	7	Control subfield	NR	.
 773	HOST ITEM ENTRY	R	.	8	Field link and sequence number	R	.
@@ -2011,7 +2029,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 774	CONSTITUENT UNIT ENTRY	R	.	x	International Standard Serial Number	NR	.
 774	CONSTITUENT UNIT ENTRY	R	.	y	CODEN designation	NR	.
 774	CONSTITUENT UNIT ENTRY	R	.	z	International Standard Book Number	R	.
-774	CONSTITUENT UNIT ENTRY	R	.	4	Relationship code	R	.
+774	CONSTITUENT UNIT ENTRY	R	.	4	Relationship	R	.
 774	CONSTITUENT UNIT ENTRY	R	.	6	Linkage	NR	.
 774	CONSTITUENT UNIT ENTRY	R	.	7	Control subfield	NR	.
 774	CONSTITUENT UNIT ENTRY	R	.	8	Field link and sequence number	R	.
@@ -2037,7 +2055,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 775	OTHER EDITION ENTRY	R	.	x	International Standard Serial Number	NR	.
 775	OTHER EDITION ENTRY	R	.	y	CODEN designation	NR	.
 775	OTHER EDITION ENTRY	R	.	z	International Standard Book Number	R	.
-775	OTHER EDITION ENTRY	R	.	4	Relationship code	R	.
+775	OTHER EDITION ENTRY	R	.	4	Relationship	R	.
 775	OTHER EDITION ENTRY	R	.	6	Linkage	NR	.
 775	OTHER EDITION ENTRY	R	.	7	Control subfield	NR	.
 775	OTHER EDITION ENTRY	R	.	8	Field link and sequence number	R	.
@@ -2061,7 +2079,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 776	ADDITIONAL PHYSICAL FORM ENTRY	R	.	x	International Standard Serial Number	NR	.
 776	ADDITIONAL PHYSICAL FORM ENTRY	R	.	y	CODEN designation	NR	.
 776	ADDITIONAL PHYSICAL FORM ENTRY	R	.	z	International Standard Book Number	R	.
-776	ADDITIONAL PHYSICAL FORM ENTRY	R	.	4	Relationship code	R	.
+776	ADDITIONAL PHYSICAL FORM ENTRY	R	.	4	Relationship	R	.
 776	ADDITIONAL PHYSICAL FORM ENTRY	R	.	6	Linkage	NR	.
 776	ADDITIONAL PHYSICAL FORM ENTRY	R	.	7	Control subfield	NR	.
 776	ADDITIONAL PHYSICAL FORM ENTRY	R	.	8	Field link and sequence number	R	.
@@ -2082,7 +2100,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 777	ISSUED WITH ENTRY	R	.	w	Record control number	R	.
 777	ISSUED WITH ENTRY	R	.	x	International Standard Serial Number	NR	.
 777	ISSUED WITH ENTRY	R	.	y	CODEN designation	NR	.
-777	ISSUED WITH ENTRY	R	.	4	Relationship code	R	.
+777	ISSUED WITH ENTRY	R	.	4	Relationship	R	.
 777	ISSUED WITH ENTRY	R	.	6	Linkage	NR	.
 777	ISSUED WITH ENTRY	R	.	7	Control subfield	NR	.
 777	ISSUED WITH ENTRY	R	.	8	Field link and sequence number	R	.
@@ -2106,7 +2124,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 780	PRECEDING ENTRY	R	.	x	International Standard Serial Number	NR	.
 780	PRECEDING ENTRY	R	.	y	CODEN designation	NR	.
 780	PRECEDING ENTRY	R	.	z	International Standard Book Number	R	.
-780	PRECEDING ENTRY	R	.	4	Relationship code	R	.
+780	PRECEDING ENTRY	R	.	4	Relationship	R	.
 780	PRECEDING ENTRY	R	.	6	Linkage	NR	.
 780	PRECEDING ENTRY	R	.	7	Control subfield	NR	.
 780	PRECEDING ENTRY	R	.	8	Field link and sequence number	R	.
@@ -2130,7 +2148,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 785	SUCCEEDING ENTRY	R	.	x	International Standard Serial Number	NR	.
 785	SUCCEEDING ENTRY	R	.	y	CODEN designation	NR	.
 785	SUCCEEDING ENTRY	R	.	z	International Standard Book Number	R	.
-785	SUCCEEDING ENTRY	R	.	4	Relationship code	R	.
+785	SUCCEEDING ENTRY	R	.	4	Relationship	R	.
 785	SUCCEEDING ENTRY	R	.	6	Linkage	NR	.
 785	SUCCEEDING ENTRY	R	.	7	Control subfield	NR	.
 785	SUCCEEDING ENTRY	R	.	8	Field link and sequence number	R	.
@@ -2156,7 +2174,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 786	DATA SOURCE ENTRY	R	.	x	International Standard Serial Number	NR	.
 786	DATA SOURCE ENTRY	R	.	y	CODEN designation	NR	.
 786	DATA SOURCE ENTRY	R	.	z	International Standard Book Number	R	.
-786	DATA SOURCE ENTRY	R	.	4	Relationship code	R	.
+786	DATA SOURCE ENTRY	R	.	4	Relationship	R	.
 786	DATA SOURCE ENTRY	R	.	6	Linkage	NR	.
 786	DATA SOURCE ENTRY	R	.	7	Control subfield	NR	.
 786	DATA SOURCE ENTRY	R	.	8	Field link and sequence number	R	.
@@ -2179,7 +2197,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 787	OTHER RELATIONSHIP ENTRY	R	.	x	International Standard Serial Number	NR	.
 787	OTHER RELATIONSHIP ENTRY	R	.	y	CODEN designation	NR	.
 787	OTHER RELATIONSHIP ENTRY	R	.	z	International Standard Book Number	R	.
-787	OTHER RELATIONSHIP ENTRY	R	.	4	Relationship code	R	.
+787	OTHER RELATIONSHIP ENTRY	R	.	4	Relationship	R	.
 787	OTHER RELATIONSHIP ENTRY	R	.	6	Linkage	NR	.
 787	OTHER RELATIONSHIP ENTRY	R	.	7	Control subfield	NR	.
 787	OTHER RELATIONSHIP ENTRY	R	.	8	Field link and sequence number	R	.
@@ -2208,7 +2226,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	x	International Standard Serial Number	NR	.
 800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	0	Authority record control number or standard number	R	.
 800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	3	Materials specified	NR	.
-800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	4	Relator code	R	.
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	4	Relationship	R	.
 800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	5	Institution to which field applies	R	.
 800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	6	Linkage	NR	.
 800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	7	Control subfield	NR	.
@@ -2236,7 +2254,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	x	International Standard Serial Number	NR	.
 810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	0	Authority record control number or standard number	R	.
 810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	3	Materials specified	NR	.
-810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	4	Relator code	R	.
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	4	Relationship	R	.
 810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	5	Institution to which field applies	R	.
 810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	6	Linkage	NR	.
 810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	7	Control subfield	NR	.
@@ -2262,7 +2280,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 811	SERIES ADDED ENTRY--MEETING NAME	R	.	x	International Standard Serial Number	NR	.
 811	SERIES ADDED ENTRY--MEETING NAME	R	.	0	Authority record control number or standard number	R	.
 811	SERIES ADDED ENTRY--MEETING NAME	R	.	3	Materials specified	NR	.
-811	SERIES ADDED ENTRY--MEETING NAME	R	.	4	Relator code	R	.
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	4	Relationship	R	.
 811	SERIES ADDED ENTRY--MEETING NAME	R	.	5	Institution to which field applies	R	.
 811	SERIES ADDED ENTRY--MEETING NAME	R	.	6	Linkage	NR	.
 811	SERIES ADDED ENTRY--MEETING NAME	R	.	7	Control subfield	NR	.
@@ -2362,14 +2380,14 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 856	ELECTRONIC LOCATION AND ACCESS	R	.	6	Linkage	NR	.
 856	ELECTRONIC LOCATION AND ACCESS	R	.	8	Field link and sequence number	R	.
 880	ALTERNATE GRAPHIC REPRESENTATION	R	.	6	Linkage	NR	.
-880	ALTERNATE GRAPHIC REPRESENTATION	R	.	a-z			.
-880	ALTERNATE GRAPHIC REPRESENTATION	R	.	0-5			.
-880	ALTERNATE GRAPHIC REPRESENTATION	R	.	7-9			.
-883	MACHINE-GENERATED METADATA PROVENANCE	R	.	a	Replacement title	R	.
-883	MACHINE-GENERATED METADATA PROVENANCE	R	.	i	Explanatory text	R	.
-883	MACHINE-GENERATED METADATA PROVENANCE	R	.	w	Replacement bibliographic record control number	R	.
-883	MACHINE-GENERATED METADATA PROVENANCE	R	.	6	Linkage	NR	.
-883	MACHINE-GENERATED METADATA PROVENANCE	R	.	8	Field link and sequence number	R	.
+880	ALTERNATE GRAPHIC REPRESENTATION	R	.	a-z		.	.
+880	ALTERNATE GRAPHIC REPRESENTATION	R	.	0-5		.	.
+880	ALTERNATE GRAPHIC REPRESENTATION	R	.	7-9		.	.
+882	REPLACEMENT RECORD INFORMATION	NR	.	a	Replacement title	R	.
+882	REPLACEMENT RECORD INFORMATION	NR	.	i	Explanatory text	R	.
+882	REPLACEMENT RECORD INFORMATION	NR	.	w	Replacement bibliographic record control number	R	.
+882	REPLACEMENT RECORD INFORMATION	NR	.	6	Linkage	NR	.
+882	REPLACEMENT RECORD INFORMATION	NR	.	8	Field link and sequence number	R	.
 883	MACHINE-GENERATED METADATA PROVENANCE	R	.	a	Generation process	NR	.
 883	MACHINE-GENERATED METADATA PROVENANCE	R	.	c	Confidence value	NR	.
 883	MACHINE-GENERATED METADATA PROVENANCE	R	.	d	Generation date	NR	.

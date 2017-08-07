@@ -8,11 +8,53 @@ if htmlsrc.message == 'OK'
   data = data.gsub!(/^--Leader.*?\n--/m, '--')
 end
 
-fields = data.split(/^$/)
-marcfields = ["MARC tag\tField name\tRepeatability\tOther note"]
-marcsfs = ["MARC tag\tField name\tField repeatability\tField note\tSubfield delimiter\tSubfield name\tSubfield repeatability\tSubfield note"]
+#p data
 
-fields.each do |f|
+ data_chunks = data.split(/^\s*$/)
+ marcfields = ["MARC tag\tField name\tRepeatability\tOther note"]
+ marcsfs = ["MARC tag\tField name\tField repeatability\tField note\tSubfield delimiter\tSubfield name\tSubfield repeatability\tSubfield note"]
+
+data_chunks_in_lines = []
+
+data_chunks.each do |f|
+  lines = f.split(/\n/).each { |ln| ln.chomp! }
+  data_chunks_in_lines << lines.select { |ln| ln !~ /^( *|   Subfield Codes.*|--.*)$/ }  
+end
+
+field_data_in_lines = data_chunks_in_lines.select { |arr| arr.size > 0 }
+
+# A start at improving this code, used for some debugging. Once problem was fixed, didn't have time to refactor the whole thing. Whee. --2017-08-07
+# class Field
+#   attr_reader = :tag
+#   attr_reader = :name
+#   attr_reader = :repeat
+#   attr_reader = :context
+#   attr_reader = :subfields
+
+#   def initialize(flines)
+#     fdata = /(^\d{3}) - ([^(\[]+)/.match(flines.shift)
+#     @tag = fdata[1]
+#     @name = fdata[2]
+#     @repeat = ''
+#     @context = ''
+#     @subfields = []
+
+#     puts "#{@tag} -- #{@name}"
+#   end
+# end
+
+# #field_data_in_lines.each { |fd| Field.new(fd) }
+
+# class Subfield
+#   attr_reader = :tag
+#   attr_reader = :name
+#   attr_reader = :repeat
+#   attr_reader = :context
+# end
+
+
+
+ data_chunks.each do |f|
   lines = f.split(/\n/)
   lines.each { |ln| ln.chomp! }
   keeplines = []
@@ -48,6 +90,7 @@ fields.each do |f|
   if /\((N?R)\)/.match(fielddata)
     frep = /\((N?R)\)/.match(fielddata)[1]
   end
+  frep = '.' if frep == ''
   if /(\[.+\])/.match(fielddata)
     fcontext = /(\[.+\])/.match(fielddata)[1]
   end
@@ -55,6 +98,11 @@ fields.each do |f|
   marcfields << "#{ftag}\t#{fname}\t#{frep}\t#{fcontext}"
 
   sfdata.each { |ln|
+    sfdelim = ''
+    sfname = ''
+    sfrep = ''
+    sfmore = ''
+    
     sfdelim = /\$(.|.-.) (-|S)/.match(ln)[1]
     if /\$. - .* \(/.match(ln)
       sfname = /\$. - (.*) \(/.match(ln)[1]
@@ -66,7 +114,7 @@ fields.each do |f|
     if /\(N?R\)/.match(ln)
       sfrep = /\((N?R)\)/.match(ln)[1]
     else
-      sfrep = ''
+      sfrep = '.'
     end
     if /\[.+\]/.match(ln)
       sfmore = /(\[.+\])/.match(ln)[1]
