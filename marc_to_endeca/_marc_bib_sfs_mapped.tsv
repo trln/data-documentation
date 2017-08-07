@@ -50,7 +50,7 @@ MARC tag	Field name	Field repeatability	Field note	SF delimiter	SF name	SF repea
 110	MAIN ENTRY--CORPORATE NAME	NR	.	n	Number of part/section/meeting	R	.	110n	Main Author	.	.	.	TRLN
 111	MAIN ENTRY--MEETING NAME	NR	.	a	Meeting name or jurisdiction name as entry element	NR	.	111a	Author	.	.	.	TRLN
 111	MAIN ENTRY--MEETING NAME	NR	.	a	Meeting name or jurisdiction name as entry element	NR	.	111a	Main Author	.	.	.	TRLN
-111	MAIN ENTRY--MEETING NAME	NR	.	b	Number		[OBSOLETE]	111b	Main Author	.	.	.	TRLN
+111	MAIN ENTRY--MEETING NAME	NR	.	b	Number	.	[OBSOLETE]	111b	Main Author	.	.	.	TRLN
 111	MAIN ENTRY--MEETING NAME	NR	.	c	Location of meeting	R	.	111c	Author	.	.	.	TRLN
 111	MAIN ENTRY--MEETING NAME	NR	.	c	Location of meeting	R	.	111c	Main Author	.	.	.	TRLN
 111	MAIN ENTRY--MEETING NAME	NR	.	d	Date of meeting	NR	.	111d	Author	.	.	.	TRLN
@@ -179,14 +179,19 @@ MARC tag	Field name	Field repeatability	Field note	SF delimiter	SF name	SF repea
 255	CARTOGRAPHIC MATHEMATICAL DATA	R	.	e	Statement of equinox	NR	.	255e	Cartographic Data	.	.	.	TRLN
 255	CARTOGRAPHIC MATHEMATICAL DATA	R	.	f	Outer G-ring coordinate pairs	NR	.	255f	Cartographic Data	.	.	.	TRLN
 255	CARTOGRAPHIC MATHEMATICAL DATA	R	.	g	Exclusion G-ring coordinate pairs	NR	.	255g	Cartographic Data	.	.	.	TRLN
+260	PUBLICATION, DISTRIBUTION, ETC.	R	.	a	Place of publication, distribution, etc.	R	.	260a	Imprint	.	.	.	TRLN
+260	PUBLICATION, DISTRIBUTION, ETC.	R	.	b	Name of publisher, distributor, etc.	R	.	260b	Imprint	.	.	.	TRLN
+260	PUBLICATION, DISTRIBUTION, ETC.	R	.	b	Name of publisher, distributor, etc.	R	.	260b	Publisher	.	.	.	TRLN
+260	PUBLICATION, DISTRIBUTION, ETC.	R	.	c	Date of publication, distribution, etc.	R	.	260c	Imprint	.	.	.	TRLN
+260	PUBLICATION, DISTRIBUTION, ETC.	R	.	c	Date of publication, distribution, etc.	R	.	260c	Published	.	.	.	TRLN
+260	PUBLICATION, DISTRIBUTION, ETC.	R	.	e	Place of manufacture	R	.	260e	Imprint	.	.	.	TRLN
+260	PUBLICATION, DISTRIBUTION, ETC.	R	.	f	Manufacturer	R	.	260f	Imprint	.	.	.	TRLN
+260	PUBLICATION, DISTRIBUTION, ETC.	R	.	f	Manufacturer	R	.	260f	Publisher	.	.	.	TRLN
+260	PUBLICATION, DISTRIBUTION, ETC.	R	.	g	Date of manufacture	R	.	260g	Imprint	.	.	.	TRLN
 262	IMPRINT STATEMENT FOR SOUND RECORDINGS	NR	[LOCAL]	a	Place of production, release, etc.	NR	.	262a	Imprint	.	.	.	TRLN
 262	IMPRINT STATEMENT FOR SOUND RECORDINGS	NR	[LOCAL]	b	Publisher or trade name	NR	.	262b	Imprint	.	.	.	TRLN
 262	IMPRINT STATEMENT FOR SOUND RECORDINGS	NR	[LOCAL]	b	Publisher or trade name	NR	.	262b	Sound Recording Imprint	.	.	.	TRLN
 262	IMPRINT STATEMENT FOR SOUND RECORDINGS	NR	[LOCAL]	c	Date of production, release, etc.	NR	.	262c	Imprint	.	.	.	TRLN
-264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	a	Projected publication date	NR	.	264a	Distribution Statement	.	2	.	TRLN
-264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	a	Projected publication date	NR	.	264a	Imprint	.	1	.	TRLN
-264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	a	Projected publication date	NR	.	264a	Manufacturer Statement	.	3	.	TRLN
-264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	a	Projected publication date	NR	.	264a	Production Statement	.	0	.	TRLN
 264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	a	Place of production, publication, distribution, manufacture	R	.	264a	Distribution Statement	.	2	.	TRLN
 264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	a	Place of production, publication, distribution, manufacture	R	.	264a	Imprint	.	1	.	TRLN
 264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	a	Place of production, publication, distribution, manufacture	R	.	264a	Manufacturer Statement	.	3	.	TRLN
@@ -214,14 +219,8 @@ MARC tag	Field name	Field repeatability	Field note	SF delimiter	SF name	SF repea
 300	PHYSICAL DESCRIPTION	R	.	g	Size of unit	R	.	300g	Material	.	.	.	TRLN
 310	CURRENT PUBLICATION FREQUENCY	NR	.	a	Current publication frequency	NR	.	310a	Current Frequency	.	.	.	TRLN
 310	CURRENT PUBLICATION FREQUENCY	NR	.	b	Date of current publication frequency	NR	.	310b	Current Frequency	.	.	.	TRLN
-344	SOUND CHARACTERISTICS	R	.	a	Planar coordinate encoding method	NR	.	344a	Material Details	.	.	.	TRLN
-344	SOUND CHARACTERISTICS	R	.	b	Planar distance units	NR	.	344b	Material Details	.	.	.	TRLN
-344	SOUND CHARACTERISTICS	R	.	c	Abscissa resolution	NR	.	344c	Material Details	.	.	.	TRLN
-344	SOUND CHARACTERISTICS	R	.	d	Ordinate resolution	NR	.	344d	Material Details	.	.	.	TRLN
-344	SOUND CHARACTERISTICS	R	.	e	Distance resolution	NR	.	344e	Material Details	.	.	.	TRLN
-344	SOUND CHARACTERISTICS	R	.	f	Bearing resolution	NR	.	344f	Material Details	.	.	.	TRLN
-344	SOUND CHARACTERISTICS	R	.	g	Bearing units	NR	.	344g	Material Details	.	.	.	TRLN
-344	SOUND CHARACTERISTICS	R	.	h	Bearing reference direction	NR	.	344h	Material Details	.	.	.	TRLN
+321	FORMER PUBLICATION FREQUENCY	R	.	a	Former publication frequency	NR	.	321a	Former Frequency	.	.	.	TRLN
+321	FORMER PUBLICATION FREQUENCY	R	.	b	Dates of former publication frequency	NR	.	321b	Former Frequency	.	.	.	TRLN
 344	SOUND CHARACTERISTICS	R	.	a	Type of recording	R	.	344a	Material Details	.	.	.	TRLN
 344	SOUND CHARACTERISTICS	R	.	b	Recording medium	R	.	344b	Material Details	.	.	.	TRLN
 344	SOUND CHARACTERISTICS	R	.	c	Playing speed	R	.	344c	Material Details	.	.	.	TRLN
@@ -231,12 +230,19 @@ MARC tag	Field name	Field repeatability	Field note	SF delimiter	SF name	SF repea
 344	SOUND CHARACTERISTICS	R	.	g	Configuration of playback channels	R	.	344g	Material Details	.	.	.	TRLN
 344	SOUND CHARACTERISTICS	R	.	h	Special playback characteristics	R	.	344h	Material Details	.	.	.	TRLN
 344	SOUND CHARACTERISTICS	R	.	3	Materials specified	NR	.	3443	Material Details	.	.	.	TRLN
-346	VIDEO CHARACTERISTICS	R	.	a	Presentation format	R	.	346a	Material Details	.	.	.	TRLN
-346	VIDEO CHARACTERISTICS	R	.	b	Projection speed	R	.	346b	Material Details	.	.	.	TRLN
-346	VIDEO CHARACTERISTICS	R	.	3	Materials specified	NR	.	3463	Material Details	.	.	.	TRLN
+345	PROJECTION CHARACTERISTICS OF MOVING IMAGE	R	.	a	Presentation format	R	.	345a	Material Details	.	.	.	TRLN
+345	PROJECTION CHARACTERISTICS OF MOVING IMAGE	R	.	b	Projection speed	R	.	345b	Material Details	.	.	.	TRLN
+345	PROJECTION CHARACTERISTICS OF MOVING IMAGE	R	.	3	Materials specified	NR	.	3453	Material Details	.	.	.	TRLN
 346	VIDEO CHARACTERISTICS	R	.	a	Video format	R	.	346a	Material Details	.	.	.	TRLN
 346	VIDEO CHARACTERISTICS	R	.	b	Broadcast standard	R	.	346b	Material Details	.	.	.	TRLN
 346	VIDEO CHARACTERISTICS	R	.	3	Materials specified	NR	.	3463	Material Details	.	.	.	TRLN
+347	DIGITAL FILE CHARACTERISTICS	R	.	a	File type	R	.	347a	Material Details	.	.	.	TRLN
+347	DIGITAL FILE CHARACTERISTICS	R	.	b	Encoding format	R	.	347b	Material Details	.	.	.	TRLN
+347	DIGITAL FILE CHARACTERISTICS	R	.	c	File size	R	.	347c	Material Details	.	.	.	TRLN
+347	DIGITAL FILE CHARACTERISTICS	R	.	d	Resolution	R	.	347d	Material Details	.	.	.	TRLN
+347	DIGITAL FILE CHARACTERISTICS	R	.	e	Regional encoding	R	.	347e	Material Details	.	.	.	TRLN
+347	DIGITAL FILE CHARACTERISTICS	R	.	f	Encoded bitrate	R	.	347f	Material Details	.	.	.	TRLN
+347	DIGITAL FILE CHARACTERISTICS	R	.	3	Materials specified	NR	.	3473	Material Details	.	.	.	TRLN
 351	ORGANIZATION AND ARRANGEMENT OF MATERIALS	R	.	a	Organization	R	.	351a	Organization	.	.	.	TRLN
 362	DATES OF PUBLICATION AND/OR SEQUENTIAL DESIGNATION	R	.	a	Dates of publication and/or sequential designation	NR	.	362a	Volumes	.	.	.	TRLN
 440	SERIES STATEMENT/ADDED ENTRY--TITLE	R	[OBSOLETE]	a	Title	NR	.	440a	Series Statement	.	.	.	TRLN
@@ -382,16 +388,13 @@ MARC tag	Field name	Field repeatability	Field note	SF delimiter	SF name	SF repea
 567	METHODOLOGY NOTE	R	.	a	Methodology note	NR	.	567a	Notes	.	.	.	TRLN
 580	LINKING ENTRY COMPLEXITY NOTE	R	.	a	Linking entry complexity note	NR	.	580a	Notes	.	.	.	TRLN
 581	PUBLICATIONS ABOUT DESCRIBED MATERIALS NOTE	R	.	a	Publications about described materials note	NR	.	581a	Indexed Notes	.	.	.	TRLN
-590	LOCAL NOTE		[OBSOLETE]	a	Exhibitions note	NR	.	590a	Indexed Notes	.	.	.	TRLN
-590	LOCAL NOTE		[OBSOLETE]	a	Exhibitions note	NR	.	590a	Notes	.	.	.	TRLN
-590	LOCAL NOTE		[OBSOLETE]	a	Awards note	NR	.	590a	Indexed Notes	.	.	.	TRLN
-590	LOCAL NOTE		[OBSOLETE]	a	Awards note	NR	.	590a	Notes	.	.	.	TRLN
-590	LOCAL NOTE		[OBSOLETE]	a	Source of description note	NR	.	590a	Indexed Notes	.	.	.	TRLN
-590	LOCAL NOTE		[OBSOLETE]	a	Source of description note	NR	.	590a	Notes	.	.	.	TRLN
-590	LOCAL NOTE		[OBSOLETE]	a	Local note	NR	.	590a	Indexed Notes	.	.	.	TRLN
-590	LOCAL NOTE		[OBSOLETE]	a	Local note	NR	.	590a	Notes	.	.	.	TRLN
-590	RECEIPT DATE NOTE		[OBSOLETE]	a	Receipt date	NR	.	590a	Indexed Notes	.	.	.	TRLN
-590	RECEIPT DATE NOTE		[OBSOLETE]	a	Receipt date	NR	.	590a	Notes	.	.	.	TRLN
+585	EXHIBITIONS NOTE	R	.	a	Exhibitions note	NR	.	585a	Indexed Notes	.	.	.	TRLN
+586	AWARDS NOTE	R	.	a	Awards note	NR	.	586a	Indexed Notes	.	.	.	TRLN
+588	SOURCE OF DESCRIPTION NOTE	R	.	a	Source of description note	NR	.	588a	Notes	.	.	.	TRLN
+590	LOCAL NOTE	.	[OBSOLETE]	a	Local note	NR	.	590a	Indexed Notes	.	.	.	TRLN
+590	LOCAL NOTE	.	[OBSOLETE]	a	Local note	NR	.	590a	Notes	.	.	.	TRLN
+590	RECEIPT DATE NOTE	.	[OBSOLETE]	a	Receipt date	NR	.	590a	Indexed Notes	.	.	.	TRLN
+590	RECEIPT DATE NOTE	.	[OBSOLETE]	a	Receipt date	NR	.	590a	Notes	.	.	.	TRLN
 600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	a	Personal name	NR	.	600a	Subject	.	[12347]	.	TRLN
 600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	a	Personal name	NR	.	600a	Subject Headings	.	.	.	TRLN
 600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	a	Personal name	NR	.	600a	Subjects	.	.	.	TRLN
@@ -671,7 +674,7 @@ MARC tag	Field name	Field repeatability	Field note	SF delimiter	SF name	SF repea
 700	ADDED ENTRY--PERSONAL NAME	R	.	t	Title of a work	NR	.	700t	Other Titles	.	.	.	TRLN
 700	ADDED ENTRY--PERSONAL NAME	R	.	u	Affiliation	NR	.	700u	Name Title	.	.	.	TRLN
 700	ADDED ENTRY--PERSONAL NAME	R	.	x	International Standard Serial Number	NR	.	700x	Name Title	.	.	.	TRLN
-700	ADDED ENTRY--PERSONAL NAME	R	.	4	Relator code	R	.	7004	Name Title	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	4	Relationship	R	.	7004	Name Title	.	.	.	TRLN
 710	ADDED ENTRY--CORPORATE NAME	R	.	a	Corporate name or jurisdiction name as entry element	NR	.	710a	Name Title	.	.	.	TRLN
 710	ADDED ENTRY--CORPORATE NAME	R	.	a	Corporate name or jurisdiction name as entry element	NR	.	710a	Other Authors	.	.	.	TRLN
 710	ADDED ENTRY--CORPORATE NAME	R	.	b	Subordinate unit	R	.	710b	Name Title	.	.	.	TRLN
@@ -709,10 +712,10 @@ MARC tag	Field name	Field repeatability	Field note	SF delimiter	SF name	SF repea
 710	ADDED ENTRY--CORPORATE NAME	R	.	t	Title of a work	NR	.	710t	Other Titles	.	.	.	TRLN
 710	ADDED ENTRY--CORPORATE NAME	R	.	u	Affiliation	NR	.	710u	Name Title	.	.	.	TRLN
 710	ADDED ENTRY--CORPORATE NAME	R	.	x	International Standard Serial Number	NR	.	710x	Name Title	.	.	.	TRLN
-710	ADDED ENTRY--CORPORATE NAME	R	.	4	Relator code	R	.	7104	Name Title	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	4	Relationship	R	.	7104	Name Title	.	.	.	TRLN
 711	ADDED ENTRY--MEETING NAME	R	.	a	Meeting name or jurisdiction name as entry element	NR	.	711a	Name Title	.	.	.	TRLN
 711	ADDED ENTRY--MEETING NAME	R	.	a	Meeting name or jurisdiction name as entry element	NR	.	711a	Other Authors	.	.	.	TRLN
-711	ADDED ENTRY--MEETING NAME	R	.	b	Number		[OBSOLETE]	711b	Other Authors	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	b	Number	.	[OBSOLETE]	711b	Other Authors	.	.	.	TRLN
 711	ADDED ENTRY--MEETING NAME	R	.	c	Location of meeting	R	.	711c	Name Title	.	.	.	TRLN
 711	ADDED ENTRY--MEETING NAME	R	.	c	Location of meeting	R	.	711c	Other Authors	.	.	.	TRLN
 711	ADDED ENTRY--MEETING NAME	R	.	d	Date of meeting	NR	.	711d	Name Title	.	.	.	TRLN
@@ -743,7 +746,7 @@ MARC tag	Field name	Field repeatability	Field note	SF delimiter	SF name	SF repea
 711	ADDED ENTRY--MEETING NAME	R	.	t	Title of a work	NR	.	711t	Other Titles	.	.	.	TRLN
 711	ADDED ENTRY--MEETING NAME	R	.	u	Affiliation	NR	.	711u	Name Title	.	.	.	TRLN
 711	ADDED ENTRY--MEETING NAME	R	.	x	International Standard Serial Number	NR	.	711x	Name Title	.	.	.	TRLN
-711	ADDED ENTRY--MEETING NAME	R	.	4	Relator code	R	.	7114	Name Title	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	4	Relationship	R	.	7114	Name Title	.	.	.	TRLN
 720	ADDED ENTRY--UNCONTROLLED NAME	R	.	a	Name	NR	.	720a	Uncontrolled Author	.	.	.	TRLN
 730	ADDED ENTRY--UNIFORM TITLE	R	.	a	Uniform title	NR	.	730a	Uniform Title	.	.	.	TRLN
 730	ADDED ENTRY--UNIFORM TITLE	R	.	d	Date of treaty signing	R	.	730d	Uniform Title	.	.	.	TRLN

@@ -2,9 +2,10 @@ MARC tag	Field name	Repeatability	Other note	Endeca mappings
 001	CONTROL NUMBER	NR	.	(UNC): . -> OCLCNumber
 003	CONTROL NUMBER IDENTIFIER	NR	.	not mapped to Endeca
 005	DATE AND TIME OF LATEST TRANSACTION	NR	.	not mapped to Endeca
+006	FIXED-LENGTH DATA ELEMENTS--ADDITIONAL MATERIAL CHARACTERISTICS--GENERAL INFORMATION	R	.	not mapped to Endeca
 007	PHYSICAL DESCRIPTION FIXED FIELD--GENERAL INFORMATION	R	.	(TRLN): various codes may contribute to complex logic -> Format
-008	FIXED-LENGTH DATA ELEMENTS--GENERAL INFORMATION	NR	.	(TRLN): 33-34 -> Genre;;;(TRLN): 35-37 -> Language;;;(TRLN): 10-Jul -> PubDateSort;;;(TRLN): 10-Jul -> Publication Year
-009	PHYSICAL DESCRIPTION FIXED-FIELD FOR ARCHIVAL COLLECTION		[OBSOLETE]	not mapped to Endeca
+008	FIXED-LENGTH DATA ELEMENTS--GENERAL INFORMATION	NR	.	(TRLN): 33-34 -> Genre;;;(TRLN): 35-37 -> Language;;;(TRLN): 07-10 -> PubDateSort;;;(TRLN): 07-10 -> Publication Year
+009	PHYSICAL DESCRIPTION FIXED-FIELD FOR ARCHIVAL COLLECTION	.	[OBSOLETE]	not mapped to Endeca
 010	LIBRARY OF CONGRESS CONTROL NUMBER	NR	.	not mapped to Endeca
 011	LINKING LIBRARY OF CONGRESS CONTROL NUMBER	NR	[OBSOLETE]	not mapped to Endeca
 013	PATENT CONTROL INFORMATION	R	.	not mapped to Endeca
@@ -21,6 +22,7 @@ MARC tag	Field name	Repeatability	Other note	Endeca mappings
 028	PUBLISHER NUMBER OR DISTRIBUTOR NUMBER	R	.	(TRLN): ab -> Publisher Number
 030	CODEN DESIGNATION	R	.	not mapped to Endeca
 031	MUSICAL INCIPITS INFORMATION	R	.	not mapped to Endeca
+032	POSTAL REGISTRATION NUMBER	R	.	not mapped to Endeca
 033	DATE/TIME AND PLACE OF AN EVENT	R	.	not mapped to Endeca
 034	CODED CARTOGRAPHIC MATHEMATICAL DATA	R	.	not mapped to Endeca
 035	SYSTEM CONTROL NUMBER	R	.	not mapped to Endeca
@@ -50,12 +52,13 @@ MARC tag	Field name	Repeatability	Other note	Endeca mappings
 080	UNIVERSAL DECIMAL CLASSIFICATION NUMBER	R	.	not mapped to Endeca
 082	DEWEY DECIMAL CLASSIFICATION NUMBER	R	.	not mapped to Endeca
 083	ADDITIONAL DEWEY DECIMAL CLASSIFICATION NUMBER	R	.	not mapped to Endeca
+084	OTHER CLASSIFICATION NUMBER	R	.	not mapped to Endeca
 085	SYNTHESIZED CLASSIFICATION NUMBER COMPONENTS	R	.	not mapped to Endeca
 086	GOVERNMENT DOCUMENT CLASSIFICATION NUMBER	R	.	not mapped to Endeca
 088	REPORT NUMBER	R	.	not mapped to Endeca
-090	LOCAL CALL NUMBER		[OBSOLETE]	(UNC): WHEN a 'good' LC# hasn't been extracted from elsewhere, . -> Call Number Range
-090	SHELF LOCATION		[OBSOLETE]	(UNC): WHEN a 'good' LC# hasn't been extracted from elsewhere, . -> Call Number Range
-091	MICROFILM SHELF LOCATION		[OBSOLETE]	not mapped to Endeca
+090	LOCAL CALL NUMBER	.	[OBSOLETE]	(UNC): WHEN a 'good' LC# hasn't been extracted from elsewhere, . -> Call Number Range
+090	SHELF LOCATION	.	[OBSOLETE]	(UNC): WHEN a 'good' LC# hasn't been extracted from elsewhere, . -> Call Number Range
+091	MICROFILM SHELF LOCATION	.	[OBSOLETE]	not mapped to Endeca
 100	MAIN ENTRY--PERSONAL NAME	NR	.	(TRLN): abcdq -> Author;;;(TRLN): abcdegq -> Main Author
 110	MAIN ENTRY--CORPORATE NAME	NR	.	(TRLN): abcdefg -> Author;;;(TRLN): abcdefgn -> Main Author
 111	MAIN ENTRY--MEETING NAME	NR	.	(TRLN): acdefnq -> Author;;;(TRLN): abcdefngq -> Main Author
@@ -78,37 +81,53 @@ MARC tag	Field name	Repeatability	Other note	Endeca mappings
 256	COMPUTER FILE CHARACTERISTICS	NR	.	not mapped to Endeca
 257	COUNTRY OF PRODUCING ENTITY	R	.	not mapped to Endeca
 258	PHILATELIC ISSUE DATE	R	.	not mapped to Endeca
+260	PUBLICATION, DISTRIBUTION, ETC.	R	.	(TRLN): abcefg -> Imprint;;;(TRLN): c -> Published;;;(TRLN): bf -> Publisher
 261	IMPRINT STATEMENT FOR FILMS	NR	[LOCAL]	not mapped to Endeca
 262	IMPRINT STATEMENT FOR SOUND RECORDINGS	NR	[LOCAL]	(TRLN): abcde -> Imprint;;;(TRLN): b -> Sound Recording Imprint
+263	PROJECTED PUBLICATION DATE	NR	.	not mapped to Endeca
 264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	(TRLN): WHEN i2=4, c -> Copyright;;;(TRLN): WHEN i2=4, c -> Copyright Statement;;;(TRLN): WHEN i2=2, abc -> Distribution Statement;;;(TRLN): WHEN i2=2, b -> Distributor;;;(TRLN): WHEN i2=1, abc -> Imprint;;;(TRLN): WHEN i2=3, b -> Manufacturer;;;(TRLN): WHEN i2=3, abc -> Manufacturer Statement;;;(TRLN): WHEN i2=0, b -> Producer;;;(TRLN): WHEN i2=0, abc -> Production Statement;;;(TRLN): WHEN i2=1, c -> Published;;;(TRLN): WHEN i2=1, b -> Publisher
 265	SOURCE FOR ACQUISITION/SUBSCRIPTION ADDRESS	NR	[OBSOLETE]	not mapped to Endeca
 270	ADDRESS	R	.	not mapped to Endeca
 300	PHYSICAL DESCRIPTION	R	.	(TRLN): abcefg -> Material
-301	PHYSICAL DESCRIPTION FOR FILMS		[OBSOLETE]	not mapped to Endeca
-302	PAGE OR ITEM COUNT		[OBSOLETE]	not mapped to Endeca
-303	UNIT COUNT		[OBSOLETE]	not mapped to Endeca
-304	LINEAR FOOTAGE		[OBSOLETE]	not mapped to Endeca
-305	PHYSICAL DESCRIPTION FOR SOUND RECORDINGS		[OBSOLETE]	not mapped to Endeca
+301	PHYSICAL DESCRIPTION FOR FILMS	.	[OBSOLETE]	not mapped to Endeca
+302	PAGE OR ITEM COUNT	.	[OBSOLETE]	not mapped to Endeca
+303	UNIT COUNT	.	[OBSOLETE]	not mapped to Endeca
+304	LINEAR FOOTAGE	.	[OBSOLETE]	not mapped to Endeca
+305	PHYSICAL DESCRIPTION FOR SOUND RECORDINGS	.	[OBSOLETE]	not mapped to Endeca
 306	PLAYING TIME	NR	.	not mapped to Endeca
 307	HOURS, ETC.	R	.	not mapped to Endeca
-308	PHYSICAL DESCRIPTION FOR FILMS		[OBSOLETE]	not mapped to Endeca
+308	PHYSICAL DESCRIPTION FOR FILMS	.	[OBSOLETE]	not mapped to Endeca
 310	CURRENT PUBLICATION FREQUENCY	NR	.	(TRLN): ab -> Current Frequency
 315	FREQUENCY	NR	[OBSOLETE]	not mapped to Endeca
+321	FORMER PUBLICATION FREQUENCY	R	.	(TRLN): ab -> Former Frequency
+336	CONTENT TYPE	R	.	not mapped to Endeca
+337	MEDIA TYPE	R	.	not mapped to Endeca
+338	CARRIER TYPE	R	.	not mapped to Endeca
 340	PHYSICAL MEDIUM	R	.	not mapped to Endeca
 342	GEOSPATIAL REFERENCE DATA	R	.	not mapped to Endeca
+343	PLANAR COORDINATE DATA	R	.	not mapped to Endeca
 344	SOUND CHARACTERISTICS	R	.	(TRLN): abcdefgh3 -> Material Details
+345	PROJECTION CHARACTERISTICS OF MOVING IMAGE	R	.	(TRLN): ab3 -> Material Details
 346	VIDEO CHARACTERISTICS	R	.	(TRLN): ab3 -> Material Details
+347	DIGITAL FILE CHARACTERISTICS	R	.	(TRLN): abcdef3 -> Material Details
 348	FORMAT OF NOTATED MUSIC	R	.	not mapped to Endeca
 350	PRICE	NR	[OBSOLETE]	not mapped to Endeca
 351	ORGANIZATION AND ARRANGEMENT OF MATERIALS	R	.	(TRLN): a -> Organization
 352	DIGITAL GRAPHIC REPRESENTATION	R	.	not mapped to Endeca
 355	SECURITY CLASSIFICATION CONTROL	R	.	not mapped to Endeca
 357	ORIGINATOR DISSEMINATION CONTROL	NR	.	not mapped to Endeca
-359	RENTAL PRICE		[OBSOLETE]	not mapped to Endeca
+359	RENTAL PRICE	.	[OBSOLETE]	not mapped to Endeca
 362	DATES OF PUBLICATION AND/OR SEQUENTIAL DESIGNATION	R	.	(TRLN): a -> Volumes
 363	NORMALIZED DATE AND SEQUENTIAL DESIGNATION	R	.	not mapped to Endeca
 365	TRADE PRICE	R	.	not mapped to Endeca
 366	TRADE AVAILABILITY INFORMATION	R	.	not mapped to Endeca
+370	ASSOCIATED PLACE	R	.	not mapped to Endeca
+377	ASSOCIATED LANGUAGE	R	.	not mapped to Endeca
+380	FORM OF WORK	R	.	not mapped to Endeca
+381	OTHER DISTINGUISHING CHARACTERISTICS OF WORK OR EXPRESSION	R	.	not mapped to Endeca
+382	MEDIUM OF PERFORMANCE	R	.	not mapped to Endeca
+383	NUMERIC DESIGNATION OF MUSICAL WORK	R	.	not mapped to Endeca
+384	KEY	NR	.	not mapped to Endeca
 385	AUDIENCE CHARACTERISTICS	R	.	not mapped to Endeca
 386	CREATOR/CONTRIBUTOR CHARACTERISTICS	R	.	not mapped to Endeca
 388	TIME PERIOD OF CREATION	R	.	not mapped to Endeca
@@ -173,8 +192,11 @@ MARC tag	Field name	Repeatability	Other note	Endeca mappings
 582	RELATED COMPUTER FILES NOTE	R	[OBSOLETE]	not mapped to Endeca
 583	ACTION NOTE	R	.	not mapped to Endeca
 584	ACCUMULATION AND FREQUENCY OF USE NOTE	R	.	not mapped to Endeca
-590	LOCAL NOTE		[OBSOLETE]	(TRLN): a -> Indexed Notes;;;(TRLN): a -> Notes
-590	RECEIPT DATE NOTE		[OBSOLETE]	(TRLN): a -> Indexed Notes;;;(TRLN): a -> Notes
+585	EXHIBITIONS NOTE	R	.	(TRLN): a -> Indexed Notes
+586	AWARDS NOTE	R	.	(TRLN): a -> Indexed Notes
+588	SOURCE OF DESCRIPTION NOTE	R	.	(TRLN): a -> Notes
+590	LOCAL NOTE	.	[OBSOLETE]	(TRLN): a -> Indexed Notes;;;(TRLN): a -> Notes
+590	RECEIPT DATE NOTE	.	[OBSOLETE]	(TRLN): a -> Indexed Notes;;;(TRLN): a -> Notes
 600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	(TRLN): WHEN i2=[12347], v -> Genre;;;(TRLN): WHEN i2=[12347], z -> Region;;;(TRLN): WHEN i2=[12347], a -> Subject;;;(TRLN): WHEN i2=[12347], x -> Subject;;;(TRLN): abcdefghijklmnopqrstvxyz -> Subject Headings;;;(TRLN): abcdefghijklmnopqrstvxyz -> Subjects;;;(TRLN): WHEN i2=[12347], y -> Time Period
 610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	(TRLN): WHEN i2=[12347], v -> Genre;;;(TRLN): WHEN i2=[12347], z -> Region;;;(TRLN): WHEN i2=[12347], a -> Subject;;;(TRLN): WHEN i2=[12347], x -> Subject;;;(TRLN): abcdefghijklmnopqrstvxyz -> Subject Headings;;;(TRLN): abcdefghijklmnopqrstvxyz -> Subjects;;;(TRLN): WHEN i2=[12347], y -> Time Period
 611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	(TRLN): WHEN i2=[12347], v -> Genre;;;(TRLN): WHEN i2=[12347], z -> Region;;;(TRLN): WHEN i2=[12347], a -> Subject;;;(TRLN): WHEN i2=[12347], x -> Subject;;;(TRLN): acdefghijklmnopqrstvxyz -> Subject Headings;;;(TRLN): acdefghijklmnopqrstvxyz -> Subjects;;;(TRLN): WHEN i2=[12347], y -> Time Period
@@ -183,7 +205,7 @@ MARC tag	Field name	Repeatability	Other note	Endeca mappings
 648	SUBJECT ADDED ENTRY--CHRONOLOGICAL TERM	R	.	not mapped to Endeca
 650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	(TRLN): WHEN i2=[12347], v -> Genre;;;(TRLN): WHEN i2=2, x -> Medical Subject;;;(TRLN): WHEN i2=2, a -> Medical Subject;;;(TRLN): WHEN i2=[12347], z -> Region;;;(TRLN): WHEN i2=[12347], a -> Subject;;;(TRLN): WHEN i2=[12347], x -> Subject;;;(TRLN): abcdevxyz -> Subject Headings;;;(TRLN): abcdevxyz -> Subjects;;;(TRLN): WHEN i2=[12347], y -> Time Period
 651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	(TRLN): WHEN i2=[12347], v -> Genre;;;(TRLN): WHEN i2=[12347], a -> Region;;;(TRLN): WHEN i2=[12347], z -> Region;;;(TRLN): WHEN i2=[12347], x -> Subject;;;(TRLN): avxyz -> Subject Headings;;;(TRLN): avxyz -> Subjects;;;(TRLN): WHEN i2=[12347], y -> Time Period
-652	SUBJECT ADDED ENTRY--REVERSED GEOGRAPHIC		[OBSOLETE]	not mapped to Endeca
+652	SUBJECT ADDED ENTRY--REVERSED GEOGRAPHIC	.	[OBSOLETE]	not mapped to Endeca
 653	INDEX TERM--UNCONTROLLED	R	.	(TRLN): a -> Subject Headings;;;(TRLN): a -> Subjects
 654	SUBJECT ADDED ENTRY--FACETED TOPICAL TERMS	R	.	not mapped to Endeca
 655	INDEX TERM--GENRE/FORM	R	.	(TRLN): WHEN i2=[12347], a -> Genre;;;(TRLN): WHEN i2=[12347], z -> Region;;;(TRLN): abvxyz -> Subject Headings
@@ -192,10 +214,10 @@ MARC tag	Field name	Repeatability	Other note	Endeca mappings
 658	INDEX TERM--CURRICULUM OBJECTIVE	R	.	not mapped to Endeca
 662	SUBJECT ADDED ENTRY--HIERARCHICAL PLACE NAME	R	.	not mapped to Endeca
 700	ADDED ENTRY--PERSONAL NAME	R	.	(TRLN): abcdq -> Author;;;(TRLN): abcdejqu4fhiklmnoprstxg -> Name Title;;;(TRLN): abcdeq -> Other Authors;;;(TRLN): fghijklmnoprst -> Other Titles;;;(TRLN): WHEN 4=drt || e=director,  -> Director
-705	ADDED ENTRY--PERSONAL NAME		[OBSOLETE]	not mapped to Endeca
+705	ADDED ENTRY--PERSONAL NAME	.	[OBSOLETE]	not mapped to Endeca
 710	ADDED ENTRY--CORPORATE NAME	R	.	(TRLN): abceu4fhiklmoprstxdgn -> Name Title;;;(TRLN): abcde -> Other Authors;;;(TRLN): fghklmnoprst -> Other Titles
 711	ADDED ENTRY--MEETING NAME	R	.	(TRLN): acdejqu4fhiklpstxgn -> Name Title;;;(TRLN): abcdeq -> Other Authors;;;(TRLN): fghklmnpst -> Other Titles
-715	ADDED ENTRY--CORPORATE NAME		[OBSOLETE]	not mapped to Endeca
+715	ADDED ENTRY--CORPORATE NAME	.	[OBSOLETE]	not mapped to Endeca
 720	ADDED ENTRY--UNCONTROLLED NAME	R	.	(TRLN): a -> Uncontrolled Author
 730	ADDED ENTRY--UNIFORM TITLE	R	.	(TRLN): adfghklmnoprst -> Uniform Title
 740	ADDED ENTRY--UNCONTROLLED RELATED/ANALYTICAL TITLE	R	.	(TRLN): ahnp -> Varying Titles
@@ -242,14 +264,15 @@ MARC tag	Field name	Repeatability	Other note	Endeca mappings
 866	TEXTUAL HOLDINGS--BASIC BIBLIOGRAPHIC UNIT	R	.	not mapped to Endeca
 867	TEXTUAL HOLDINGS--SUPPLEMENTARY MATERIAL	R	.	not mapped to Endeca
 868	TEXTUAL HOLDINGS--INDEXES	R	.	not mapped to Endeca
-870	VARIANT PERSONAL NAME		[OBSOLETE]	not mapped to Endeca
-871	VARIANT CORPORATE NAME		[OBSOLETE]	not mapped to Endeca
-872	VARIANT CONFERENCE OR MEETING NAME		[OBSOLETE]	not mapped to Endeca
-873	VARIANT UNIFORM TITLE HEADING		[OBSOLETE]	not mapped to Endeca
+870	VARIANT PERSONAL NAME	.	[OBSOLETE]	not mapped to Endeca
+871	VARIANT CORPORATE NAME	.	[OBSOLETE]	not mapped to Endeca
+872	VARIANT CONFERENCE OR MEETING NAME	.	[OBSOLETE]	not mapped to Endeca
+873	VARIANT UNIFORM TITLE HEADING	.	[OBSOLETE]	not mapped to Endeca
 876	ITEM INFORMATION--BASIC BIBLIOGRAPHIC UNIT	R	.	not mapped to Endeca
 877	ITEM INFORMATION--SUPPLEMENTARY MATERIAL	R	.	not mapped to Endeca
 878	ITEM INFORMATION--INDEXES	R	.	not mapped to Endeca
 880	ALTERNATE GRAPHIC REPRESENTATION	R	.	not mapped to Endeca
+882	REPLACEMENT RECORD INFORMATION	NR	.	not mapped to Endeca
 883	MACHINE-GENERATED METADATA PROVENANCE	R	.	not mapped to Endeca
 884	DESCRIPTION CONVERSION INFORMATION	R	.	not mapped to Endeca
 885	MATCHING INFORMATION	R	.	not mapped to Endeca
