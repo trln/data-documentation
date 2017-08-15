@@ -1,9 +1,0 @@
-* MARC spreadsheet - mapping marc bibliographic to our elements
-** tags tab: extract all MARC bibliographic tags from: http://www.loc.gov/marc/bibliographic/ecbdlist.html
-** endeca tab
-*** copy over explicitly stated MARC tag mappings and some other data from endeca data model spreadsheet, including Endeca element into which field data is mapped
-*** remove rows where Endeca element (or prepipeline label) is normalized or vernacular
-* Questions
-** What do we want to do with relationship designators in headings? 
-** Vernacular -- do we move ahead with the general approach we were thinking, or continue specifying only certain fields that are specially handled as vernacular in the system (which is what Stanford is still doing...)
-** Authors -- separate corporate/meeting and persons?
