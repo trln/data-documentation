@@ -1,34 +1,24 @@
-Argot field	source data format	element/field	subelement/field(s)	constraints	processing	notes	mapping_id
-subject_topic_lcsh_facet	MARC	600	abcdfghjklmnopqrstu	i2=0	Trim spaces; remove trailing punctuation	"In Endeca data model, people (and their works) as topics are mapped into subject:topic facet"	1
-subject_topic_lcsh_facet	MARC	600	abcdfghjklmnopqrstu	i2=7 AND $2=lcsh	Trim spaces; remove trailing punctuation	"In Endeca data model, people as topics are mapped into subject:topic facet"	2
-subject_topic_lcsh_facet	MARC	600	x	i2=0	Each $x value in field is separate value; remove trailing punctuation	.	3
-subject_topic_lcsh_facet	MARC	600	x	i2=7 AND $2=lcsh	Each $x value in field is separate value; remove trailing punctuation	.	4
-subject_topic_lcsh_facet	MARC	610	abcdfghklmnoprstu	i2=0	Trim spaces; remove trailing punctuation	"In Endeca data model, corporate bodies (and their works) as topics are mapped into subject:topic facet"	5
-subject_topic_lcsh_facet	MARC	610	abcdfghklmnoprstu	i2=7 AND $2=lcsh	Trim spaces; remove trailing punctuation	"In Endeca data model, corporate bodies (and their works) as topics are mapped into subject:topic facet"	6
-subject_topic_lcsh_facet	MARC	610	x	i2=0	Each $x value in field is separate value; remove trailing punctuation	.	7
-subject_topic_lcsh_facet	MARC	610	x	i2=7 AND $2=lcsh	Each $x value in field is separate value; remove trailing punctuation	.	8
-subject_topic_lcsh_facet	MARC	611	acdefghklnpqstu	i2=0	Trim spaces; remove trailing punctuation	"In Endeca data model, meeting names (and their works) as topics are mapped into subject:topic facet"	9
-subject_topic_lcsh_facet	MARC	611	acdefghklnpqstu	i2=7 AND $2=lcsh	Trim spaces; remove trailing punctuation	"In Endeca data model, meeting names (and their works) as topics are mapped into subject:topic facet"	10
-subject_topic_lcsh_facet	MARC	611	x	i2=0	Each $x value in field is separate value; remove trailing punctuation	.	11
-subject_topic_lcsh_facet	MARC	611	x	i2=7 AND $2=lcsh	Each $x value in field is separate value; remove trailing punctuation	.	12
-subject_topic_lcsh_facet	MARC	630	adfghklmnoprst	i2=0	Trim spaces; remove trailing punctuation	"In Endeca data model, works as topics are mapped into subject:topic facet"	13
-subject_topic_lcsh_facet	MARC	630	adfghklmnoprst	i2=7 AND $2=lcsh	Trim spaces; remove trailing punctuation	"In Endeca data model, works as topics are mapped into subject:topic facet"	14
-subject_topic_lcsh_facet	MARC	630	x	i2=0	Each $x value in field is separate value; remove trailing punctuation	.	15
-subject_topic_lcsh_facet	MARC	630	x	i2=7 AND $2=lcsh	Each $x value in field is separate value; remove trailing punctuation	.	16
-subject_topic_lcsh_facet	MARC	647	acdg	i2=0	Trim spaces; remove trailing punctuation	.	17
-subject_topic_lcsh_facet	MARC	647	acdg	i2=7 AND $2=lcsh	Trim spaces; remove trailing punctuation	.	18
-subject_topic_lcsh_facet	MARC	647	x	i2=0	Each $x value in field is separate value; remove trailing punctuation	.	19
-subject_topic_lcsh_facet	MARC	647	x	i2=7 AND $2=lcsh	Each $x value in field is separate value; remove trailing punctuation	.	20
-subject_topic_lcsh_facet	MARC	648	x	i2=0	Each $x value in field is separate value; remove trailing punctuation	.	21
-subject_topic_lcsh_facet	MARC	648	x	i2=7 AND $2=lcsh	Each $x value in field is separate value; remove trailing punctuation	.	22
-subject_topic_lcsh_facet	MARC	650	abcdg	i2=0	Trim spaces; remove trailing punctuation	.	23
-subject_topic_lcsh_facet	MARC	650	abcdg	i2=7 AND $2=lcsh	Trim spaces; remove trailing punctuation	.	24
-subject_topic_lcsh_facet	MARC	650	x	i2=0	Each $x value in field is separate value; remove trailing punctuation	.	25
-subject_topic_lcsh_facet	MARC	650	x	i2=7 AND $2=lcsh	Each $x value in field is separate value; remove trailing punctuation	.	26
-subject_topic_lcsh_facet	MARC	651	x	i2=0	Each $x value in field is separate value; remove trailing punctuation	.	27
-subject_topic_lcsh_facet	MARC	651	x	i2=7 AND $2=lcsh	Each $x value in field is separate value; remove trailing punctuation	.	28
-subject_topic_lcsh_facet	MARC	656	a	i2=7 AND $2=lcsh	Trim spaces; remove trailing punctuation	.	29
-subject_topic_lcsh_facet	MARC	656	x	i2=7 AND $2=lcsh	Each $x value in field is separate value; remove trailing punctuation	.	30
-subject_topic_lcsh_facet	MARC	657	a	i2=7 AND $2=lcsh	Trim spaces; remove trailing punctuation	.	31
-subject_topic_lcsh_facet	MARC	657	x	i2=7 AND $2=lcsh	Each $x value in field is separate value; remove trailing punctuation	.	32
-subject_genre_facet	MARC	008	33-34	LDR/06 = a AND LDR/07 =~ [acdm]	"For each byte value present: map a value from 008_literary_form.json if there is a match. If there is no match, don't populate"	.	33
+Argot field	source data format	element/field	subelement/field(s)	constraints	processing_type	processing instructions	notes	mapping_id
+subject_genre_facet	MARC	006	17	LDR/06 = a AND LDR/07 =~ [acdm] AND 006/00 =~ [at]	subelement_to_value	"if =~ [abcd], value = Biography"	. 	36
+subject_genre_facet	MARC	006	16	LDR/06 = a AND LDR/07 =~ [acdm] AND 006/00 =~ [at]	subelement_to_value	"map a value from 008_literary_form.json if there is a match. If there is no match, don't populate"	.	35
+subject_genre_facet	MARC	008	34	LDR/06 = a AND LDR/07 =~ [acdm]	subelement_to_value	"if =~ [abcd], value = Biography"	. 	34
+subject_genre_facet	MARC	008	33	LDR/06 = a AND LDR/07 =~ [acdm]	subelement_to_value	"map a value from 008_literary_form.json if there is a match. If there is no match, don't populate"	.	33
+subject_genre_facet	MARC	600	v	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	2
+subject_topic_lcsh_facet	MARC	600	abcdfghjklmnopqrstu	i2=0 OR (i2=7 AND $2=lcsh)	concat_subelements	.	"In Endeca data model, people (and their works) as topics are mapped into subject:topic facet"	1
+subject_topic_lcsh_facet	MARC	600	x	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	3
+subject_topic_lcsh_facet	MARC	610	abcdfghklmnoprstu	i2=0 OR (i2=7 AND $2=lcsh)	concat_subelements	.	"In Endeca data model, corporate bodies (and their works) as topics are mapped into subject:topic facet"	5
+subject_topic_lcsh_facet	MARC	610	x	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	7
+subject_topic_lcsh_facet	MARC	611	acdefghklnpqstu	i2=0 OR (i2=7 AND $2=lcsh)	concat_subelements	.	"In Endeca data model, meeting names (and their works) as topics are mapped into subject:topic facet"	9
+subject_topic_lcsh_facet	MARC	611	x	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	11
+subject_topic_lcsh_facet	MARC	630	adfghklmnoprst	i2=0 OR (i2=7 AND $2=lcsh)	concat_subelements	.	"In Endeca data model, works as topics are mapped into subject:topic facet"	13
+subject_topic_lcsh_facet	MARC	630	x	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	15
+subject_topic_lcsh_facet	MARC	647	x	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	19
+subject_topic_lcsh_facet	MARC	647	acdg	i2=0 OR (i2=7 AND $2=lcsh)	concat_subelements	.	.	17
+subject_topic_lcsh_facet	MARC	648	x	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	21
+subject_topic_lcsh_facet	MARC	650	x	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	25
+subject_topic_lcsh_facet	MARC	650	abcdg	i2=0 OR (i2=7 AND $2=lcsh)	concat_subelements	.	.	23
+subject_topic_lcsh_facet	MARC	651	x	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	27
+subject_topic_lcsh_facet	MARC	656	x	i2=7 AND $2=lcsh	subelement_to_value	.	.	30
+subject_topic_lcsh_facet	MARC	656	a	i2=7 AND $2=lcsh	subelement_to_value	.	.	29
+subject_topic_lcsh_facet	MARC	657	x	i2=7 AND $2=lcsh	subelement_to_value	.	.	32
+subject_topic_lcsh_facet	MARC	657	a	i2=7 AND $2=lcsh	subelement_to_value	.	.	31
