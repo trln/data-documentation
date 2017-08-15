@@ -1,0 +1,68 @@
+Argot field,source data format,element/field,subelement/field(s),constraints,processing,notes
+creators_and_contributors_main_author,MARC,100,abcdejqu4,na,translate $4 to term,modeling of $e and $4 need to be discussed
+creators_and_contributors_main_author,MARC,110,abcdegnu4,na,translate $4 to term,modeling of $e and $4 need to be discussed
+creators_and_contributors_main_author,MARC,111,acdegjnqu4,na,translate $4 to term,modeling of $j and $4 need to be discussed
+creators_and_contributors_directors,MARC,700,abcdjqu,$e = director OR $4 =~ /drt *$/,na,"do not extract/include $e or $4 values because ""Name, Given, director"" will be redundant when displayed with ""Director:"" label"
+creators_and_contributors_additional_authors,MARC,700,abcdejqu4,$e and/or $4 in list of creator codes/terms (http://id.loc.gov/vocabulary/relators/collection_RDACreator.html ),translate $4 to term,modeling of $e and $4 need to be discussed
+creators_and_contributors_contributors,MARC,700,abcdejqu4,$e and/or $4 in list of contributor codes/terms (http://id.loc.gov/vocabulary/relators/collection_RDAContributor.html ),translate $4 to term,modeling of $e and $4 need to be discussed
+creators_and_contributors_additional_authors,MARC,710,abceu4 -- dgn preceding t,$e and/or $4 in list of creator codes/terms (http://id.loc.gov/vocabulary/relators/collection_RDACreator.html ),translate $4 to term,modeling of $e and $4 need to be discussed
+creators_and_contributors_contributors,MARC,710,abceu4 -- dgn preceding t,$e and/or $4 in list of contributor codes/terms (http://id.loc.gov/vocabulary/relators/collection_RDAContributor.html ),translate $4 to term,modeling of $e and $4 need to be discussed
+creators_and_contributors_additional_authors,MARC,711,acdejqu4 -- gn preceding t,$j and/or $4 in list of creator codes/terms (http://id.loc.gov/vocabulary/relators/collection_RDACreator.html ),translate $4 to term,modeling of $j and $4 need to be discussed
+creators_and_contributors_contributors,MARC,711,acdejqu4 -- gn preceding t,$j and/or $4 in list of contributor codes/terms (http://id.loc.gov/vocabulary/relators/collection_RDAContributor.html ),translate $4 to term,modeling of $j and $4 need to be discussed
+creators_and_contributors_other,MARC,700,abcdejqu4,$e and/or $4 in list of other codes/terms (http://id.loc.gov/vocabulary/relators/collection_RDAOther.html ) OR no $e or $4,translate $4 to term,modeling of $e and $4 need to be discussed
+creators_and_contributors_other,MARC,710,abceu4 -- dgn preceding t,$e and/or $4 in list of other codes/terms (http://id.loc.gov/vocabulary/relators/collection_RDAOther.html ) OR no $e or $4,translate $4 to term,modeling of $e and $4 need to be discussed
+creators_and_contributors_other,MARC,711,acdejqu4 -- gn preceding t,$j and/or $4 in list of other codes/terms (http://id.loc.gov/vocabulary/relators/collection_RDAOther.html ) OR no $j or $4,translate $4 to term,modeling of $j and $4 need to be discussed
+creators_and_contributors_included_work_author(s),MARC,700,abcdjqu,i2 = 2 AND field includes t or k,na,.
+creators_and_contributors_included_work_author(s),MARC,710,abcu -- dgn preceding t,i2 = 2 AND field includes t or k,na,.
+creators_and_contributors_included_work_author(s),MARC,711,acdequ -- gn preceding t,i2 = 2 AND field includes t or k,na,.
+creators_and_contributors_related_work_author(s),MARC,700,abcdjqu,i2 != 2 AND field includes t or k,na,.
+creators_and_contributors_related_work_author(s),MARC,710,abcu -- dgn preceding t,i2 != 2 AND field includes t or k,na,.
+creators_and_contributors_related_work_author(s),MARC,711,acdequ -- gn preceding t,i2 != 2 AND field includes t or k,na,.
+creators_and_contributors_statement of responsibility,MARC,245,c,na,na,.
+creators_and_contributors_chapter_authors,MARC,505,r,i2 = 0,na,.
+creators_and_contributors_chapter_authors,ICE,Chapter Author,na,na,na,.
+creators_and_contributors_related_work_author(s),MARC,765,a,na,na,.
+creators_and_contributors_related_work_author(s),MARC,767,a,na,na,.
+creators_and_contributors_related_work_author(s),MARC,770,a,na,na,.
+creators_and_contributors_related_work_author(s),MARC,772,a,na,na,.
+creators_and_contributors_related_work_author(s),MARC,773,a,na,na,.
+creators_and_contributors_included_work_author(s),MARC,774,a,na,na,.
+creators_and_contributors_related_work_author(s),MARC,775,a,na,na,.
+creators_and_contributors_related_work_author(s),MARC,777,a,na,na,"777 can't be mapped to included work, since the reciprocal link (to the broader resource) in the record for the narrower resource would also be coded as a 777"
+creators_and_contributors_related_work_author(s),MARC,780,a,na,na,.
+creators_and_contributors_related_work_author(s),MARC,785,a,na,na,.
+creators_and_contributors_related_work_author(s),MARC,786,a,na,na,.
+creators_and_contributors_related_work_author(s),MARC,787,a,na,na,.
+subject_topic_lcsh,MARC,600,abcdfghjklmnopqrstu,i2=0,Trim spaces; remove trailing punctuation,"In Endeca data model, people (and their works) as topics are mapped into subject:topic facet"
+subject_topic_lcsh,MARC,600,abcdfghjklmnopqrstu,i2=7 AND $2=lcsh,Trim spaces; remove trailing punctuation,"In Endeca data model, people as topics are mapped into subject:topic facet"
+subject_topic_lcsh,MARC,600,x,i2=0,Each $x value in field is separate value; remove trailing punctuation,.
+subject_topic_lcsh,MARC,600,x,i2=7 AND $2=lcsh,Each $x value in field is separate value; remove trailing punctuation,.
+subject_topic_lcsh,MARC,610,abcdfghklmnoprstu,i2=0,Trim spaces; remove trailing punctuation,"In Endeca data model, corporate bodies (and their works) as topics are mapped into subject:topic facet"
+subject_topic_lcsh,MARC,610,abcdfghklmnoprstu,i2=7 AND $2=lcsh,Trim spaces; remove trailing punctuation,"In Endeca data model, corporate bodies (and their works) as topics are mapped into subject:topic facet"
+subject_topic_lcsh,MARC,610,x,i2=0,Each $x value in field is separate value; remove trailing punctuation,.
+subject_topic_lcsh,MARC,610,x,i2=7 AND $2=lcsh,Each $x value in field is separate value; remove trailing punctuation,.
+subject_topic_lcsh,MARC,611,acdefghklnpqstu,i2=0,Trim spaces; remove trailing punctuation,"In Endeca data model, meeting names (and their works) as topics are mapped into subject:topic facet"
+subject_topic_lcsh,MARC,611,acdefghklnpqstu,i2=7 AND $2=lcsh,Trim spaces; remove trailing punctuation,"In Endeca data model, meeting names (and their works) as topics are mapped into subject:topic facet"
+subject_topic_lcsh,MARC,611,x,i2=0,Each $x value in field is separate value; remove trailing punctuation,.
+subject_topic_lcsh,MARC,611,x,i2=7 AND $2=lcsh,Each $x value in field is separate value; remove trailing punctuation,.
+subject_topic_lcsh,MARC,630,adfghklmnoprst,i2=0,Trim spaces; remove trailing punctuation,"In Endeca data model, works as topics are mapped into subject:topic facet"
+subject_topic_lcsh,MARC,630,adfghklmnoprst,i2=7 AND $2=lcsh,Trim spaces; remove trailing punctuation,"In Endeca data model, works as topics are mapped into subject:topic facet"
+subject_topic_lcsh,MARC,630,x,i2=0,Each $x value in field is separate value; remove trailing punctuation,.
+subject_topic_lcsh,MARC,630,x,i2=7 AND $2=lcsh,Each $x value in field is separate value; remove trailing punctuation,.
+subject_topic_lcsh,MARC,647,acdg,i2=0,Trim spaces; remove trailing punctuation,.
+subject_topic_lcsh,MARC,647,acdg,i2=7 AND $2=lcsh,Trim spaces; remove trailing punctuation,.
+subject_topic_lcsh,MARC,647,x,i2=0,Each $x value in field is separate value; remove trailing punctuation,.
+subject_topic_lcsh,MARC,647,x,i2=7 AND $2=lcsh,Each $x value in field is separate value; remove trailing punctuation,.
+subject_topic_lcsh,MARC,648,x,i2=0,Each $x value in field is separate value; remove trailing punctuation,.
+subject_topic_lcsh,MARC,648,x,i2=7 AND $2=lcsh,Each $x value in field is separate value; remove trailing punctuation,.
+subject_topic_lcsh,MARC,650,abcdg,i2=0,Trim spaces; remove trailing punctuation,.
+subject_topic_lcsh,MARC,650,abcdg,i2=7 AND $2=lcsh,Trim spaces; remove trailing punctuation,.
+subject_topic_lcsh,MARC,650,x,i2=0,Each $x value in field is separate value; remove trailing punctuation,.
+subject_topic_lcsh,MARC,650,x,i2=7 AND $2=lcsh,Each $x value in field is separate value; remove trailing punctuation,.
+subject_topic_lcsh,MARC,651,x,i2=0,Each $x value in field is separate value; remove trailing punctuation,.
+subject_topic_lcsh,MARC,651,x,i2=7 AND $2=lcsh,Each $x value in field is separate value; remove trailing punctuation,.
+subject_topic_lcsh,MARC,656,a,i2=7 AND $2=lcsh,Trim spaces; remove trailing punctuation,.
+subject_topic_lcsh,MARC,656,x,i2=7 AND $2=lcsh,Each $x value in field is separate value; remove trailing punctuation,.
+subject_topic_lcsh,MARC,657,a,i2=7 AND $2=lcsh,Trim spaces; remove trailing punctuation,.
+subject_topic_lcsh,MARC,657,x,i2=7 AND $2=lcsh,Each $x value in field is separate value; remove trailing punctuation,.
+subject_genre,MARC,8,33-34,LDR/06 = a AND LDR/07 =~ [acdm],"For each byte value present: map a value from 008_literary_form.json if there is a match. If there is no match, don't populate",.

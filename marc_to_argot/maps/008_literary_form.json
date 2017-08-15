@@ -1,0 +1,11 @@
+{ "0" : "Nonfiction",
+  "1" : "Fiction",
+  "d" : "Drama",
+  "e" : "Essays",
+  "f" : "Novels",
+  "h" : "Humor, satire, etc",
+  "i" : "Letters",
+  "j" : "Short storeis",
+  "p" : "Poetry",
+  "s" : "Speeches, addresses, etc"
+ }
