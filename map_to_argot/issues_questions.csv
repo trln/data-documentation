@@ -1,4 +1,0 @@
-subject_topic_lcsh,655,x,"Not really topical in practice, right? "
-genre,655,x,"Append to end of $a value, separated by "", ""? "
-subject_topic_mesh,.,.,Endeca data model has separate Medical Subject facet. Are we not populating that? 
-genre,.,.,"Should not be limited to just LCSH. Maybe we only pull it from $v of LCSH headings, but terms from the 655 fields should include several other vocabularies that are primary sources of genre/form terms (LCSH is not the main source here)"
