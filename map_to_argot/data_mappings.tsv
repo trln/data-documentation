@@ -12,21 +12,21 @@ subject_topic_lcsh_facet	MARC	611	acdefghklnpqstu	i2=0 OR (i2=7 AND $2=lcsh)	con
 subject_topic_lcsh_facet	MARC	611	x	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	11	.
 subject_topic_lcsh_facet	MARC	630	adfghklmnoprst	i2=0 OR (i2=7 AND $2=lcsh)	concat_subelements	.	"In Endeca data model, works as topics are mapped into subject:topic facet"	13	.
 subject_topic_lcsh_facet	MARC	630	x	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	15	.
-subject_topic_lcsh_facet	MARC	647	x	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	19	.
-subject_topic_lcsh_facet	MARC	647	acdg	i2=0 OR (i2=7 AND $2=lcsh)	concat_subelements	.	.	17	.
-subject_topic_lcsh_facet	MARC	648	x	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	21	.
+subject_topic_lcsh_facet	MARC	647	x	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	UNC doesn't have this field in our catalog at all yet. It was added to MARC in 2016-11 and probably hasn't been implemented by OCLC yet. We can hold off on including it.	19	y
+subject_topic_lcsh_facet	MARC	647	acdg	i2=0 OR (i2=7 AND $2=lcsh)	concat_subelements	.	UNC doesn't have this field in our catalog at all yet. It was added to MARC in 2016-11 and probably hasn't been implemented by OCLC yet. We can hold off on including it.	17	y
+subject_topic_lcsh_facet	MARC	648	x	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	UNC doesn't have any occurrences of this subfield (regardless of term source)	21	y
 subject_topic_lcsh_facet	MARC	650	x	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	25	.
 subject_topic_lcsh_facet	MARC	650	abcdg	i2=0 OR (i2=7 AND $2=lcsh)	concat_subelements	.	.	23	.
 subject_topic_lcsh_facet	MARC	651	x	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	27	.
-subject_topic_lcsh_facet	MARC	656	x	i2=7 AND $2=lcsh	subelement_to_value	.	.	30	.
-subject_topic_lcsh_facet	MARC	656	a	i2=7 AND $2=lcsh	subelement_to_value	.	.	29	.
-subject_topic_lcsh_facet	MARC	657	x	i2=7 AND $2=lcsh	subelement_to_value	.	.	32	.
-subject_topic_lcsh_facet	MARC	657	a	i2=7 AND $2=lcsh	subelement_to_value	.	.	31	.
+subject_topic_lcsh_facet	MARC	656	x	i2=7 AND $2=lcsh	subelement_to_value	.	"UNC doesn't have any occurrences of these subfields (regardless of term source). Check w/other institutions re: current needs here. Can/should be mapped eventually, depending on how use of field evolves"	30	y
+subject_topic_lcsh_facet	MARC	656	a	i2=7 AND $2=lcsh	subelement_to_value	.	"UNC only has 4 LCSH occurrences. Check w/other institutions re: current needs here. Can/should be mapped eventually, depending on how use of field evolves"	29	y
+subject_topic_lcsh_facet	MARC	657	x	i2=7 AND $2=lcsh	subelement_to_value	.	"UNC doesn't have any occurrences of this field (regardless of term source). Check w/other institutions re: needs here. May need to handle at some point in the future, depending on how field use evolves in practice. "	32	y
+subject_topic_lcsh_facet	MARC	657	a	i2=7 AND $2=lcsh	subelement_to_value	.	"UNC doesn't have any occurrences of this field (regardless of term source). Check w/other institutions re: needs here. May need to handle at some point in the future, depending on how field use evolves in practice. "	31	y
 subject_genre_facet	MARC	610	v	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	4	.
 subject_genre_facet	MARC	611	v	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	6	.
 subject_genre_facet	MARC	630	v	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	8	.
-subject_genre_facet	MARC	647	v	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	10	.
-subject_genre_facet	MARC	648	v	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	12	.
+subject_genre_facet	MARC	647	v	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	UNC doesn't have this field in our catalog at all yet. It was added to MARC in 2016-11 and probably hasn't been implemented by OCLC yet. We can hold off on including it.	10	y
+subject_genre_facet	MARC	648	v	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	UNC doesn't have any occurrences of this subfield (regardless of term source)	12	y
 subject_genre_facet	MARC	650	v	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	14	.
 subject_genre_facet	MARC	651	v	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	16	.
 subject_genre_facet	MARC	655	ax	i2=0 OR (i2=7 AND $2=lcsh)	concat_subelements	"Separate subelements with ""--"", not "" """	Need to consult with metadata experts at other institutions to verify this is the best way to handle $x;;;Need PO approval to include non-LCSH vocabularies	18	y
@@ -39,5 +39,13 @@ subject_genre_facet	MARC	655	ax	i2=7 AND $2=rbgenr	concat_subelements	"Separate 
 subject_genre_facet	MARC	655	v	i2=7 AND $2=rbgenr	subelement_to_value	.	Need PO approval to include non-LCSH vocabularies: Genre terms: a thesaurus for use in rare book and special collections cataloguing (Chicago: Association of College and Research Libraries) -- Important for rare/special library materials -- 173536 headings in UNC cat on 2017-08-16	38	y
 subject_genre_facet	MARC	655	ax	i2=7 AND $2=rbprov	concat_subelements	"Delete "" (Provenance)"" from $a value;;;Separate subelements with ""--"", not "" """	"Need PO approval to include non-LCSH vocabularies: Provenance evidence: a thesaurus for use in rare book and special collections cataloging (Chicago: Association of College and Research Libraries, ALA) -- Important for rare/special library materials -- >10000 headings in UNC cat on 2017-08-16"	39	y
 subject_genre_facet	MARC	655	v	i2=7 AND $2=rbprov	subelement_to_value	.	"Need PO approval to include non-LCSH vocabularies: Provenance evidence: a thesaurus for use in rare book and special collections cataloging (Chicago: Association of College and Research Libraries, ALA) -- Important for rare/special library materials -- >10000 headings in UNC cat on 2017-08-16"	40	y
-subject_genre_facet	MARC	656	kv	i2=7 AND $2=lcsh	subelement_to_value	.	.	41	.
-subject_genre_facet	MARC	657	v	i2=7 AND $2=lcsh	subelement_to_value	.	.	42	.
+subject_genre_facet	MARC	656	kv	i2=7 AND $2=lcsh	subelement_to_value	.	"UNC doesn't have any occurrences of these subfields (regardless of term source). Check w/other institutions re: current needs here. Can/should be mapped eventually, depending on how use of field evolves"	41	y
+subject_genre_facet	MARC	657	v	i2=7 AND $2=lcsh	subelement_to_value	.	"UNC doesn't have any occurrences of these subfields (regardless of term source). Check w/other institutions re: current needs here. Can/should be mapped eventually, depending on how use of field evolves"	42	y
+subject_chronological_lcsh_facet	MARC	600	y	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	43	.
+subject_chronological_lcsh_facet	MARC	610	y	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	44	.
+subject_chronological_lcsh_facet	MARC	611	y	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	45	.
+subject_chronological_lcsh_facet	MARC	630	y	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	46	.
+subject_chronological_lcsh_facet	MARC	648	a	i2=0 OR (i2=7 AND $2=~/lcsh|fast/)	subelement_to_value	.	"Need PO approval to include FAST terms -- seems they will be used much more than LCSH ever will in this field. On 2017-08-16, UNC has 33302 instances of FAST terms used here and 0 LCSH terms used in this field.;;;Verify with other institutions that this mapping works with this field for them."	47	y
+subject_chronological_lcsh_facet	MARC	650	y	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	48	.
+subject_chronological_lcsh_facet	MARC	651	y	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	49	.
+subject_chronological_lcsh_facet	MARC	655	y	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	50	.
