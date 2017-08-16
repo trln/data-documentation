@@ -1,4 +1,10 @@
-subject_topic_lcsh	655	x	"Not really topical in practice, right? "
-genre	655	x	"Append to end of $a value, separated by "", ""? "
+related to field(s)	element	subelement	issue/question
+subject_topic_lcsh	655	x	"Not really topical in practice, right? --- in most cases seems to qualify/narrow the genre/form term in the $a, not express a topic."
+subject_genre_facet	655	x	"Append to end of $a value, separated by ""--""? "
 subject_topic_mesh	.	.	Endeca data model has separate Medical Subject facet. Are we not populating that? 
-genre	.	.	"Should not be limited to just LCSH. Maybe we only pull it from $v of LCSH headings, but terms from the 655 fields should include several other vocabularies that are primary sources of genre/form terms (LCSH is not the main source here)"
+subject_genre_facet	.	.	"Should not be limited to just LCSH. Maybe we only pull it from $v of LCSH headings, but terms from the 655 fields should include several other vocabularies that are primary sources of genre/form terms (LCSH is not the main source here)"
+subject fields/general	6xx	.	"Include FAST terms? Any other vocabularies? Endeca data model specified constraints that, if followed, pulled in terms/headings from nearly any source"
+subject_geographic_facet	043	.	"Any reason to tangle with this field? Does it provide info beyond what we get from 6XXs, where it is more or less structured/coded so as to be machine-processable?"
+subject_chronological_facet	033	.	"From MARC spec: ""This information in textual form is contained in field 518 (Date/Time and Place of an Event Note)."" --- Can't really pull this info out of a 518 in a usable way. Useful in public catalog at all? "
+subject_chronological_facet	046	op	Useful? 
+subject_chronological_facet	045	.	Useful? 

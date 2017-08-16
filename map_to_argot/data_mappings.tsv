@@ -49,3 +49,11 @@ subject_chronological_facet	MARC	648	a	i2=0 OR (i2=7 AND $2=~/lcsh|fast/)	subele
 subject_chronological_facet	MARC	650	y	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	48	.
 subject_chronological_facet	MARC	651	y	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	49	.
 subject_chronological_facet	MARC	655	y	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	50	.
+subject_geographic_facet	MARC	600	z	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	51	.
+subject_geographic_facet	MARC	610	z	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	52	.
+subject_geographic_facet	MARC	611	z	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	53	.
+subject_geographic_facet	MARC	630	z	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	54	.
+subject_geographic_facet	MARC	648	z	i2=0 OR (i2=7 AND $2=~/lcsh|fast/)	subelement_to_value	.	UNC doesn't have any occurrences of this subfield (regardless of term source)	55	y
+subject_geographic_facet	MARC	650	z	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	56	.
+subject_geographic_facet	MARC	651	z	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	57	.
+subject_geographic_facet	MARC	655	z	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	58	.
