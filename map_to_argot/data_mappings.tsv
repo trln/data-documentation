@@ -41,11 +41,11 @@ subject_genre_facet	MARC	655	ax	i2=7 AND $2=rbprov	concat_subelements	"Delete ""
 subject_genre_facet	MARC	655	v	i2=7 AND $2=rbprov	subelement_to_value	.	"Need PO approval to include non-LCSH vocabularies: Provenance evidence: a thesaurus for use in rare book and special collections cataloging (Chicago: Association of College and Research Libraries, ALA) -- Important for rare/special library materials -- >10000 headings in UNC cat on 2017-08-16"	40	y
 subject_genre_facet	MARC	656	kv	i2=7 AND $2=lcsh	subelement_to_value	.	"UNC doesn't have any occurrences of these subfields (regardless of term source). Check w/other institutions re: current needs here. Can/should be mapped eventually, depending on how use of field evolves"	41	y
 subject_genre_facet	MARC	657	v	i2=7 AND $2=lcsh	subelement_to_value	.	"UNC doesn't have any occurrences of these subfields (regardless of term source). Check w/other institutions re: current needs here. Can/should be mapped eventually, depending on how use of field evolves"	42	y
-subject_chronological_lcsh_facet	MARC	600	y	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	43	.
-subject_chronological_lcsh_facet	MARC	610	y	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	44	.
-subject_chronological_lcsh_facet	MARC	611	y	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	45	.
-subject_chronological_lcsh_facet	MARC	630	y	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	46	.
-subject_chronological_lcsh_facet	MARC	648	a	i2=0 OR (i2=7 AND $2=~/lcsh|fast/)	subelement_to_value	.	"Need PO approval to include FAST terms -- seems they will be used much more than LCSH ever will in this field. On 2017-08-16, UNC has 33302 instances of FAST terms used here and 0 LCSH terms used in this field.;;;Verify with other institutions that this mapping works with this field for them."	47	y
-subject_chronological_lcsh_facet	MARC	650	y	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	48	.
-subject_chronological_lcsh_facet	MARC	651	y	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	49	.
-subject_chronological_lcsh_facet	MARC	655	y	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	50	.
+subject_chronological_facet	MARC	600	y	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	43	.
+subject_chronological_facet	MARC	610	y	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	44	.
+subject_chronological_facet	MARC	611	y	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	45	.
+subject_chronological_facet	MARC	630	y	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	46	.
+subject_chronological_facet	MARC	648	a	i2=0 OR (i2=7 AND $2=~/lcsh|fast/)	subelement_to_value	.	"Need PO approval to include FAST terms -- seems they will be used much more than LCSH ever will in this field. On 2017-08-16, UNC has 33302 instances of FAST terms used here and 0 LCSH terms used in this field.;;;Verify with other institutions that this mapping works with this field for them."	47	y
+subject_chronological_facet	MARC	650	y	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	48	.
+subject_chronological_facet	MARC	651	y	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	49	.
+subject_chronological_facet	MARC	655	y	i2=0 OR (i2=7 AND $2=lcsh)	subelement_to_value	.	.	50	.
