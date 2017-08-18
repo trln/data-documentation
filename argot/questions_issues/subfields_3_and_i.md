@@ -65,8 +65,11 @@ Possible display:
 
 > **Included in series:** 
 >> (Box set): Criterion Collection ; 813
+
 >> (Alice in the Cities): Criterion collection ; 814
+
 >> (Wrong Move): Criterion collection ; 815
+
 >> (Kings of the Road): Criterion collection ; 816
 
 ## Details on $i
