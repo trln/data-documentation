@@ -104,10 +104,13 @@ Possible display:
 
 > **Author**
 >> Verdi, Giuseppe, 1813-1901.
+
 > **Title**
 >> Othello : in full score / Giuseppe Verdi.
+
 > **Other formats/versions**
 >> Reproduction of: Verdi, Giuseppe, 1813-1901. Otello. Milano: Ricordi, c1913
+
 > **Related works**
 >> Libretto based on: Shakespeare, William, 1564-1616. Otello.
 
