@@ -37,7 +37,7 @@ For continuing resources where publisher has changed over time, $3 specifies the
 This could be displayed as: 
 
 > **Publication details**
->> 2013-present: Peterborough, Ontario : Baywolf Press
+>> (2013-): Peterborough, Ontario : Baywolf Press
 
 Here, the way a series title appeared in the volumes of that series changed over time. $3 is used to specify, for example, that between 1979 and 2004, the series title on the item was "Resource bulletin NC":
 ```
@@ -45,6 +45,13 @@ Here, the way a series title appeared in the volumes of that series changed over
 490 1 _ $31979-2004:$aResource bulletin NC
 490 1 _ $32005:$aResource bulletin NRS
 ```
+
+This could be displayed as: 
+
+> **Included in series:** 
+>> (1965-1978): USDA Forest Service resource bulletin NC
+>> (1979-2004): Resource bulletin NC
+>> (2005): Resource bulletin NRS
 
 Here, the bib describes the whole box set. The $3 is used to qualify the transcribed series titles/volume info for the set as a whole, and each piece in the set.
 ```
@@ -54,29 +61,29 @@ Here, the bib describes the whole box set. The $3 is used to qualify the transcr
 490 1 _ $3Kings of the Road:$aCriterion collection ;$v816
 ```
 
-518 - Date/Time and Place of an Event Note specifying the recording details for the different works on a recording
-```
-518 _ _ $31st work$orecorded$d2011 December 18$pAmerican Academy of Arts & Letters, New York City.
-518 _ _ $32nd-3rd works$orecorded$d2012 June 3-4$pGranoff Music Center, Distler Hall, Tufts University.
-518 _ _ $35th work$orecorded$d2009 December 17$pAmerican Academy of Arts & Letters, New York City.
-518 _ _ $34th work$orecorded$d2012 September 19-20$pAmerican Academy of Arts & Letters, New York City.
-```
+Possible display:
 
-** subfield i
-  - *ABOUT*
-    - $i is *defined for use in 39 MARC tags* and seems to be added to more fields with every MARC update
-    - When defined, $i is usually, but not always, called something like: "Display text" or "Relationship information". *HOWEVER*, in some fields, it's something else altogether
-    - Because of the inconsistency mentioned in the previous point, there's no simple blanket definition of $i, but *in general* (and for our purposes) it is used in fields that record data about some entity related to the one described by the record. 
+> **Included in series:** 
+>> (Box set): Criterion Collection ; 813
+>> (Alice in the Cities): Criterion collection ; 814
+>> (Wrong Move): Criterion collection ; 815
+>> (Kings of the Road): Criterion collection ; 816
+
+## Details on $i
+  - **ABOUT**
+    - $i is **defined for use in 39 MARC tags** and seems to be added to more fields with every MARC update
+    - When defined, $i is usually, but not always, called something like: "Display text" or "Relationship information". **HOWEVER**, in some fields, it's something else altogether
+    - Because of the inconsistency mentioned in the previous point, there's no simple blanket definition of $i, but **in general** (and for our purposes) it is used in fields that record data about some entity related to the one described by the record. 
     - The $i specifies how that other entity is related to the one being described here. 
     - There is no clear standard policy or practice mandated for $i's location in a MARC field -- however, it is usually put first
-  - *DISPLAY*
+  - **DISPLAY**
     - $i (or a modified version of it) is necessary for an accurate/meaningful display.
     - For display, it should appear first, as a qualifying label to the rest of the field.
-  - *INDEXING*
+  - **INDEXING**
     - $i should NOT be included in any indexes (except for keyword index, and only then if we decide to dump the entire record in that index)
     - $i can be leveraged to determine how certain fields should be indexed
 
-*Examples*
+### $i examples
 
 The FRBR WEMI terms in parentheses should be stripped out for display, but we could use this to index Shakespeare's Othello as a related work (or Shakespeare as a related author). The work described in this record may be interesting to a user searching for Shakespeare's Othello, but it probably isn't highly relevant. 
 
@@ -88,7 +95,19 @@ Likewise, we use the 787$i to index that work as a "version of" this one---exact
 787 	08$iReproduction of (manifestation):$aVerdi, Giuseppe, 1813-1901.$tOtello.$dMilano: Ricordi, c1913
 ```
 
-** subfield $3 AND $i
+Possible display: 
+
+> **Author**
+>> Verdi, Giuseppe, 1813-1901.
+> **Title**
+>> Othello : in full score / Giuseppe Verdi.
+> **Other formats/versions**
+>> Reproduction of: Verdi, Giuseppe, 1813-1901. Otello. Milano: Ricordi, c1913
+> **Related works**
+>> Libretto based on: Shakespeare, William, 1564-1616. Otello.
+
+
+## subfield $3 AND $i
  - This happens. Of course it does.
  - It's possible in 10 MARC fields, 5 of which we will definitely need to handle for indexing/display
 
@@ -101,7 +120,15 @@ From a record describing a recording of multiple works, one of which was based o
 700 1 _ $31st work$iBased on (work):$aKrell, Max,$d1887-1962.$tDämon.
 ```
 
+Could display as: 
+
+> **Related works**
+>> (1st work): Based on: Krell, Max, 1887-1962. Dämon.
+
 From a record describing a book containing multiple works, one of which (Liber gestorum) is an adaptation of the related work cited in the 700:
 ```
 700 0 _ $3Liber gestorum$iAdaptation of:$aJames$bI,$cKing of Aragon,$d1208-1276.$tLlibre dels fets.
 ```
+
+> **Related works**
+>> (Liber gestorum): Adaptation of: James I, King of Aragon, 1208-1276. Llibre dels fets.
