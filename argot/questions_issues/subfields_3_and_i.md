@@ -50,7 +50,9 @@ This could be displayed as:
 
 > **Included in series:** 
 >> (1965-1978): USDA Forest Service resource bulletin NC
+
 >> (1979-2004): Resource bulletin NC
+
 >> (2005): Resource bulletin NRS
 
 Here, the bib describes the whole box set. The $3 is used to qualify the transcribed series titles/volume info for the set as a whole, and each piece in the set.
