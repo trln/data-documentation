@@ -10,7 +10,15 @@ See [[https://github.com/trln/data-documentation/tree/master/argot][Argot direct
  - Should match a field specified in https://github.com/trln/data-documentation/blob/master/argot/argot_fields.tsv
 ** source data format 
  - Source data schema. 
- - Initially will be MARC but will eventually include other schema. Defining all in one file allows eventual at-a-glance understanding of what data (from any source) ends up treated a certain way in Argot/Argon
+ - Values:
+   - MARC
+   - MARCish -- not standard MARC, but included in MARC bib data extracts (item, holdings, etc fields mapped into institution-specific, locally-defined MARC fields
+** provisional?
+ - y : I'm proposing this, but it isn't approved, or putting it in as a placeholder until a question is answered
+ - n : proceed with as much confidence as we can muster for anything... :-) 
+** institution
+ - standard : based on current MARC standard and known legacy MARC data practices. Should apply more or less consistently to any MARC from any institution.
+ - DUKE|NCCU|NCSU|UNC : institution-specific mapping
 ** element/field
 - main field tag (MARC) or element (other schema) from which data is mapped
 ** subelement/field(s)
