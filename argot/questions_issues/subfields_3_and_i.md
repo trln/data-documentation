@@ -3,6 +3,7 @@
 Please advise on modeling this across-MARC pattern in Argot: 
 
 - When they occur, $3 and $i should display as labels on fields
+  - Most fields where $3 and $i are defined are repeatable and should be shown in the same order as they occur in the catalog record.
 - When present, $3 and $i should **not** be indexed as part of the content of the field
 - Neither $3 nor $i is required in any field -- they are used when necessary (see below for details)
  - $3 available for use in 77 MARC fields
@@ -21,6 +22,7 @@ Please advise on modeling this across-MARC pattern in Argot:
 - DISPLAY
   - $3 is necessary for an accurate/meaningful display, so that we are not implying the data in the field describes/applies to the entire thing described by the record
   - For display, it should appear first, as a qualifying label to the rest of the field.
+  - Most fields where $3 is defined are repeatable and should be shown in the same order as they occur in the catalog record.
 - INDEXING
   - $3 should NOT be included in any indexes (except for keyword index, and only then if we decide to dump the entire record in that index)
 
@@ -84,6 +86,7 @@ Possible display:
   - **DISPLAY**
     - $i (or a modified version of it) is necessary for an accurate/meaningful display.
     - For display, it should appear first, as a qualifying label to the rest of the field.
+    - Most fields where $3 is defined are repeatable and should be shown in the same order as they occur in the catalog record.
   - **INDEXING**
     - $i should NOT be included in any indexes (except for keyword index, and only then if we decide to dump the entire record in that index)
     - $i can be leveraged to determine how certain fields should be indexed
