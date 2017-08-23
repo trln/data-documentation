@@ -5,3 +5,4 @@ subject_geographic_facet,43,.,"Any reason to tangle with this field? Does it pro
 subject_chronological_facet,33,.,"From MARC spec: ""This information in textual form is contained in field 518 (Date/Time and Place of an Event Note)."" --- Can't really pull this info out of a 518 in a usable way. Useful in public catalog at all? "
 subject_chronological_facet,46,op,Useful? 
 subject_chronological_facet,45,.,Useful? 
+date_catalogedNCCU...,.,.,Need to find out where this is in their data.

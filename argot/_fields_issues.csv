@@ -6,5 +6,4 @@ subject_topic_lcsh_facet,Dedupe values assigned to field or not? Do multiple occ
 subject_genre_facet,Dedupe values assigned to field or not? Do multiple occurrences of the same value help in ordering the results by relevance?,.
 subject_chronological_facet,Dedupe values assigned to field or not? Do multiple occurrences of the same value help in ordering the results by relevance?,.
 subject_geographic_facet,Dedupe values assigned to field or not? Do multiple occurrences of the same value help in ordering the results by relevance?,.
-date_cataloged,"Need institutional mappings for Duke, NCSU, NCCU",.
 circulation_count,Do we plan on keeping Sort by Popularity function? It doesn't work well at all. ,
