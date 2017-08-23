@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<table xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" id="4" name="issuesfield" displayName="issuesfield" ref="A1:C9" totalsRowShown="0" headerRowDxfId="6" dataDxfId="5"><autoFilter ref="A1:C9"/><tableColumns count="3"><tableColumn id="1" name="field" dataDxfId="9"/><tableColumn id="3" name="desc" dataDxfId="8"/><tableColumn id="4" name="doc" dataDxfId="7"/></tableColumns><tableStyleInfo name="TableStyleMedium7" showFirstColumn="0" showLastColumn="0" showRowStripes="1" showColumnStripes="0"/></table>

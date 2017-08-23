@@ -1,0 +1,10 @@
+field,desc,doc
+subject_topic_mesh_facet,Endeca data model has separate Medical Subject facet. Are we not populating that? ,.
+subject_genre_facet,"Should not be limited to just LCSH. Maybe we only pull it from $v of LCSH headings, but terms from the 655 fields should include several other vocabularies that are primary sources of genre/form terms (LCSH is not the main source here)",.
+subject_topic_other,"Include FAST terms? Any other vocabularies? Endeca data model specified constraints that, if followed, pulled in terms/headings from nearly any source",.
+subject_topic_lcsh_facet,Dedupe values assigned to field or not? Do multiple occurrences of the same value help in ordering the results by relevance?,.
+subject_genre_facet,Dedupe values assigned to field or not? Do multiple occurrences of the same value help in ordering the results by relevance?,.
+subject_chronological_facet,Dedupe values assigned to field or not? Do multiple occurrences of the same value help in ordering the results by relevance?,.
+subject_geographic_facet,Dedupe values assigned to field or not? Do multiple occurrences of the same value help in ordering the results by relevance?,.
+date_cataloged,"Need institutional mappings for Duke, NCSU, NCCU",.
+circulation_count,Do we plan on keeping Sort by Popularity function? It doesn't work well at all. ,
