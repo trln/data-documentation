@@ -1,13 +1,23 @@
-Please **do not** directly edit files beginning with "_"
+Please **do not** directly edit .csv files beginning with "_"
 
 They are generated from other files (here, *argot.xslx*) which need to be kept current. 
 
 If you edit these files, please branch/send merge request so I can make sure relevant master files *argot.xslx* reflect your changes. 
 
-# What's here?
+## Why are you making this complicated?
+The .xlsx format is easy for Kristina (and probably other data/metadata folks) to use, but has drawbacks. Pros/cons: 
+- PRO: has some checks/validatation stuff built in to flag fields/mappings with issues, etc.
+- PRO: use tables and formulas to flexibly/easily link up the worksheets for analysis/checking work
+- PRO: maintain formatting between work sessions
+- CON: can't be meaningfully version controlled via Git without unzipping into hideous Microsoft XML, which is more opaque than anything here
+- CON: can't be opened/worked with any tool but Excel without losing data/messing up formulas
 
-## Files
-- **argot.xlsx** - working document - easy for kms to use - has some checks/validatation stuff built in, but can't really be version controlled or opened with anything but Excel without losing data (boo)
+The *csvsplit.ps1* script is used to generate one .csv file per worksheet in *argot.xlsx*. The .csv files are intended to provide: 
+- a record of how the data model changed over time (they are plain text, and thus version-controllable)
+- quick/easy reference for anyone to check on a field or a mapping without needing the whole .xslx file or access to Excel
+
+# File list
+- **argot.xlsx** - working master document 
 
 - **csvsplit.ps1** - script that splits *argot.xlsx* into csv files
 
@@ -20,7 +30,7 @@ If you edit these files, please branch/send merge request so I can make sure rel
 
 - **README.md** - this file.
 
-## Directories
+# Directory list
 
 - **helpers** - scripts/etc to pull down data/mappings from other sources for use in data transformations
 
