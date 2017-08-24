@@ -4,7 +4,12 @@ Please advise on modeling this across-MARC pattern in Argot:
 
 - When they occur, $3 and $i should display as labels on fields
   - Most fields where $3 and $i are defined are repeatable and should be shown in the same order as they occur in the catalog record.
-- When present, $3 and $i should **not** be indexed as part of the content of the field
+- When present, $3 and $i should **not** be indexed as part of the content of the field. Reasons why I'm saying the $3 and/or $i should not be indexed include: 
+  - The values here are provided by catalogers and would not be known to users before searching, so indexing does not add useful findability
+  - When $3 or $i is included in some types of fields (notes, for instance) it doesn't cause much of a problem or matter much -- we can just include them in the main indexed field(s) in this case
+  - However, these subfields are heavily used in fields that record author and title information.
+    - I have assumed the indexed versions of the data in such fields could in some cases feed into auto-suggest, in which case we do NOT want labels/contextual info not part of the names/titles to be included
+    - Because these are often controlled values (and in Endeca, we have hyperlinked some of these names/titles to query for other records with the same headings), concerns about a) spuriously small search results if $3 and $i values are included in the hyperlink-query; and b) effects on relevance ranking (if whole field match plays or left-anchored match plays in) if the $3 and $i labels are included in indexed values
 - Neither $3 nor $i is required in any field -- they are used when necessary (see below for details)
  - $3 available for use in 77 MARC fields
  - $i avaliable for use in 29 MARC fields
