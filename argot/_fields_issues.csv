@@ -7,3 +7,5 @@ subject_genre_facet,Dedupe values assigned to field or not? Do multiple occurren
 subject_chronological_facet,Dedupe values assigned to field or not? Do multiple occurrences of the same value help in ordering the results by relevance?,.
 subject_geographic_facet,Dedupe values assigned to field or not? Do multiple occurrences of the same value help in ordering the results by relevance?,.
 circulation_count,Do we plan on keeping Sort by Popularity function? It doesn't work well at all. ,
+item_type,Do we need this in Argot/Argon? Will any features use it? Not sure if any do in Endeca.,
+resource_type,Use case for this? Does NCSU still need? Anyone else?,

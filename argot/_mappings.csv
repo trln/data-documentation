@@ -6,7 +6,7 @@ date_cataloged,MARCish,n,UNC,999,a,i1=0 AND i2=0,subelement_to_value,Convert to 
 date_cataloged,MARCish,y,NCCU,.,.,.,.,Convert to whatever standard date format you decide is best for this field. Note: It is expected that this field will be empty in provisional or on-the-fly records.,,date_catalogedNCCU...,1,0
 item_due_date,MARCish,n,UNC,999,d,i1=9 AND i2=1,subelement_to_value,.,Will be blank if item is NOT checked out,item_due_dateUNC999di1=9 AND i2=1,0,0
 item_location,MARCish,n,UNC,999,l,i1=9 AND i2=1,subelement_to_value,.,.,item_locationUNC999li1=9 AND i2=1,0,0
-item_public_note,MARCish,n,UNC,999,n,i1=9 AND i2=1,subelement_to_value,.,.,item_public_noteUNC999ni1=9 AND i2=1,0,0
+item_note,MARCish,n,UNC,999,n,i1=9 AND i2=1,subelement_to_value,.,.,item_noteUNC999ni1=9 AND i2=1,0,0
 item_record_id,MARCish,n,UNC,999,i,i1=9 AND i2=1,subelement_to_value,.,.,item_record_idUNC999ii1=9 AND i2=1,0,0
 subject_chronological_facet,MARC,n,GEN,600,y,i2=0 OR (i2=7 AND $2=lcsh),subelement_to_value,.,.,subject_chronological_facetGEN600yi2=0 OR (i2=7 AND $2=lcsh),0,1
 subject_chronological_facet,MARC,n,GEN,610,y,i2=0 OR (i2=7 AND $2=lcsh),subelement_to_value,.,.,subject_chronological_facetGEN610yi2=0 OR (i2=7 AND $2=lcsh),0,1
