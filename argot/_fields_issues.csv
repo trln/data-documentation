@@ -9,3 +9,5 @@ subject_geographic_facet,Dedupe values assigned to field or not? Do multiple occ
 circulation_count,Do we plan on keeping Sort by Popularity function? It doesn't work well at all. ,
 item_type,Do we need this in Argot/Argon? Will any features use it? Not sure if any do in Endeca.,
 resource_type,Use case for this? Does NCSU still need? Anyone else?,
+bib_locations_hierarchical,Recommended: limit to physical places people can go -- Online and E-resource are NOT locations,
+bib_locations_hierarchical,Determine best way to derive/represent data; I've provided something that seems to make sense to me... ,

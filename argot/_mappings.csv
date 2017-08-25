@@ -1,4 +1,5 @@
 field,source data format,provisional?,institution,element/field,subelement/field(s),constraints,processing_type,processing instructions,notes,mapping_id,mapping issue ct,field issue ct,field defined?
+bib_locations_hierarchical,MARCish,y,UNC,,,,,,,bib_locations_hierarchicalUNC,0,2,y
 circulation_count,MARCish,y,UNC,999,o,i1=9 AND i2=1,calculated,SUM of this value across all attached item records,.,circulation_countUNC999oi1=9 AND i2=1,0,1,y
 date_cataloged,MARCish,n,DUKE,946,b,.,subelement_to_value,Convert to whatever standard date format you decide is best for this field. Note: It is expected that this field will be empty in provisional or on-the-fly records.,.,date_catalogedDUKE946b.,0,0,y
 date_cataloged,MARCish,n,NCSU,909,a,.,subelement_to_value,Convert to whatever standard date format you decide is best for this field. Note: It is expected that this field will be empty in provisional or on-the-fly records.,.,date_catalogedNCSU909a.,0,0,y

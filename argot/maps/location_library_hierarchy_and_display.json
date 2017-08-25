@@ -1,0 +1,313 @@
+{
+    "Duke" : {
+	"in record display" : "Duke",
+	"parents" : {
+	}
+    },
+    "Duke:MCL" : {
+	"in record display" : "Medical Center Library",
+	"parents" : {
+	    "Duke" : "Medical Center",
+	    "Health Sciences Libraries" : "Duke Medical Center"
+	}
+    },
+    "Duke:MedArchives" : {
+	"in record display" : "Medical Center Library",
+	"parents" : {
+	    "Duke:MCL" : "Archives"
+	}
+    },
+    "Health Sciences Libraries" : {
+	"in record display" : "Health Sciences Libraries",
+	"parents" : {
+	}
+    },
+    "Law Libraries" : {
+	"in record display" : "Law Libraries",
+	"parents" : {
+	}
+    },
+    "NCCU" : {
+	"in record display" : "NCCU",
+	"parents" : {
+	}
+    },
+    "NCSU" : {
+	"in record display" : "NCSU",
+	"parents" : {
+	}
+    },
+    "TRLN" : {
+	"in record display" : "TRLN",
+	"parents" : {
+	}
+    },
+    "UNC Chapel Hill" : {
+	"in record display" : "UNC Chapel Hill",
+	"parents" : {
+	}
+    },
+    "UNC:Archival Materials (Wilson Library)" : {
+	"in record display" : "Archival Materials (Wilson Library)",
+	"parents" : {
+	    "UNC Chapel Hill" : "Archival Materials (Wilson Library)",
+	    "UNC:Wilson Library" : "Archival Materials"
+	}
+    },
+    "UNC:Art Library" : {
+	"in record display" : "Art Library",
+	"parents" : {
+	    "UNC Chapel Hill" : "Art Library"
+	}
+    },
+    "UNC:Biology/Chemistry Library" : {
+        "in record display" : "Biology/Chemistry Library",
+        "parents" : {
+            "UNC Chapel Hill" : "Biology/Chemistry Library"
+        }
+    },
+    "UNC:Carolina Population Center Library" : {
+        "in record display" : "Carolina Population Center Library",
+        "parents" : {
+            "UNC Chapel Hill" : "Carolina Population Center Library"
+        }
+    },
+    "UNC:Carolina Women\'s Studies Collection" : {
+        "in record display" : "Carolina Women\'s Studies Collection",
+        "parents" : {
+            "UNC Chapel Hill" : "Carolina Women\'s Studies Collection"
+        }
+    },
+    "UNC:Davis Circulation Holds Shelf" : {
+	"in record display" : "Davis Circulation Holds Shelf",
+	"parents" : {
+	    "UNC:Davis Library" : "Circulation Holds Shelf"
+	}
+    },
+    "UNC:Davis Library" : {
+        "in record display" : "Davis Library",
+        "parents" : {
+            "UNC Chapel Hill" : "Davis Library"
+        }
+    },
+    "UNC:Davis Library Global Browsing Collection" : {
+        "in record display" : "Davis Library Global Browsing Collection",
+        "parents" : {
+            "UNC:Davis Library" : "Global Browsing Collection"
+        }
+    },
+    "UNC:Davis Library Government Documents" : {
+        "in record display" : "Davis Library Government Documents",
+        "parents" : {
+            "UNC:Davis Library" : "Government Documents"
+        }
+    },
+    "UNC:Davis Library Maps Collection" : {
+        "in record display" : "Davis Library Maps Collection",
+        "parents" : {
+            "UNC:Davis Library" : "Maps Collection"
+        }
+    },
+    "UNC:Davis Library Reference" : {
+        "in record display" : "Davis Library Reference",
+        "parents" : {
+            "UNC:Davis Library" : "Reference Materials"
+        }
+    },
+    "UNC:Davis Library Staff Use Materials" : {
+        "in record display" : "Davis Library Staff Use Materials",
+        "parents" : {
+            "UNC:Davis Library" : "Staff Use Materials"
+        }
+    },
+    "UNC:Global Initiatives K-12 Library" : {
+        "in record display" : "Global Initiatives K-12 Library",
+        "parents" : {
+            "UNC Chapel Hill" : "Global Initiatives K-12 Library"
+        }
+    },
+    "UNC:Graduate Funding Information Center" : {
+        "in record display" : "Graduate Funding Information Center",
+        "parents" : {
+            "UNC Chapel Hill" : "Graduate Funding Information Center"
+        }
+    },
+    "UNC:Health Sciences Library" : {
+        "in record display" : "Health Sciences Library",
+        "parents" : {
+            "UNC Chapel Hill" : "Health Sciences Library",
+	    "Health Sciences Libraries" : "UNC Health Sciences Library"
+        }
+    },
+    "UNC:Highway Safety Research Center Library" : {
+        "in record display" : "Highway Safety Research Center Library",
+        "parents" : {
+            "UNC Chapel Hill" : "Highway Safety Research Center Library"
+        }
+    },
+    "UNC:Information & Library Science Library" : {
+        "in record display" : "Information & Library Science Library",
+        "parents" : {
+            "UNC Chapel Hill" : "Information & Library Science Library"
+        }
+    },
+    "UNC:Kenan Science Library" : {
+        "in record display" : "Kenan Science Library",
+        "parents" : {
+            "UNC Chapel Hill" : "Kenan Science Library"
+        }
+    },
+    "UNC:LGBTQ Center Library" : {
+        "in record display" : "LGBTQ Center Library",
+        "parents" : {
+            "UNC Chapel Hill" : "LGBTQ Center Library"
+        }
+    },
+    "UNC:Latin American Film Library" : {
+        "in record display" : "Latin American Film Library",
+        "parents" : {
+            "UNC Chapel Hill" : "Latin American Film Library"
+        }
+    },
+    "UNC:Law Library" : {
+        "in record display" : "Law Library",
+        "parents" : {
+            "UNC Chapel Hill" : "Law Library",
+	    "Law Libraries" : "UNC Law"
+        }
+    },
+    "UNC:Library Service Center" : {
+        "in record display" : "Library Service Center",
+        "parents" : {
+            "UNC Chapel Hill" : "Library Service Center"
+        }
+    },
+    "UNC:MBA Career Resource Center" : {
+        "in record display" : "MBA Career Resource Center",
+        "parents" : {
+            "UNC Chapel Hill" : "MBA Career Resource Center"
+        }
+    },
+    "UNC:Marine Sciences Library" : {
+        "in record display" : "Marine Sciences Library",
+        "parents" : {
+            "UNC Chapel Hill" : "Marine Sciences Library"
+        }
+    },
+    "UNC:Media Resources Center" : {
+        "in record display" : "Media Resources Center",
+        "parents" : {
+            "UNC Chapel Hill" : "Media Resources Center"
+        }
+    },
+    "UNC:Media Resources Center Language Learning Kits" : {
+        "in record display" : "Media Resources Center Language Learning Kits",
+        "parents" : {
+            "UNC:Media Resources Center" : "Language Learning Kits"
+        }
+    },
+    "UNC:Media Resources Center Audiobooks" : {
+        "in record display" : "Media Resources Center Audiobooks",
+        "parents" : {
+            "UNC:Media Resources Center" : "Audiobooks"
+        }
+    },
+    "UNC:Music Library" : {
+        "in record display" : "Music Library",
+        "parents" : {
+            "UNC Chapel Hill" : "Music Library"
+        }
+    },
+    "UNC:Music Library Vault" : {
+        "in record display" : "Music Library Vault",
+        "parents" : {
+            "UNC:Music Library" : "Music Vault"
+        }
+    },
+    "UNC:North Carolina Botanical Garden Library" : {
+        "in record display" : "North Carolina Botanical Garden Library",
+        "parents" : {
+            "UNC Chapel Hill" : "North Carolina Botanical Garden Library"
+        }
+    },
+    "UNC:North Carolina Collection" : {
+        "in record display" : "North Carolina Collection",
+        "parents" : {
+            "UNC Chapel Hill" : "North Carolina Collection",
+	    "UNC:Wilson Library" : "North Carolina Collection"
+        }
+    },
+    "UNC:Odum Institute Library" : {
+        "in record display" : "Odum Institute Library",
+        "parents" : {
+            "UNC Chapel Hill" : "Odum Institute Library"
+        }
+    },
+    "UNC:Office of Research Development" : {
+        "in record display" : "Office of Research Development",
+        "parents" : {
+            "UNC Chapel Hill" : "Office of Research Development"
+        }
+    },
+    "UNC:Park Library (School of Media & Journalism)" : {
+        "in record display" : "Park Library (School of Media & Journalism)",
+        "parents" : {
+            "UNC Chapel Hill" : "Park Library (School of Media & Journalism)"
+        }
+    },
+    "UNC:Rare Book Collection" : {
+        "in record display" : "Rare Book Collection",
+        "parents" : {
+            "UNC Chapel Hill" : "Rare Book Collection",
+	    "UNC:Wilson Library" : "Rare Book Collection"
+        }
+    },
+    "UNC:School of Government Library" : {
+        "in record display" : "School of Government Library",
+        "parents" : {
+            "UNC Chapel Hill" : "School of Government Library"
+        }
+    },
+    "UNC:Science Library Annex" : {
+        "in record display" : "Science Library Annex",
+        "parents" : {
+            "UNC Chapel Hill" : "Science Library Annex"
+        }
+    },
+    "UNC:Stone Center Library" : {
+        "in record display" : "Stone Center Library",
+        "parents" : {
+            "UNC Chapel Hill" : "Stone Center Library"
+        }
+    },
+    "UNC:Storage" : {
+        "in record display" : "Storage",
+        "parents" : {
+            "UNC Chapel Hill" : "Storage"
+        }
+    },
+    "UNC:TRLN Shared Print Collection" : {
+        "in record display" : "TRLN Shared Print Collection",
+        "parents" : {
+            "TRLN" : "Shared Print Collection"
+        }
+    },
+    "UNC:Undergrad Library" : {
+        "in record display" : "Undergrad Library",
+        "parents" : {
+            "UNC Chapel Hill" : "Undergrad Library"
+        }
+    },
+    "UNC:Undergrad Popular Reading Collection (McNaughton)" : {
+        "in record display" : "Undergrad Popular Reading Collection (McNaughton)",
+        "parents" : {
+            "Undergrad Library" : "Popular Reading Collection (McNaughton)"
+        }
+    },
+    "UNC:Wilson Library" : {
+        "in record display" : "Wilson Library",
+        "parents" : {
+            "UNC Chapel Hill" : "Wilson Library"
+        }
+    },
+}
