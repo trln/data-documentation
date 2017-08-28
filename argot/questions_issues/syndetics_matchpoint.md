@@ -2,16 +2,16 @@
 
 The field(s) on which we attempt to get a match between our data and two different Syndetics data sets: 
 
-1. Syndetics Indexed Content Enhancement (ICE) data that gets merged into our bib records in the actual index and is thus searchable 
+- Syndetics Indexed Content Enhancement (ICE) data that gets merged into our bib records in the actual index and is thus searchable 
   - Data is received from Syndetics and matching occurs using our resources at indexing time. The main concern here is processing time, and that's not too worrisome.
-1. Syndetics display-time supplementary content via API -- book cover images, summaries, 1st chapter previews, tables of contents, etc.
+- Syndetics display-time supplementary content via API -- book cover images, summaries, 1st chapter previews, tables of contents, etc.
   - There may be API terms of use that constrain what we can do here.
   - We may be able to leverage the approach that NCSU has, I believe, used locally, which involves a large dataset from Syndetics giving all matchpoints and the supplementary content available for each. This can be used to pre-identify a fruitful match point, if available, for each record. This would prevent throwing multiple queries at the API for every record. 
   
 ## Suggested match strategy
 This is what would be ideal, if we can do it with reasonable processing times and without running afoul of Syndetics. 
 
-1. For items with ISBNs referring to that item (or different format version of same item, since content, contributors, associated images, etc. should be the same across formats)
+- For items with ISBNs referring to that item (or different format version of same item, since content, contributors, associated images, etc. should be the same across formats)
   - start with ISBN_this_item Argot field and move to ISBN_other_format Argot field if necessary
   - start with first ISBN value in field
   - if no match, attempt next ISBN value in field until match is found
@@ -21,10 +21,10 @@ This is what would be ideal, if we can do it with reasonable processing times an
     - these are both recorded in 020$z
     - however instances of (A) are extremely common, while (B) is quite rare. 
     - I suspect the benefit of more good matches in our catalog will far outweigh possible problems introduced, and there's no efficient way of determining this beforehand
-1. For items with UPCs
+- For items with UPCs
   - same approach as with ISBNs
   - same potential issue as with ISBNs
-1. For records for **video and music content only** which contain OCLC numbers
+- For records for **video and music content only** which contain OCLC numbers
   - same approach as above, but use OCLC_number and OCLC_number_merged Argot fields
   - this recommendation is based on: 
 	- Info in [Syndetics documentation](https://developers.exlibrisgroup.com/resources/voyager/code_contributions/SyndeticsStarterDocument.pdf) (pg. 2) stating that OCLC number matching only works for video and music content
