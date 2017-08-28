@@ -24,6 +24,7 @@ This is what would be ideal, if we can do it with reasonable processing times an
 - For items with UPCs
   - same approach as with ISBNs
   - same potential issue as with ISBNs
+  - For A/V content, this seems to be the main productive match point
 - For records for **video and music content only** which contain OCLC numbers
   - same approach as above, but use OCLC_number and OCLC_number_merged Argot fields
   - this recommendation is based on: 
@@ -40,7 +41,7 @@ This is what would be ideal, if we can do it with reasonable processing times an
 ## To-do
 - Ben: can TRLN contact Syndetics and find out if we need to switch to Syndetics Plus and if there are new costs associated with that
 - Ben (maybe): do I recall that the ICE product is no longer available to new customers from Syndetics? If so, should be be concerned about the availability of this service going forward? If there is a replacement for this service, should we look into it so we are not building in support for a service heading toward obsolescence? 
-- Kristina: verify details of the Syndetics database thing NCSU has been doing. (Or maybe Emily L. knows the details on this---whether it can be leveraged to avoid doing tons of fruitless API calls)
+- Kristina: verify details of the Syndetics database thing NCSU has been doing and whether it might be useful to centralize it. (Or maybe Emily L. knows the details on this---whether it can be leveraged to avoid doing tons of fruitless API calls)
 
 
   
