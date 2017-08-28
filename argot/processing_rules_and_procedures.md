@@ -48,7 +48,7 @@ contributor_relator : ["translator"]
 
 Displayed as: 
 
-> Contributor(s): ++Balme, D. M. (David M.), 1912-1989,++ translator
+> Contributor(s): <u>Balme, D. M. (David M.), 1912-1989,</u> translator
 
 If we do what is currently done in Endeca, then the underlined portion above is hyperlinked and does a quoted/phrase search of the author index for entire name. 
 
