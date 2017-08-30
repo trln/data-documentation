@@ -1,13 +1,13 @@
-field,desc,doc
-subject_topic_mesh_facet,Endeca data model has separate Medical Subject facet. Are we not populating that? ,.
-subject_genre_facet,"Should not be limited to just LCSH. Maybe we only pull it from $v of LCSH headings, but terms from the 655 fields should include several other vocabularies that are primary sources of genre/form terms (LCSH is not the main source here)",.
-subject_topic_other,"Include FAST terms? Any other vocabularies? Endeca data model specified constraints that, if followed, pulled in terms/headings from nearly any source",.
-subject_topic_lcsh_facet,Dedupe values assigned to field or not? Do multiple occurrences of the same value help in ordering the results by relevance?,.
-subject_genre_facet,Dedupe values assigned to field or not? Do multiple occurrences of the same value help in ordering the results by relevance?,.
-subject_chronological_facet,Dedupe values assigned to field or not? Do multiple occurrences of the same value help in ordering the results by relevance?,.
-subject_geographic_facet,Dedupe values assigned to field or not? Do multiple occurrences of the same value help in ordering the results by relevance?,.
-circulation_count,Do we plan on keeping Sort by Popularity function? It doesn't work well at all. ,
-item_type,Do we need this in Argot/Argon? Will any features use it? Not sure if any do in Endeca.,
-resource_type,Use case for this? Does NCSU still need? Anyone else?,
-bib_locations_hierarchical,Recommended: limit to physical places people can go -- Online and E-resource are NOT locations,
-bib_locations_hierarchical,Determine best way to derive/represent data; I've provided something that seems to make sense to me... ,
+field,desc,doc,jira ref
+subject_topic_mesh_facet,Endeca data model has separate Medical Subject facet. Are we not populating that? ,.,https://trlnmain.atlassian.net/browse/TD-370
+subject_genre_facet,"Should not be limited to just LCSH. Maybe we only pull it from $v of LCSH headings, but terms from the 655 fields should include several other vocabularies that are primary sources of genre/form terms (LCSH is not the main source here)",.,.
+subject_topic_other,"Include FAST terms? Any other vocabularies? Endeca data model specified constraints that, if followed, pulled in terms/headings from nearly any source",.,.
+subject_topic_lcsh_facet,Dedupe values assigned to field or not? Do multiple occurrences of the same value help in ordering the results by relevance?,.,.
+subject_genre_facet,Dedupe values assigned to field or not? Do multiple occurrences of the same value help in ordering the results by relevance?,.,.
+subject_chronological_facet,Dedupe values assigned to field or not? Do multiple occurrences of the same value help in ordering the results by relevance?,.,.
+subject_geographic_facet,Dedupe values assigned to field or not? Do multiple occurrences of the same value help in ordering the results by relevance?,.,.
+circulation_count,Do we plan on keeping Sort by Popularity function? It doesn't work well at all. ,.,https://trlnmain.atlassian.net/browse/TD-151?jql=text%20~%20%22popular%22
+item_type,Do we need this in Argot/Argon? Will any features use it? Not sure if any do in Endeca.,.,.
+resource_type,Use case for this? Does NCSU still need? Anyone else?,.,.
+bib_locations_hierarchical,Recommended: limit to physical places people can go -- Online and E-resource are NOT locations,.,https://trlnmain.atlassian.net/browse/TD-371
+bib_locations_hierarchical,"Determine best way to derive/represent data; I've provided something that seems to make sense to me and serves as an example of what we are doing now with polyhierarchy and ""sublocations"", that we need to still be able to do",https://github.com/trln/data-documentation/blob/master/argot/questions_issues/location.md,https://trlnmain.atlassian.net/browse/TD-363
