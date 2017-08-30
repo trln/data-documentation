@@ -8,7 +8,7 @@
  - /unless otherwise specified/, add a space at the end of each subelement
 
 ## All fields that become facet values
-1. strip trailing punctuation (but leave hyphens that are at the end)
+- strip trailing punctuation (but leave hyphens that are at the end)
 
 If we can do this in a smart way, great. If not, it's better to occasionally get stuff like:
 
@@ -23,6 +23,9 @@ Smith, Bob
 Smith, Bob.
 Smith, Bob, 
 ```
+
+- deduplicate/uniq! values
+-- facet values can be mapped from multiple other fields in the record, which means you could, for example, have the same name going in from creator_main and included_work_creator fields. Or, the Genre facet may be getting populated with "Fiction" because that's in the $v of 5 different 650 fields. 
 
 ## $e and $4 (and in X11 headings, $j)
 Do the following steps per heading. 
@@ -63,3 +66,4 @@ Becomes:
 contributor : ["Benjamin, Arthur, 1893-1960,", "Stämpfli, Jakob, 1934-"]
 contributor_relator : ["arranger of music, performer", "singer, performer"]
 ```
+
