@@ -10,6 +10,7 @@ Please advise on modeling this across-MARC pattern in Argot:
   - However, these subfields are heavily used in fields that record author and title information.
     - I have assumed the indexed versions of the data in such fields could in some cases feed into auto-suggest, in which case we do NOT want labels/contextual info not part of the names/titles to be included
     - Because these are often controlled values (and in Endeca, we have hyperlinked some of these names/titles to query for other records with the same headings), concerns about a) spuriously small search results if $3 and $i values are included in the hyperlink-query; and b) effects on relevance ranking (if whole field match plays or left-anchored match plays in) if the $3 and $i labels are included in indexed values
+	- EXAMPLE: Broken query because $i is included in indexed value/query built into UI: [Author/title search for Shakespeare's Othello](http://search.lib.unc.edu/search?N=0&Ntk=Author|Title&Ntt=%22Shakespeare%2C+William%2C+1564-1616.%22|%22Opera+adaptation+of+%28work%29%3A+Othello.+Italian.%22&follow=Author|Title_Details) returns one hit -- it *should* work [this way](http://search.lib.unc.edu/search?N=0&Ntk=Author|Title&Ntt=%22Shakespeare%2C+William%2C+1564-1616.%22|%22Othello%22&follow=Author|Title_Details)
 - Neither $3 nor $i is required in any field -- they are used when necessary (see below for details)
  - $3 available for use in 77 MARC fields
  - $i avaliable for use in 29 MARC fields
