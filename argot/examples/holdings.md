@@ -91,7 +91,7 @@ holdings_a = [
   "holdings_location_library" : "UNC:Davis Library", 
   "holdings_location_shelf" : "dgdba", 
   "holdings_summary" : "v.26(2013/2014)", 
-  "holdings_note" : ["Bound in brown rib grain (T) cloth binding stamped in blind.", "Recipes clipped from newspapers pasted on both sides of rear free end-paper."]
+  "holdings_note" : ["Bound in brown rib grain (T) cloth binding stamped in blind.", "Recipes clipped from newspapers pasted on both sides of rear free end-paper."],
   "holdings_call_number" : "TX715 .P962 1858",
   "holdings_record_id" : "c2786750"
   }
