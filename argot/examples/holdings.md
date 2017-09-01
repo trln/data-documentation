@@ -1,7 +1,12 @@
 # Examples of holdings mappings
 ## UNC
+- Basic structure of holdings json from [Adam's documentation on Confluence](https://trlnmain.atlassian.net/wiki/spaces/TD/pages/6422529/Mapping+Holdings+in+Argot)
+- Fields defined at: https://github.com/trln/data-documentation/blob/master/argot/_fields.csv 
+- Mapping/logic of UNC data to Argot fields defined at: https://github.com/trln/data-documentation/blob/master/argot/_mappings.csv
+
 Basic procedure: 
 - get holdings_record_id value ($a), holdings_location_shelf value ($b) and $c value from each 999 92
+  - See [Location issues/considerations: One idea for data mapping/transformation](https://github.com/trln/data-documentation/blob/master/argot/questions_issues/location.md#one-idea-for-data-mappingtransformation) for how *holdings_location_shelf* is turned into *holdings_location_library* value
 - to assign holdings_call_number and holdings_note values, for each holdings_record_id value, look for a 999 93 field where $0=#{holdings_record_id value} and $2='852'
 - to assign holdings_summary values, for each holdings_record_id value, look for a 999 93 field where $0=#{holdings_record_id value} and $2='866'
 - if $c value (from 999 92) > 0, assign holdings_record_id value to holdings_record_id field --- Else, that field is blank
@@ -72,10 +77,6 @@ Basic procedure:
 ```
 
 **Result:**
-- See [Location issues/considerations: One idea for data mapping/transformation](https://github.com/trln/data-documentation/blob/master/argot/questions_issues/location.md#one-idea-for-data-mappingtransformation) for how *holdings_location_shelf* is turned into *holdings_location_library* value
-- Basic structure of holdings json from [Adam's documentation on Confluence](https://trlnmain.atlassian.net/wiki/spaces/TD/pages/6422529/Mapping+Holdings+in+Argot)
-- Fields defined at: https://github.com/trln/data-documentation/blob/master/argot/_fields.csv 
-- Mapping/logic of UNC data to Argot fields defined at: https://github.com/trln/data-documentation/blob/master/argot/_mappings.csv
 
 ``` json
 holdings_a = [
