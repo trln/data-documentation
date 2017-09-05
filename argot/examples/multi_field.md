@@ -1,38 +1,41 @@
+## Note about example data
 These are fake/mocked up examples to show a range of values/situations in a compressed way. 
 
 We are unlikely to see records like these, but we will definitely see records that contain the patterns that these examples show.
 
+## Note about example "display"
+For now, please ignore the details of labels for displayed fields, or whether your search result view/brief record page view/full record view shows things this way. 
+
+`creator_main`, `title_main`, and `statement_of_responsibility` are three separate fields to allow flexibility/customization here. Each example below is one way to do it, chosen to highlight the issue the example is meant to eludicate.
+
 ## Main entry + uniform title
-MARC data: 
+### MARC data: 
 ```
 100 1 _ $aBroughton, James,$d1913-1999,$eauthor,$etranslator.
 240 1 0 $aAllemagne de notre temps.$lEnglish
 245 1 0 $aGermany in our time/$cwritten and translated by J. Broughton.
 ```
 
-Display/behavior mockup:
-```
-(Optionally displayed as separate field labeled "Main author" OR displayed with any other names under "Authors" label)
-Main author: 
-  <a href="author index query on \"Broughton, James, 1913-1999\">Broughton, James, 1913-1999</a>, author, translator.
+### Display/behavior mockup:
+#### Display
+**Main author:**
+  - [Broughton, James, 1913-1999](http://fake.com/exact-phrase-author-index-search-on-linked-value), author, translator.
 
-(Optionally main_title displayed alone/in combo with main_author field)
-Title: 
-  Germany in our time
-OR
-(Optionally main_title shown displayed in combination with statement_of_responsibility)
-Title:
-  Germany in our time / written and translated by J. Broughton.
+**Title:**
+  - Germany in our time
+    - written and translated by J. Broughton.
 
-Other versions of this work: 
-  <a href="citation index exact phrase query on: \"Broughton, James, 1913-1999. Allemagne de notre temps\">Broughton, James, 1913-1999. Allemagne de notre temps.</a> English
-  
-Value in author facet: 
-  Broughton, James, 1913-1999
+**Other versions of this work:**
+  [Broughton, James, 1913-1999. Allemagne de notre temps.](http://fake.com/exact-phrase-citation-index-search-on-linked-value) English
 
-Values in author index:
-  Broughton, James, 1913-1999.
-  written and translated by J. Broughton.
+#### Facet values
+Author facet:
+  - Broughton, James, 1913-1999
+
+#### Index values
+Author index:
+  - Broughton, James, 1913-1999. _from_ `creator_main` _- high relevance_
+  - written and translated by J. Broughton.
   
 Values in title index:
   Germany in our time
