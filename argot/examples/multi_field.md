@@ -26,7 +26,7 @@ For now, please ignore the details of labels for displayed fields, or whether yo
     - written and translated by J. Broughton.
 
 **This work:**
-  [Broughton, James, 1913-1999. Allemagne de notre temps.](http://fake.com/exact-phrase-citation-index-search-on-linked-value) English
+  - [Broughton, James, 1913-1999. Allemagne de notre temps.](http://fake.com/exact-phrase-citation-index-search-on-linked-value) English
 
 #### Facet values
 Author facet:
@@ -70,7 +70,7 @@ Keyword index:
   - Selected horror classics
     - selected and introduced by Werner Hertzog and Bruce Campbell.
 
-**Authors/contributors: **
+**Authors/contributors:**
   - **(Volume 1)** [Herzog, Werner, 1942-](http://fake.com/exact-phrase-author-index-search-on-linked-value) editor, author of introduction
   - **(Volume 2)** [Campbell, Bruce, 1958-](http://fake.com/exact-phrase-author-index-search-on-linked-value) editor, author of introduction
   
