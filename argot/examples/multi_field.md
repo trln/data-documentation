@@ -25,7 +25,7 @@ For now, please ignore the details of labels for displayed fields, or whether yo
   - Germany in our time
     - written and translated by J. Broughton.
 
-**Other versions of this work:**
+**This work:**
   [Broughton, James, 1913-1999. Allemagne de notre temps.](http://fake.com/exact-phrase-citation-index-search-on-linked-value) English
 
 #### Facet values
@@ -34,25 +34,25 @@ Author facet:
 
 #### Index values
 Author index:
-  - Broughton, James, 1913-1999. _from_ `creator_main` _- high relevance_
-  - written and translated by J. Broughton.
+  - Broughton, James, 1913-1999. (_from_ `creator_main` _--high relevance_)
+  - written and translated by J. Broughton. (_from_ `statement_of_responsibility` _-high relevance_)
   
-Values in title index:
-  Germany in our time
-  Allemagne de notre temps. English
-  
-Values in work_citation index:
-  Broughton, James, 1913-1999. Allemagne de notre temps.
+Title index:
+  - Germany in our time (_from_ `title_main` _--high relevance_)
+  - Allemagne de notre temps. (_from MARC 240 field (uniform title) displayed as part of_ `work_citation` _display and thus separate display unnecessary--high relevance_)
 
-Values in keyword index: 
-  Broughton, James, 1913-1999, author, translator
-  Allemagne de notre temps. English
-  Germany in our time
-  written and translated by J. Broughton.
-```
+Work_citation index:
+  - Broughton, James, 1913-1999. Allemagne de notre temps.
+
+Keyword index: 
+  - Broughton, James, 1913-1999, author, translator
+  - Allemagne de notre temps. English
+  - Germany in our time
+  - written and translated by J. Broughton.
+
 
 ## Multivolume work containing multiple works, with related work
-MARC data:
+### MARC data:
 ```
 245 0 0 $aSelected horror classics/$cselected and introduced by Werner Hertzog and Bruce Campbell.
 700 1 _ $aHerzog, Werner,$d1942-$4edt$4aui$3Volume 1
@@ -64,87 +64,81 @@ MARC data:
 710 2 _ $iContinuation of (work):$aAssociation of Horror Buffs.$tStories you should know
 ```
 
-Display/behavior mockup:
+### Display/behavior mockup:
+#### Display
+**Title:**
+  - Selected horror classics
+    - selected and introduced by Werner Hertzog and Bruce Campbell.
+
+**Authors/contributors: **
+  - **(Volume 1)** [Herzog, Werner, 1942-](http://fake.com/exact-phrase-author-index-search-on-linked-value) editor, author of introduction
+  - **(Volume 2)** [Campbell, Bruce, 1958-](http://fake.com/exact-phrase-author-index-search-on-linked-value) editor, author of introduction
+  
+**This work:** 
+  - [Selected horror classics](http://fake.com/exact-phrase-citation-index-search-on-linked-value)
+  
+**Contains work(s):**
+  - **(Volume 1)** [Poe, Edgar Allan, 1809-1849. Black cat](http://fake.com/exact-phrase-citation-index-search-on-linked-value)
+  - **(Volume 1)** [Lovecraft, H. P. (Howard Phillips), 1890-1937. Call of Cthulhu](http://fake.com/exact-phrase-citation-index-search-on-linked-value)
+  - **(Volume 2)** [Le Fanu, Joseph Sheridan, 1814-1873. Carmilla](http://fake.com/exact-phrase-citation-index-search-on-linked-value)
+  - **(Volume 2)** [Irving, Washington, 1783-1859. Legend of Sleepy Hollow](http://fake.com/exact-phrase-citation-index-search-on-linked-value)
+  
+**Related works:**
+ - Continuation of: [Association of Horror Buffs. Stories you should know](http://fake.com/exact-phrase-citation-index-search-on-linked-value)
+
+#### Facet values
+Author facet: 
+  - Herzog, Werner, 1942-
+  - Campbell, Bruce, 1958-
+  - Poe, Edgar Allan, 1809-1849
+  - Lovecraft, H. P. (Howard Phillips), 1890-1937
+  - Le Fanu, Joseph Sheridan, 1814-1873
+  - Irving, Washington, 1783-1859
+  
+_Association of Horror Buffs NOT in facet because known "related" names are excluded. Further, in Endeca, only personal names from 7xxs were mapped to the Author facet; corporate and meeting names from 710 and 711 were not faceted as authors._
+  
+#### Index values
+Author index:
+  - Herzog, Werner, 1942- _(from_ `editor` _--slightly lower relevance)_
+  - Campbell, Bruce, 1958- _(from_ `editor` _--slightly lower relevance)_
+  - Poe, Edgar Allan, 1809-1849 _(from_ `included_work_creator` _--high relevance)_
+  - Lovecraft, H. P. (Howard Phillips), 1890-1937  _(from_ `included_work_creator` _--high relevance)_
+  - Le Fanu, Joseph Sheridan, 1814-1873 _(from_ `included_work_creator` _--high relevance)_
+  - Irving, Washington, 1783-1859 _(from_ `included_work_creator` _--high relevance)_
+  - selected and introduced by Werner Hertzog and Bruce Campbell. _(from_ `statement_of_responsibility` _--high relevance)_
+  - Association of Horror Buffs _(from_ `related_work_creator` _--lower relevance)_
+
+Title index:
+  - Selected horror classics _(from_ `title_main` _--high relevance)_
+  - Black cat _(from_ `included_work_title` _--high relevance)_
+  - Call of Cthulhu _(from_ `included_work_title` _--high relevance)_
+  - Carmilla _(from_ `included_work_title` _--high relevance)_
+  - Legend of Sleepy Hollow _(from_ `included_work_title` _--high relevance)_
+  - Stories you should know _(from_ `related_work_title` _--lower relevance)_
+
+Work_citation index:
+  - Selected horror classics _(from_ `work_citation` _--high relevance)_
+  - Poe, Edgar Allan, 1809-1849. Black cat _(from_ `included_work_citation` _--high relevance)_
+  - Lovecraft, H. P. (Howard Phillips), 1890-1937. Call of Cthulhu _(from_ `included_work_citation` _--high relevance)_
+  - Le Fanu, Joseph Sheridan, 1814-1873. Carmilla _(from_ `included_work_citation` _--high relevance)_
+  - Irving, Washington, 1783-1859. Legend of Sleepy Hollow _(from_ `included_work_citation` _--high relevance)_
+  - Association of Horror Buffs. Stories you should know _(from_ `related_work_citation` _--high relevance)_
+
+Keyword index: 
+  - Selected horror classics
+  - selected and introduced by Werner Hertzog and Bruce Campbell.
+  - Volume 1 Herzog, Werner, 1942- editor, author of introduction
+  - Volume 2 Campbell, Bruce, 1958- editor, author of introduction
+  - Volume 1 Poe, Edgar Allan, 1809-1849, author. Black cat
+  - Volume 1 Lovecraft, H. P. (Howard Phillips), 1890-1937. Call of Cthulhu
+  - Volume 2 Le Fanu, Joseph Sheridan, 1814-1873. Carmilla
+  - Volume 2 Irving, Washington, 1783-1859. Legend of Sleepy Hollow
+  - Continuation of (work): Association of Horror Buffs. Stories you should know
+
+
+
+
 ```
-(Optionally displayed as separate field labeled "Main author" OR displayed with any other names under "Authors" label)
-Main author: 
-  (blank) -- no author for overall work. Herzog and Campbell are in 'editor' field to make them available to citation builder feature(s)
-
-(Optionally main_title displayed alone/in combo with main_author field)
-Title: 
-  Selected horror classics
-OR
-(Optionally main_title shown displayed in combination with statement_of_responsibility)
-Title:
-  Selected horror classics / selected and introduced by Werner Hertzog and Bruce Campbell.
-
-Authors/contributors: 
-  (Volume 1) <a href="query link to phrase search for \"Herzog, Werner, 1942-\"">Herzog, Werner, 1942-</a> editor, author of introduction
-  (Volume 2) <a href="query link to phrase search for \"Campbell, Bruce, 1958-\"">Campbell, Bruce, 1958- editor, author of introduction
-  
-Other versions of this work: 
-  <a href="citation index exact phrase query on: \"Selected horror classics\">Selected horror classics</a>
-  
-Contains works: 
-  (Volume 1) <a href="citation index exact phrase query on: \"Poe, Edgar Allan, 1809-1849. Black cat\"">Poe, Edgar Allan, 1809-1849. Black cat</a>
-  (Volume 1) <a href="citation index exact phrase query on: \"Lovecraft, H. P. (Howard Phillips), 1890-1937. Call of Cthulhu\"">Lovecraft, H. P. (Howard Phillips), 1890-1937. Call of Cthulhu</a>
-  (Volume 2) <a href="citation index exact phrase query on: \"Le Fanu, Joseph Sheridan, 1814-1873. Carmilla\"">Le Fanu, Joseph Sheridan, 1814-1873. Carmilla</a>
-  (Volume 2) <a href="citation index exact phrase query on: \"Irving, Washington, 1783-1859. Legend of Sleepy Hollow\"">Irving, Washington, 1783-1859. Legend of Sleepy Hollow</a>
-  
-Related works:
-Continuation of: <a href="citation index exact phrase query on: \"Association of Horror Buffs. Stories you should know\"">Association of Horror Buffs. Stories you should know</a> 
-  
-Values in author facet: 
-  Herzog, Werner, 1942-
-  Campbell, Bruce, 1958-
-  Poe, Edgar Allan, 1809-1849
-  Lovecraft, H. P. (Howard Phillips), 1890-1937
-  Le Fanu, Joseph Sheridan, 1814-1873
-  Irving, Washington, 1783-1859
-  
-  (Association of Horror Buffs NOT in facet because known "related" names are excluded)
-  
-Values in author index:
-  Herzog, Werner, 1942- (from editor field, so slightly lower relevance contribution)
-  Campbell, Bruce, 1958- (from editor field, so slightly lower relevance contribution)
-  Poe, Edgar Allan, 1809-1849 (from included_work_creator field, so high relevance contribution)
-  Lovecraft, H. P. (Howard Phillips), 1890-1937 (from included_work_creator field, so high relevance contribution)
-  Le Fanu, Joseph Sheridan, 1814-1873 (from included_work_creator field, so high relevance contribution)
-  Irving, Washington, 1783-1859 (from included_work_creator field, so high relevance contribution)
-  selected and introduced by Werner Hertzog and Bruce Campbell. (from statement_of_responsibility field, so high relevance contribution)
-  Association of Horror Buffs (from related_work_creator field, so lower relevance contribution)
-
-Values in title index:
-  Selected horror classics (main_title of this work, so highest relevance contribution)
-  Black cat (included, high relevance contribution)
-  Call of Cthulhu (included, high relevance contribution)
-  Carmilla (included, high relevance contribution)
-  Legend of Sleepy Hollow (included, high relevance contribution)
-  Stories you should know (related, lower relevance contribution)
-
-Values in work_citation index:
-  Selected horror classics (when no 1XX field, use main_title)
-  Poe, Edgar Allan, 1809-1849. Black cat (included work, high relevance)
-  Lovecraft, H. P. (Howard Phillips), 1890-1937. Call of Cthulhu (included work, high relevance)
-  Le Fanu, Joseph Sheridan, 1814-1873. Carmilla (included work, high relevance)
-  Irving, Washington, 1783-1859. Legend of Sleepy Hollow (included work, high relevance)
-  Association of Horror Buffs. Stories you should know (related work, low relevance)
-
-Values in keyword index: 
-  Selected horror classics
-  selected and introduced by Werner Hertzog and Bruce Campbell.
-  Volume 1 Herzog, Werner, 1942- editor, author of introduction
-  Volume 2 Campbell, Bruce, 1958- editor, author of introduction
-  Volume 1 Poe, Edgar Allan, 1809-1849, author. Black cat
-  Volume 1 Lovecraft, H. P. (Howard Phillips), 1890-1937. Call of Cthulhu
-  Volume 2 Le Fanu, Joseph Sheridan, 1814-1873. Carmilla
-  Volume 2 Irving, Washington, 1783-1859. Legend of Sleepy Hollow
-  Continuation of (work): Association of Horror Buffs. Stories you should know
-``` 
-
-
-
-
 700 1 _ $aRosny, Leon.
 700 1 _ $aVol. 3$aSmith, Henry.$tAnnotated decisions.
 710 1 _ $aUnited States.$bGeneral Accounting Office.$tDecisions of the Comptroller General of the United States (Annual)$x0011-7323
