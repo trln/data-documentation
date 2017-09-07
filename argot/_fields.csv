@@ -1,5 +1,5 @@
 field,category,provisional,local,parent,required,multivalued?,searchable in,retain order,facet,displayed,label,definition,rationale,relevance importance (1=most imp),endeca equivalent,notes,implementation details,documentation,issue ct,mapping ct
-author_facet,names,n,n,x,y,y,x,n,Author,facet value,.,Creator and selected contributor names for narrowing down search results,.,.,Author,x,https://github.com/trln/data-documentation/blob/master/argot/processing_rules_and_procedures.md#all-fields-that-become-facet-values,.,0,8
+author_facet,names,n,n,x,y,y,x,n,Author,facet value,.,Creator and selected contributor names for narrowing down search results,.,.,Author,x,https://github.com/trln/data-documentation/blob/master/argot/processing_rules_and_procedures.md#all-fields-that-become-facet-values,.,0,7
 bib_locations_hierarchical,.,y,y,x,y,y,facet,n,Location,facet value,x,"Higher-level (library, etc.) locations housing volumes/copies of the resource described in the bib record ",Support for hierarchical location facet; polyhierarchy already existing in Endeca,x,Location,,,,2,0
 circulation_count,.,y,y,x,?,n,x,x,x,n,x,Total of circulation counts for all items attached to bibliographic record,Used to sort by popularity,x,Circulation Level,.,SUM of circulation count for items attached to bib,.,1,1
 contributor,names,n,n,x,,,,,,,,,,,Other Authors,,,,0,0
@@ -49,8 +49,5 @@ subject_topic_mesh_facet,subject,y,n,x,i,y,facet,n,Medical Subject,facet value,x
 subject_topic_other,subject,y,n,x,i,y,facet,n,Subject,facet value,x,Topical terms from non-LCSH/MeSH vocabularies,Explode subject headings into segments to allow filtering/narrowing by individual topical terms. Endeca did not limit this facet to LCSH,?,Subject: Topic,x,.,.,1,0
 title_main,title,n,n,x,,,,,,,,,,,Main Title,,,,0,0
 toc_work_creator,names,n,n,x,,,,,,,,,,,Table of Contents author index,,,,0,0
-undiff_name,names,n,n,x,,,,,,,,,,,Other Authors,,,,0,0
-undiff_work_citation,work,n,n,x,,,,,,,,,,,Name Title,,,,0,0
-undiff_work_citation_label,work,n,n,x,,,,,,,,,,,x,,,,0,0
 uniform_title,title,n,n,x,y,n,title,x,x,.,.,Consistent/controlled version of the work title,"Retrieve/collocate works where title has been recorded differently on separate versions (different language title, wording/spelling changed, etc.)",high,Main Uniform Title;;;Uniform Title;;;Journal Uniform Title,"This should definitely be a separate searchable string in the title index, but unsure whether it needs to be displayed on its own -- it will be part of the work_citation field which is probably more suitable for display",.,.,0,3
 work_citation,work,n,n,x,,,,,,,,,,,Uniform Title;;;Name Title,,,,0,0
