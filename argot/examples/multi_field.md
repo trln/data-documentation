@@ -95,7 +95,7 @@ Author facet:
   - Le Fanu, Joseph Sheridan, 1814-1873
   - Irving, Washington, 1783-1859
   
-_Association of Horror Buffs NOT in facet because known "related" names are excluded. Further, in Endeca, only personal names from 7xxs were mapped to the Author facet; corporate and meeting names from 710 and 711 were not faceted as authors._
+_Association of Horror Buffs NOT in facet because known "related" names are excluded; they are not authors of the thing described by *this* record. Further, in Endeca, only personal names from 7xxs were mapped to the Author facet; corporate and meeting names from 710 and 711 were not faceted as authors._
   
 #### Index values
 Author index:
@@ -136,7 +136,57 @@ Keyword index:
   - Continuation of (work): Association of Horror Buffs. Stories you should know
 
 
+## two "creators", related work
+### MARC data:
+```
+100 1 _ $aBaldwin, James,$d1924-1987,$eauthor.
+245 1 0 $aI am not your negro :$ba major motion picture directed by Raoul Peck /$cfrom texts by James Baldwin ; compiled and edited by Raoul Peck.
+700 1 _ $aPeck, Raoul,$ecompiler,$eauthor of introduction.
+730 0 _ $iScreenplay for (work):$aI am not your negro (Motion picture)
+```
 
+### Display/behavior mockup:
+#### Display
+**Main author:**
+  - [Baldwin, James, 1924-1987](http://fake.com/exact-phrase-author-index-search-on-linked-value), author
+  
+**Title:**
+  - I am not your negro : a major motion picture directed by Raoul Peck
+    - from texts by James Baldwin ; compiled and edited by Raoul Peck.
+
+**Authors/contributors:**
+  - [Baldwin, James, 1924-1987](http://fake.com/exact-phrase-author-index-search-on-linked-value), author.
+  - [Peck, Raoul](http://fake.com/exact-phrase-author-index-search-on-linked-value), compiler, author of introduction.
+**This work:**
+  - [Baldwin, James, 1924-1987. I am not your negro.](http://fake.com/exact-phrase-citation-index-search-on-linked-value)
+
+**Related work(s):**
+  - Screenplay for: [I am not your negro (Motion picture)](http://fake.com/exact-phrase-citation-index-search-on-linked-value)
+
+#### Facet values
+Author facet:
+  - Baldwin, James, 1924-1987
+  - Peck, Raoul
+  
+#### Index values
+Author index:
+  - Baldwin, James, 1924-1987 (_from_ `creator_main` _--high relevance_)
+  - from texts by James Baldwin ; compiled and edited by Raoul Peck. (_from_ `statement_of_responsibility` _-high relevance_)
+  - Peck, Raoul (_from_ `creator_add` _--high relevance_)
+  
+Title index:
+  - I am not your negro : a major motion picture directed by Raoul Peck (_from_ `title_main` _--high relevance_)
+  - I am not your negro (Motion picture) (_related title --lower relevance_)
+
+Work_citation index:
+  - Baldwin, James, 1924-1987. I am not your negro. _(this work -- higher relevance)_
+  - I am not your negro (Motion picture) _(related work -- lower relevance)_
+
+Keyword index: 
+- Baldwin, James, 1924-1987, author.
+- I am not your negro : a major motion picture directed by Raoul Peck / from texts by James Baldwin ; compiled and edited by Raoul Peck.
+- Peck, Raoul, compiler, author of introduction
+- Screenplay for (work): I am not your negro (Motion picture)
 
 ```
 700 1 _ $aRosny, Leon.

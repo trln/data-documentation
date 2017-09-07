@@ -14,7 +14,7 @@ def grab_json(uri)
   response = http.request(request)
 
   if response.code == "200"
-    return JSON.parse(response.body)["@graph"]
+    return JSON.parse(response.body)
   else
     return "Error getting JSON: #{response.code}"
   end
