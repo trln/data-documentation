@@ -1,7 +1,6 @@
 field,category,provisional,local,parent,required,multivalued?,searchable in,retain order,facet,displayed,label,definition,rationale,relevance importance (1=most imp),endeca equivalent,notes,implementation details,documentation,issue ct,mapping ct
 author_facet,names,n,n,x,y,y,x,n,Author,facet value,.,Creator and selected contributor names for narrowing down search results,.,.,Author,x,https://github.com/trln/data-documentation/blob/master/argot/processing_rules_and_procedures.md#all-fields-that-become-facet-values,.,0,7
 bib_locations_hierarchical,.,y,y,x,y,y,facet,n,Location,facet value,x,"Higher-level (library, etc.) locations housing volumes/copies of the resource described in the bib record ",Support for hierarchical location facet; polyhierarchy already existing in Endeca,x,Location,,,,2,0
-circulation_count,.,y,y,x,?,n,x,x,x,n,x,Total of circulation counts for all items attached to bibliographic record,Used to sort by popularity,x,Circulation Level,.,SUM of circulation count for items attached to bib,.,1,1
 contributor,names,n,n,x,,,,,,,,,,,Other Authors,,,,0,0
 contributor_relator,names,n,n,x,,,,,,,,,,,x,,,,0,0
 creator_add,names,n,n,x,,,,,,,,,,,Other Authors,,,,0,0

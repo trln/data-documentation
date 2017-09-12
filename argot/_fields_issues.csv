@@ -6,7 +6,6 @@ subject_topic_lcsh_facet,Dedupe values assigned to field or not? Do multiple occ
 subject_genre_facet,Dedupe values assigned to field or not? Do multiple occurrences of the same value help in ordering the results by relevance?,.,.
 subject_chronological_facet,Dedupe values assigned to field or not? Do multiple occurrences of the same value help in ordering the results by relevance?,.,.
 subject_geographic_facet,Dedupe values assigned to field or not? Do multiple occurrences of the same value help in ordering the results by relevance?,.,.
-circulation_count,Do we plan on keeping Sort by Popularity function? It doesn't work well at all. ,.,https://trlnmain.atlassian.net/browse/TD-151?jql=text%20~%20%22popular%22
 item_type,Do we need this in Argot/Argon? Will any features use it? Not sure if any do in Endeca.,.,.
 resource_type,Use case for this? Does NCSU still need? Anyone else?,.,.
 bib_locations_hierarchical,Recommended: limit to physical places people can go -- Online and E-resource are NOT locations,.,https://trlnmain.atlassian.net/browse/TD-371
