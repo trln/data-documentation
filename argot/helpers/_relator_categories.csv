@@ -1,0 +1,543 @@
+category,relator
+contributor,voc
+contributor,vocalist
+contributor,clb
+contributor,collaborator
+contributor,ppt
+contributor,puppeteer
+contributor,sce
+contributor,scenarist
+contributor,spk
+contributor,speaker
+contributor,rce
+contributor,recording engineer
+contributor,pro
+contributor,producer
+contributor,wac
+contributor,writer of added commentary
+contributor,win
+contributor,writer of introduction
+contributor,sgd
+contributor,stage director
+contributor,srv
+contributor,surveyor
+contributor,rsg
+contributor,restager
+contributor,sng
+contributor,singer
+contributor,res
+contributor,researcher
+contributor,wat
+contributor,writer of added text
+contributor,mod
+contributor,moderator
+contributor,prs
+contributor,production designer
+contributor,csp
+contributor,consultant to a project
+contributor,edt
+contributor,editor
+contributor,ccp
+contributor,conceptor
+contributor,cmm
+contributor,commentator
+contributor,vac
+contributor,voice actor
+contributor,rcd
+contributor,recordist
+contributor,edc
+contributor,editor of compilation
+contributor,osp
+contributor,onscreen presenter
+contributor,aft
+contributor,"author of afterword, colophon, etc."
+contributor,mtk
+contributor,minute taker
+contributor,pan
+contributor,panelist
+contributor,wde
+contributor,wood engraver
+contributor,cnd
+contributor,conductor
+contributor,rth
+contributor,research team head
+contributor,eng
+contributor,engineer
+contributor,arr
+contributor,arranger
+contributor,fac
+contributor,facsimilist
+contributor,ctb
+contributor,contributor
+contributor,dis
+contributor,dissertant
+contributor,aud
+contributor,author of dialog
+contributor,mus
+contributor,musician
+contributor,ill
+contributor,illustrator
+contributor,abr
+contributor,abridger
+contributor,mfr
+contributor,manufacturer
+contributor,hst
+contributor,host
+contributor,edm
+contributor,editor of moving image work
+contributor,org
+contributor,originator
+contributor,mte
+contributor,metal-engraver
+contributor,scr
+contributor,scribe
+contributor,prd
+contributor,production personnel
+contributor,anm
+contributor,animator
+contributor,ren
+contributor,renderer
+contributor,prf
+contributor,performer
+contributor,std
+contributor,set designer
+contributor,aui
+contributor,"author of introduction, etc."
+contributor,trl
+contributor,translator
+contributor,vdg
+contributor,videographer
+contributor,itr
+contributor,instrumentalist
+contributor,nrt
+contributor,narrator
+contributor,ctr
+contributor,contractor
+contributor,adi
+contributor,art director
+contributor,sad
+contributor,scientific advisor
+contributor,wam
+contributor,writer of accompanying material
+contributor,wal
+contributor,writer of added lyrics
+contributor,rtm
+contributor,research team member
+contributor,cwt
+contributor,commentator for written text
+contributor,sec
+contributor,secretary
+contributor,drm
+contributor,draftsman
+contributor,cst
+contributor,costume designer
+contributor,lgd
+contributor,lighting designer
+contributor,pre
+contributor,presenter
+contributor,wst
+contributor,writer of supplementary textual content
+contributor,rev
+contributor,reviewer
+contributor,stn
+contributor,standards body
+contributor,wdc
+contributor,woodcutter
+contributor,wpr
+contributor,writer of preface
+contributor,stl
+contributor,storyteller
+contributor,aqt
+contributor,author in quotations or text abstracts
+contributor,cll
+contributor,calligrapher
+contributor,frg
+contributor,forger
+contributor,crp
+contributor,correspondent
+contributor,msd
+contributor,musical director
+contributor,crt
+contributor,court reporter
+contributor,adp
+contributor,adapter
+contributor,act
+contributor,actor
+contributor,tch
+contributor,teacher
+contributor,trc
+contributor,transcriber
+contributor,dnc
+contributor,dancer
+contributor,dln
+contributor,delineator
+contributor,rpt
+contributor,reporter
+contributor,flm
+contributor,film editor
+contributor,rpy
+contributor,responsible party
+creator,grt
+creator,graphic technician
+creator,pra
+creator,praeses
+creator,ivr
+creator,interviewer
+creator,com
+creator,compiler
+creator,lsa
+creator,landscape architect
+creator,cmp
+creator,composer
+creator,enj
+creator,enacting jurisdiction
+creator,chr
+creator,choreographer
+creator,aus
+creator,screenwriter
+creator,lbt
+creator,librettist
+creator,lyr
+creator,lyricist
+creator,scl
+creator,sculptor
+creator,pht
+creator,photographer
+creator,ctg
+creator,cartographer
+creator,rsp
+creator,respondent
+creator,ive
+creator,interviewee
+creator,inv
+creator,inventor
+creator,dsr
+creator,designer
+creator,cre
+creator,creator
+creator,art
+creator,artist
+creator,arc
+creator,architect
+creator,prg
+creator,programmer
+creator,aut
+creator,author
+creator,fmk
+creator,filmmaker
+uncategorized,stm
+uncategorized,stage manager
+uncategorized,stg
+uncategorized,setting
+uncategorized,prv
+uncategorized,provider
+uncategorized,pte
+uncategorized,plaintiff-appellee
+uncategorized,tyd
+uncategorized,type designer
+uncategorized,sds
+uncategorized,sound designer
+uncategorized,sgn
+uncategorized,signer
+uncategorized,pmn
+uncategorized,production manager
+uncategorized,pup
+uncategorized,publication place
+uncategorized,dpc
+uncategorized,depicted
+uncategorized,lse
+uncategorized,licensee
+uncategorized,fnd
+uncategorized,funder
+uncategorized,bkp
+uncategorized,book producer
+uncategorized,opn
+uncategorized,opponent
+uncategorized,cov
+uncategorized,cover designer
+uncategorized,dtc
+uncategorized,data contributor
+uncategorized,lee
+uncategorized,libelee-appellee
+uncategorized,mrb
+uncategorized,marbler
+uncategorized,fpy
+uncategorized,first party
+uncategorized,rps
+uncategorized,repository
+uncategorized,cns
+uncategorized,censor
+uncategorized,pat
+uncategorized,patron
+uncategorized,lel
+uncategorized,libelee
+uncategorized,lbr
+uncategorized,laboratory
+uncategorized,cpc
+uncategorized,copyright claimant
+uncategorized,elt
+uncategorized,electrotyper
+uncategorized,tcd
+uncategorized,technical director
+uncategorized,pbd
+uncategorized,publishing director
+uncategorized,bdd
+uncategorized,binding designer
+uncategorized,asg
+uncategorized,assignee
+uncategorized,ptt
+uncategorized,plaintiff-appellant
+uncategorized,crr
+uncategorized,corrector
+uncategorized,lso
+uncategorized,licensor
+uncategorized,cpt
+uncategorized,complainant-appellant
+uncategorized,lit
+uncategorized,libelant-appellant
+uncategorized,rse
+uncategorized,respondent-appellee
+uncategorized,cpl
+uncategorized,complainant
+uncategorized,rst
+uncategorized,respondent-appellant
+uncategorized,exp
+uncategorized,expert
+uncategorized,rbr
+uncategorized,rubricator
+uncategorized,elg
+uncategorized,electrician
+uncategorized,str
+uncategorized,stereotyper
+uncategorized,mrk
+uncategorized,markup editor
+uncategorized,tyg
+uncategorized,typographer
+uncategorized,auc
+uncategorized,auctioneer
+uncategorized,cpe
+uncategorized,complainant-appellee
+uncategorized,prc
+uncategorized,process contact
+uncategorized,pth
+uncategorized,patent holder
+uncategorized,ths
+uncategorized,thesis advisor
+uncategorized,bpd
+uncategorized,bookplate designer
+uncategorized,bsl
+uncategorized,bookseller
+uncategorized,wit
+uncategorized,witness
+uncategorized,cot
+uncategorized,contestant-appellant
+uncategorized,cph
+uncategorized,copyright holder
+uncategorized,fld
+uncategorized,field director
+uncategorized,sht
+uncategorized,supporting host
+uncategorized,ppm
+uncategorized,papermaker
+uncategorized,led
+uncategorized,lead
+uncategorized,pta
+uncategorized,patent applicant
+uncategorized,cli
+uncategorized,client
+uncategorized,pma
+uncategorized,permitting agency
+uncategorized,dfe
+uncategorized,defendant-appellee
+uncategorized,lil
+uncategorized,libelant
+uncategorized,ant
+uncategorized,bibliographic antecedent
+uncategorized,dbp
+uncategorized,distribution place
+uncategorized,lie
+uncategorized,libelant-appellee
+uncategorized,att
+uncategorized,attributed name
+uncategorized,pfr
+uncategorized,proofreader
+uncategorized,asn
+uncategorized,associated name
+uncategorized,cts
+uncategorized,contestee
+uncategorized,prp
+uncategorized,production place
+uncategorized,dft
+uncategorized,defendant-appellant
+uncategorized,spy
+uncategorized,second party
+uncategorized,acp
+uncategorized,art copyist
+uncategorized,blw
+uncategorized,blurb writer
+uncategorized,ldr
+uncategorized,laboratory director
+uncategorized,len
+uncategorized,lender
+uncategorized,cte
+uncategorized,contestee-appellee
+uncategorized,bkd
+uncategorized,book designer
+uncategorized,con
+uncategorized,conservator
+uncategorized,gis
+uncategorized,geographic information specialist
+uncategorized,mcp
+uncategorized,music copyist
+uncategorized,evp
+uncategorized,event place
+uncategorized,mfp
+uncategorized,manufacture place
+uncategorized,let
+uncategorized,libelee-appellant
+uncategorized,mon
+uncategorized,monitor
+uncategorized,uvp
+uncategorized,university place
+uncategorized,ard
+uncategorized,artistic director
+uncategorized,dtm
+uncategorized,data manager
+uncategorized,clr
+uncategorized,colorist
+uncategorized,mdc
+uncategorized,metadata contact
+uncategorized,ctt
+uncategorized,contestee-appellant
+uncategorized,pdr
+uncategorized,project director
+uncategorized,cmt
+uncategorized,compositor
+uncategorized,pop
+uncategorized,printer of plates
+uncategorized,dub
+uncategorized,dubious author
+uncategorized,coe
+uncategorized,contestant-appellee
+uncategorized,cos
+uncategorized,contestant
+uncategorized,anl
+uncategorized,analyst
+uncategorized,red
+uncategorized,redaktor
+uncategorized,app
+uncategorized,applicant
+uncategorized,bjd
+uncategorized,bookjacket designer
+other,tlp
+other,television producer
+other,ptf
+other,plaintiff
+other,rcp
+other,addressee
+other,rpc
+other,radio producer
+other,orm
+other,organizer
+other,cur
+other,curator
+other,cou
+other,court governed
+other,drt
+other,director
+other,isb
+other,issuing body
+other,ann
+other,annotator
+other,ape
+other,appellee
+other,spn
+other,sponsor
+other,rsr
+other,restorationist
+other,col
+other,collector
+other,dfd
+other,defendant
+other,ilu
+other,illuminator
+other,dgg
+other,degree granting institution
+other,med
+other,medium
+other,fmd
+other,film director
+other,jug
+other,jurisdiction governed
+other,dte
+other,dedicatee
+other,his
+other,host institution
+other,ato
+other,autographer
+other,dgs
+other,degree supervisor
+other,prn
+other,production company
+other,ins
+other,inscriber
+other,hnr
+other,honoree
+other,dto
+other,dedicator
+other,fmp
+other,film producer
+other,csl
+other,consultant
+other,cor
+other,collection registrar
+other,oth
+other,other
+other,rdd
+other,radio director
+other,bnd
+other,binder
+other,tld
+other,television director
+other,apl
+other,appellant
+other,jud
+other,judge
+other,cng
+other,cinematographer
+publisher,brd
+publisher,broadcaster
+publisher,pbl
+publisher,publisher
+publisher,dst
+publisher,distributor
+manufacturer,egr
+manufacturer,engraver
+manufacturer,prm
+manufacturer,printmaker
+manufacturer,brl
+manufacturer,braille embosser
+manufacturer,prt
+manufacturer,printer
+manufacturer,etr
+manufacturer,etcher
+manufacturer,clt
+manufacturer,collotyper
+manufacturer,ltg
+manufacturer,lithographer
+manufacturer,plt
+manufacturer,platemaker
+manufacturer,cas
+manufacturer,caster
+owner,dnr
+owner,donor
+owner,sll
+owner,seller
+owner,fmo
+owner,former owner
+owner,own
+owner,owner
+owner,dpt
+owner,depositor
+distributor,fds
+distributor,film distributor

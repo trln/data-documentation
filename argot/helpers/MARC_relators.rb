@@ -1,3 +1,4 @@
+require 'csv'
 require 'json'
 require 'net/http'
 require 'uri'
@@ -153,15 +154,15 @@ active['results']['bindings'].each { |result|
 cat_hash = {}
 
 categories = {
+  'http://purl.org/dc/elements/1.1/contributor' => {'predicate' => 'rdfs:subPropertyOf', 'category' => 'contributor'},
+  'http://purl.org/dc/elements/1.1/publisher' => {'predicate' => 'rdfs:subPropertyOf', 'category' => 'publisher'},
   'http://id.loc.gov/vocabulary/relators/collection_RDAContributor' => {'predicate' => 'mads:isMemberOfMADSCollection', 'category' => 'contributor'},
   'http://id.loc.gov/vocabulary/relators/collection_RDACreator' => {'predicate' => 'mads:isMemberOfMADSCollection', 'category' => 'creator'},
   'http://id.loc.gov/vocabulary/relators/collection_RDAManufacturer' => {'predicate' => 'mads:isMemberOfMADSCollection', 'category' => 'manufacturer'},
   'http://id.loc.gov/vocabulary/relators/collection_RDAPublisher' => {'predicate' => 'mads:isMemberOfMADSCollection', 'category' => 'publisher'},
   'http://id.loc.gov/vocabulary/relators/collection_RDADistributor' => {'predicate' => 'mads:isMemberOfMADSCollection', 'category' => 'distributor'},
   'http://id.loc.gov/vocabulary/relators/collection_RDAOwner' => {'predicate' => 'mads:isMemberOfMADSCollection', 'category' => 'owner'},
-  'http://id.loc.gov/vocabulary/relators/collection_RDAOther' => {'predicate' => 'mads:isMemberOfMADSCollection', 'category' => 'other'},
-  'http://purl.org/dc/elements/1.1/contributor' => {'predicate' => 'rdfs:subPropertyOf', 'category' => 'contributor'},
-  'http://purl.org/dc/elements/1.1/publisher' => {'predicate' => 'rdfs:subPropertyOf', 'category' => 'publisher'}
+  'http://id.loc.gov/vocabulary/relators/collection_RDAOther' => {'predicate' => 'mads:isMemberOfMADSCollection', 'category' => 'other'}
 }
 
 
@@ -212,3 +213,23 @@ File.open("../maps/_relator_code_to_label.json", "w") do |f|
   f.write(expansions.to_json)
 end
 
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+# create human-friendly list of relators by category
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+catlist = {}
+relators.values.each { |rel|
+  if catlist[rel.category]
+    catlist[rel.category] << rel.code
+    catlist[rel.category] << rel.label
+  else
+    catlist[rel.category] = [rel.code]
+    catlist[rel.category] << rel.label
+  end
+}
+
+CSV.open("_relator_categories.csv", "wb") do |csv|
+  csv << ['category', 'relator']
+  catlist.each_pair { |cat, vals|
+    vals.each { |val| csv << [cat, val] }
+  }
+end
