@@ -1,3 +1,12 @@
+- [Argot *items* field](#argot--items--field)
+  * [Subelements](#subelements)
+  * [Basic structure of *items* field in Argot](#basic-structure-of--items--field-in-argot)
+  * [Institution-specific item mapping examples](#institution-specific-item-mapping-examples)
+    + [UNC mapping examples](#unc-mapping-examples)
+      - [call_no (UNC)](#call-no--unc-)
+
+
+
 # Argot *items* field
 
 The Argot *items* field is an array of item elements. Each item element is an an escaped JSON string representing an item record attached to the bib.
@@ -10,7 +19,7 @@ The Argot *items* field is an array of item elements. Each item element is an an
   * The *items* field may contain multiple elements representing multiple item records attached to the bib
   * The order of item elements in the *items* field should represent the display order of items desired
 
-## item element subelements
+## Subelements
 * **call_no**
   * full call number, including any volume and/or copy designators
   * required
