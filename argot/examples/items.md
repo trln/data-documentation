@@ -184,3 +184,7 @@ items = [
   }"
 ]
 ```
+
+:information_source: UNC's example shows the same code in loc_b and loc_n because the Sierra ILS stores one code representing location.
+
+Duke, NCCU, and NCSU have different codes in their local systems for loc_b and loc_n
