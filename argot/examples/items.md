@@ -163,7 +163,7 @@ items = [
   \"cn_scheme\" : \"LC\",
   \"status\" : \"In-Library Use Only\",
   \"rec_id\" : \"i1763213\",
-  \"notes\" : ["Public note here"]
+  \"notes\" : [\"Public note here\"]
   }",
   "{
   \"loc_b\" : \"dhca\",
