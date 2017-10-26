@@ -6,7 +6,7 @@ The Argot *holdings* field is an array of holdings elements. Each holdings eleme
 
 * **Required?**
   * Optional, but should be consistent per format per institution.
-	* If no *holdings* data exists in the Argot record, Argon can derive a placeholder "holdings" based on item data. Out of the box this isn't great, but could be developed further.
+	* If no *holdings* data exists in the Argot record, Argon can derive a placeholder "holdings" based on item data. Out of the box this isn't great, but could be developed further. See [Holdings data in Argot and Argon](https://trlnmain.atlassian.net/wiki/spaces/TD/pages/6422529/Holdings+data+in+Argot+and+Argon) for more on this.
   * Not used in display of online resources
 * **Repeatable/multivalued?**
   * The *holdings* field itself is not repeated in the Argot record representing a bib record
@@ -179,25 +179,25 @@ We'll have to determine how many unsuppressed holdings records lack textual hold
 
 ``` json
 holdings = [
-  {
-  "loc_b" : "bbdaa", 
-  "loc_n" : "bbdaa", 
-  "summary" : "v.1(1988)-v.25(2012)", 
-  "notes" : [
-    "Shelved on Index Table"
+  "{
+  \"loc_b\" : \"bbdaa\", 
+  \"loc_n\" : \"bbdaa\", 
+  \"summary\" : \"v.1(1988)-v.25(2012)\", 
+  \"notes\" : [
+    \"Shelved on Index Table\"
 	], 
-  "call_no" : "ML113 .I6 B IX"
+  \"call_no\" : \"ML113 .I6 B IX\"
   },
   {
-  "loc_b" : "dgdba", 
-  "loc_n" : "dgdba", 
-  "summary" : "v.26(2013/2014)", 
-  "notes" : [
-    "Bound in brown rib grain (T) cloth binding stamped in blind.", 
-	"Recipes clipped from newspapers pasted on both sides of rear free end-paper."
+  \"loc_b\" : \"dgdba\", 
+  \"loc_n\" : \"dgdba\", 
+  \"summary\" : \"v.26(2013/2014)\", 
+  \"notes\" : [
+    \"Bound in brown rib grain (T) cloth binding stamped in blind.\", 
+	\"Recipes clipped from newspapers pasted on both sides of rear free end-paper.\"
   ],
-  "call_no" : "TX715 .P962 1858",
-  "rec_id" : "c2786750"
-  }
+  \"call_no\" : \"TX715 .P962 1858\",
+  \"rec_id\" : \"c2786750\"
+  }"
 ]
 ```
