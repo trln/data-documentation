@@ -25,7 +25,7 @@ call_no (holdings),MARCish,n,UNC,999,hijkm,i1=9 AND i2=3 AND $0=#{holdings_recor
 loc_b (holdings),MARCish,n,UNC,999,b,i1=9 and i2=2,derived from other field,derived from  holdings_location_shelf -- See https://github.com/trln/data-documentation/blob/master/argot/questions_issues/location.md#one-idea-for-data-mappingtransformation,x,loc_b (holdings)UNC999bi1=9 and i2=2,0,0,y
 loc_n (holdings),MARCish,n,UNC,999,b,i1=9 and i2=2,subelement_to_value,See https://github.com/trln/data-documentation/blob/master/argot/questions_issues/location.md#one-idea-for-data-mappingtransformation,,loc_n (holdings)UNC999bi1=9 and i2=2,0,0,y
 notes (holdings),MARCish,n,UNC,999,lz,i1=9 AND i2=3 AND $0=#{holdings_record_id} AND $2='852',subelement_to_value,x,x,notes (holdings)UNC999lzi1=9 AND i2=3 AND $0=#{holdings_record_id} AND $2='852',0,0,y
-rec_id (holdings),MARCish,n,UNC,999,a,(i1=9 AND i2=2) AND $c > 0,subelement_to_value,x,x,rec_id (holdings)UNC999a(i1=9 AND i2=2) AND $c > 0,0,0,y
+holdings_id,MARCish,n,UNC,999,a,(i1=9 AND i2=2) AND $c > 0,subelement_to_value,x,x,holdings_idUNC999a(i1=9 AND i2=2) AND $c > 0,0,0,y
 summary (holdings),MARCish,n,UNC,999,a,i1=9 AND i2=3 AND $0=#{holdings_record_id} AND $2='866',subelement_to_value,x,x,summary (holdings)UNC999ai1=9 AND i2=3 AND $0=#{holdings_record_id} AND $2='866',0,0,y
 call_no (items),MARCish,n,UNC,999,qvc,i1=9 AND i2=1,concat_subelements,See https://github.com/trln/data-documentation/blob/master/argot/examples/items.md#item_call_number-unc,.,call_no (items)UNC999qvci1=9 AND i2=1,0,0,y
 due_date (items),MARCish,n,UNC,999,d,i1=9 AND i2=1,subelement_to_value,.,Will be blank if item is NOT checked out,due_date (items)UNC999di1=9 AND i2=1,0,0,y
@@ -34,7 +34,7 @@ loc_b (items),MARCish,n,UNC,999,f,i1=9 AND i2=4 AND NOT EXIST (tag=999 AND i1=9 
 loc_n (items),MARCish,n,UNC,999,l,i1=9 AND i2=1,subelement_to_value,See https://github.com/trln/data-documentation/blob/master/argot/questions_issues/location.md#one-idea-for-data-mappingtransformation,.,loc_n (items)UNC999li1=9 AND i2=1,0,0,y
 loc_n (items),MARCish,n,UNC,999,f,i1=9 AND i2=4 AND NOT EXIST (tag=999 AND i1=9 and i2=1),subelement_to_value,See https://github.com/trln/data-documentation/blob/master/argot/questions_issues/location.md#one-idea-for-data-mappingtransformation,.,loc_n (items)UNC999fi1=9 AND i2=4 AND NOT EXIST (tag=999 AND i1=9 and i2=1),0,0,y
 notes (items),MARCish,n,UNC,999,n,i1=9 AND i2=1,subelement_to_value,.,.,notes (items)UNC999ni1=9 AND i2=1,0,0,y
-rec_id (items),MARCish,n,UNC,999,i,i1=9 AND i2=1,subelement_to_value,.,.,rec_id (items)UNC999ii1=9 AND i2=1,0,0,y
+item_id,MARCish,n,UNC,999,i,i1=9 AND i2=1,subelement_to_value,.,.,item_idUNC999ii1=9 AND i2=1,0,0,y
 status (items),MARCish,n,UNC,999,d,i1=9 AND i2=1 and $d IS NOT blank,"value = ""Checked Out""",.,.,status (items)UNC999di1=9 AND i2=1 and $d IS NOT blank,0,0,y
 status (items),MARCish,n,UNC,999,s,i1=9 AND i2=1 and $d IS blank,map subelement to value,"See maps/item_status_ils_to_argot.json[""UNC""]",.,status (items)UNC999si1=9 AND i2=1 and $d IS blank,0,0,y
 status (items),MARCish,n,UNC,999,a,i1=9 AND i2=4 AND NOT EXIST (tag=999 AND i1=9 and i2=1),"value = ""On Order""",.,Order record data (999 94) should only be output if there is no item or holdings data output,status (items)UNC999ai1=9 AND i2=4 AND NOT EXIST (tag=999 AND i1=9 and i2=1),0,0,y

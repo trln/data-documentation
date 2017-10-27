@@ -27,8 +27,8 @@ The Argot *holdings* field is an array of holdings elements. Each holdings eleme
   * Array, where each separate note from holdings record is an element
   * Required if display of public notes is desired
   * Preferred: do not send a *notes* key with empty array as value if there are no notes to publicly display
-* **rec_id**
-  * Local id of holdings record
+* **holdings_id**
+  * Local, unique id of holdings record
   * Optional per institution - format consistently to meet institutional needs
 * **summary** - Summary holdings statement -- representation of what items are included at the location specified
   * Array, where each separate holdings summary (main bib unit, supplement, index) is an element
@@ -61,7 +61,7 @@ holdings = [
   \"notes\" : [
     \"Latest in Science Library Annex Serials\"
 	],
-  \"rec_id\" : \"c2792043\"
+  \"holdings_id\" : \"c2792043\"
   }"
 ]
 ```
@@ -197,7 +197,7 @@ holdings = [
 	\"Recipes clipped from newspapers pasted on both sides of rear free end-paper.\"
   ],
   \"call_no\" : \"TX715 .P962 1858\",
-  \"rec_id\" : \"c2786750\"
+  \"holdings_id\" : \"c2786750\"
   }"
 ]
 ```

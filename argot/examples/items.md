@@ -51,8 +51,8 @@ The Argot *items* field is an array of item elements. Each item element is an an
   * Array, where each separate note from item record is an element
   * Required if display of public notes is desired
   * If there are no notes to publicly display, prefer to **not** send *notes* subelement with empty array
-* **rec_id**
-  * Local id of item record
+* **item_id**
+  * Local, unique id of item record -- may be barcode value, item record id, or whatever is useful
   * Optional per institution - format consistently to meet institutional needs
 * **status**
   * Human readable, local status message for the item
@@ -162,7 +162,7 @@ items = [
   \"call_no\" : \"PR1367 .M34 v.9(1959/1960)\",
   \"cn_scheme\" : \"LC\",
   \"status\" : \"In-Library Use Only\",
-  \"rec_id\" : \"i1763213\",
+  \"item_id\" : \"i1763213\",
   \"notes\" : [\"Public note here\"]
   }",
   "{
@@ -171,7 +171,7 @@ items = [
   \"call_no\" : \"PR1367 .M34 v.9(1959/1960) c.2\",
   \"cn_scheme\" : \"LC\",
   \"status\" : \"In-Library Use Only\",
-  \"rec_id\" : \"i9509452\",
+  \"item_id\" : \"i9509452\",
   }",
   "{
   \"loc_b\" : \"dhca\",
@@ -180,7 +180,7 @@ items = [
   \"cn_scheme\" : \"LC\",
   \"status\" : \"Checked Out\",
   \"due_date\" : \"2017-10-31\",
-  \"rec_id\" : \"i9509453\",
+  \"item_id\" : \"i9509453\",
   }"
 ]
 ```
