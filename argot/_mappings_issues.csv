@@ -6,3 +6,4 @@ subject_chronological_facet,33,.,"From MARC spec: ""This information in textual 
 subject_chronological_facet,46,op,Useful? 
 subject_chronological_facet,45,.,Useful? 
 date_catalogedNCCU...,.,.,Need to find out where this is in their data.
+call_no (holdings)UNC999hijkmi1=9 AND i2=3 AND $0=#{holdings_record_id} AND $2='852',.,.,Update
