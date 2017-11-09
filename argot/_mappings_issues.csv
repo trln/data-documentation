@@ -7,3 +7,7 @@ subject_chronological_facet,46,op,Useful?
 subject_chronological_facet,45,.,Useful? 
 date_catalogedNCCU...,.,.,Need to find out where this is in their data.
 call_no (holdings)UNC999hijkmi1=9 AND i2=3 AND $0=#{holdings_record_id} AND $2='852',.,.,Update
+,752,,Mapping to NOTE in Endeca: http://search.lib.unc.edu/search?R=UNCb3040837
+"location_hierarchyUNCloc_b (items, holdings)..",.,.,Automate generation of YAML from location management spreadsheet
+status (items)UNC999ai1=9 AND i2=4 AND NOT EXIST (tag=999 AND i1=9 and i2=1),.,.,Desired statuses from order data will be discussed at next UNC OPAC Committee meeting
+summary (holdings)UNC999ai1=9 AND i2=3 AND $0=#{holdings_record_id} AND $2='866',863/4/5 + 853/4/5,.,Still need to figure out generating a summary from these fields.
