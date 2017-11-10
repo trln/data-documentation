@@ -104,7 +104,6 @@ uniform_title,MARC,n,GEN,110,f(g)kl(n)pt,.,concat_subelements,$g and/or $n inclu
 uniform_title,MARC,n,GEN,111,f(g)kl(n)pt,.,concat_subelements,$g and/or $n included if it occurs AFTER a $t or $k,"Appears to be old practice for recording uniform title, instead of using separate 240. UNC doesn't have any records where uniform title info is in the 1xx AND a 240.",uniform_titleGEN111f(g)kl(n)pt.,0,0,y,,
 vol (items),MARCish,n,UNC,999,v,i1=9 AND i2=1,subelement_to_value,.,.,vol (items)UNC999vi1=9 AND i2=1,0,0,y,y,y
 title_abbreviated,MARC,n,GEN,210,ab,i1=1,concat_subelements,.,,title_abbreviatedGEN210abi1=1,0,0,y,,
-coden,MARC,n,GEN,030,a,,subelement_to_value,.,.,codenGEN30a,0,0,y,,
 oclc_number,MARC,n,UNC,001,.,see notes,see notes,see notes,https://github.com/trln/marc-to-argot/blob/master/spec/unc_oclc_number_spec.rb,oclc_numberUNC1.see notes,0,0,y,,
 oclc_number,MARC,n,UNC,003,.,see notes,see notes,see notes,https://github.com/trln/marc-to-argot/blob/master/spec/unc_oclc_number_spec.rb,oclc_numberUNC3.see notes,0,0,y,,
 oclc_number,MARC,n,UNC,035,a,see notes,see notes,see notes,https://github.com/trln/marc-to-argot/blob/master/spec/unc_oclc_number_spec.rb,oclc_numberUNC35asee notes,0,0,y,,
