@@ -22,25 +22,24 @@
  - parent : populated with name of parent field if the element maps into a nested JSON structure in Argot (we are trying to avoid this complexity except where it is deemed necessary)
    - There should be something in the "additional documentation" column for these fields to show examples. 
    
- - required : more accurately, "*how* required is this?"
-   - m : mandatory -- this must be populated for overall shared catalog function
-   - i : "if/ideal" -- ideally, populate this field if data is present or mapping the data out is possible -- consistency here improves the cohesiveness of the catalog, but missing data isn't breaking it
-   - o : very/completely optional -- there is a use case/need for this, but maybe not for all institutions
-   
+- obligation : shorthand for 'required' and 'multivalued' 
+  - {1} : required, single value only
+  - {0, 1} : not required. If provided, must be single value
+  - {0, n} : not required. Any number of values may be provided
+  - {1, n} : required. One or more values may be provided
+
+- retain order : whether it is important or not to retain order of fields
+ - y : it is important
+ - x : not important or not applicable
+ 
 For the following four columns, I decided to focus on the behavior in Argon, rather than their specification in Solr. The devs are best situated at this point to decide how to translate Argot into Solr to achieve the desired behavior.
 
-- multivalued? : based on best understanding of source data and purpose of field
-  - y : yes
-  - n : no
-  - ? : unsure
 - searchable in : indexes where this field should be searched when a user types in a query
 - facet : facet(s) populated by data in this field
 - displayed : if the value should be displayed, and if so, where/how
 - label : initial suggestion for default display label
-  - . : not applicable
+  - x : not applicable -- not displayed
+  - . : who knows. Expected to display, but not filled in yet
+  - 'UPC:' + #{upc} + #{upc_qualifying_info} : Shows how display will be constructed in pseudo-Ruby
   
 - endeca equivalent : used to compare defined field set to Endeca data model
-# more details on fields
-
-## date
-### cataloged_date
