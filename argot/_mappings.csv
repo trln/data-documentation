@@ -109,3 +109,6 @@ uniform_title,MARC,n,GEN,111,f(g)kl(n)pt,.,concat_subelements,$g and/or $n inclu
 vol (items),MARCish,n,UNC,999,v,i1=9 AND i2=1,subelement_to_value,.,.,vol (items)UNC999vi1=9 AND i2=1,0,0,y,y,y
 misc_id,MARC,n,GEN,010,a,.,subelement_to_value,"qual MUST = """";;;type = ""LCCN"";;;Do NOT trim leading/trailing spaces",x,misc_idGEN10a.,0,0,y,,
 misc_id,MARC,n,GEN,010,b,.,subelement_to_value,"qual MUST = """";;;type = ""NUCMC"";;;Do NOT trim leading/trailing spaces",x,misc_idGEN10b.,0,0,y,,
+misc_id,MARC,n,GEN,015,a,.,subelement_to_value,"if subfield includes parentheses, split into 'id' and 'qual';;;if subfield contains no parentheses, 'id' = whole subfield value",x,misc_idGEN15a.,0,0,y,,
+misc_id,MARC,n,GEN,015,q,.,subelement_to_value,qual = subfield valuewith parentheses removed,x,misc_idGEN15q.,0,0,y,,
+misc_id,MARC,n,GEN,015,2,.,map subelement to value,"type = ""National Bibliography Number"" if there is no $2; otherwise, map $2 using https://github.com/trln/marc-to-argot/blob/master/lib/translation_maps/shared/national_bibliography_codes.yaml",Mapping is from: https://www.loc.gov/standards/sourcelist/national-bibliography.html,misc_idGEN152.,0,0,y,,
