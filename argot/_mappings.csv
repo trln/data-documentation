@@ -107,3 +107,5 @@ uniform_title,MARC,n,GEN,100,f(g)klnpt,.,concat_subelements,$g included if it oc
 uniform_title,MARC,n,GEN,110,f(g)kl(n)pt,.,concat_subelements,$g and/or $n included if it occurs AFTER a $t or $k,"Appears to be old practice for recording uniform title, instead of using separate 240. UNC doesn't have any records where uniform title info is in the 1xx AND a 240.",uniform_titleGEN110f(g)kl(n)pt.,0,0,y,,
 uniform_title,MARC,n,GEN,111,f(g)kl(n)pt,.,concat_subelements,$g and/or $n included if it occurs AFTER a $t or $k,"Appears to be old practice for recording uniform title, instead of using separate 240. UNC doesn't have any records where uniform title info is in the 1xx AND a 240.",uniform_titleGEN111f(g)kl(n)pt.,0,0,y,,
 vol (items),MARCish,n,UNC,999,v,i1=9 AND i2=1,subelement_to_value,.,.,vol (items)UNC999vi1=9 AND i2=1,0,0,y,y,y
+misc_id,MARC,n,GEN,010,a,.,subelement_to_value,"qual MUST = """";;;type = ""LCCN"";;;Do NOT trim leading/trailing spaces",x,misc_idGEN10a.,0,0,y,,
+misc_id,MARC,n,GEN,010,b,.,subelement_to_value,"qual MUST = """";;;type = ""NUCMC"";;;Do NOT trim leading/trailing spaces",x,misc_idGEN10b.,0,0,y,,
