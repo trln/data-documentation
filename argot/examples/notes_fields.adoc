@@ -1,0 +1,90 @@
+= Notes fields
+== Overview of notes in Argot
+=== Separate-field treatment
+A few notes are pulled out into special fields. This is because a) there is some special treatment for the field in the systesm AND/OR b) we deem the data in the note to be different/important enought to set it apart from other notes, either in a separate area, or with a separate primary label.
+
+Examples are:
+- 505 Contents note (TOC from Syndetics overrides display of this field; if no Syndetics data present, show separate from other notes as Contents)
+- 520 Summary note (Similar to 505) 
+- 511 Participant or Performer Note (display as separate field)
+
+=== Ignored notes
+Some notes are NOT displayed or indexed.
+
+These are considered notes more of interest to internal library staff, and of little use in discovering, identifying, and/or selecting materials in the public catalog. Two examples are:
+- 530 - Additional Physical Form Available Note
+- 583 - Action Note
+
+Details on all ignored notes fields below in ignored notes section.
+=== Displayed notes
+notes_display contains all notes to be displayed (which includes some notes that are not indexed).
+
+notes_display allows us to display notes in the order they appear in the catalog record, which is sometimes important for having them make sense.
+
+This also allows us to generate nonindexed labels from the data, so that the displayed notes make more sense.
+
+=== Indexed notes
+notes_index contains only the main content (i.e. no labels, etc) of notes (or parts of notes) that meaningfully contribute to retrieval
+
+
+== Patterns in notes field processing
+=== A. Plain and simple processing -- nothing special
+b1000070a	500 _ _ $a"Sponsored by NASA Historical Staff, Office of Policy Analysis."
+
+=== B. Field-refers-to label (from $3) needed
+b1004068a	500 _ _ $3c. 1$aInscribed: "Benson R. Wilcox"--Fly leaf.$5NcU-H
+
+500 - General Note
+=== C. Label generated from MARC tag needed
+=== D. Label generated from MARC tag and indicator(s) needed
+- 510 - Citation/References Note
+- 521 - Target Audience Note
+- 522 - Geographic Coverage Note
+
+=== E. Label created from $i
+[WARNING]
+.$i is not always a label
+=====================================================================
+In the following fields, $i is a non-label data element: 
+- 514
+- 542
+- 552
+- 583
+=====================================================================
+=== F. Something else
+==== 518 - Date/Time and Place of an Event Note
+- May need $3 label
+-- b7832943a	518 _ _ $3CD 2$oRecorded$d2004 November,$pAuditorium (Chiesa) di San Salvatore a Rodengo, Brescia, Italy.
+-- b7832943a	518 _ _ $3CD 1$oRecorded$d2001 October,$pIstituo di musica Antica Academia Monte Regalis, Mondovi, Italy.
+- If $a, treat like basic textual note
+-- b1200040a	518 _ _ $a"Recorded in the formerly monastic church of St. Ottilie in Möschenfeld near Munich. Date of recording, May, 1967."
+- If any subfields occur after $a, remove them and throw in a space -- these are probably mis-coded and should be cleaned up in the data, but are pretty innocuous and seem easy-ish to deal with
+-- b8966892a	518 _ _ $aBroadcast$dFriday, November 18 (10:01-11:00 p.m. Est), on ABC.
+- If no $a... $o 
+
+== Separate field notes
+=== 514 - Data Quality Note
+b8981148a	514 _ _ $zConforms To:$eCombined Arms Research Library Digital Library.
+b6855632a	514 _ _ $aThe attribute accuracy is unknown.$dNo duplicate features are present.$eAfter processing, the data set is checked for number of records, attribute names, and values compared with source materials.
+
+=== 506 - Restrictions on Access Note
+=== 508 - Creation/Production Credits Note
+=== 511 - Participant or Performer Note
+== Ignored notes
+=== 524 - Preferred Citation of Described Materials Note
+UNC catalog use = 23 fields
+
+Field has been around since at least 2008 (and not updated since)
+
+Users unlikely to look in full record to find out the preferred way to cite something. Also, we don't know what citation format they are being required to use.
+
+Does not add to retrieval/discovery
+
+=== 530 - Additional Physical Form Available Note
+=== 583 - Action Note
+
+== Examples
+b2415252a	535 1 _ $aDiocesan Library, Episcopal Diocese of Western North Carolina,$bP. O. Box 368, Black Mountain, N.C. 28711.
+b2020885a	535 1 _ $aNational Archives and Records Administration$cUSA
+b4014115a	535 2 _ $aChurch of Jesus Christ of the Latter-day Saints. Family History Center, Greensboro, N.C.$3Microfilm
+

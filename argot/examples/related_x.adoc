@@ -1,0 +1,37 @@
+== 534
+If 534 contains $a and $t, created related work entry using $p as label. $a is indexed as related author. $t indexed as related title.
+
+b4234053a	534 _ _ $pOriginally issued in:$aWytfliet, Corneille.$tDescriptionis Ptolemaicae augmentum.$cLouvain, 1597.
+--------------------------------------
+{
+'relationship': 'Originally issued in:',
+'author': 'Wytfliet, Corneille.',
+'title' : 'Descriptionis Ptolemaicae augmentum.',
+'details' : 'Louvain, 1597.'
+}
+--------------------------------------
+
+
+b4247559a	534 _ _ $pOriginally in:$tAtlas universel /$aP. Santini.
+--------------------------------------
+{
+'relationship': 'Originally in:',
+'author': 'P. Santini.',
+'title' : 'Atlas universel'
+}
+--------------------------------------
+
+b5226836a	534 _ _ $pTranscribed from:$aBarnett, Anthony, 1941-.$tAnti-beauty$cLewes : Allardyce Book, 1999.$e58 p.$z0907954278.
+
+--------------------------------------
+{
+'relationship': 'Transcribed from:',
+'author': 'Barnett, Anthony, 1941-.',
+'title' : 'Anti-beauty',
+ 'details' : 'Lewes : Allardyce Book, 1999. 58 p.',
+ 'isbn' : '0907954278'
+ }
+--------------------------------------
+
+
+
