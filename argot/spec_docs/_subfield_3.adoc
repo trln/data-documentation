@@ -220,6 +220,7 @@ Hard to say, but it's a relatively recent addition to the MARC standard. Or at l
 *To exclude $3 would render the statements made by $3-bearing fields false in the context of the overall record.*
 
 Therefore, if $3 is present, in almost all cases, it should be treated like a label. That means, ideallyfootnote:[In Kristina\'s opinion, anyway.] the $3 value is:
+
 - shown at beginning of field display, regardless of where it appears in the underlying data.
 - visually distinguished from rest of field in some way
 - NOT indexed as part of field

@@ -4,6 +4,7 @@
 A few notes are pulled out into special fields. This is because a) there is some special treatment for the field in the systesm AND/OR b) we deem the data in the note to be different/important enought to set it apart from other notes, either in a separate area, or with a separate primary label.
 
 Examples are:
+
 - 505 Contents note (TOC from Syndetics overrides display of this field; if no Syndetics data present, show separate from other notes as Contents)
 - 520 Summary note (Similar to 505) 
 - 511 Participant or Performer Note (display as separate field)
@@ -34,6 +35,7 @@ b1004068a	500 _ _ $3c. 1$aInscribed: "Benson R. Wilcox"--Fly leaf.$5NcU-H
 
 500 - General Note
 === D. Label generated from MARC tag and/or indicator value(s) needed
+
 - 510 - Citation/References Note
 - 521 - Target Audience Note
 - 522 - Geographic Coverage Note
@@ -43,6 +45,7 @@ b1004068a	500 _ _ $3c. 1$aInscribed: "Benson R. Wilcox"--Fly leaf.$5NcU-H
 .$i is not always a label
 =====================================================================
 In the following fields, $i is a non-label data element: 
+
 - 514
 - 542
 - 552
@@ -50,6 +53,7 @@ In the following fields, $i is a non-label data element:
 =====================================================================
 === F. Something else
 ==== 518 - Date/Time and Place of an Event Note
+
 - May need $3 label
 -- b7832943a	518 _ _ $3CD 2$oRecorded$d2004 November,$pAuditorium (Chiesa) di San Salvatore a Rodengo, Brescia, Italy.
 -- b7832943a	518 _ _ $3CD 1$oRecorded$d2001 October,$pIstituo di musica Antica Academia Monte Regalis, Mondovi, Italy.
