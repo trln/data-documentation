@@ -54,14 +54,14 @@ In the following fields, $i is a non-label data element:
 === F. Something else
 ==== 518 - Date/Time and Place of an Event Note
 
-- May need $3 label
--- b7832943a	518 _ _ $3CD 2$oRecorded$d2004 November,$pAuditorium (Chiesa) di San Salvatore a Rodengo, Brescia, Italy.
--- b7832943a	518 _ _ $3CD 1$oRecorded$d2001 October,$pIstituo di musica Antica Academia Monte Regalis, Mondovi, Italy.
-- If $a, treat like basic textual note
--- b1200040a	518 _ _ $a"Recorded in the formerly monastic church of St. Ottilie in Möschenfeld near Munich. Date of recording, May, 1967."
-- If any subfields occur after $a, remove them and throw in a space -- these are probably mis-coded and should be cleaned up in the data, but are pretty innocuous and seem easy-ish to deal with
--- b8966892a	518 _ _ $aBroadcast$dFriday, November 18 (10:01-11:00 p.m. Est), on ABC.
-- If no $a... $o 
+* May need $3 label
+** b7832943a	518 _ _ $3CD 2$oRecorded$d2004 November,$pAuditorium (Chiesa) di San Salvatore a Rodengo, Brescia, Italy.
+** b7832943a	518 _ _ $3CD 1$oRecorded$d2001 October,$pIstituo di musica Antica Academia Monte Regalis, Mondovi, Italy.
+* If $a, treat like basic textual note
+** b1200040a	518 _ _ $a"Recorded in the formerly monastic church of St. Ottilie in Möschenfeld near Munich. Date of recording, May, 1967."
+* If any subfields occur after $a, remove them and throw in a space -- these are probably mis-coded and should be cleaned up in the data, but are pretty innocuous and seem easy-ish to deal with
+** b8966892a	518 _ _ $aBroadcast$dFriday, November 18 (10:01-11:00 p.m. Est), on ABC.
+* If no $a... $o 
 
 == Separate field notes
 === 514 - Data Quality Note
