@@ -11,11 +11,8 @@ Examples are:
 === Ignored notes
 Some notes are NOT displayed or indexed.
 
-These are considered notes more of interest to internal library staff, and of little use in discovering, identifying, and/or selecting materials in the public catalog. Two examples are:
-- 530 - Additional Physical Form Available Note
-- 583 - Action Note
-
 Details on all ignored notes fields below in ignored notes section.
+
 === Displayed notes
 notes_display contains all notes to be displayed (which includes some notes that are not indexed).
 
@@ -26,17 +23,17 @@ This also allows us to generate nonindexed labels from the data, so that the dis
 === Indexed notes
 notes_index contains only the main content (i.e. no labels, etc) of notes (or parts of notes) that meaningfully contribute to retrieval
 
+=== Local notes
+It will be up to individual institutions to decide how their local notes (590) field data is mapped.
 
-== Patterns in notes field processing
-=== A. Plain and simple processing -- nothing special
-b1000070a	500 _ _ $a"Sponsored by NASA Historical Staff, Office of Policy Analysis."
+In Endeca, we had the option of mapping this to either the non-indexed `Notes` property (using prepipeline data label 590) or the `Indexed Notes` property (using prepipeline data label `590_indexed`).
 
-=== B. Field-refers-to label (from $3) needed
+== Special patterns in notes field processing
+=== A. Field-refers-to label (from $3) needed
 b1004068a	500 _ _ $3c. 1$aInscribed: "Benson R. Wilcox"--Fly leaf.$5NcU-H
 
 500 - General Note
-=== C. Label generated from MARC tag needed
-=== D. Label generated from MARC tag and indicator(s) needed
+=== D. Label generated from MARC tag and/or indicator value(s) needed
 - 510 - Citation/References Note
 - 521 - Target Audience Note
 - 522 - Geographic Coverage Note
@@ -70,6 +67,7 @@ b6855632a	514 _ _ $aThe attribute accuracy is unknown.$dNo duplicate features ar
 === 506 - Restrictions on Access Note
 === 508 - Creation/Production Credits Note
 === 511 - Participant or Performer Note
+
 == Ignored notes
 === 524 - Preferred Citation of Described Materials Note
 UNC catalog use = 23 fields
@@ -82,9 +80,24 @@ Does not add to retrieval/discovery
 
 === 530 - Additional Physical Form Available Note
 === 583 - Action Note
+=== 588 - Source of Description Note
+b1296969a	588 _ _ $aDescription based on: Vol. 16, no. 8 (Aug. 1971); title from cover.
+b1311160a	588 _ _ $aLatest issue consulted: Vol. 35, no. 1 (winter 2001) surrogate.
 
 == Examples
+b1000070a	500 _ _ $a"Sponsored by NASA Historical Staff, Office of Policy Analysis."
+
 b2415252a	535 1 _ $aDiocesan Library, Episcopal Diocese of Western North Carolina,$bP. O. Box 368, Black Mountain, N.C. 28711.
 b2020885a	535 1 _ $aNational Archives and Records Administration$cUSA
 b4014115a	535 2 _ $aChurch of Jesus Christ of the Latter-day Saints. Family History Center, Greensboro, N.C.$3Microfilm
+
+b2559560a	563 _ _ $aNLM copy bound in contemporary Cambridge-style binding.$5DNLM
+b9021086a	563 _ _ $aRebacked tooled old calf, with bosses and clasps (the latter missing on upper edge). "333" written on inner cover. Front endpaper is vellum leaf from a 14th century service book; written in large gothic script with red and blue initials decorated with pen flourishes. Back doublure is part of a vellum leaf from a 14th century annotated digest; written in gothic script.
+b4254290a	563 _ _ $aSome pages uncut.$3(Health Sciences Library, c. 1)
+
+b3616660a	567 _ _ $aSamples from 319 quadrangles (1 degree x 2 degrees) beginning in 1976 and ending in 1980; four main sample types represented: stream sediment, soil, surface water, and ground water. Each sample analyzed for uranium and as many as 58 other elements including sulfate.
+b5250152a	567 8 _ $aThe Protocol for Assessing Community Excellence in Environmental Health (PACE EH) offers local health officials guidance in conducting a community-based environmental health assessment and creating an accurate and verifiable profile of the community's environmental health status. The process is designed to improve decision making by taking a collaborative community-based approach to generating an action plan that is based on a set of priorities that reflect both an accurate assessment of local environmental health status and an understanding of public values and priorities. The methodology takes the user through a series of tasks to engage the public, collect necessary and relevant information related to community environmental health concerns, rank issues, and set local priorities for action. At the heart are three core processes: developing new relationships with community stakeholders, expanding understanding about the relationship between human health and the state of the environment, and redefining a leadership role for public health officials in environmental health.
+
+
+
 

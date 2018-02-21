@@ -1,0 +1,241 @@
+= MARC subfield 3 ($3)
+== What is it?
+Cryptically named "Materials Specified," what it means is actually pretty simple.
+
+The bib record describes a resource, which may be made up of multiple materials or parts.
+
+In general, every field in the record describes the overall resource being described. But sometimes you want to say that the data in a given field refers only to a sub-part of the overall resource being described.
+
+.Example record
+-------
+100 1 _ $aCavallotti, Felice,$d1842-1898.
+245 1 0 $aOpere di Felice Cavallotti.
+264 _ 1 $aMilano :$bCarlo Aliprandi,$c[1895-1896]
+300 _ _ $a9 volumes :$billustrations ;$c21 cm
+336 _ _ $atext$btxt$2rdacontent
+337 _ _ $aunmediated$bn$2rdamedia
+338 _ _ $avolume$bnc$2rdacarrier
+500 _ _ $3v. 9$aPublished by "La Poligrafica, societa editrice," whose label covers the imprint on cover of v.1-3, 5, 7-8.
+505 1 _ $av. 1. I pezzenti. Guido. Agnese. Drammi in versi -- v. 2. Sogni e Scherzi.  Il catico del cantici-- v. 3. Battaglie. Canzoni, giambi e ballate. Due popoli. Lamarcia de Leonida. Körner. Tirteo -- -- [v. 9.] Fra tombe e monumenti / scelti e ordinati per cura di Carlo Romussi, per cura del medesimo
+700 1 _ $3v. 3$aRomussi, Carlo,$d1847-1913,$eeditor.
+856 4 1 $3v. 1$yFull text available via the UNC-Chapel Hill Libraries$uhttps://archive.org/details/operedifelicecav01cava
+856 4 1 $3v. 2$yFull text available via the UNC-Chapel Hill Libraries$uhttps://archive.org/details/operedifelicecav02cava
+856 4 1 $3v. 3$yFull text available via the UNC-Chapel Hill Libraries$uhttps://archive.org/details/operedifelicecav03cava
+856 4 1 $3v. 9$yFull text available via the UNC-Chapel Hill Libraries$uhttps://archive.org/details/operedifelicecav09cava
+-------
+
+In the above example, the bib record describes the 9-volume set, however $3 is used in several fields to express:
+- v. 9 has a different publisher (500)
+- v. 3 was edited by Carlo Romussi (700)
+- v. 1, 2, 3, and 9 are available as separate digitized objects at Internet Archive.
+
+== What fields can have $3?
+
+As of 2018-02-21, 79 MARC fields have the $3 subfield defined.
+
+Consult https://github.com/trln/data-documentation/blob/master/marc/_marc_bib_subfields.tsv[tab-delimted file of all defined MARC subfields] for details.
+
+== How frequently is $3 used?
+Hard to say, but it's a relatively recent addition to the MARC standard. Or at least, its definition for use in more fields is ongoing.
+
+.UNC catalog analysis: occurrences of MARC fields in unsuppressed bib records containing $3
+|===
+|MARC field |count of fields with $3
+
+|856
+|332750
+
+|541
+|19807
+
+|260
+|9686
+
+|915
+|9135
+
+|506
+|7015
+
+|264
+|908
+
+|518
+|859
+
+|336
+|814
+
+|337
+|781
+
+|338
+|753
+
+|880
+|654
+
+|490
+|456
+
+|956
+|427
+
+|533
+|372
+
+|944
+|362
+
+|500
+|324
+
+|561
+|318
+
+|347
+|220
+
+|344
+|106
+
+|300
+|73
+
+|033
+|61
+
+|340
+|51
+
+|346
+|49
+
+|710
+|48
+
+|700
+|44
+
+|050
+|43
+
+|583
+|38
+
+|546
+|36
+
+|510
+|30
+
+|830
+|25
+
+|345
+|20
+
+|852
+|8
+
+|655
+|8
+
+|650
+|6
+
+|538
+|6
+
+|563
+|6
+
+|891
+|5
+
+|590
+|5
+
+|382
+|5
+
+|535
+|5
+
+|037
+|3
+
+|351
+|3
+
+|530
+|3
+
+|600
+|3
+
+|505
+|2
+
+|562
+|2
+
+|581
+|2
+
+|651
+|2
+
+|773
+|2
+
+|540
+|1
+
+|250
+|1
+
+|919
+|1
+
+|348
+|1
+
+|586
+|1
+
+|730
+|1
+
+|585
+|1
+
+|020
+|1
+
+|===
+
+
+== What to do with $3 data
+*To exclude $3 would render the statements made by $3-bearing fields false in the context of the overall record.*
+
+Therefore, if $3 is present, in almost all cases, it should be treated like a label. That means, ideallyfootnote:[In Kristina\'s opinion, anyway.] the $3 value is:
+- shown at beginning of field display, regardless of where it appears in the underlying data.
+- visually distinguished from rest of field in some way
+- NOT indexed as part of field
+
+
+My suggestion would be to have a macro or subroutine or something `get_sf3_label` that can be called when necessary during field processing.
+
+This would clean up punctuation from around the value and make sure the value ends in a colon.footnote:[This is necessary because our ILSs and catalogs have not kept up with changes in MARC practice so catalogers have ended up hard-coding a lot of non-prescribed punctuation in fields like $3 (which should be provided by the system) in order for end-user display to look nice]
+
+I can spec out the details of punctuation cleanup, etc. later.
+
+[WARNING]
+.$3 is not always a label
+=====================================================================
+In at least one field (541), $3 is used in such a way (at least in UNC data) that it doesn't really work as a label for the field.
+
+We should be able to specify for a given field that $3 not be treated as a label.
+=====================================================================
+
