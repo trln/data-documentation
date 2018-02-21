@@ -25,9 +25,9 @@ In general, every field in the record describes the overall resource being descr
 -------
 
 In the above example, the bib record describes the 9-volume set, however $3 is used in several fields to express:
-- v. 9 has a different publisher (500)
-- v. 3 was edited by Carlo Romussi (700)
-- v. 1, 2, 3, and 9 are available as separate digitized objects at Internet Archive.
+* v. 9 has a different publisher (500)
+* v. 3 was edited by Carlo Romussi (700)
+* v. 1, 2, 3, and 9 are available as separate digitized objects at Internet Archive.
 
 == What fields can have $3?
 
