@@ -1,9 +1,7 @@
-= Notes fields
-
 :toc:
 :toc-placement!:
 
-
+= Notes fields
 
 *See the https://github.com/trln/data-documentation/tree/master/argot[Argot Excel file available here] or the https://github.com/trln/data-documentation/blob/master/argot/_mappings.csv[mappings.csv file] for field/subfield specific instructions.*
 
