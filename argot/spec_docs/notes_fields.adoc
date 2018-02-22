@@ -148,6 +148,7 @@ One example is the 518 where you have the option of putting a natural language n
 
 === UNC b5260735
 _There are notes in this record other than the one(s) shown here_
+
  561 0 _ $aGift of Ralph Falls, 6/25/97.
 
 Indicator 1 = 0 means "Private," so this field should NOT be included in Argot record.
