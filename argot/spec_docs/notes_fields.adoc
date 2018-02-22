@@ -42,10 +42,10 @@ It will be up to individual institutions to decide how their local notes (590) f
 In Endeca, we had the option of mapping this to either the non-indexed `Notes` property (using prepipeline data label `590`) or the `Indexed Notes` property (using prepipeline data label `590_indexed`).
 
 == Special patterns in notes field processing
-=== A. Field-refers-to label (from $3) needed
+=== Field-refers-to label (from $3) needed
 See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_subfield_3.adoc[spec document for $3] for more details. 
 
-=== B. Label generated from MARC tag and/or indicator value(s) and/or subfield definitions
+=== Label generated from MARC tag and/or indicator value(s) and/or subfield definitions
 Data in some note fields looks very weird without a label.
 
 The same MARC field is often used to record different types of data, with indicator coding controlling the meaning of the field.
@@ -76,7 +76,7 @@ Should be displayed:
 
  For age(s): Adult. (as determined by Brodart)
 
-=== C. Label created from $i
+=== Label created from $i
 
 [WARNING]
 .$i is not always a label
@@ -89,7 +89,7 @@ In the following fields, $i is a non-label data element:
 - 583
 =====================================================================
 
-=== F. Something else
+=== Something else
 Of course some fields are just weird and complicated.
 
 One example is the 518 where you have the option of putting a natural language note in the $a. OR you can bust up the information into separately coded elements where the $p sort of functions as a label.
