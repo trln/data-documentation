@@ -71,7 +71,7 @@ note_display[label],MARC,n,GEN,561,3,ind1 != 0,subelement_to_value,.,.,note_disp
 note_display[value],MARC,n,GEN,500,a,.,subelement_to_value,.,.,note_display[value]GEN500a.,0,0,y,n,n
 note_display[value],MARC,n,GEN,541,abcdefhno3,.,concat_subelements,DO NOT use $3 to create label,.,note_display[value]GEN541abcdefhno3.,0,0,y,n,n
 note_display[value],MARC,n,GEN,561,a,ind1 != 0,subelement_to_value,.,.,note_display[value]GEN561aind1 != 0,0,0,y,n,n
-note_display[value],MARC,n,GEN,,,,,,,note_display[value]GEN,0,0,y,,
+note_display[value],MARC,n,GEN,501,a,.,subelement_to_value,.,.,note_display[value]GEN501a.,0,0,y,n,n
 note_display[value],MARC,n,UNC,590,a,.,concat_subelements,.,.,note_display[value]UNC590a.,0,0,y,n,n
 note_display[value],MARC,n,GEN,502,abcdgo,.,concat_subelements,Complex instructions. Refer to linked documentation for thie field,.,note_display[value]GEN502abcdgo.,0,0,y,n,n
 note_display[value],MARC,n,GEN,504,ab,.,concat_subelements,"Prefix $b value with: ""Number of references: """,.,note_display[value]GEN504ab.,0,0,y,n,n
@@ -79,7 +79,7 @@ note_display[value],MARC,n,GEN,507,ab,.,concat_subelements,.,.,note_display[valu
 note_index,MARC,n,GEN,500,a,.,subelement_to_value,.,.,note_indexGEN500a.,0,0,y,n,n
 note_index,MARC,n,GEN,541,a,.,subelement_to_value,.,.,note_indexGEN541a.,0,0,y,n,n
 note_index,MARC,n,GEN,561,a,ind1 != 0,subelement_to_value,.,.,note_indexGEN561aind1 != 0,0,0,y,n,n
-note_index,MARC,n,GEN,,,,,,,note_indexGEN,0,0,y,,
+note_index,MARC,n,GEN,501,a,.,concat_subelements,.,.,note_indexGEN501a.,0,0,y,n,n
 note_index,MARC,n,UNC,590,a,"value is NOT: ""Vendor-supplied catalog record.""",concat_subelements,.,.,"note_indexUNC590avalue is NOT: ""Vendor-supplied catalog record.""",0,0,y,n,n
 note_index,MARC,n,GEN,502,abcdgo,.,concat_subelements,Complex instructions. Refer to linked documentation for thie field,.,note_indexGEN502abcdgo.,0,0,y,n,n
 note_index,MARC,n,GEN,507,ab,.,concat_subelements,.,.,note_indexGEN507ab.,0,0,y,n,n
