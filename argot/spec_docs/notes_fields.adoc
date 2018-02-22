@@ -15,14 +15,14 @@ Some notes are NOT displayed or indexed.
 Details on all ignored notes fields below in ignored notes section.
 
 === Displayed notes
-notes_display contains all notes to be displayed (which includes some notes that are not indexed).
+note_display contains all notes to be displayed (which includes some notes that are not indexed).
 
-notes_display allows us to display notes in the order they appear in the catalog record, which is sometimes important for having them make sense.
+note_display allows us to display notes in the order they appear in the catalog record, which is sometimes important for having them make sense.
 
 This also allows us to generate nonindexed labels from the data, so that the displayed notes make more sense.
 
 === Indexed notes
-notes_index contains only the main content (i.e. no labels, etc) of notes (or parts of notes) that meaningfully contribute to retrieval
+note_index contains only the main content (i.e. no labels, etc) of notes (or parts of notes) that meaningfully contribute to retrieval
 
 === Local notes
 It will be up to individual institutions to decide how their local notes (590) field data is mapped.
@@ -31,16 +31,40 @@ In Endeca, we had the option of mapping this to either the non-indexed `Notes` p
 
 == Special patterns in notes field processing
 === A. Field-refers-to label (from $3) needed
-b1004068a	500 _ _ $3c. 1$aInscribed: "Benson R. Wilcox"--Fly leaf.$5NcU-H
+See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_subfield_3.adoc[spec document for $3] for more details. 
 
-500 - General Note
-=== D. Label generated from MARC tag and/or indicator value(s) needed
+=== B. Label generated from MARC tag and/or indicator value(s) and/or subfield definitions
+Data in some note fields looks very weird without a label.
 
-- 510 - Citation/References Note
-- 521 - Target Audience Note
-- 522 - Geographic Coverage Note
+The same MARC field is often used to record different types of data, with indicator coding controlling the meaning of the field.
 
-=== E. Label created from $i
+Some subfields are used to record data that needs its own label in order for the data (and its relationship to the rest of the data in the field) to make sense.
+
+We should use the coding of the MARC data to display data to end users in a meaningful way.
+
+*Each MARC field's indicators and subfields are defined separately, so this type of processing will be very field-specific.*
+
+==== 521 example 1
+
+ 521 2 _ $a6-12$bMorgan Reynolds Incorporated
+
+Without generating a label using the MARC tag and indicator coding, we end up with a cryptic note displayed:
+
+ 6-12 Morgan Reynolds Incorporated
+
+Or we can meaningfully label/display the info:
+
+ For grade(s): 6-12. (as determined by Morgan Reynolds Incorporated)
+
+
+==== 521 example 2
+ 521 1 _ $aAdult.$bBrodart
+
+Should be displayed:
+ For age(s): Adult. (as determined by Brodart)
+
+=== C. Label created from $i
+
 [WARNING]
 .$i is not always a label
 =====================================================================
@@ -51,8 +75,11 @@ In the following fields, $i is a non-label data element:
 - 552
 - 583
 =====================================================================
+
 === F. Something else
-==== 518 - Date/Time and Place of an Event Note
+Of course some fields are just weird and complicated.
+
+One example is the 518 where you have the option of putting a natural language note in the $a. OR you can bust up the information into separately coded elements where the $p sort of functions as a label.
 
 * May need $3 label
 ** b7832943a	518 _ _ $3CD 2$oRecorded$d2004 November,$pAuditorium (Chiesa) di San Salvatore a Rodengo, Brescia, Italy.
@@ -62,6 +89,87 @@ In the following fields, $i is a non-label data element:
 * If any subfields occur after $a, remove them and throw in a space -- these are probably mis-coded and should be cleaned up in the data, but are pretty innocuous and seem easy-ish to deal with
 ** b8966892a	518 _ _ $aBroadcast$dFriday, November 18 (10:01-11:00 p.m. Est), on ABC.
 * If no $a... $o 
+
+== Examples
+=== UNC b1055018
+ 500 _ _ $a"This edition is limited to 750 copies, and the type has been distributed."
+
+[source,javascript]
+----
+{
+  "note_display":[
+    {
+      "value":"\"This edition is limited to 750 copies, and the type has been distributed.\""
+    }
+  ],
+  "note_index":[
+    "\"This edition is limited to 750 copies, and the type has been distributed.\""
+  ]
+}
+----
+
+=== UNC b1004068
+ 500 _ _ $aTranslation is based on a photocopy of the original MS. in the Library of Pembroke College, Oxford.
+ 500 _ _ $a"Published under the auspices of the Library of the New York Academy of Medicine."
+ 500 _ _ $3c. 1$aInscribed: "Benson R. Wilcox"--Fly leaf.$5NcU-H
+ 541 _ _ $aPresented by Benson R. Wilcox$c(Gift :$d2010 :$fHealth Sciences Library,$3c. 1)
+ 561 _ _ $3c. 1$aBookplate: "Ex Libris Benson R. Wilcox M.D."--Inside front cover.$5NcU-H
+
+[source,javascript]
+----
+{
+  "note_display":[
+    {
+      "value":"Translation is based on a photocopy of the original MS. in the Library of Pembroke College, Oxford."
+    },
+    {
+      "value":"\"Published under the auspices of the Library of the New York Academy of Medicine.\""
+    },
+    {
+      "label":"c. 1",
+      "value":"Inscribed: \"Benson R. Wilcox\"--Fly leaf."
+    },
+    {
+      "value":"Presented by Benson R. Wilcox (Gift : 2010 : Health Sciences Library, c. 1)"
+    },
+    {
+      "label":"c. 1",
+      "value":"Bookplate: \"Ex Libris Benson R. Wilcox M.D.\"--Inside front cover."
+    }
+  ],
+  "note_index":[
+    "Translation is based on a photocopy of the original MS. in the Library of Pembroke College, Oxford.",
+    "\"Published under the auspices of the Library of the New York Academy of Medicine.\"",
+    "Presented by Benson R. Wilcox",
+    "Bookplate: \"Ex Libris Benson R. Wilcox M.D.\"--Inside front cover."
+  ]
+}
+----
+
+=== UNC b5260735
+_There are notes in this record other than the one(s) shown here_
+ 561 0 _ $aGift of Ralph Falls, 6/25/97.
+
+Indicator 1 = 0 means "Private," so this field should NOT be included in Argot record.
+
+=== UNC b1193620
+_There are notes in this record other than the one(s) shown here_
+
+ 501 _ _ $aBound with: United States. Congress. Committee on Labor and Public Welfare. Subcommittee on Labor. Legislative history of the coverage of nonprofit hospitals under the National labor relations act, 1974, Public law 93-360 (S. 3203).
+
+[source,javascript]
+----
+{
+  "note_display":[
+    {
+      "value":"Bound with: United States. Congress. Committee on Labor and Public Welfare. Subcommittee on Labor. Legislative history of the coverage of nonprofit hospitals under the National labor relations act, 1974, Public law 93-360 (S. 3203)."
+    }
+  ],
+  "note_index":[
+    "Bound with: United States. Congress. Committee on Labor and Public Welfare. Subcommittee on Labor. Legislative history of the coverage of nonprofit hospitals under the National labor relations act, 1974, Public law 93-360 (S. 3203)."
+  ]
+}
+----
 
 == Separate field notes
 === 514 - Data Quality Note
@@ -89,7 +197,6 @@ b1296969a	588 _ _ $aDescription based on: Vol. 16, no. 8 (Aug. 1971); title from
 b1311160a	588 _ _ $aLatest issue consulted: Vol. 35, no. 1 (winter 2001) surrogate.
 
 == Examples
-b1000070a	500 _ _ $a"Sponsored by NASA Historical Staff, Office of Policy Analysis."
 
 b2415252a	535 1 _ $aDiocesan Library, Episcopal Diocese of Western North Carolina,$bP. O. Box 368, Black Mountain, N.C. 28711.
 b2020885a	535 1 _ $aNational Archives and Records Administration$cUSA
