@@ -1,0 +1,16 @@
+= Subfield 6
+== Shift off subfield list before further processing
+When present, appears at beginning of MARC variable field.
+
+Used to match/link the vernacular script version of a field in an 880 to its transliterated equivalent field in the record.
+
+When present, $6 needs to be shifted off the array of subfields in the field and handled separately, so the field(s) can otherwise be processed as normal.
+
+As an example, UNCb2527655 contains:
+
+ 502 _ _ $6880-06$aOriginally presented as the author's thesis (M.S. -- Zhongguo wen hua xue yuan)
+ 880 _ _ $6502-06/$1$aOriginally presented as the author's thesis (M.S. -- 中國文化學院)
+
+Processing of the 502 data is done one way if the field begins with $a and does not contain subfields b,c,d,g, or o.
+
+Attempting to process the above fields following that rule will cause problems if the $6 isn't dealt with before processing begins. 

@@ -1,4 +1,10 @@
 = Notes fields
+*See the https://github.com/trln/data-documentation/tree/master/argot[Argot Excel file available here] or the https://github.com/trln/data-documentation/blob/master/argot/_mappings.csv[mappings.csv file] for field/subfield specific instructions.*
+
+== Test records
+The UNC bib records referred to by bib number in this document are at:
+https://github.com/trln/extract_marcxml_for_argot_unc/blob/master/output/testing/notes.xml
+
 == Overview of notes in Argot
 === Separate-field treatment
 A few notes are pulled out into special fields. This is because a) there is some special treatment for the field in the systesm AND/OR b) we deem the data in the note to be different/important enought to set it apart from other notes, either in a separate area, or with a separate primary label.
@@ -91,7 +97,7 @@ One example is the 518 where you have the option of putting a natural language n
 * If no $a... $o 
 
 == Examples
-=== UNC b1055018
+=== UNCb1055018
  500 _ _ $a"This edition is limited to 750 copies, and the type has been distributed."
 
 [source,javascript]
@@ -108,7 +114,7 @@ One example is the 518 where you have the option of putting a natural language n
 }
 ----
 
-=== UNC b1004068
+=== UNCb1004068
  500 _ _ $aTranslation is based on a photocopy of the original MS. in the Library of Pembroke College, Oxford.
  500 _ _ $a"Published under the auspices of the Library of the New York Academy of Medicine."
  500 _ _ $3c. 1$aInscribed: "Benson R. Wilcox"--Fly leaf.$5NcU-H
@@ -146,14 +152,14 @@ One example is the 518 where you have the option of putting a natural language n
 }
 ----
 
-=== UNC b5260735
+=== UNCb5260735
 _There are notes in this record other than the one(s) shown here_
 
  561 0 _ $aGift of Ralph Falls, 6/25/97.
 
 Indicator 1 = 0 means "Private," so this field should NOT be included in Argot record.
 
-=== UNC b1193620
+=== UNCb1193620
 _There are notes in this record other than the one(s) shown here_
 
  501 _ _ $aBound with: United States. Congress. Committee on Labor and Public Welfare. Subcommittee on Labor. Legislative history of the coverage of nonprofit hospitals under the National labor relations act, 1974, Public law 93-360 (S. 3203).
@@ -172,7 +178,250 @@ _There are notes in this record other than the one(s) shown here_
 }
 ----
 
+=== UNCb9058990
+_Example shows special 502 field processing_
+
+_590 processing will be institution-specific_
+
+ 502 _ _ $aThesis (Ph. D.)--University of Lancaster, Lancashire, England.
+ 506 1 _ $aAccess limited to UNC Chapel Hill-authenticated users.$fUnlimited simultaneous users
+ 590 _ _ $aProvider: SpringerLink.
+
+[source,javascript]
+----
+{
+  "note_display":[
+    {
+      "value":"Thesis (Ph. D.)--University of Lancaster, Lancashire, England."
+    },
+    {
+      "value":"Provider: SpringerLink."
+    }
+  ],
+  "note_index":[
+    "Thesis (Ph. D.)--University of Lancaster, Lancashire, England.",
+    "Provider: SpringerLink."
+  ],
+  "note_access_restriction":[
+    {
+      "value":"Access limited to UNC Chapel Hill-authenticated users. Unlimited simultaneous users"
+    }
+  ]
+}
+----
+
+=== UNCb7386333
+_Example shows special 502 field processing_
+
+_588 is NOT mapped to Argot._
+
+ 502 _ _ $gRecital document$bMaster of Music in Performance and Vocal Pedagogy$cUniversity of Texas at San Antonio$d2012.
+ 504 _ _ $aIncludes bibliographical references (pages 58-64).
+ 538 _ _ $aSystem requirements: Adobe Acrobat reader.
+ 588 _ _ $aDescription based on online resource; title from PDF title (viewed April 15, 2013).
+
+[source,javascript]
+----
+{
+  "note_display":[
+    {
+      "value":"Recital document--Master of Music in Performance and Vocal Pedagogy--University of Texas at San Antonio, 2012."
+    },
+    {
+      "value":"Includes bibliographical references (pages 58-64)."
+    },
+    {
+      "value":"System requirements: PDF reader."
+    }
+  ],
+  "note_index":[
+    "Recital document--Master of Music in Performance and Vocal Pedagogy--University of Texas at San Antonio, 2012."
+  ]
+}
+----
+
+=== UNCb1511334
+_Example shows special 502 field processing_
+
+_There are notes in this record other than the one(s) shown here_
+
+ 502 _ _ $bPh. D.$cUniversity of North Carolina$d1976
+
+[source,javascript]
+----
+{
+  "note_display":[
+    {
+      "value":"Ph. D.--University of North Carolina, 1976"
+    }
+  ],
+  "note_index":[
+    "Ph. D.--University of North Carolina, 1976"
+  ]
+}
+----
+
+=== UNCb6856070
+_Example shows special 502 field processing_
+
+_There are notes in this record other than the one(s) shown here_
+
+ 502 _ _ $cBremen International Graduate School of Social Sciences$d2008
+
+[source,javascript]
+----
+{
+  "note_display":[
+    {
+      "value":"Thesis/dissertation--Bremen International Graduate School of Social Sciences, 2008"
+    }
+  ],
+  "note_index":[
+    "Bremen International Graduate School of Social Sciences, 2008"
+  ]
+}
+----
+
+=== UNCb4706138
+_There are notes in this record other than the one(s) shown here_
+
+ 504 _ _ $b36 references.
+
+[source,javascript]
+----
+{
+  "note_display":[
+    {
+      "value":"Number of references: 36 references."
+    }
+  ]
+}
+----
+
+=== UNCb2019098
+_There are notes in this record other than the one(s) shown here_
+
+ 504 _ _ $aBibliography : p. 81-83.$b52.
+
+[source,javascript]
+----
+{
+  "note_display":[
+    {
+      "value":"Bibliography : p. 81-83. Number of references: 52."
+    }
+  ]
+}
+----
+
+=== UNCb3366168
+_There are notes in this record other than the one(s) shown here_
+
+ 507 _ _ $aScale 1:100,000;$b1 cm. = 1 kilometer.
+
+
+[source,javascript]
+----
+{
+  "note_display":[
+    {
+      "value":"Scale 1:100,000; 1 cm. = 1 kilometer."
+    }
+  ],
+  "note_index":[
+    "Scale 1:100,000; 1 cm. = 1 kilometer."
+  ]
+}
+----
+
+
+
+
+== Complex processing instructions
+=== 502 Disseration note
+==== Logic
+*See _Shift off subfield list before further processing_ section of https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_subfield_6.adoc[$6 spec sheet]*
+
+===== If first subfield is a and there are no subfields b,c,d,g, or o
+
+* take contents of $a
+
+_See UNCb9058990 example above._
+
+===== If first subfield is a, followed by subfields b,c,d,g, or o
+
+* Build note field from all subfield elements present, following punctuation provision rules
+
+_This example is using mock data, since the records like this in the UNC catalog were already cleaned up._
+
+ 502 _ _ $aThesis$bPh.D$cUniversity of North Carolina at Chapel Hill.
+
+[source,javascript]
+----
+{
+  "note_display":[
+    {
+      "value":"Thesis--Ph.D--University of North Carolina at Chapel Hill."
+    }
+  ],
+  "note_index":[
+    "Thesis--Ph.D--University of North Carolina at Chapel Hill."
+  ]
+}
+----
+
+===== If first subfield is b or g
+
+* Build note field from all subfield elements present, following punctuation provision rules
+
+See UNCb7386333 and UNCb1511334 examples above.
+
+===== Else...
+
+** Provide fake $b value "Thesis/dissertation" to use at beginning of field
+** Build note field from all subfield elements present, following punctuation provision rules
+
+See UNCb6856070 example above.
+
+[NOTE]
+====
+Unless it's easier to use the constructed display value in this case, it would be fine to just use the actual field data in `note_index`.
+
+See UNCb6856070 example above.
+====
+
+==== Punctuation rules for building field value from component subfields (non-$a-only field values
+
+* Precede all non-initial subfield values except $d with `--`
+* Precede non-initial $d with `, ` (comma space)
+
+[NOTE]
+====
+If I recall correctly, punctuation is stripped out of or ignored in the indexed fields.
+
+If that's true, then if it is easier or better to NOT stick the punctuation in the values sent to `note_indexed`, that seems fine.
+====
+
+
+=== 538
+
+Replacements (case insensitive):
+* Adobe Acrobat reader -> PDF reader
+* Adobe [Acrobat] Reader -> PDF reader
+
+Omissions (case insensitive):
+
+* Fields starting with:
+** Mode of access: World Wide Web
+** Mode of access: Internet
+** System requirements: WWW browser
+
+
+
 == Separate field notes
+
+
+
 === 514 - Data Quality Note
 b8981148a	514 _ _ $zConforms To:$eCombined Arms Research Library Digital Library.
 b6855632a	514 _ _ $aThe attribute accuracy is unknown.$dNo duplicate features are present.$eAfter processing, the data set is checked for number of records, attribute names, and values compared with source materials.
@@ -197,17 +446,23 @@ Does not add to retrieval/discovery
 b1296969a	588 _ _ $aDescription based on: Vol. 16, no. 8 (Aug. 1971); title from cover.
 b1311160a	588 _ _ $aLatest issue consulted: Vol. 35, no. 1 (winter 2001) surrogate.
 
-== Examples
+== Examples (to do) 
 
 b2415252a	535 1 _ $aDiocesan Library, Episcopal Diocese of Western North Carolina,$bP. O. Box 368, Black Mountain, N.C. 28711.
+
 b2020885a	535 1 _ $aNational Archives and Records Administration$cUSA
+
 b4014115a	535 2 _ $aChurch of Jesus Christ of the Latter-day Saints. Family History Center, Greensboro, N.C.$3Microfilm
 
+
 b2559560a	563 _ _ $aNLM copy bound in contemporary Cambridge-style binding.$5DNLM
+
 b9021086a	563 _ _ $aRebacked tooled old calf, with bosses and clasps (the latter missing on upper edge). "333" written on inner cover. Front endpaper is vellum leaf from a 14th century service book; written in large gothic script with red and blue initials decorated with pen flourishes. Back doublure is part of a vellum leaf from a 14th century annotated digest; written in gothic script.
+
 b4254290a	563 _ _ $aSome pages uncut.$3(Health Sciences Library, c. 1)
 
 b3616660a	567 _ _ $aSamples from 319 quadrangles (1 degree x 2 degrees) beginning in 1976 and ending in 1980; four main sample types represented: stream sediment, soil, surface water, and ground water. Each sample analyzed for uranium and as many as 58 other elements including sulfate.
+
 b5250152a	567 8 _ $aThe Protocol for Assessing Community Excellence in Environmental Health (PACE EH) offers local health officials guidance in conducting a community-based environmental health assessment and creating an accurate and verifiable profile of the community's environmental health status. The process is designed to improve decision making by taking a collaborative community-based approach to generating an action plan that is based on a set of priorities that reflect both an accurate assessment of local environmental health status and an understanding of public values and priorities. The methodology takes the user through a series of tasks to engage the public, collect necessary and relevant information related to community environmental health concerns, rank issues, and set local priorities for action. At the heart are three core processes: developing new relationships with community stakeholders, expanding understanding about the relationship between human health and the state of the environment, and redefining a leadership role for public health officials in environmental health.
 
 
