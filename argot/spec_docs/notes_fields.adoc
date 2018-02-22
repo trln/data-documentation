@@ -1,5 +1,7 @@
 = Notes fields
 
+:toc:
+:toc-placement!:
 
 
 
@@ -9,7 +11,7 @@
 The UNC bib records referred to by bib number in this document are at:
 https://github.com/trln/extract_marcxml_for_argot_unc/blob/master/output/testing/notes.xml
 
-:toc:
+toc::[]
 
 == Overview of notes in Argot
 === Separate-field treatment
