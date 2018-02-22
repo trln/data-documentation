@@ -1,10 +1,15 @@
 = Notes fields
 
+
+
+
 *See the https://github.com/trln/data-documentation/tree/master/argot[Argot Excel file available here] or the https://github.com/trln/data-documentation/blob/master/argot/_mappings.csv[mappings.csv file] for field/subfield specific instructions.*
 
-== Test records
+*Test records*
 The UNC bib records referred to by bib number in this document are at:
 https://github.com/trln/extract_marcxml_for_argot_unc/blob/master/output/testing/notes.xml
+
+:toc:
 
 == Overview of notes in Argot
 === Separate-field treatment
@@ -34,7 +39,7 @@ note_index contains only the main content (i.e. no labels, etc) of notes (or par
 === Local notes
 It will be up to individual institutions to decide how their local notes (590) field data is mapped.
 
-In Endeca, we had the option of mapping this to either the non-indexed `Notes` property (using prepipeline data label 590) or the `Indexed Notes` property (using prepipeline data label `590_indexed`).
+In Endeca, we had the option of mapping this to either the non-indexed `Notes` property (using prepipeline data label `590`) or the `Indexed Notes` property (using prepipeline data label `590_indexed`).
 
 == Special patterns in notes field processing
 === A. Field-refers-to label (from $3) needed
@@ -68,6 +73,7 @@ Or we can meaningfully label/display the info:
  521 1 _ $aAdult.$bBrodart
 
 Should be displayed:
+
  For age(s): Adult. (as determined by Brodart)
 
 === C. Label created from $i
@@ -407,6 +413,7 @@ If that's true, then if it is easier or better to NOT stick the punctuation in t
 === 538
 
 Replacements (case insensitive):
+
 * Adobe Acrobat reader -> PDF reader
 * Adobe [Acrobat] Reader -> PDF reader
 
@@ -425,6 +432,7 @@ Omissions (case insensitive):
 
 === 514 - Data Quality Note
 b8981148a	514 _ _ $zConforms To:$eCombined Arms Research Library Digital Library.
+
 b6855632a	514 _ _ $aThe attribute accuracy is unknown.$dNo duplicate features are present.$eAfter processing, the data set is checked for number of records, attribute names, and values compared with source materials.
 
 === 506 - Restrictions on Access Note
@@ -465,7 +473,4 @@ b4254290a	563 _ _ $aSome pages uncut.$3(Health Sciences Library, c. 1)
 b3616660a	567 _ _ $aSamples from 319 quadrangles (1 degree x 2 degrees) beginning in 1976 and ending in 1980; four main sample types represented: stream sediment, soil, surface water, and ground water. Each sample analyzed for uranium and as many as 58 other elements including sulfate.
 
 b5250152a	567 8 _ $aThe Protocol for Assessing Community Excellence in Environmental Health (PACE EH) offers local health officials guidance in conducting a community-based environmental health assessment and creating an accurate and verifiable profile of the community's environmental health status. The process is designed to improve decision making by taking a collaborative community-based approach to generating an action plan that is based on a set of priorities that reflect both an accurate assessment of local environmental health status and an understanding of public values and priorities. The methodology takes the user through a series of tasks to engage the public, collect necessary and relevant information related to community environmental health concerns, rank issues, and set local priorities for action. At the heart are three core processes: developing new relationships with community stakeholders, expanding understanding about the relationship between human health and the state of the environment, and redefining a leadership role for public health officials in environmental health.
-
-
-
 
