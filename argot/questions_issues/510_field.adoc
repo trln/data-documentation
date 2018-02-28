@@ -14,6 +14,8 @@ If I am wrong about the 2nd point above, we probably need to keep the 510 in the
 
 *It seems like this field is mostly used in archival, rare book, and special collections materials, so requests for feedback should be targeted at our colleagues in those areas.*
 
+toc::[]
+
 == How is this field handled in Endeca?
 
 - Displayed (in details/full record tab, with label "Notes")
