@@ -1,0 +1,111 @@
+:toc:
+:toc-placement!:
+
+= Request for feedback: treatment of 510 (Citation/References) note in public catalog
+Kristina Spurgin
+2018-02-28
+
+I am proposing that we drop display of the 510 note from the TRLN Discovery public catalog, because:
+
+- it is a difficult field to display properly
+- it seems to me to add little to the user's ability to retrieve, identify, or select a resource from the public catalog
+
+If I am wrong about the 2nd point above, we probably need to keep the 510 in the TRLN Discovery catalog. That's what I'm looking for feedback on.
+
+*It seems like this field is mostly used in archival, rare book, and special collections materials, so requests for feedback should be targeted at our colleagues in those areas.*
+
+== How is this field handled in Endeca?
+
+- Displayed (in details/full record tab, with label "Notes")
+- NOT indexed
+
+*The following applies to UNC only, as I do not know how other institutions are extracting/transforming their MARC*
+
+- The following is prepended to the data in the MARC field for display: "Cited in: "
+
+http://search.trln.org/search?id=UNCb1071561[Here is an example of a UNC book record containing 510s, as it appears in SearchTRLN.]
+
+=== Problem with how it's handled in Endeca
+Depending on the format of the resource described in the rest of the record, the 510 field means something different:
+
+- For books and music, it contains references to published descriptions or reviews of the item
+- For continuing resources, it is used to specify publications in which a continuing resource has been indexed and/or abstracted and the dates of coverage, if known.
+- For unpublished visual materials, it contains references to published descriptions of the work.
+- For a collection of graphic items, it contains references to published descriptions of the collection.
+- For projected visual materials, it contains references to reviews of the work described.
+- For mixed materials, it contains references to publications in which abstracts, citations, descriptions, or indexes of the described materials have appeared.
+
+So, this one field may include data about:
+
+- description of resource
+- review of resource
+- index of resource
+- abstract of resource
+
+The referenced resource is a different resource from the one represented by the bibliographic record. 
+
+The MARC standard says that one of the following labels should be displayed for the data in this field, depending on the first indicator value:
+
+- Indexed by:
+- Indexed in its entirety by:
+- Indexed selectively by:
+- References:
+
+The first three labels seem ok, if we assume the first indicator values have been coded accurately.
+
+"References:" strikes me as extremely vague and confusing in the context of display to the user. UNC's chosen label "Cited by: " is probably the best we could do here, given that I assume any description, review, or abstract of the described item would indeed cite it.
+
+Nothing in data recorded in the field states the relationship between the referenced resource and the resource described by our catalog record.
+
+
+== My concerns
+
+- Do these notes mean anything to the user?
+- If a user knows what this field means and wants to go to the work that cites, references, indexes, or describes the work described in the record, is there enough info in this field to get them there?
+
+If the answer to the above questions is "No," then we should omit this from TRLN Discovery.
+
+If the answer is "Yes," then I need feedback on how people think data from the 510 should be labeled and displayed.
+
+== Examples
+=== http://search.trln.org/search?id=UNCb1071561[Book, Davis Library and Rare Book Collection]
+
+- Cited in: BAL 4537
+- Cited in: Hubin, A.J. Crime fiction, 1749-1980, p. 109
+- Cited in: Queen, E. Queen's quorum, 29
+- Cited in: Quinby, H.C. Davis, 23
+
+=== http://search.trln.org/search?id=UNCb1402681[Book, Davis, NCC, Rare Book]
+
+- Cited in: ESTC(RLIN), N66258
+- Cited in: ESTC(RLIN), T149673
+
+=== http://search.trln.org/search?id=UNCb1189479[Serial]
+
+- Cited in: America, history and life 0002-7065 1963-1970
+- Cited in: Annual bibliography of English language and literature 0066-3786
+- Cited in: Historical abstracts. Part A. Modern history abstracts 0363-2717 1963-1970
+- Cited in: Historical abstracts. Part B. Twentieth century abstracts 0363-2725 1963-1970
+
+=== http://search.trln.org/search?id=UNCb8714253[DVD]
+
+- Cited in: DDC
+- Cited in: DDEB
+- Cited in: DDSE
+- Cited in: DDSG
+- Cited in: DDST
+- Cited in: DDW
+
+=== http://search.trln.org/search?id=UNCb2122047[Printed music]
+
+- Cited in: C. Humphries and W.C. Smith. Music publishing in the British Isles, 2nd ed., p. 203.
+- Cited in: Catalog of printed music in the British Library to 1980, v. 46, p. 188.
+
+=== http://search.trln.org/search?id=UNCb4677151[Sound recording]
+
+- Cited in: Morgan E75
+
+=== http://search.trln.org/search?id=UNCb1927072[Image]
+
+- Cited in: Theofiles 191.
+
