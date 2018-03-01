@@ -1,0 +1,77 @@
+:toc:
+:toc-placement!:
+
+= General processing for $i _as a label_
+
+toc::[]
+
+== About $i and when it is a label
+As of 2018-02-28, $i is defined in 40 MARC fields.
+
+In 27 MARC fields, it is defined as one of the following:
+
+- Display text
+- Relationship information
+- Explanatory text
+
+In these 27 fields, $i should be treated as a label for the rest of the field.
+
+The mapping specs for individual fields with $i defined will specify whether it should be treated as a label or not.
+
+== Processing $i
+=== Strip FRBR WEMI terms out
+WEMI terms include:
+
+- work
+- expression
+- manifestation
+- item
+
+These terms are included in parentheses in $i in some fields. The parenthetical value (and preceding space) should be removed for display.
+
+*Example:*
+
+ $iMusical setting of (work):
+
+becomes:
+
+ "label": "Musical setting of:
+
+=== Label needs to end with a colon
+The colon is often provided by the cataloger, but sometimes it may not be. In such cases, it should be provided.
+
+Presence/absence of terminating colon is not actually specified in MARC encoding standard.
+
+*Example:*
+
+MARC input
+
+ $iBased on$aAuthor data
+
+Argot label output
+ "label": "Based on:"
+
+=== Capitalize first letter of label if it is lowercase
+Preferred case is not actually specified in MARC encoding standard.
+
+*Example:*
+
+MARC input
+
+ $iadapted from:$aAuthor data
+
+Argot label output
+ "label": "Adapted from:"
+
+=== When $i as a label occurs in the same field with a $3, they must be combined in the label
+
+$3 should come first, regardless of position in field.
+
+*Example:*
+
+MARC input
+
+ $iMusical setting of (work):$aAuthor data$tTitle data$32nd work
+
+Argot label output
+ "label": "2nd work: Musical setting of:"

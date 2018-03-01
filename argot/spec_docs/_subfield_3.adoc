@@ -241,3 +241,42 @@ In at least one field (541), $3 is used in such a way (at least in UNC data) tha
 We should be able to specify for a given field that $3 not be treated as a label.
 =====================================================================
 
+== $3 processing specifics
+=== Label needs to end with a colon
+The colon may be provided by the cataloger, but seems to be provided in $3 less frequently than in $i. If missing, it should be provided.
+
+Presence/absence of terminating colon is not actually specified in MARC encoding standard.
+
+*Example:*
+
+MARC input
+
+ $iVol. 2$aAuthor data
+
+Argot label output
+ "label": "Vol. 2:"
+
+=== Capitalize first letter of label if it is lowercase
+Preferred case is not actually specified in MARC encoding standard.
+
+*Example:*
+
+MARC input
+
+ $3looseleaf binder$aAuthor data
+
+Argot label output
+ "label": "Looseleaf binder:"
+
+=== When $i as a label occurs in the same field with a $3, they must be combined in the label
+
+$3 should come first, regardless of position in field.
+
+*Example:*
+
+MARC input
+
+ $iMusical setting of (work):$aAuthor data$tTitle data$32nd work
+
+Argot label output
+ "label": "2nd work: Musical setting of:"

@@ -1,37 +1,252 @@
-== 534
-If 534 contains $a and $t, created related work entry using $p as label. $a is indexed as related author. $t indexed as related title.
+:toc:
+:toc-placement!:
 
-b4234053a	534 _ _ $pOriginally issued in:$aWytfliet, Corneille.$tDescriptionis Ptolemaicae augmentum.$cLouvain, 1597.
---------------------------------------
+= Related works, authors, titles, ids
+
+*Test records*
+The UNC bib records referred to by bib number in this document are at:
+todo
+
+toc::[]
+
+== Overview of 'related' fields in Argot
+=== related_work
+Complex, structured data field containing information about works related to the work described in the record, for which a more specific related_work_* field  has not been defined. 
+
+ - label: Contextualizing info derived from data in field itself and/or the MARC tag or indicator values. Will not always be present.
+ -- Display but do not index
+ - author: The author name related portion. Some works do not have an author, so will lack this part.
+ -- indexed as `author_related`
+ -- combined with `title` segment to create indexed `work_citation_related` value 
+ - title: The title related portion. All works must have a title, so this segment should always be present.
+ -- indexed as `title_related`
+ -- combined with `author` segment to create indexed `work_citation_related` value for in-catalog hyperlink querying and possible use in autosuggest
+
+=== related_title
+
+==== Source data
+- 700, 710, or 711 with i2 = blank and including a $t
+
+== Overview of derivative fields
+
+- `work_citation_related`: indexed value for in-catalog hyperlink querying and possible use in autosuggest. Keyword search should include these values.
+- `author_related`: will be retrieved, but relranked low, in an author search
+- `title_related`: will be retrieved, but relranked low, in a title search
+
+== Examples
+=== UNCb7641376 - 700 with $i
+==== MARC
+ 100 1 _ $aSabuda, Robert,$eauthor.
+ 245 1 4 $aThe little mermaid :$ba pop-up adaptation of the classic fairy tale /$cRobert Sabuda.
+ 700 1 _ $iBased on:$aAndersen, H. C.$q(Hans Christian),$d1805-1875.$tLille havfrue.$lEnglish.
+
+==== Argot
+[source,javascript]
+----
 {
-'relationship': 'Originally issued in:',
-'author': 'Wytfliet, Corneille.',
-'title' : 'Descriptionis Ptolemaicae augmentum.',
-'details' : 'Louvain, 1597.'
-}
---------------------------------------
-
-
-b4247559a	534 _ _ $pOriginally in:$tAtlas universel /$aP. Santini.
---------------------------------------
-{
-'relationship': 'Originally in:',
-'author': 'P. Santini.',
-'title' : 'Atlas universel'
-}
---------------------------------------
-
-b5226836a	534 _ _ $pTranscribed from:$aBarnett, Anthony, 1941-.$tAnti-beauty$cLewes : Allardyce Book, 1999.$e58 p.$z0907954278.
-
---------------------------------------
-{
-'relationship': 'Transcribed from:',
-'author': 'Barnett, Anthony, 1941-.',
-'title' : 'Anti-beauty',
- 'details' : 'Lewes : Allardyce Book, 1999. 58 p.',
- 'isbn' : '0907954278'
+ "related_work": {
+  "label": "Based on:",
+  "author": "Andersen, H. C. (Hans Christian), 1805-1875.",
+  "title": "Lille havfrue.||English."
  }
---------------------------------------
+}
+----
+
+==== Behavior
+
+*Displayed:*
+
+Based on: http://search.trln.org/search?Nty=1&Ntk=Author&Ntt=Andersen%2C%20H.%20C.%20(Hans%20Christian)%2C%201805-1875&N=0[Andersen, H. C. (Hans Christian), 1805-1875.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Lille%20havfrue|Andersen%2C%20H.%20C.%20(Hans%20Christian)%2C%201805-1875&N=0[Lille havfrue.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Lille%20havfrue.%20English|Andersen%2C%20H.%20C.%20(Hans%20Christian)%2C%201805-1875&N=0[English.]
+
+*Combined `work_citation_related` index entry for intracatalog linking (and autosuggest?):*
+
+- Andersen, H. C. (Hans Christian), 1805-1875. Lille havfrue. English.
 
 
+*`author_related` index entry:*
 
+- Andersen, H. C. (Hans Christian), 1805-1875.
+
+*`title_related` index entry:*
+
+- Lille havfrue. English
+
+=== UNCb8993417 - 700, with $3 and $i
+==== MARC
+_Some fields that would be mapped to `related_work` are omitted from example._
+
+ 245 0 0 $aIf this world could stop.
+ 264 _ 1 $a[New Haven, CT] :$bBad Wolf Music Group,$c[2014]
+ 700 1 _ $32nd work$iMusical setting of (work):$aJoyce, James,$d1882-1941.$tUlysses.
+ 700 1 _ $33rd work$iMusical setting of (work):$aWhiteley, Opal Stanley.$tClan of the lichens.
+ 700 1 _ $35th work$iMusical setting of (work):$aDove, Rita.$tIf this world could stop.
+
+==== Argot
+[source,javascript]
+----
+{
+ "related_work": {
+  "label": "2nd work: Musical setting of:",
+  "author": "Joyce, James, 1882-1941",
+  "title": "Ulysses."
+ },
+ "related_work": {
+  "label": "3rd work: Musical setting of:",
+  "author": "Whiteley, Opal Stanley.",
+  "title": "Clan of the lichens."
+ },
+  "related_work": {
+  "label": "5th work: Musical setting of:",
+  "author": "Dove, Rita.",
+  "title": "If this world could stop."
+ }
+}
+----
+
+==== Behavior
+
+*Displayed:*
+
+- 2nd work: Musical setting of: http://search.trln.org/search?Nty=1&Ntk=Author&Ntt=Joyce%2C%20James%2C%201882-1941.&N=0[Joyce, James, 1882-1941.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Ulysses.|Joyce%2C%20James%2C%201882-1941.&N=0[Ulysses.]
+- 3rd work: Musical setting of: http://search.trln.org/search?Nty=1&Ntk=Author&Ntt=Whiteley%2C%20Opal%20Stanley.&N=0[Whiteley, Opal Stanley.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Clan%20of%20the%20lichens.|Whiteley%2C%20Opal%20Stanley.&N=0[Clan of the lichens.]
+- 5th work: Musical setting of: http://search.trln.org/search?Nty=1&Ntk=Author&Ntt=Dove%2C%20Rita.%20&N=0[Dove, Rita.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=If%20this%20world%20could%20stop.|Dove%2C%20Rita.%20&N=0[If this world could stop.]
+  
+*Combined `work_citation_related` index entry for intracatalog linking (and autosuggest?):*
+
+- Joyce, James, 1882-1941. Ulysses.
+- Whiteley, Opal Stanley. Clan of the lichens.
+- Dove, Rita. If this world could stop.
+
+* `author_related` index entry:*
+
+- Joyce, James, 1882-1941.
+- Whiteley, Opal Stanley.
+- Dove, Rita.
+
+*`title_related` index entry:*
+
+- Ulysses.
+- Clan of the lichens.
+- If this world could stop.
+
+=== UNCb8843477 - 710 with $i
+==== MARC
+ 100 1 _ $aJacobson, Sidney,$eauthor.
+ 245 1 4 $aThe torture report :$ba graphic adaptation /$cSid Jacobson and Ernie Colón ; introduction by Jane Mayer ; afterword by Scott Horton.
+ 710 1 _ $iGraphic novelization of (work):$aUnited States.$bCongress.$bSenate.$bSelect Committee on Intelligence.$tSenate Intelligence Committee report on torture.
+
+==== Argot
+[source,javascript]
+----
+{
+ "related_work": {
+  "label": "Graphic novelization of:",
+  "author": "United States. Congress. Senate. Select Committee on Intelligence.",
+  "title": "Senate Intelligence Committee report on torture."
+ }
+}
+----
+
+==== Behavior
+
+*Displayed:*
+
+Graphic novelization of: http://search.trln.org/search?Nty=1&Ntk=Author&Ntt=United%20States.%20Congress.%20Senate.%20Select%20Committee%20on%20Intelligence.&N=0[United States. Congress. Senate. Select Committee on Intelligence.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Senate%20Intelligence%20Committee%20report%20on%20torture.|United%20States.%20Congress.%20Senate.%20Select%20Committee%20on%20Intelligence.&N=0[Senate Intelligence Committee report on torture.]
+  
+
+
+*Combined `work_citation_related` index entry for intracatalog linking (and autosuggest?):*
+
+- United States. Congress. Senate. Select Committee on Intelligence. Senate Intelligence Committee report on torture.
+
+*`author_related` index entry:*
+
+- United States. Congress. Senate. Select Committee on Intelligence.
+
+*`title_related` index entry:*
+
+- Senate Intelligence Committee report on torture.
+
+=== UNCb8843477 - 710 with $i
+==== MARC
+ 100 1 _ $aEmerson, Joseph,$d1777-1833.
+ 245 1 4 $aThe Evangelical primer$h[microform].
+ 711 2 _ $aWestminster Assembly$d(1643-1652).$tShorter catechism.$f1809.
+
+==== Argot
+[source,javascript]
+----
+{
+ "related_work": {
+  "author": "Westminster Assembly (1643-1652).",
+  "title": "Shorter catechism.||1809."
+ }
+}
+----
+
+==== Behavior
+
+*Displayed:*
+
+http://search.trln.org/search?Nty=1&Ntk=Author&Ntt=Westminster%20Assembly%20(1643-1652).&N=0[Westminster Assembly (1643-1652).] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Shorter%20catechism.|Westminster%20Assembly%20(1643-1652).&N=0[Shorter catechism.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Shorter%20catechism.%201809.|Westminster%20Assembly%20(1643-1652).&N=0[1809.]
+  
+*Combined `work_citation_related` index entry for intracatalog linking (and autosuggest?):*
+
+- Westminster Assembly (1643-1652). Shorter catechism. 1809.
+
+*`author_related` index entry:*
+
+- Westminster Assembly (1643-1652).
+
+*`title_related` index entry:*
+
+- Shorter catechism. 1809.
+
+=== UNCb6869637 - 740 and 786, somewhat duplicated data
+==== MARC
+ 245 0 4 $aThe international plant names index$h[electronic resource].
+ 500 _ _ $a"The records in IPNI come from three sources: the Index Kewensis (IK), the Gray Card Index (GCI) and the Australian Plant Names Index (APNI)." --"About the index" page (viewed Nov. 10, 2011).
+ 740 0 _ $aIndex Kewensis.
+ 740 0 _ $aGray card index.
+ 740 0 _ $aAustralian plant name index.
+ 786 0 _ $tAustralian plant name index.$d[Canberra, A.C.T.] : Australian National Botanic Gardens : Australian National Herbarium$w(DLC)  2009252503$w(OCoLC)64343431
+ 786 0 _ $tIndex Kewensis plantarum phanerogamarum. Supplementum$w(DLC)   89659069$w(OCoLC)2992677
+ 786 0 _ $tIndex Kewensis. Supplement$w(DLC)sn 88021550$w(OCoLC)16733857
+ 786 0 _ $tGray card index.$dCambridge, Mass. : Harvard University Herbraria, [c1992-]$w(OCoLC)43851144
+
+
+==== Argot
+[source,javascript]
+----
+{
+ "related_work": {
+  "author": "Westminster Assembly (1643-1652).",
+  "title": "Shorter catechism.||1809."
+ }
+}
+----
+
+==== Behavior
+
+*Displayed:*
+
+http://search.trln.org/search?Nty=1&Ntk=Author&Ntt=Westminster%20Assembly%20(1643-1652).&N=0[Westminster Assembly (1643-1652).] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Shorter%20catechism.|Westminster%20Assembly%20(1643-1652).&N=0[Shorter catechism.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Shorter%20catechism.%201809.|Westminster%20Assembly%20(1643-1652).&N=0[1809.]
+  
+*Combined `work_citation_related` index entry for intracatalog linking (and autosuggest?):*
+
+- Westminster Assembly (1643-1652). Shorter catechism. 1809.
+
+*`author_related` index entry:*
+
+- Westminster Assembly (1643-1652).
+
+*`title_related` index entry:*
+
+- Shorter catechism. 1809.
+
+== Field-specific processing notes
+=== 786
+*Deriving label value:*
+
+- If $i present, use that (refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_subfield_i.adoc[general $i processing instructions])
+- If no $i, use: `Data source:`
