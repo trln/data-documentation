@@ -260,6 +260,7 @@ MARC input
  $iVol. 2$aAuthor data
 
 Argot label output
+
  "label": "Vol. 2:"
 
 === Capitalize first letter of label if it is lowercase
@@ -272,6 +273,7 @@ MARC input
  $3looseleaf binder$aAuthor data
 
 Argot label output
+
  "label": "Looseleaf binder:"
 
 === When $i as a label occurs in the same field with a $3, they must be combined in the label
@@ -285,4 +287,5 @@ MARC input
  $iMusical setting of (work):$aAuthor data$tTitle data$32nd work
 
 Argot label output
+
  "label": "2nd work: Musical setting of:"
