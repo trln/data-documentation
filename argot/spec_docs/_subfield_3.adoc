@@ -1,4 +1,9 @@
+:toc:
+:toc-placement!:
+
 = MARC subfield 3 ($3)
+toc::[]
+
 == What is it?
 Cryptically named "Materials Specified," what it means is actually pretty simple.
 
