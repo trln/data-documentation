@@ -22,10 +22,14 @@ Complex, structured data field containing information about works related to the
  -- indexed as `title_related`
  -- combined with `author` segment to create indexed `work_citation_related` value for in-catalog hyperlink querying and possible use in autosuggest
 
-=== related_title
+
 
 ==== Source data
 - 700, 710, or 711 with i2 = blank and including a $t
+
+=== related_title
+==== Source data
+- 740 with i2 = blank
 
 == Overview of derivative fields
 
@@ -117,7 +121,7 @@ _Some fields that would be mapped to `related_work` are omitted from example._
 - Whiteley, Opal Stanley. Clan of the lichens.
 - Dove, Rita. If this world could stop.
 
-* `author_related` index entry:*
+*`author_related` index entry:*
 
 - Joyce, James, 1882-1941.
 - Whiteley, Opal Stanley.
@@ -218,31 +222,12 @@ http://search.trln.org/search?Nty=1&Ntk=Author&Ntt=Westminster%20Assembly%20(164
 ==== Argot
 [source,javascript]
 ----
-{
- "related_work": {
-  "author": "Westminster Assembly (1643-1652).",
-  "title": "Shorter catechism.||1809."
- }
-}
+todo
 ----
 
 ==== Behavior
 
-*Displayed:*
-
-http://search.trln.org/search?Nty=1&Ntk=Author&Ntt=Westminster%20Assembly%20(1643-1652).&N=0[Westminster Assembly (1643-1652).] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Shorter%20catechism.|Westminster%20Assembly%20(1643-1652).&N=0[Shorter catechism.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Shorter%20catechism.%201809.|Westminster%20Assembly%20(1643-1652).&N=0[1809.]
-  
-*Combined `work_citation_related` index entry for intracatalog linking (and autosuggest?):*
-
-- Westminster Assembly (1643-1652). Shorter catechism. 1809.
-
-*`author_related` index entry:*
-
-- Westminster Assembly (1643-1652).
-
-*`title_related` index entry:*
-
-- Shorter catechism. 1809.
+todo
 
 == Field-specific processing notes
 === 786
