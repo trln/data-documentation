@@ -1,0 +1,17 @@
+There are many similarities across this family of fields. The details of http://www.loc.gov/marc/bibliographic/bd76x78x.html[the MARC specification for these fields] are all on one page.
+
+Below are the patterns and exceptions to know about with these fields
+
+== ind1 is key for determining whether to extract field for display
+Catalogers are _supposed to_ consider the record as a whole (including what data is duplicated and/or needed for display).
+
+Respecting the ind1 value should save us from many cases of noisy, duplicative displayed data.
+
+- ind1 = 0 : extract field data for display
+- ind1 = 1 : extract field data for indexing only [ideally, there's a uniq! run on arrays of indexed values for each field?]
+
+== Label from $i if present
+If $i present, use that to populate label value for Argot field. Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_subfield_i.adoc[general $i processing instructions] for details.
+
+== Field-specific label if $i not present
+See Argot specs for individual fields for label to use if there's no $i
