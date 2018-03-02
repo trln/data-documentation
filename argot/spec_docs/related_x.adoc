@@ -475,6 +475,7 @@ RELATED ITEMS:
 === 770
 - Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/76X-78X_linking_entry_processing.adoc[76X-78X linking entry processing procedures].
 - If no $i, `label`  =  `Is supplemented by:`
+
 === 786
 - Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/76X-78X_linking_entry_processing.adoc[76X-78X linking entry processing procedures].
 - If no $i, `label`  =  `Data source:`
