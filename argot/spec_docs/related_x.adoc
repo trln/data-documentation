@@ -11,24 +11,48 @@ toc::[]
 
 == Overview of 'related' fields in Argot
 === related_work
-Complex, structured data field containing information about works related to the work described in the record, for which a more specific related_work_* field  has not been defined. 
+Complex, structured data field containing information about works related to the work described in the record, for which a more specific related_work_* field  has not been defined.
 
- - label: Contextualizing info derived from data in field itself and/or the MARC tag or indicator values. Will not always be present.
+It must always include a title, but may lack an author (in the case of diffuse or unknown authorship).
+
+An imperfect aspect of this is:
+
+ - Some of the MARC source fields for `related_work` are themselves specified so that well-formed 'uniform work identifiers' are the result (main entry + title proper).
+ - Other MARC source fields for `related_work` have been less clearly specified, so that they may include
+ -- title data beyond title proper (other title info, parallel title, alternative title)
+ -- author name that would not be recorded as main entry (or that would be recorded as main entry, but in a different form)
+ -- other bib data about related work: publication, extent, ISBNs, ISSNs, etc
+ 
+==== `related_work` subelements
+ - `label`: Contextualizing info derived from data in field itself and/or the MARC tag or indicator values. Will not always be present.
  -- Display but do not index
- - author: The author name related portion. Some works do not have an author, so will lack this part.
+ - `author`: The author name related portion. Some works do not have an author, so will lack this part.
  -- indexed as `author_related`
  -- combined with `title` segment to create indexed `work_citation_related` value 
- - title: The title related portion. All works must have a title, so this segment should always be present.
+ - `title`: The title related portion. All works must have a title, so this segment should always be present.
  -- indexed as `title_related`
  -- combined with `author` segment to create indexed `work_citation_related` value for in-catalog hyperlink querying and possible use in autosuggest
-
+ -- subelements of the title portion are separated with `||` to allow for adaptive hyperlinking. This delimiter is stripped out of the display.
+ - `details`: other bib data about related work
+ -- displayed after the author/title hyperlink, but not included in hyperlink
+ -- not indexed
+ - `isbn`: ISBN of cited related work.
+ -- displayed, with `ISBN:` label, at end of field display
+ -- indexed in `isbn_related`
+ - `issn`: ISSN of cited related work.
+ -- displayed, with `ISSN:` label, at end of field display
+ -- indexed in `issn_related`
 
 
 ==== Source data
+`related_work` gets populated from fields where it is possible to record name-title entries, *if a title is recorded in the field*.
+
 - 700, 710, or 711 with i2 = blank and including a $t
 
 === related_title
+
 ==== Source data
+
 - 740 with i2 = blank
 
 == Overview of derivative fields
@@ -207,6 +231,17 @@ http://search.trln.org/search?Nty=1&Ntk=Author&Ntt=Westminster%20Assembly%20(164
 - Shorter catechism. 1809.
 
 === UNCb6869637 - 740 and 786, somewhat duplicated data
+In general, fields that map to `related_work` are likely to have fuller, richer info than fields that map to `related_title`
+
+Because of system limitations for displaying MARC 76X-78X (Linking Entries), the data recorded in them is often duplicated in less informative fields.
+
+*Ideally we could figure out some way to minimize display of duplicated data.* One idea for this could be:
+
+- Process `related_work` first.
+- When its processing is complete, grab array of all the `title` subelements that were set for `related_works` and send to Traject context clipboard
+- When processing fields that map to `related title`, skip any where the title already exists in the context clipboard array
+
+
 ==== MARC
  245 0 4 $aThe international plant names index$h[electronic resource].
  500 _ _ $a"The records in IPNI come from three sources: the Index Kewensis (IK), the Gray Card Index (GCI) and the Australian Plant Names Index (APNI)." --"About the index" page (viewed Nov. 10, 2011).
@@ -218,20 +253,101 @@ http://search.trln.org/search?Nty=1&Ntk=Author&Ntt=Westminster%20Assembly%20(164
  786 0 _ $tIndex Kewensis. Supplement$w(DLC)sn 88021550$w(OCoLC)16733857
  786 0 _ $tGray card index.$dCambridge, Mass. : Harvard University Herbraria, [c1992-]$w(OCoLC)43851144
 
-
-==== Argot
+==== Argot (without deduplication)
 [source,javascript]
 ----
-todo
+{
+ "related_work": [
+ {
+  "label": "Data source:",
+  "title": "Australian plant name index.",
+  "details": "[Canberra, A.C.T.] : Australian National Botanic Gardens : Australian National Herbarium"
+ },
+ {
+  "label": "Data source:",
+  "title": "Index Kewensis plantarum phanerogamarum. Supplementum"
+ },
+  {
+  "label": "Data source:",
+  "title": "Index Kewensis. Supplement"
+ },
+ {
+  "label": "Data source:",
+  "title": "Gray card index.",
+  "details": "Cambridge, Mass. : Harvard University Herbraria, [c1992-]"
+ }
+ ],
+ "related_title": [
+  {"title": "Index Kewensis."},
+  {"title": "Gray card index."},
+  {"title": "Australian plant name index."} 
+ ]
+}
 ----
 
-==== Behavior
+==== Argot (ideal, deduplicated)
+[source,javascript]
+----
+{
+ "related_work": [
+ {
+  "label": "Data source:",
+  "title": "Australian plant name index.",
+  "details": "[Canberra, A.C.T.] : Australian National Botanic Gardens : Australian National Herbarium"
+ },
+ {
+  "label": "Data source:",
+  "title": "Index Kewensis plantarum phanerogamarum. Supplementum"
+ },
+  {
+  "label": "Data source:",
+  "title": "Index Kewensis. Supplement"
+ },
+ {
+  "label": "Data source:",
+  "title": "Gray card index.",
+  "details": "Cambridge, Mass. : Harvard University Herbraria, [c1992-]"
+ }
+ ],
+  "related_title": [
+  {"title": "Index Kewensis."}
+ ]
+}
+----
 
-todo
+==== Behavior (based on deduplicated Argot)
+*Displayed:*
+RELATED WORKS:
+
+- Data source: http://search.trln.org/search?Nty=1&Ntk=Title&Ntt=Australian%20plant%20name%20index.&N=0[Australian plant name index.] [Canberra, A.C.T.] : Australian National Botanic Gardens : Australian National Herbarium
+- Data source: http://search.trln.org/search?Nty=1&Ntk=Title&Ntt=Index%20Kewensis%20plantarum%20phanerogamarum.%20Supplementum&N=0[Index Kewensis plantarum phanerogamarum. Supplementum]
+- Data source: http://search.trln.org/search?Nty=1&Ntk=Title&Ntt=Index%20Kewensis.%20Supplement&N=0[Index Kewensis. Supplement]
+- Data source: http://search.trln.org/search?Nty=1&Ntk=Title&Ntt=Gray%20card%20index.&N=0[Gray card index.] Cambridge, Mass. : Harvard University Herbraria, [c1992-]
+- http://search.trln.org/search?Nty=1&Ntk=Title&Ntt=Index%20Kewensis.&N=0[Index Kewensis.]
+  
+*Combined `work_citation_related` index entry for intracatalog linking (and autosuggest?):*
+
+- Australian plant name index.
+- Index Kewensis plantarum phanerogamarum. Supplementum
+- Index Kewensis. Supplement
+- Gray card index.
+- Index Kewensis.
+
+*`author_related` index entry:*
+
+na
+
+*`title_related` index entry:*
+
+- Australian plant name index.
+- Index Kewensis plantarum phanerogamarum. Supplementum
+- Index Kewensis. Supplement
+- Gray card index.
+- Index Kewensis.
 
 == Field-specific processing notes
 === 786
-*Deriving label value:*
 
-- If $i present, use that (refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_subfield_i.adoc[general $i processing instructions])
-- If no $i, use: `Data source:`
+- Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/76X-78X_linking_entry_processing.adoc[76X-78X linking entry processing procedures].
+- If no $i, `label`  =  `Data source:`
+
