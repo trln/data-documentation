@@ -46,7 +46,15 @@ In Endeca, we had the option of mapping this to either the non-indexed `Notes` p
 See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_subfield_3.adoc[spec document for $3] for more details. 
 
 === Label generated from MARC tag and/or indicator value(s) and/or subfield definitions
-Data in some note fields looks very weird without a label.
+Data in some note fields looks very weird without a label. http://search.trln.org/search?id=UNCb1240038[Here's an example record in SearchTRLN]:
+
+NOTES
+
+- 1943-64. 1 v.
+- No earlier abstracts published?
+- Title varies slightly.
+- (GL)
+
 
 The same MARC field is often used to record different types of data, with indicator coding controlling the meaning of the field.
 
