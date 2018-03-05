@@ -1,7 +1,7 @@
 :toc:
 :toc-placement!:
 
-= Request for feedback: treatment of 510 (Citation/References) note in public catalog
+= Request for feedback: treatment of 510 (Citation/References) and 555 (Cumulative Index/Finding Aids) notes in public catalog
 Kristina Spurgin
 2018-02-28
 
@@ -12,11 +12,18 @@ I am proposing that we drop display of the 510 note from the TRLN Discovery publ
 
 If I am wrong about the 2nd point above, we probably need to keep the 510 in the TRLN Discovery catalog. That's what I'm looking for feedback on.
 
-*It seems like this field is mostly used in archival, rare book, and special collections materials, so requests for feedback should be targeted at our colleagues in those areas.*
+*It seems like the 510 field is mostly used in archival, rare book, and special collections materials, so requests for feedback should be targeted at our colleagues in those areas.*
+
+The 555 field is closely related to the 510 field, so I believe they should be handled consistently. *The 555 seems most heavily used in serials cataloging.*
 
 toc::[]
 
-== How is this field handled in Endeca?
+== 510 vs. 555
+As described below, the 510 can be used to record, among other things,  data about other resources that index the resource described by the record.
+
+555 is used when the resource described in the record contains indexes to itself, which may appear in different issues/volumes over time. 
+
+== How is the 510 field handled in Endeca?
 
 - Displayed (in details/full record tab, with label "Notes")
 - NOT indexed
@@ -27,7 +34,19 @@ toc::[]
 
 http://search.trln.org/search?id=UNCb1071561[Here is an example of a UNC book record containing 510s, as it appears in SearchTRLN.]
 
-=== Problem with how it's handled in Endeca
+== How is the 555 field handled in Endeca?
+This is unclear to me (or maybe the way data from this field is handled is inconsistent across institutions?)
+
+Endeca data model includes a specific `Cumulative Indexes` field, with the following properties:
+
+- displayed
+- not indexed
+
+http://search.trln.org/search?id=UNCb1273347[SearchTRLN] displays it with all the other notes.
+
+http://search.lib.unc.edu/search?R=UNCb1273347[UNC] displays it separately with its own label ("Indexes:).
+
+== Problem with how 510 is handled in Endeca
 Depending on the format of the resource described in the rest of the record, the 510 field means something different:
 
 - For books and music, it contains references to published descriptions or reviews of the item
@@ -59,8 +78,10 @@ The first three labels seem ok, if we assume the first indicator values have bee
 
 Nothing in data recorded in the field states the relationship between the referenced resource and the resource described by our catalog record.
 
+== Problem with how 555 is handled in Endeca
+Nothing serious, though it seems the shared interface should leverage the separately defined field to usefully label the data.
 
-== My concerns
+== My concerns about 510
 
 - Do these notes mean anything to the user?
 - If a user knows what this field means and wants to go to the work that cites, references, indexes, or describes the work described in the record, is there enough info in this field to get them there?
@@ -69,7 +90,17 @@ If the answer to the above questions is "No," then we should omit this from TRLN
 
 If the answer is "Yes," then I need feedback on how people think data from the 510 should be labeled and displayed.
 
-== Examples
+== My concerns about 555
+
+The bib record is an abstract descriptions of the journal as a whole. The data recorded in these fields, as I understand it, doesn't describe the cumulative index volumes *held by UNC or Duke or any other specific library*. It describes the cumulative index volumes that exist anywhere for the journal.
+
+If a user sees `Indexes: Nos. 1-5, 1948-52 in no. 6.` in our catalog:
+
+- do they know what that means? (I confess I actually don't)
+- do they find it confusing/frustrating if we don't even have the no. 6 referred to in our holdings? (I think I would)
+
+
+== 510 examples
 === http://search.trln.org/search?id=UNCb1071561[Book, Davis Library and Rare Book Collection]
 
 - Cited in: BAL 4537
@@ -111,3 +142,15 @@ If the answer is "Yes," then I need feedback on how people think data from the 5
 
 - Cited in: Theofiles 191.
 
+== 511 examples
+=== http://search.trln.org/search?id=UNCb1288170[UNCb1288170]
+
+- V. 1-11; new ser. v. 1-30, 1888-1928 (includes also index to Current anthropological literature and Memoirs of the American Anthropological Association), 1 v.; v. 31-40, 1929-32 (includes also index to Current anthropological literature and Memoirs of the American Anthropological Association), in v. 42; v. 41-50, 1939-48 (includes also index to Memoirs of the American Anthropological Association), 1 v.; v. 51-60, 1949-58 (includes also index to Memoirs of the American Anthropological Association), 1 v.; v. 61-71, 1959-69 (includes also index to Memoirs of the American Anthropological Association), 1 v.
+
+=== http://search.trln.org/search?id=UNCb1283253[UNCb1283253]
+
+- List of contents, v. 1-50, 1948-1997. l v.; list of contents, v. 1-55, 1948-2002. 1 v.
+
+=== http://search.trln.org/search?id=UNCb1288171[UNCb1288171]
+
+- 1812-80. 1 v.; 1880-1903. 1 v.; 1821-1961. 1 v.
