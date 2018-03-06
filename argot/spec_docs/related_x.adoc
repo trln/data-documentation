@@ -10,6 +10,18 @@ todo
 toc::[]
 
 == Overview of 'related' fields in Argot
+=== work_name_title
+
+- 100/110/111 + 240
+- 100/110/111 + 243
+- 100/110/111 + 245anp (subfields to include need verification)
+
+=== work_title
+
+- 130
+- 245anp (subfields to include need verification) when no 1XX and ind1=0
+
+
 === related_name_title
 Complex, structured data field containing information about works related to the work described in the record, for which a more specific related_name_title_* field  has not been defined.
 

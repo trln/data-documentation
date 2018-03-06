@@ -12,3 +12,6 @@ call_no (holdings)UNC999hijkmi1=9 AND i2=3 AND $0=#{holdings_record_id} AND $2='
 status (items)UNC999ai1=9 AND i2=4 AND NOT EXIST (tag=999 AND i1=9 and i2=1),.,.,Desired statuses from order data will be discussed at next UNC OPAC Committee meeting,,,,,,,,,,,,
 summary (holdings)UNC999ai1=9 AND i2=3 AND $0=#{holdings_record_id} AND $2='866',863/4/5 + 853/4/5,.,Still need to figure out generating a summary from these fields.,,,,,,,,,,,,
 isbn[qualifying_info]GEN20aif there is data in parentheses,20,.,UNCb2224383: the colon should not be extracted as qualifying info,,,,,,,,,,,,
+note_summaryGEN520abc3x,520,3,"As of 2018-03-05, there is no special handling of this field",,,,,,,,,,,,
+note_summaryGEN520abc3x,520,c,"Ideally wouldn't be indexed, but complicating this is not a priority",,,,,,,,,,,,
+note_tocGEN505agrtx,505,.,"As of 2018-03-05, no label is set from ind1 value",,,,,,,,,,,,

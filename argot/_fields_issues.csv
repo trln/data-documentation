@@ -10,3 +10,10 @@ resource_type,Use case for this? Does NCSU still need? Anyone else?,.,.
 location_facet,Create documentation in this repo,.,.
 rollup_id,Create documentation in this repo,.,.
 rollup_id,SerSol number rollup; UNC is sending data through. Alert others.,.,.
+copyright_year,MARC-to-Argot fix: copyright_year vs. copyright_data (and what does this field DO in the system?),.,https://trlnmain.atlassian.net/browse/TD-498
+copyright_year,If we are keeping this we probably need to pull from 008 or something? ,.,.
+date_cataloged,MARC-to-Argot check/fix: date_cataloged element no longer being set,.,https://trlnmain.atlassian.net/browse/TD-500
+director,"MARC-to-Argot fix: director element not being set, at least in some cases",.,https://trlnmain.atlassian.net/browse/TD-501
+director,MARC-to-Argot fix: names mapped to director should not also be mapped to authors[other],.,https://trlnmain.atlassian.net/browse/TD-502
+director,"relator code stuff needs to be handled. Consider a person with multiple roles, including director: https://ingest.discovery.trln.org/record/search?id=UNCb7398974",.,.
+,,,
