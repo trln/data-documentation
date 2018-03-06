@@ -1,0 +1,73 @@
+:toc:
+:toc-placement!:
+
+= MARC subfield 5 ($5) -- Institution to which field applies
+
+toc::[]
+
+== What is it?
+From http://www.loc.gov/marc/bibliographic/ecbdcntf.html[MARC spec]: "MARC code of the institution or organization that holds the copy to which the data in the field applies. Data in the field may not apply to the universal description of the item or may apply universally to the item but be of interest only to the location cited."
+
+In general, an institution only wants to index/display fields containing a $5 if the value in the $5 is one of their institution codes.
+
+-------
+500 _ _ $aThe Library of Congress copy has bookplate of the Benedictine Monastery in Grafschaft; inscribed by Thomas Jefferson.$5DLC
+
+710 2 _ $aBridgewater Library,$dformer owner.$5NjP
+
+538 _ _ $aMaster and use copy. Digital master created according to Benchmark for Faithful Digital Reproductions of Monographs and Serials, Version 1. Digital Library Federation, December 2002.$uhttp://purl.oclc.org/DLF/benchrepro0212$5MiAaHDL
+-------
+
+The fields shown above may appear in a WorldCat master record and be brought into the local system; however, our users do not care. It is not relevant to our copy of this title.
+
+
+== What fields can have $5?
+
+As of 2018-03-06, 30 MARC fields have the $5 subfield defined.
+
+There is a trend of defining $5 for additional MARC fields going forward.
+
+Consult https://github.com/trln/data-documentation/blob/master/marc/_marc_bib_subfields.tsv[tab-delimted file of all defined MARC subfields] for details.
+
+
+== What to do with $5 data
+Exclude the entire field from processing.
+
+The proper place to handle this work needs to be discussed.
+
+A couple of options are outlined below.
+
+== $5 processing specifics
+=== A couple of options for where/how to handle this
+==== Option 1 - Handle in MARC-to-Argot
+This looks something like:
+
+ - Part of each institution's spec includes a $5 whitelist---organization code(s) where, if the code is in a $5, the field should be retained/processed
+ - Macro/subroutine/whatever checks fields for presence of $5, and, if present, tests the $5 value(s) against institution spec
+
+Pros:
+
+ - The basic pattern of this processing is the same for all institutions. Figure it out once and handle the differences in customization/specs
+ - It will be handled consistently for everyone
+ - Data extract people don't have to do extra work
+
+Cons:
+
+ - Another thing to write in MARC-to-Argot
+ - Slow down MARC-to-Argot processing?
+
+==== Option 2 - Require each institution to handle this in the pre-MARC-to-Argot data
+
+ - Each insitution's catalog extract procedure (or a post-processing step on the extracted data) will need to remove fields with $5 values that are not for that institution
+
+Pros:
+ - less to do in MARC-to-Argot
+
+Cons:
+ - someone has to figure out how to do this for each institution, which means it may not be implemented consistently
+ - mixes data transformation into the data extract step, which is something we're trying to minimize (at least at UNC)
+
+=== Repeatability
+$5 is defined as a repeatable subfield in some MARC fields. In other MARC fields, it is not repeatable.
+
+Any routine to deal with $5 across different fields should assume multiple $5 values may be present in a field. 
