@@ -33,7 +33,7 @@ Consult https://github.com/trln/data-documentation/blob/master/marc/_marc_bib_su
 == What to do with $5 data
 Exclude the entire field from processing.
 
-The proper place to handle this work needs to be discussed.
+The proper place to handle this work needs to be discussed. There's a ticket for it: https://trlnmain.atlassian.net/browse/TD-496[TD-496].
 
 A couple of options are outlined below.
 
