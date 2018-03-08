@@ -27,3 +27,4 @@ items[vol],not displaying. Example: https://discovery.trln.org/catalog/UNCb19196
 note_summary,ensure label is being provided based on indicator value,,
 subject_genre,construct primary source value in this facet,.,https://trlnmain.atlassian.net/browse/TD-270
 subject_topic_lcsh,MARC-to-Argot fix: rename subject_topic_lcsh to subject_topic; tweak mappings as necessary,.,https://trlnmain.atlassian.net/browse/TD-511
+title[main][value],MARC-to-Argot change: title field,.,https://trlnmain.atlassian.net/browse/TD-513
