@@ -141,7 +141,7 @@ Data sources:
 -- Label specifying type of relationship from $i if present, otherwise "Has been translated as:"
 - 770 with ind1=0 and $t or $s (may or may not include author elements)
 -- Label specifying type of relationship from $i if present, otherwise "Has supplement:"
-- 770 with ind1=0 and $t or $s (may or may not include author elements)
+- 772 with ind1=0 and $t or $s (may or may not include author elements)
 -- Label specifying type of relationship from $i if present, otherwise "Supplement to:" or "Has parent resource:", depending on ind2 value
 - 773 with ind1=0 and $t or $s (may or may not include author elements)
 -- Label specifying type of relationship from $i if present, otherwise "Is part of:"
@@ -190,9 +190,9 @@ Data sources:
 We are currently treating these the same as any other subject headings, which is fine for now. 
 ----
 
-== Generalized example, this work + included work + series
-
-=== MARC
+== Examples
+=== this work + included work + series
+==== MARC
 
 [source]
 ----
@@ -204,7 +204,7 @@ We are currently treating these the same as any other subject headings, which is
 800 1 _ $aLiszt, Franz,$d1811-1886.$tPiano music (Howard) ;$v29.$x0084-4411
 ----
 
-=== Argot
+==== Argot
 
 [source:javascript]
 ----
@@ -245,7 +245,8 @@ We are currently treating these the same as any other subject headings, which is
   }
 }
 ----
-=== Full record display (partial)
+
+==== Full record display (partial)
 *The complete music for solo piano. 29 [sound recording]* +
 Franz Liszt. +
 London : Hyperion, p1994.
@@ -262,7 +263,7 @@ More like this: http:author_search_for.info/Liszt,_Franz,_1811-1886.[Liszt, Fran
 
 Other items in series: http:author_search_for.info/Liszt,_Franz,_1811-1886.[Liszt, Franz, 1811-1886.] http:work_citation_begins_with.info/Liszt,_Franz,_1811-1886._Piano_music_Howard.[Piano music (Howard) ;] 29. ISSN: 0084-4411 
 
-=== Indexed
+==== Indexed
 
 *authors_main* (Author, Keyword)
 
@@ -314,6 +315,102 @@ Other items in series: http:author_search_for.info/Liszt,_Franz,_1811-1886.[Lisz
 *issn_series* (ISBN/ISSN, Keyword)
 
 - 0084-4411
+
+=== Earlier/Later titles - display info from notes, index info from linking entries
+==== MARC
+[source]
+----
+210 0 _ $aActa bot. neerl.
+222 _ 0 $aActa botanica neerlandica
+245 0 0 $aActa botanica Neerlandica$h[serial] :$bofficial publication of the Nederlandse Botanische Vereniging.
+580 _ _ $aMerger of: Nederlandsch kruidkundig archief, and: Recueil des travaux botaniques néerlandais.
+580 _ _ $aMerged with: Botanica acta, to form: Plant biology (Stuttgart, Germany).
+770 0 _ $tWentia$w(DLC)   86653984$w(OCoLC)1769608
+776 1 _ $tActa botanica neerlandica (Online)$w(OCoLC)38089048
+780 1 4 $tNederlandsch kruidkundig archief$g1858-1951$w(OCoLC)1714426
+780 1 4 $tRecueil des travaux botaniques néerlandais$w(DLC)sc 82003303$w(OCoLC)1590372
+785 1 7 $tBotanica acta$x0932-8629$w(DLC)   88640720$w(OCoLC)17167709
+785 1 7 $tPlant biology (Stuttgart, Germany)$x1435-8603$w(DLC)sn 99047129$w(OCoLC)41000240
+----
+
+==== Argot (partial)
+[source:javascript]
+----
+{
+  "title_variant_indexed":[
+    "Acta bot. neerl.",
+    "Acta botanica neerlandica"
+  ],
+  "work_citation":"Acta botanica Neerlandica",
+  "title_main":{
+    "value":"Acta botanica Neerlandica [serial] : official publication of the Nederlandse Botanische Vereniging."
+  },
+  "related_work_note":[
+    "Merger of: Nederlandsch kruidkundig archief, and: Recueil des travaux botaniques néerlandais.",
+    "Merged with: Botanica acta, to form: Plant biology (Stuttgart, Germany)."
+  ],
+  "related_work":[
+    {
+      "label":"Has supplement:",
+      "title":"Wentia"
+    }
+  ],
+  "title_history_index_only":[
+    {
+      "title":"Nederlandsch kruidkundig archief"
+    },
+    {
+      "title":"Recueil des travaux botaniques néerlandais"
+    },
+    {
+      "title":"Botanica acta",
+      "issn":"0932-8629"
+    },
+    {
+      "title":"Plant biology (Stuttgart, Germany)",
+      "issn":"1435-8603"
+    }
+  ]
+}
+----
+
+==== Full record display (partial)
+*Acta botanica Neerlandica [serial] : official publication of the Nederlandse Botanische Vereniging.* +
+Amsterdam : North-Holland Pub. Co., 1952-c1998.
+
+*Related items* +
+More like this: http:work_citation_begins_with.info/Acta_botanica_Neerlandica[Acta botanica Neerlandica] +
+Merger of: Nederlandsch kruidkundig archief, and: Recueil des travaux botaniques néerlandais. +
+Merged with: Botanica acta, to form: Plant biology (Stuttgart, Germany). +
+Has supplement: http:work_citation_begins_with.info/Wentia[Wentia]
+
+==== Indexed
+
+*work_citation* (Work Citation for intercatalog linking)
+
+- Acta botanica Neerlandica
+
+*title_main* (Title, Keyword)
+
+- Acta botanica Neerlandica [serial] : official publication of the Nederlandse Botanische Vereniging.
+
+*title_variants* (Title, Keyword)
+
+- Acta bot. neerl.
+- Acta botanica neerlandica
+
+*title_history* (Title, Keyword)
+
+- Nederlandsch kruidkundig archief
+- Recueil des travaux botaniques néerlandais
+- Botanica acta
+- Plant biology (Stuttgart, Germany)
+
+*issn_title_history* (ISBN/ISSN, Keyword)
+
+- 0932-8629
+- 1435-8603
+
 
 == Overview of 'related' fields in Argot
 
