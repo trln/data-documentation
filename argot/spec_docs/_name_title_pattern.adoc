@@ -255,13 +255,13 @@ London : Hyperion, p1994.
 Author: Liszt, Franz, 1811-1886.
 
 *This item includes* +
-http://author_search_for.info/Liszt,_Franz,_1811-1886.[Liszt, Franz, 1811-1886.] http://work_citation_begins_with.info/Liszt,_Franz,_1811-1886._Magyar_dallok.[Magyar dallok.] +
-http://author_search_for.info/Liszt,_Franz,_1811-1886.[Liszt, Franz, 1811-1886.] http://work_citation_begins_with.info/Liszt,_Franz,_1811-1886._Rhapsodies_hongroises.[Rhapsodies hongroises.] http://work_citation_begins_with.info/Liszt,_Franz,_1811-1886._Rhapsodies_hongroises._No_9.[No 9.]
+http://www.search.com/author_search_for/Liszt,_Franz,_1811-1886.[Liszt, Franz, 1811-1886.] http://www.search.com/work_citation_begins_with/Liszt,_Franz,_1811-1886._Magyar_dallok.[Magyar dallok.] +
+http://www.search.com/author_search_for/Liszt,_Franz,_1811-1886.[Liszt, Franz, 1811-1886.] http://www.search.com/work_citation_begins_with/Liszt,_Franz,_1811-1886._Rhapsodies_hongroises.[Rhapsodies hongroises.] http://www.search.com/work_citation_begins_with/Liszt,_Franz,_1811-1886._Rhapsodies_hongroises._No_9.[No 9.]
 
 *Related items* +
-More like this: http://author_search_for.info/Liszt,_Franz,_1811-1886.[Liszt, Franz, 1811-1886.] http://work_citation_begins_with.info/Liszt,_Franz,_1811-1886._Piano_music.[Piano music.] http://work_citation_begins_with.info/Liszt,_Franz,_1811-1886._Piano_music._Selections[Selections]
+More like this: http://www.search.com/author_search_for/Liszt,_Franz,_1811-1886.[Liszt, Franz, 1811-1886.] http://www.search.com/work_citation_begins_with/Liszt,_Franz,_1811-1886._Piano_music.[Piano music.] http://www.search.com/work_citation_begins_with/Liszt,_Franz,_1811-1886._Piano_music._Selections[Selections]
 
-Other items in series: http://author_search_for.info/Liszt,_Franz,_1811-1886.[Liszt, Franz, 1811-1886.] http://work_citation_begins_with.info/Liszt,_Franz,_1811-1886._Piano_music_Howard.[Piano music (Howard) ;] 29. ISSN: 0084-4411 
+Other items in series: http://www.search.com/author_search_for/Liszt,_Franz,_1811-1886.[Liszt, Franz, 1811-1886.] http://www.search.com/work_citation_begins_with/Liszt,_Franz,_1811-1886._Piano_music_Howard.[Piano music (Howard) ;] 29. ISSN: 0084-4411 
 
 ==== Indexed
 
@@ -379,10 +379,10 @@ Other items in series: http://author_search_for.info/Liszt,_Franz,_1811-1886.[Li
 Amsterdam : North-Holland Pub. Co., 1952-c1998.
 
 *Related items* +
-More like this: http://work_citation_begins_with.info/Acta_botanica_Neerlandica[Acta botanica Neerlandica] +
+More like this: http://www.search.com/work_citation_begins_with/Acta_botanica_Neerlandica[Acta botanica Neerlandica] +
 Merger of: Nederlandsch kruidkundig archief, and: Recueil des travaux botaniques néerlandais. +
 Merged with: Botanica acta, to form: Plant biology (Stuttgart, Germany). +
-Has supplement: http://work_citation_begins_with.info/Wentia[Wentia]
+Has supplement: http://www.search.com/work_citation_begins_with/Wentia[Wentia]
 
 ==== Indexed
 
