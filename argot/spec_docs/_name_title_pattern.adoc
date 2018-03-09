@@ -255,8 +255,8 @@ London : Hyperion, p1994.
 Author: Liszt, Franz, 1811-1886.
 
 *This item includes* +
-http://www.search.com/author_search_for/Liszt,_Franz,_1811-1886.[Liszt, Franz, 1811-1886.] http://www.search.com/work_citation_begins_with/Liszt,_Franz,_1811-1886._Magyar_dallok.[Magyar dallok.] +
-http://www.search.com/author_search_for/Liszt,_Franz,_1811-1886.[Liszt, Franz, 1811-1886.] http://www.search.com/work_citation_begins_with/Liszt,_Franz,_1811-1886._Rhapsodies_hongroises.[Rhapsodies hongroises.] http://www.search.com/work_citation_begins_with/Liszt,_Franz,_1811-1886._Rhapsodies_hongroises._No_9.[No 9.]
+http://www.search.com/author_search_for/Liszt,_Franz,_1811-1886[Liszt, Franz, 1811-1886.] http://www.search.com/work_citation_begins_with/Liszt,_Franz,_1811-1886_Magyar_dallok[Magyar dallok.] +
+http://www.search.com/author_search_for/Liszt,_Franz,_1811-1886[Liszt, Franz, 1811-1886.] http://www.search.com/work_citation_begins_with/Liszt,_Franz,_1811-1886_Rhapsodies_hongroises[Rhapsodies hongroises.] http://www.search.com/work_citation_begins_with/Liszt,_Franz,_1811-1886_Rhapsodies_hongroises_No_9[No 9.]
 
 *Related items* +
 More like this: http://www.search.com/author_search_for/Liszt,_Franz,_1811-1886.[Liszt, Franz, 1811-1886.] http://www.search.com/work_citation_begins_with/Liszt,_Franz,_1811-1886._Piano_music.[Piano music.] http://www.search.com/work_citation_begins_with/Liszt,_Franz,_1811-1886._Piano_music._Selections[Selections]
