@@ -454,7 +454,7 @@ Based on: http://www.search.com/author_search_for/Andersen_string[Andersen, H. C
 ** Robert Sabuda.
 * *work_citation* (Work Citation for intercatalog linking)
 ** Sabuda, Robert. Little mermaid
-* *work_citation_included*
+* *work_citation_related*
 ** Andersen, H. C. (Hans Christian), 1805-1875. Lille havfrue. English.
 * *title_main* (Title, Keyword)
 ** The little mermaid : a pop-up adaptation of the classic fairy tale
