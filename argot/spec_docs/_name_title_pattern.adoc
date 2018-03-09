@@ -61,7 +61,7 @@ Clicking the `title` portion of the display conducts an adaptive-hyperlinked `wo
 === work_citation
 "Authorized access point" (or approximation thereof) *for resource described by the record*.
 
-[EXAMPLE]
+[NOTE]
 ====
 Record A describes Work A
 
