@@ -61,6 +61,15 @@ Clicking the `title` portion of the display conducts an adaptive-hyperlinked `wo
 === work_citation
 "Authorized access point" (or approximation thereof) *for resource described by the record*.
 
+[EXAMPLE]
+====
+Record A describes Work A
+
+Record B describes a work that has related work: Work A
+
+The `work_citation` derived from Record A should be the same as the concatenated `author` and `title` portions of the `related_work` derived from Record B.
+====
+
 Consists of authorized access point for agent with main responsibility for creation of the work (if applicable, plus the preferred title for the work.
 
 The authorized access point is the mechanism by which the following are accomplished in a library catalog (RDA 6.0):
@@ -73,7 +82,7 @@ The authorized access point is the mechanism by which the following are accompli
 
 [NOTE]
 ====
-`work_citation` won't ever include `label`, `details`, `isbn`, or `issn` subelements, but the treatement of the remaining elements in `work_citation` is identical to how they are treated in the other fields in this pattern. 
+`work_citation` won't ever include `label`, `details`, `isbn`, or `issn` subelements, but the treatment of the remaining elements in `work_citation` is identical to how they are treated in the other fields in this pattern. 
 ====
 
 [NOTE]
