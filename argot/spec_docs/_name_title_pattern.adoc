@@ -12,28 +12,28 @@ toc::[]
 
 == The pattern
 
- - `label`: Contextualizing info derived from data in field itself and/or the MARC tag or indicator values. Will not always be present.
- -- Display but do not index
- - `author`: The author name related portion. Some works do not have an author, so will lack this part.
- -- indexed as `author_related`, `author_included`, or `author_series` as appropriate
- -- combined with `title` segment to create indexed `work_citation*` value
- - `title`: The title related portion. All works must have a title, so this segment should always be present.
- -- indexed as `title_related`, `title_included`, `title_series`, or `title_variant_indexed` as appropriate
- -- if there is no separate `title_filing` element set, combined with `author` segment to create indexed `work_citation*` value for in-catalog hyperlink querying and possible use in autosuggest
- -- subelements of the title portion are separated with `||` to allow for adaptive hyperlinking. This delimiter is stripped out of the display.
- - `title_filing` : The title related portion, minus initial article/non-filing characters, if this value would be different than what's in `title`
- -- indexed as `title_related`, `title_included`, `title_series`, or `title_variant_indexed` as appropriate
- -- if present, combined with `author` segment to create indexed `work_citation*` value for in-catalog hyperlink querying and possible use in autosuggest
- -- subelements of the title portion are separated with `||` to allow for adaptive hyperlinking. This delimiter is stripped out of the display.
- - `details`: other bib data about related work
- -- displayed after the author/title hyperlink, but not included in hyperlink
- -- not indexed
- - `isbn`: ISBN of cited related work.
- -- displayed, with `ISBN:` label, at end of field display
- -- indexed in `isbn_related` or `isbn_included` as appropriate 
- - `issn`: ISSN of cited related work.
- -- displayed, with `ISSN:` label, at end of field display
- -- indexed in `issn_related`, `issn_included`, or `issn_series` as appropriate
+* `label`: Contextualizing info derived from data in field itself and/or the MARC tag or indicator values. Will not always be present.
+** Display but do not index
+* `author`: The author name related portion. Some works do not have an author, so will lack this part.
+** indexed as `author_related`, `author_included`, or `author_series` as appropriate
+** combined with `title` segment to create indexed `work_citation*` value
+* `title`: The title related portion. All works must have a title, so this segment should always be present.
+** indexed as `title_related`, `title_included`, `title_series`, or `title_variant_indexed` as appropriate
+** if there is no separate `title_filing` element set, combined with `author` segment to create indexed `work_citation*` value for in-catalog hyperlink querying and possible use in autosuggest
+** subelements of the title portion are separated with `||` to allow for adaptive hyperlinking. This delimiter is stripped out of the display.
+* `title_filing` : The title related portion, minus initial article/non-filing characters, if this value would be different than what's in `title`
+** indexed as `title_related`, `title_included`, `title_series`, or `title_variant_indexed` as appropriate
+** if present, combined with `author` segment to create indexed `work_citation*` value for in-catalog hyperlink querying and possible use in autosuggest
+** subelements of the title portion are separated with `||` to allow for adaptive hyperlinking. This delimiter is stripped out of the display.
+* `details`: other bib data about related work
+** displayed after the author/title hyperlink, but not included in hyperlink
+** not indexed
+* `isbn`: ISBN of cited related work.
+** displayed, with `ISBN:` label, at end of field display
+** indexed in `isbn_related` or `isbn_included` as appropriate 
+* `issn`: ISSN of cited related work.
+** displayed, with `ISSN:` label, at end of field display
+** indexed in `issn_related`, `issn_included`, or `issn_series` as appropriate
 
 Display should be built as follows:
  `label` + `author` + `title` + `details` + ISBN: `isbn` + ISSN: `issn`
@@ -65,13 +65,13 @@ Consists of authorized access point for agent with main responsibility for creat
 
 The authorized access point is the mechanism by which the following are accomplished in a library catalog (RDA 6.0):
 
-- bringing together all descriptions of manifestations embodying a work when various manifestations have appeared under various titles
-- identifying a work when the title by which it is known differs from a title proper of the manifestation being described
-- differentiating between two or more works with the same title
-- organizing hierarchical displays of descriptions for manifestations embodying different expressions of a work
-- recording a relationship to a related work or a related expression
+* bringing together all descriptions of manifestations embodying a work when various manifestations have appeared under various titles
+* identifying a work when the title by which it is known differs from a title proper of the manifestation being described
+* differentiating between two or more works with the same title
+* organizing hierarchical displays of descriptions for manifestations embodying different expressions of a work
+* recording a relationship to a related work or a related expression
 
-[IMPORTANT]
+[NOTE]
 ----
 `work_citation` won't ever include `label`, `details`, `isbn`, or `issn` subelements, but the treatement of the remaining elements in `work_citation` is identical to how they are treated in the other fields in this pattern. 
 ----
@@ -82,98 +82,98 @@ The authorized access point is the mechanism by which the following are accompli
 
 This is because:
 
-- As per the definition of an authorized access point for a work, the uniform title on its own is not useful
-- Patrons (and many librarians) have no clue what the heck a "uniform title" is
-- "Uniform title" has been replaced by "preferred title for work" in RDA (the current content standard for library cataloging)
+* As per the definition of an authorized access point for a work, the uniform title on its own is not useful
+* Patrons (and many librarians) have no clue what the heck a "uniform title" is
+* "Uniform title" has been replaced by "preferred title for work" in RDA (the current content standard for library cataloging)
 ====
 
 In TRLN Discovery, displaying/hyperlinking this supports:
 
-- Navigation to records describing other expressions and manifestations of the work
+* Navigation to records describing other expressions and manifestations of the work
 
 Indexing this supports:
 
-- Precision in inter-catalog hyperlink navigation features
-- (?) Improvements to autosuggest
+* Precision in inter-catalog hyperlink navigation features
+* (?) Improvements to autosuggest
 
 Data sources:
 
-- 130 if present, otherwise...
-- 100/110/111 + 240 if present, otherwise...
-- 100/110/111 + 243 if present, otherwise...
-- 100/110/111 + 245anp (subfields to include need verification) if present, otherwise...
-- 245anp (subfields to include need verification) when no 1XX and ind1=0
+* 130 if present, otherwise...
+* 100/110/111 + 240 if present, otherwise...
+* 100/110/111 + 243 if present, otherwise...
+* 100/110/111 + 245anp (subfields to include need verification) if present, otherwise...
+* 245anp (subfields to include need verification) when no 1XX and ind1=0
 
 === included_work
 "Authorized access point" (or approximation thereof) for *work included in the resource described by the catalog record*
 
 Data sources:
 
-- 700, 710, or 711 with ind2=2 and $t or $k present
--- Label specifying type of relationship from $i if present
-- 730 with ind2=2 (will not include author elements)
--- Label specifying type of relationship from $i if present
-- 740 with ind2=2 (will not include author elements)
-- 774 with ind1=0 and $t or $s (may or may not include author elements)
--- Label specifying type of relationship from $i if present
+* 700, 710, or 711 with ind2=2 and $t or $k present
+** Label specifying type of relationship from $i if present
+* 730 with ind2=2 (will not include author elements)
+** Label specifying type of relationship from $i if present
+* 740 with ind2=2 (will not include author elements)
+* 774 with ind1=0 and $t or $s (may or may not include author elements)
+** Label specifying type of relationship from $i if present
 
 ==== issued_with_work
 "Authorized access point" (or approximation thereof) for *work that is separately cataloged but that is issued with or included in the resource described by the catalog record*
 
 Data sources:
 
-- 777 with ind1=0 and $t or $s (may or may not include author elements)
--- Label specifying type of relationship from $i if present
+* 777 with ind1=0 and $t or $s (may or may not include author elements)
+** Label specifying type of relationship from $i if present
 
 === related_work
 "Authorized access point" (or approximation thereof) for *work related to the resource described by the catalog record*
 
 Data sources:
 
-- 700, 710, or 711 with ind2!=2 and $t or $k present
--- Label specifying type of relationship from $i if present
-- 730 with ind2!=2 (will not include author elements)
--- Label specifying type of relationship from $i if present
-- 740 with ind2!=2 (will not include author elements)
-- 765 with ind1=0 and $t or $s (may or may not include author elements)
--- Label specifying type of relationship from $i if present, otherwise "Is a translation of:" (or "Original language version:")
-- 767 with ind1=0 and $t or $s (may or may not include author elements)
--- Label specifying type of relationship from $i if present, otherwise "Has been translated as:"
-- 770 with ind1=0 and $t or $s (may or may not include author elements)
--- Label specifying type of relationship from $i if present, otherwise "Has supplement:"
-- 772 with ind1=0 and $t or $s (may or may not include author elements)
--- Label specifying type of relationship from $i if present, otherwise "Supplement to:" or "Has parent resource:", depending on ind2 value
-- 773 with ind1=0 and $t or $s (may or may not include author elements)
--- Label specifying type of relationship from $i if present, otherwise "Is part of:"
-- 775 with ind1=0 and $t or $s (may or may not include author elements)
--- Label specifying type of relationship from $i if present, otherwise "Other edition:"
-- 786 with ind1=0 and $t or $s (may or may not include author elements)
--- Label specifying type of relationship from $i if present, otherwise "Data source:"
-- 786 with ind1=0 and $t or $s (may or may not include author elements)
--- Label specifying type of relationship from $i if present
+* 700, 710, or 711 with ind2!=2 and $t or $k present
+** Label specifying type of relationship from $i if present
+* 730 with ind2!=2 (will not include author elements)
+** Label specifying type of relationship from $i if present
+* 740 with ind2!=2 (will not include author elements)
+* 765 with ind1=0 and $t or $s (may or may not include author elements)
+** Label specifying type of relationship from $i if present, otherwise "Is a translation of:" (or "Original language version:")
+* 767 with ind1=0 and $t or $s (may or may not include author elements)
+** Label specifying type of relationship from $i if present, otherwise "Has been translated as:"
+* 770 with ind1=0 and $t or $s (may or may not include author elements)
+** Label specifying type of relationship from $i if present, otherwise "Has supplement:"
+* 772 with ind1=0 and $t or $s (may or may not include author elements)
+** Label specifying type of relationship from $i if present, otherwise "Supplement to:" or "Has parent resource:", depending on ind2 value
+* 773 with ind1=0 and $t or $s (may or may not include author elements)
+** Label specifying type of relationship from $i if present, otherwise "Is part of:"
+* 775 with ind1=0 and $t or $s (may or may not include author elements)
+** Label specifying type of relationship from $i if present, otherwise "Other edition:"
+* 786 with ind1=0 and $t or $s (may or may not include author elements)
+** Label specifying type of relationship from $i if present, otherwise "Data source:"
+* 786 with ind1=0 and $t or $s (may or may not include author elements)
+** Label specifying type of relationship from $i if present
 
 ==== earlier_work
 "Authorized access point" (or approximation thereof) for *work that is separately cataloged, of which the resource cataloged here is a continuation*
 
 Data sources:
 
-- 780 with ind1=0 and $t or $s (may or may not include author elements)
--- Label specifying type of relationship from $i if present
+* 780 with ind1=0 and $t or $s (may or may not include author elements)
+** Label specifying type of relationship from $i if present
 
 ==== later_work
 "Authorized access point" (or approximation thereof) for *work that is separately cataloged, which continues the resource cataloged here*
 
 Data sources:
 
-- 785 with ind1=0 and $t or $s (may or may not include author elements)
--- Label specifying type of relationship from $i if present
+* 785 with ind1=0 and $t or $s (may or may not include author elements)
+** Label specifying type of relationship from $i if present
 
 ==== series_collocating
 "Authorized access point" (or approximation thereof) representing *the series of which the resouce cataloged here is a member*
 
 Data sources:
 
-- 800, 810, 811, or 830
+* 800, 810, 811, or 830
 
 
 [NOTE]
@@ -265,56 +265,33 @@ Other items in series: http://www.search.com/author_search_for/Liszt,_Franz,_181
 
 ==== Indexed
 
-*authors_main* (Author, Keyword)
-
-- Liszt, Franz, 1811-1886.
-
-*author_included*  (Author, Keyword)
-
-- Liszt, Franz, 1811-1886.
-
-*author_series*  (Series, Author, Keyword)
-
-- Liszt, Franz, 1811-1886.
-
-*statement_of_responsibility* (Author, Keyword)
-
-- Franz Liszt.
-
-*work_citation* (Work Citation for intercatalog linking)
-
-- Liszt, Franz, 1811-1886. Piano music. Selections
-
-*work_citation_included*
-
-- Liszt, Franz, 1811-1886. Magyar dallok.
-- Liszt, Franz, 1811-1886. Rhapsodies hongroises. No 9.
-
-*work_citation_series*
-
-- Liszt, Franz, 1811-1886. Piano music (Howard)
-
-*title_main* (Title, Keyword)
-
-- complete music for solo piano. 29 [sound recording]
-- The complete music for solo piano. 29 [sound recording]
-
-*title_variants* (Title, Keyword)
-
-- Piano music. Selections
-
-*title_included* (Title, Keyword)
-
-- Magyar dallok.
-- Rhapsodies hongroises. No 9.
-
-*title_series* (Series, Title, Keyword)
-
-- Piano music (Howard) ;
-
-*issn_series* (ISBN/ISSN, Keyword)
-
-- 0084-4411
+* *authors_main* (Author, Keyword)
+** Liszt, Franz, 1811-1886.
+* *author_included*  (Author, Keyword)
+** Liszt, Franz, 1811-1886.
+* *author_series*  (Series, Author, Keyword)
+** Liszt, Franz, 1811-1886.
+* *statement_of_responsibility* (Author, Keyword)
+** Franz Liszt.
+* *work_citation* (Work Citation for intercatalog linking)
+** Liszt, Franz, 1811-1886. Piano music. Selections
+* *work_citation_included*
+** Liszt, Franz, 1811-1886. Magyar dallok.
+** Liszt, Franz, 1811-1886. Rhapsodies hongroises. No 9.
+* *work_citation_series*
+** Liszt, Franz, 1811-1886. Piano music (Howard)
+* *title_main* (Title, Keyword)
+** complete music for solo piano. 29 [sound recording]
+** The complete music for solo piano. 29 [sound recording]
+* *title_variants* (Title, Keyword)
+** Piano music. Selections
+* *title_included* (Title, Keyword)
+** Magyar dallok.
+** Rhapsodies hongroises. No 9.
+* *title_series* (Series, Title, Keyword)
+** Piano music (Howard) ;
+* *issn_series* (ISBN/ISSN, Keyword)
+** 0084-4411
 
 === Earlier/Later titles - display info from notes, index info from linking entries
 ==== MARC
@@ -341,7 +318,9 @@ Other items in series: http://www.search.com/author_search_for/Liszt,_Franz,_181
     "Acta bot. neerl.",
     "Acta botanica neerlandica"
   ],
-  "work_citation":"Acta botanica Neerlandica",
+  "work_citation":{
+    "title":"Acta botanica Neerlandica"
+  },
   "title_main":{
     "value":"Acta botanica Neerlandica [serial] : official publication of the Nederlandse Botanische Vereniging."
   },
@@ -386,29 +365,82 @@ Has supplement: http://www.search.com/work_citation_begins_with/Wentia[Wentia]
 
 ==== Indexed
 
-*work_citation* (Work Citation for intercatalog linking)
+* *work_citation* (Work Citation for intercatalog linking)
+** Acta botanica Neerlandica
+* *title_main* (Title, Keyword)
+** Acta botanica Neerlandica [serial] : official publication of the Nederlandse Botanische Vereniging.
+* *title_variants* (Title, Keyword)
+** Acta bot. neerl.
+** Acta botanica neerlandica
+* *title_related*
+** Wentia
+* *title_history* (Title, Keyword)
+** Nederlandsch kruidkundig archief
+** Recueil des travaux botaniques néerlandais
+** Botanica acta
+** Plant biology (Stuttgart, Germany)
+* *issn_title_history* (ISBN/ISSN, Keyword)
+** 0932-8629
+** 1435-8603
 
-- Acta botanica Neerlandica
+=== UNCb7641376 - related work 700 with $i
+==== MARC
+100 1 _ $aSabuda, Robert,$eauthor.
+245 1 4 $aThe little mermaid :$ba pop-up adaptation of the classic fairy tale /$cRobert Sabuda.
+250 _ _ $aFirst edition.
+264 _ 1 $aNew York :$bLittle Simon, an imprint of Simon & Schuster Children's Publishing Division,$c[2013]
+700 1 _ $iBased on:$aAndersen, H. C.$q(Hans Christian),$d1805-1875.$tLille havfrue.$lEnglish.
 
-*title_main* (Title, Keyword)
+==== Argot
+[source,javascript]
+----
+{
+  "work_citation":{
+    "author":"Sabuda, Robert",
+    "title":"Little mermaid"
+  },
+  "title_main":{
+    "value":"The little mermaid : a pop-up adaptation of the classic fairy tale",
+    "sort":"little mermaid : a pop-up adaptation of the classic fairy tale"
+  },
+  "statement_of_responsibility":[
+    {
+      "value":"Robert Sabuda."
+    }
+  ],
+  "related_work":{
+    "label":"Based on:",
+    "author":"Andersen, H. C. (Hans Christian), 1805-1875.",
+    "title":"Lille havfrue.||English."
+  }
+}
+----
 
-- Acta botanica Neerlandica [serial] : official publication of the Nederlandse Botanische Vereniging.
+==== Full record display (partial)
+*The little mermaid : a pop-up adaptation of the classic fairy tale* +
+Robert Sabuda. +
+New York : Little Simon, an imprint of Simon & Schuster Children's Publishing Division, [2013] +
+First edition.
 
-*title_variants* (Title, Keyword)
+*Authors, etc.* +
+Author: http://www.search.com/author_search_for/Sabuda,_Robert[Sabuda, Robert,] author.
 
-- Acta bot. neerl.
-- Acta botanica neerlandica
+*Related items* +
+Based on: http://www.search.com/author_search_for/Andersen_string[Andersen, H. C. (Hans Christian), 1805-1875.] http://www.search.com/work_citation_begins_with_Andersen_string_Lille_havfrue/[Lille havfrue.] http://www.search.com/work_citation_begins_with_Andersen_string_Lille_havfrue_English[English.]
 
-*title_history* (Title, Keyword)
-
-- Nederlandsch kruidkundig archief
-- Recueil des travaux botaniques néerlandais
-- Botanica acta
-- Plant biology (Stuttgart, Germany)
-
-*issn_title_history* (ISBN/ISSN, Keyword)
-
-- 0932-8629
-- 1435-8603
-
+* *authors_main* (Author, Keyword)
+** Sabuda, Robert, author.
+* *author_related*  (Author, Keyword)
+** Andersen, H. C. (Hans Christian), 1805-1875.
+* *statement_of_responsibility* (Author, Keyword)
+** Robert Sabuda.
+* *work_citation* (Work Citation for intercatalog linking)
+** Sabuda, Robert. Little mermaid
+* *work_citation_included*
+** Andersen, H. C. (Hans Christian), 1805-1875. Lille havfrue. English.
+* *title_main* (Title, Keyword)
+** The little mermaid : a pop-up adaptation of the classic fairy tale
+** little mermaid : a pop-up adaptation of the classic fairy tale
+* *title_related* (Title, Keyword)
+** Lille havfrue. English
 
