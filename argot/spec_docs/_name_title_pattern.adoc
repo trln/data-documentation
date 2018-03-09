@@ -41,7 +41,7 @@ Display should be built as follows:
 Clicking the `author` portion of display, if present, conducts an author phrase seach.
 
 [CAUTION]
-----
+====
 What happens when you click on author part vs. a title part is tricky, and I don't even know if it can be sanely implemented the way I describe it here.
 
 I have said if you click the author portion, it does a regular author index search on that value.
@@ -51,7 +51,7 @@ Once you start clicking in the title portion, it's doing a search on the `work_c
 *The reason for this is:* Only the FIRST author should ever be included in the kind of name/title entry that will populate the `work_citation` index.
 
 If we made clicking the author portion search the `work_citation` index instead of do a general author search, only works where that person was the first/main author will be returned, which is probably NOT what we are looking for. 
-----
+====
 
 Clicking the `title` portion of the display conducts an adaptive-hyperlinked `work_citation` starts-with search for `author` + segment of `title` clicked on. 
 
