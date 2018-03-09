@@ -1,0 +1,800 @@
+:toc:
+:toc-placement!:
+
+= Work entries: Name/title pattern
+
+
+*Test records*
+The UNC bib records referred to by bib number in this document are at:
+todo
+
+toc::[]
+
+== The pattern
+
+ - `label`: Contextualizing info derived from data in field itself and/or the MARC tag or indicator values. Will not always be present.
+ -- Display but do not index
+ - `author`: The author name related portion. Some works do not have an author, so will lack this part.
+ -- indexed as `author_related`, `author_included`, or `author_series` as appropriate
+ -- combined with `title` segment to create indexed `work_citation*` value
+ - `title`: The title related portion. All works must have a title, so this segment should always be present.
+ -- indexed as `title_related`, `title_included`, `title_series`, or `title_variant_indexed` as appropriate
+ -- if there is no separate `title_filing` element set, combined with `author` segment to create indexed `work_citation*` value for in-catalog hyperlink querying and possible use in autosuggest
+ -- subelements of the title portion are separated with `||` to allow for adaptive hyperlinking. This delimiter is stripped out of the display.
+ - `title_filing` : The title related portion, minus initial article/non-filing characters, if this value would be different than what's in `title`
+ -- indexed as `title_related`, `title_included`, `title_series`, or `title_variant_indexed` as appropriate
+ -- if present, combined with `author` segment to create indexed `work_citation*` value for in-catalog hyperlink querying and possible use in autosuggest
+ -- subelements of the title portion are separated with `||` to allow for adaptive hyperlinking. This delimiter is stripped out of the display.
+ - `details`: other bib data about related work
+ -- displayed after the author/title hyperlink, but not included in hyperlink
+ -- not indexed
+ - `isbn`: ISBN of cited related work.
+ -- displayed, with `ISBN:` label, at end of field display
+ -- indexed in `isbn_related` or `isbn_included` as appropriate 
+ - `issn`: ISSN of cited related work.
+ -- displayed, with `ISSN:` label, at end of field display
+ -- indexed in `issn_related`, `issn_included`, or `issn_series` as appropriate
+
+Display should be built as follows:
+ `label` + `author` + `title` + `details` + ISBN: `isbn` + ISSN: `issn`
+
+Clicking the `author` portion of display, if present, conducts an author phrase seach.
+
+[CAUTION]
+----
+What happens when you click on author part vs. a title part is tricky, and I don't even know if it can be sanely implemented the way I describe it here.
+
+I have said if you click the author portion, it does a regular author index search on that value.
+
+Once you start clicking in the title portion, it's doing a search on the `work_citation` index for precision.
+
+*The reason for this is:* Only the FIRST author should ever be included in the kind of name/title entry that will populate the `work_citation` index.
+
+If we made clicking the author portion search the `work_citation` index instead of do a general author search, only works where that person was the first/main author will be returned, which is probably NOT what we are looking for. 
+----
+
+Clicking the `title` portion of the display conducts an adaptive-hyperlinked `work_citation` starts-with search for `author` + segment of `title` clicked on. 
+
+
+== Argot fields to which this pattern applies
+
+=== work_citation
+"Authorized access point" (or approximation thereof) *for resource described by the record*.
+
+Consists of authorized access point for agent with main responsibility for creation of the work (if applicable, plus the preferred title for the work.
+
+The authorized access point is the mechanism by which the following are accomplished in a library catalog (RDA 6.0):
+
+- bringing together all descriptions of manifestations embodying a work when various manifestations have appeared under various titles
+- identifying a work when the title by which it is known differs from a title proper of the manifestation being described
+- differentiating between two or more works with the same title
+- organizing hierarchical displays of descriptions for manifestations embodying different expressions of a work
+- recording a relationship to a related work or a related expression
+
+[IMPORTANT]
+----
+`work_citation` won't ever include `label`, `details`, `isbn`, or `issn` subelements, but the treatement of the remaining elements in `work_citation` is identical to how they are treated in the other fields in this pattern. 
+----
+
+[NOTE]
+====
+*There will be no "uniform title" field in Argot.*
+
+This is because:
+
+- As per the definition of an authorized access point for a work, the uniform title on its own is not useful
+- Patrons (and many librarians) have no clue what the heck a "uniform title" is
+- "Uniform title" has been replaced by "preferred title for work" in RDA (the current content standard for library cataloging)
+====
+
+In TRLN Discovery, displaying/hyperlinking this supports:
+
+- Navigation to records describing other expressions and manifestations of the work
+
+Indexing this supports:
+
+- Precision in inter-catalog hyperlink navigation features
+- (?) Improvements to autosuggest
+
+Data sources:
+
+- 130 if present, otherwise...
+- 100/110/111 + 240 if present, otherwise...
+- 100/110/111 + 243 if present, otherwise...
+- 100/110/111 + 245anp (subfields to include need verification) if present, otherwise...
+- 245anp (subfields to include need verification) when no 1XX and ind1=0
+
+=== included_work
+"Authorized access point" (or approximation thereof) for *work included in the resource described by the catalog record*
+
+Data sources:
+
+- 700, 710, or 711 with ind2=2 and $t or $k present
+-- Label specifying type of relationship from $i if present
+- 730 with ind2=2 (will not include author elements)
+-- Label specifying type of relationship from $i if present
+- 740 with ind2=2 (will not include author elements)
+- 774 with ind1=0 and $t or $s (may or may not include author elements)
+-- Label specifying type of relationship from $i if present
+
+==== issued_with_work
+"Authorized access point" (or approximation thereof) for *work that is separately cataloged but that is issued with or included in the resource described by the catalog record*
+
+Data sources:
+
+- 777 with ind1=0 and $t or $s (may or may not include author elements)
+-- Label specifying type of relationship from $i if present
+
+=== related_work
+"Authorized access point" (or approximation thereof) for *work related to the resource described by the catalog record*
+
+Data sources:
+
+- 700, 710, or 711 with ind2!=2 and $t or $k present
+-- Label specifying type of relationship from $i if present
+- 730 with ind2!=2 (will not include author elements)
+-- Label specifying type of relationship from $i if present
+- 740 with ind2!=2 (will not include author elements)
+- 765 with ind1=0 and $t or $s (may or may not include author elements)
+-- Label specifying type of relationship from $i if present, otherwise "Is a translation of:" (or "Original language version:")
+- 767 with ind1=0 and $t or $s (may or may not include author elements)
+-- Label specifying type of relationship from $i if present, otherwise "Has been translated as:"
+- 770 with ind1=0 and $t or $s (may or may not include author elements)
+-- Label specifying type of relationship from $i if present, otherwise "Has supplement:"
+- 770 with ind1=0 and $t or $s (may or may not include author elements)
+-- Label specifying type of relationship from $i if present, otherwise "Supplement to:" or "Has parent resource:", depending on ind2 value
+- 773 with ind1=0 and $t or $s (may or may not include author elements)
+-- Label specifying type of relationship from $i if present, otherwise "Is part of:"
+- 775 with ind1=0 and $t or $s (may or may not include author elements)
+-- Label specifying type of relationship from $i if present, otherwise "Other edition:"
+- 786 with ind1=0 and $t or $s (may or may not include author elements)
+-- Label specifying type of relationship from $i if present, otherwise "Data source:"
+- 786 with ind1=0 and $t or $s (may or may not include author elements)
+-- Label specifying type of relationship from $i if present
+
+==== earlier_work
+"Authorized access point" (or approximation thereof) for *work that is separately cataloged, of which the resource cataloged here is a continuation*
+
+Data sources:
+
+- 780 with ind1=0 and $t or $s (may or may not include author elements)
+-- Label specifying type of relationship from $i if present
+
+==== later_work
+"Authorized access point" (or approximation thereof) for *work that is separately cataloged, which continues the resource cataloged here*
+
+Data sources:
+
+- 785 with ind1=0 and $t or $s (may or may not include author elements)
+-- Label specifying type of relationship from $i if present
+
+==== series_collocating
+"Authorized access point" (or approximation thereof) representing *the series of which the resouce cataloged here is a member*
+
+Data sources:
+
+- 800, 810, 811, or 830
+
+
+[NOTE]
+----
+Some subject fields follow this same pattern, so we _could_ implement a `subject_work` field that'd be modeled the same way as the other fields covered here. It would be defined as:
+
+"Authorized access point" (or approximation thereof) for *work that is a subject of the resource cataloged here*
+
+Data sources:
+
+- 600, 610, 611 with $t or $k
+- 630
+
+We are currently treating these the same as any other subject headings, which is fine for now. 
+----
+
+== Generalized example, this work + included work + series
+
+=== MARC
+
+[source]
+----
+100 1 _ $aLiszt, Franz,$d1811-1886.
+240 1 0 $aPiano music.$kSelections
+245 1 4 $aThe complete music for solo piano.$n29$h[sound recording] /$cFranz Liszt.
+700 1 2 $aLiszt, Franz,$d1811-1886.$tMagyar dallok.
+700 1 2 $aLiszt, Franz,$d1811-1886.$tRhapsodies hongroises.$nNo 9.
+800 1 _ $aLiszt, Franz,$d1811-1886.$tPiano music (Howard) ;$v29.$x0084-4411
+----
+
+=== Argot
+
+[source:javascript]
+----
+{
+  "authors":{
+    "main":[
+      {
+        "name":"Liszt, Franz, 1811-1886."
+      }
+    ]
+  },
+  "work_citation":{
+    "author":"Liszt, Franz, 1811-1886.",
+    "title":"Piano music.||Selections"
+  },
+  "title_main":{
+    "value":"The complete music for solo piano. 29 [sound recording]",
+    "sort":"complete music for solo piano. 29 [sound recording]"
+  },
+  "statement_of_responsibility":{
+    "value":"Franz Liszt."
+  },
+  "included_work":[
+    {
+      "author":"Liszt, Franz, 1811-1886.",
+      "title":"Magyar dallok."
+    },
+    {
+      "author":"Liszt, Franz, 1811-1886.",
+      "title":"Rhapsodies hongroises.||No 9."
+    }
+  ],
+  "series_collocation":{
+    "author":"Liszt, Franz, 1811-1886.",
+    "title":"Piano music (Howard) ;",
+    "details":"29.",
+    "issn":"0084-4411"
+  }
+}
+----
+=== Full record display (partial)
+*The complete music for solo piano. 29 [sound recording]* +
+Franz Liszt. +
+London : Hyperion, p1994.
+
+*Authors, etc.* +
+Author: Liszt, Franz, 1811-1886.
+
+*This item includes* +
+http:author_search_for.info/Liszt,_Franz,_1811-1886.[Liszt, Franz, 1811-1886.] http:work_citation_begins_with.info/Liszt,_Franz,_1811-1886._Magyar_dallok.[Magyar dallok.] +
+http:author_search_for.info/Liszt,_Franz,_1811-1886.[Liszt, Franz, 1811-1886.] http:work_citation_begins_with.info/Liszt,_Franz,_1811-1886._Rhapsodies_hongroises.[Rhapsodies hongroises.] http:work_citation_begins_with.info/Liszt,_Franz,_1811-1886._Rhapsodies_hongroises._No_9.[No 9.]
+
+*Related items* +
+More like this: http:author_search_for.info/Liszt,_Franz,_1811-1886.[Liszt, Franz, 1811-1886.] http:work_citation_begins_with.info/Liszt,_Franz,_1811-1886._Piano_music.[Piano music.] http:work_citation_begins_with.info/Liszt,_Franz,_1811-1886._Piano_music._Selections[Selections]
+
+Other items in series: http:author_search_for.info/Liszt,_Franz,_1811-1886.[Liszt, Franz, 1811-1886.] http:work_citation_begins_with.info/Liszt,_Franz,_1811-1886._Piano_music_Howard.[Piano music (Howard) ;] 29. ISSN: 0084-4411 
+
+=== Indexed
+
+*authors_main* (Author, Keyword)
+
+- Liszt, Franz, 1811-1886.
+
+*author_included*  (Author, Keyword)
+
+- Liszt, Franz, 1811-1886.
+
+*author_series*  (Series, Author, Keyword)
+
+- Liszt, Franz, 1811-1886.
+
+*statement_of_responsibility* (Author, Keyword)
+
+- Franz Liszt.
+
+*work_citation* (Work Citation for intercatalog linking)
+
+- Liszt, Franz, 1811-1886. Piano music. Selections
+
+*work_citation_included*
+
+- Liszt, Franz, 1811-1886. Magyar dallok.
+- Liszt, Franz, 1811-1886. Rhapsodies hongroises. No 9.
+
+*work_citation_series*
+
+- Liszt, Franz, 1811-1886. Piano music (Howard)
+
+*title_main* (Title, Keyword)
+
+- complete music for solo piano. 29 [sound recording]
+- The complete music for solo piano. 29 [sound recording]
+
+*title_variants* (Title, Keyword)
+
+- Piano music. Selections
+
+*title_included* (Title, Keyword)
+
+- Magyar dallok.
+- Rhapsodies hongroises. No 9.
+
+*title_series* (Series, Title, Keyword)
+
+- Piano music (Howard) ;
+
+*issn_series* (ISBN/ISSN, Keyword)
+
+- 0084-4411
+
+== Overview of 'related' fields in Argot
+
+
+=== related_name_title
+Complex, structured data field containing information about works related to the work described in the record, for which a more specific related_name_title_* field  has not been defined.
+
+It must always include a name part and a title part.
+
+An imperfect aspect of this is:
+
+ - Some of the MARC source fields for `related_name_title` are themselves specified so that well-formed 'uniform work identifiers' are the result (main entry + title proper).
+ - Other MARC source fields for `related_name_title` have been less clearly specified, so that they may include
+ -- title data beyond title proper (other title info, parallel title, alternative title)
+ -- author name that would not be recorded as main entry (or that would be recorded as main entry, but in a different form)
+ -- other bib data about related work: publication, extent, ISBNs, ISSNs, etc
+ 
+==== `related_name_title` subelements
+ - `label`: Contextualizing info derived from data in field itself and/or the MARC tag or indicator values. Will not always be present.
+ -- Display but do not index
+ - `author`: The author name related portion. Some works do not have an author, so will lack this part.
+ -- indexed as `author_related`
+ -- combined with `title` segment to create indexed `name_title_idx_related` value
+ - `title`: The title related portion. All works must have a title, so this segment should always be present.
+ -- indexed as `title_related_idx`
+ -- combined with `author` segment to create indexed `name_title_idx_related` value for in-catalog hyperlink querying and possible use in autosuggest
+ -- subelements of the title portion are separated with `||` to allow for adaptive hyperlinking. This delimiter is stripped out of the display.
+ - `details`: other bib data about related work
+ -- displayed after the author/title hyperlink, but not included in hyperlink
+ -- not indexed
+ - `isbn`: ISBN of cited related work.
+ -- displayed, with `ISBN:` label, at end of field display
+ -- indexed in `isbn_related`
+ - `issn`: ISSN of cited related work.
+ -- displayed, with `ISSN:` label, at end of field display
+ -- indexed in `issn_related`
+
+Display should be built as follows:
+ `label` + `author` + `title` + `details` + `isbn` + `issn`
+
+Clicking the `author` portion of display conducts an author phrase seach.
+
+Clicking the `title` portion of the display conducts an adaptive-hyperlinked name_title_idx starts-with search for `author` + segment of `title` clicked on. 
+
+==== Source data
+`related_name_title` gets populated from fields where it is possible to record name-title entries, *if a title is recorded in the field*.
+
+- 700, 710, or 711 with i2 = blank and including a $t or $k
+
+=== related_title
+Related title info from fields where only a title is recorded.
+
+MARC fields with nonfiling character indicator values get mapped into this Argot field. https://trlnmain.atlassian.net/browse/TD-484[TD-484] is for reviewing treatment of such fields, and explains why they are tricky.
+
+==== `related_title` subelements
+ - `label`: Contextualizing info derived from data in field itself and/or the MARC tag or indicator values. Will not always be present.
+ -- Display but do not index
+ - `initart`: Initial article portion of title
+ -- Based on nonfiling character indicator value (which begins counting with 1).
+ -- Only populated if nonfiling character indicator value is NOT 0
+ -- Split title string at indicator value (-1 to get string index value). Trim the resulting 2 elements. The 0th element = `initart`. The 1st element = `title`
+ - `title`: Contextualizing info derived from data in field itself and/or the MARC tag or indicator values. Will not always be present.
+ -- Display but do not index
+ - `details`: other bib data about related work
+ -- displayed after the author/title hyperlink, but not included in hyperlink
+ -- not indexed
+ - `isbn`: ISBN of cited related work.
+ -- displayed, with `ISBN:` label, at end of field display
+ -- indexed in `isbn_related`
+ - `issn`: ISSN of cited related work.
+ -- displayed, with `ISSN:` label, at end of field display
+ -- indexed in `issn_related`
+
+==== Source data
+
+- 740 with i2 = blank
+
+== Overview of derivative fields
+
+- `name_title_idx` : Constructed 'uniform title' for this work. Indexed value for in-catalog hyperlink querying and possible use in autosuggest. Keyword search should include these values, but queries typed in by the user are not the main thing this index is trying to support.
+- `name_title_idx_related`: indexed value for in-catalog hyperlink querying and possible use in autosuggest. Keyword search should include these values, but queries typed in by the user are not the main thing this index is trying to support.
+-- This is harnessing some of the power of a more controlled search for some catalog behavior, so follow the conventions for card catalog sorting/indexing here to avoid introducing duplication and confusion in the service of not "splitting the catalog"
+- `author_related_idx`: will be retrieved, but relranked low, in an author search
+- `title_related_idx`: will be retrieved, but relranked low, in a title search. 
+-- When there is a known/coded initial article, send title value to this field with and without that article. (See https://trlnmain.atlassian.net/browse/TD-484)
+
+== Examples
+=== UNCb7641376 - 700 with $i
+==== MARC
+ 100 1 _ $aSabuda, Robert,$eauthor.
+ 245 1 4 $aThe little mermaid :$ba pop-up adaptation of the classic fairy tale /$cRobert Sabuda.
+ 700 1 _ $iBased on:$aAndersen, H. C.$q(Hans Christian),$d1805-1875.$tLille havfrue.$lEnglish.
+
+==== Argot
+[source,javascript]
+----
+{
+ "related_name_title": {
+  "label": "Based on:",
+  "author": "Andersen, H. C. (Hans Christian), 1805-1875.",
+  "title": "Lille havfrue.||English."
+ }
+}
+----
+
+==== Behavior
+
+*Displayed:*
+
+RELATED ITEMS:
+
+Based on: http://search.trln.org/search?Nty=1&Ntk=Author&Ntt=Andersen%2C%20H.%20C.%20(Hans%20Christian)%2C%201805-1875&N=0[Andersen, H. C. (Hans Christian), 1805-1875.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Lille%20havfrue|Andersen%2C%20H.%20C.%20(Hans%20Christian)%2C%201805-1875&N=0[Lille havfrue.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Lille%20havfrue.%20English|Andersen%2C%20H.%20C.%20(Hans%20Christian)%2C%201805-1875&N=0[English.]
+
+*Combined `name_title_idx_related` index entry for intracatalog linking (and autosuggest?):*
+
+- Andersen, H. C. (Hans Christian), 1805-1875. Lille havfrue. English.
+
+
+*`author_related_idx` index entry:*
+
+- Andersen, H. C. (Hans Christian), 1805-1875.
+
+*`title_related_idx` index entry:*
+
+- Lille havfrue. English
+
+=== UNCb8993417 - 700, with $3 and $i
+==== MARC
+_Some fields that would be mapped to `related_name_title` are omitted from example._
+
+ 245 0 0 $aIf this world could stop.
+ 264 _ 1 $a[New Haven, CT] :$bBad Wolf Music Group,$c[2014]
+ 700 1 _ $32nd work$iMusical setting of (work):$aJoyce, James,$d1882-1941.$tUlysses.
+ 700 1 _ $33rd work$iMusical setting of (work):$aWhiteley, Opal Stanley.$tClan of the lichens.
+ 700 1 _ $35th work$iMusical setting of (work):$aDove, Rita.$tIf this world could stop.
+
+==== Argot
+[source,javascript]
+----
+{
+ "related_name_title": {
+  "label": "2nd work: Musical setting of:",
+  "author": "Joyce, James, 1882-1941",
+  "title": "Ulysses."
+ },
+ "related_name_title": {
+  "label": "3rd work: Musical setting of:",
+  "author": "Whiteley, Opal Stanley.",
+  "title": "Clan of the lichens."
+ },
+  "related_name_title": {
+  "label": "5th work: Musical setting of:",
+  "author": "Dove, Rita.",
+  "title": "If this world could stop."
+ }
+}
+----
+
+==== Behavior
+
+*Displayed:*
+
+RELATED ITEMS:
+
+- 2nd work: Musical setting of: http://search.trln.org/search?Nty=1&Ntk=Author&Ntt=Joyce%2C%20James%2C%201882-1941.&N=0[Joyce, James, 1882-1941.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Ulysses.|Joyce%2C%20James%2C%201882-1941.&N=0[Ulysses.]
+- 3rd work: Musical setting of: http://search.trln.org/search?Nty=1&Ntk=Author&Ntt=Whiteley%2C%20Opal%20Stanley.&N=0[Whiteley, Opal Stanley.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Clan%20of%20the%20lichens.|Whiteley%2C%20Opal%20Stanley.&N=0[Clan of the lichens.]
+- 5th work: Musical setting of: http://search.trln.org/search?Nty=1&Ntk=Author&Ntt=Dove%2C%20Rita.%20&N=0[Dove, Rita.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=If%20this%20world%20could%20stop.|Dove%2C%20Rita.%20&N=0[If this world could stop.]
+  
+*Combined `name_title_idx_related` index entry for intracatalog linking (and autosuggest?):*
+
+- Joyce, James, 1882-1941. Ulysses.
+- Whiteley, Opal Stanley. Clan of the lichens.
+- Dove, Rita. If this world could stop.
+
+*`author_related_idx` index entry:*
+
+- Joyce, James, 1882-1941.
+- Whiteley, Opal Stanley.
+- Dove, Rita.
+
+*`title_related_idx` index entry:*
+
+- Ulysses.
+- Clan of the lichens.
+- If this world could stop.
+
+=== UNCb8843477 - 710 with $i
+==== MARC
+ 100 1 _ $aJacobson, Sidney,$eauthor.
+ 245 1 4 $aThe torture report :$ba graphic adaptation /$cSid Jacobson and Ernie Colón ; introduction by Jane Mayer ; afterword by Scott Horton.
+ 710 1 _ $iGraphic novelization of (work):$aUnited States.$bCongress.$bSenate.$bSelect Committee on Intelligence.$tSenate Intelligence Committee report on torture.
+
+==== Argot
+[source,javascript]
+----
+{
+ "related_name_title": {
+  "label": "Graphic novelization of:",
+  "author": "United States. Congress. Senate. Select Committee on Intelligence.",
+  "title": "Senate Intelligence Committee report on torture."
+ }
+}
+----
+
+==== Behavior
+
+*Displayed:*
+
+RELATED ITEMS:
+
+Graphic novelization of: http://search.trln.org/search?Nty=1&Ntk=Author&Ntt=United%20States.%20Congress.%20Senate.%20Select%20Committee%20on%20Intelligence.&N=0[United States. Congress. Senate. Select Committee on Intelligence.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Senate%20Intelligence%20Committee%20report%20on%20torture.|United%20States.%20Congress.%20Senate.%20Select%20Committee%20on%20Intelligence.&N=0[Senate Intelligence Committee report on torture.]
+  
+
+
+*Combined `name_title_idx_related` index entry for intracatalog linking (and autosuggest?):*
+
+- United States. Congress. Senate. Select Committee on Intelligence. Senate Intelligence Committee report on torture.
+
+*`author_related_idx` index entry:*
+
+- United States. Congress. Senate. Select Committee on Intelligence.
+
+*`title_related_idx` index entry:*
+
+- Senate Intelligence Committee report on torture.
+
+=== UNCb8843477 - 711 without label
+==== MARC
+ 100 1 _ $aEmerson, Joseph,$d1777-1833.
+ 245 1 4 $aThe Evangelical primer$h[microform].
+ 711 2 _ $aWestminster Assembly$d(1643-1652).$tShorter catechism.$f1809.
+
+==== Argot
+[source,javascript]
+----
+{
+ "related_name_title": [
+ {
+  "author": "Westminster Assembly (1643-1652).",
+  "title": "Shorter catechism.||1809."
+ }
+ ]
+}
+----
+
+==== Behavior
+*Displayed:*
+
+RELATED ITEMS:
+
+- http://search.trln.org/search?Nty=1&Ntk=Author&Ntt=Westminster%20Assembly%20(1643-1652).&N=0[Westminster Assembly (1643-1652).] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Shorter%20catechism.|Westminster%20Assembly%20(1643-1652).&N=0[Shorter catechism.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Shorter%20catechism.%201809.|Westminster%20Assembly%20(1643-1652).&N=0[1809.]
+  
+*Combined `name_title_idx_related` index entry for intracatalog linking (and autosuggest?):*
+
+- Westminster Assembly (1643-1652). Shorter catechism. 1809.
+
+*`author_related_idx` index entry:*
+
+- Westminster Assembly (1643-1652).
+
+*`title_related_idx` index entry:*
+
+- Shorter catechism. 1809.
+
+=== UNCb4914240 - 710 with $g in title
+==== MARC
+ 245 0 0 $aRecueil de pièces de luth en tablature italienne ;$bXVIIe siècle.
+ 500 _ _ $aFacsimile of Bibliothèque du Conservatoir Royal de Musique de Bruxelles, Ms. 16.662 -16.663.
+ 710 2 _ $iFacsimilie of (manifestation):$aConservatoire royal de musique de Bruxelles.$bBibliothèque.$kManuscript.$g16.662.
+ 710 2 _ $iFacsimilie of (manifestation):$aConservatoire royal de musique de Bruxelles.$bBibliothèque.$kManuscript.$g16.663.
+
+==== Argot
+[source,javascript]
+----
+{
+ "related_name_title": [
+ {
+  "label": "Facsimilie of:",
+  "author": "Conservatoire royal de musique de Bruxelles. Bibliothèque.",
+  "title": "Manuscript.||16.662."
+ },
+ {
+  "label": "Facsimilie of:",
+  "author": "Conservatoire royal de musique de Bruxelles. Bibliothèque.",
+  "title": "Manuscript.||16.663."
+ }
+ ]
+}
+----
+
+==== Behavior
+*Displayed:*
+
+RELATED ITEMS:
+
+- Facsimilie of: http://search.trln.org/search?Nty=1&Ne=2+200043+206472+210899+210956&N=0&Ntk=Author&Ntt=Conservatoire%20royal%20de%20musique%20de%20Bruxelles.%20Biblioth%C3%A8que[Conservatoire royal de musique de Bruxelles. Bibliothèque.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Manuscript.|Conservatoire%20royal%20de%20musique%20de%20Bruxelles.%20Biblioth%C3%A8que&N=0[Manuscript.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Manuscript.%2016.662.|Conservatoire%20royal%20de%20musique%20de%20Bruxelles.%20Biblioth%C3%A8que&N=0[16.662.]
+- Facsimilie of: http://search.trln.org/search?Nty=1&Ne=2+200043+206472+210899+210956&N=0&Ntk=Author&Ntt=Conservatoire%20royal%20de%20musique%20de%20Bruxelles.%20Biblioth%C3%A8que[Conservatoire royal de musique de Bruxelles. Bibliothèque.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Manuscript.|Conservatoire%20royal%20de%20musique%20de%20Bruxelles.%20Biblioth%C3%A8que&N=0[Manuscript.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Manuscript.%2016.663.|Conservatoire%20royal%20de%20musique%20de%20Bruxelles.%20Biblioth%C3%A8que&N=0[16.663.]
+  
+*Combined `name_title_idx_related` index entry for intracatalog linking (and autosuggest?):*
+
+- Conservatoire royal de musique de Bruxelles. Bibliothèque. Manuscript. 16.662.
+- Conservatoire royal de musique de Bruxelles. Bibliothèque. Manuscript. 16.663.
+
+*`author_related_idx` index entry:*
+
+- Conservatoire royal de musique de Bruxelles. Bibliothèque.
+
+*`title_related_idx` index entry:*
+
+- Manuscript. 16.662.
+- Manuscript. 16.663.
+
+=== 770
+==== MARC
+ 210 0 _ $aAm. econ. rev.
+ 222 _ 4 $aThe American economic review
+ 245 0 4 $aThe American economic review$h[serial].
+ 500 _ _ $aEach vol. includes also: Papers and proceedings of the ... Annual Meeting of the American Economic Association.
+ 515 _ _ $aVol. 1 called also Bulletin of the American Economic Association, 4th series.
+ 515 _ _ $aThe American economic review, with its supplements, forms the 4th series of the Publications of the American Economic Association.
+ 525 _ _ $aHas frequent supplements.
+ 730 0 _ $aBulletin of the American Economic Association.
+ 770 0 _ $aAmerican Economic Association.$tPapers and proceedings of the annual meeting$g1911-$x0065-812X$w(DLC)   01011768$w(OCoLC)1479792
+ 776 0 8 $iOnline version$tAmerican economic review (Online)$x1944-7981$w(DLC)sn 97023013$w(OCoLC)35705012
+ 776 0 8 $iOnline version:$tAmerican economic review$w(OCoLC)565226305
+ 777 0 _ $aAmerican Economic Association.$tPapers and proceedings of the annual meeting$x0065-812X$w(DLC)   01011768$w(OCoLC)1479792
+ 780 0 4 $tEconomic bulletin (Baltimore, Md.)$x1536-1489$w(DLC)   09025911$w(OCoLC)1567381
+ 780 0 4 $tAmerican Economic Association quarterly$x1532-5059$w(DLC)sn 91026538$w(OCoLC)6483348
+
+=== 772
+=== 765
+=== 767
+=== 773
+=== UNCb4827856 - 775 with $i and $s, no $a
+==== MARC
+ 130 0 _ $aIdentity theft and your social security number (Online)
+ 245 1 0 $aIdentity theft and your social security number$h[electronic resource].
+ 580 _ _ $aIssued also in Spanish.
+ 580 _ _ $aReports in several languages available via the SSA multilanguage gateway.
+ 775 0 8 $iSpanish version:$sIdentity theft and your social security number. Spanish (Online)$tRobo de identidad y su número de seguro social$w(DLC)  2005230022$w(OCoLC)57614487
+ 775 0 8 $iOther language versions:$tIdentity theft and your social security number (Online)$w(DLC)  2006230527$w(OCoLC)64391649$w(DLC)  2006230517$w(OCoLC)64201706$w(DLC)  2006230627$w(OCoLC)64560561$w(DLC)  2006230601$w(OCoLC)64402658$w(DLC)  2006230673$w(OCoLC)65181174$w(DLC)  2006230683$w(OCoLC)65189576$w(DLC)  2006230449$w(OCoLC)63761026
+
+=== 787
+
+=== UNCb6869637 - 740 and 786, somewhat duplicated data
+Because of system limitations for displaying MARC 76X-78X (Linking Entries), the data recorded in 'linking fields' is often duplicated in other fields.
+
+*Ideally we could figure out some way to minimize display of duplicated data.* One idea for this could be:
+
+- Once `related_title` has been completely populated, identify the entries where the `title` element is a duplicate (maybe stripping off terminal punctuation to do some vague normalization)
+- Keep entries with duplicate `title` if they have `label`, but the `label` values differ
+- Prefer entry with a `label` value if some entries with duplicate `title` lack a `label` value
+- If there are multiple entries with duplicate `label` + `title` (`title` with no `label`), prefer the one with more other info
+
+==== MARC
+ 245 0 4 $aThe international plant names index$h[electronic resource].
+ 500 _ _ $a"The records in IPNI come from three sources: the Index Kewensis (IK), the Gray Card Index (GCI) and the Australian Plant Names Index (APNI)." --"About the index" page (viewed Nov. 10, 2011).
+ 740 0 _ $aIndex Kewensis.
+ 740 0 _ $aGray card index.
+ 740 0 _ $aAustralian plant name index.
+ 786 0 _ $tAustralian plant name index.$d[Canberra, A.C.T.] : Australian National Botanic Gardens : Australian National Herbarium$w(DLC)  2009252503$w(OCoLC)64343431
+ 786 0 _ $tIndex Kewensis plantarum phanerogamarum. Supplementum$w(DLC)   89659069$w(OCoLC)2992677
+ 786 0 _ $tIndex Kewensis. Supplement$w(DLC)sn 88021550$w(OCoLC)16733857
+ 786 0 _ $tGray card index.$dCambridge, Mass. : Harvard University Herbraria, [c1992-]$w(OCoLC)43851144
+
+==== Argot (without deduplication)
+[source,javascript]
+----
+{
+ "related_title": [
+  {"title": "Index Kewensis."},
+  {"title": "Gray card index."},
+  {"title": "Australian plant name index."},
+ {
+  "label": "Data source:",
+  "title": "Australian plant name index.",
+  "details": "[Canberra, A.C.T.] : Australian National Botanic Gardens : Australian National Herbarium"
+ },
+ {
+  "label": "Data source:",
+  "title": "Index Kewensis plantarum phanerogamarum. Supplementum"
+ },
+  {
+  "label": "Data source:",
+  "title": "Index Kewensis. Supplement"
+ },
+ {
+  "label": "Data source:",
+  "title": "Gray card index.",
+  "details": "Cambridge, Mass. : Harvard University Herbraria, [c1992-]"
+ }
+ ]
+}
+----
+
+==== Argot (ideal, deduplicated)
+[source,javascript]
+----
+{
+ "related_title": [
+ {"title": "Index Kewensis."},
+ {
+  "label": "Data source:",
+  "title": "Australian plant name index.",
+  "details": "[Canberra, A.C.T.] : Australian National Botanic Gardens : Australian National Herbarium"
+ },
+ {
+  "label": "Data source:",
+  "title": "Index Kewensis plantarum phanerogamarum. Supplementum"
+ },
+  {
+  "label": "Data source:",
+  "title": "Index Kewensis. Supplement"
+ },
+ {
+  "label": "Data source:",
+  "title": "Gray card index.",
+  "details": "Cambridge, Mass. : Harvard University Herbraria, [c1992-]"
+ }
+ ]
+}
+----
+
+==== Behavior (based on deduplicated Argot)
+*Displayed:*
+
+RELATED ITEMS:
+
+- http://search.trln.org/search?Nty=1&Ntk=Title&Ntt=Index%20Kewensis.&N=0[Index Kewensis.]
+- Data source: http://search.trln.org/search?Nty=1&Ntk=Title&Ntt=Australian%20plant%20name%20index.&N=0[Australian plant name index.] [Canberra, A.C.T.] : Australian National Botanic Gardens : Australian National Herbarium
+- Data source: http://search.trln.org/search?Nty=1&Ntk=Title&Ntt=Index%20Kewensis%20plantarum%20phanerogamarum.%20Supplementum&N=0[Index Kewensis plantarum phanerogamarum. Supplementum]
+- Data source: http://search.trln.org/search?Nty=1&Ntk=Title&Ntt=Index%20Kewensis.%20Supplement&N=0[Index Kewensis. Supplement]
+- Data source: http://search.trln.org/search?Nty=1&Ntk=Title&Ntt=Gray%20card%20index.&N=0[Gray card index.] Cambridge, Mass. : Harvard University Herbraria, [c1992-]
+  
+
+*`title_related_idx` index entry:*
+
+- Australian plant name index.
+- Index Kewensis plantarum phanerogamarum. Supplementum
+- Index Kewensis. Supplement
+- Gray card index.
+- Index Kewensis.
+
+=== UNCb1011957 - 740 with nonfiling indicator
+==== MARC
+ 245 1 4 $aThe Evander gas-field,$cby P. J. Hugo. Met 'n opsomming in Afrikaans onder die opskrif: Die Gasveld Evander.
+ 740 4 _ $aDie Gasveld Evander.
+
+==== Argot
+[source,javascript]
+----
+{
+  "related_title": [
+  {"initart": "Die",
+   "title": "Gasveld Evander."
+  }
+ ]
+}
+----
+
+==== Behavior (based on deduplicated Argot)
+*Displayed:*
+
+RELATED ITEMS:
+
+- http://search.trln.org/search?Nty=1&Ntk=Title&Ntt=Gasveld%20Evander.&N=0[Die Gasveld Evander.]
+
+*`title_related_idx` index entry:*
+
+- Die Gasveld Evander.
+- Gasveld Evander.
+
+
+=== linking field not for display
+
+== Field-specific processing notes
+=== 770
+- Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/76X-78X_linking_entry_processing.adoc[76X-78X linking entry processing procedures].
+- If no $i, `label`  =  `Is supplemented by:`
+
+=== 786
+- Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/76X-78X_linking_entry_processing.adoc[76X-78X linking entry processing procedures].
+- If no $i, `label`  =  `Data source:`
+
