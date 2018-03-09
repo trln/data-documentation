@@ -72,9 +72,9 @@ The authorized access point is the mechanism by which the following are accompli
 * recording a relationship to a related work or a related expression
 
 [NOTE]
-----
+====
 `work_citation` won't ever include `label`, `details`, `isbn`, or `issn` subelements, but the treatement of the remaining elements in `work_citation` is identical to how they are treated in the other fields in this pattern. 
-----
+====
 
 [NOTE]
 ====
@@ -177,18 +177,18 @@ Data sources:
 
 
 [NOTE]
-----
+====
 Some subject fields follow this same pattern, so we _could_ implement a `subject_work` field that'd be modeled the same way as the other fields covered here. It would be defined as:
 
 "Authorized access point" (or approximation thereof) for *work that is a subject of the resource cataloged here*
 
 Data sources:
 
-- 600, 610, 611 with $t or $k
-- 630
+* 600, 610, 611 with $t or $k
+* 630
 
 We are currently treating these the same as any other subject headings, which is fine for now. 
-----
+====
 
 == Examples
 === this work + included work + series
@@ -295,6 +295,7 @@ Other items in series: http://www.search.com/author_search_for/Liszt,_Franz,_181
 
 === Earlier/Later titles - display info from notes, index info from linking entries
 ==== MARC
+
 [source]
 ----
 210 0 _ $aActa bot. neerl.
@@ -311,6 +312,7 @@ Other items in series: http://www.search.com/author_search_for/Liszt,_Franz,_181
 ----
 
 ==== Argot (partial)
+
 [source:javascript]
 ----
 {
@@ -385,13 +387,18 @@ Has supplement: http://www.search.com/work_citation_begins_with/Wentia[Wentia]
 
 === UNCb7641376 - related work 700 with $i
 ==== MARC
+
+[source]
+----
 100 1 _ $aSabuda, Robert,$eauthor.
 245 1 4 $aThe little mermaid :$ba pop-up adaptation of the classic fairy tale /$cRobert Sabuda.
 250 _ _ $aFirst edition.
 264 _ 1 $aNew York :$bLittle Simon, an imprint of Simon & Schuster Children's Publishing Division,$c[2013]
 700 1 _ $iBased on:$aAndersen, H. C.$q(Hans Christian),$d1805-1875.$tLille havfrue.$lEnglish.
+----
 
 ==== Argot
+
 [source,javascript]
 ----
 {
@@ -427,6 +434,8 @@ Author: http://www.search.com/author_search_for/Sabuda,_Robert[Sabuda, Robert,] 
 
 *Related items* +
 Based on: http://www.search.com/author_search_for/Andersen_string[Andersen, H. C. (Hans Christian), 1805-1875.] http://www.search.com/work_citation_begins_with_Andersen_string_Lille_havfrue/[Lille havfrue.] http://www.search.com/work_citation_begins_with_Andersen_string_Lille_havfrue_English[English.]
+
+==== Indexing
 
 * *authors_main* (Author, Keyword)
 ** Sabuda, Robert, author.
