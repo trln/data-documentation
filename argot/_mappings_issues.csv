@@ -16,3 +16,4 @@ note_summaryGEN520abc3x,520,3,"As of 2018-03-05, there is no special handling of
 note_summaryGEN520abc3x,520,c,"Ideally wouldn't be indexed, but complicating this is not a priority",,,,,,,,,,,,
 note_tocGEN505agrtx,505,.,"As of 2018-03-05, no label is set from ind1 value",,,,,,,,,,,,
 note_access_restriction[label],506,3,"This doesn't actually need to be a separate element, since the field isn't indexed",,,,,,,,,,,,
+editionGEN250ab3none,250,3,make sure this is getting handled,,,,,,,,,,,,
