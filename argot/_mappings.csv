@@ -26,7 +26,6 @@ director,MARC,n,GEN,710,abcd(g)(n)u,$e = ('director' OR 'film director') OR $4 =
 edition,MARC,n,GEN,250,ab3,none,concat_subelements,$3 label,.,editionGEN250ab3none,1,0,y,,
 editor,MARC,n,GEN,100,abcd(g)jqu,$e = ('editor' OR 'editor of compilation') OR $4 = ('edt' OR 'edc'),concat_subelements,"$g and/or $n included if there is NO $t or $k, or if it occurs BEFORE any $t/$k present","Main author/creatorship is assumed when name is recorded in 1xx, and may not always be represented by explicit relator term/code. Editor is a ""contributor"" role, not a ""creator role"". There is no good way to tell if ""1xx Doe, John$eeditor"") really means ""author and editor,"" or if the name *should* have been recorded in 7xx field because the person only was in a contributor role. We err on the side of treating it as if the name has two roles. ",editorGEN100abcd(g)jqu$e = ('editor' OR 'editor of compilation') OR $4 = ('edt' OR 'edc'),0,2,y,.,.
 editor,MARC,n,GEN,700,abcd(g)jqu,$e = ('editor' OR 'editor of compilation') OR $4 = ('edt' OR 'edc'),concat_subelements,"$g and/or $n included if there is NO $t or $k, or if it occurs BEFORE any $t/$k present",x,editorGEN700abcd(g)jqu$e = ('editor' OR 'editor of compilation') OR $4 = ('edt' OR 'edc'),0,2,y,.,.
-title_former_note,MARC,n,GEN,547,a,none,subelement_to_value,x,x,title_former_noteGEN547anone,0,0,y,,
 frequency[current],MARC,n,GEN,310,ab,none,concat_subelements,x,x,frequency[current]GEN310abnone,0,1,y,y,n
 frequency[former],MARC,n,GEN,321,ab,none,concat_subelements,x,x,frequency[former]GEN321abnone,0,1,y,y,n
 genre_headings,MARC,n,GEN,567,b,$2 is present,subelement_to_value,x,x,genre_headingsGEN567b$2 is present,0,0,y,n,n
@@ -59,6 +58,11 @@ imprint_multiple[value],MARC,n,GEN,264,abc,.,concat_subelements,Field should not
 isbn[number],MARC,n,GEN,020,az,.,subelement_to_value,clean any qualifying info and punctuation from the end,,isbn[number]GEN20az.,0,0,y,,
 isbn[qualifying_info],MARC,n,GEN,020,az,if there is data in parentheses,see notes,extract the data from inside the parentheses as the qualifying info,x,isbn[qualifying_info]GEN20azif there is data in parentheses,0,1,y,,
 isbn[qualifying_info],MARC,n,GEN,020,q,.,concat_subelements,remove parentheses from around data,x,isbn[qualifying_info]GEN20q.,0,1,y,,
+issn[value],MARC,n,GEN,022,a,.,subelement_to_value,"issn[type] = ""ISSN""",x,issn[value]GEN22a.,0,0,y,y,y
+issn[value],MARC,n,GEN,022,l,.,subelement_to_value,"issn[type] = ""ISSN-L""",x,issn[value]GEN22l.,0,0,y,y,y
+issn[value],MARC,n,GEN,022,m,.,subelement_to_value,"issn[type] = ""ISSN-L (canceled)""",x,issn[value]GEN22m.,0,0,y,y,y
+issn[value],MARC,n,GEN,022,y,.,subelement_to_value,"issn[type] = ""ISSN (incorrect)""",x,issn[value]GEN22y.,0,0,y,y,y
+issn[value],MARC,n,GEN,022,z,.,subelement_to_value,"issn[type] = ""ISSN (canceled)""",x,issn[value]GEN22z.,0,0,y,y,y
 items[call_no],MARCish,n,UNC,999,q,i1=9 AND i2=1,concat_subelements,See https://github.com/trln/data-documentation/blob/master/argot/examples/items.md#item_call_number-unc,.,items[call_no]UNC999qi1=9 AND i2=1,0,0,y,y,y
 items[copy_no],MARCish,n,UNC,999,c,i1=9 AND i2=1 AND value != '1',subelement_to_value,.,.,items[copy_no]UNC999ci1=9 AND i2=1 AND value != '1',0,1,y,y,y
 items[due_date],MARCish,n,UNC,999,d,i1=9 AND i2=1,subelement_to_value,.,Will be blank if item is NOT checked out,items[due_date]UNC999di1=9 AND i2=1,0,1,y,y,y
@@ -73,20 +77,14 @@ items[status],MARCish,n,UNC,999,d,i1=9 AND i2=1 and $d IS NOT blank,constant,"va
 items[status],MARCish,n,UNC,999,a,i1=9 AND i2=4 AND NOT EXIST (tag=999 AND i1=9 and i2=1),constant,"value = ""On Order""",Order record data (999 94) should only be output if there is no item or holdings data output,items[status]UNC999ai1=9 AND i2=4 AND NOT EXIST (tag=999 AND i1=9 and i2=1),0,0,y,.,.
 items[vol],MARCish,n,UNC,999,v,i1=9 AND i2=1,subelement_to_value,.,.,items[vol]UNC999vi1=9 AND i2=1,0,1,y,y,y
 location_hierarchy,MARC-to-Argot,n,UNC,"loc_b (items, holdings)",.,.,map subelement to value,Each loc_b value is mapped to a location hierarchy. Details forthcoming.,,"location_hierarchyUNCloc_b (items, holdings)..",1,0,y,y,y
-misc_id[value],MARC,n,GEN,015,a,.,subelement_to_value,"if subfield includes parentheses, split into 'id' and 'qual';;;if subfield contains no parentheses, 'id' = whole subfield value",x,misc_id[value]GEN15a.,0,0,y,y,y
 misc_id[qual],MARC,n,GEN,015,q,.,subelement_to_value,qual = subfield value with parentheses removed,x,misc_id[qual]GEN15q.,0,0,y,y,y
 misc_id[type],MARC,n,GEN,015,2,.,map subelement to value,"type = ""National Bibliography Number"" if there is no $2; otherwise, map $2 using https://github.com/trln/marc-to-argot/blob/master/lib/translation_maps/shared/national_bibliography_codes.yaml",Mapping is from: https://www.loc.gov/standards/sourcelist/national-bibliography.html,misc_id[type]GEN152.,0,0,y,y,y
+misc_id[value],MARC,n,GEN,015,a,.,subelement_to_value,"if subfield includes parentheses, split into 'id' and 'qual';;;if subfield contains no parentheses, 'id' = whole subfield value",x,misc_id[value]GEN15a.,0,0,y,y,y
 misc_id[value],MARC,n,GEN,010,a,.,subelement_to_value,"misc_id[qual]   = """";;;misc_id[type] = ""LCCN"";;;Do NOT trim leading/trailing spaces",x,misc_id[value]GEN10a.,0,0,y,y,y
 misc_id[value],MARC,n,GEN,010,b,.,subelement_to_value,"misc_id[qual]  = """";;;misc_id[type] = ""NUCMC"";;;Do NOT trim leading/trailing spaces",x,misc_id[value]GEN10b.,0,0,y,y,y
-issn[value],MARC,n,GEN,022,a,.,subelement_to_value,"issn[type] = ""ISSN""",x,issn[value]GEN22a.,0,0,y,y,y
-issn[value],MARC,n,GEN,022,l,.,subelement_to_value,"issn[type] = ""ISSN-L""",x,issn[value]GEN22l.,0,0,y,y,y
-issn[value],MARC,n,GEN,022,m,.,subelement_to_value,"issn[type] = ""ISSN-L (canceled)""",x,issn[value]GEN22m.,0,0,y,y,y
-issn[value],MARC,n,GEN,022,y,.,subelement_to_value,"issn[type] = ""ISSN (incorrect)""",x,issn[value]GEN22y.,0,0,y,y,y
-issn[value],MARC,n,GEN,022,z,.,subelement_to_value,"issn[type] = ""ISSN (canceled)""",x,issn[value]GEN22z.,0,0,y,y,y
-note_acquisition_source,MARC,y,UNC,541,abcdefhno3,i1!=0,concat_subelements,DO NOT use $3 to create label,x,note_acquisition_sourceUNC541abcdefhno3i1!=0,0,0,y,,
-note_index,MARC,y,UNC,541,a,i1!=0,subelement_to_value,x,x,note_indexUNC541ai1!=0,0,0,y,,
 note_access_restriction[label],MARC,n,GEN,506,3,.,subelement_to_value,.,.,note_access_restriction[label]GEN5063.,0,0,y,n,n
 note_access_restriction[value],MARC,n,GEN,506,abcdefu,.,concat_subelements,.,.,note_access_restriction[value]GEN506abcdefu.,0,0,y,n,n
+note_acquisition_source,MARC,y,UNC,541,abcdefhno3,i1!=0,concat_subelements,DO NOT use $3 to create label,x,note_acquisition_sourceUNC541abcdefhno3i1!=0,0,0,y,,
 note_admin_history,MARC,n,GEN,545,abu,i1=1,concat_subelements,x,x,note_admin_historyGEN545abui1=1,0,0,y,,
 note_biographical,MARC,n,GEN,545,abu,i1=~/[ 0],concat_subelements,x,x,note_biographicalGEN545abui1=~/[ 0],0,0,y,,
 note_display[label],MARC,n,GEN,500,3,.,subelement_to_value,.,.,note_display[label]GEN5003.,0,0,y,n,n
@@ -99,6 +97,7 @@ note_display[value],MARC,n,UNC,590,a,.,concat_subelements,.,.,note_display[value
 note_display[value],MARC,n,GEN,502,abcdgo,.,concat_subelements,Complex instructions. Refer to linked documentation for thie field,.,note_display[value]GEN502abcdgo.,0,0,y,n,n
 note_display[value],MARC,n,GEN,504,ab,.,concat_subelements,"Prefix $b value with: ""Number of references: """,.,note_display[value]GEN504ab.,0,0,y,n,n
 note_display[value],MARC,n,GEN,507,ab,.,concat_subelements,.,.,note_display[value]GEN507ab.,0,0,y,n,n
+note_index,MARC,y,UNC,541,a,i1!=0,subelement_to_value,x,x,note_indexUNC541ai1!=0,0,0,y,,
 note_index,MARC,n,GEN,500,a,.,subelement_to_value,.,.,note_indexGEN500a.,0,0,y,n,n
 note_index,MARC,n,GEN,541,a,.,subelement_to_value,.,.,note_indexGEN541a.,0,0,y,n,n
 note_index,MARC,n,GEN,561,a,ind1 != 0,subelement_to_value,.,.,note_indexGEN561aind1 != 0,0,0,y,n,n
@@ -106,6 +105,7 @@ note_index,MARC,n,GEN,501,a,.,concat_subelements,.,.,note_indexGEN501a.,0,0,y,n,
 note_index,MARC,n,UNC,590,a,"value is NOT: ""Vendor-supplied catalog record.""",concat_subelements,.,.,"note_indexUNC590avalue is NOT: ""Vendor-supplied catalog record.""",0,0,y,n,n
 note_index,MARC,n,GEN,502,abcdgo,.,concat_subelements,Complex instructions. Refer to linked documentation for thie field,.,note_indexGEN502abcdgo.,0,0,y,n,n
 note_index,MARC,n,GEN,507,ab,.,concat_subelements,.,.,note_indexGEN507ab.,0,0,y,n,n
+note_index,MARC,n,GEN,544,d,none,subelement_to_value,x,x,note_indexGEN544dnone,0,0,y,n,n
 note_issuance,MARC,n,GEN,550,a,none,subelement_to_value,x,x,note_issuanceGEN550anone,0,0,y,,
 note_summary,MARC,n,GEN,520,abc3,none,concat_subelements,x,https://trlnmain.atlassian.net/wiki/spaces/TD/pages/96665601/Argon+Fields+and+their+display,note_summaryGEN520abc3none,0,1,y,y,.
 note_system_details,MARC,n,GEN,538,aiu3,none,concat_subelements,Create label from $3 + $i if either or both are present,x,note_system_detailsGEN538aiu3none,0,0,y,,
@@ -141,7 +141,6 @@ related_work[title],MARC,y,GEN,786,s,i1 != 1 AND NOT $a AND $s,subelement_to_val
 related_work[title],MARC,y,GEN,786,t,i1 != 1 AND NOT $a AND NOT $s AND $t,subelement_to_value,see documentation ,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/related_x.adoc,related_work[title]GEN786ti1 != 1 AND NOT $a AND NOT $s AND $t,0,0,n,n,n
 related_work_note,MARC,n,GEN,580,a,.,concat_subelements,x,x,related_work_noteGEN580a.,0,0,y,n,n
 related_work_note,MARC,n,GEN,544,abcden3,none,concat_subelements,"$3 label + ""Related archival materials: """,x,related_work_noteGEN544abcden3none,0,0,y,n,n
-note_index,MARC,n,GEN,544,d,none,subelement_to_value,x,x,note_indexGEN544dnone,0,0,y,n,n
 rollup_id,MARC-to-Argot,n,UNC,001,.,Is OCLC number or SerialsSolutions number,map subelement to value,"Take value from oclc_number or sersol_number fields;;;Prefix with OCLC or SS, respectively",x,rollup_idUNC1.Is OCLC number or SerialsSolutions number,0,2,y,y,y
 rollup_id,MARC-to-Argot,n,UNC,019,.,"If oclc_number is not set, and 019 has at least 1 $a",map subelement to value,Prefix with OCLC,x,"rollup_idUNC19.If oclc_number is not set, and 019 has at least 1 $a",0,2,y,y,y
 special_binding_description,MARC,n,GEN,563,a3,?,?,?,?,special_binding_descriptionGEN563a3?,0,0,y,,
@@ -207,12 +206,15 @@ subject_topic_lcsh,MARC,y,GEN,656,a,i2=7 AND $2=lcsh,subelement_to_value,.,"UNC 
 subject_topic_lcsh,MARC,y,GEN,656,x,i2=7 AND $2=lcsh,subelement_to_value,.,"UNC doesn't have any occurrences of these subfields (regardless of term source). Check w/other institutions re: current needs here. Can/should be mapped eventually, depending on how use of field evolves",subject_topic_lcshGEN656xi2=7 AND $2=lcsh,0,2,y,y,.
 subject_topic_lcsh,MARC,y,GEN,657,a,i2=7 AND $2=lcsh,subelement_to_value,.,"UNC doesn't have any occurrences of this field (regardless of term source). Check w/other institutions re: needs here. May need to handle at some point in the future, depending on how field use evolves in practice. ",subject_topic_lcshGEN657ai2=7 AND $2=lcsh,0,2,y,y,.
 subject_topic_lcsh,MARC,y,GEN,657,x,i2=7 AND $2=lcsh,subelement_to_value,.,"UNC doesn't have any occurrences of this field (regardless of term source). Check w/other institutions re: needs here. May need to handle at some point in the future, depending on how field use evolves in practice. ",subject_topic_lcshGEN657xi2=7 AND $2=lcsh,0,2,y,y,.
+title_former_note,MARC,n,GEN,547,a,none,subelement_to_value,x,x,title_former_noteGEN547anone,0,0,y,,
+title_former_work,MARC,n,GEN,780,,,,,,title_former_workGEN780,0,0,y,n,n
 title_history_index_only[isbn],MARC,n,GEN,780,z,ind1=1,subelement_to_value,,,title_history_index_only[isbn]GEN780zind1=1,0,0,y,,
 title_history_index_only[isbn],MARC,n,GEN,785,z,ind1=1,subelement_to_value,,,title_history_index_only[isbn]GEN785zind1=1,0,0,y,,
 title_history_index_only[issn],MARC,n,GEN,780,x,ind1=1,subelement_to_value,,,title_history_index_only[issn]GEN780xind1=1,0,0,y,,
 title_history_index_only[issn],MARC,n,GEN,785,x,ind1=1,subelement_to_value,,,title_history_index_only[issn]GEN785xind1=1,0,0,y,,
 title_history_index_only[title],MARC,n,GEN,780,st,ind1=1,subelement_to_value,,,title_history_index_only[title]GEN780stind1=1,0,0,y,,
 title_history_index_only[title],MARC,n,GEN,785,st,ind1=1,subelement_to_value,,,title_history_index_only[title]GEN785stind1=1,0,0,y,,
+title_later_work,MARC,n,GEN,785,,,,,,title_later_workGEN785,0,0,y,n,n
 title_main[sort],MARC,n,GEN,245,abfghknps,i2!=0,concat_subelements,Remove number of characters specified by i2 from beginning of title string,x,title_main[sort]GEN245abfghknpsi2!=0,0,0,y,,
 title_main[value],MARC,n,GEN,245,abfghknps,none,concat_subelements,x,x,title_main[value]GEN245abfghknpsnone,0,0,y,,
 title_variant_display,MARC,n,GEN,246,abfghinp,i1=~/[01],concat_subelements,create label from $i or i2 if not blank,x,title_variant_displayGEN246abfghinpi1=~/[01],0,0,y,,
@@ -222,5 +224,5 @@ upc[qualifying_info],MARC,n,GEN,024,q,i1=1,concat_subelements,remove parentheses
 upc[qualifying_info],MARC,n,GEN,024,a,i1=1 and $a data includes parenthetical qualifying info,subelement_to_value,"strip out the actual UPC, remove parentheses from around data",.,upc[qualifying_info]GEN24ai1=1 and $a data includes parenthetical qualifying info,0,0,y,,
 upc[value],MARC,n,GEN,024,a,i1=1,subelement_to_value,remove parenthetical qualifier if it's included in $a,.,upc[value]GEN24ai1=1,0,0,y,,
 virtual_collection,MARCish,n,UNC,919,t,.,subelement_to_value,x,x,virtual_collectionUNC919t.,0,0,y,n,n
-title_former_work,MARC,n,GEN,780,,,,,,title_former_workGEN780,0,0,y,n,n
-title_later_work,MARC,n,GEN,785,,,,,,title_later_workGEN785,0,0,y,n,n
+series_transcribed,MARC,n,GEN,490,alvx3,none,concat_subelements,"Prepend ""ISSN: "" to any $x value.;;;Create label from $3 if present",x,series_transcribedGEN490alvx3none,0,0,y,n,n
+series_transcribed_issn,MARC,n,GEN,490,x,none,subelement_to_value,x,x,series_transcribed_issnGEN490xnone,0,0,y,n,n
