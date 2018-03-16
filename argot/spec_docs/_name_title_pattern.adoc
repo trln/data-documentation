@@ -382,9 +382,11 @@ Other items in series: http://www.search.com/author_search_for/Liszt,_Franz,_181
 *Acta botanica Neerlandica [serial] : official publication of the Nederlandse Botanische Vereniging.* +
 Amsterdam : North-Holland Pub. Co., 1952-c1998.
 
-*Related items* +
+*Title history and variations:* +
 Merger of: Nederlandsch kruidkundig archief, and: Recueil des travaux botaniques néerlandais. +
-Merged with: Botanica acta, to form: Plant biology (Stuttgart, Germany). +
+Merged with: Botanica acta, to form: Plant biology (Stuttgart, Germany).
+
+*Related items* +
 Has supplement: http://www.search.com/work_citation_begins_with/Wentia[Wentia]
 
 ==== Indexed
@@ -627,7 +629,7 @@ Lansing [etc.] : W. S. George [etc.], 1836-1874.
 *Authors, etc.* +
 http://www.search.info/author_search_on[Michigan]
 
-*Also known as (title variations):* +
+*Title history and variations:* +
 Portion of title: General acts and joint and concurrent resolutions of the Legislature of the state of Michigan +
 Spine title: Laws of Michigan +
 Continues: http://www.search.info/author_search_on[Michigan.] http://www.search.info/works_search_on[Laws, etc. (Session laws : 1824-1835)] Acts passed at the special session of the Legislative Council of the territory of Michigan + 
