@@ -109,7 +109,22 @@ Data sources:
 
 * 130 if present, otherwise...
 * 100/110/111 if present + 240 if present, otherwise...
-* 100/110/111 if present + 243 if present
+* 100/110/111 if present + 243 if present, otherwise
+
+=== work_citation_uncontrolled
+Basically the same as `work_citation`, but set when a preferred form of title is not recorded in 130, 240, or 243 field.
+
+Index only.
+
+This should not display (as `work_citation` does) in related works section ("More like this:"). Since a preferred title has not been established for useful collocation in the catalog, it is unlikely to provide a useful collocation.
+
+Since this field is derived from the same data source as `authors_main` and `title_main`, it does not need to be displayed at all.
+
+It is needed to make the name/title-based navigation in the catalog work properly.  *Other* records may record this item as a related or included work, and this is the form they should use to do that, according to the cataloging standards.
+
+Data sources:
+
+* 100/110/111 if present + 245anp (need to verify the subfields included)
 
 
 === included_work
@@ -328,9 +343,9 @@ Other items in series: http://www.search.com/author_search_for/Liszt,_Franz,_181
     "Acta bot. neerl.",
     "Acta botanica neerlandica"
   ],
-  "work_citation":{
-    "title":"Acta botanica Neerlandica"
-  },
+  "work_citation_uncontrolled":[
+    "Acta botanica Neerlandica"
+  ],
   "title_main":{
     "value":"Acta botanica Neerlandica [serial] : official publication of the Nederlandse Botanische Vereniging."
   },
@@ -368,14 +383,13 @@ Other items in series: http://www.search.com/author_search_for/Liszt,_Franz,_181
 Amsterdam : North-Holland Pub. Co., 1952-c1998.
 
 *Related items* +
-More like this: http://www.search.com/work_citation_begins_with/Acta_botanica_Neerlandica[Acta botanica Neerlandica] +
 Merger of: Nederlandsch kruidkundig archief, and: Recueil des travaux botaniques néerlandais. +
 Merged with: Botanica acta, to form: Plant biology (Stuttgart, Germany). +
 Has supplement: http://www.search.com/work_citation_begins_with/Wentia[Wentia]
 
 ==== Indexed
 
-* *work_citation* (Work Citation for intercatalog linking)
+* *work_citation_uncontrolled* (Work Citation for intercatalog linking)
 ** Acta botanica Neerlandica
 * *title_main* (Title, Keyword)
 ** Acta botanica Neerlandica [serial] : official publication of the Nederlandse Botanische Vereniging.
@@ -410,10 +424,9 @@ Has supplement: http://www.search.com/work_citation_begins_with/Wentia[Wentia]
 [source,javascript]
 ----
 {
-  "work_citation":{
-    "author":"Sabuda, Robert",
-    "title":"Little mermaid"
-  },
+  "work_citation_uncontrolled":[
+    "Sabuda, Robert. Little mermaid"
+  ],
   "title_main":{
     "value":"The little mermaid : a pop-up adaptation of the classic fairy tale",
     "sort":"little mermaid : a pop-up adaptation of the classic fairy tale"
@@ -451,7 +464,7 @@ Based on: http://www.search.com/author_search_for/Andersen_string[Andersen, H. C
 ** Andersen, H. C. (Hans Christian), 1805-1875.
 * *statement_of_responsibility* (Author, Keyword)
 ** Robert Sabuda.
-* *work_citation* (Work Citation for intercatalog linking)
+* *work_citation_uncontrolled* (Work Citation for intercatalog linking)
 ** Sabuda, Robert. Little mermaid
 * *work_citation_related*
 ** Andersen, H. C. (Hans Christian), 1805-1875. Lille havfrue. English.
