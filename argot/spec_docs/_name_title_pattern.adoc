@@ -175,7 +175,7 @@ Data sources:
 * 786 with ind1=0 and $t or $s (may or may not include author elements)
 ** Label specifying type of relationship from $i if present
 
-==== earlier_work
+==== title_former_work
 "Authorized access point" (or approximation thereof) for *work that is separately cataloged, of which the resource cataloged here is a continuation*
 
 Data sources:
@@ -183,7 +183,7 @@ Data sources:
 * 780 with ind1=0 and $t or $s (may or may not include author elements)
 ** Label specifying type of relationship from $i if present
 
-==== later_work
+==== title_later_work
 "Authorized access point" (or approximation thereof) for *work that is separately cataloged, which continues the resource cataloged here*
 
 Data sources:
@@ -398,7 +398,7 @@ Has supplement: http://www.search.com/work_citation_begins_with/Wentia[Wentia]
 ** Acta botanica neerlandica
 * *title_related*
 ** Wentia
-* *title_history* (Title, Keyword)
+* *title_history_index_only* (Title, Keyword)
 ** Nederlandsch kruidkundig archief
 ** Recueil des travaux botaniques néerlandais
 ** Botanica acta
@@ -474,3 +474,196 @@ Based on: http://www.search.com/author_search_for/Andersen_string[Andersen, H. C
 * *title_related* (Title, Keyword)
 ** Lille havfrue. English
 
+=== UNCb8993417 - related titles in 700, with $3 and $i
+==== MARC
+_Some fields that would be mapped to `related_name_title` are omitted from example._
+
+[source]
+----
+245 0 0 $aIf this world could stop.
+264 _ 1 $a[New Haven, CT] :$bBad Wolf Music Group,$c[2014]
+700 1 _ $32nd work$iMusical setting of (work):$aJoyce, James,$d1882-1941.$tUlysses.
+700 1 _ $33rd work$iMusical setting of (work):$aWhiteley, Opal Stanley.$tClan of the lichens.
+700 1 _ $35th work$iMusical setting of (work):$aDove, Rita.$tIf this world could stop.
+----
+
+==== Argot
+[source,javascript]
+----
+{
+  "work_citation_uncontrolled":[
+    "If this world could stop."
+  ],
+  "title_main":{
+    "value":"If this world could stop."
+  },
+  "related_work":[
+    {
+      "label":"2nd work: Musical setting of:",
+      "author":"Joyce, James, 1882-1941",
+      "title":"Ulysses."
+    },
+    {
+      "label":"3rd work: Musical setting of:",
+      "author":"Whiteley, Opal Stanley.",
+      "title":"Clan of the lichens."
+    },
+    {
+      "label":"5th work: Musical setting of:",
+      "author":"Dove, Rita.",
+      "title":"If this world could stop."
+    }
+  ]
+}
+----
+
+==== Display 
+*If this world could stop.* +
+[New Haven, CT] :$bBad Wolf Music Group,$c[2014] +
+
+RELATED ITEMS:
+
+- 2nd work: Musical setting of: http://search.trln.org/search?Nty=1&Ntk=Author&Ntt=Joyce%2C%20James%2C%201882-1941.&N=0[Joyce, James, 1882-1941.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Ulysses.|Joyce%2C%20James%2C%201882-1941.&N=0[Ulysses.]
+- 3rd work: Musical setting of: http://search.trln.org/search?Nty=1&Ntk=Author&Ntt=Whiteley%2C%20Opal%20Stanley.&N=0[Whiteley, Opal Stanley.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Clan%20of%20the%20lichens.|Whiteley%2C%20Opal%20Stanley.&N=0[Clan of the lichens.]
+- 5th work: Musical setting of: http://search.trln.org/search?Nty=1&Ntk=Author&Ntt=Dove%2C%20Rita.%20&N=0[Dove, Rita.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=If%20this%20world%20could%20stop.|Dove%2C%20Rita.%20&N=0[If this world could stop.]
+  
+==== Indexed
+
+* *work_citation_uncontrolled* (Work Citation for intercatalog linking)
+** If this world could stop.
+* *title_main*
+** If this world could stop.
+* *work_citation_related*  (Work Citation for intercatalog linking)
+** Joyce, James, 1882-1941. Ulysses.
+** Whiteley, Opal Stanley. Clan of the lichens.
+** Dove, Rita. If this world could stop.
+* *author_related*
+** Joyce, James, 1882-1941.
+** Whiteley, Opal Stanley.
+** Dove, Rita.
+* *title_related*
+** Ulysses.
+** Clan of the lichens.
+** If this world could stop.
+
+=== UNCb1011957 - related title in 740 with nonfiling indicator
+==== MARC
+
+[source]
+----
+100 1 _ $aHugo, P. J.
+245 1 4 $aThe Evander gas-field,$cby P. J. Hugo. Met 'n opsomming in Afrikaans onder die opskrif: Die Gasveld Evander.
+260 _ _ $aPretoria,$bGovt. Printer,$c1964.
+740 4 _ $aDie Gasveld Evander.
+----
+
+==== Argot
+[source,javascript]
+----
+{
+  "work_citation_uncontrolled": [
+   "Hugo, P. J. Evander gas-field"
+   ],
+   "title_main": {
+   "value": "The Evander gas-field,",
+   "sort": "Evander gas-field,"
+   },
+   "statement_of_responsibility": {
+   "value": "by P. J. Hugo. Met 'n opsomming in Afrikaans onder die opskrif: Die Gasveld Evander."
+   }
+  "related_work": [
+  {
+   "title": "Die Gasveld Evander.",
+   "title_filing": "Gasveld Evander."   
+  }
+ ]
+}
+----
+
+==== Display (partial)
+*The Evander gas-field* +
+by P. J. Hugo. Met 'n opsomming in Afrikaans onder die opskrif: Die Gasveld Evander.* +
+Pretoria, Govt. Printer, 1964.
+
+RELATED ITEMS:
+
+- http://search.trln.org/search?Nty=1&Ntk=Title&Ntt=Gasveld%20Evander.&N=0[Gasveld Evander.]
+
+==== Indexed
+
+* *work_citation_uncontrolled* (Work Citation for intercatalog linking)
+** Hugo, P. J. Evander gas-field
+* *title_main*
+** The Evander gas-field,
+** Evander gas-field,
+* *work_citation_related*  (Work Citation for intercatalog linking)
+** Gasveld Evander.
+* *title_related*
+** Gasveld Evander.
+** Die Gasveld Evander.
+
+=== UNCb - former/later titles (with uniform title and transcribed title) from linking fields to display
+
+==== MARC
+
+[source]
+----
+110 1 _ $aMichigan.
+240 1 0 $aLaws, etc. (Session laws : 1835-1874)
+245 1 0 $aActs of the Legislature of the State of Michigan$h[serial].
+246 1 0 $aGeneral acts and joint and concurrent resolutions of the Legislature of the state of Michigan
+246 0 8 $aLaws of Michigan
+260 _ _ $aLansing [etc.] :$bW. S. George [etc.], 1836-1874.
+780 0 0 $aMichigan.$sLaws, etc. (Session laws : 1824-1835)$tActs passed at the special session of the Legislative Council of the territory of Michigan
+785 0 6 $aMichigan.$sLaws, etc. (Session laws : 1875-1931 : Public)$tPublic acts and joint and concurrent resolutions of the Legislature of the state of Michigan$w(OCoLC)5031140
+785 0 6 $aMichigan.$sLaws, etc. (Session laws : 1875-1931 : Local)$tLocal acts of the Legislature of the state of Michigan passed at the regular session$w(OCoLC)5421450
+----
+
+==== Display (partial)
+*Acts of the Legislature of the State of Michigan [serial].* +
+Lansing [etc.] : W. S. George [etc.], 1836-1874.
+
+
+*Authors, etc.* +
+http://www.search.info/author_search_on[Michigan]
+
+*Also known as (title variations):* +
+Portion of title: General acts and joint and concurrent resolutions of the Legislature of the state of Michigan +
+Spine title: Laws of Michigan +
+Continues: http://www.search.info/author_search_on[Michigan.] http://www.search.info/works_search_on[Laws, etc. (Session laws : 1824-1835)] Acts passed at the special session of the Legislative Council of the territory of Michigan + 
+Split into: http://www.search.info/author_search_on[Michigan.] http://www.search.info/works_search_on[Laws, etc. (Session laws : 1875-1931 : Public)] Public acts and joint and concurrent resolutions of the Legislature of the state of Michigan
+Split into: http://www.search.info/author_search_on[Michigan.] http://www.search.info/works_search_on[Laws, etc. (Session laws : 1875-1931 : Local)] Local acts of the Legislature of the state of Michigan passed at the regular session
+
+
+*Related items* +
+More like this: http://www.search.info/author_search_on[Michigan]. http://www.search.info/works_search_on[Laws, etc. (Session laws : 1835-1874)]
+
+
+==== Indexed
+* *author_facet*
+** Michigan
+* *author_main*
+** Michigan
+* *work_citation*
+** Michigan. Laws, etc. (Session laws : 1835-1874)
+* *work_citation_uncontrolled*
+** Michigan. Acts of the Legislature of the State of Michigan
+* *title_main*
+** Acts of the Legislature of the State of Michigan [serial].
+* *title_variant*
+** Laws, etc. (Session laws : 1835-1874)
+** General acts and joint and concurrent resolutions of the Legislature of the state of Michigan +
+** Laws of Michigan +
+* *title_history_index_only*
+** Laws, etc. (Session laws : 1824-1835)
+** Acts passed at the special session of the Legislative Council of the territory of Michigan
+** Laws, etc. (Session laws : 1875-1931 : Public)
+** Public acts and joint and concurrent resolutions of the Legislature of the state of Michigan
+** Laws, etc. (Session laws : 1875-1931 : Local)
+** Local acts of the Legislature of the state of Michigan passed at the regular session
+* *title_history_work*
+** Michigan. Laws, etc. (Session laws : 1824-1835)
+** Michigan. Laws, etc. (Session laws : 1875-1931 : Public)
+** Michigan. Laws, etc. (Session laws : 1875-1931 : Local)
+* *title_history_author*
+** Michigan
