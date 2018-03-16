@@ -25,6 +25,7 @@ toc::[]
 ** indexed as `title_related`, `title_included`, `title_series`, or `title_variant_indexed` as appropriate
 ** if present, combined with `author` segment to create indexed `work_citation*` value for in-catalog hyperlink querying and possible use in autosuggest
 ** subelements of the title portion are separated with `||` to allow for adaptive hyperlinking. This delimiter is stripped out of the display.
+* `title_variation` : used to index under non-uniform title when uniform title and title proper are recorded in linking fields
 * `details`: other bib data about related work
 ** displayed after the author/title hyperlink, but not included in hyperlink
 ** not indexed
@@ -619,6 +620,22 @@ Pretoria, Govt. Printer, 1964.
 780 0 0 $aMichigan.$sLaws, etc. (Session laws : 1824-1835)$tActs passed at the special session of the Legislative Council of the territory of Michigan
 785 0 6 $aMichigan.$sLaws, etc. (Session laws : 1875-1931 : Public)$tPublic acts and joint and concurrent resolutions of the Legislature of the state of Michigan$w(OCoLC)5031140
 785 0 6 $aMichigan.$sLaws, etc. (Session laws : 1875-1931 : Local)$tLocal acts of the Legislature of the state of Michigan passed at the regular session$w(OCoLC)5421450
+----
+
+==== Argot (partial)
+
+[source:javascript]
+----
+{
+ "title_former_work": [
+  {
+  "label": "Continues:",
+  "author": "Michigan.",
+  "title": "Laws, etc. (Session laws : 1824-1835)",
+  "title_variation": "Acts passed at the special session of the Legislative Council of the territory of Michigan"
+  }
+ ]
+}
 ----
 
 ==== Display (partial)
