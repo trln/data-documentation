@@ -585,7 +585,7 @@ RELATED ITEMS:
 by P. J. Hugo. Met 'n opsomming in Afrikaans onder die opskrif: Die Gasveld Evander.* +
 Pretoria, Govt. Printer, 1964.
 
-RELATED ITEMS:
+*Related items:*
 
 - http://search.trln.org/search?Nty=1&Ntk=Title&Ntt=Gasveld%20Evander.&N=0[Gasveld Evander.]
 
@@ -631,7 +631,7 @@ http://www.search.info/author_search_on[Michigan]
 Portion of title: General acts and joint and concurrent resolutions of the Legislature of the state of Michigan +
 Spine title: Laws of Michigan +
 Continues: http://www.search.info/author_search_on[Michigan.] http://www.search.info/works_search_on[Laws, etc. (Session laws : 1824-1835)] Acts passed at the special session of the Legislative Council of the territory of Michigan + 
-Split into: http://www.search.info/author_search_on[Michigan.] http://www.search.info/works_search_on[Laws, etc. (Session laws : 1875-1931 : Public)] Public acts and joint and concurrent resolutions of the Legislature of the state of Michigan
+Split into: http://www.search.info/author_search_on[Michigan.] http://www.search.info/works_search_on[Laws, etc. (Session laws : 1875-1931 : Public)] Public acts and joint and concurrent resolutions of the Legislature of the state of Michigan + 
 Split into: http://www.search.info/author_search_on[Michigan.] http://www.search.info/works_search_on[Laws, etc. (Session laws : 1875-1931 : Local)] Local acts of the Legislature of the state of Michigan passed at the regular session
 
 
