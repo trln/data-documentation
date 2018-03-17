@@ -1,0 +1,113 @@
+{
+  "record_data_source":[
+    "ILSMARC"
+  ],
+  "id":"UNCb000001",
+  "local_id":{
+    "value":"b000001"
+  },
+  "institution":[
+    "unc"
+  ],
+    "virtual_collection":[
+	"Totally Faked Up Examples"
+    ],
+    
+  "isbn":[
+    {
+      "number":"0385014808",
+      "qualifying_info":""
+    }
+  ],
+  "publication_year":[
+    1969
+  ],
+  "language":[
+    "English"
+  ],
+  "lang_code":"eng",
+  "imprint_main":[
+    "{\"type\":\"imprint\",\"value\":\"Garden City, N.Y. : Anchor Books, 1969.\"}"
+  ],
+  "publisher":[
+    "Anchor Books"
+  ],
+  "authors":{
+    "main":[
+      {
+        "name":"Achebe, Chinua."
+      }
+    ]
+  },
+  "author_facet":[
+    "Achebe, Chinua"
+  ],
+  "title_main":{
+      "value":"Arrow of God /",
+      "sort":"Arrow of God"
+  },
+    "resource_type":[
+	"Book"
+    ],
+    "physical_media":[
+	"Print"
+    ],
+    "subjects":[
+	"Igbo (African people) -- Fiction.",
+	"Nigeria -- Fiction."
+    ],
+    "subject_topic":[
+	"Igbo (African people)"
+    ],
+    "subject_region":[
+	"Nigeria"
+    ],
+  "subject_genre":[
+    "Fiction"
+  ],
+  "statement_of_responsibility":[
+    {
+      "value":"Chinua Achebe ; introduction by K.W.J. Post."
+    }
+  ],
+    "physical_description":[
+	"xiv, 266 p. ; 18 cm."
+    ],
+  "access_type":[
+    "At the Library"
+  ],
+  "oclc_number":{
+    "value":"13852074"
+  },
+  "rollup_id":"OCLC13852074",
+  "available":"Available",
+  "call_number_schemes":[
+    "LC"
+  ],
+  "normalized_call_numbers":[
+    "lc:PR.93879.A3.A7--1969"
+  ],
+  "lcc_callnum_classification":[
+    "P - Language and literature",
+    "P - Language and literature:PR1 - PR9680 English literature",
+    "P - Language and literature:PR1 - PR9680 English literature:PR8309 - PR9680 English literature: Provincial, local, etc."
+  ],
+  "location_hierarchy":[
+    "unc",
+    "unc:uncdavy"
+  ],
+  "barcodes":[
+    "00006123456",
+    "00021306819"
+  ],
+  "items":[
+    "{\"id\":\"i3073031\",\"loc_b\":\"ddda\",\"loc_n\":\"ddda\",\"status\":\"Available\",\"cn_scheme\":\"LC\",\"call_no\":\"PR9387.9.A3 A7 1969\"}",
+    "{\"id\":\"i3073032\",\"loc_b\":\"wcda\",\"loc_n\":\"wcda\",\"status\":\"Available\",\"copy_no\":\"2\",\"cn_scheme\":\"LC\",\"call_no\":\"PR9387.9.A3 A7 1969\"}"
+  ],
+  "description":{
+    "general":[
+      "xiv, 266 p. ;",
+      "18 cm."
+    ]
+  }    
+}
