@@ -212,6 +212,59 @@ One example is the 518 where you have the option of putting a natural language n
 
 ----
 
+=== 504
+
+[IMPORTANT]
+====
+*Processing rule*
+
+If $b is present, prepend "Number of references: " to its value.
+====
+
+==== UNCb4706138
+===== MARC
+
+[source]
+----
+504 _ _ $b36 references.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_general":[
+    {
+      "value":"Number of references: 36 references.",
+      "indexed":"false"
+    }
+  ]
+}
+----
+
+==== UNCb2019098
+===== MARC
+
+[source]
+----
+504 _ _ $aBibliography : p. 81-83.$b52.
+----
+
+===== Argot
+[source,javascript]
+----
+{
+  "note_general":[
+    {
+      "value":"Bibliography : p. 81-83. Number of references: 52.",
+      "indexed":"false"
+    }
+  ]
+}
+----
+
+
 == Examples: note_local
 === 500, 541, 561
 *500* is mapped to `note_local` if whitelisted $5 for institution creating Argot is present.
@@ -310,142 +363,143 @@ _There are notes in this record other than the one(s) shown here_
 }
 ----
 
+===== Display
 
-=== UNCb9058990
+[NOTE]
+====
+I'm on the fence about where this belongs.
+
+It sort of makes sense with "This item includes".
+
+It also sort of makes sense with physical description details or general notes.
+
+It also seems like the kind of thing that institutions might want to display in different ways, which is a main reason I pulled it out as a separate, specific note field. 
+====
+
+== Examples: note_dissertation
+=== 502
+==== UNCb9058990
 _Example shows special 502 field processing_
 
-_590 processing will be institution-specific_
+===== MARC
+[source]
+----
+502 _ _ $aThesis (Ph. D.)--University of Lancaster, Lancashire, England.
+----
 
- 502 _ _ $aThesis (Ph. D.)--University of Lancaster, Lancashire, England.
- 506 1 _ $aAccess limited to UNC Chapel Hill-authenticated users.$fUnlimited simultaneous users
- 590 _ _ $aProvider: SpringerLink.
+===== Argot
+
+[IMPORTANT]
+====
+*Processing rule*
+
+If there is NO $bcdgo in the field, treat the $a like a normal string value -- extract as is from the record.
+====
 
 [source,javascript]
 ----
 {
-  "note_display":[
+  "note_dissertation":[
     {
       "value":"Thesis (Ph. D.)--University of Lancaster, Lancashire, England."
-    },
-    {
-      "value":"Provider: SpringerLink."
-    }
-  ],
-  "note_index":[
-    "Thesis (Ph. D.)--University of Lancaster, Lancashire, England.",
-    "Provider: SpringerLink."
-  ],
-  "note_access_restriction":[
-    {
-      "value":"Access limited to UNC Chapel Hill-authenticated users. Unlimited simultaneous users"
     }
   ]
 }
 ----
 
-=== UNCb7386333
+==== UNCb7386333
 _Example shows special 502 field processing_
 
-_588 is NOT mapped to Argot._
+===== MARC
 
- 502 _ _ $gRecital document$bMaster of Music in Performance and Vocal Pedagogy$cUniversity of Texas at San Antonio$d2012.
- 504 _ _ $aIncludes bibliographical references (pages 58-64).
- 538 _ _ $aSystem requirements: Adobe Acrobat reader.
- 588 _ _ $aDescription based on online resource; title from PDF title (viewed April 15, 2013).
+[source]
+----
+502 _ _ $gRecital document$bMaster of Music in Performance and Vocal Pedagogy$cUniversity of Texas at San Antonio$d2012.
+----
+
+===== Argot
+
+[IMPORTANT]
+====
+*Processing rule*
+
+If there is NO $a in the field, provide punctuation between subfields
+
+[cols=2*,options=header]
+|====================
+| subfield delimiter | preceding punctuation
+| b | -- or em dash
+| c | -- or em dash
+| d | comma space
+| g | (if not first subfield) -- or em dash
+|====================
+
+====
 
 [source,javascript]
 ----
 {
-  "note_display":[
+  "note_dissertation":[
     {
       "value":"Recital document--Master of Music in Performance and Vocal Pedagogy--University of Texas at San Antonio, 2012."
-    },
-    {
-      "value":"Includes bibliographical references (pages 58-64)."
-    },
-    {
-      "value":"System requirements: PDF reader."
     }
-  ],
-  "note_index":[
-    "Recital document--Master of Music in Performance and Vocal Pedagogy--University of Texas at San Antonio, 2012."
   ]
 }
 ----
 
-=== UNCb1511334
+==== UNCb1511334
 _Example shows special 502 field processing_
 
-_There are notes in this record other than the one(s) shown here_
+===== MARC
+[source]
+----
+502 _ _ $bPh. D.$cUniversity of North Carolina$d1976
+----
 
- 502 _ _ $bPh. D.$cUniversity of North Carolina$d1976
+===== Argot
+*Same processing rule as previous example*
 
 [source,javascript]
 ----
 {
-  "note_display":[
+  "note_dissertation":[
     {
       "value":"Ph. D.--University of North Carolina, 1976"
     }
-  ],
-  "note_index":[
-    "Ph. D.--University of North Carolina, 1976"
   ]
 }
 ----
 
-=== UNCb6856070
+==== UNCb6856070
 _Example shows special 502 field processing_
 
-_There are notes in this record other than the one(s) shown here_
+===== MARC
 
- 502 _ _ $cBremen International Graduate School of Social Sciences$d2008
+[source]
+----
+502 _ _ $cBremen International Graduate School of Social Sciences$d2008
+----
+
+===== Argot
+
+[IMPORTANT]
+====
+*Processing rule*
+
+If there is NO $a or $b in the field, and field does not begin with a $g, provide a contextualizing label for field. 
+====
 
 [source,javascript]
 ----
 {
-  "note_display":[
+  "note_dissertation":[
     {
       "value":"Thesis/dissertation--Bremen International Graduate School of Social Sciences, 2008"
     }
-  ],
-  "note_index":[
-    "Bremen International Graduate School of Social Sciences, 2008"
   ]
 }
 ----
 
-=== UNCb4706138
-_There are notes in this record other than the one(s) shown here_
-
- 504 _ _ $b36 references.
-
-[source,javascript]
-----
-{
-  "note_display":[
-    {
-      "value":"Number of references: 36 references."
-    }
-  ]
-}
-----
-
-=== UNCb2019098
-_There are notes in this record other than the one(s) shown here_
-
- 504 _ _ $aBibliography : p. 81-83.$b52.
-
-[source,javascript]
-----
-{
-  "note_display":[
-    {
-      "value":"Bibliography : p. 81-83. Number of references: 52."
-    }
-  ]
-}
-----
 
 === UNCb3366168
 _There are notes in this record other than the one(s) shown here_

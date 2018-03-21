@@ -86,32 +86,33 @@ note_access_restriction[label],MARC,n,GEN,506,3,.,subelement_to_value,.,.,note_a
 note_access_restriction[value],MARC,n,GEN,506,abcdefu,.,concat_subelements,.,.,note_access_restriction[value]GEN506abcdefu.,0,0,y,n,n
 note_admin_history,MARC,n,GEN,545,abu,i1=1,concat_subelements,x,x,note_admin_historyGEN545abui1=1,0,0,y,,
 note_biographical,MARC,n,GEN,545,abu,i1=~/[ 0],concat_subelements,x,x,note_biographicalGEN545abui1=~/[ 0],0,0,y,,
-note_general[label],MARC,n,GEN,500,3,field does NOT contain $5,concat_subelements,.,.,note_general[label]GEN5003field does NOT contain $5,0,0,y,n,n
 note_display[label],MARC,n,GEN,561,3,ind1 != 0,subelement_to_value,.,.,note_display[label]GEN5613ind1 != 0,0,0,n,n,n
-note_general[value],MARC,n,GEN,500,a,field does NOT contain $5,concat_subelements,.,.,note_general[value]GEN500afield does NOT contain $5,0,0,y,n,n
-note_local[label],MARC,n,GEN,500,3,field contains whitelisted $5 value,concat_subelements,.,.,note_local[label]GEN5003field contains whitelisted $5 value,0,0,n,n,n
-note_local[value],MARC,n,GEN,500,a,field contains whitelisted $5 value,concat_subelements,.,.,note_local[value]GEN500afield contains whitelisted $5 value,0,0,n,n,n
-note_local[value],MARC,n,UNC,541,abcdefhno3,.,concat_subelements,DO NOT use $3 to create label,.,note_local[value]UNC541abcdefhno3.,0,0,n,n,n
-note_local[label],MARC,n,UNC,541,.,.,constant,"""label"":""Source of acquisition""",.,note_local[label]UNC541..,0,0,n,,
-note_local[value],MARC,n,GEN,561,a,ind1 != 0,concat_subelements,.,.,note_local[value]GEN561aind1 != 0,0,0,n,n,n
-note_local[label],MARC,n,GEN,561,.,ind1 != 0 and $3 NOT present,constant,"""label"":""Ownership history""",,note_local[label]GEN561.ind1 != 0 and $3 NOT present,0,0,n,,
-note_local[label],MARC,n,GEN,561,3,ind1 != 0 and $3 present,concat_subelements,"""label"":""Ownership history: #{$3 value(s)}""",.,note_local[label]GEN5613ind1 != 0 and $3 present,0,0,n,,
 note_display[value],MARC,n,GEN,501,a,.,subelement_to_value,.,.,note_display[value]GEN501a.,0,0,n,n,n
-note_local[value],MARC,n,GEN,590,a,.,concat_subelements,.,.,note_local[value]GEN590a.,1,0,n,n,n
 note_display[value],MARC,n,GEN,502,abcdgo,.,concat_subelements,Complex instructions. Refer to linked documentation for thie field,.,note_display[value]GEN502abcdgo.,0,0,n,n,n
-note_display[value],MARC,n,GEN,504,ab,.,concat_subelements,"Prefix $b value with: ""Number of references: """,.,note_display[value]GEN504ab.,0,0,n,n,n
 note_display[value],MARC,n,GEN,507,ab,.,concat_subelements,.,.,note_display[value]GEN507ab.,0,0,n,n,n
+note_dissertation[value],MARC,n,GEN,502,abcdg,.,concat_subelements,Complex instructions. Refer to linked documentation for thie field,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_dissertation[value]GEN502abcdg.,0,0,y,n,n
+note_general[indexed],MARC,n,GEN,504,.,.,constant,value = false,.,note_general[indexed]GEN504..,0,0,y,n,n
+note_general[label],MARC,n,GEN,500,3,field does NOT contain $5,concat_subelements,.,.,note_general[label]GEN5003field does NOT contain $5,0,0,y,n,n
+note_general[value],MARC,n,GEN,500,a,field does NOT contain $5,concat_subelements,.,.,note_general[value]GEN500afield does NOT contain $5,0,0,y,n,n
+note_general[value],MARC,n,GEN,504,ab,.,concat_subelements,"Prefix $b value with: ""Number of references: """,.,note_general[value]GEN504ab.,0,0,y,n,n
 note_index,MARC,y,UNC,541,a,i1!=0,subelement_to_value,x,x,note_indexUNC541ai1!=0,0,0,n,,
-note_local[indexed_value],MARC,n,UNC,541,a,.,subelement_to_value,.,.,note_local[indexed_value]UNC541a.,0,0,n,n,n
 note_index,MARC,n,GEN,561,a,ind1 != 0,subelement_to_value,.,.,note_indexGEN561aind1 != 0,0,0,n,n,n
-note_index,MARC,n,GEN,501,a,.,concat_subelements,.,.,note_indexGEN501a.,0,0,n,n,n
-note_index,MARC,n,GEN,502,abcdgo,.,concat_subelements,Complex instructions. Refer to linked documentation for thie field,.,note_indexGEN502abcdgo.,0,0,n,n,n
 note_index,MARC,n,GEN,507,ab,.,concat_subelements,.,.,note_indexGEN507ab.,0,0,n,n,n
 note_index,MARC,n,GEN,544,d,none,subelement_to_value,x,x,note_indexGEN544dnone,0,0,n,n,n
 note_issuance,MARC,n,GEN,550,a,none,subelement_to_value,x,x,note_issuanceGEN550anone,0,0,y,,
+note_local[indexed_value],MARC,n,UNC,541,a,.,subelement_to_value,.,.,note_local[indexed_value]UNC541a.,0,0,n,n,n
+note_local[label],MARC,n,GEN,500,3,field contains whitelisted $5 value,concat_subelements,.,.,note_local[label]GEN5003field contains whitelisted $5 value,0,0,n,n,n
+note_local[label],MARC,n,UNC,541,.,.,constant,"""label"":""Source of acquisition""",.,note_local[label]UNC541..,0,0,n,,
+note_local[label],MARC,n,GEN,561,.,ind1 != 0 and $3 NOT present,constant,"""label"":""Ownership history""",,note_local[label]GEN561.ind1 != 0 and $3 NOT present,0,0,n,,
+note_local[label],MARC,n,GEN,561,3,ind1 != 0 and $3 present,concat_subelements,"""label"":""Ownership history: #{$3 value(s)}""",.,note_local[label]GEN5613ind1 != 0 and $3 present,0,0,n,,
+note_local[value],MARC,n,GEN,500,a,field contains whitelisted $5 value,concat_subelements,.,.,note_local[value]GEN500afield contains whitelisted $5 value,0,0,n,n,n
+note_local[value],MARC,n,UNC,541,abcdefhno3,.,concat_subelements,DO NOT use $3 to create label,.,note_local[value]UNC541abcdefhno3.,0,0,n,n,n
+note_local[value],MARC,n,GEN,561,a,ind1 != 0,concat_subelements,.,.,note_local[value]GEN561aind1 != 0,0,0,n,n,n
+note_local[value],MARC,n,GEN,590,a,.,concat_subelements,.,.,note_local[value]GEN590a.,1,0,n,n,n
 note_summary,MARC,n,GEN,520,abc3,none,concat_subelements,x,https://trlnmain.atlassian.net/wiki/spaces/TD/pages/96665601/Argon+Fields+and+their+display,note_summaryGEN520abc3none,0,1,y,y,.
 note_system_details,MARC,n,GEN,538,aiu3,none,concat_subelements,Create label from $3 + $i if either or both are present,x,note_system_detailsGEN538aiu3none,0,0,y,,
 note_toc,MARC,n,GEN,505,agrt,none,concat_subelements,x,https://trlnmain.atlassian.net/wiki/spaces/TD/pages/96665601/Argon+Fields+and+their+display,note_tocGEN505agrtnone,0,0,y,y,.
+note_with[value],MARC,n,GEN,501,a,.,concat_subelements,.,.,note_with[value]GEN501a.,0,0,y,n,n
 oclc_number[old],MARC,n,UNC,019,a,x,subelement_to_value,x,https://github.com/trln/marc-to-argot/blob/master/spec/unc_oclc_number_spec.rb,oclc_number[old]UNC19ax,0,0,y,y,y
 oclc_number[value],MARC,n,UNC,001,.,see notes,see notes,see notes,https://github.com/trln/marc-to-argot/blob/master/spec/unc_oclc_number_spec.rb,oclc_number[value]UNC1.see notes,0,0,y,y,y
 oclc_number[value],MARC,n,UNC,003,.,see notes,see notes,see notes,https://github.com/trln/marc-to-argot/blob/master/spec/unc_oclc_number_spec.rb,oclc_number[value]UNC3.see notes,0,0,y,y,y
@@ -145,6 +146,8 @@ related_work_note,MARC,n,GEN,580,a,.,concat_subelements,x,x,related_work_noteGEN
 related_work_note,MARC,n,GEN,544,abcden3,none,concat_subelements,"$3 label + ""Related archival materials: """,x,related_work_noteGEN544abcden3none,0,0,y,n,n
 rollup_id,MARC-to-Argot,n,UNC,001,.,Is OCLC number or SerialsSolutions number,map subelement to value,"Take value from oclc_number or sersol_number fields;;;Prefix with OCLC or SS, respectively",x,rollup_idUNC1.Is OCLC number or SerialsSolutions number,0,2,y,y,y
 rollup_id,MARC-to-Argot,n,UNC,019,.,"If oclc_number is not set, and 019 has at least 1 $a",map subelement to value,Prefix with OCLC,x,"rollup_idUNC19.If oclc_number is not set, and 019 has at least 1 $a",0,2,y,y,y
+series_transcribed,MARC,n,GEN,490,alvx3,none,concat_subelements,"Prepend ""ISSN: "" to any $x value.;;;Create label from $3 if present",x,series_transcribedGEN490alvx3none,0,0,y,n,n
+series_transcribed_issn,MARC,n,GEN,490,x,none,subelement_to_value,x,x,series_transcribed_issnGEN490xnone,0,0,y,n,n
 special_binding_description,MARC,n,GEN,563,a3,?,?,?,?,special_binding_descriptionGEN563a3?,0,0,y,,
 statement_of_responsibility,MARC,n,GEN,245,c,none,concat_subelements,x,Is concat_subelements in case some bad data exists with repeated $c,statement_of_responsibilityGEN245cnone,0,0,y,y,
 subject_chronological,MARC,n,GEN,600,y,i2=0 OR (i2=7 AND $2=lcsh),subelement_to_value,.,.,subject_chronologicalGEN600yi2=0 OR (i2=7 AND $2=lcsh),0,1,y,y,.
@@ -226,8 +229,6 @@ upc[qualifying_info],MARC,n,GEN,024,q,i1=1,concat_subelements,remove parentheses
 upc[qualifying_info],MARC,n,GEN,024,a,i1=1 and $a data includes parenthetical qualifying info,subelement_to_value,"strip out the actual UPC, remove parentheses from around data",.,upc[qualifying_info]GEN24ai1=1 and $a data includes parenthetical qualifying info,0,0,y,,
 upc[value],MARC,n,GEN,024,a,i1=1,subelement_to_value,remove parenthetical qualifier if it's included in $a,.,upc[value]GEN24ai1=1,0,0,y,,
 virtual_collection,MARCish,n,UNC,919,t,.,subelement_to_value,x,x,virtual_collectionUNC919t.,0,0,y,n,n
-series_transcribed,MARC,n,GEN,490,alvx3,none,concat_subelements,"Prepend ""ISSN: "" to any $x value.;;;Create label from $3 if present",x,series_transcribedGEN490alvx3none,0,0,y,n,n
-series_transcribed_issn,MARC,n,GEN,490,x,none,subelement_to_value,x,x,series_transcribed_issnGEN490xnone,0,0,y,n,n
 work_citation_uncontrolled,MARC,n,GEN,100,abcd(g)jqu,.,concat_subelements,"$g and/or $n included if there is NO $t or $k, or if it occurs BEFORE any $t/$k present",Prepended to title portion from 245,work_citation_uncontrolledGEN100abcd(g)jqu.,0,0,y,n,n
 work_citation_uncontrolled,MARC,n,GEN,110,abcd(g)(n)u,.,concat_subelements,"$g and/or $n included if there is NO $t or $k, or if it occurs BEFORE any $t/$k present",Prepended to title portion from 245,work_citation_uncontrolledGEN110abcd(g)(n)u.,0,0,y,n,n
 work_citation_uncontrolled,MARC,n,GEN,111,acde(g)(n)qu,.,concat_subelements,"$g and/or $n included there is NO $t or $k, or if it occurs BEFORE any $t/$k present",Prepended to title portion from 245,work_citation_uncontrolledGEN111acde(g)(n)qu.,0,0,y,n,n
