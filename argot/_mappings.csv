@@ -109,6 +109,11 @@ note_local[value],MARC,n,GEN,500,a,field contains whitelisted $5 value,concat_su
 note_local[value],MARC,n,UNC,541,abcdefhno3,.,concat_subelements,DO NOT use $3 to create label,.,note_local[value]UNC541abcdefhno3.,0,0,n,n,n
 note_local[value],MARC,n,GEN,561,a,ind1 != 0,concat_subelements,.,.,note_local[value]GEN561aind1 != 0,0,0,n,n,n
 note_local[value],MARC,n,GEN,590,a,.,concat_subelements,.,.,note_local[value]GEN590a.,1,0,n,n,n
+note_performer_credits[value],MARC,n,GEN,511,a,.,concat_subelements,x,x,note_performer_credits[value]GEN511a.,0,0,y,n,n
+note_performer_credits[label],MARC,n,GEN,511,.,ind1=1,constant,"""label"":""Cast""",x,note_performer_credits[label]GEN511.ind1=1,0,0,y,n,n
+note_production_credits[value],MARC,n,GEN,508,a,.,concat_subelements,x,x,note_production_credits[value]GEN508a.,0,0,y,n,n
+note_scale[value],MARC,n,GEN,507,ab,.,concat_subelements,x,x,note_scale[value]GEN507ab.,0,0,y,n,n
+note_scale[value],MARC,n,GEN,255,abcdefg,.,concat_subelements,x,x,note_scale[value]GEN255abcdefg.,0,0,y,n,n
 note_summary,MARC,n,GEN,520,abc3,none,concat_subelements,x,https://trlnmain.atlassian.net/wiki/spaces/TD/pages/96665601/Argon+Fields+and+their+display,note_summaryGEN520abc3none,0,1,y,y,.
 note_system_details,MARC,n,GEN,538,aiu3,none,concat_subelements,Create label from $3 + $i if either or both are present,x,note_system_detailsGEN538aiu3none,0,0,y,,
 note_toc,MARC,n,GEN,505,agrt,none,concat_subelements,x,https://trlnmain.atlassian.net/wiki/spaces/TD/pages/96665601/Argon+Fields+and+their+display,note_tocGEN505agrtnone,0,0,y,y,.

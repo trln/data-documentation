@@ -121,7 +121,7 @@ One example is the 518 where you have the option of putting a natural language n
 ** b7832943a	518 _ _ $3CD 2$oRecorded$d2004 November,$pAuditorium (Chiesa) di San Salvatore a Rodengo, Brescia, Italy.
 ** b7832943a	518 _ _ $3CD 1$oRecorded$d2001 October,$pIstituo di musica Antica Academia Monte Regalis, Mondovi, Italy.
 * If $a, treat like basic textual note
-** b1200040a	518 _ _ $a"Recorded in the formerly monastic church of St. Ottilie in M�schenfeld near Munich. Date of recording, May, 1967."
+** b1200040a	518 _ _ $a"Recorded in the formerly monastic church of St. Ottilie in Möschenfeld near Munich. Date of recording, May, 1967."
 * If any subfields occur after $a, remove them and throw in a space -- these are probably mis-coded and should be cleaned up in the data, but are pretty innocuous and seem easy-ish to deal with
 ** b8966892a	518 _ _ $aBroadcast$dFriday, November 18 (10:01-11:00 p.m. Est), on ABC.
 * If no $a... $o 
@@ -500,29 +500,123 @@ If there is NO $a or $b in the field, and field does not begin with a $g, provid
 }
 ----
 
+== Examples: note_scale
+=== 255
+==== UNC1998984
+===== MARC
 
-=== UNCb3366168
-_There are notes in this record other than the one(s) shown here_
+[source]
+----
+255 _ _ $aScale [3 cm. per degree]$d(Zones -18⁰ to -33⁰, -31⁰ to -46⁰, -44⁰ to 59⁰, -57⁰ to -72⁰, -69⁰ to -84⁰ ;$eeq. 1875)
+----
 
- 507 _ _ $aScale 1:100,000;$b1 cm. = 1 kilometer.
-
-
+===== Argot
 [source,javascript]
 ----
 {
-  "note_display":[
+  "note_scale":[
     {
-      "value":"Scale 1:100,000; 1 cm. = 1 kilometer."
+      "value":"Scale [3 cm. per degree] (Zones -18⁰ to -33⁰, -31⁰ to -46⁰, -44⁰ to 59⁰, -57⁰ to -72⁰, -69⁰ to -84⁰ ; eq. 1875)"
     }
-  ],
-  "note_index":[
-    "Scale 1:100,000; 1 cm. = 1 kilometer."
   ]
 }
 ----
 
+=== 507
+==== UNCb3366168
+===== MARC
 
+[source]
+----
+507 _ _ $aScale 1:100,000;$b1 cm. = 1 kilometer.
+----
 
+===== Argot
+[source,javascript]
+----
+{
+  "note_scale":[
+    {
+      "value":"Scale 1:100,000; 1 cm. = 1 kilometer."
+    }
+  ]
+}
+----
+
+== Examples: note_performer_credits
+=== 511
+==== UNCb1193204
+===== MARC
+
+[source]
+----
+511 0 _ $aJoan Sutherland, soprano; Marilyn Horne, contralto; Joseph Rouleau, bass; with other soloists; London Symphony Orchestra; Richard Bonynge, conductor.
+----
+
+===== Argot
+[source,javascript]
+----
+{
+  "note_performer_credits":[
+    {
+      "value":"Joan Sutherland, soprano; Marilyn Horne, contralto; Joseph Rouleau, bass; with other soloists; London Symphony Orchestra; Richard Bonynge, conductor."
+    }
+  ]
+}
+----
+
+==== UNCb1709125
+===== MARC
+
+[source]
+----
+511 1 _ $aBela Lugosi, David Manners, Helen Chandler, Edward Van Sloan, Dwight Frye, Frances Dade.
+----
+
+===== Argot
+[source,javascript]
+----
+{
+  "note_performer_credits":[
+    {
+      "label":"Cast",
+      "value":"Bela Lugosi, David Manners, Helen Chandler, Edward Van Sloan, Dwight Frye, Frances Dade."
+    }
+  ]
+}
+----
+
+== Examples: note_production_credits
+=== 508
+==== UNCb5311776
+===== MARC
+
+[source]
+----
+245 0 0 $aForbidden Hollywood collection.$nVol. 1$h[videorecording].
+505 0 _ $aDisc one. Baby face [prerelease version] / Warner Bros. Pictures, Inc. & the Vitaphone Corp. present ; directed by Alfred E. Green ; screen play by Gene Markey & Kathryn Scola ; story by Mark Canfield ; [produced by William LeBaron, Raymond Griffith] (1933, 76 min) ; Baby face [original theatrical release] / Warner Bros. Pictures, Inc. & the Vitaphone Corp. present ; directed by Alfred E. Green ; screen play by Gene Markey & Kathryn Scola ; story by Mark Canfield (1933, 72 min) -- Disc two. Red-headed woman / Metro-Goldwyn-Mayer presents ; directed by Jack Conway ; from the book by Katharine Brush ; screen play by Anita Loos ; [produced by Albert Lewin, Irving Thalberg ; additional writing by F. Scott Fitzgerald] (1932, 79 min.) -- Waterloo bridge / Carl Laemmle presents ; produced by Carl Laemmle, Jr. ; Universal Pictures Corp. ; from the stage play by Robert E. Sherwood ; adaptation and added dialogue, Benn Levy ; screen play, Tom Reed ; directed by James Whale (1931, 81 min.).
+508 _ _ $aBaby face: editing, Howard Bretherton ; photography, James Van Trees.
+508 _ _ $aRed-headed woman: photography, Harold Rosson ; editing, Blanche Sewell.
+508 _ _ $aWaterloo Bridge: cinematographer, Arthur Edeson ; editor, Clarence Kolster, Maurice Pivar ; music, Val Burton.
+----
+
+===== Argot
+[source,javascript]
+----
+{
+  "note_production_credits":[
+    {
+      "value":"Baby face: editing, Howard Bretherton ; photography, James Van Trees."
+    },
+    {
+    "value":"Red-headed woman: photography, Harold Rosson ; editing, Blanche Sewell."
+    },
+    {
+    "value":"Waterloo Bridge: cinematographer, Arthur Edeson ; editor, Clarence Kolster, Maurice Pivar ; music, Val Burton."
+    }
+  ]
+}
+----
 
 == Complex processing instructions
 === 502 Disseration note
