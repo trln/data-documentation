@@ -99,19 +99,21 @@ note_index,MARC,y,UNC,541,a,i1!=0,subelement_to_value,x,x,note_indexUNC541ai1!=0
 note_index,MARC,n,GEN,561,a,ind1 != 0,subelement_to_value,.,.,note_indexGEN561aind1 != 0,0,0,n,n,n
 note_index,MARC,n,GEN,507,ab,.,concat_subelements,.,.,note_indexGEN507ab.,0,0,n,n,n
 note_index,MARC,n,GEN,544,d,none,subelement_to_value,x,x,note_indexGEN544dnone,0,0,n,n,n
-note_issuance,MARC,n,GEN,550,a,none,subelement_to_value,x,x,note_issuanceGEN550anone,0,0,y,,
-note_local[indexed_value],MARC,n,UNC,541,a,.,subelement_to_value,.,.,note_local[indexed_value]UNC541a.,0,0,n,n,n
-note_local[label],MARC,n,GEN,500,3,field contains whitelisted $5 value,concat_subelements,.,.,note_local[label]GEN5003field contains whitelisted $5 value,0,0,n,n,n
-note_local[label],MARC,n,UNC,541,.,.,constant,"""label"":""Source of acquisition""",.,note_local[label]UNC541..,0,0,n,,
-note_local[label],MARC,n,GEN,561,.,ind1 != 0 and $3 NOT present,constant,"""label"":""Ownership history""",,note_local[label]GEN561.ind1 != 0 and $3 NOT present,0,0,n,,
-note_local[label],MARC,n,GEN,561,3,ind1 != 0 and $3 present,concat_subelements,"""label"":""Ownership history: #{$3 value(s)}""",.,note_local[label]GEN5613ind1 != 0 and $3 present,0,0,n,,
-note_local[value],MARC,n,GEN,500,a,field contains whitelisted $5 value,concat_subelements,.,.,note_local[value]GEN500afield contains whitelisted $5 value,0,0,n,n,n
-note_local[value],MARC,n,UNC,541,abcdefhno3,.,concat_subelements,DO NOT use $3 to create label,.,note_local[value]UNC541abcdefhno3.,0,0,n,n,n
-note_local[value],MARC,n,GEN,561,a,ind1 != 0,concat_subelements,.,.,note_local[value]GEN561aind1 != 0,0,0,n,n,n
-note_local[value],MARC,n,GEN,590,a,.,concat_subelements,.,.,note_local[value]GEN590a.,1,0,n,n,n
-note_performer_credits[value],MARC,n,GEN,511,a,.,concat_subelements,x,x,note_performer_credits[value]GEN511a.,0,0,y,n,n
+note_issuance[value],MARC,n,GEN,550,a,none,concat_subelements,x,x,note_issuance[value]GEN550anone,0,0,y,,
+note_local[indexed_value],MARC,n,UNC,541,a,.,subelement_to_value,.,.,note_local[indexed_value]UNC541a.,0,0,y,n,n
+note_local[label],MARC,n,GEN,500,3,field contains whitelisted $5 value,concat_subelements,.,.,note_local[label]GEN5003field contains whitelisted $5 value,0,0,y,n,n
+note_local[label],MARC,n,UNC,541,.,.,constant,"""label"":""Source of acquisition""",.,note_local[label]UNC541..,0,0,y,,
+note_local[label],MARC,n,GEN,561,.,ind1 != 0 and $3 NOT present,constant,"""label"":""Ownership history""",,note_local[label]GEN561.ind1 != 0 and $3 NOT present,0,0,y,,
+note_local[label],MARC,n,GEN,561,3,ind1 != 0 and $3 present,concat_subelements,"""label"":""Ownership history: #{$3 value(s)}""",.,note_local[label]GEN5613ind1 != 0 and $3 present,0,0,y,,
+note_local[value],MARC,n,GEN,500,a,field contains whitelisted $5 value,concat_subelements,.,.,note_local[value]GEN500afield contains whitelisted $5 value,0,0,y,n,n
+note_local[value],MARC,n,UNC,541,abcdefhno3,.,concat_subelements,DO NOT use $3 to create label,.,note_local[value]UNC541abcdefhno3.,0,0,y,n,n
+note_local[value],MARC,n,GEN,561,a,ind1 != 0,concat_subelements,.,.,note_local[value]GEN561aind1 != 0,0,0,y,n,n
+note_local[value],MARC,n,GEN,590,a,.,concat_subelements,.,.,note_local[value]GEN590a.,1,0,y,n,n
 note_performer_credits[label],MARC,n,GEN,511,.,ind1=1,constant,"""label"":""Cast""",x,note_performer_credits[label]GEN511.ind1=1,0,0,y,n,n
+note_performer_credits[value],MARC,n,GEN,511,a,.,concat_subelements,x,x,note_performer_credits[value]GEN511a.,0,0,y,n,n
 note_production_credits[value],MARC,n,GEN,508,a,.,concat_subelements,x,x,note_production_credits[value]GEN508a.,0,0,y,n,n
+note_report_type[value],MARC,n,GEN,513,a,.,concat_subelements,deduplicate field once all values are assigned,x,note_report_type[value]GEN513a.,0,0,y,n,n
+note_report_coverage[value],MARC,n,GEN,513,b,.,concat_subelements,x,x,note_report_coverage[value]GEN513b.,0,0,y,n,n
 note_scale[value],MARC,n,GEN,507,ab,.,concat_subelements,x,x,note_scale[value]GEN507ab.,0,0,y,n,n
 note_scale[value],MARC,n,GEN,255,abcdefg,.,concat_subelements,x,x,note_scale[value]GEN255abcdefg.,0,0,y,n,n
 note_summary,MARC,n,GEN,520,abc3,none,concat_subelements,x,https://trlnmain.atlassian.net/wiki/spaces/TD/pages/96665601/Argon+Fields+and+their+display,note_summaryGEN520abc3none,0,1,y,y,.
@@ -238,3 +240,9 @@ work_citation_uncontrolled,MARC,n,GEN,100,abcd(g)jqu,.,concat_subelements,"$g an
 work_citation_uncontrolled,MARC,n,GEN,110,abcd(g)(n)u,.,concat_subelements,"$g and/or $n included if there is NO $t or $k, or if it occurs BEFORE any $t/$k present",Prepended to title portion from 245,work_citation_uncontrolledGEN110abcd(g)(n)u.,0,0,y,n,n
 work_citation_uncontrolled,MARC,n,GEN,111,acde(g)(n)qu,.,concat_subelements,"$g and/or $n included there is NO $t or $k, or if it occurs BEFORE any $t/$k present",Prepended to title portion from 245,work_citation_uncontrolledGEN111acde(g)(n)qu.,0,0,y,n,n
 work_citation_uncontrolled,MARC,n,GEN,245,anp,.,concat_subelements,"Include $n and/or $p that PRECEDE any $b or $h;;;Strip initial articles/etc as per i2 value;;;The 100, 110, or 111 string (if those fields are present) followed by "". "" is prepended to this value to create the full work_citation_uncontrolled entry",Prepended to title portion from 245,work_citation_uncontrolledGEN245anp.,0,0,y,n,n
+note_organization[value],MARC,n,GEN,351,abc3,.,concat_subelements,Create label from $3,x,note_organization[value]GEN351abc3.,0,0,y,,
+musical_presentation_statement,MARC,n,GEN,254,a,.,concat_subelements,.,x,musical_presentation_statementGEN254a.,0,0,y,n,n
+description_details_digital_file,MARC,n,GEN,347,,,subelement_to_value,Complex instructions. Refer to linked documentation for thie field,documentation needed,description_details_digital_fileGEN347,0,0,y,,
+description_details_projection,MARC,n,GEN,345,,,subelement_to_value,Complex instructions. Refer to linked documentation for thie field,documentation needed,description_details_projectionGEN345,0,0,y,,
+description_details_sound,MARC,n,GEN,344,,,subelement_to_value,Complex instructions. Refer to linked documentation for thie field,documentation needed,description_details_soundGEN344,0,0,y,,
+description_details_video,MARC,n,GEN,346,,,subelement_to_value,Complex instructions. Refer to linked documentation for thie field,documentation needed,description_details_videoGEN346,0,0,y,,

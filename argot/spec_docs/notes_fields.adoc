@@ -378,8 +378,52 @@ It also seems like the kind of thing that institutions might want to display in 
 
 == Examples: note_dissertation
 === 502
+==== Complex processing rules
+*See _Shift off subfield list before further processing_ section of https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_subfield_6.adoc[$6 spec sheet]*
+
+===== Punctuation provision rules for building field value from component subfields (i.e. when there are subfields other than a present)
+
+* Precede all non-initial subfield values except $d with `--`
+* Precede non-initial $d with `, ` (comma space)
+
+===== Logic
+
+* If first subfield is a...
+** If there are no other subfields (b,c,d,g, or o)
+*** Take contents of $a.
+*** See UNCb9058990 example below.
+** And it is followed by subfields b,c,d,g, or o
+*** Build note field from all extractable subfield elements present, following punctuation provision rules.
+*** See mock example below.
+* If first subfield is b or g
+** Build note field from all subfield elements present, following punctuation provision rules.
+** See UNCb7386333 and UNCb1511334 examples below.
+* Else...
+** Provide fake $b value "Thesis/dissertation" to use at beginning of field
+** Build note field from all subfield elements present, following punctuation provision rules
+** See UNCb6856070 example below.
+
+==== UNC mock example
+===== MARC
+
+[source]
+----
+502 _ _ $aThesis$bPh.D$cUniversity of North Carolina at Chapel Hill.
+----
+
+===== Argot
+[source,javascript]
+----
+{
+  "note_dissertation":[
+    {
+      "value":"Thesis--Ph.D--University of North Carolina at Chapel Hill."
+    }
+  ]
+}
+----
+
 ==== UNCb9058990
-_Example shows special 502 field processing_
 
 ===== MARC
 [source]
@@ -388,13 +432,6 @@ _Example shows special 502 field processing_
 ----
 
 ===== Argot
-
-[IMPORTANT]
-====
-*Processing rule*
-
-If there is NO $bcdgo in the field, treat the $a like a normal string value -- extract as is from the record.
-====
 
 [source,javascript]
 ----
@@ -408,7 +445,6 @@ If there is NO $bcdgo in the field, treat the $a like a normal string value -- e
 ----
 
 ==== UNCb7386333
-_Example shows special 502 field processing_
 
 ===== MARC
 
@@ -418,23 +454,6 @@ _Example shows special 502 field processing_
 ----
 
 ===== Argot
-
-[IMPORTANT]
-====
-*Processing rule*
-
-If there is NO $a in the field, provide punctuation between subfields
-
-[cols=2*,options=header]
-|====================
-| subfield delimiter | preceding punctuation
-| b | -- or em dash
-| c | -- or em dash
-| d | comma space
-| g | (if not first subfield) -- or em dash
-|====================
-
-====
 
 [source,javascript]
 ----
@@ -448,7 +467,6 @@ If there is NO $a in the field, provide punctuation between subfields
 ----
 
 ==== UNCb1511334
-_Example shows special 502 field processing_
 
 ===== MARC
 [source]
@@ -457,7 +475,6 @@ _Example shows special 502 field processing_
 ----
 
 ===== Argot
-*Same processing rule as previous example*
 
 [source,javascript]
 ----
@@ -471,8 +488,6 @@ _Example shows special 502 field processing_
 ----
 
 ==== UNCb6856070
-_Example shows special 502 field processing_
-
 ===== MARC
 
 [source]
@@ -481,13 +496,6 @@ _Example shows special 502 field processing_
 ----
 
 ===== Argot
-
-[IMPORTANT]
-====
-*Processing rule*
-
-If there is NO $a or $b in the field, and field does not begin with a $g, provide a contextualizing label for field. 
-====
 
 [source,javascript]
 ----
@@ -618,72 +626,162 @@ If there is NO $a or $b in the field, and field does not begin with a $g, provid
 }
 ----
 
-== Complex processing instructions
-=== 502 Disseration note
-==== Logic
-*See _Shift off subfield list before further processing_ section of https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_subfield_6.adoc[$6 spec sheet]*
+== Examples: note_report_type, note_report_coverage
+=== 513
+==== UNCb3661373
+===== MARC
 
-===== If first subfield is a and there are no subfields b,c,d,g, or o
+[source]
+----
+245 1 0 $aTheory and modeling of atmospheric turbulence /$cC.M. Tchen ; prepared for George C. Marshall Space Flight Center.
+260 _ _ $aWashington, D.C. :$bNational Aeronautics and Space Administration, Scientific and Technical Information Office ;$a[Springfield, Va. :$bFor sale by National Technical Information Service],$c1984.
+300 _ _ $a2 v. :$bill. ;$c28 cm.
+500 _ _ $a"February 1984"--Pt. 1.
+500 _ _ $a"August 1984"--Pt. 2.
+513 _ _ $aContractor report.$bSept 1, 1981-Aug 31, 1982 (pt. 1)
+513 _ _ $aContractor report.$bSept 1, 1982-Aug 31, 1983 (pt. 2)
+----
 
-* take contents of $a
-
-_See UNCb9058990 example above._
-
-===== If first subfield is a, followed by subfields b,c,d,g, or o
-
-* Build note field from all subfield elements present, following punctuation provision rules
-
-_This example is using mock data, since the records like this in the UNC catalog were already cleaned up._
-
- 502 _ _ $aThesis$bPh.D$cUniversity of North Carolina at Chapel Hill.
+===== Argot
 
 [source,javascript]
 ----
 {
-  "note_display":[
+  "note_report_type":[
     {
-      "value":"Thesis--Ph.D--University of North Carolina at Chapel Hill."
+      "value":"Contractor report."
     }
-  ],
-  "note_index":[
-    "Thesis--Ph.D--University of North Carolina at Chapel Hill."
+    ],
+  "note_report_coverage":[
+    {
+    "value":"Sept 1, 1981-Aug 31, 1982 (pt. 1)"
+    },
+    {
+    "value":"Sept 1, 1982-Aug 31, 1983 (pt. 2)"
+    }
   ]
 }
 ----
 
-===== If first subfield is b or g
+===== Display suggestion
+*Theory and modeling of atmospheric turbulence* +
+C.M. Tchen ; prepared for George C. Marshall Space Flight Center. +
+Washington, D.C. : National Aeronautics and Space Administration, Scientific and Technical Information Office ; [Springfield, Va. : For sale by National Technical Information Service], 1984.
 
-* Build note field from all subfield elements present, following punctuation provision rules
-
-See UNCb7386333 and UNCb1511334 examples above.
-
-===== Else...
-
-** Provide fake $b value "Thesis/dissertation" to use at beginning of field
-** Build note field from all subfield elements present, following punctuation provision rules
-
-See UNCb6856070 example above.
-
-[NOTE]
-====
-Unless it's easier to use the constructed display value in this case, it would be fine to just use the actual field data in `note_index`.
-
-See UNCb6856070 example above.
-====
-
-==== Punctuation rules for building field value from component subfields (non-$a-only field values
-
-* Precede all non-initial subfield values except $d with `--`
-* Precede non-initial $d with `, ` (comma space)
-
-[NOTE]
-====
-If I recall correctly, punctuation is stripped out of or ignored in the indexed fields.
-
-If that's true, then if it is easier or better to NOT stick the punctuation in the values sent to `note_indexed`, that seems fine.
-====
+*OTHER DETAILS* +
+Washington, D.C. : National Aeronautics and Space Administration, Scientific and Technical Information Office ; [Springfield, Va. : For sale by National Technical Information Service], 1984. +
+*Report covers:* Sept 1, 1981-Aug 31, 1982 (pt. 1) +
+*Report covers:* Sept 1, 1982-Aug 31, 1983 (pt. 2)
 
 
+*Physical description:* 2 v. : ill. ; 28 cm. +
+*Type of report:* Contractor report.
+
+*Notes:* +
+"February 1984"--Pt. 1. +
+"August 1984"--Pt. 2.
+
+==== UNCb2372593
+===== MARC
+
+[source]
+----
+513 _ _ $aIn house.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_report_type":[
+    {
+      "value":"In house."
+    }
+    ]
+}
+----
+
+==== UNCb3405558
+===== MARC
+
+[source]
+----
+513 _ _ $bJanuary - March 1983.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_report_coverage":[
+    {
+    "value":"January - March 1983."
+    }
+  ]
+}
+----
+
+== Examples: note_issuance
+=== 550
+==== UNCb234211
+===== MARC
+
+[source]
+----
+245 0 0 $aAmerican birds$h[serial].
+260 _ _ $a[New York,$bNational Audubon Society]
+550 _ _ $aVols. for <Feb.-June 1971> published by the National Audubon Society in collaboration with the U.S. Fish and Wildlife Service.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_issuance":[
+    {
+      "value":"Vols. for <Feb.-June 1971> published by the National Audubon Society in collaboration with the U.S. Fish and Wildlife Service."
+    }
+    ]
+}
+----
+
+===== Display suggestion
+*American birds [serial].* +
+[New York, National Audubon Society] +
+
+*OTHER DETAILS* +
+[New York, National Audubon Society] +
+Vols. for <Feb.-June 1971> published by the National Audubon Society in collaboration with the U.S. Fish and Wildlife Service.
+
+== Examples: note_organization
+
+=== 351
+==== UNCb6351954
+===== MARC
+
+[source]
+----
+351 _ _ $3Publications and correspondence$aOrganized into two groups: Publications. Correspondence.$bChronological arrangement within group.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_organization":[
+    {
+      "value":"Publications and correspondence: Organized into two groups: Publications. Correspondence. Chronological arrangement within group."
+    }
+    ]
+}
+----
+
+
+== Complex processing instructions
 === 538
 
 Replacements (case insensitive):
