@@ -125,7 +125,7 @@ note_scale[value],MARC,n,GEN,255,abcdefg,.,concat_subelements,x,x,note_scale[val
 note_summary,MARC,n,GEN,520,abc3,none,concat_subelements,x,https://trlnmain.atlassian.net/wiki/spaces/TD/pages/96665601/Argon+Fields+and+their+display,note_summaryGEN520abc3none,0,1,y,y,.
 note_system_details,MARC,n,GEN,538,aiu3,none,concat_subelements,Create label from $3 + $i if either or both are present,x,note_system_detailsGEN538aiu3none,0,0,y,,
 note_toc,MARC,n,GEN,505,agrt,none,concat_subelements,x,https://trlnmain.atlassian.net/wiki/spaces/TD/pages/96665601/Argon+Fields+and+their+display,note_tocGEN505agrtnone,0,0,y,y,.
-note_with[value],MARC,n,GEN,501,a,.,concat_subelements,.,.,note_with[value]GEN501a.,0,0,y,n,n
+note_with,MARC,n,GEN,501,a,.,concat_subelements,.,.,note_withGEN501a.,0,0,y,n,n
 oclc_number[old],MARC,n,UNC,019,a,x,subelement_to_value,x,https://github.com/trln/marc-to-argot/blob/master/spec/unc_oclc_number_spec.rb,oclc_number[old]UNC19ax,0,0,y,y,y
 oclc_number[value],MARC,n,UNC,001,.,see notes,see notes,see notes,https://github.com/trln/marc-to-argot/blob/master/spec/unc_oclc_number_spec.rb,oclc_number[value]UNC1.see notes,0,0,y,y,y
 oclc_number[value],MARC,n,UNC,003,.,see notes,see notes,see notes,https://github.com/trln/marc-to-argot/blob/master/spec/unc_oclc_number_spec.rb,oclc_number[value]UNC3.see notes,0,0,y,y,y

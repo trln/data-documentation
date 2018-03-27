@@ -356,9 +356,7 @@ _There are notes in this record other than the one(s) shown here_
 ----
 {
   "note_with":[
-    {
-      "value":"Bound with: United States. Congress. Committee on Labor and Public Welfare. Subcommittee on Labor. Legislative history of the coverage of nonprofit hospitals under the National labor relations act, 1974, Public law 93-360 (S. 3203)."
-    }
+      "Bound with: United States. Congress. Committee on Labor and Public Welfare. Subcommittee on Labor. Legislative history of the coverage of nonprofit hospitals under the National labor relations act, 1974, Public law 93-360 (S. 3203)."
   ]
 }
 ----
