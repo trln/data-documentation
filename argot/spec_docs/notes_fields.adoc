@@ -725,9 +725,7 @@ Washington, D.C. : National Aeronautics and Space Administration, Scientific and
 ----
 {
   "note_issuance":[
-    {
-      "value":"Vols. for <Feb.-June 1971> published by the National Audubon Society in collaboration with the U.S. Fish and Wildlife Service."
-    }
+      "Vols. for <Feb.-June 1971> published by the National Audubon Society in collaboration with the U.S. Fish and Wildlife Service."
     ]
 }
 ----

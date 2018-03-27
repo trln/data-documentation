@@ -104,7 +104,7 @@ note_index,MARC,y,UNC,541,a,i1!=0,subelement_to_value,x,x,note_indexUNC541ai1!=0
 note_index,MARC,n,GEN,561,a,ind1 != 0,subelement_to_value,.,.,note_indexGEN561aind1 != 0,0,0,n,n,n
 note_index,MARC,n,GEN,507,ab,.,concat_subelements,.,.,note_indexGEN507ab.,0,0,n,n,n
 note_index,MARC,n,GEN,544,d,none,subelement_to_value,x,x,note_indexGEN544dnone,0,0,n,n,n
-note_issuance[value],MARC,n,GEN,550,a,none,concat_subelements,x,x,note_issuance[value]GEN550anone,0,0,y,,
+note_issuance,MARC,n,GEN,550,a,none,concat_subelements,x,x,note_issuanceGEN550anone,0,0,y,,
 note_local[indexed_value],MARC,n,UNC,541,a,.,subelement_to_value,.,.,note_local[indexed_value]UNC541a.,0,0,y,n,n
 note_local[label],MARC,n,GEN,500,3,field contains whitelisted $5 value,concat_subelements,.,.,note_local[label]GEN5003field contains whitelisted $5 value,0,0,y,n,n
 note_local[label],MARC,n,UNC,541,.,.,constant,"""label"":""Source of acquisition""",.,note_local[label]UNC541..,0,0,y,,
