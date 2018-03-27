@@ -491,7 +491,7 @@ It also seems like the kind of thing that institutions might want to display in 
 ----
 {
   "note_dissertation":[
-      "Thesis/dissertation--Bremen International Graduate School of Social Sciences, 2008"
+      /dissertation--Bremen International Graduate School of Social Sciences, 2008"
   ]
 }
 ----
@@ -511,9 +511,7 @@ It also seems like the kind of thing that institutions might want to display in 
 ----
 {
   "note_scale":[
-    {
-      "value":"Scale [3 cm. per degree] (Zones -18⁰ to -33⁰, -31⁰ to -46⁰, -44⁰ to 59⁰, -57⁰ to -72⁰, -69⁰ to -84⁰ ; eq. 1875)"
-    }
+      "Scale [3 cm. per degree] (Zones -18⁰ to -33⁰, -31⁰ to -46⁰, -44⁰ to 59⁰, -57⁰ to -72⁰, -69⁰ to -84⁰ ; eq. 1875)"
   ]
 }
 ----
@@ -532,9 +530,7 @@ It also seems like the kind of thing that institutions might want to display in 
 ----
 {
   "note_scale":[
-    {
-      "value":"Scale 1:100,000; 1 cm. = 1 kilometer."
-    }
+      "Scale 1:100,000; 1 cm. = 1 kilometer."
   ]
 }
 ----

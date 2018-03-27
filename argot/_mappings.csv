@@ -120,8 +120,8 @@ note_performer_credits[value],MARC,n,GEN,511,a,.,concat_subelements,x,x,note_per
 note_production_credits,MARC,n,GEN,508,a,.,concat_subelements,x,x,note_production_creditsGEN508a.,0,0,y,n,n
 note_report_coverage,MARC,n,GEN,513,b,.,concat_subelements,x,x,note_report_coverageGEN513b.,0,0,y,n,n
 note_report_type,MARC,n,GEN,513,a,.,concat_subelements,deduplicate field once all values are assigned,x,note_report_typeGEN513a.,0,0,y,n,n
-note_scale[value],MARC,n,GEN,507,ab,.,concat_subelements,x,x,note_scale[value]GEN507ab.,0,0,y,n,n
-note_scale[value],MARC,n,GEN,255,abcdefg,.,concat_subelements,x,x,note_scale[value]GEN255abcdefg.,0,0,y,n,n
+note_scale,MARC,n,GEN,507,ab,.,concat_subelements,x,x,note_scaleGEN507ab.,0,0,y,n,n
+note_scale,MARC,n,GEN,255,abcdefg,.,concat_subelements,x,x,note_scaleGEN255abcdefg.,0,0,y,n,n
 note_summary,MARC,n,GEN,520,abc3,none,concat_subelements,x,https://trlnmain.atlassian.net/wiki/spaces/TD/pages/96665601/Argon+Fields+and+their+display,note_summaryGEN520abc3none,0,1,y,y,.
 note_system_details,MARC,n,GEN,538,aiu3,none,concat_subelements,Create label from $3 + $i if either or both are present,x,note_system_detailsGEN538aiu3none,0,0,y,,
 note_toc,MARC,n,GEN,505,agrt,none,concat_subelements,x,https://trlnmain.atlassian.net/wiki/spaces/TD/pages/96665601/Argon+Fields+and+their+display,note_tocGEN505agrtnone,0,0,y,y,.
