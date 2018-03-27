@@ -20,6 +20,10 @@ date_cataloged,MARCish,y,NCCU,.,.,.,subelement_to_value,"If necessary, convert t
 date_cataloged,MARCish,n,NCSU,909,a,.,subelement_to_value,"If necessary, convert to ISO 8601 date/timestamp format",.,date_catalogedNCSU909a.,0,1,y,.,.
 date_cataloged,MARCish,n,UNC,999,a,i1=0 AND i2=0,subelement_to_value,"If necessary, convert to ISO 8601 date/timestamp format",.,date_catalogedUNC999ai1=0 AND i2=0,0,1,y,.,.
 derived_work_note,MARC,n,GEN,581,az3,.,see notes,$3 label; prepend ISBN to $z value,x,derived_work_noteGEN581az3.,0,0,y,,
+description_details_digital_file,MARC,n,GEN,347,,,subelement_to_value,Complex instructions. Refer to linked documentation for thie field,documentation needed,description_details_digital_fileGEN347,0,0,y,,
+description_details_projection,MARC,n,GEN,345,,,subelement_to_value,Complex instructions. Refer to linked documentation for thie field,documentation needed,description_details_projectionGEN345,0,0,y,,
+description_details_sound,MARC,n,GEN,344,,,subelement_to_value,Complex instructions. Refer to linked documentation for thie field,documentation needed,description_details_soundGEN344,0,0,y,,
+description_details_video,MARC,n,GEN,346,,,subelement_to_value,Complex instructions. Refer to linked documentation for thie field,documentation needed,description_details_videoGEN346,0,0,y,,
 director,MARC,n,GEN,100,abcd(g)jqu,$e = ('director' OR 'film director') OR $4 = ('drt' OR 'fmd'),concat_subelements,"subfield g included if there is NO $t or $k, or if it occurs BEFORE any $t/$k present","Main author/creatorship is assumed when name is recorded in 1xx, and may not always be represented by explicit relator term/code. Director is a ""contributor"" role, not a ""creator role"". There is no good way to tell if ""1xx Doe, John$edirector"") really means ""writer and director"" or if the name *should* have been recorded in 7xx field because the person only was in a contributor role. We err on the side of treating it as if the name has two roles. ",directorGEN100abcd(g)jqu$e = ('director' OR 'film director') OR $4 = ('drt' OR 'fmd'),0,3,y,.,.
 director,MARC,n,GEN,700,abcd(g)jqu,$e = ('director' OR 'film director') OR $4 = ('drt' OR 'fmd'),concat_subelements,"subfield g included if there is NO $t or $k, or if it occurs BEFORE any $t/$k present",x,directorGEN700abcd(g)jqu$e = ('director' OR 'film director') OR $4 = ('drt' OR 'fmd'),0,3,y,.,.
 director,MARC,n,GEN,710,abcd(g)(n)u,$e = ('director' OR 'film director') OR $4 = ('drt' OR 'fmd'),concat_subelements,"$g and/or $n included if there is NO $t or $k, or if it occurs BEFORE any $t/$k present",x,directorGEN710abcd(g)(n)u$e = ('director' OR 'film director') OR $4 = ('drt' OR 'fmd'),0,3,y,.,.
@@ -82,6 +86,7 @@ misc_id[type],MARC,n,GEN,015,2,.,map subelement to value,"type = ""National Bibl
 misc_id[value],MARC,n,GEN,015,a,.,subelement_to_value,"if subfield includes parentheses, split into 'id' and 'qual';;;if subfield contains no parentheses, 'id' = whole subfield value",x,misc_id[value]GEN15a.,0,0,y,y,y
 misc_id[value],MARC,n,GEN,010,a,.,subelement_to_value,"misc_id[qual]   = """";;;misc_id[type] = ""LCCN"";;;Do NOT trim leading/trailing spaces",x,misc_id[value]GEN10a.,0,0,y,y,y
 misc_id[value],MARC,n,GEN,010,b,.,subelement_to_value,"misc_id[qual]  = """";;;misc_id[type] = ""NUCMC"";;;Do NOT trim leading/trailing spaces",x,misc_id[value]GEN10b.,0,0,y,y,y
+musical_presentation_statement,MARC,n,GEN,254,a,.,concat_subelements,.,x,musical_presentation_statementGEN254a.,0,0,y,n,n
 note_access_restriction[label],MARC,n,GEN,506,3,.,subelement_to_value,.,.,note_access_restriction[label]GEN5063.,0,0,y,n,n
 note_access_restriction[value],MARC,n,GEN,506,abcdefu,.,concat_subelements,.,.,note_access_restriction[value]GEN506abcdefu.,0,0,y,n,n
 note_admin_history,MARC,n,GEN,545,abu,i1=1,concat_subelements,x,x,note_admin_historyGEN545abui1=1,0,0,y,,
@@ -109,11 +114,12 @@ note_local[value],MARC,n,GEN,500,a,field contains whitelisted $5 value,concat_su
 note_local[value],MARC,n,UNC,541,abcdefhno3,.,concat_subelements,DO NOT use $3 to create label,.,note_local[value]UNC541abcdefhno3.,0,0,y,n,n
 note_local[value],MARC,n,GEN,561,a,ind1 != 0,concat_subelements,.,.,note_local[value]GEN561aind1 != 0,0,0,y,n,n
 note_local[value],MARC,n,GEN,590,a,.,concat_subelements,.,.,note_local[value]GEN590a.,1,0,y,n,n
+note_organization,MARC,n,GEN,351,abc3,.,concat_subelements,Create label from $3,x,note_organizationGEN351abc3.,0,0,y,,
 note_performer_credits[label],MARC,n,GEN,511,.,ind1=1,constant,"""label"":""Cast""",x,note_performer_credits[label]GEN511.ind1=1,0,0,y,n,n
 note_performer_credits[value],MARC,n,GEN,511,a,.,concat_subelements,x,x,note_performer_credits[value]GEN511a.,0,0,y,n,n
-note_production_credits[value],MARC,n,GEN,508,a,.,concat_subelements,x,x,note_production_credits[value]GEN508a.,0,0,y,n,n
-note_report_type[value],MARC,n,GEN,513,a,.,concat_subelements,deduplicate field once all values are assigned,x,note_report_type[value]GEN513a.,0,0,y,n,n
+note_production_credits,MARC,n,GEN,508,a,.,concat_subelements,x,x,note_production_creditsGEN508a.,0,0,y,n,n
 note_report_coverage[value],MARC,n,GEN,513,b,.,concat_subelements,x,x,note_report_coverage[value]GEN513b.,0,0,y,n,n
+note_report_type[value],MARC,n,GEN,513,a,.,concat_subelements,deduplicate field once all values are assigned,x,note_report_type[value]GEN513a.,0,0,y,n,n
 note_scale[value],MARC,n,GEN,507,ab,.,concat_subelements,x,x,note_scale[value]GEN507ab.,0,0,y,n,n
 note_scale[value],MARC,n,GEN,255,abcdefg,.,concat_subelements,x,x,note_scale[value]GEN255abcdefg.,0,0,y,n,n
 note_summary,MARC,n,GEN,520,abc3,none,concat_subelements,x,https://trlnmain.atlassian.net/wiki/spaces/TD/pages/96665601/Argon+Fields+and+their+display,note_summaryGEN520abc3none,0,1,y,y,.
@@ -240,9 +246,3 @@ work_citation_uncontrolled,MARC,n,GEN,100,abcd(g)jqu,.,concat_subelements,"$g an
 work_citation_uncontrolled,MARC,n,GEN,110,abcd(g)(n)u,.,concat_subelements,"$g and/or $n included if there is NO $t or $k, or if it occurs BEFORE any $t/$k present",Prepended to title portion from 245,work_citation_uncontrolledGEN110abcd(g)(n)u.,0,0,y,n,n
 work_citation_uncontrolled,MARC,n,GEN,111,acde(g)(n)qu,.,concat_subelements,"$g and/or $n included there is NO $t or $k, or if it occurs BEFORE any $t/$k present",Prepended to title portion from 245,work_citation_uncontrolledGEN111acde(g)(n)qu.,0,0,y,n,n
 work_citation_uncontrolled,MARC,n,GEN,245,anp,.,concat_subelements,"Include $n and/or $p that PRECEDE any $b or $h;;;Strip initial articles/etc as per i2 value;;;The 100, 110, or 111 string (if those fields are present) followed by "". "" is prepended to this value to create the full work_citation_uncontrolled entry",Prepended to title portion from 245,work_citation_uncontrolledGEN245anp.,0,0,y,n,n
-note_organization[value],MARC,n,GEN,351,abc3,.,concat_subelements,Create label from $3,x,note_organization[value]GEN351abc3.,0,0,y,,
-musical_presentation_statement,MARC,n,GEN,254,a,.,concat_subelements,.,x,musical_presentation_statementGEN254a.,0,0,y,n,n
-description_details_digital_file,MARC,n,GEN,347,,,subelement_to_value,Complex instructions. Refer to linked documentation for thie field,documentation needed,description_details_digital_fileGEN347,0,0,y,,
-description_details_projection,MARC,n,GEN,345,,,subelement_to_value,Complex instructions. Refer to linked documentation for thie field,documentation needed,description_details_projectionGEN345,0,0,y,,
-description_details_sound,MARC,n,GEN,344,,,subelement_to_value,Complex instructions. Refer to linked documentation for thie field,documentation needed,description_details_soundGEN344,0,0,y,,
-description_details_video,MARC,n,GEN,346,,,subelement_to_value,Complex instructions. Refer to linked documentation for thie field,documentation needed,description_details_videoGEN346,0,0,y,,

@@ -613,15 +613,9 @@ It also seems like the kind of thing that institutions might want to display in 
 ----
 {
   "note_production_credits":[
-    {
-      "value":"Baby face: editing, Howard Bretherton ; photography, James Van Trees."
-    },
-    {
-    "value":"Red-headed woman: photography, Harold Rosson ; editing, Blanche Sewell."
-    },
-    {
-    "value":"Waterloo Bridge: cinematographer, Arthur Edeson ; editor, Clarence Kolster, Maurice Pivar ; music, Val Burton."
-    }
+    "Baby face: editing, Howard Bretherton ; photography, James Van Trees."
+    "Red-headed woman: photography, Harold Rosson ; editing, Blanche Sewell."
+    "Waterloo Bridge: cinematographer, Arthur Edeson ; editor, Clarence Kolster, Maurice Pivar ; music, Val Burton."
   ]
 }
 ----
@@ -773,9 +767,7 @@ Vols. for <Feb.-June 1971> published by the National Audubon Society in collabor
 ----
 {
   "note_organization":[
-    {
-      "value":"Publications and correspondence: Organized into two groups: Publications. Correspondence. Chronological arrangement within group."
-    }
+    "Publications and correspondence: Organized into two groups: Publications. Correspondence. Chronological arrangement within group."
     ]
 }
 ----
@@ -807,9 +799,6 @@ b8981148a	514 _ _ $zConforms To:$eCombined Arms Research Library Digital Library
 
 b6855632a	514 _ _ $aThe attribute accuracy is unknown.$dNo duplicate features are present.$eAfter processing, the data set is checked for number of records, attribute names, and values compared with source materials.
 
-=== 506 - Restrictions on Access Note
-=== 508 - Creation/Production Credits Note
-=== 511 - Participant or Performer Note
 
 == Ignored notes
 === 524 - Preferred Citation of Described Materials Note
