@@ -95,7 +95,7 @@ note_display[label],MARC,n,GEN,561,3,ind1 != 0,subelement_to_value,.,.,note_disp
 note_display[value],MARC,n,GEN,501,a,.,subelement_to_value,.,.,note_display[value]GEN501a.,0,0,n,n,n
 note_display[value],MARC,n,GEN,502,abcdgo,.,concat_subelements,Complex instructions. Refer to linked documentation for thie field,.,note_display[value]GEN502abcdgo.,0,0,n,n,n
 note_display[value],MARC,n,GEN,507,ab,.,concat_subelements,.,.,note_display[value]GEN507ab.,0,0,n,n,n
-note_dissertation[value],MARC,n,GEN,502,abcdg,.,concat_subelements,Complex instructions. Refer to linked documentation for thie field,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_dissertation[value]GEN502abcdg.,0,0,y,n,n
+note_dissertation,MARC,n,GEN,502,abcdg,.,concat_subelements,Complex instructions. Refer to linked documentation for thie field,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_dissertationGEN502abcdg.,0,0,y,n,n
 note_general[indexed],MARC,n,GEN,504,.,.,constant,value = false,.,note_general[indexed]GEN504..,0,0,y,n,n
 note_general[label],MARC,n,GEN,500,3,field does NOT contain $5,concat_subelements,.,.,note_general[label]GEN5003field does NOT contain $5,0,0,y,n,n
 note_general[value],MARC,n,GEN,500,a,field does NOT contain $5,concat_subelements,.,.,note_general[value]GEN500afield does NOT contain $5,0,0,y,n,n

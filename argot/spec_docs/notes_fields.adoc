@@ -414,9 +414,7 @@ It also seems like the kind of thing that institutions might want to display in 
 ----
 {
   "note_dissertation":[
-    {
-      "value":"Thesis--Ph.D--University of North Carolina at Chapel Hill."
-    }
+      "Thesis--Ph.D--University of North Carolina at Chapel Hill."
   ]
 }
 ----
@@ -435,9 +433,7 @@ It also seems like the kind of thing that institutions might want to display in 
 ----
 {
   "note_dissertation":[
-    {
-      "value":"Thesis (Ph. D.)--University of Lancaster, Lancashire, England."
-    }
+      "Thesis (Ph. D.)--University of Lancaster, Lancashire, England."
   ]
 }
 ----
@@ -457,9 +453,7 @@ It also seems like the kind of thing that institutions might want to display in 
 ----
 {
   "note_dissertation":[
-    {
-      "value":"Recital document--Master of Music in Performance and Vocal Pedagogy--University of Texas at San Antonio, 2012."
-    }
+      "Recital document--Master of Music in Performance and Vocal Pedagogy--University of Texas at San Antonio, 2012."
   ]
 }
 ----
@@ -478,9 +472,7 @@ It also seems like the kind of thing that institutions might want to display in 
 ----
 {
   "note_dissertation":[
-    {
-      "value":"Ph. D.--University of North Carolina, 1976"
-    }
+      "Ph. D.--University of North Carolina, 1976"
   ]
 }
 ----
@@ -499,9 +491,7 @@ It also seems like the kind of thing that institutions might want to display in 
 ----
 {
   "note_dissertation":[
-    {
-      "value":"Thesis/dissertation--Bremen International Graduate School of Social Sciences, 2008"
-    }
+      "Thesis/dissertation--Bremen International Graduate School of Social Sciences, 2008"
   ]
 }
 ----
