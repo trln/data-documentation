@@ -642,17 +642,11 @@ It also seems like the kind of thing that institutions might want to display in 
 ----
 {
   "note_report_type":[
-    {
-      "value":"Contractor report."
-    }
+    "Contractor report."
     ],
   "note_report_coverage":[
-    {
-    "value":"Sept 1, 1981-Aug 31, 1982 (pt. 1)"
-    },
-    {
-    "value":"Sept 1, 1982-Aug 31, 1983 (pt. 2)"
-    }
+    "Sept 1, 1981-Aug 31, 1982 (pt. 1)",
+    "Sept 1, 1982-Aug 31, 1983 (pt. 2)"
   ]
 }
 ----
@@ -689,9 +683,7 @@ Washington, D.C. : National Aeronautics and Space Administration, Scientific and
 ----
 {
   "note_report_type":[
-    {
-      "value":"In house."
-    }
+    "In house."
     ]
 }
 ----
@@ -710,9 +702,7 @@ Washington, D.C. : National Aeronautics and Space Administration, Scientific and
 ----
 {
   "note_report_coverage":[
-    {
-    "value":"January - March 1983."
-    }
+    "January - March 1983."
   ]
 }
 ----

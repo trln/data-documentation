@@ -118,8 +118,8 @@ note_organization,MARC,n,GEN,351,abc3,.,concat_subelements,Create label from $3,
 note_performer_credits[label],MARC,n,GEN,511,.,ind1=1,constant,"""label"":""Cast""",x,note_performer_credits[label]GEN511.ind1=1,0,0,y,n,n
 note_performer_credits[value],MARC,n,GEN,511,a,.,concat_subelements,x,x,note_performer_credits[value]GEN511a.,0,0,y,n,n
 note_production_credits,MARC,n,GEN,508,a,.,concat_subelements,x,x,note_production_creditsGEN508a.,0,0,y,n,n
-note_report_coverage[value],MARC,n,GEN,513,b,.,concat_subelements,x,x,note_report_coverage[value]GEN513b.,0,0,y,n,n
-note_report_type[value],MARC,n,GEN,513,a,.,concat_subelements,deduplicate field once all values are assigned,x,note_report_type[value]GEN513a.,0,0,y,n,n
+note_report_coverage,MARC,n,GEN,513,b,.,concat_subelements,x,x,note_report_coverageGEN513b.,0,0,y,n,n
+note_report_type,MARC,n,GEN,513,a,.,concat_subelements,deduplicate field once all values are assigned,x,note_report_typeGEN513a.,0,0,y,n,n
 note_scale[value],MARC,n,GEN,507,ab,.,concat_subelements,x,x,note_scale[value]GEN507ab.,0,0,y,n,n
 note_scale[value],MARC,n,GEN,255,abcdefg,.,concat_subelements,x,x,note_scale[value]GEN255abcdefg.,0,0,y,n,n
 note_summary,MARC,n,GEN,520,abc3,none,concat_subelements,x,https://trlnmain.atlassian.net/wiki/spaces/TD/pages/96665601/Argon+Fields+and+their+display,note_summaryGEN520abc3none,0,1,y,y,.
