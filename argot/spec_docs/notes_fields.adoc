@@ -118,12 +118,12 @@ Of course some fields are just weird and complicated.
 One example is the 518 where you have the option of putting a natural language note in the $a. OR you can bust up the information into separately coded elements where the $p sort of functions as a label.
 
 * May need $3 label
-** b7832943a	518 _ _ $3CD 2$oRecorded$d2004 November,$pAuditorium (Chiesa) di San Salvatore a Rodengo, Brescia, Italy.
-** b7832943a	518 _ _ $3CD 1$oRecorded$d2001 October,$pIstituo di musica Antica Academia Monte Regalis, Mondovi, Italy.
+** b7832943a: 	518 _ _ $3CD 2$oRecorded$d2004 November,$pAuditorium (Chiesa) di San Salvatore a Rodengo, Brescia, Italy.
+** b7832943a: 	518 _ _ $3CD 1$oRecorded$d2001 October,$pIstituo di musica Antica Academia Monte Regalis, Mondovi, Italy.
 * If $a, treat like basic textual note
-** b1200040a	518 _ _ $a"Recorded in the formerly monastic church of St. Ottilie in Möschenfeld near Munich. Date of recording, May, 1967."
+** b1200040a: 	518 _ _ $a"Recorded in the formerly monastic church of St. Ottilie in Möschenfeld near Munich. Date of recording, May, 1967."
 * If any subfields occur after $a, remove them and throw in a space -- these are probably mis-coded and should be cleaned up in the data, but are pretty innocuous and seem easy-ish to deal with
-** b8966892a	518 _ _ $aBroadcast$dFriday, November 18 (10:01-11:00 p.m. Est), on ABC.
+** b8966892a: 	518 _ _ $aBroadcast$dFriday, November 18 (10:01-11:00 p.m. Est), on ABC.
 * If no $a... $o 
 
 == Argot note pattern
@@ -161,7 +161,11 @@ One example is the 518 where you have the option of putting a natural language n
 
 == Examples: note_general
 === 500
+
+NOTE
+====
 500 is mapped to `note_general` if it lacks a whitelisted $5 value for the institution creating the Argot.
+====
 
 ==== UNCb1055018
 ===== MARC
