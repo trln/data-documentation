@@ -320,6 +320,7 @@ If $b is present, prepend "Number of references: " to its value.
 
 ==== UNCb5260735
 _I don't know why our rare books catalogers have added what basically amount to duplicate 590 notes. I'm flagging this as a long-term data cleanup project for UNC._
+
 ===== MARC
 
 [source]
@@ -495,7 +496,7 @@ It also seems like the kind of thing that institutions might want to display in 
 ----
 {
   "note_dissertation":[
-      /dissertation--Bremen International Graduate School of Social Sciences, 2008"
+      "Thesis/dissertation--Bremen International Graduate School of Social Sciences, 2008"
   ]
 }
 ----
@@ -964,15 +965,6 @@ Omissions (case insensitive):
 ** System requirements: WWW browser
 
 
-
-== Separate field notes
-
-
-
-=== 514 - Data Quality Note
-b8981148a	514 _ _ $zConforms To:$eCombined Arms Research Library Digital Library.
-
-b6855632a	514 _ _ $aThe attribute accuracy is unknown.$dNo duplicate features are present.$eAfter processing, the data set is checked for number of records, attribute names, and values compared with source materials.
 
 
 == Ignored notes
