@@ -785,7 +785,7 @@ From http://www.loc.gov/marc/bibliographic/bd514.html with a minor edit
 
 ===== Suggested display
 |====================
-| Notes on data quality: | Attribute accuracy: Estimated to be 98.5%. -- Village names compared to source map -- all match, therefore errors are possible only if source maps are incorrect.
+| Data quality: | Attribute accuracy: Estimated to be 98.5%. -- Village names compared to source map -- all match, therefore errors are possible only if source maps are incorrect.
 | | Logical consistency: Node-to-line, line-to-area topological relationships maintained. Line and area attributes maintained. GRASS 4.0 program \"v.support\" checks topological relationships.
 | | Other data details: All incorporated limits shown on USGS quads were digitized.
 | | Horizontal position accuracy: The accuracy of this data is based upon the use of the source maps ... [subfield $f shortened in this example]
