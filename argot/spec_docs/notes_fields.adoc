@@ -744,6 +744,200 @@ Vols. for <Feb.-June 1971> published by the National Audubon Society in collabor
 }
 ----
 
+== Examples: note_data_quality
+=== 514
+==== Complex processing rules
+
+Produce a separate note with the label listed below for data in the given subfields.
+
+* Attribute accuracy -- abc
+* Logical consistency -- d
+* Horizontal position accuracy -- fgh
+* Vertical position accuracy -- ijk
+* Cloud cover -- m
+* Other data details -- euz
+
+Insert ` -- ` between subfield values in all of the above *except* `Other data details`, where the subfield values should be separated by spaces only.
+
+==== mock 1
+From http://www.loc.gov/marc/bibliographic/bd514.html with a minor edit
+===== MARC
+
+[source]
+----
+514 _ _ $bEstimated to be 98.5%.$cVillage names compared to source map -- all match, therefore errors are possible only if source maps are incorrect.$dNode-to-line, line-to-area topological relationships maintained. Line and area attributes maintained. GRASS 4.0 program "v.support" checks topological relationships.$eAll incorporated limits shown on USGS quads were digitized.$fThe accuracy of this data is based upon the use of the source maps ... [subfield $f shortened in this example]$m8.42%
+----
+
+===== Argot
+
+[source:javascript]
+----
+{
+  "note_data_quality":[
+    "Attribute accuracy: Estimated to be 98.5%. -- Village names compared to source map -- all match, therefore errors are possible only if source maps are incorrect.",
+    "Logical consistency: Node-to-line, line-to-area topological relationships maintained. Line and area attributes maintained. GRASS 4.0 program \"v.support\" checks topological relationships.",
+    "Other data details: All incorporated limits shown on USGS quads were digitized.",
+    "Horizontal position accuracy: The accuracy of this data is based upon the use of the source maps ... [subfield $f shortened in this example]",
+    "Cloud cover: 8.42%"
+  ]
+}
+----
+
+===== Suggested display
+|====================
+| Notes on data quality: | Attribute accuracy: Estimated to be 98.5%. -- Village names compared to source map -- all match, therefore errors are possible only if source maps are incorrect.
+| | Logical consistency: Node-to-line, line-to-area topological relationships maintained. Line and area attributes maintained. GRASS 4.0 program \"v.support\" checks topological relationships.
+| | Other data details: All incorporated limits shown on USGS quads were digitized.
+| | Horizontal position accuracy: The accuracy of this data is based upon the use of the source maps ... [subfield $f shortened in this example]
+| | Cloud cover: 8.42%
+|====================
+
+
+==== mock 2
+From http://www.loc.gov/marc/bibliographic/bd514.html
+===== MARC
+
+[source]
+----
+514 _ _ $aThe map layer that displays Special Feature Symbols shows the approximate location of small (less than 2 acres in size) areas of soils ... [subfield $a shortened in this example] $dQuarter quadrangles edited and joined internally and to surrounding quads. All known errors corrected.$eThe combination of spatial linework layer, Special Feature Symbols layer, and attribute data are considered a complete SSURGO dataset.$fThe actual on ground transition between the area represented by the Special Feature Symbol and the surrounding soils generally is very narrow with a well defined edge. The center of the feature area was compiled and digitized as a point. The same standards for compilation and digitizing used for line data were applied to the development of the Special Feature Symbols layer.
+----
+
+===== Argot
+
+[source:javascript]
+----
+{
+  "note_data_quality":[
+    "Attribute accuracy: The map layer that displays Special Feature Symbols shows the approximate location of small (less than 2 acres in size) areas of soils ... [subfield $a shortened in this example]",
+    "Logical consistency: Quarter quadrangles edited and joined internally and to surrounding quads. All known errors corrected.",
+    "Other data details: The combination of spatial linework layer, Special Feature Symbols layer, and attribute data are considered a complete SSURGO dataset.",
+    "Horizontal position accuracy: The actual on ground transition between the area represented by the Special Feature Symbol and the surrounding soils generally is very narrow with a well defined edge. The center of the feature area was compiled and digitized as a point. The same standards for compilation and digitizing used for line data were applied to the development of the Special Feature Symbols layer."
+  ]
+}
+----
+
+==== mock 3
+From http://www.loc.gov/marc/bibliographic/bd514.html
+===== MARC
+
+[source]
+----
+514 _ _ $bApproximately 95%
+----
+
+===== Argot
+
+[source:javascript]
+----
+{
+  "note_data_quality":[
+    "Attribute accuracy: Approximately 95%"
+  ]
+}
+----
+
+==== mock 4
+From http://www.loc.gov/marc/bibliographic/bd514.html
+===== MARC
+
+[source]
+----
+514 _ _ $aHorizontal position accuracy 1-3 meters$fDifferential GPS$g3 meters$hStatic tests$iBar test$jOne foot$kBar check.
+----
+
+===== Argot
+
+[source:javascript]
+----
+{
+  "note_data_quality":[
+    "Attribute accuracy: Horizontal position accuracy 1-3 meters",
+    "Horizontal position accuracy: Differential GPS -- 3 meters -- Static tests",
+    "Vertical position accuracy: Bar test -- One foot -- Bar check."
+  ]
+}
+----
+
+==== mock 5
+From http://www.loc.gov/marc/bibliographic/bd514.html
+===== MARC
+
+[source]
+----
+514 _ _ $zCompleteness:$u<URI>
+----
+
+===== Argot
+
+[source:javascript]
+----
+{
+  "note_data_quality":[
+    "Other data details: Completeness: <URI>"
+  ]
+}
+----
+
+==== UNCb4265192
+===== MARC
+
+[source]
+----
+514 _ _ $aNED has a resolution of one arc-second (approximately 30 meters) for the conterminous United States, Hawaii and a resolution of two arc-seconds for Alaska$g30 meters$uhttp://spatialnews.geocomm.com/whitepapers/sdts-demmap.pdf$zThe Spatial data and transfer standard mapping of the USGS digital elevation model.$uhttp://gisdata.usgs.net/NED/fgdcmetadata.asp$zNational elevation dataset FGDC compliant metadata.
+----
+
+===== Argot
+
+[source:javascript]
+----
+{
+  "note_data_quality":[
+    "Attribute accuracy: NED has a resolution of one arc-second (approximately 30 meters) for the conterminous United States, Hawaii and a resolution of two arc-seconds for Alaska",
+    "Horizontal position accuracy: 30 meters",    
+    "Other data details: http://spatialnews.geocomm.com/whitepapers/sdts-demmap.pdf The Spatial data and transfer standard mapping of the USGS digital elevation model. http://gisdata.usgs.net/NED/fgdcmetadata.asp National elevation dataset FGDC compliant metadata."
+  ]
+}
+----
+
+==== UNCb8346897
+===== MARC
+
+[source]
+----
+514 _ _ $zConforms To:$eCombined Arms Research Library Digital Library
+----
+
+===== Argot
+
+[source:javascript]
+----
+{
+  "note_data_quality":[
+    "Other data details: Conforms To: Combined Arms Research Library Digital Library"
+  ]
+}
+----
+
+==== UNCb6855640
+===== MARC
+
+[source]
+----
+514 _ _ $aThe attribute accuracy is unknown.$dNo duplicate features are present.$eAfter processing, the data set is checked for number of records, attribute names, and values compared with source materials.
+----
+
+===== Argot
+
+[source:javascript]
+----
+{
+  "note_data_quality":[
+    "Attribute accuracy: The attribute accuracy is unknown.",
+    "Logical consistency: No duplicate features are present.",
+    "Other data details: After processing, the data set is checked for number of records, attribute names, and values compared with source materials."
+  ]
+}
+----
 
 == Complex processing instructions
 === 538
