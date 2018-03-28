@@ -162,7 +162,7 @@ One example is the 518 where you have the option of putting a natural language n
 == Examples: note_general
 === 500
 
-NOTE
+[NOTE]
 ====
 500 is mapped to `note_general` if it lacks a whitelisted $5 value for the institution creating the Argot.
 ====
