@@ -128,7 +128,7 @@ One example is the 518 where you have the option of putting a natural language n
 
 == Argot note pattern
 
-[source:javascript]
+[source,javascript]
 ----
 {
   "note_field_name":[
@@ -757,10 +757,11 @@ Produce a separate note with the label listed below for data in the given subfie
 * Cloud cover -- m
 * Other data details -- euz
 
-Insert ` -- ` between subfield values in all of the above *except* `Other data details`, where the subfield values should be separated by spaces only.
+Insert ` -- ` (space hyphen hyphen space) between subfield values in all of the above *except* `Other data details`, where the subfield values should be separated by spaces only.
 
 ==== mock 1
 From http://www.loc.gov/marc/bibliographic/bd514.html with a minor edit
+
 ===== MARC
 
 [source]
@@ -770,7 +771,7 @@ From http://www.loc.gov/marc/bibliographic/bd514.html with a minor edit
 
 ===== Argot
 
-[source:javascript]
+[source,javascript]
 ----
 {
   "note_data_quality":[
@@ -795,6 +796,7 @@ From http://www.loc.gov/marc/bibliographic/bd514.html with a minor edit
 
 ==== mock 2
 From http://www.loc.gov/marc/bibliographic/bd514.html
+
 ===== MARC
 
 [source]
@@ -804,7 +806,7 @@ From http://www.loc.gov/marc/bibliographic/bd514.html
 
 ===== Argot
 
-[source:javascript]
+[source,javascript]
 ----
 {
   "note_data_quality":[
@@ -818,6 +820,7 @@ From http://www.loc.gov/marc/bibliographic/bd514.html
 
 ==== mock 3
 From http://www.loc.gov/marc/bibliographic/bd514.html
+
 ===== MARC
 
 [source]
@@ -827,7 +830,7 @@ From http://www.loc.gov/marc/bibliographic/bd514.html
 
 ===== Argot
 
-[source:javascript]
+[source,javascript]
 ----
 {
   "note_data_quality":[
@@ -838,6 +841,7 @@ From http://www.loc.gov/marc/bibliographic/bd514.html
 
 ==== mock 4
 From http://www.loc.gov/marc/bibliographic/bd514.html
+
 ===== MARC
 
 [source]
@@ -847,7 +851,7 @@ From http://www.loc.gov/marc/bibliographic/bd514.html
 
 ===== Argot
 
-[source:javascript]
+[source,javascript]
 ----
 {
   "note_data_quality":[
@@ -860,6 +864,7 @@ From http://www.loc.gov/marc/bibliographic/bd514.html
 
 ==== mock 5
 From http://www.loc.gov/marc/bibliographic/bd514.html
+
 ===== MARC
 
 [source]
@@ -869,7 +874,7 @@ From http://www.loc.gov/marc/bibliographic/bd514.html
 
 ===== Argot
 
-[source:javascript]
+[source,javascript]
 ----
 {
   "note_data_quality":[
@@ -888,7 +893,7 @@ From http://www.loc.gov/marc/bibliographic/bd514.html
 
 ===== Argot
 
-[source:javascript]
+[source,javascript]
 ----
 {
   "note_data_quality":[
@@ -909,7 +914,7 @@ From http://www.loc.gov/marc/bibliographic/bd514.html
 
 ===== Argot
 
-[source:javascript]
+[source,javascript]
 ----
 {
   "note_data_quality":[
@@ -928,7 +933,7 @@ From http://www.loc.gov/marc/bibliographic/bd514.html
 
 ===== Argot
 
-[source:javascript]
+[source,javascript]
 ----
 {
   "note_data_quality":[
