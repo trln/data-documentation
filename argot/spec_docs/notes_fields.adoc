@@ -301,7 +301,7 @@ If $b is present, prepend "Number of references: " to its value.
       "value":"Inscribed: \"Benson R. Wilcox\"--Fly leaf."
     },
     {
-      "label:"Source of acquisition",
+      "label":"Source of acquisition",
       "value":"Presented by Benson R. Wilcox (Gift : 2010 : Health Sciences Library, c. 1)",
       "indexed_value":"Presented by Benson R. Wilcox"
     },
