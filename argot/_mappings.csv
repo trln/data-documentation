@@ -115,7 +115,8 @@ note_local[value],MARC,n,GEN,500,a,field contains whitelisted $5 value,concat_su
 note_local[value],MARC,n,UNC,541,abcdefhno3,.,concat_subelements,DO NOT use $3 to create label,.,note_local[value]UNC541abcdefhno3.,0,0,y,n,n
 note_local[value],MARC,n,GEN,561,a,ind1 != 0,concat_subelements,.,.,note_local[value]GEN561aind1 != 0,0,0,y,n,n
 note_local[value],MARC,n,GEN,590,a,.,concat_subelements,.,.,note_local[value]GEN590a.,1,0,y,n,n
-note_organization,MARC,n,GEN,351,abc3,.,concat_subelements,Create label from $3,x,note_organizationGEN351abc3.,0,0,y,,
+note_numbering,MARC,n,GEN,515,a,none,concat_subelements,x,x,note_numberingGEN515anone,0,0,y,n,n
+note_organization,MARC,n,GEN,351,abc3,.,concat_subelements,Create label from $3,x,note_organizationGEN351abc3.,0,0,y,n,n
 note_performer_credits[label],MARC,n,GEN,511,.,ind1=1,constant,"""label"":""Cast""",x,note_performer_credits[label]GEN511.ind1=1,0,0,y,n,n
 note_performer_credits[value],MARC,n,GEN,511,a,.,concat_subelements,x,x,note_performer_credits[value]GEN511a.,0,0,y,n,n
 note_production_credits,MARC,n,GEN,508,a,.,concat_subelements,x,x,note_production_creditsGEN508a.,0,0,y,n,n

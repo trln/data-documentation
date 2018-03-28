@@ -949,6 +949,30 @@ From http://www.loc.gov/marc/bibliographic/bd514.html
 }
 ----
 
+== Examples: note_numbering
+
+=== 515
+==== UNCb1269140
+===== MARC
+
+[source]
+----
+515 _ _ $aIssues for 1863-1950 have no vol. numbering but constitute v. 1-85.
+515 _ _ $aVol. 102 issued in 2 pts.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_numbering":[
+    "Issues for 1863-1950 have no vol. numbering but constitute v. 1-85.",
+    "Vol. 102 issued in 2 pts."
+    ]
+}
+----
+
 == Complex processing instructions
 === 538
 
