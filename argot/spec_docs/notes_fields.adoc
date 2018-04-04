@@ -1783,6 +1783,32 @@ Washington, D.C. : National Aeronautics and Space Administration, Scientific and
 }
 ----
 
+== Examples: note_supplement
+
+* Field is NOT indexed
+
+=== 525
+
+==== UNCb1310968
+
+===== MARC
+
+[source]
+----
+525 _ _ $aSome issues accompanied by supplements.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_supplement":[
+    "Some issues accompanied by supplements."
+    ]
+}
+----
+
 == Examples: note_system_details
 
 * Field is NOT indexed
