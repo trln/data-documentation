@@ -159,6 +159,302 @@ One example is the 518 where you have the option of putting a natural language n
 **** Display (if there is anything notable to say/show)
 **** Indexing/search (if there is anything notable to say/show)
 
+
+== Examples: note_access_restrictions
+
+Field is NOT indexed.
+
+=== 506
+==== UNCb4320053
+===== MARC
+
+[source]
+----
+506 1 _ $aAccess limited to UNC Chapel Hill-authenticated users.$fLimited to one (1) concurrent user
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_access_restrictions":[
+    "Access limited to UNC Chapel Hill-authenticated users. Limited to one (1) concurrent user"
+    ]
+}
+----
+
+== Examples: note_admin_history
+
+* Field is indexed
+
+=== 545 (ind1=1)
+==== UNCb5251752
+
+===== MARC
+[source]
+-----
+545 1 _ $aSpurlock-Neal Company started out as a drug store in Nashville, Tennessee in 1868, expanding later into a wholesale distributor of products from cough medicine and sarsaparilla to candies and syrups. By 1910, the company had become one of the largest retail druggists in the South.
+-----
+
+===== Argot
+[source,javascript]
+----
+{
+  "note_admin_history":[
+      "Spurlock-Neal Company started out as a drug store in Nashville, Tennessee in 1868, expanding later into a wholesale distributor of products from cough medicine and sarsaparilla to candies and syrups. By 1910, the company had become one of the largest retail druggists in the South."
+  ]
+}
+----
+
+== Examples: note_binding
+
+* Field is indexed
+
+=== 563
+
+==== UNCb8681679
+
+===== MARC
+
+[source]
+----
+563 _ _ $aPerfect bound softcover. Four-color offset lithography. Illustrated paper wrappers with flaps. Housed in foldout die-cut box with gold foil origami crane inserted into cover slot. Signed and numbered by the artist on book's front cover flap -- Description from$uhttp://vampandtramp.com/finepress/s/clarissa-sligh.html
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_binding":[
+  {
+    "value":"Perfect bound softcover. Four-color offset lithography. Illustrated paper wrappers with flaps. Housed in foldout die-cut box with gold foil origami crane inserted into cover slot. Signed and numbered by the artist on book's front cover flap -- Description from http://vampandtramp.com/finepress/s/clarissa-sligh.html"
+  }
+ ]
+}
+----
+
+==== UNCb2559560
+
+* Do NOT extract/map based on $5 See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_subfield_5.adoc[$5 spec doc] for details.
+
+===== MARC
+[source]
+----
+563 _ _ $aNLM copy bound in contemporary Cambridge-style binding.$5DNLM
+----
+
+===== Argot
+
+*NONE*
+
+==== UNCb4254290
+
+* Label from $3
+
+===== MARC
+
+[source]
+----
+563 _ _ $aSome pages uncut.$3(Health Sciences Library, c. 1)
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_binding":[
+    {
+      "label":"(Health Sciences Library, c. 1):",
+      "value":"Some pages uncut."
+    }
+  ]
+}
+----
+
+== Examples: note_biographical
+
+* Field is indexed
+
+=== 545 (ind1=~/ 0/)
+==== UNCb3784489
+
+===== MARC
+[source]
+-----
+545 _ _ $aEllen Walters, filmmaker, teacher, and anthropologist of Laurinburg, N.C., has produced and directed several documentary films on southern culture.
+-----
+
+===== Argot
+[source,javascript]
+----
+{
+  "note_biographical":[
+      "Ellen Walters, filmmaker, teacher, and anthropologist of Laurinburg, N.C., has produced and directed several documentary films on southern culture."
+  ]
+}
+----
+
+== Examples: note_copy_version
+
+* Field is not indexed
+
+=== 562
+==== UNCb7426360 mock
+
+* Label from $3
+
+===== MARC
+[source]
+-----
+562 _ _ $3v. 2$aP. 140 is wrongly numbered 410.
+-----
+
+===== Argot
+[source,javascript]
+----
+{
+  "note_copy_version":[
+      "v. 2: P. 140 is wrongly numbered 410."
+  ]
+}
+----
+
+===== Display
+
+[NOTE]
+====
+I'm on the fence about where this belongs, though the `full display` column in the Argot fields.csv has it in "Other details > (item/copy-specific description cluster) > (no label)"
+
+Separated out because I imagine this is something some institutions may want to treat differently.
+
+It sometimes seems to be used for manifestation-level differences (i.e. all in a printing run would have same pagination error or advertisement included). However, sometimes it looks to be used for literal copy-specific notes (which would be local). 
+====
+
+== Examples: note_dissertation
+=== 502
+==== Complex processing rules
+*See _Shift off subfield list before further processing_ section of https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_subfield_6.adoc[$6 spec sheet]*
+
+===== Punctuation provision rules for building field value from component subfields (i.e. when there are subfields other than a present)
+
+* Precede all non-initial subfield values except $d with `--`
+* Precede non-initial $d with `, ` (comma space)
+
+===== Logic
+
+* If first subfield is a...
+** If there are no other subfields (b,c,d,g, or o)
+*** Take contents of $a.
+*** See UNCb9058990 example below.
+** And it is followed by subfields b,c,d,g, or o
+*** Build note field from all extractable subfield elements present, following punctuation provision rules.
+*** See mock example below.
+* If first subfield is b or g
+** Build note field from all subfield elements present, following punctuation provision rules.
+** See UNCb7386333 and UNCb1511334 examples below.
+* Else...
+** Provide fake $b value "Thesis/dissertation" to use at beginning of field
+** Build note field from all subfield elements present, following punctuation provision rules
+** See UNCb6856070 example below.
+
+==== UNC mock example
+===== MARC
+
+[source]
+----
+502 _ _ $aThesis$bPh.D$cUniversity of North Carolina at Chapel Hill.
+----
+
+===== Argot
+[source,javascript]
+----
+{
+  "note_dissertation":[
+      "Thesis--Ph.D--University of North Carolina at Chapel Hill."
+  ]
+}
+----
+
+==== UNCb9058990
+
+===== MARC
+[source]
+----
+502 _ _ $aThesis (Ph. D.)--University of Lancaster, Lancashire, England.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_dissertation":[
+      "Thesis (Ph. D.)--University of Lancaster, Lancashire, England."
+  ]
+}
+----
+
+==== UNCb7386333
+
+===== MARC
+
+[source]
+----
+502 _ _ $gRecital document$bMaster of Music in Performance and Vocal Pedagogy$cUniversity of Texas at San Antonio$d2012.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_dissertation":[
+      "Recital document--Master of Music in Performance and Vocal Pedagogy--University of Texas at San Antonio, 2012."
+  ]
+}
+----
+
+==== UNCb1511334
+
+===== MARC
+[source]
+----
+502 _ _ $bPh. D.$cUniversity of North Carolina$d1976
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_dissertation":[
+      "Ph. D.--University of North Carolina, 1976"
+  ]
+}
+----
+
+==== UNCb6856070
+===== MARC
+
+[source]
+----
+502 _ _ $cBremen International Graduate School of Social Sciences$d2008
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_dissertation":[
+      "Thesis/dissertation--Bremen International Graduate School of Social Sciences, 2008"
+  ]
+}
+----
+
 == Examples: note_general
 === 500
 
@@ -615,55 +911,6 @@ See UNCb6569074, UNCb5764837 examples below.
 }
 ----
 
-=== 586
-
-==== UNCb4336828
-===== MARC
-
-[source]
-----
-586 _ _ $aAcademy Awards, 2003: Best Documentary, Features (Michael Moore, Michael Donovan)
-586 _ _ $aCannes Film Festival, 2002: 55th Anniversary Prize (Michael Moore)
-----
-
-===== Argot
-
-[source,javascript]
-----
-{
-  "note_general":[
-    {
-      "value":"Academy Awards, 2003: Best Documentary, Features (Michael Moore, Michael Donovan)"
-    },
-    {
-      "value":"Cannes Film Festival, 2002: 55th Anniversary Prize (Michael Moore)"
-    }
-  ]
-}
-----
-
-==== UNCb7672018
-===== MARC
-
-[source]
-----
-586 _ _ $6880-05$3Ana$aDai 150-kai Akutagawa-shō, 2014
-----
-
-===== Argot
-
-[source,javascript]
-----
-{
-  "note_general":[
-    {
-      "label":"Ana:",
-      "value":"Dai 150-kai Akutagawa-shō, 2014"
-    }
-  ]
-}
-----
-
 === 585
 
 ==== UNCb4794350
@@ -710,6 +957,55 @@ See UNCb6569074, UNCb5764837 examples below.
   "note_general":[
     {
       "value":"\"Published in conjunction with the exhibition Wiener Werkstätte 1903-1932 : the luxury of beauty, Neue Galerie New York, October 26, 2017-January 29, 2018\" (title page verso)."
+    }
+  ]
+}
+----
+
+=== 586
+
+==== UNCb4336828
+===== MARC
+
+[source]
+----
+586 _ _ $aAcademy Awards, 2003: Best Documentary, Features (Michael Moore, Michael Donovan)
+586 _ _ $aCannes Film Festival, 2002: 55th Anniversary Prize (Michael Moore)
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_general":[
+    {
+      "value":"Academy Awards, 2003: Best Documentary, Features (Michael Moore, Michael Donovan)"
+    },
+    {
+      "value":"Cannes Film Festival, 2002: 55th Anniversary Prize (Michael Moore)"
+    }
+  ]
+}
+----
+
+==== UNCb7672018
+===== MARC
+
+[source]
+----
+586 _ _ $6880-05$3Ana$aDai 150-kai Akutagawa-shō, 2014
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_general":[
+    {
+      "label":"Ana:",
+      "value":"Dai 150-kai Akutagawa-shō, 2014"
     }
   ]
 }
@@ -791,89 +1087,6 @@ _I don't know why our rare books catalogers have added what basically amount to 
 }
 ----
 
-== Examples: note_admin_history
-
-* Field is indexed
-
-=== 545 (ind1=1)
-==== UNCb5251752
-
-===== MARC
-[source]
------
-545 1 _ $aSpurlock-Neal Company started out as a drug store in Nashville, Tennessee in 1868, expanding later into a wholesale distributor of products from cough medicine and sarsaparilla to candies and syrups. By 1910, the company had become one of the largest retail druggists in the South.
------
-
-===== Argot
-[source,javascript]
-----
-{
-  "note_admin_history":[
-      "Spurlock-Neal Company started out as a drug store in Nashville, Tennessee in 1868, expanding later into a wholesale distributor of products from cough medicine and sarsaparilla to candies and syrups. By 1910, the company had become one of the largest retail druggists in the South."
-  ]
-}
-----
-
-== Examples: note_biographical
-
-* Field is indexed
-
-=== 545 (ind1=~/ 0/)
-==== UNCb3784489
-
-===== MARC
-[source]
------
-545 _ _ $aEllen Walters, filmmaker, teacher, and anthropologist of Laurinburg, N.C., has produced and directed several documentary films on southern culture.
------
-
-===== Argot
-[source,javascript]
-----
-{
-  "note_biographical":[
-      "Ellen Walters, filmmaker, teacher, and anthropologist of Laurinburg, N.C., has produced and directed several documentary films on southern culture."
-  ]
-}
-----
-
-== Examples: note_copy_version
-
-* Field is not indexed
-
-=== 562
-==== UNCb7426360 mock
-
-* Label from $3
-
-===== MARC
-[source]
------
-562 _ _ $3v. 2$aP. 140 is wrongly numbered 410.
------
-
-===== Argot
-[source,javascript]
-----
-{
-  "note_copy_version":[
-      "v. 2: P. 140 is wrongly numbered 410."
-  ]
-}
-----
-
-===== Display
-
-[NOTE]
-====
-I'm on the fence about where this belongs, though the `full display` column in the Argot fields.csv has it in "Other details > (item/copy-specific description cluster) > (no label)"
-
-Separated out because I imagine this is something some institutions may want to treat differently.
-
-It sometimes seems to be used for manifestation-level differences (i.e. all in a printing run would have same pagination error or advertisement included). However, sometimes it looks to be used for literal copy-specific notes (which would be local). 
-====
-
-
 == Examples: note_with
 === 501
 ==== UNCb1193620
@@ -907,128 +1120,6 @@ It also sort of makes sense with physical description details or general notes.
 
 It also seems like the kind of thing that institutions might want to display in different ways, which is a main reason I pulled it out as a separate, specific note field. 
 ====
-
-== Examples: note_dissertation
-=== 502
-==== Complex processing rules
-*See _Shift off subfield list before further processing_ section of https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_subfield_6.adoc[$6 spec sheet]*
-
-===== Punctuation provision rules for building field value from component subfields (i.e. when there are subfields other than a present)
-
-* Precede all non-initial subfield values except $d with `--`
-* Precede non-initial $d with `, ` (comma space)
-
-===== Logic
-
-* If first subfield is a...
-** If there are no other subfields (b,c,d,g, or o)
-*** Take contents of $a.
-*** See UNCb9058990 example below.
-** And it is followed by subfields b,c,d,g, or o
-*** Build note field from all extractable subfield elements present, following punctuation provision rules.
-*** See mock example below.
-* If first subfield is b or g
-** Build note field from all subfield elements present, following punctuation provision rules.
-** See UNCb7386333 and UNCb1511334 examples below.
-* Else...
-** Provide fake $b value "Thesis/dissertation" to use at beginning of field
-** Build note field from all subfield elements present, following punctuation provision rules
-** See UNCb6856070 example below.
-
-==== UNC mock example
-===== MARC
-
-[source]
-----
-502 _ _ $aThesis$bPh.D$cUniversity of North Carolina at Chapel Hill.
-----
-
-===== Argot
-[source,javascript]
-----
-{
-  "note_dissertation":[
-      "Thesis--Ph.D--University of North Carolina at Chapel Hill."
-  ]
-}
-----
-
-==== UNCb9058990
-
-===== MARC
-[source]
-----
-502 _ _ $aThesis (Ph. D.)--University of Lancaster, Lancashire, England.
-----
-
-===== Argot
-
-[source,javascript]
-----
-{
-  "note_dissertation":[
-      "Thesis (Ph. D.)--University of Lancaster, Lancashire, England."
-  ]
-}
-----
-
-==== UNCb7386333
-
-===== MARC
-
-[source]
-----
-502 _ _ $gRecital document$bMaster of Music in Performance and Vocal Pedagogy$cUniversity of Texas at San Antonio$d2012.
-----
-
-===== Argot
-
-[source,javascript]
-----
-{
-  "note_dissertation":[
-      "Recital document--Master of Music in Performance and Vocal Pedagogy--University of Texas at San Antonio, 2012."
-  ]
-}
-----
-
-==== UNCb1511334
-
-===== MARC
-[source]
-----
-502 _ _ $bPh. D.$cUniversity of North Carolina$d1976
-----
-
-===== Argot
-
-[source,javascript]
-----
-{
-  "note_dissertation":[
-      "Ph. D.--University of North Carolina, 1976"
-  ]
-}
-----
-
-==== UNCb6856070
-===== MARC
-
-[source]
-----
-502 _ _ $cBremen International Graduate School of Social Sciences$d2008
-----
-
-===== Argot
-
-[source,javascript]
-----
-{
-  "note_dissertation":[
-      "Thesis/dissertation--Bremen International Graduate School of Social Sciences, 2008"
-  ]
-}
-----
 
 == Examples: note_scale
 === 255
@@ -1502,30 +1593,6 @@ From http://www.loc.gov/marc/bibliographic/bd514.html
 }
 ----
 
-== Examples: note_access_restrictions
-
-Field is NOT indexed.
-
-=== 506
-==== UNCb4320053
-===== MARC
-
-[source]
-----
-506 1 _ $aAccess limited to UNC Chapel Hill-authenticated users.$fLimited to one (1) concurrent user
-----
-
-===== Argot
-
-[source,javascript]
-----
-{
-  "note_access_restrictions":[
-    "Access limited to UNC Chapel Hill-authenticated users. Limited to one (1) concurrent user"
-    ]
-}
-----
-
 == Examples: note_related_work
 
 === 544
@@ -1761,90 +1828,6 @@ Field is NOT indexed.
     ]
 }
 ----
-
-== Examples: note_binding
-
-* Field is indexed
-
-=== 563
-
-==== UNCb8681679
-
-===== MARC
-
-[source]
-----
-563 _ _ $aPerfect bound softcover. Four-color offset lithography. Illustrated paper wrappers with flaps. Housed in foldout die-cut box with gold foil origami crane inserted into cover slot. Signed and numbered by the artist on book's front cover flap -- Description from$uhttp://vampandtramp.com/finepress/s/clarissa-sligh.html
-----
-
-===== Argot
-
-[source,javascript]
-----
-{
-  "note_binding":[
-  {
-    "value":"Perfect bound softcover. Four-color offset lithography. Illustrated paper wrappers with flaps. Housed in foldout die-cut box with gold foil origami crane inserted into cover slot. Signed and numbered by the artist on book's front cover flap -- Description from http://vampandtramp.com/finepress/s/clarissa-sligh.html"
-  }
- ]
-}
-----
-
-==== UNCb2559560
-
-* Do NOT extract/map based on $5 See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_subfield_5.adoc[$5 spec doc] for details.
-
-===== MARC
-[source]
-----
-563 _ _ $aNLM copy bound in contemporary Cambridge-style binding.$5DNLM
-----
-
-===== Argot
-
-*NONE*
-
-==== UNCb4254290
-
-* Label from $3
-
-===== MARC
-
-[source]
-----
-563 _ _ $aSome pages uncut.$3(Health Sciences Library, c. 1)
-----
-
-===== Argot
-
-[source,javascript]
-----
-{
-  "note_binding":[
-    {
-      "label":"(Health Sciences Library, c. 1):",
-      "value":"Some pages uncut."
-    }
-  ]
-}
-----
-== Complex processing instructions
-=== 538
-
-Replacements (case insensitive):
-
-* Adobe Acrobat reader -> PDF reader
-* Adobe [Acrobat] Reader -> PDF reader
-
-Omissions (case insensitive):
-
-* Fields starting with:
-** Mode of access: World Wide Web
-** Mode of access: Internet
-** System requirements: WWW browser
-
-
-
 
 == Ignored notes
 === 524 - Preferred Citation of Described Materials Note
