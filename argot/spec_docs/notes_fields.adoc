@@ -1368,28 +1368,6 @@ _I don't know why our rare books catalogers have added what basically amount to 
 }
 ----
 
-== Examples: note_organization
-
-=== 351
-==== UNCb6351954
-===== MARC
-
-[source]
-----
-351 _ _ $3Publications and correspondence$aOrganized into two groups: Publications. Correspondence.$bChronological arrangement within group.
-----
-
-===== Argot
-
-[source,javascript]
-----
-{
-  "note_organization":[
-    "Publications and correspondence: Organized into two groups: Publications. Correspondence. Chronological arrangement within group."
-    ]
-}
-----
-
 == Examples: note_numbering
 
 === 515
@@ -1410,6 +1388,28 @@ _I don't know why our rare books catalogers have added what basically amount to 
   "note_numbering":[
     "Issues for 1863-1950 have no vol. numbering but constitute v. 1-85.",
     "Vol. 102 issued in 2 pts."
+    ]
+}
+----
+
+== Examples: note_organization
+
+=== 351
+==== UNCb6351954
+===== MARC
+
+[source]
+----
+351 _ _ $3Publications and correspondence$aOrganized into two groups: Publications. Correspondence.$bChronological arrangement within group.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_organization":[
+    "Publications and correspondence: Organized into two groups: Publications. Correspondence. Chronological arrangement within group."
     ]
 }
 ----
@@ -1479,93 +1479,6 @@ _I don't know why our rare books catalogers have added what basically amount to 
     "Baby face: editing, Howard Bretherton ; photography, James Van Trees."
     "Red-headed woman: photography, Harold Rosson ; editing, Blanche Sewell."
     "Waterloo Bridge: cinematographer, Arthur Edeson ; editor, Clarence Kolster, Maurice Pivar ; music, Val Burton."
-  ]
-}
-----
-
-== Examples: note_report_type, note_report_coverage
-=== 513
-==== UNCb3661373
-===== MARC
-
-[source]
-----
-245 1 0 $aTheory and modeling of atmospheric turbulence /$cC.M. Tchen ; prepared for George C. Marshall Space Flight Center.
-260 _ _ $aWashington, D.C. :$bNational Aeronautics and Space Administration, Scientific and Technical Information Office ;$a[Springfield, Va. :$bFor sale by National Technical Information Service],$c1984.
-300 _ _ $a2 v. :$bill. ;$c28 cm.
-500 _ _ $a"February 1984"--Pt. 1.
-500 _ _ $a"August 1984"--Pt. 2.
-513 _ _ $aContractor report.$bSept 1, 1981-Aug 31, 1982 (pt. 1)
-513 _ _ $aContractor report.$bSept 1, 1982-Aug 31, 1983 (pt. 2)
-----
-
-===== Argot
-
-[source,javascript]
-----
-{
-  "note_report_type":[
-    "Contractor report."
-    ],
-  "note_report_coverage":[
-    "Sept 1, 1981-Aug 31, 1982 (pt. 1)",
-    "Sept 1, 1982-Aug 31, 1983 (pt. 2)"
-  ]
-}
-----
-
-===== Display suggestion
-*Theory and modeling of atmospheric turbulence* +
-C.M. Tchen ; prepared for George C. Marshall Space Flight Center. +
-Washington, D.C. : National Aeronautics and Space Administration, Scientific and Technical Information Office ; [Springfield, Va. : For sale by National Technical Information Service], 1984.
-
-*OTHER DETAILS* +
-Washington, D.C. : National Aeronautics and Space Administration, Scientific and Technical Information Office ; [Springfield, Va. : For sale by National Technical Information Service], 1984. +
-*Report covers:* Sept 1, 1981-Aug 31, 1982 (pt. 1) +
-*Report covers:* Sept 1, 1982-Aug 31, 1983 (pt. 2)
-
-
-*Physical description:* 2 v. : ill. ; 28 cm. +
-*Type of report:* Contractor report.
-
-*Notes:* +
-"February 1984"--Pt. 1. +
-"August 1984"--Pt. 2.
-
-==== UNCb2372593
-===== MARC
-
-[source]
-----
-513 _ _ $aIn house.
-----
-
-===== Argot
-
-[source,javascript]
-----
-{
-  "note_report_type":[
-    "In house."
-    ]
-}
-----
-
-==== UNCb3405558
-===== MARC
-
-[source]
-----
-513 _ _ $bJanuary - March 1983.
-----
-
-===== Argot
-
-[source,javascript]
-----
-{
-  "note_report_coverage":[
-    "January - March 1983."
   ]
 }
 ----
@@ -1680,6 +1593,93 @@ Washington, D.C. : National Aeronautics and Space Administration, Scientific and
       "value":"William R. Ferris Collection, #20367 in the, Southern Folklife Collection, University of North Carolina at Chapel Hill.",
       "indexed_value":"William R. Ferris Collection, #20367 in the,"
     }
+  ]
+}
+----
+
+== Examples: note_report_type, note_report_coverage
+=== 513
+==== UNCb3661373
+===== MARC
+
+[source]
+----
+245 1 0 $aTheory and modeling of atmospheric turbulence /$cC.M. Tchen ; prepared for George C. Marshall Space Flight Center.
+260 _ _ $aWashington, D.C. :$bNational Aeronautics and Space Administration, Scientific and Technical Information Office ;$a[Springfield, Va. :$bFor sale by National Technical Information Service],$c1984.
+300 _ _ $a2 v. :$bill. ;$c28 cm.
+500 _ _ $a"February 1984"--Pt. 1.
+500 _ _ $a"August 1984"--Pt. 2.
+513 _ _ $aContractor report.$bSept 1, 1981-Aug 31, 1982 (pt. 1)
+513 _ _ $aContractor report.$bSept 1, 1982-Aug 31, 1983 (pt. 2)
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_report_type":[
+    "Contractor report."
+    ],
+  "note_report_coverage":[
+    "Sept 1, 1981-Aug 31, 1982 (pt. 1)",
+    "Sept 1, 1982-Aug 31, 1983 (pt. 2)"
+  ]
+}
+----
+
+===== Display suggestion
+*Theory and modeling of atmospheric turbulence* +
+C.M. Tchen ; prepared for George C. Marshall Space Flight Center. +
+Washington, D.C. : National Aeronautics and Space Administration, Scientific and Technical Information Office ; [Springfield, Va. : For sale by National Technical Information Service], 1984.
+
+*OTHER DETAILS* +
+Washington, D.C. : National Aeronautics and Space Administration, Scientific and Technical Information Office ; [Springfield, Va. : For sale by National Technical Information Service], 1984. +
+*Report covers:* Sept 1, 1981-Aug 31, 1982 (pt. 1) +
+*Report covers:* Sept 1, 1982-Aug 31, 1983 (pt. 2)
+
+
+*Physical description:* 2 v. : ill. ; 28 cm. +
+*Type of report:* Contractor report.
+
+*Notes:* +
+"February 1984"--Pt. 1. +
+"August 1984"--Pt. 2.
+
+==== UNCb2372593
+===== MARC
+
+[source]
+----
+513 _ _ $aIn house.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_report_type":[
+    "In house."
+    ]
+}
+----
+
+==== UNCb3405558
+===== MARC
+
+[source]
+----
+513 _ _ $bJanuary - March 1983.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_report_coverage":[
+    "January - March 1983."
   ]
 }
 ----
