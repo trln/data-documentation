@@ -791,6 +791,43 @@ _I don't know why our rare books catalogers have added what basically amount to 
 }
 ----
 
+== Examples: note_copy_version
+
+* Field is not indexed
+
+=== 562
+==== UNCb7426360 mock
+
+* Label from $3
+
+===== MARC
+[source]
+-----
+562 _ _ $3v. 2$aP. 140 is wrongly numbered 410.
+-----
+
+===== Argot
+[source,javascript]
+----
+{
+  "note_copy_version":[
+      "v. 2: P. 140 is wrongly numbered 410."
+  ]
+}
+----
+
+===== Display
+
+[NOTE]
+====
+I'm on the fence about where this belongs, though the `full display` column in the Argot fields.csv has it in "Other details > (item/copy-specific description cluster) > (no label)"
+
+Separated out because I imagine this is something some institutions may want to treat differently.
+
+It sometimes seems to be used for manifestation-level differences (i.e. all in a printing run would have same pagination error or advertisement included). However, sometimes it looks to be used for literal copy-specific notes (which would be local). 
+====
+
+
 == Examples: note_with
 === 501
 ==== UNCb1193620

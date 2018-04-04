@@ -13,7 +13,6 @@ authors[main][relator],MARC,n,GEN,100,e4,.,subelement_to_value,https://github.co
 authors[main][relator],MARC,n,GEN,110,e4,.,subelement_to_value,https://github.com/trln/data-documentation/blob/master/argot/processing_rules_and_procedures.md#e-and-4-and-in-x11-headings-j,x,authors[main][relator]GEN110e4.,0,0,y,.,.
 authors[main][relator],MARC,n,GEN,111,j4,.,subelement_to_value,https://github.com/trln/data-documentation/blob/master/argot/processing_rules_and_procedures.md#e-and-4-and-in-x11-headings-j,x,authors[main][relator]GEN111j4.,0,0,y,.,.
 barcodes,MARCish,n,UNC,999,b,i1=9 AND i2=1,subelement_to_value,x,x,barcodesUNC999bi1=9 AND i2=1,0,0,y,,
-copy_or_version_specific_description,MARC,n,GEN,562,abcde3,?,?,?,?,copy_or_version_specific_descriptionGEN562abcde3?,0,0,y,,
 date_cataloged,MARCish,n,NCSU,909,a,.,subelement_to_value,"If necessary, convert to ISO 8601 date/timestamp format",.,date_catalogedNCSU909a.,0,1,y,.,.
 date_cataloged,MARCish,n,DUKE,946,b,.,subelement_to_value,"If necessary, convert to ISO 8601 date/timestamp format",.,date_catalogedDUKE946b.,0,1,y,.,.
 date_cataloged,MARCish,n,UNC,999,a,i1=0 AND i2=0,subelement_to_value,"If necessary, convert to ISO 8601 date/timestamp format",.,date_catalogedUNC999ai1=0 AND i2=0,0,1,y,.,.
@@ -91,6 +90,7 @@ note_admin_history,MARC,n,GEN,545,abu,i1=1,concat_subelements,x,x,note_admin_his
 note_binding[label],MARC,n,GEN,563,3,.,subelement_to_value,x,x,note_binding[label]GEN5633.,0,0,y,,
 note_binding[value],MARC,n,GEN,563,au,.,concat_subelements,x,x,note_binding[value]GEN563au.,0,0,y,,
 note_biographical,MARC,n,GEN,545,abu,i1=~/[ 0],concat_subelements,x,x,note_biographicalGEN545abui1=~/[ 0],0,0,y,,
+note_copy_version,MARC,n,GEN,562,abcde3,none,concat_subelements,$3 label,x,note_copy_versionGEN562abcde3none,0,0,y,,
 note_data_quality,MARC,n,GEN,514,abcdefghijkmuz,.,concat_subelements,Complex instructions. Refer to linked documentation for thie field,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_data_qualityGEN514abcdefghijkmuz.,0,0,y,n,n
 note_display[label],MARC,n,GEN,561,3,ind1 != 0,subelement_to_value,.,.,note_display[label]GEN5613ind1 != 0,0,0,n,n,n
 note_display[value],MARC,n,GEN,501,a,.,subelement_to_value,.,.,note_display[value]GEN501a.,0,0,n,n,n
