@@ -791,6 +791,52 @@ _I don't know why our rare books catalogers have added what basically amount to 
 }
 ----
 
+== Examples: note_admin_history
+
+* Field is indexed
+
+=== 545 (ind1=1)
+==== UNCb5251752
+
+===== MARC
+[source]
+-----
+545 1 _ $aSpurlock-Neal Company started out as a drug store in Nashville, Tennessee in 1868, expanding later into a wholesale distributor of products from cough medicine and sarsaparilla to candies and syrups. By 1910, the company had become one of the largest retail druggists in the South.
+-----
+
+===== Argot
+[source,javascript]
+----
+{
+  "note_admin_history":[
+      "Spurlock-Neal Company started out as a drug store in Nashville, Tennessee in 1868, expanding later into a wholesale distributor of products from cough medicine and sarsaparilla to candies and syrups. By 1910, the company had become one of the largest retail druggists in the South."
+  ]
+}
+----
+
+== Examples: note_biographical
+
+* Field is indexed
+
+=== 545 (ind1=~/ 0/)
+==== UNCb3784489
+
+===== MARC
+[source]
+-----
+545 _ _ $aEllen Walters, filmmaker, teacher, and anthropologist of Laurinburg, N.C., has produced and directed several documentary films on southern culture.
+-----
+
+===== Argot
+[source,javascript]
+----
+{
+  "note_biographical":[
+      "Ellen Walters, filmmaker, teacher, and anthropologist of Laurinburg, N.C., has produced and directed several documentary films on southern culture."
+  ]
+}
+----
+
 == Examples: note_copy_version
 
 * Field is not indexed
