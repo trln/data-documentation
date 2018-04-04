@@ -655,6 +655,56 @@ From http://www.loc.gov/marc/bibliographic/bd514.html
 }
 ----
 
+== Examples: note_file_type
+
+* Field is NOT indexed
+
+=== 516
+
+==== UNCb3511387
+
+* No label provided
+
+===== MARC
+
+[source]
+----
+516 8 _ $aISO 9660 format; data files in dBase format; text files in ASCII format
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_file_type":[
+    "ISO 9660 format; data files in dBase format; text files in ASCII format"
+    ]
+}
+----
+
+==== UNCb4829326
+
+* Label provided
+
+===== MARC
+
+[source]
+----
+516 _ _ $aPDF
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_file_type":[
+    "PDF"
+    ]
+}
+----
+
 == Examples: note_general
 === 500
 
@@ -1631,56 +1681,6 @@ Washington, D.C. : National Aeronautics and Space Administration, Scientific and
       "indexed_value":"William R. Ferris Collection, #20367 in the,"
     }
   ]
-}
-----
-
-== Examples: note_file_type
-
-* Field is NOT indexed
-
-=== 516
-
-==== UNCb3511387
-
-* No label provided
-
-===== MARC
-
-[source]
-----
-516 8 _ $aISO 9660 format; data files in dBase format; text files in ASCII format
-----
-
-===== Argot
-
-[source,javascript]
-----
-{
-  "note_file_type":[
-    "ISO 9660 format; data files in dBase format; text files in ASCII format"
-    ]
-}
-----
-
-==== UNCb4829326
-
-* Label provided
-
-===== MARC
-
-[source]
-----
-516 _ _ $aPDF
-----
-
-===== Argot
-
-[source,javascript]
-----
-{
-  "note_file_type":[
-    "PDF"
-    ]
 }
 ----
 
