@@ -147,6 +147,12 @@ note_related_work[label],MARC,n,GEN,544,{na},i1=~/[01]/ AND !$3,constant,"""labe
 note_related_work[label],MARC,n,GEN,544,3,i1=blank,subelement_to_value,"""label"":""#{$3 value}:""",x,note_related_work[label]GEN5443i1=blank,0,0,y,,
 note_related_work[label],MARC,n,GEN,544,3,i1=~/[01]/,see notes,"""label"":""#{$3 value}: Related materials:""",x,note_related_work[label]GEN5443i1=~/[01]/,0,0,y,,
 note_related_work[value],MARC,n,GEN,544,abcden,none,concat_subelements,x,x,note_related_work[value]GEN544abcdennone,0,0,y,,
+note_related_work[label],MARC,n,GEN,535,{na},i1=1 AND !$3,constant,"""label"":""Originals held by:""",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_related_work[label]GEN535{na}i1=1 AND !$3,0,0,y,,
+note_related_work[label],MARC,n,GEN,535,{na},i1=2 AND !$3,constant,"""label"":""Duplicates held by:""",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_related_work[label]GEN535{na}i1=2 AND !$3,0,0,y,,
+note_related_work[label],MARC,n,GEN,535,3,i1=1 AND $3,see notes,"""label"":""#{$3 value}: Originals held by:""",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_related_work[label]GEN5353i1=1 AND $3,0,0,y,,
+note_related_work[label],MARC,n,GEN,535,3,i1=2 AND $3,see notes,"""label"":""#{$3 value}: Duplicates held by:""",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_related_work[label]GEN5353i1=2 AND $3,0,0,y,,
+note_related_work[value],MARC,n,GEN,535,abcdg,none,concat_subelements,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_related_work[value]GEN535abcdgnone,0,0,y,,
+note_related_work[indexed],MARC,n,GEN,535,{na},none,constant,"""indexed"":""false""",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_related_work[indexed]GEN535{na}none,0,0,y,,
 note_report_coverage,MARC,n,GEN,513,b,.,concat_subelements,x,x,note_report_coverageGEN513b.,0,0,y,n,n
 note_report_type,MARC,n,GEN,513,a,.,concat_subelements,deduplicate field once all values are assigned,x,note_report_typeGEN513a.,0,0,y,n,n
 note_scale,MARC,n,GEN,255,abcdefg,.,concat_subelements,x,x,note_scaleGEN255abcdefg.,0,0,y,n,n

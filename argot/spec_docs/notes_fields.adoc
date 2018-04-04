@@ -1490,6 +1490,61 @@ _I don't know why our rare books catalogers have added what basically amount to 
 
 == Examples: note_related_work
 
+=== 535
+==== UNCb2415252
+
+* Label provided based on i1 value
+* Not indexed
+
+===== MARC
+
+[source]
+----
+535 1 _ $aDiocesan Library, Episcopal Diocese of Western North Carolina,$bP. O. Box 368, Black Mountain, N.C. 28711.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_related_work":[
+    {
+      "label":"Originals held by:",
+      "value":"Diocesan Library, Episcopal Diocese of Western North Carolina, P. O. Box 368, Black Mountain, N.C. 28711."
+      "indexed":"false"
+    }
+  ]
+}
+----
+
+==== UNCb4014115
+
+* Label provided based on i1 value and $3 if present
+* Not indexed
+
+===== MARC
+
+[source]
+----
+535 2 _ $aChurch of Jesus Christ of the Latter-day Saints. Family History Center, Greensboro, N.C.$3Microfilm
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_related_work":[
+    {
+      "label":"Microfilm: Duplicates held by:",
+      "value":"Church of Jesus Christ of the Latter-day Saints. Family History Center, Greensboro, N.C.",
+      "indexed":"false"
+    }
+  ]
+}
+----
+
 === 544
 ==== UNCb2364073
 
