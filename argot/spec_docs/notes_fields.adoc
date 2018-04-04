@@ -664,6 +664,57 @@ See UNCb6569074, UNCb5764837 examples below.
 }
 ----
 
+=== 585
+
+==== UNCb4794350
+
+* Label from $3
+
+===== MARC
+
+[source]
+----
+585 _ _ $3Paintings, calligraphies, seal carvings$aExhibited: University Museum and Art Gallery, The University of Hong Kong, sponsored by Mr. Frankie W., October 29, 2004-December 9, 2004.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_general":[
+    {
+      "label":"Paintings, calligraphies, seal carvings:",
+      "value":"Exhibited: University Museum and Art Gallery, The University of Hong Kong, sponsored by Mr. Frankie W., October 29, 2004-December 9, 2004."
+    }
+  ]
+}
+----
+
+==== UNCb9057170
+
+* No label
+
+===== MARC
+
+[source]
+----
+585 _ _ $a"Published in conjunction with the exhibition Wiener Werkstätte 1903-1932 : the luxury of beauty, Neue Galerie New York, October 26, 2017-January 29, 2018" (title page verso).
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_general":[
+    {
+      "value":"\"Published in conjunction with the exhibition Wiener Werkstätte 1903-1932 : the luxury of beauty, Neue Galerie New York, October 26, 2017-January 29, 2018\" (title page verso)."
+    }
+  ]
+}
+----
+
 == Examples: note_local
 === 500, 541, 561
 *500* is mapped to `note_local` if whitelisted $5 for institution creating Argot is present.

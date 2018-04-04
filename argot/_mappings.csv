@@ -14,10 +14,10 @@ authors[main][relator],MARC,n,GEN,110,e4,.,subelement_to_value,https://github.co
 authors[main][relator],MARC,n,GEN,111,j4,.,subelement_to_value,https://github.com/trln/data-documentation/blob/master/argot/processing_rules_and_procedures.md#e-and-4-and-in-x11-headings-j,x,authors[main][relator]GEN111j4.,0,0,y,.,.
 barcodes,MARCish,n,UNC,999,b,i1=9 AND i2=1,subelement_to_value,x,x,barcodesUNC999bi1=9 AND i2=1,0,0,y,,
 copy_or_version_specific_description,MARC,n,GEN,562,abcde3,?,?,?,?,copy_or_version_specific_descriptionGEN562abcde3?,0,0,y,,
-date_cataloged,MARCish,n,DUKE,946,b,.,subelement_to_value,"If necessary, convert to ISO 8601 date/timestamp format",.,date_catalogedDUKE946b.,0,1,y,.,.
-date_cataloged,MARCish,y,NCCU,.,.,.,subelement_to_value,"If necessary, convert to ISO 8601 date/timestamp format",.,date_catalogedNCCU...,1,1,y,.,.
 date_cataloged,MARCish,n,NCSU,909,a,.,subelement_to_value,"If necessary, convert to ISO 8601 date/timestamp format",.,date_catalogedNCSU909a.,0,1,y,.,.
+date_cataloged,MARCish,n,DUKE,946,b,.,subelement_to_value,"If necessary, convert to ISO 8601 date/timestamp format",.,date_catalogedDUKE946b.,0,1,y,.,.
 date_cataloged,MARCish,n,UNC,999,a,i1=0 AND i2=0,subelement_to_value,"If necessary, convert to ISO 8601 date/timestamp format",.,date_catalogedUNC999ai1=0 AND i2=0,0,1,y,.,.
+date_cataloged,MARCish,y,NCCU,.,.,.,subelement_to_value,"If necessary, convert to ISO 8601 date/timestamp format",.,date_catalogedNCCU...,1,1,y,.,.
 derived_work_note,MARC,n,GEN,581,az3,.,see notes,$3 label; prepend ISBN to $z value,x,derived_work_noteGEN581az3.,0,0,y,,
 description_details_digital_file,MARC,n,GEN,347,,,subelement_to_value,Complex instructions. Refer to linked documentation for thie field,documentation needed,description_details_digital_fileGEN347,0,0,y,,
 description_details_projection,MARC,n,GEN,345,,,subelement_to_value,Complex instructions. Refer to linked documentation for thie field,documentation needed,description_details_projectionGEN345,0,0,y,,
@@ -31,8 +31,8 @@ editor,MARC,n,GEN,100,abcd(g)jqu,$e = ('editor' OR 'editor of compilation') OR $
 editor,MARC,n,GEN,700,abcd(g)jqu,$e = ('editor' OR 'editor of compilation') OR $4 = ('edt' OR 'edc'),concat_subelements,"$g and/or $n included if there is NO $t or $k, or if it occurs BEFORE any $t/$k present",x,editorGEN700abcd(g)jqu$e = ('editor' OR 'editor of compilation') OR $4 = ('edt' OR 'edc'),0,2,y,.,.
 frequency[current],MARC,n,GEN,310,ab,none,concat_subelements,x,x,frequency[current]GEN310abnone,0,1,y,y,n
 frequency[former],MARC,n,GEN,321,ab,none,concat_subelements,x,x,frequency[former]GEN321abnone,0,1,y,y,n
-genre_headings,MARC,n,GEN,567,b,$2 is present,subelement_to_value,x,x,genre_headingsGEN567b$2 is present,0,0,y,n,n
 genre_headings,MARC,y,GEN,382,,,,,,genre_headingsGEN382,0,0,y,,
+genre_headings,MARC,n,GEN,567,b,$2 is present,subelement_to_value,x,x,genre_headingsGEN567b$2 is present,0,0,y,n,n
 holdings[call_no],MARCish,n,UNC,999,hijkm,i1=9 AND i2=3 AND $0=#{holdings_record_id} AND $2='852',concat_subelements,x,x,holdings[call_no]UNC999hijkmi1=9 AND i2=3 AND $0=#{holdings_record_id} AND $2='852',0,0,y,y,y
 holdings[holdings_id],MARCish,n,UNC,999,a,(i1=9 AND i2=2) AND $c > 0,subelement_to_value,x,x,holdings[holdings_id]UNC999a(i1=9 AND i2=2) AND $c > 0,0,0,y,y,y
 holdings[loc_b],MARCish,n,UNC,999,b,i1=9 and i2=2,subelement_to_value,derived from  holdings_location_shelf -- See https://github.com/trln/data-documentation/blob/master/argot/questions_issues/location.md#one-idea-for-data-mappingtransformation,x,holdings[loc_b]UNC999bi1=9 and i2=2,0,0,y,y,y
@@ -82,9 +82,9 @@ items[vol],MARCish,n,UNC,999,v,i1=9 AND i2=1,subelement_to_value,.,.,items[vol]U
 location_hierarchy,MARC-to-Argot,n,UNC,"loc_b (items, holdings)",.,.,map subelement to value,Each loc_b value is mapped to a location hierarchy. Details forthcoming.,,"location_hierarchyUNCloc_b (items, holdings)..",1,0,y,y,y
 misc_id[qual],MARC,n,GEN,015,q,.,subelement_to_value,qual = subfield value with parentheses removed,x,misc_id[qual]GEN15q.,0,0,y,y,y
 misc_id[type],MARC,n,GEN,015,2,.,map subelement to value,"type = ""National Bibliography Number"" if there is no $2; otherwise, map $2 using https://github.com/trln/marc-to-argot/blob/master/lib/translation_maps/shared/national_bibliography_codes.yaml",Mapping is from: https://www.loc.gov/standards/sourcelist/national-bibliography.html,misc_id[type]GEN152.,0,0,y,y,y
-misc_id[value],MARC,n,GEN,015,a,.,subelement_to_value,"if subfield includes parentheses, split into 'id' and 'qual';;;if subfield contains no parentheses, 'id' = whole subfield value",x,misc_id[value]GEN15a.,0,0,y,y,y
 misc_id[value],MARC,n,GEN,010,a,.,subelement_to_value,"misc_id[qual]   = """";;;misc_id[type] = ""LCCN"";;;Do NOT trim leading/trailing spaces",x,misc_id[value]GEN10a.,0,0,y,y,y
 misc_id[value],MARC,n,GEN,010,b,.,subelement_to_value,"misc_id[qual]  = """";;;misc_id[type] = ""NUCMC"";;;Do NOT trim leading/trailing spaces",x,misc_id[value]GEN10b.,0,0,y,y,y
+misc_id[value],MARC,n,GEN,015,a,.,subelement_to_value,"if subfield includes parentheses, split into 'id' and 'qual';;;if subfield contains no parentheses, 'id' = whole subfield value",x,misc_id[value]GEN15a.,0,0,y,y,y
 musical_presentation_statement,MARC,n,GEN,254,a,.,concat_subelements,.,x,musical_presentation_statementGEN254a.,0,0,y,n,n
 note_access_restriction,MARC,n,GEN,506,abcdefu3,.,concat_subelements,"If $3 present, process as label",x,note_access_restrictionGEN506abcdefu3.,0,0,y,n,n
 note_admin_history,MARC,n,GEN,545,abu,i1=1,concat_subelements,x,x,note_admin_historyGEN545abui1=1,0,0,y,,
@@ -102,33 +102,35 @@ note_general[indexed],MARC,n,GEN,504,.,.,constant,value = false,.,note_general[i
 note_general[indexed],MARC,n,GEN,521,{na},none,constant,"""indexed"":""false""",x,note_general[indexed]GEN521{na}none,0,0,y,,
 note_general[indexed],MARC,n,GEN,556,{na},none,constant,"""indexed"":""false""",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_general[indexed]GEN556{na}none,0,0,y,,
 note_general[label],MARC,n,GEN,500,3,field does NOT contain $5,concat_subelements,.,.,note_general[label]GEN5003field does NOT contain $5,0,0,y,n,n
-note_general[label],MARC,n,GEN,546,3,none,concat_subelements,x,x,note_general[label]GEN5463none,0,0,y,,
-note_general[label],MARC,n,GEN,586,3,none,concat_subelements,x,x,note_general[label]GEN5863none,0,0,y,,
 note_general[label],MARC,n,GEN,521,{na},$3 NOT present,see notes,Set label based on i1 value,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_general[label]GEN521{na}$3 NOT present,0,0,y,,
 note_general[label],MARC,n,GEN,521,3,none,see notes,"Set label based on i1 value, prepend $3 value to this label",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_general[label]GEN5213none,0,0,y,,
 note_general[label],MARC,n,GEN,522,{na},i1=blank,constant,"""label"":""Geographic coverage:""",x,note_general[label]GEN522{na}i1=blank,0,0,y,,
 note_general[label],MARC,n,GEN,522,{na},i1=8,DO NOT SET,x,x,note_general[label]GEN522{na}i1=8,0,0,y,,
+note_general[label],MARC,n,GEN,546,3,none,concat_subelements,x,x,note_general[label]GEN5463none,0,0,y,,
 note_general[label],MARC,n,GEN,556,{na},i1=blank,constant,"""label"":""Documentation:""",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_general[label]GEN556{na}i1=blank,0,0,y,,
-note_general[value],MARC,n,GEN,586,a,none,concat_subelements,x,x,note_general[value]GEN586anone,0,0,y,,
+note_general[label],MARC,n,GEN,586,3,none,concat_subelements,x,x,note_general[label]GEN5863none,0,0,y,,
 note_general[value],MARC,n,GEN,500,a,field does NOT contain $5,concat_subelements,.,.,note_general[value]GEN500afield does NOT contain $5,0,0,y,n,n
 note_general[value],MARC,n,GEN,504,ab,.,concat_subelements,"Prefix $b value with: ""Number of references: """,.,note_general[value]GEN504ab.,0,0,y,n,n
-note_general[value],MARC,n,GEN,546,ab,none,concat_subelements,x,x,note_general[value]GEN546abnone,0,0,y,,
 note_general[value],MARC,n,GEN,521,ab,none,see notes,Create source statement from $b; separate repeated $a with '; ',https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_general[value]GEN521abnone,0,0,y,,
 note_general[value],MARC,n,GEN,522,a,none,concat_subelements,x,x,note_general[value]GEN522anone,0,0,y,,
+note_general[value],MARC,n,GEN,546,ab,none,concat_subelements,x,x,note_general[value]GEN546abnone,0,0,y,,
 note_general[value],MARC,n,GEN,556,a,none,concat_subelements,,,note_general[value]GEN556anone,0,0,y,,
-note_index,MARC,y,UNC,541,a,i1!=0,subelement_to_value,x,x,note_indexUNC541ai1!=0,0,0,n,,
-note_index,MARC,n,GEN,561,a,ind1 != 0,subelement_to_value,.,.,note_indexGEN561aind1 != 0,0,0,n,n,n
+note_general[value],MARC,n,GEN,586,a,none,concat_subelements,x,x,note_general[value]GEN586anone,0,0,y,,
 note_index,MARC,n,GEN,507,ab,.,concat_subelements,.,.,note_indexGEN507ab.,0,0,n,n,n
+note_index,MARC,y,UNC,541,a,i1!=0,subelement_to_value,x,x,note_indexUNC541ai1!=0,0,0,n,,
 note_index,MARC,n,GEN,544,d,none,subelement_to_value,x,x,note_indexGEN544dnone,0,0,n,n,n
+note_index,MARC,n,GEN,561,a,ind1 != 0,subelement_to_value,.,.,note_indexGEN561aind1 != 0,0,0,n,n,n
 note_issuance,MARC,n,GEN,550,a,none,concat_subelements,x,x,note_issuanceGEN550anone,0,0,y,,
 note_local[indexed_value],MARC,n,UNC,541,a,.,subelement_to_value,.,.,note_local[indexed_value]UNC541a.,0,0,y,n,n
 note_local[label],MARC,n,GEN,500,3,field contains whitelisted $5 value,concat_subelements,.,.,note_local[label]GEN5003field contains whitelisted $5 value,0,0,y,n,n
 note_local[label],MARC,n,UNC,541,.,.,constant,"""label"":""Source of acquisition""",.,note_local[label]UNC541..,0,0,y,,
 note_local[label],MARC,n,GEN,561,.,ind1 != 0 and $3 NOT present,constant,"""label"":""Ownership history""",,note_local[label]GEN561.ind1 != 0 and $3 NOT present,0,0,y,,
 note_local[label],MARC,n,GEN,561,3,ind1 != 0 and $3 present,concat_subelements,"""label"":""Ownership history: #{$3 value(s)}""",.,note_local[label]GEN5613ind1 != 0 and $3 present,0,0,y,,
+note_local[label],MARC,n,GEN,585,3,none,concat_subelements,x,x,note_local[label]GEN5853none,0,0,y,,
 note_local[value],MARC,n,GEN,500,a,field contains whitelisted $5 value,concat_subelements,.,.,note_local[value]GEN500afield contains whitelisted $5 value,0,0,y,n,n
 note_local[value],MARC,n,UNC,541,abcdefhno3,.,concat_subelements,DO NOT use $3 to create label,.,note_local[value]UNC541abcdefhno3.,0,0,y,n,n
 note_local[value],MARC,n,GEN,561,a,ind1 != 0,concat_subelements,.,.,note_local[value]GEN561aind1 != 0,0,0,y,n,n
+note_local[value],MARC,n,GEN,585,a,none,concat_subelements,x,x,note_local[value]GEN585anone,0,0,y,,
 note_local[value],MARC,n,GEN,590,a,.,concat_subelements,.,.,note_local[value]GEN590a.,1,0,y,n,n
 note_numbering,MARC,n,GEN,515,a,none,concat_subelements,x,x,note_numberingGEN515anone,0,0,y,n,n
 note_organization,MARC,n,GEN,351,abc3,.,concat_subelements,Create label from $3,x,note_organizationGEN351abc3.,0,0,y,n,n
@@ -145,8 +147,8 @@ note_related_work[label],MARC,n,GEN,544,3,i1=~/[01]/,see notes,"""label"":""#{$3
 note_related_work[value],MARC,n,GEN,544,abcden,none,concat_subelements,x,x,note_related_work[value]GEN544abcdennone,0,0,y,,
 note_report_coverage,MARC,n,GEN,513,b,.,concat_subelements,x,x,note_report_coverageGEN513b.,0,0,y,n,n
 note_report_type,MARC,n,GEN,513,a,.,concat_subelements,deduplicate field once all values are assigned,x,note_report_typeGEN513a.,0,0,y,n,n
-note_scale,MARC,n,GEN,507,ab,.,concat_subelements,x,x,note_scaleGEN507ab.,0,0,y,n,n
 note_scale,MARC,n,GEN,255,abcdefg,.,concat_subelements,x,x,note_scaleGEN255abcdefg.,0,0,y,n,n
+note_scale,MARC,n,GEN,507,ab,.,concat_subelements,x,x,note_scaleGEN507ab.,0,0,y,n,n
 note_summary,MARC,n,GEN,520,abc3,none,concat_subelements,x,https://trlnmain.atlassian.net/wiki/spaces/TD/pages/96665601/Argon+Fields+and+their+display,note_summaryGEN520abc3none,0,1,y,y,.
 note_system_details,MARC,n,GEN,538,aiu3,none,concat_subelements,Create label from $3 + $i if either or both are present,x,note_system_detailsGEN538aiu3none,0,0,y,,
 note_toc,MARC,n,GEN,505,agrt,none,concat_subelements,x,https://trlnmain.atlassian.net/wiki/spaces/TD/pages/96665601/Argon+Fields+and+their+display,note_tocGEN505agrtnone,0,0,y,y,.
@@ -199,6 +201,8 @@ subject_genre,MARC,n,GEN,006,16,LDR/06 = a AND LDR/07 =~ [acdm] AND 006/00 =~ [a
 subject_genre,MARC,n,GEN,006,17,LDR/06 = a AND LDR/07 =~ [acdm] AND 006/00 =~ [at],subelement_to_value,"if =~ [abcd], value = Biography",. ,subject_genreGEN617LDR/06 = a AND LDR/07 =~ [acdm] AND 006/00 =~ [at],0,3,y,y,.
 subject_genre,MARC,n,GEN,008,33,LDR/06 = a AND LDR/07 =~ [acdm],subelement_to_value,"map a value from 008_literary_form.json if there is a match. If there is no match, don't populate",.,subject_genreGEN833LDR/06 = a AND LDR/07 =~ [acdm],0,3,y,y,.
 subject_genre,MARC,n,GEN,008,34,LDR/06 = a AND LDR/07 =~ [acdm],subelement_to_value,"if =~ [abcd], value = Biography",. ,subject_genreGEN834LDR/06 = a AND LDR/07 =~ [acdm],0,3,y,y,.
+subject_genre,MARC,y,GEN,382,,,,,,subject_genreGEN382,0,3,y,,
+subject_genre,MARC,n,GEN,567,b,$2 is present,subelement_to_value,x,x,subject_genreGEN567b$2 is present,0,3,y,n,n
 subject_genre,MARC,n,GEN,600,v,i2=0 OR (i2=7 AND $2=lcsh),subelement_to_value,.,.,subject_genreGEN600vi2=0 OR (i2=7 AND $2=lcsh),0,3,y,y,.
 subject_genre,MARC,n,GEN,610,v,i2=0 OR (i2=7 AND $2=lcsh),subelement_to_value,.,.,subject_genreGEN610vi2=0 OR (i2=7 AND $2=lcsh),0,3,y,y,.
 subject_genre,MARC,n,GEN,611,v,i2=0 OR (i2=7 AND $2=lcsh),subelement_to_value,.,.,subject_genreGEN611vi2=0 OR (i2=7 AND $2=lcsh),0,3,y,y,.
@@ -219,8 +223,6 @@ subject_genre,MARC,y,GEN,655,v,i2=7 AND $2=rbgenr,subelement_to_value,.,Need PO 
 subject_genre,MARC,y,GEN,655,v,i2=7 AND $2=rbprov,subelement_to_value,.,"Need PO approval to include non-LCSH vocabularies: Provenance evidence: a thesaurus for use in rare book and special collections cataloging (Chicago: Association of College and Research Libraries, ALA) -- Important for rare/special library materials -- >10000 headings in UNC cat on 2017-08-16",subject_genreGEN655vi2=7 AND $2=rbprov,0,3,y,y,.
 subject_genre,MARC,y,GEN,656,kv,i2=7 AND $2=lcsh,subelement_to_value,.,"UNC doesn't have any occurrences of these subfields (regardless of term source). Check w/other institutions re: current needs here. Can/should be mapped eventually, depending on how use of field evolves",subject_genreGEN656kvi2=7 AND $2=lcsh,0,3,y,y,.
 subject_genre,MARC,y,GEN,657,v,i2=7 AND $2=lcsh,subelement_to_value,.,"UNC doesn't have any occurrences of these subfields (regardless of term source). Check w/other institutions re: current needs here. Can/should be mapped eventually, depending on how use of field evolves",subject_genreGEN657vi2=7 AND $2=lcsh,0,3,y,y,.
-subject_genre,MARC,n,GEN,567,b,$2 is present,subelement_to_value,x,x,subject_genreGEN567b$2 is present,0,3,y,n,n
-subject_genre,MARC,y,GEN,382,,,,,,subject_genreGEN382,0,3,y,,
 subject_geographic,MARC,n,GEN,600,z,i2=0 OR (i2=7 AND $2=lcsh),subelement_to_value,.,.,subject_geographicGEN600zi2=0 OR (i2=7 AND $2=lcsh),0,1,y,y,.
 subject_geographic,MARC,n,GEN,610,z,i2=0 OR (i2=7 AND $2=lcsh),subelement_to_value,.,.,subject_geographicGEN610zi2=0 OR (i2=7 AND $2=lcsh),0,1,y,y,.
 subject_geographic,MARC,n,GEN,611,z,i2=0 OR (i2=7 AND $2=lcsh),subelement_to_value,.,.,subject_geographicGEN611zi2=0 OR (i2=7 AND $2=lcsh),0,1,y,y,.
