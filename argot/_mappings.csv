@@ -106,15 +106,15 @@ note_general[label],MARC,n,GEN,521,{na},$3 NOT present,see notes,Set label based
 note_general[label],MARC,n,GEN,521,3,none,see notes,"Set label based on i1 value, prepend $3 value to this label",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_general[label]GEN5213none,0,0,y,,
 note_general[label],MARC,n,GEN,522,{na},i1=blank,constant,"""label"":""Geographic coverage:""",x,note_general[label]GEN522{na}i1=blank,0,0,y,,
 note_general[label],MARC,n,GEN,522,{na},i1=8,DO NOT SET,x,x,note_general[label]GEN522{na}i1=8,0,0,y,,
+note_general[label],MARC,n,GEN,536,{na},none,constant,"""label"":""Funding details:""",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_general[label]GEN536{na}none,0,0,y,,
 note_general[label],MARC,n,GEN,546,3,none,concat_subelements,x,x,note_general[label]GEN5463none,0,0,y,,
 note_general[label],MARC,n,GEN,556,{na},i1=blank,constant,"""label"":""Documentation:""",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_general[label]GEN556{na}i1=blank,0,0,y,,
 note_general[label],MARC,n,GEN,586,3,none,concat_subelements,x,x,note_general[label]GEN5863none,0,0,y,,
-note_general[label],MARC,n,GEN,536,{na},none,constant,"""label"":""Funding details:""",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_general[label]GEN536{na}none,0,0,y,,
-note_general[value],MARC,n,GEN,536,abcdefgh,none,concat_subelements,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_general[value]GEN536abcdefghnone,0,0,y,,
 note_general[value],MARC,n,GEN,500,a,field does NOT contain $5,concat_subelements,.,.,note_general[value]GEN500afield does NOT contain $5,0,0,y,n,n
 note_general[value],MARC,n,GEN,504,ab,.,concat_subelements,"Prefix $b value with: ""Number of references: """,.,note_general[value]GEN504ab.,0,0,y,n,n
 note_general[value],MARC,n,GEN,521,ab,none,see notes,Create source statement from $b; separate repeated $a with '; ',https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_general[value]GEN521abnone,0,0,y,,
 note_general[value],MARC,n,GEN,522,a,none,concat_subelements,x,x,note_general[value]GEN522anone,0,0,y,,
+note_general[value],MARC,n,GEN,536,abcdefgh,none,concat_subelements,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_general[value]GEN536abcdefghnone,0,0,y,,
 note_general[value],MARC,n,GEN,546,ab,none,concat_subelements,x,x,note_general[value]GEN546abnone,0,0,y,,
 note_general[value],MARC,n,GEN,556,a,none,concat_subelements,,,note_general[value]GEN556anone,0,0,y,,
 note_general[value],MARC,n,GEN,586,a,none,concat_subelements,x,x,note_general[value]GEN586anone,0,0,y,,
