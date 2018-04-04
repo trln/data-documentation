@@ -1744,6 +1744,68 @@ Washington, D.C. : National Aeronautics and Space Administration, Scientific and
 }
 ----
 
+== Examples: note_reproduction
+=== 533
+
+==== UNCb4128950
+
+* label from $3
+* indexed
+
+===== MARC
+
+[source]
+----
+533 _ _ $aMicrofilm.$3v.3-4.$bWoodbridge, Conn. :$cPrimary Source Microfilm, an imprint of Gale Group,$d2000.$e1 reel ; 35mm.$nUnit 326.$f(The Eighteenth Century ; reel 11380, no. 01).$7s2000    ctu  b
+533 _ _ $aMicrofilm.$3v.1-2.$bWoodbridge, Conn. :$cPrimary Source Microfilm, an imprint of Gale Group,$d2000.$e1 reel ; 35mm.$nUnit 326.$f(The Eighteenth Century ; reel 11379, no. 01).$7s2000    ctu  b bb
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_reproduction":[
+    {
+      "label":"v.3-4.:",
+      "value":"Microfilm. Woodbridge, Conn. : Primary Source Microfilm, an imprint of Gale Group, 2000. 1 reel ; 35mm. Unit 326. (The Eighteenth Century ; reel 11380, no. 01).",
+      "indexed_value":"Primary Source Microfilm, an imprint of Gale Group, (The Eighteenth Century ; reel 11380, no. 01)."
+    },
+    {
+      "label":"v.1-2.:",
+      "value":"Microfilm. Woodbridge, Conn. : Primary Source Microfilm, an imprint of Gale Group, 2000. 1 reel ; 35mm. Unit 326. (The Eighteenth Century ; reel 11379, no. 01).",
+      "indexed_value":"Primary Source Microfilm, an imprint of Gale Group, (The Eighteenth Century ; reel 11379, no. 01)."
+    }
+  ]
+}
+----
+
+==== UNCb1817196
+
+* no label
+* not indexed (no $c or $f present)
+
+===== MARC
+
+[source]
+----
+533 _ _ $aMicroopaque.$bWorcester, Mass. :$bMicro Research Corporation [for the American Antiquarian Society].$e4 opaques ; 15 x 23 cm.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_reproduction":[
+    {
+      "value":"Microopaque. Worcester, Mass. : Micro Research Corporation [for the American Antiquarian Society]. 4 opaques ; 15 x 23 cm.",
+      "indexed":"false"
+    }
+  ]
+}
+----
+
 == Examples: note_scale
 === 255
 ==== UNC1998984
