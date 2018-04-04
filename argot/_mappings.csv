@@ -1,5 +1,4 @@
 field,source data format,provisional?,institution,element/field,subelement/field(s),constraints,processing_type,processing instructions,notes,mapping_id,mapping issue ct,field issue ct,field defined?,done in mta?,tests done?
-accompanying_material,MARC,n,GEN,556,az,?,?,?,?,accompanying_materialGEN556az?,0,0,y,,
 author_facet,MARC,n,GEN,100,abcd(g)jqu,.,concat_subelements,"subfield g included if there is NO $t or $k, or if it occurs BEFORE any $t/$k present ;;; https://github.com/trln/data-documentation/blob/master/argot/processing_rules_and_procedures.md#all-fields-that-become-facet-values",x,author_facetGEN100abcd(g)jqu.,0,0,y,y,.
 author_facet,MARC,n,GEN,110,abcd(g)(n)u,.,concat_subelements,"$g and/or $n included if there is NO $t or $k, or if it occurs BEFORE any $t/$k present ;;; https://github.com/trln/data-documentation/blob/master/argot/processing_rules_and_procedures.md#all-fields-that-become-facet-values",x,author_facetGEN110abcd(g)(n)u.,0,0,y,y,.
 author_facet,MARC,n,GEN,111,acde(g)(n)qu,.,concat_subelements,"$g and/or $n included if there is NO $t or $k, or if it occurs BEFORE any $t/$k present ;;; https://github.com/trln/data-documentation/blob/master/argot/processing_rules_and_procedures.md#all-fields-that-become-facet-values",x,author_facetGEN111acde(g)(n)qu.,0,0,y,y,.
@@ -87,20 +86,34 @@ misc_id[value],MARC,n,GEN,015,a,.,subelement_to_value,"if subfield includes pare
 misc_id[value],MARC,n,GEN,010,a,.,subelement_to_value,"misc_id[qual]   = """";;;misc_id[type] = ""LCCN"";;;Do NOT trim leading/trailing spaces",x,misc_id[value]GEN10a.,0,0,y,y,y
 misc_id[value],MARC,n,GEN,010,b,.,subelement_to_value,"misc_id[qual]  = """";;;misc_id[type] = ""NUCMC"";;;Do NOT trim leading/trailing spaces",x,misc_id[value]GEN10b.,0,0,y,y,y
 musical_presentation_statement,MARC,n,GEN,254,a,.,concat_subelements,.,x,musical_presentation_statementGEN254a.,0,0,y,n,n
-note_access_restriction[label],MARC,n,GEN,506,3,.,subelement_to_value,.,.,note_access_restriction[label]GEN5063.,0,0,y,n,n
-note_access_restriction[value],MARC,n,GEN,506,abcdefu,.,concat_subelements,.,.,note_access_restriction[value]GEN506abcdefu.,0,0,y,n,n
+note_access_restriction,MARC,n,GEN,506,abcdefu3,.,concat_subelements,"If $3 present, process as label",x,note_access_restrictionGEN506abcdefu3.,0,0,y,n,n
 note_admin_history,MARC,n,GEN,545,abu,i1=1,concat_subelements,x,x,note_admin_historyGEN545abui1=1,0,0,y,,
 note_biographical,MARC,n,GEN,545,abu,i1=~/[ 0],concat_subelements,x,x,note_biographicalGEN545abui1=~/[ 0],0,0,y,,
+note_data_quality,MARC,n,GEN,514,abcdefghijkmuz,.,concat_subelements,Complex instructions. Refer to linked documentation for thie field,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_data_qualityGEN514abcdefghijkmuz.,0,0,y,n,n
 note_display[label],MARC,n,GEN,561,3,ind1 != 0,subelement_to_value,.,.,note_display[label]GEN5613ind1 != 0,0,0,n,n,n
 note_display[value],MARC,n,GEN,501,a,.,subelement_to_value,.,.,note_display[value]GEN501a.,0,0,n,n,n
 note_display[value],MARC,n,GEN,502,abcdgo,.,concat_subelements,Complex instructions. Refer to linked documentation for thie field,.,note_display[value]GEN502abcdgo.,0,0,n,n,n
 note_display[value],MARC,n,GEN,507,ab,.,concat_subelements,.,.,note_display[value]GEN507ab.,0,0,n,n,n
-note_data_quality,MARC,n,GEN,514,abcdefghijkmuz,.,concat_subelements,Complex instructions. Refer to linked documentation for thie field,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_data_qualityGEN514abcdefghijkmuz.,0,0,y,n,n
 note_dissertation,MARC,n,GEN,502,abcdg,.,concat_subelements,Complex instructions. Refer to linked documentation for thie field,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_dissertationGEN502abcdg.,0,0,y,n,n
+note_file_type,MARC,n,GEN,516,a,none,concat_subelements,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_file_typeGEN516anone,0,0,y,,
 note_general[indexed],MARC,n,GEN,504,.,.,constant,value = false,.,note_general[indexed]GEN504..,0,0,y,n,n
+note_general[indexed],MARC,n,GEN,521,{na},none,constant,"""indexed"":""false""",x,note_general[indexed]GEN521{na}none,0,0,y,,
+note_general[indexed],MARC,n,GEN,556,{na},none,constant,"""indexed"":""false""",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_general[indexed]GEN556{na}none,0,0,y,,
 note_general[label],MARC,n,GEN,500,3,field does NOT contain $5,concat_subelements,.,.,note_general[label]GEN5003field does NOT contain $5,0,0,y,n,n
+note_general[label],MARC,n,GEN,546,3,none,concat_subelements,x,x,note_general[label]GEN5463none,0,0,y,,
+note_general[label],MARC,n,GEN,586,3,none,concat_subelements,x,x,note_general[label]GEN5863none,0,0,y,,
+note_general[label],MARC,n,GEN,521,{na},$3 NOT present,see notes,Set label based on i1 value,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_general[label]GEN521{na}$3 NOT present,0,0,y,,
+note_general[label],MARC,n,GEN,521,3,none,see notes,"Set label based on i1 value, prepend $3 value to this label",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_general[label]GEN5213none,0,0,y,,
+note_general[label],MARC,n,GEN,522,{na},i1=blank,constant,"""label"":""Geographic coverage:""",x,note_general[label]GEN522{na}i1=blank,0,0,y,,
+note_general[label],MARC,n,GEN,522,{na},i1=8,DO NOT SET,x,x,note_general[label]GEN522{na}i1=8,0,0,y,,
+note_general[label],MARC,n,GEN,556,{na},i1=blank,constant,"""label"":""Documentation:""",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_general[label]GEN556{na}i1=blank,0,0,y,,
+note_general[value],MARC,n,GEN,586,a,none,concat_subelements,x,x,note_general[value]GEN586anone,0,0,y,,
 note_general[value],MARC,n,GEN,500,a,field does NOT contain $5,concat_subelements,.,.,note_general[value]GEN500afield does NOT contain $5,0,0,y,n,n
 note_general[value],MARC,n,GEN,504,ab,.,concat_subelements,"Prefix $b value with: ""Number of references: """,.,note_general[value]GEN504ab.,0,0,y,n,n
+note_general[value],MARC,n,GEN,546,ab,none,concat_subelements,x,x,note_general[value]GEN546abnone,0,0,y,,
+note_general[value],MARC,n,GEN,521,ab,none,see notes,Create source statement from $b; separate repeated $a with '; ',https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_general[value]GEN521abnone,0,0,y,,
+note_general[value],MARC,n,GEN,522,a,none,concat_subelements,x,x,note_general[value]GEN522anone,0,0,y,,
+note_general[value],MARC,n,GEN,556,a,none,concat_subelements,,,note_general[value]GEN556anone,0,0,y,,
 note_index,MARC,y,UNC,541,a,i1!=0,subelement_to_value,x,x,note_indexUNC541ai1!=0,0,0,n,,
 note_index,MARC,n,GEN,561,a,ind1 != 0,subelement_to_value,.,.,note_indexGEN561aind1 != 0,0,0,n,n,n
 note_index,MARC,n,GEN,507,ab,.,concat_subelements,.,.,note_indexGEN507ab.,0,0,n,n,n
@@ -120,6 +133,14 @@ note_organization,MARC,n,GEN,351,abc3,.,concat_subelements,Create label from $3,
 note_performer_credits[label],MARC,n,GEN,511,.,ind1=1,constant,"""label"":""Cast""",x,note_performer_credits[label]GEN511.ind1=1,0,0,y,n,n
 note_performer_credits[value],MARC,n,GEN,511,a,.,concat_subelements,x,x,note_performer_credits[value]GEN511a.,0,0,y,n,n
 note_production_credits,MARC,n,GEN,508,a,.,concat_subelements,x,x,note_production_creditsGEN508a.,0,0,y,n,n
+note_related_work[indexed],MARC,n,GEN,544,{na},$d present,DO NOT SET,x,"By default, when not set, note will be indexed",note_related_work[indexed]GEN544{na}$d present,0,0,y,,
+note_related_work[indexed],MARC,n,GEN,544,{na},$d NOT present,constant,"""indexed"":""false""","Only $d should be indexed, so if it is not there, we don't want the rest of the displayed note indexed",note_related_work[indexed]GEN544{na}$d NOT present,0,0,y,,
+note_related_work[indexed_value],MARC,n,GEN,544,d,none,concat_subelements,x,x,note_related_work[indexed_value]GEN544dnone,0,0,y,,
+note_related_work[label],MARC,n,GEN,544,{na},i1=blank AND !$3,DO NOT SET,x,x,note_related_work[label]GEN544{na}i1=blank AND !$3,0,0,y,,
+note_related_work[label],MARC,n,GEN,544,{na},i1=~/[01]/ AND !$3,constant,"""label"":""Related materials:""",x,note_related_work[label]GEN544{na}i1=~/[01]/ AND !$3,0,0,y,,
+note_related_work[label],MARC,n,GEN,544,3,i1=blank,subelement_to_value,"""label"":""#{$3 value}:""",x,note_related_work[label]GEN5443i1=blank,0,0,y,,
+note_related_work[label],MARC,n,GEN,544,3,i1=~/[01]/,see notes,"""label"":""#{$3 value}: Related materials:""",x,note_related_work[label]GEN5443i1=~/[01]/,0,0,y,,
+note_related_work[value],MARC,n,GEN,544,abcden,none,concat_subelements,x,x,note_related_work[value]GEN544abcdennone,0,0,y,,
 note_report_coverage,MARC,n,GEN,513,b,.,concat_subelements,x,x,note_report_coverageGEN513b.,0,0,y,n,n
 note_report_type,MARC,n,GEN,513,a,.,concat_subelements,deduplicate field once all values are assigned,x,note_report_typeGEN513a.,0,0,y,n,n
 note_scale,MARC,n,GEN,507,ab,.,concat_subelements,x,x,note_scaleGEN507ab.,0,0,y,n,n
@@ -157,8 +178,7 @@ related_work[title],MARC,y,GEN,740,ahnp,i2 != 2 AND i1=0,concat_subelements,see 
 related_work[title],MARC,y,GEN,740,ahnp,i2 != 2 AND i1!=0,see notes,split part after initial article into title subelement based on nonfiling characters indicator value,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/related_x.adoc,related_work[title]GEN740ahnpi2 != 2 AND i1!=0,0,0,n,n,n
 related_work[title],MARC,y,GEN,786,s,i1 != 1 AND NOT $a AND $s,subelement_to_value,see documentation ,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/related_x.adoc,related_work[title]GEN786si1 != 1 AND NOT $a AND $s,0,0,n,n,n
 related_work[title],MARC,y,GEN,786,t,i1 != 1 AND NOT $a AND NOT $s AND $t,subelement_to_value,see documentation ,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/related_x.adoc,related_work[title]GEN786ti1 != 1 AND NOT $a AND NOT $s AND $t,0,0,n,n,n
-related_work_note,MARC,n,GEN,580,a,.,concat_subelements,x,x,related_work_noteGEN580a.,0,0,y,n,n
-related_work_note,MARC,n,GEN,544,abcden3,none,concat_subelements,"$3 label + ""Related archival materials: """,x,related_work_noteGEN544abcden3none,0,0,y,n,n
+related_work_note,MARC,n,GEN,580,a,.,concat_subelements,x,x,related_work_noteGEN580a.,0,0,n,n,n
 rollup_id,MARC-to-Argot,n,UNC,001,.,Is OCLC number or SerialsSolutions number,map subelement to value,"Take value from oclc_number or sersol_number fields;;;Prefix with OCLC or SS, respectively",x,rollup_idUNC1.Is OCLC number or SerialsSolutions number,0,2,y,y,y
 rollup_id,MARC-to-Argot,n,UNC,019,.,"If oclc_number is not set, and 019 has at least 1 $a",map subelement to value,Prefix with OCLC,x,"rollup_idUNC19.If oclc_number is not set, and 019 has at least 1 $a",0,2,y,y,y
 series_transcribed,MARC,n,GEN,490,alvx3,none,concat_subelements,"Prepend ""ISSN: "" to any $x value.;;;Create label from $3 if present",x,series_transcribedGEN490alvx3none,0,0,y,n,n

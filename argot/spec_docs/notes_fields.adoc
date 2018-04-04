@@ -89,7 +89,7 @@ Without generating a label using the MARC tag and indicator coding, we end up wi
 
 Or we can meaningfully label/display the info:
 
- For grade(s): 6-12. (as determined by Morgan Reynolds Incorporated)
+ For grade(s): 6-12. (source: Morgan Reynolds Incorporated)
 
 
 ==== 521 example 2
@@ -97,7 +97,7 @@ Or we can meaningfully label/display the info:
 
 Should be displayed:
 
- For age(s): Adult. (as determined by Brodart)
+ For age(s): Adult. (source: Brodart)
 
 === Label created from $i
 
@@ -268,6 +268,401 @@ If $b is present, prepend "Number of references: " to its value.
 }
 ----
 
+=== 521
+
+==== Complex processing rules
+
+*Provide label based on value of indicator 1.*
+
+[%header,cols=2*]
+|====================
+| i1 value | label value
+| blank | For audience(s):
+| 0 | For grade(s):
+| 1 | For age(s):
+| 2 | For grade(s):
+| 3 | For audience(s):
+| 4 | For audience(s):
+| 8 | LABEL NOT PROVIDED
+|====================
+
+*Separate repeated $a values with `; ` (semicolon space)* +
+See UNCb3388632 below
+
+*Create parenthetical source statement from $b value if present* +
+See UNCb6569074, UNCb5764837 examples below.
+
+*Create label from $3 value if present*
+
+*Field is NOT indexed.*
+
+==== UNCb1301072
+
+* No label (i1=8)
+
+===== MARC
+
+[source]
+----
+521 8 _ $a"The professional bulletin for Army engineers."
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_general":[
+    {
+      "value":"\"The professional bulletin for Army engineers.\"",
+      "indexed":"false"
+    }
+  ]
+}
+----
+
+==== UNCb6569074
+
+* Label based on indicator
+* Source statement from $b
+
+===== MARC
+
+[source]
+----
+521 _ _ $aScholarly & Professional$bIEEE Computer Society Press
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_general":[
+    {
+      "label":"For audience(s):",
+      "value":"Scholarly & Professional (source: IEEE Computer Society Press)",
+      "indexed":"false"
+    }
+  ]
+}
+----
+
+==== UNCb6424285
+
+* Label based on indicator
+
+===== MARC
+
+[source]
+----
+521 0 _ $a4.5.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_general":[
+    {
+      "label":"For grade(s):",
+      "value":"4.5.",
+      "indexed":"false"
+    }
+  ]
+}
+----
+
+==== UNCb3731759 mock
+
+* Label based on indicator
+
+===== MARC
+
+[source]
+----
+521 1 _ $a3 to 7.$3workbook:
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_general":[
+    {
+      "label":"Workbook: For age(s):",
+      "value":"3 to 7.",
+      "indexed":"false"
+    }
+  ]
+}
+----
+
+==== UNCb5764837
+
+* Label based on indicator
+* Source statement from $b
+
+===== MARC
+
+[source]
+----
+521 2 _ $a7-12.$bBrodart
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_general":[
+    {
+      "label":"For grade(s):",
+      "value":"7-12. (source: Brodart)",
+      "indexed":"false"
+    }
+  ]
+}
+----
+
+==== UNCb3388632
+
+* Label based on indicator
+
+===== MARC
+
+[source]
+----
+521 3 _ $aOlder adults$ayounger persons with disabilities.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_general":[
+    {
+      "label":"For audience(s):",
+      "value":"Older adults; younger persons with disabilities.",
+      "indexed":"false"
+    }
+  ]
+}
+----
+
+=== 522
+
+==== UNCb8954715a
+
+===== MARC
+
+[source]
+----
+522 8 _ $a"The non-OECD countries in this report comprise ... central and Eastern European countries (CEECs), major New Indepenent States (NIS), and China, Brazil, and India ..."
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_general":[
+    {
+      "value":"\"The non-OECD countries in this report comprise ... central and Eastern European countries (CEECs), major New Indepenent States (NIS), and China, Brazil, and India ...\""
+    }
+  ]
+}
+----
+
+==== UNCb8954715
+
+* label not provided (i1=8)
+
+===== MARC
+
+[source]
+----
+522 8 _ $a"The non-OECD countries in this report comprise ... central and Eastern European countries (CEECs), major New Indepenent States (NIS), and China, Brazil, and India ..."
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_general":[
+    {
+      "value":"\"The non-OECD countries in this report comprise ... central and Eastern European countries (CEECs), major New Indepenent States (NIS), and China, Brazil, and India ...\""
+    }
+  ]
+}
+----
+
+=== 546
+
+==== UNCb8420259a
+
+* label provided (i1=blank)
+
+===== MARC
+
+[source]
+----
+522 _ _ $aAsia-Pacific ; Africa ; Near East ; Americas ; Europe ; Argentina ; Uruguay ; Brazil ; Chile ; Peru.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_general":[
+    {
+      "label":"Geographic coverage:",
+      "value":"Asia-Pacific ; Africa ; Near East ; Americas ; Europe ; Argentina ; Uruguay ; Brazil ; Chile ; Peru."
+    }
+  ]
+}
+----
+
+==== UNCb5753246
+
+===== MARC
+
+[source]
+----
+500 _ _ $aIncludes index.
+546 _ _ $3Text$aLatin
+546 _ _ $3Introduction and notes$aGerman
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_general":[
+    {
+      "value":"Includes index."
+    },
+    {
+      "label":"Text:",
+      "value":"Latin"
+    },
+    {
+      "label":"Introduction and notes:",
+      "value":"German"
+    }
+  ]
+}
+----
+
+=== 556
+
+* Values from this field are NOT indexed
+
+==== UNCb4430475
+
+* Label provided
+
+===== MARC
+
+[source]
+----
+556 _ _ $aIPEDS peer analysis system user manual, self guided tutorials.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_general":[
+     {
+       "label":"Documentation:",
+       "value":"IPEDS peer analysis system user manual, self guided tutorials.",
+       "indexed":"false"
+     }
+    ]
+}
+----
+
+==== UNCb3226895
+
+* Label not provided
+
+===== MARC
+
+[source]
+----
+556 8 _ $aAccompanied by user's manual (in English and French). Title on manual: Mayer international auction records on CD-ROM.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_general":[
+    {
+      "value":"Accompanied by user's manual (in English and French). Title on manual: Mayer international auction records on CD-ROM.",
+      "indexed":"false"
+    }
+  ]
+}
+----
+
+=== 586
+
+==== UNCb4336828
+===== MARC
+
+[source]
+----
+586 _ _ $aAcademy Awards, 2003: Best Documentary, Features (Michael Moore, Michael Donovan)
+586 _ _ $aCannes Film Festival, 2002: 55th Anniversary Prize (Michael Moore)
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_general":[
+    {
+      "value":"Academy Awards, 2003: Best Documentary, Features (Michael Moore, Michael Donovan)"
+    },
+    {
+      "value":"Cannes Film Festival, 2002: 55th Anniversary Prize (Michael Moore)"
+    }
+  ]
+}
+----
+
+==== UNCb7672018
+===== MARC
+
+[source]
+----
+586 _ _ $6880-05$3Ana$aDai 150-kai Akutagawa-shō, 2014
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_general":[
+    {
+      "label":"Ana:",
+      "value":"Dai 150-kai Akutagawa-shō, 2014"
+    }
+  ]
+}
+----
 
 == Examples: note_local
 === 500, 541, 561
@@ -969,6 +1364,266 @@ From http://www.loc.gov/marc/bibliographic/bd514.html
   "note_numbering":[
     "Issues for 1863-1950 have no vol. numbering but constitute v. 1-85.",
     "Vol. 102 issued in 2 pts."
+    ]
+}
+----
+
+== Examples: note_access_restrictions
+
+Field is NOT indexed.
+
+=== 506
+==== UNCb4320053
+===== MARC
+
+[source]
+----
+506 1 _ $aAccess limited to UNC Chapel Hill-authenticated users.$fLimited to one (1) concurrent user
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_access_restrictions":[
+    "Access limited to UNC Chapel Hill-authenticated users. Limited to one (1) concurrent user"
+    ]
+}
+----
+
+== Examples: note_related_work
+
+=== 544
+==== UNCb2364073
+
+* No label provided
+* Indexed portion different from display portion
+
+===== MARC
+
+[source]
+----
+544 _ _ $dSee also James Ritchie Sparkman books (#2732);$dSparkman family papers (#2791) at the$aSouthern Historical Collection, University of North Carolina at Chapel Hill.
+544 _ _ $dSee also W.E. Sparkman account book at the$aSouth Caroliniana Library, University of South Carolina.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_related_work":[
+    {
+      "value":"See also James Ritchie Sparkman books (#2732); Sparkman family papers (#2791) at the Southern Historical Collection, University of North Carolina at Chapel Hill.",
+      "indexed_value":"See also James Ritchie Sparkman books (#2732); Sparkman family papers (#2791) at the"
+    },
+    {
+      "value":"See also W.E. Sparkman account book at the South Caroliniana Library, University of South Carolina.",
+      "indexed_value":"See also W.E. Sparkman account book at the"
+    }
+  ]
+}
+----
+
+==== UNCb6466285
+
+* Nothing from field is indexed.
+* No label provided
+
+===== MARC
+
+[source]
+----
+544 _ _ $aThe North Carolina Collection Photographic Archives, University of North Carolina at Chapel Hill, holds many collections with images relating to the history of the University of North Carolina at Chapel Hill.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_related_work":[
+    {
+      "value":"The North Carolina Collection Photographic Archives, University of North Carolina at Chapel Hill, holds many collections with images relating to the history of the University of North Carolina at Chapel Hill.",
+      "indexed":"false"
+    }
+  ]
+}
+----
+
+==== UNCb7335781
+
+* Label provided based on indicator value
+* Indexed portion different from display portion
+
+===== MARC
+
+[source]
+----
+544 1 _ $dWilliam R. Ferris Collection, #20367 in the,$aSouthern Folklife Collection, University of North Carolina at Chapel Hill.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_related_work":[
+    {
+      "label":"Related materials:",
+      "value":"William R. Ferris Collection, #20367 in the, Southern Folklife Collection, University of North Carolina at Chapel Hill.",
+      "indexed_value":"William R. Ferris Collection, #20367 in the,"
+    }
+  ]
+}
+----
+
+==== UNCb7335781 mock
+
+* Label provided based on indicator value AND $3 value
+* Indexed portion different from display portion
+
+===== MARC
+
+[source]
+----
+544 1 _ $3Documents from 1970s$dWilliam R. Ferris Collection, #20367 in the,$aSouthern Folklife Collection, University of North Carolina at Chapel Hill.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_related_work":[
+    {
+      "label":"Documents from 1970s: Related materials:",
+      "value":"William R. Ferris Collection, #20367 in the, Southern Folklife Collection, University of North Carolina at Chapel Hill.",
+      "indexed_value":"William R. Ferris Collection, #20367 in the,"
+    }
+  ]
+}
+----
+
+== Examples: note_file_type
+
+* Field is NOT indexed
+
+=== 516
+
+==== UNCb3511387
+
+* No label provided
+
+===== MARC
+
+[source]
+----
+516 8 _ $aISO 9660 format; data files in dBase format; text files in ASCII format
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_file_type":[
+    "ISO 9660 format; data files in dBase format; text files in ASCII format"
+    ]
+}
+----
+
+==== UNCb4829326
+
+* Label provided
+
+===== MARC
+
+[source]
+----
+516 _ _ $aPDF
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_material_description":[
+    "PDF"
+    ]
+}
+----
+
+== Examples: note_system_details
+
+* Field is NOT indexed
+
+=== 538
+
+==== UNCb7177098
+
+* Set label from $3 and $i values (both present)
+
+===== MARC
+
+[source]
+----
+538 _ _ $3v.1-2$iDigital master conforms to:$aBenchmark for Faithful Digital Reproductions of Monographs and Serials. Version 1. Digital Library Federation, December 2002$uhttp://www.diglib.org/standards/bmarkfin.htm
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_system_details":[
+    "v.1-2: Digital master conforms to: Benchmark for Faithful Digital Reproductions of Monographs and Serials. Version 1. Digital Library Federation, December 2002 http://www.diglib.org/standards/bmarkfin.htm"
+    ]
+}
+----
+
+==== UNCb7469525
+
+* Set label from $3
+
+===== MARC
+
+[source]
+----
+538 _ _ $3Videodisc$aDVD; stereo. or 5.1 surround.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_system_details":[
+    "Videodisc: DVD; stereo. or 5.1 surround."
+    ]
+}
+----
+
+==== UNCb3512702
+
+* No label
+
+===== MARC
+
+[source]
+----
+538 _ _ $aSystem requirements for accompanying computer disc: IBM comatible PC; CD-ROM player and drive.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_system_details":[
+    "System requirements for accompanying computer disc: IBM comatible PC; CD-ROM player and drive."
     ]
 }
 ----
