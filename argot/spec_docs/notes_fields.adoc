@@ -1003,29 +1003,7 @@ See UNCb6569074, UNCb5764837 examples below.
 
 ==== UNCb8954715a
 
-===== MARC
-
-[source]
-----
-522 8 _ $a"The non-OECD countries in this report comprise ... central and Eastern European countries (CEECs), major New Indepenent States (NIS), and China, Brazil, and India ..."
-----
-
-===== Argot
-
-[source,javascript]
-----
-{
-  "note_general":[
-    {
-      "value":"\"The non-OECD countries in this report comprise ... central and Eastern European countries (CEECs), major New Indepenent States (NIS), and China, Brazil, and India ...\""
-    }
-  ]
-}
-----
-
-==== UNCb8954715
-
-* label not provided (i1=8)
+* Label not provided (i1=8)
 
 ===== MARC
 
@@ -1047,9 +1025,7 @@ See UNCb6569074, UNCb5764837 examples below.
 }
 ----
 
-=== 546
-
-==== UNCb8420259a
+==== UNCb8420259
 
 * label provided (i1=blank)
 
@@ -1073,6 +1049,35 @@ See UNCb6569074, UNCb5764837 examples below.
   ]
 }
 ----
+
+=== 536
+
+==== UNCb3455797
+
+* label provided (constant)
+
+===== MARC
+
+[source]
+----
+536 _ _ $aHeadquarters, U.S. Army Corps of Engineers.$d4A162784,$dAT 45,$dFF-XS5.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_general":[
+    {
+      "label":"Funding details:",
+      "value":"Headquarters, U.S. Army Corps of Engineers. 4A162784, AT 45, FF-XS5."
+    }
+  ]
+}
+----
+
+=== 546
 
 ==== UNCb5753246
 
