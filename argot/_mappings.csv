@@ -88,6 +88,8 @@ misc_id[value],MARC,n,GEN,010,b,.,subelement_to_value,"misc_id[qual]  = """";;;m
 musical_presentation_statement,MARC,n,GEN,254,a,.,concat_subelements,.,x,musical_presentation_statementGEN254a.,0,0,y,n,n
 note_access_restriction,MARC,n,GEN,506,abcdefu3,.,concat_subelements,"If $3 present, process as label",x,note_access_restrictionGEN506abcdefu3.,0,0,y,n,n
 note_admin_history,MARC,n,GEN,545,abu,i1=1,concat_subelements,x,x,note_admin_historyGEN545abui1=1,0,0,y,,
+note_binding[label],MARC,n,GEN,563,3,.,subelement_to_value,x,x,note_binding[label]GEN5633.,0,0,y,,
+note_binding[value],MARC,n,GEN,563,au,.,concat_subelements,x,x,note_binding[value]GEN563au.,0,0,y,,
 note_biographical,MARC,n,GEN,545,abu,i1=~/[ 0],concat_subelements,x,x,note_biographicalGEN545abui1=~/[ 0],0,0,y,,
 note_data_quality,MARC,n,GEN,514,abcdefghijkmuz,.,concat_subelements,Complex instructions. Refer to linked documentation for thie field,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_data_qualityGEN514abcdefghijkmuz.,0,0,y,n,n
 note_display[label],MARC,n,GEN,561,3,ind1 != 0,subelement_to_value,.,.,note_display[label]GEN5613ind1 != 0,0,0,n,n,n
@@ -183,7 +185,7 @@ rollup_id,MARC-to-Argot,n,UNC,001,.,Is OCLC number or SerialsSolutions number,ma
 rollup_id,MARC-to-Argot,n,UNC,019,.,"If oclc_number is not set, and 019 has at least 1 $a",map subelement to value,Prefix with OCLC,x,"rollup_idUNC19.If oclc_number is not set, and 019 has at least 1 $a",0,2,y,y,y
 series_transcribed,MARC,n,GEN,490,alvx3,none,concat_subelements,"Prepend ""ISSN: "" to any $x value.;;;Create label from $3 if present",x,series_transcribedGEN490alvx3none,0,0,y,n,n
 series_transcribed_issn,MARC,n,GEN,490,x,none,subelement_to_value,x,x,series_transcribed_issnGEN490xnone,0,0,y,n,n
-special_binding_description,MARC,n,GEN,563,a3,?,?,?,?,special_binding_descriptionGEN563a3?,0,0,y,,
+special_binding_description,MARC,n,GEN,563,a3,?,?,?,?,special_binding_descriptionGEN563a3?,0,0,n,,
 statement_of_responsibility,MARC,n,GEN,245,c,none,concat_subelements,x,Is concat_subelements in case some bad data exists with repeated $c,statement_of_responsibilityGEN245cnone,0,0,y,y,
 subject_chronological,MARC,n,GEN,600,y,i2=0 OR (i2=7 AND $2=lcsh),subelement_to_value,.,.,subject_chronologicalGEN600yi2=0 OR (i2=7 AND $2=lcsh),0,1,y,y,.
 subject_chronological,MARC,n,GEN,610,y,i2=0 OR (i2=7 AND $2=lcsh),subelement_to_value,.,.,subject_chronologicalGEN610yi2=0 OR (i2=7 AND $2=lcsh),0,1,y,y,.

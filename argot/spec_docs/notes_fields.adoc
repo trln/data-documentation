@@ -1628,6 +1628,72 @@ Field is NOT indexed.
 }
 ----
 
+== Examples: note_binding
+
+* Field is indexed
+
+=== 563
+
+==== UNCb8681679
+
+===== MARC
+
+[source]
+----
+563 _ _ $aPerfect bound softcover. Four-color offset lithography. Illustrated paper wrappers with flaps. Housed in foldout die-cut box with gold foil origami crane inserted into cover slot. Signed and numbered by the artist on book's front cover flap -- Description from$uhttp://vampandtramp.com/finepress/s/clarissa-sligh.html
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_binding":[
+  {
+    "value":"Perfect bound softcover. Four-color offset lithography. Illustrated paper wrappers with flaps. Housed in foldout die-cut box with gold foil origami crane inserted into cover slot. Signed and numbered by the artist on book's front cover flap -- Description from http://vampandtramp.com/finepress/s/clarissa-sligh.html"
+  }
+ ]
+}
+----
+
+==== UNCb2559560
+
+* Do NOT extract/map based on $5 See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_subfield_5.adoc[$5 spec doc] for details.
+
+===== MARC
+[source]
+----
+563 _ _ $aNLM copy bound in contemporary Cambridge-style binding.$5DNLM
+----
+
+===== Argot
+
+*NONE*
+
+==== UNCb4254290
+
+* Label from $3
+
+===== MARC
+
+[source]
+----
+563 _ _ $aSome pages uncut.$3(Health Sciences Library, c. 1)
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_binding":[
+    {
+      "label":"(Health Sciences Library, c. 1):",
+      "value":"Some pages uncut."
+    }
+  ]
+}
+----
 == Complex processing instructions
 === 538
 
@@ -1669,13 +1735,6 @@ b2415252a	535 1 _ $aDiocesan Library, Episcopal Diocese of Western North Carolin
 b2020885a	535 1 _ $aNational Archives and Records Administration$cUSA
 
 b4014115a	535 2 _ $aChurch of Jesus Christ of the Latter-day Saints. Family History Center, Greensboro, N.C.$3Microfilm
-
-
-b2559560a	563 _ _ $aNLM copy bound in contemporary Cambridge-style binding.$5DNLM
-
-b9021086a	563 _ _ $aRebacked tooled old calf, with bosses and clasps (the latter missing on upper edge). "333" written on inner cover. Front endpaper is vellum leaf from a 14th century service book; written in large gothic script with red and blue initials decorated with pen flourishes. Back doublure is part of a vellum leaf from a 14th century annotated digest; written in gothic script.
-
-b4254290a	563 _ _ $aSome pages uncut.$3(Health Sciences Library, c. 1)
 
 b3616660a	567 _ _ $aSamples from 319 quadrangles (1 degree x 2 degrees) beginning in 1976 and ending in 1980; four main sample types represented: stream sediment, soil, surface water, and ground water. Each sample analyzed for uranium and as many as 58 other elements including sulfate.
 
