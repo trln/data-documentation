@@ -1960,6 +1960,148 @@ Washington, D.C. : National Aeronautics and Space Administration, Scientific and
 }
 ----
 
+=== 534
+==== Complex processing instructions
+
+* $p present
+** $a, $t, or $k present (UNCb6744882, UNCb4232925)
+*** `label` from $p
+*** `value` from other specified subfields
+*** `indexed_value` from $a, $t, $k
+** $a, $t, or $k NOT present (UNCb8257422)
+*** `label` from $p
+*** `value` from other specified subfields
+*** `indexed` false
+* field lacks $p (UNCb4916807)
+** `label` constant value "Original version:"
+** `value` from specified subfields
+** `indexed` false
+
+The above logic may seem a bit arbitrary---why not check for presence of $a, t, or k first? Without a $p, $a and other subfield coding/content becomes untrustworthy and we cannot assume $a, t, or k should be indexed. 
+
+*Label from $3*
+If $3 is present, prepend its value to label assigned via above logic (UNCb9094522)
+
+==== UNCb6744882
+
+===== MARC
+
+[source]
+----
+534 _ _ $pElectronic reproduction. Originally published in:$kFontes rerum bohemicarum.$mT. 3.$cPrague : Nákl. N.F. Palackého, [1882]
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_reproduction":[
+    {
+      "label":"Electronic reproduction. Originally published in:",
+      "value":"Fontes rerum bohemicarum. T. 3. Prague : Nákl. N.F. Palackého, [1882]",
+      "indexed_value":"Fontes rerum bohemicarum."
+    }
+  ]
+}
+----
+
+==== UNCb4232925
+
+===== MARC
+
+[source]
+----
+534 _ _ $pOriginal version in:$aBry, Theodor de, 1528-1598.$tAdmiranda narratio, fida tamen, de commodis et incolarum ritibus Virginæ ...$kAmerica.$npt. 1.$cFrancoforti ad Moenum, 1590.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_reproduction":[
+    {
+      "label":"Original version in:",
+      "value":"Bry, Theodor de, 1528-1598. Admiranda narratio, fida tamen, de commodis et incolarum ritibus Virginæ ... America. pt. 1. Francoforti ad Moenum, 1590.",
+      "indexed_value":"Bry, Theodor de, 1528-1598. Admiranda narratio, fida tamen, de commodis et incolarum ritibus Virginæ ... America."
+    }
+  ]
+}
+----
+
+==== UNCb8257422
+
+===== MARC
+
+[source]
+----
+534 _ _ $pFacsimilie reprint. Originally published:$cNew York : D. Appleton and Company, 1894.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_reproduction":[
+    {
+      "label":"Facsimilie reprint. Originally published:",
+      "value":"New York : D. Appleton and Company, 1894.",
+      "indexed":"false"
+    }
+  ]
+}
+----
+
+==== UNCb4916807
+
+===== MARC
+
+[source]
+----
+534 _ _ $aFaksimile-uitg. van de autografen, 1786, 1787.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_reproduction":[
+    {
+      "label":"Original version:",
+      "value":"Faksimile-uitg. van de autografen, 1786, 1787.",
+      "indexed":"false"
+    }
+  ]
+}
+----
+
+==== UNCb9094522
+
+===== MARC
+
+[source]
+----
+534 _ _ $3Works 1-12$pissued earlier as analog disc:$cArhoolie$o5036.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_reproduction":[
+    {
+      "label":"Works 1-12: issued earlier as analog disc:",
+      "value":"Arhoolie 5036.",
+      "indexed":"false"
+    }
+  ]
+}
+----
+
 == Examples: note_scale
 === 255
 ==== UNC1998984
