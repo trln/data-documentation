@@ -100,6 +100,7 @@ note_display,note_display[value],MARC,n,GEN,507,ab,.,concat_subelements,.,.,note
 note_display,note_display[label],MARC,n,GEN,561,3,ind1 != 0,subelement_to_value,.,.,note_display[label]GEN5613ind1 != 0,0,0,n,n,n
 note_dissertation,note_dissertation,MARC,n,GEN,502,abcdg,.,concat_subelements,Complex instructions. Refer to linked documentation for this field,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_dissertationGEN502abcdg.,0,0,y,n,n
 note_file_type,note_file_type,MARC,n,GEN,516,a,none,concat_subelements,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_file_typeGEN516anone,0,0,y,,
+note_former_title,note_former_title,MARC,n,GEN,547,a,none,subelement_to_value,x,x,note_former_titleGEN547anone,0,0,y,,
 note_general,note_general[label],MARC,n,GEN,500,3,field does NOT contain $5,concat_subelements,.,.,note_general[label]GEN5003field does NOT contain $5,0,0,y,n,n
 note_general,note_general[value],MARC,n,GEN,500,a,field does NOT contain $5,concat_subelements,.,.,note_general[value]GEN500afield does NOT contain $5,0,0,y,n,n
 note_general,note_general[indexed],MARC,n,GEN,504,.,.,constant,value = false,.,note_general[indexed]GEN504..,0,0,y,n,n
@@ -165,6 +166,8 @@ note_related_work,note_related_work[label],MARC,n,GEN,544,3,i1=~/[01]/,see notes
 note_related_work,note_related_work[label],MARC,n,GEN,544,{na},i1=blank AND !$3,DO NOT SET,x,x,note_related_work[label]GEN544{na}i1=blank AND !$3,0,0,y,,
 note_related_work,note_related_work[label],MARC,n,GEN,544,{na},i1=~/[01]/ AND !$3,constant,"""label"":""Related materials:""",x,note_related_work[label]GEN544{na}i1=~/[01]/ AND !$3,0,0,y,,
 note_related_work,note_related_work[value],MARC,n,GEN,544,abcden,none,concat_subelements,x,x,note_related_work[value]GEN544abcdennone,0,0,y,,
+note_related_work,note_related_work[indexed],MARC,n,GEN,580,{na},none,constant,"""indexed"":""false""","Only $d should be indexed, so if it is not there, we don't want the rest of the displayed note indexed",note_related_work[indexed]GEN580{na}none,0,0,y,,
+note_related_work,note_related_work[value],MARC,n,GEN,580,a,none,concat_subelements,x,x,note_related_work[value]GEN580anone,0,0,y,,
 note_related_work,note_related_work[indexed_value],MARC,n,GEN,,,,,,,note_related_work[indexed_value]GEN,0,0,y,,
 note_related_work,note_related_work[label],MARC,n,GEN,,3,i1=1 AND $3,see notes,"""label"":""#{$3 value}: Originals held by:""",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_related_work[label]GEN3i1=1 AND $3,0,0,y,,
 note_related_work,note_related_work[value],MARC,n,GEN,,{na},none,constant,"""indexed"":""false""",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_related_work[value]GEN{na}none,0,0,y,,
@@ -218,7 +221,6 @@ related_work,related_work[issn],MARC,y,GEN,786,x,i1 != 1 AND NOT $a AND ($s OR $
 related_work,related_work[label],MARC,y,GEN,786,i,i1 != 1 AND NOT $a AND ($s OR $t),concat_subelements,see documentation ,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/related_x.adoc,related_work[label]GEN786ii1 != 1 AND NOT $a AND ($s OR $t),0,0,n,n,n
 related_work,related_work[title],MARC,y,GEN,786,s,i1 != 1 AND NOT $a AND $s,subelement_to_value,see documentation ,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/related_x.adoc,related_work[title]GEN786si1 != 1 AND NOT $a AND $s,0,0,n,n,n
 related_work,related_work[title],MARC,y,GEN,786,t,i1 != 1 AND NOT $a AND NOT $s AND $t,subelement_to_value,see documentation ,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/related_x.adoc,related_work[title]GEN786ti1 != 1 AND NOT $a AND NOT $s AND $t,0,0,n,n,n
-related_work_note,related_work_note,MARC,n,GEN,580,a,.,concat_subelements,x,x,related_work_noteGEN580a.,0,0,n,n,n
 rollup_id,rollup_id,MARC-to-Argot,n,UNC,001,.,Is OCLC number or SerialsSolutions number,map subelement to value,"Take value from oclc_number or sersol_number fields;;;Prefix with OCLC or SS, respectively",x,rollup_idUNC1.Is OCLC number or SerialsSolutions number,0,2,y,y,y
 rollup_id,rollup_id,MARC-to-Argot,n,UNC,019,.,"If oclc_number is not set, and 019 has at least 1 $a",map subelement to value,Prefix with OCLC,x,"rollup_idUNC19.If oclc_number is not set, and 019 has at least 1 $a",0,2,y,y,y
 series_transcribed,series_transcribed,MARC,n,GEN,490,alvx3,none,concat_subelements,"Prepend ""ISSN: "" to any $x value.;;;Create label from $3 if present",x,series_transcribedGEN490alvx3none,0,0,y,n,n
@@ -286,7 +288,6 @@ subject_topic_lcsh,subject_topic_lcsh,MARC,y,GEN,656,a,i2=7 AND $2=lcsh,subeleme
 subject_topic_lcsh,subject_topic_lcsh,MARC,y,GEN,656,x,i2=7 AND $2=lcsh,subelement_to_value,.,"UNC doesn't have any occurrences of these subfields (regardless of term source). Check w/other institutions re: current needs here. Can/should be mapped eventually, depending on how use of field evolves",subject_topic_lcshGEN656xi2=7 AND $2=lcsh,0,2,y,y,.
 subject_topic_lcsh,subject_topic_lcsh,MARC,y,GEN,657,a,i2=7 AND $2=lcsh,subelement_to_value,.,"UNC doesn't have any occurrences of this field (regardless of term source). Check w/other institutions re: needs here. May need to handle at some point in the future, depending on how field use evolves in practice. ",subject_topic_lcshGEN657ai2=7 AND $2=lcsh,0,2,y,y,.
 subject_topic_lcsh,subject_topic_lcsh,MARC,y,GEN,657,x,i2=7 AND $2=lcsh,subelement_to_value,.,"UNC doesn't have any occurrences of this field (regardless of term source). Check w/other institutions re: needs here. May need to handle at some point in the future, depending on how field use evolves in practice. ",subject_topic_lcshGEN657xi2=7 AND $2=lcsh,0,2,y,y,.
-title_former_note,title_former_note,MARC,n,GEN,547,a,none,subelement_to_value,x,x,title_former_noteGEN547anone,0,0,y,,
 title_former_work,title_former_work,MARC,n,GEN,780,,,,,,title_former_workGEN780,0,0,y,n,n
 title_history_index_only,title_history_index_only[isbn],MARC,n,GEN,780,z,ind1=1,subelement_to_value,,,title_history_index_only[isbn]GEN780zind1=1,0,0,y,,
 title_history_index_only,title_history_index_only[issn],MARC,n,GEN,780,x,ind1=1,subelement_to_value,,,title_history_index_only[issn]GEN780xind1=1,0,0,y,,
@@ -300,6 +301,7 @@ title_main,title_main[value],MARC,n,GEN,245,abfghknps,none,concat_subelements,x,
 title_variant_display,title_variant_display,MARC,n,GEN,246,abfghinp,i1=~/[01],concat_subelements,create label from $i or i2 if not blank,x,title_variant_displayGEN246abfghinpi1=~/[01],0,0,y,,
 title_variant_indexed,title_variant_indexed,MARC,n,GEN,210,ab,i1=1,concat_subelements,.,,title_variant_indexedGEN210abi1=1,0,0,y,.,.
 title_variant_indexed,title_variant_indexed,MARC,n,GEN,246,abfghnp,none,concat_subelements,.,x,title_variant_indexedGEN246abfghnpnone,0,0,y,,
+title_variant_indexed,title_variant_indexed,MARC,n,GEN,247,,none,concat_subelements,.,x,title_variant_indexedGEN247none,0,0,y,,
 upc,upc[qualifying_info],MARC,n,GEN,024,a,i1=1 and $a data includes parenthetical qualifying info,subelement_to_value,"strip out the actual UPC, remove parentheses from around data",.,upc[qualifying_info]GEN24ai1=1 and $a data includes parenthetical qualifying info,0,0,y,,
 upc,upc[qualifying_info],MARC,n,GEN,024,q,i1=1,concat_subelements,remove parentheses from around data,.,upc[qualifying_info]GEN24qi1=1,0,0,y,,
 upc,upc[value],MARC,n,GEN,024,a,i1=1,subelement_to_value,remove parenthetical qualifier if it's included in $a,.,upc[value]GEN24ai1=1,0,0,y,,

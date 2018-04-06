@@ -1835,6 +1835,34 @@ _I don't know why our rare books catalogers have added what basically amount to 
 }
 ----
 
+=== 580
+==== UNCb1285933
+
+* No label provided
+* Not indexed
+
+===== MARC
+
+[source]
+----
+580 _ _ $aMerged with: Botanica acta, to form: Plant biology (Stuttgart, Germany).
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_related_work":[
+    {
+      "value":"Merged with: Botanica acta, to form: Plant biology (Stuttgart, Germany).",
+      "indexed":"false"
+    }
+  ]
+}
+----
+
+
 == Examples: note_report_type, note_report_coverage
 === 513
 ==== UNCb3661373
@@ -2262,6 +2290,39 @@ If $3 is present, prepend its value to label assigned via above logic (UNCb90945
     ]
 }
 ----
+
+== Examples: note_former_title
+
+Field is *NOT* indexed. This field should occur with 247s that allow the titles to be indexed. The 247s should be coded as index only. 
+
+=== 547
+
+==== UNCb6843127
+
+===== MARC
+[source]
+-----
+247 0 1 $aNugents;$bthe garment weekly$fVol. 41, no. 9-v. 55, no. 10, v. 54, no. 6-v. 84, no. 4 (May 12, 1917-Sept. 3, 1921, Nov. 6, 1923-Oct. 23, 1928)
+247 0 1 $aGarment weekly$fv. 55, no. 11-v. 54, no. 5 (Sept. 10, 1921-Oct. 30, 1923)
+247 0 1 $aNugent's;$bthe specialty store magazine$fv. 85, no. 1-9 (Oct., 1929-June, 1930)
+247 0 1 $aNugent's;$bfor buyers of fashion merchandise$fv. 85, no. 10-v. 87, no. 7 (July, 1930-April, 1932)
+547 _ _ $aVol. 41, no. 9-v. 55, no. 10, v. 54, no. 6-v. 84, no. 4 (May 12, 1917-Sept. 3, 1921, Nov. 6, 1923-Oct. 23, 1928) title reads: Nugents; the garment weekly; v. 55, no. 11-v. 54, no. 5 (Sept. 10, 1921-Oct. 30, 1923) The Garment weekly; v. 85, no. 1-9 (Oct., 1929-June, 1930), Nugent's; the specialty store magazine; v. 85, no. 10-v. 87, no. 7 (July, 1930-April, 1932), Nugent's; for buyers of fashion merchandise.
+-----
+
+===== Argot
+[source,javascript]
+----
+{
+  "note_former_title":[
+      "Vol. 41, no. 9-v. 55, no. 10, v. 54, no. 6-v. 84, no. 4 (May 12, 1917-Sept. 3, 1921, Nov. 6, 1923-Oct. 23, 1928) title reads: Nugents; the garment weekly; v. 55, no. 11-v. 54, no. 5 (Sept. 10, 1921-Oct. 30, 1923) The Garment weekly; v. 85, no. 1-9 (Oct., 1929-June, 1930), Nugent's; the specialty store magazine; v. 85, no. 10-v. 87, no. 7 (July, 1930-April, 1932), Nugent's; for buyers of fashion merchandise."
+  ]
+}
+----
+
+===== Behavior
+This field is displayed, not indexed.
+
+Indexing of the titles is based on the 247 field and is handled by the Argot `title_variant` pattern of fields described https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_title_variant.adoc[here]. 
 
 == Examples: note_with
 === 501

@@ -1,8 +1,9 @@
 :toc:
 :toc-placement!:
 
-= Work entries: Name/title pattern
+= Work entry pattern
 
+The pattern used to create fields for works (i.e. often having name/title characteristics, among others, and designed to help the user navigate to other sets of records in the catalog)
 
 *Test records*
 The UNC bib records referred to by bib number in this document are at:

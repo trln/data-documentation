@@ -261,35 +261,6 @@ RELATED ITEMS:
 - Gray card index.
 - Index Kewensis.
 
-=== UNCb1011957 - 740 with nonfiling indicator
-==== MARC
- 245 1 4 $aThe Evander gas-field,$cby P. J. Hugo. Met 'n opsomming in Afrikaans onder die opskrif: Die Gasveld Evander.
- 740 4 _ $aDie Gasveld Evander.
-
-==== Argot
-[source,javascript]
-----
-{
-  "related_title": [
-  {"initart": "Die",
-   "title": "Gasveld Evander."
-  }
- ]
-}
-----
-
-==== Behavior (based on deduplicated Argot)
-*Displayed:*
-
-RELATED ITEMS:
-
-- http://search.trln.org/search?Nty=1&Ntk=Title&Ntt=Gasveld%20Evander.&N=0[Die Gasveld Evander.]
-
-*`title_related_idx` index entry:*
-
-- Die Gasveld Evander.
-- Gasveld Evander.
-
 
 === linking field not for display
 
