@@ -814,6 +814,65 @@ If $b is present, prepend "Number of references: " to its value.
 }
 ----
 
+=== 518
+
+==== b7612476
+
+* label from $3
+* content of note broken down into specific subfields
+
+===== MARC
+
+[source]
+----
+518 _ _ $31st-4th works$orecorded$d2013 January 25-27$pSt. Mary's Church, Chilham, Kent.
+518 _ _ $35th work$orecorded$d2013 January 31$pNo. 2 Studio, Abbey Road, London.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_general":[
+    {
+      "label":"1st-4th works:",
+      "value":"recorded 2013 January 25-27 St. Mary's Church, Chilham, Kent.",
+      "indexed":"false"
+    },
+    {
+      "label":"5th work:",
+      "value":"recorded 2013 January 31 No. 2 Studio, Abbey Road, London.",
+      "indexed":"false"
+    }
+  ]
+}
+----
+
+==== b1818381
+
+* no label
+* full note in $a
+
+===== MARC
+
+[source]
+----
+518 _ _ $aRecorded June 11-18, 1981, Corbett Auditorium, College-Conservatory of Music, University of Cincinnati.
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_general":[
+    {
+      "value":"Recorded June 11-18, 1981, Corbett Auditorium, College-Conservatory of Music, University of Cincinnati.",
+      "indexed":"false"
+    }
+----
+
 === 521
 
 ==== Complex processing rules

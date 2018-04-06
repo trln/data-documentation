@@ -99,9 +99,11 @@ note_display[value],MARC,n,GEN,507,ab,.,concat_subelements,.,.,note_display[valu
 note_dissertation,MARC,n,GEN,502,abcdg,.,concat_subelements,Complex instructions. Refer to linked documentation for thie field,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_dissertationGEN502abcdg.,0,0,y,n,n
 note_file_type,MARC,n,GEN,516,a,none,concat_subelements,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_file_typeGEN516anone,0,0,y,,
 note_general[indexed],MARC,n,GEN,504,.,.,constant,value = false,.,note_general[indexed]GEN504..,0,0,y,n,n
+note_general[indexed],MARC,n,GEN,518,{na},none,constant,"""indexed"":""false""",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_general[indexed]GEN518{na}none,0,0,y,,
 note_general[indexed],MARC,n,GEN,521,{na},none,constant,"""indexed"":""false""",x,note_general[indexed]GEN521{na}none,0,0,y,,
 note_general[indexed],MARC,n,GEN,556,{na},none,constant,"""indexed"":""false""",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_general[indexed]GEN556{na}none,0,0,y,,
 note_general[label],MARC,n,GEN,500,3,field does NOT contain $5,concat_subelements,.,.,note_general[label]GEN5003field does NOT contain $5,0,0,y,n,n
+note_general[label],MARC,n,GEN,518,3,none,concat_subelements,x,x,note_general[label]GEN5183none,0,0,y,,
 note_general[label],MARC,n,GEN,521,{na},$3 NOT present,see notes,Set label based on i1 value,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_general[label]GEN521{na}$3 NOT present,0,0,y,,
 note_general[label],MARC,n,GEN,521,3,none,see notes,"Set label based on i1 value, prepend $3 value to this label",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_general[label]GEN5213none,0,0,y,,
 note_general[label],MARC,n,GEN,522,{na},i1=blank,constant,"""label"":""Geographic coverage:""",x,note_general[label]GEN522{na}i1=blank,0,0,y,,
@@ -112,6 +114,7 @@ note_general[label],MARC,n,GEN,556,{na},i1=blank,constant,"""label"":""Documenta
 note_general[label],MARC,n,GEN,586,3,none,concat_subelements,x,x,note_general[label]GEN5863none,0,0,y,,
 note_general[value],MARC,n,GEN,500,a,field does NOT contain $5,concat_subelements,.,.,note_general[value]GEN500afield does NOT contain $5,0,0,y,n,n
 note_general[value],MARC,n,GEN,504,ab,.,concat_subelements,"Prefix $b value with: ""Number of references: """,.,note_general[value]GEN504ab.,0,0,y,n,n
+note_general[value],MARC,n,GEN,518,adop,none,concat_subelements,x,x,note_general[value]GEN518adopnone,0,0,y,,
 note_general[value],MARC,n,GEN,521,ab,none,see notes,Create source statement from $b; separate repeated $a with '; ',https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_general[value]GEN521abnone,0,0,y,,
 note_general[value],MARC,n,GEN,522,a,none,concat_subelements,x,x,note_general[value]GEN522anone,0,0,y,,
 note_general[value],MARC,n,GEN,536,abcdefgh,none,concat_subelements,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_general[value]GEN536abcdefghnone,0,0,y,,
@@ -155,6 +158,10 @@ note_related_work[value],MARC,n,GEN,535,abcdg,none,concat_subelements,x,https://
 note_related_work[value],MARC,n,GEN,544,abcden,none,concat_subelements,x,x,note_related_work[value]GEN544abcdennone,0,0,y,,
 note_report_coverage,MARC,n,GEN,513,b,.,concat_subelements,x,x,note_report_coverageGEN513b.,0,0,y,n,n
 note_report_type,MARC,n,GEN,513,a,.,concat_subelements,deduplicate field once all values are assigned,x,note_report_typeGEN513a.,0,0,y,n,n
+note_reproduction[indexed],MARC,n,GEN,533,{na},!$c AND !$f,constant,"""indexed"":""false""","Only $c and/or $f should be indexed, so if they aren't present, we don't want the rest of the displayed note indexed",note_reproduction[indexed]GEN533{na}!$c AND !$f,0,0,y,,
+note_reproduction[indexed_value],MARC,n,GEN,533,cf,none,concat_subelements,x,x,note_reproduction[indexed_value]GEN533cfnone,0,0,y,,
+note_reproduction[label],MARC,n,GEN,533,3,none,subelement_to_value,x,x,note_reproduction[label]GEN5333none,0,0,y,,
+note_reproduction[value],MARC,n,GEN,533,abcdefmn,none,concat_subelements,x,x,note_reproduction[value]GEN533abcdefmnnone,0,0,y,,
 note_scale,MARC,n,GEN,255,abcdefg,.,concat_subelements,x,x,note_scaleGEN255abcdefg.,0,0,y,n,n
 note_scale,MARC,n,GEN,507,ab,.,concat_subelements,x,x,note_scaleGEN507ab.,0,0,y,n,n
 note_summary,MARC,n,GEN,520,abc3,none,concat_subelements,x,https://trlnmain.atlassian.net/wiki/spaces/TD/pages/96665601/Argon+Fields+and+their+display,note_summaryGEN520abc3none,0,1,y,y,.
@@ -281,7 +288,3 @@ work_citation_uncontrolled,MARC,n,GEN,100,abcd(g)jqu,.,concat_subelements,"$g an
 work_citation_uncontrolled,MARC,n,GEN,110,abcd(g)(n)u,.,concat_subelements,"$g and/or $n included if there is NO $t or $k, or if it occurs BEFORE any $t/$k present",Prepended to title portion from 245,work_citation_uncontrolledGEN110abcd(g)(n)u.,0,0,y,n,n
 work_citation_uncontrolled,MARC,n,GEN,111,acde(g)(n)qu,.,concat_subelements,"$g and/or $n included there is NO $t or $k, or if it occurs BEFORE any $t/$k present",Prepended to title portion from 245,work_citation_uncontrolledGEN111acde(g)(n)qu.,0,0,y,n,n
 work_citation_uncontrolled,MARC,n,GEN,245,anp,.,concat_subelements,"Include $n and/or $p that PRECEDE any $b or $h;;;Strip initial articles/etc as per i2 value;;;The 100, 110, or 111 string (if those fields are present) followed by "". "" is prepended to this value to create the full work_citation_uncontrolled entry",Prepended to title portion from 245,work_citation_uncontrolledGEN245anp.,0,0,y,n,n
-note_reproduction[indexed],MARC,n,GEN,533,{na},!$c AND !$f,constant,"""indexed"":""false""","Only $c and/or $f should be indexed, so if they aren't present, we don't want the rest of the displayed note indexed",note_reproduction[indexed]GEN533{na}!$c AND !$f,0,0,y,,
-note_reproduction[indexed_value],MARC,n,GEN,533,cf,none,concat_subelements,x,x,note_reproduction[indexed_value]GEN533cfnone,0,0,y,,
-note_reproduction[label],MARC,n,GEN,533,3,none,subelement_to_value,x,x,note_reproduction[label]GEN5333none,0,0,y,,
-note_reproduction[value],MARC,n,GEN,533,abcdefmn,none,concat_subelements,x,x,note_reproduction[value]GEN533abcdefmnnone,0,0,y,,
