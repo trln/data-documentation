@@ -816,7 +816,7 @@ If $b is present, prepend "Number of references: " to its value.
 
 === 518
 
-==== b7612476
+==== UNCb7612476
 
 * label from $3
 * content of note broken down into specific subfields
@@ -849,7 +849,7 @@ If $b is present, prepend "Number of references: " to its value.
 }
 ----
 
-==== b1818381
+==== UNCb1818381
 
 * no label
 * full note in $a
@@ -1104,6 +1104,101 @@ See UNCb6569074, UNCb5764837 examples below.
     {
       "label":"Geographic coverage:",
       "value":"Asia-Pacific ; Africa ; Near East ; Americas ; Europe ; Argentina ; Uruguay ; Brazil ; Chile ; Peru."
+    }
+  ]
+}
+----
+
+=== 526
+==== Complex processing rules
+*Label set based on i1 value and $i if present*
+
+* i1=0 : Label = "Reading program:"
+* i1=8 : no label
+* i1=anything else : no label (invalid/undefined values)
+
+If i1=0 and $i present, label = "Reading program: #{$ivalue}:"
+
+*Add punctuation between subfields*
+
+" -- " (space hyphen hyphen space)
+
+*Provide labels for cryptic subfields*
+
+[%header,cols=2*]
+|====================
+| subfield | prepend
+| a | (nothing)
+| b | "Interest level: "
+| c | "Reading level: "
+| d | "Title points: "
+| z | (nothing)
+|====================
+
+*When $a is the sole subfield*
+
+* Do nothing special, in which case `value` and `indexed value` will be identical; OR
+* Do an extra thing to omit setting `indexed_value`
+
+I probably wouldn't do anything special. This is not THAT common of a note, and the contents of the note tend to be relatively brief.
+
+*When there is no $a*
+
+* Do nothing special, in which case, whatever else is in `value` will be indexed; OR
+* Do an extra thing to add `indexed:false`
+
+I probably wouldn't do anything special. This field doesn't even make sense without a $a, so I suspect any instances missing a $a need to be deleted or corrected anyway. There shouldn't be too many of them.
+
+==== UNCb8186117 mock
+
+* label from i1 and $i
+* cryptic subfield labels and between-subfield punctuation provided
+
+===== MARC
+
+[source]
+----
+526 0 _ $aAccelerated Reader$bGrades 5-8$c4.9$d10$xSD$zQuiz 161076$zEnglish fiction.$i2017 addition to
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_general":[
+    {
+      "label":"Reading program: 2017 addition to:"
+      "value":"Accelerated Reader -- Interest level: Grades 5-8 -- Reading level: 4.9 -- Title points: 10 --  Quiz 161076 -- English fiction.",
+      "indexed_value":"Accelerated Reader"
+    }
+  ]
+}
+----
+
+==== UNCb7402489
+
+* no label
+
+===== MARC
+
+[source]
+----
+526 8 _ $aCE credits available from Psychotherapy.net
+----
+
+===== Argot
+
+*Applying the "do nothing special" option described above*
+
+[source,javascript]
+----
+{
+  "note_general":[
+    {
+      "label":"Reading program: 2017 addition to:"
+      "value":"CE credits available from Psychotherapy.net"
+      "indexed_value":"CE credits available from Psychotherapy.net"
     }
   ]
 }
