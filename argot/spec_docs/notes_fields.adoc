@@ -1527,6 +1527,30 @@ _I don't know why our rare books catalogers have added what basically amount to 
 }
 ----
 
+== Examples: note_methodology
+
+=== 567
+==== UNCb3616660
+
+===== MARC
+
+[source]
+----
+567 _ _ $aSamples from 319 quadrangles (1 degree x 2 degrees) beginning in 1976 and ending in 1980; four main sample types represented: stream sediment, soil, surface water, and ground water. Each sample analyzed for uranium and as many as 58 other elements including sulfate.
+----
+
+===== Argot
+[source,javascript]
+----
+{
+  "note_methodology":[
+    {
+      "value":"Samples from 319 quadrangles (1 degree x 2 degrees) beginning in 1976 and ending in 1980; four main sample types represented: stream sediment, soil, surface water, and ground water. Each sample analyzed for uranium and as many as 58 other elements including sulfate."
+    }
+  ]
+}
+----
+
 == Examples: note_numbering
 
 === 515
