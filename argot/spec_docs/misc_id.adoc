@@ -50,7 +50,7 @@ Special case:
 * 035 - ILSs seem to use this SO differently, that maybe this belongs handled in local configs. OCLC numbers should already be being mapped to separate field if they come from 035. If mapping other numbers to `misc_id`, `type` = mapped translation of parenthetical prefix? 
 
 === Map to `misc_id`
-=== Higher priority
+==== Higher priority
 
 * 024
 ** i1 = 1 is already mapped to upc, so skip that one
@@ -77,14 +77,14 @@ Special case:
 * 088
 ** include "canceled/invalid" in `type` if number is in $z
 
-=== Lower priority
+==== Lower priority
 
 * 013 - expanding $b, c, f for display is complicated. Format $d more nicely for display. Labels needed for $e, f 
 * 016 - `type` set from ind1 or mapped $2 value, with "canceled/invalid" qualifier if data in $z
 * 017 - `type` set from $i if present; otherwise "Copyright or legal deposit number" with "canceled/invalid" qualifier if data in $z; format $d for display; add $b to all $a values
 * 036 - really easy mapping but infrequently used http://experimental.worldcat.org/marcusage/036.html[WorldCat use]
 
-=== Do not map
+==== Do not map
 _These recommendations will be sent to metadata experts for approval/feedback_
 
 * 018 - complete cryptic mess. Impossible that it's actually up to date in any way.  1 instance in UNC catalog. http://experimental.worldcat.org/marcusage/018.html[WorldCat use]
