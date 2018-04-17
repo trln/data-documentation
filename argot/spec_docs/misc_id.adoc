@@ -47,7 +47,11 @@ The following IDs (and ID-like elements) are handled in their own separate field
 
 Special case:
 
-* 035 - ILSs seem to use this SO differently, that maybe this belongs handled in local configs. OCLC numbers should already be being mapped to separate field if they come from 035. If mapping other numbers to `misc_id`, `type` = mapped translation of parenthetical prefix? 
+* 035
+** ILSs seem to use this SO differently, that maybe this belongs handled in local configs.
+** OCLC numbers should already be being mapped to separate field if they come from 035.
+** It seems likely that many non-OCoLC 035 values belong in vendor marc id (which was intended to improve rollup if we are using non-OCLC vendor MARC)
+** If mapping other numbers to `misc_id`, `type` = mapped translation of parenthetical prefix? 
 
 === Map to `misc_id`
 ==== Higher priority
