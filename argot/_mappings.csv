@@ -81,8 +81,9 @@ items,items[status],MARCish,n,UNC,999,d,i1=9 AND i2=1 and $d IS NOT blank,consta
 items,items[status],MARCish,n,UNC,999,s,i1=9 AND i2=1 and $d IS blank,map subelement to value,"See maps/item_status_ils_to_argot.json[""UNC""]",.,items[status]UNC999si1=9 AND i2=1 and $d IS blank,0,0,y,y,y
 items,items[vol],MARCish,n,UNC,999,v,i1=9 AND i2=1,subelement_to_value,.,.,items[vol]UNC999vi1=9 AND i2=1,0,1,y,y,y
 location_hierarchy,location_hierarchy,MARC-to-Argot,n,UNC,"loc_b (items, holdings)",.,.,map subelement to value,Each loc_b value is mapped to a location hierarchy. Details forthcoming.,,"location_hierarchyUNCloc_b (items, holdings)..",1,0,y,y,y
-misc_id,misc_id[value],MARC,n,GEN,010,a,.,subelement_to_value,"misc_id[qual]   = """";;;misc_id[type] = ""LCCN"";;;Do NOT trim leading/trailing spaces",x,misc_id[value]GEN10a.,0,0,y,y,y
-misc_id,misc_id[value],MARC,n,GEN,010,b,.,subelement_to_value,"misc_id[qual]  = """";;;misc_id[type] = ""NUCMC"";;;Do NOT trim leading/trailing spaces",x,misc_id[value]GEN10b.,0,0,y,y,y
+misc_id,misc_id[value],MARC,n,GEN,010,a,.,subelement_to_value,"misc_id[qual]   = """";;;misc_id[type] = ""LCCN""",x,misc_id[value]GEN10a.,0,0,y,y,y
+misc_id,misc_id[value],MARC,n,GEN,010,b,.,subelement_to_value,"misc_id[qual]  = """";;;misc_id[type] = ""NUCMC""",x,misc_id[value]GEN10b.,0,0,y,y,y
+misc_id,misc_id[value],MARC,n,GEN,010,z,.,subelement_to_value,"misc_id[qual]  = """";;;misc_id[type] = ""Canceled or invalid LCCN""",x,misc_id[value]GEN10z.,0,0,y,,
 misc_id,misc_id[qual],MARC,n,GEN,015,q,.,subelement_to_value,qual = subfield value with parentheses removed,x,misc_id[qual]GEN15q.,0,0,y,y,y
 misc_id,misc_id[type],MARC,n,GEN,015,2,.,map subelement to value,"type = ""National Bibliography Number"" if there is no $2; otherwise, map $2 using https://github.com/trln/marc-to-argot/blob/master/lib/translation_maps/shared/national_bibliography_codes.yaml",Mapping is from: https://www.loc.gov/standards/sourcelist/national-bibliography.html,misc_id[type]GEN152.,0,0,y,y,y
 misc_id,misc_id[value],MARC,n,GEN,015,a,.,subelement_to_value,"if subfield includes parentheses, split into 'id' and 'qual';;;if subfield contains no parentheses, 'id' = whole subfield value",x,misc_id[value]GEN15a.,0,0,y,y,y

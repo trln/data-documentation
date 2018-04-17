@@ -5,3 +5,274 @@
 
 toc::[]
 
+There are MANY possible ID types, many of which are only relevant for certain formats or disciplines. Make a general use IDs field so these can be searched and displayed, without having to define every ID type separately.
+
+== Map to separate fields, not `misc_id`
+The following IDs (and ID-like elements) are handled in their own separate fields because they have specific uses in the system beyond search/display. These should *NOT* be mapped to `misc_id`:
+
+* barcodes
+* id (main unique ID for records in TRLN Discovery - institutional prefix + local id)
+* isbns from various fields
+* issns from various fields
+* oclc number
+* rollup id
+* sersol number
+* syndetics id
+* upc
+* vendor marc id
+
+Special case:
+
+* 035 - ILSs seem to use this SO differently, that maybe this belongs handled in local configs. OCLC numbers should already be being mapped to separate field if they come from 035. If mapping other numbers to `misc_id`, `type` = mapped translation of parenthetical prefix? 
+
+== Map to `misc_id`
+=== Higher priority
+
+* 024
+** i1 = 1 is already mapped to upc, so skip that one
+** `type` set from i1 value. If i1=8, `type`= mapped $2 value
+** include "canceled/invalid" in `type` if number is in $z
+** omit $c -- impossible that it is current/accurate
+** strip parens off $q (provide in display)
+** handle parenthetical qualifiers in $a (i.e. not encoded in $q)
+* 027
+** strip parens off $q (provide in display)
+** looks like there are parenthetical qualifiers mushed on the end of $a, but also numbers in parentheses that are part of the IDs themselves. Unclear how to handle, so keep all of $a in `value`
+* 028
+** `type` set from i1 value -- 1 = "Issue number", etc.
+** `display` = false if i2=~/[03]/
+** strip parens off $q (provide in display)
+** looks like there are parenthetical qualifiers mushed on the end of $a, but also numbers in parentheses that are part of the IDs themselves. Unclear how to handle, so keep all of $a in `value`
+* 030
+** include "canceled/invalid" in `type` if number is in $z
+* 074
+** include "canceled/invalid" in `type` if number is in $z
+** parenthetical qualifier at end of $a -> `qual`
+** expand "(MF)" to "microfiche" in `qual`
+** strip parens from `qual` (provide in display)
+* 088
+** include "canceled/invalid" in `type` if number is in $z
+
+=== Lower priority
+
+* 013 - expanding $b, c, f for display is complicated. Format $d more nicely for display. Labels needed for $e, f 
+* 016 - `type` set from ind1 or mapped $2 value, with "canceled/invalid" qualifier if data in $z
+* 017 - `type` set from $i if present; otherwise "Copyright or legal deposit number" with "canceled/invalid" qualifier if data in $z; format $d for display; add $b to all $a values
+* 036 - really easy mapping but infrequently used http://experimental.worldcat.org/marcusage/036.html[WorldCat use]
+
+== Do not map
+_These recommendations will be sent to metadata experts for approval/feedback_
+
+* 018 - complete cryptic mess. Impossible that it's actually up to date in any way.  1 instance in UNC catalog. http://experimental.worldcat.org/marcusage/018.html[WorldCat use]
+* 025 - seems *extremely* librarian-centric? (UNC n=18829) http://experimental.worldcat.org/marcusage/025.html[WorldCat use]
+* 026 - unclear how this is supposed to be used. 0 instances in UNC catalog. http://experimental.worldcat.org/marcusage/026.html[WorldCat use]
+* 031 - hella complicated. Not really an ID, per se. 2 instances in UNC catalog. http://experimental.worldcat.org/marcusage/031.html[WorldCat use]
+* 032 - extremely library-centric. Inconceivable that this is up-to-date in any way. (UNC n=4390) http://experimental.worldcat.org/marcusage/032.html[WorldCat use]
+
+
+== Argot pattern
+
+[source,javascript]
+----
+{
+  "misc_id":[
+    {
+      "type":"type of ID, may be used as label for the id",
+      "value":"the value of the ID itself",
+      "qual":"qualifying information for the ID",
+      "display":"boolean, default is true"
+    }
+  ]
+}
+----
+
+* *type*: Required. Will be used to create label for the ID in display
+* *value*: Required. The ID itself, for display and index
+* *qual*: Optional. Populated if qualifying info exists in MARC data
+* *display*: Optional. Will default to true if not explicitly set to false. Setting to false causes id `value` to be indexed without being displayed. See 028 for application. 
+
+== Examples
+
+=== 010
+
+==== Processing rules
+
+* 010 defines no qualifying info field -- `misc_id[qual]` will not be set
+* subfield delimiter value maps to `misc_id[type]` value as shown in table below.
+
+|====================
+| a | LCCN
+| b | NUCMC
+| z | Canceled or invalid LCCN
+|====================
+
+* do not need to retain whitespace padding at beginning of field data.
+
+==== UNCb6126578
+
+===== MARC
+
+[source]
+----
+010 _ _ $a   86752311 $b   13947215
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "misc_id":[
+    {
+      "type":"LCCN",
+      "value":"86752311"
+    },
+    {
+      "type":"NUCMC",
+      "value":"13947215"
+    },
+  ]
+}
+----
+
+==== UNCb1009201
+
+===== MARC
+
+[source]
+----
+010 _ _ $a   70001437 //r84$z   77373485
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "misc_id":[
+    {
+      "type":"LCCN",
+      "value":"70001437 //r84"
+    },
+    {
+      "type":"Canceled or invalid LCCN",
+      "value":"77373485"
+    },
+  ]
+}
+----
+
+=== 015
+
+==== Processing rules
+
+* If $a contains data in parentheses
+** split parenthetical qualifying data from the actual ID data
+** parenthetical qualifying data *with parentheses removed* is recorded in `qual` element
+** remaining ID data from $a, *whitespace trimmed* is recorded in `value` element
+
+* $q data *with parentheses removed* is recorded in `qual` element
+
+* If there is no $2
+** `type` element = "National Bibliography Number"
+* If there is $2
+** If $2 value found as key in https://github.com/trln/marc-to-argot/blob/master/lib/translation_maps/shared/national_bibliography_codes.yaml
+*** `type` element = value specified in https://github.com/trln/marc-to-argot/blob/master/lib/translation_maps/shared/national_bibliography_codes.yaml
+** If $2 value NOT found as key in https://github.com/trln/marc-to-argot/blob/master/lib/translation_maps/shared/national_bibliography_codes.yaml
+*** `type` element = "National Bibliography Number"
+
+==== UNCb2822192
+
+===== MARC
+
+[source]
+----
+015 _ _ $aGB96-439
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "misc_id":[
+    {
+      "type":"National Bibliography Number",
+      "value":"GB96-439"
+    }
+  ]
+}
+----
+
+==== UNCb2674927
+
+===== MARC
+
+[source]
+----
+015 _ _ $aGB7205212$q(v. 2)$2bnb
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "misc_id":[
+    {
+      "type":"British national bibliography",
+      "value":"GB7205212",
+      "qual":"v. 2"
+    }
+  ]
+}
+----
+
+==== UNCb7962766 mock
+
+===== MARC
+
+[source]
+----
+015 _ _ $a20023012390  (pbk.)$2tnt
+----
+
+===== Argot 
+[source,javascript]
+----
+{
+  "misc_id":[
+    {
+      "type":"National Bibliography Number",
+      "value":"20023012390",
+      "qual":"pbk."
+    }
+  ]
+}
+----
+
+==== UNCb1530748
+
+===== MARC
+
+[source]
+----
+015 _ _ $aBBM68-3648$aLACAP68-3222
+----
+
+===== Argot 
+[source,javascript]
+----
+{
+  "misc_id":[
+    {
+      "type":"National Bibliography Number",
+      "value":"BBM68-3648"
+    },
+    {
+      "type":"National Bibliography Number",
+      "value":"LACAP68-3222"
+    }
+  ]
+}
+----
