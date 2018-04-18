@@ -26,7 +26,7 @@ Relevant differences in catalog behavior between these include:
 ** will always be FORMER titles, and can be labeled as such
 ** will not retrieve additional/different records if searched as title, so title should not be hyperlinked
 ** basically, should be treated as a specially labeled variant title of the work described in this record
-** are handled by `title_history_variant` Argot field
+** are handled by `title_variant` Argot field
 
 * title history titles recorded in records using successive entry:
 ** may be former or later titles -- need to be labeled as such for display (though former vs. later can be indexed the same -- neither takes relevance preference)
@@ -39,23 +39,3 @@ Both types of fields may be coded to display or not to display.
 When coded to not display, there will typically be a note that serves the display purpose.
 
 These fields are always indexed, even when MARC coding specifies not to "make an access point" (which is more related to catalog card printing than indexing rules)
-
-=== title_history_variant
-[source,javascript]
-----
-{
-  "title_history_variant":[
-    {
-      "label":"Label for the note",
-      "value":"The displayed content of the note",
-      "indexed_value":"The part of above value that should be indexed, if it is different from value",
-      "display":"Boolean: true or false"
-    }
-  ]
-}
-----
-
-* `label`: Optional. May be set from $3, $i, and/or MARC field tag + indicator values. No need to set if `display` = false.
-* `value`: *Required.* The note that will be displayed. If there is no `indexed_value` and `indexed` is not false, this is also the indexed note content.
-* `indexed_value`: Optional. This should only be populated if `indexed_value` needs to be different than `value`
-* `display`: Optional. If not explicitly set, assumed to equal true. In other words, default assumption is that the field data will be displayed.
