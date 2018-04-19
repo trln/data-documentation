@@ -201,11 +201,11 @@ Alternately, explicitly set `type` to 'variant'
 |false
 |===
 
-* `display` value is also false when i2=0 or 1
+*`display` value is also false when i2=0 or 1*
 
 http://www.loc.gov/marc/bibliographic/bd246.html[The MARC spec for 246] says no note is generated when i2=0 or 1. Fields coded this way are supposed to contain portions of the title data recorded (and displayed) in the 245
 
-*`label` value is determined by i2 value and/or data in $i
+*`label` value is determined by i2 value and/or data in $i*
 
 If there is an i2 value that generates a `label`, *and* an $i value, the $i value is appended to the generated i2 value.
 
