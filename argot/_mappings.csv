@@ -169,9 +169,6 @@ note_related_work,note_related_work[label],MARC,n,GEN,544,{na},i1=~/[01]/ AND !$
 note_related_work,note_related_work[value],MARC,n,GEN,544,abcden,none,concat_subelements,x,x,note_related_work[value]GEN544abcdennone,0,0,y,,
 note_related_work,note_related_work[indexed],MARC,n,GEN,580,{na},none,constant,"""indexed"":""false""","Only $d should be indexed, so if it is not there, we don't want the rest of the displayed note indexed",note_related_work[indexed]GEN580{na}none,0,0,y,,
 note_related_work,note_related_work[value],MARC,n,GEN,580,a,none,concat_subelements,x,x,note_related_work[value]GEN580anone,0,0,y,,
-note_related_work,note_related_work[indexed_value],MARC,n,GEN,,,,,,,note_related_work[indexed_value]GEN,0,0,y,,
-note_related_work,note_related_work[label],MARC,n,GEN,,3,i1=1 AND $3,see notes,"""label"":""#{$3 value}: Originals held by:""",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_related_work[label]GEN3i1=1 AND $3,0,0,y,,
-note_related_work,note_related_work[value],MARC,n,GEN,,{na},none,constant,"""indexed"":""false""",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_related_work[value]GEN{na}none,0,0,y,,
 note_report_coverage,note_report_coverage,MARC,n,GEN,513,b,.,concat_subelements,x,x,note_report_coverageGEN513b.,0,0,y,n,n
 note_report_type,note_report_type,MARC,n,GEN,513,a,.,concat_subelements,deduplicate field once all values are assigned,x,note_report_typeGEN513a.,0,0,y,n,n
 note_reproduction,note_reproduction[indexed],MARC,n,GEN,533,{na},!$c AND !$f,constant,"""indexed"":""false""","Only $c and/or $f should be indexed, so if they aren't present, we don't want the rest of the displayed note indexed",note_reproduction[indexed]GEN533{na}!$c AND !$f,0,0,y,,
