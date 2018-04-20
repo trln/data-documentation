@@ -129,6 +129,8 @@ note_general,note_general[value],MARC,n,GEN,546,ab,none,concat_subelements,x,x,n
 note_general,note_general[indexed],MARC,n,GEN,556,{na},none,constant,"""indexed"":""false""",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_general[indexed]GEN556{na}none,0,0,y,,
 note_general,note_general[label],MARC,n,GEN,556,{na},i1=blank,constant,"""label"":""Documentation:""",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_general[label]GEN556{na}i1=blank,0,0,y,,
 note_general,note_general[value],MARC,n,GEN,556,a,none,concat_subelements,,,note_general[value]GEN556anone,0,0,y,,
+note_general,note_general[label],MARC,n,GEN,585,3,none,concat_subelements,x,x,note_general[label]GEN5853none,0,0,y,,
+note_general,note_general[value],MARC,n,GEN,585,a,none,concat_subelements,x,x,note_general[value]GEN585anone,0,0,y,,
 note_general,note_general[label],MARC,n,GEN,586,3,none,concat_subelements,x,x,note_general[label]GEN5863none,0,0,y,,
 note_general,note_general[value],MARC,n,GEN,586,a,none,concat_subelements,x,x,note_general[value]GEN586anone,0,0,y,,
 note_index,note_index,MARC,n,GEN,507,ab,.,concat_subelements,.,.,note_indexGEN507ab.,0,0,n,n,n
@@ -144,8 +146,6 @@ note_local,note_local[value],MARC,n,UNC,541,abcdefhno3,.,concat_subelements,DO N
 note_local,note_local[label],MARC,n,GEN,561,3,ind1 != 0 and $3 present,concat_subelements,"""label"":""Ownership history: #{$3 value(s)}""",.,note_local[label]GEN5613ind1 != 0 and $3 present,0,0,y,,
 note_local,note_local[label],MARC,n,GEN,561,.,ind1 != 0 and $3 NOT present,constant,"""label"":""Ownership history""",,note_local[label]GEN561.ind1 != 0 and $3 NOT present,0,0,y,,
 note_local,note_local[value],MARC,n,GEN,561,a,ind1 != 0,concat_subelements,.,.,note_local[value]GEN561aind1 != 0,0,0,y,n,n
-note_local,note_local[label],MARC,n,GEN,585,3,none,concat_subelements,x,x,note_local[label]GEN5853none,0,0,y,,
-note_local,note_local[value],MARC,n,GEN,585,a,none,concat_subelements,x,x,note_local[value]GEN585anone,0,0,y,,
 note_local,note_local[value],MARC,n,GEN,590,a,.,concat_subelements,.,.,note_local[value]GEN590a.,1,0,y,n,n
 note_methodology,note_methodology,MARC,n,GEN,567,a,none,concat_subelements,x,x,note_methodologyGEN567anone,0,0,y,,
 note_numbering,note_numbering,MARC,n,GEN,515,a,none,concat_subelements,x,x,note_numberingGEN515anone,0,0,y,n,n
