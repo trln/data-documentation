@@ -50,6 +50,19 @@ toc::[]
 * `abbrev_title_indexed`: "GATT act." 
 
 [source,javascript]
+{
+  "title_variant":[
+    {
+      "type":"key",
+      "value":"advocate of peace and universal brotherhood (Online)",
+      "display":"false"
+    }
+  ]
+}
+
+* `key_title_indexed`: "advocate of peace and universal brotherhood (Online)"
+
+[source,javascript]
 ----
 {
   "title_variant":[
@@ -171,6 +184,40 @@ toc::[]
 }
 ----
 
+=== 222
+==== Processing instructions
+
+*`type`='key'*
+
+*`display` is always false*
+
+*`indexed_value` is never needed because `value` contains the indexed value in an indexed-only field*
+
+*indexed subfields include: ab* - respect non-filing indicators
+
+==== UNCb5751048
+
+===== MARC
+
+[source]
+----
+222 _ 4 $aThe advocate of peace and universal brotherhood$b(Online)
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "title_variant":[
+    {
+      "type":"key",
+      "value":"advocate of peace and universal brotherhood (Online)",
+      "display":"false"
+    }
+  ]
+}
+----
 
 
 === 246
