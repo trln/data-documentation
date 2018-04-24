@@ -1060,7 +1060,7 @@ See UNCb6569074, UNCb5764837 examples below.
 
 === 522
 
-==== UNCb8954715a
+==== UNCb8954715
 
 * Label not provided (i1=8)
 
@@ -1189,16 +1189,12 @@ I probably wouldn't do anything special. This field doesn't even make sense with
 
 ===== Argot
 
-*Applying the "do nothing special" option described above*
-
 [source,javascript]
 ----
 {
   "note_general":[
     {
-      "label":"Reading program: 2017 addition to:"
       "value":"CE credits available from Psychotherapy.net"
-      "indexed_value":"CE credits available from Psychotherapy.net"
     }
   ]
 }
@@ -1422,7 +1418,7 @@ I probably wouldn't do anything special. This field doesn't even make sense with
 
 == Examples: note_issuance
 === 550
-==== UNCb234211
+==== UNCb1234211
 ===== MARC
 
 [source]
