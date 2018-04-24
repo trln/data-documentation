@@ -56,14 +56,14 @@ Special case:
 === Map to `misc_id`
 ==== Higher priority
 
-* 024
+* 024 (in spreadsheet)
 ** i1 = 1 is already mapped to upc, so skip that one
 ** `type` set from i1 value. If i1=8, `type`= mapped $2 value
 ** include "canceled/invalid" in `type` if number is in $z
 ** omit $c -- impossible that it is current/accurate
 ** strip parens off $q (provide in display)
 ** handle parenthetical qualifiers in $a (i.e. not encoded in $q)
-* 027
+* 027 (in spreadsheet)
 ** strip parens off $q (provide in display)
 ** looks like there are parenthetical qualifiers mushed on the end of $a, but also numbers in parentheses that are part of the IDs themselves. Unclear how to handle, so keep all of $a in `value`
 * 028
