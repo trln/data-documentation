@@ -66,7 +66,7 @@ Special case:
 * 027 (in spreadsheet)
 ** strip parens off $q (provide in display)
 ** looks like there are parenthetical qualifiers mushed on the end of $a, but also numbers in parentheses that are part of the IDs themselves. Unclear how to handle, so keep all of $a in `value`
-* 028
+* 028 (in spreadsheet)
 ** `type` set from i1 value -- 1 = "Issue number", etc.
 ** `display` = false if i2=~/[03]/
 ** strip parens off $q (provide in display)
