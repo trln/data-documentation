@@ -1,0 +1,139 @@
+:toc:
+:toc-placement!:
+
+= `included_work` field
+
+"Authorized access point" (or approximation thereof) for *work included in the resource described by the catalog record*
+
+*Uses the https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_work_entry.adoc[`work_entry` Argot pattern]*
+
+toc::[]
+
+
+
+== Data sources
+
+* 700, 710, or 711 with ind2=2 and $t or $k present
+** Label specifying type of relationship from $i if present
+* 730 with ind2=2 (will not include author elements)
+** Label specifying type of relationship from $i if present
+* 740 with ind2=2 (will not include author elements)
+* 774 with ind1=0 and $t or $s (may or may not include author elements)
+** Label specifying type of relationship from $i if present
+
+== Processing notes
+
+* Relator terms/codes are not supposed to be recorded in analytic added entries. Do not map them (e4 for X00 and X10; j4 for X11) if they are in the data
+* Segment/subfield delimiter '||' is provided in title portion to facilitate adaptive hyperlinking
+* `type` = included
+* `display` = true (so it doesn't need to be set explicitly)
+* In 700, $g is mapped to `author` if it precedes the first $t and/or $k. If $g follows the first $t and/or $k, $g is mapped to `details`
+
+== Examples
+
+=== 700
+==== UNCb5976398 -- omit relator code
+
+[source]
+----
+=700  12$aSaint-Saëns, Camille,$d1835-1921.$4cmp$tQuartets,$mviolins (2), viola, cello,$nno. 2, op. 153,$rG major
+----
+
+[source]
+----
+[
+  {'type'=>'included',
+   'author'=>'Saint-Saëns, Camille, 1835-1921.',
+   'title'=>'Quartets,||violins (2), viola, cello,||no. 2, op. 153,||G major'}
+]
+----
+
+==== UNCb8630424 -- omit relator term
+
+$e is preceded by ', ' and ends with a period signifying the end of the author name segment.
+
+We want to remove the comma that precedes a $e, but keep or provide a period at the end of the author segment.
+
+[source]
+----
+=700  12$aSchwenkel, Christina,$eauthor.$tArchitecture and dwelling in the 'war of destruction' in Vietnam.
+----
+
+[source]
+----
+[
+{'type'=>'included',
+ 'author'=>'Schwenkel, Christina.',
+ 'title'=>'Architecture and dwelling in the \'war of destruction\' in Vietnam.'}
+]
+----
+
+==== UNCb8069067 -- `label` from $i; `details` from $g
+
+[source]
+----
+=700  12$iFacsimile of:$aFerrini, Vincent,$d1913-2007.$tTidal wave : poems of the great strikes.$f1945$g(New York : Great-Concord Publishers)
+----
+
+[source]
+----
+[
+{'type'=>'included',
+ 'label'=>'Facsimile of',
+ 'author'=>'Ferrini, Vincent, 1913-2007.',
+ 'title'=>'Tidal wave : poems of the great strikes.||1945',
+ 'details'=>'(New York : Great-Concord Publishers)'}
+]
+----
+
+
+*Display*
+
+*This item includes:*
+
+* Facsimile of: http://query.info/on_author[Ferrini, Vincent, 1913-2007.] http://query.info/on_title[Tidal wave : poems of the great strikes.] http://query.info/on_title_to_left_plus[1945] (New York : Great-Concord Publishers)
+
+
+*Indexed as*
+
+`included_author`: Ferrini, Vincent, 1913-2007.
+
+`included_title`: Tidal wave : poems of the great strikes. 1945
+
+`included_work`: Ferrini, Vincent, 1913-2007. Tidal wave : poems of the great strikes. 1945
+
+
+==== UNCb7416515 -- label from $3 and $i; special $i processing
+
+See sections of https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_subfield_i.adoc[$i spec] related to deleting WEMI terms and RDA terminology replacements.
+
+[source]
+----
+=700  02$3Tome 1, volume 1$iContainer of (expression):$aPlotinus.$tPeri tou kalou.$lFrench$s(Achard and Narbonne)
+----
+
+[source]
+----
+[
+{'type'=>'included',
+ 'label'=>'Tome 1, volume 1: Contains',
+ 'author'=>'Plotinus.',
+ 'title'=>'Peri tou kalou.||French||(Achard and Narbonne)'}
+]
+----
+
+==== UNC mock -- $g as part of `author`
+
+[source]
+----
+=700  12$aName, Author,$g(Test name),$d1944-.$tTest title.
+----
+
+[source]
+----
+[
+{'type'=>'included',
+ 'author'=>'Name, Author, (Test name), 1944-.',
+ 'title'=>'Test title.'}
+]
+----

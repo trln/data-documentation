@@ -5,6 +5,10 @@
 
 The pattern used to create fields for works (i.e. often having name/title characteristics, among others, and designed to help the user navigate to other sets of records in the catalog)
 
+This pattern is used in the following Argot fields:
+
+* included_work
+
 *Test records*
 The UNC bib records referred to by bib number in this document are at:
 todo
@@ -12,6 +16,9 @@ todo
 toc::[]
 
 == The pattern
+
+* `type`: type of field (i.e. this work, included work, related work, continued work, etc.)
+
 
 * `label`: Contextualizing info derived from data in field itself and/or the MARC tag or indicator values. Will not always be present.
 ** Display but do not index
@@ -22,6 +29,7 @@ toc::[]
 ** indexed as `title_related`, `title_included`, `title_series`, or `title_variant_indexed` as appropriate
 ** if there is no separate `title_filing` element set, combined with `author` segment to create indexed `work_citation*` value for in-catalog hyperlink querying and possible use in autosuggest
 ** subelements of the title portion are separated with `||` to allow for adaptive hyperlinking. This delimiter is stripped out of the display.
+** If there is a uniform title and a title proper included in the field, uniform title is mapped to `title` and title proper is mapped to `title_variation`
 * `title_filing` : The title related portion, minus initial article/non-filing characters, if this value would be different than what's in `title`
 ** indexed as `title_related`, `title_included`, `title_series`, or `title_variant_indexed` as appropriate
 ** if present, combined with `author` segment to create indexed `work_citation*` value for in-catalog hyperlink querying and possible use in autosuggest
@@ -36,6 +44,7 @@ toc::[]
 * `issn`: ISSN of cited related work.
 ** displayed, with `ISSN:` label, at end of field display
 ** indexed in `issn_related`, `issn_included`, or `issn_series` as appropriate
+* `display`: boolean; whether data from field should be displayed; default = true
 
 Display should be built as follows:
  `label` + `author` + `title` + `details` + ISBN: `isbn` + ISSN: `issn`
@@ -129,18 +138,6 @@ Data sources:
 * 100/110/111 if present + 245anp (need to verify the subfields included)
 
 
-=== included_work
-"Authorized access point" (or approximation thereof) for *work included in the resource described by the catalog record*
-
-Data sources:
-
-* 700, 710, or 711 with ind2=2 and $t or $k present
-** Label specifying type of relationship from $i if present
-* 730 with ind2=2 (will not include author elements)
-** Label specifying type of relationship from $i if present
-* 740 with ind2=2 (will not include author elements)
-* 774 with ind1=0 and $t or $s (may or may not include author elements)
-** Label specifying type of relationship from $i if present
 
 ==== issued_with_work
 "Authorized access point" (or approximation thereof) for *work that is separately cataloged but that is issued with or included in the resource described by the catalog record*

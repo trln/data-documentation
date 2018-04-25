@@ -37,6 +37,17 @@ becomes:
 
  "label": "Musical setting of:
 
+=== Replacements of certain weird-sounding RDA terminology
+
+Replacements should be case insensitive.
+
+[%header,cols=2*]
+|====================
+| RDA value | Replace with
+| Container of | Contains
+| Contained in | In
+|====================
+
 === Label needs to end with a colon
 The colon is often provided by the cataloger, but sometimes it may not be. In such cases, it should be provided.
 
