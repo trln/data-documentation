@@ -73,7 +73,7 @@ Special case:
 ** looks like there are parenthetical qualifiers mushed on the end of $a, but also numbers in parentheses that are part of the IDs themselves. Unclear how to handle, so keep all of $a in `value`
 * 030 (in spreadsheet)
 ** include "canceled/invalid" in `type` if number is in $z
-* 074
+* 074 (in spreadsheet)
 ** include "canceled/invalid" in `type` if number is in $z
 ** parenthetical qualifier at end of $a -> `qual`
 ** expand "(MF)" to "microfiche" in `qual`
