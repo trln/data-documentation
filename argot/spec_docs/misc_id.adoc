@@ -78,7 +78,7 @@ Special case:
 ** parenthetical qualifier at end of $a -> `qual`
 ** expand "(MF)" to "microfiche" in `qual`
 ** strip parens from `qual` (provide in display)
-* 088
+* 088 (in spreadsheet)
 ** include "canceled/invalid" in `type` if number is in $z
 
 ==== Lower priority
