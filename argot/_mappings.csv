@@ -57,11 +57,24 @@ imprint_multiple,imprint_multiple[type],MARC,n,GEN,264,.,i2=2,constant,distribut
 imprint_multiple,imprint_multiple[type],MARC,n,GEN,264,.,i2=3,constant,manufacture,x,imprint_multiple[type]GEN264.i2=3,0,0,y,?,n
 imprint_multiple,imprint_multiple[type],MARC,n,GEN,264,.,i2=4,constant,copyright,x,imprint_multiple[type]GEN264.i2=4,0,0,y,?,https://github.com/trln/marc-to-argot/blob/TD-443-publication/spec/macros/shared/imprint_spec.rb
 imprint_multiple,imprint_multiple[value],MARC,n,GEN,264,abc,.,concat_subelements,Field should not end with a comma or semicolon.,x,imprint_multiple[value]GEN264abc.,0,0,y,?,https://github.com/trln/marc-to-argot/blob/TD-443-publication/spec/macros/shared/imprint_spec.rb
-included_work,included_work[author],MARC,n,GEN,700,abcd(g)jqu,i2=2 AND ($t OR $k),concat_subelements,$g included if it precedes $t and/or $k,,included_work[author]GEN700abcd(g)jqui2=2 AND ($t OR $k),0,0,y,,
-included_work,included_work[details],MARC,n,GEN,700,(g),i2=2 AND ($t OR $k),concat_subelements,$g included if it follows $t and/or $k,,included_work[details]GEN700(g)i2=2 AND ($t OR $k),0,0,y,,
-included_work,included_work[label],MARC,n,GEN,700,i3,i2=2 AND ($t OR $k),concat_subelements,See linked documentation,.,included_work[label]GEN700i3i2=2 AND ($t OR $k),0,0,y,,
-included_work,included_work[title],MARC,n,GEN,700,fhklmnoprst,i2=2 AND ($t OR $k),concat_subelements,Replace subfield delimiters with '||',,included_work[title]GEN700fhklmnoprsti2=2 AND ($t OR $k),0,0,y,,
-included_work,included_work[type],MARC,n,GEN,700,{na},i2=2 AND ($t OR $k),constant,"""type"":""included""",.,included_work[type]GEN700{na}i2=2 AND ($t OR $k),0,0,y,,
+included_work,included_work[author],MARC,n,GEN,700,abcd(g)jqu,i2=2 AND ($t OR $k),concat_subelements,$g included if it precedes $t and/or $k,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/included_work.adoc,included_work[author]GEN700abcd(g)jqui2=2 AND ($t OR $k),0,0,y,n,y
+included_work,included_work[details],MARC,n,GEN,700,(g),i2=2 AND ($t OR $k),concat_subelements,$g included if it follows $t and/or $k,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/included_work.adoc,included_work[details]GEN700(g)i2=2 AND ($t OR $k),0,0,y,n,y
+included_work,included_work[issn],MARC,n,GEN,700,x,i2=2 AND ($t OR $k),concat_subelements,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/included_work.adoc,included_work[issn]GEN700xi2=2 AND ($t OR $k),0,0,y,n,y
+included_work,included_work[label],MARC,n,GEN,700,i3,i2=2 AND ($t OR $k),concat_subelements,See linked documentation,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/included_work.adoc,included_work[label]GEN700i3i2=2 AND ($t OR $k),0,0,y,n,y
+included_work,included_work[title],MARC,n,GEN,700,fhklmnoprst,i2=2 AND ($t OR $k),concat_subelements,Replace subfield delimiters with '||',https://github.com/trln/data-documentation/blob/master/argot/spec_docs/included_work.adoc,included_work[title]GEN700fhklmnoprsti2=2 AND ($t OR $k),0,0,y,n,y
+included_work,included_work[type],MARC,n,GEN,700,{na},i2=2 AND ($t OR $k),constant,"""type"":""included""",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/included_work.adoc,included_work[type]GEN700{na}i2=2 AND ($t OR $k),0,0,y,n,y
+included_work,included_work[author],MARC,n,GEN,710,abc(d)(g)(n)u,i2=2 AND ($t OR $k),concat_subelements,"$d, g, n included if it precedes $t and/or $k",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/included_work.adoc,included_work[author]GEN710abc(d)(g)(n)ui2=2 AND ($t OR $k),0,0,y,n,y
+included_work,included_work[details],MARC,n,GEN,710,(g),i2=2 AND ($t OR $k),concat_subelements,$g included if it follows $t and/or $k,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/included_work.adoc,included_work[details]GEN710(g)i2=2 AND ($t OR $k),0,0,y,n,y
+included_work,included_work[issn],MARC,n,GEN,710,x,i2=2 AND ($t OR $k),concat_subelements,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/included_work.adoc,included_work[issn]GEN710xi2=2 AND ($t OR $k),0,0,y,n,y
+included_work,included_work[label],MARC,n,GEN,710,i3,i2=2 AND ($t OR $k),concat_subelements,See linked documentation,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/included_work.adoc,included_work[label]GEN710i3i2=2 AND ($t OR $k),0,0,y,n,y
+included_work,included_work[title],MARC,n,GEN,710,(d)fhklm(n)oprst,i2=2 AND ($t OR $k),concat_subelements,"$d, n included if they follow $t or $k; Replace subfield delimiters with '||'",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/included_work.adoc,included_work[title]GEN710(d)fhklm(n)oprsti2=2 AND ($t OR $k),0,0,y,n,y
+included_work,included_work[type],MARC,n,GEN,710,{na},i2=2 AND ($t OR $k),constant,"""type"":""included""",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/included_work.adoc,included_work[type]GEN710{na}i2=2 AND ($t OR $k),0,0,y,n,y
+included_work,included_work[author],MARC,n,GEN,711,ac(d)e(g)(n)u,i2=2 AND ($t OR $k),concat_subelements,"$d, g, n included if it precedes $t and/or $k",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/included_work.adoc,included_work[author]GEN711ac(d)e(g)(n)ui2=2 AND ($t OR $k),0,0,y,n,y
+included_work,included_work[details],MARC,n,GEN,711,(g),i2=2 AND ($t OR $k),concat_subelements,$g included if it follows $t and/or $k,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/included_work.adoc,included_work[details]GEN711(g)i2=2 AND ($t OR $k),0,0,y,n,y
+included_work,included_work[issn],MARC,n,GEN,711,x,i2=2 AND ($t OR $k),concat_subelements,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/included_work.adoc,included_work[issn]GEN711xi2=2 AND ($t OR $k),0,0,y,n,y
+included_work,included_work[label],MARC,n,GEN,711,i3,i2=2 AND ($t OR $k),concat_subelements,See linked documentation,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/included_work.adoc,included_work[label]GEN711i3i2=2 AND ($t OR $k),0,0,y,n,y
+included_work,included_work[title],MARC,n,GEN,711,(d)fhklm(n)pst,i2=2 AND ($t OR $k),concat_subelements,"$d, n included if they follow $t or $k; Replace subfield delimiters with '||'",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/included_work.adoc,included_work[title]GEN711(d)fhklm(n)psti2=2 AND ($t OR $k),0,0,y,n,y
+included_work,included_work[type],MARC,n,GEN,711,{na},i2=2 AND ($t OR $k),constant,"""type"":""included""",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/included_work.adoc,included_work[type]GEN711{na}i2=2 AND ($t OR $k),0,0,y,n,y
 isbn,isbn[number],MARC,n,GEN,020,az,.,subelement_to_value,clean any qualifying info and punctuation from the end,,isbn[number]GEN20az.,0,0,y,,
 isbn,isbn[qualifying_info],MARC,n,GEN,020,az,if there is data in parentheses,see notes,extract the data from inside the parentheses as the qualifying info,x,isbn[qualifying_info]GEN20azif there is data in parentheses,0,1,y,,
 isbn,isbn[qualifying_info],MARC,n,GEN,020,q,.,concat_subelements,remove parentheses from around data,x,isbn[qualifying_info]GEN20q.,0,1,y,,
@@ -140,10 +153,6 @@ note_binding,note_binding[value],MARC,n,GEN,563,au,.,concat_subelements,x,x,note
 note_biographical,note_biographical,MARC,n,GEN,545,abu,i1=~/[ 0],concat_subelements,x,x,note_biographicalGEN545abui1=~/[ 0],0,0,y,,
 note_copy_version,note_copy_version,MARC,n,GEN,562,abcde3,none,concat_subelements,$3 label,x,note_copy_versionGEN562abcde3none,0,0,y,,
 note_data_quality,note_data_quality,MARC,n,GEN,514,abcdefghijkmuz,.,concat_subelements,Complex instructions. Refer to linked documentation for this field,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_data_qualityGEN514abcdefghijkmuz.,0,0,y,n,n
-note_display,note_display[value],MARC,n,GEN,501,a,.,subelement_to_value,.,.,note_display[value]GEN501a.,0,0,n,n,n
-note_display,note_display[value],MARC,n,GEN,502,abcdgo,.,concat_subelements,Complex instructions. Refer to linked documentation for this field,.,note_display[value]GEN502abcdgo.,0,0,n,n,n
-note_display,note_display[value],MARC,n,GEN,507,ab,.,concat_subelements,.,.,note_display[value]GEN507ab.,0,0,n,n,n
-note_display,note_display[label],MARC,n,GEN,561,3,ind1 != 0,subelement_to_value,.,.,note_display[label]GEN5613ind1 != 0,0,0,n,n,n
 note_dissertation,note_dissertation,MARC,n,GEN,502,abcdg,.,concat_subelements,Complex instructions. Refer to linked documentation for this field,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_dissertationGEN502abcdg.,0,0,y,n,n
 note_file_type,note_file_type,MARC,n,GEN,516,a,none,concat_subelements,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_file_typeGEN516anone,0,0,y,,
 note_former_title,note_former_title,MARC,n,GEN,547,a,none,subelement_to_value,x,x,note_former_titleGEN547anone,0,0,y,,
@@ -178,10 +187,6 @@ note_general,note_general[label],MARC,n,GEN,585,3,none,concat_subelements,x,x,no
 note_general,note_general[value],MARC,n,GEN,585,a,none,concat_subelements,x,x,note_general[value]GEN585anone,0,0,y,,
 note_general,note_general[label],MARC,n,GEN,586,3,none,concat_subelements,x,x,note_general[label]GEN5863none,0,0,y,,
 note_general,note_general[value],MARC,n,GEN,586,a,none,concat_subelements,x,x,note_general[value]GEN586anone,0,0,y,,
-note_index,note_index,MARC,n,GEN,507,ab,.,concat_subelements,.,.,note_indexGEN507ab.,0,0,n,n,n
-note_index,note_index,MARC,y,UNC,541,a,i1!=0,subelement_to_value,x,x,note_indexUNC541ai1!=0,0,0,n,,
-note_index,note_index,MARC,n,GEN,544,d,none,subelement_to_value,x,x,note_indexGEN544dnone,0,0,n,n,n
-note_index,note_index,MARC,n,GEN,561,a,ind1 != 0,subelement_to_value,.,.,note_indexGEN561aind1 != 0,0,0,n,n,n
 note_issuance,note_issuance,MARC,n,GEN,550,a,none,concat_subelements,x,x,note_issuanceGEN550anone,0,0,y,,
 note_local,note_local[label],MARC,n,GEN,500,3,field contains whitelisted $5 value,concat_subelements,.,.,note_local[label]GEN5003field contains whitelisted $5 value,0,0,y,n,n
 note_local,note_local[value],MARC,n,GEN,500,a,field contains whitelisted $5 value,concat_subelements,.,.,note_local[value]GEN500afield contains whitelisted $5 value,0,0,y,n,n
@@ -268,7 +273,6 @@ rollup_id,rollup_id,MARC-to-Argot,n,UNC,001,.,Is OCLC number or SerialsSolutions
 rollup_id,rollup_id,MARC-to-Argot,n,UNC,019,.,"If oclc_number is not set, and 019 has at least 1 $a",map subelement to value,Prefix with OCLC,x,"rollup_idUNC19.If oclc_number is not set, and 019 has at least 1 $a",0,2,y,y,y
 series_transcribed,series_transcribed,MARC,n,GEN,490,alvx3,none,concat_subelements,"Prepend ""ISSN: "" to any $x value.;;;Create label from $3 if present",x,series_transcribedGEN490alvx3none,0,0,y,n,n
 series_transcribed_issn,series_transcribed_issn,MARC,n,GEN,490,x,none,subelement_to_value,x,x,series_transcribed_issnGEN490xnone,0,0,y,n,n
-special_binding_description,special_binding_description,MARC,n,GEN,563,a3,?,?,?,?,special_binding_descriptionGEN563a3?,0,0,n,,
 statement_of_responsibility,statement_of_responsibility,MARC,n,GEN,245,c,none,concat_subelements,x,Is concat_subelements in case some bad data exists with repeated $c,statement_of_responsibilityGEN245cnone,0,0,y,y,
 subject_chronological,subject_chronological,MARC,n,GEN,600,y,i2=0 OR (i2=7 AND $2=lcsh),subelement_to_value,.,.,subject_chronologicalGEN600yi2=0 OR (i2=7 AND $2=lcsh),0,1,y,y,.
 subject_chronological,subject_chronological,MARC,n,GEN,610,y,i2=0 OR (i2=7 AND $2=lcsh),subelement_to_value,.,.,subject_chronologicalGEN610yi2=0 OR (i2=7 AND $2=lcsh),0,1,y,y,.

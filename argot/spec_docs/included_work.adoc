@@ -28,6 +28,7 @@ toc::[]
 * `type` = included
 * `display` = true (so it doesn't need to be set explicitly)
 * In 700, $g is mapped to `author` if it precedes the first $t and/or $k. If $g follows the first $t and/or $k, $g is mapped to `details`
+* In 710, $d, g, or n is mapped to `author` if it precedes the first $t and/or $k. If $d, g, or n follows the first $t and/or $k, it is mapped to `title`
 
 == Examples
 
@@ -137,3 +138,122 @@ See sections of https://github.com/trln/data-documentation/blob/master/argot/spe
  'title'=>'Test title.'}
 ]
 ----
+
+=== 710
+
+==== UNCb1619280 -- no $t, but has $k
+
+[source]
+----
+=710  22$aKungliga Biblioteket (Sweden).$kManuscript.$nKB787a.$lChurch Slavic.$f1966.
+----
+
+[source]
+----
+[
+{'type'=>'included',
+ 'author'=>'Kungliga Biblioteket (Sweden).',
+ 'title'=>'Manuscript.||KB787a.||Church Slavic.||1966.'}
+]
+----
+
+==== UNCb1616558 -- $n, $d part of `author`
+
+[source]
+----
+=710  12$aUnited States.$bCongress$n(94th, 2nd session :$d1976).$tMemorial services held in the House of Representatives and Senate of the United States, together with remarks presented in eulogy of Jerry L. Litton, late a Representative from Missouri.$f197.
+----
+
+[source]
+----
+[
+{'type'=>'included',
+ 'author'=>'United States. Congress (94th, 2nd session : 1976).',
+ 'title'=>'Memorial services held in the House of Representatives and Senate of the United States, together with remarks presented in eulogy of Jerry L. Litton, late a Representative from Missouri.||197.'}
+]
+----
+
+==== UNCb1298659 -- $n part of `title` 
+
+[source]
+----
+=710  12$aNorth Carolina.$bBuilding Code Council.$tNorth Carolina state building code.$n1,$pGeneral construction.$n11X,$pMaking buildings and facilities accessible to and usable by the physically handicapped.
+----
+
+[source]
+----
+[
+{'type'=>'included',
+ 'author'=>'North Carolina. Building Code Council.',
+ 'title'=>'North Carolina state building code.||1,||General construction.||11X,||Making buildings and facilities accessible to and usable by the physically handicapped.'}
+]
+----
+
+==== UNCb2383742
+
+[source]
+----
+=710  12$aGermany (East).$tTreaties, etc.$gGermany (West),$d1990 May 18.$f1990.
+----
+
+[source]
+----
+[
+{'type'=>'included',
+ 'author'=>'Germany (East).',
+ 'title'=>'Treaties, etc.||Germany (West),||1990 May 18.||1990.'}
+]
+----
+
+==== UNCb4364438 -- has $4
+
+[source]
+----
+=710  22$aCafé Tacuba (Musical group)$4prf$t12/12
+----
+
+[source]
+----
+[
+{'type'=>'included',
+ 'author'=>'Café Tacuba (Musical group)',
+ 'title'=>'12/12'}
+]
+----
+
+=== 711 -- $e kept; $d before $t or k
+
+==== UNCb6256550
+[source]
+----
+=711  22$aGreat Central Fair for the U.S. Sanitary Commission$d(1864 :$cPhiladelphia, Pa.).$eCommittee on Public Charities and Benevolent Institutions.$tPhiladelphia [blank] 1864. 619 Walnut Street. To [blank] ...
+----
+
+[source]
+----
+[
+{'type'=>'included',
+ 'author'=>'Great Central Fair for the U.S. Sanitary Commission (1864 : Philadelphia, Pa.). Committee on Public Charities and Benevolent Institutions.',
+ 'title'=>'Philadelphia [blank] 1864. 619 Walnut Street. To [blank] ...'}
+]
+----
+
+==== UNCb1099159 mock -- $d and $g after $t; $x
+[source]
+----
+=711  22$aDeutsch Foundation Conference$d(1930 :$cUniversity of Chicago).$tCare of the aged.$d2000, $f1972.$gReprint.$x1234-1234
+----
+
+[source]
+----
+[
+{'type'=>'included',
+ 'author'=>'Deutsch Foundation Conference (1930 : University of Chicago).',
+ 'title'=>'Care of the aged.||2000,||1972.',
+ 'details'=>'Reprint.',
+ 'issn'=>'1234-1234'}
+]
+----
+
+
+
