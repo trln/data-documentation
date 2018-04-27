@@ -313,6 +313,7 @@ See sections of https://github.com/trln/data-documentation/blob/master/argot/spe
 ----
 
 ==== UNCb7644390 -- both $3 and $i in label
+
 [source]
 ----
 =730  02$3Guide:$iBased on (expression):$aDeutsche Geschichte.$nBand 6.
@@ -326,6 +327,42 @@ See sections of https://github.com/trln/data-documentation/blob/master/argot/spe
  'title'=>'Deutsche Geschichte.||Band 6.'}
 ]
 ----
+
+=== 740
+
+==== UNCb7182040 -- i1 not blank or 0
+
+[source]
+----
+=740  42$aThe English pilot.$nThe fourth book : describing the West India navigation, from Hudson's-Bay to the river Amazones ...
+----
+
+[source]
+----
+[
+{'type'=>'included',
+ 'title'=>'English pilot.||The fourth book : describing the West India navigation, from Hudson\'s-Bay to the river Amazones ...',
+ 'title_nonfiling'=>'The English pilot. The fourth book : describing the West India navigation, from Hudson\'s-Bay to the river Amazones ...'}
+]
+----
+
+==== UNCb1094156
+
+[source]
+----
+=740  \2$aIndustrial sales management game$p5.
+----
+
+[source]
+----
+[
+{'type'=>'included',
+ 'title'=>'Industrial sales management game||5.'}
+]
+----
+
+
+
 
 
 
