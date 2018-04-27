@@ -239,6 +239,7 @@ See sections of https://github.com/trln/data-documentation/blob/master/argot/spe
 ----
 
 ==== UNCb1099159 mock -- $d and $g after $t; $x
+
 [source]
 ----
 =711  22$aDeutsch Foundation Conference$d(1930 :$cUniversity of Chicago).$tCare of the aged.$d2000, $f1972.$gReprint.$x1234-1234
@@ -254,6 +255,78 @@ See sections of https://github.com/trln/data-documentation/blob/master/argot/spe
  'issn'=>'1234-1234'}
 ]
 ----
+
+=== 730 -- $x
+
+==== UNCb7339540
+
+[source]
+----
+=730  02$aCahiers de civilisation médiévale.$pBibliographie.$x0240-8678
+----
+
+[source]
+----
+[
+{'type'=>'included',
+ 'title'=>'Cahiers de civilisation médiévale.||Bibliographie.',
+ 'issn'=>'0240-8678'}
+]
+----
+
+==== UNCb4873545 mock -- $a and $t in field
+
+[source]
+----
+=730  02$aJane Pickering's lute book.$tDrewries Accord's;$oarr.
+----
+
+[source]
+----
+[
+{'type'=>'included',
+ 'title'=>'Jane Pickering\'s lute book.||arr.',
+ 'title_variation'=>'Drewries Accord\'s;'}
+]
+----
+
+
+==== UNCb7055039 mock -- i1 not blank or 0
+
+[source]
+----
+=730  02$iContains (expression):$aMagnificent Ambersons (Motion picture).$lSpanish.
+=730  42$iContains (expression):$aThe magnificent Ambersons (Motion picture).$lEnglish.
+----
+
+[source]
+----
+[
+{'type'=>'included',
+ 'label'=>'Contains',
+ 'title'=>'Magnificent Ambersons (Motion picture).||Spanish.'},
+ {'type'=>'included',
+ 'label'=>'Contains',
+ 'title'=>'Magnificent Ambersons (Motion picture).||English.',
+ 'title_nonfiling'=>'The magnificent Ambersons (Motion picture). English.'}
+]
+----
+
+==== UNCb7644390 -- both $3 and $i in label
+[source]
+----
+=730  02$3Guide:$iBased on (expression):$aDeutsche Geschichte.$nBand 6.
+----
+
+[source]
+----
+[
+{'type'=>'included',
+ 'label'=>'Guide: Based on',
+ 'title'=>'Deutsche Geschichte.||Band 6.'}
+]
+----
+
 
 
 
