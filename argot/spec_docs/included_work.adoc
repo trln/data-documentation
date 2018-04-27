@@ -361,7 +361,33 @@ See sections of https://github.com/trln/data-documentation/blob/master/argot/spe
 ]
 ----
 
+=== 774
 
+*MARC fields 76X-78X are defined according to a very similar pattern which should inform the code for processing data from these fields. See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/76X-78X_linking_entry_processing.adoc[spec covering these fields as a whole] for details.*
+
+==== UNCb8928629
+
+[source]
+----
+=774  18$aMasson, VeNeta.$tRehab at the Florida Avenue Grill.$dWashington, DC : Sage Femme Press, 1999$z0967368804$w(DLC)   99090707$w(OCoLC)43689896
+----
+
+[source]
+----
+[
+{'type'=>'included',
+ 'title'=>'Industrial sales management game||5.'}
+]
+----
+
+==== UNCb8772458
+=774  08$iContainer of (manifestation):$tSports illustrated.$gDean Smith commemorative issue (Feb. 26, 2015)$w(OCoLC)1766364
+==== UNCb1629451 mock
+=774  0\$sBulletin (North Carolina Agricultural Experiment Station)$t1991 NC Agricultural Experiment Station Bulletin$w(OCoLC)1421220
+==== UNCb8928629
+=774  18$tBellevue literary review :$gvol. 2, no. 1 (Spring 2002)$x1537-5048$w(DLC)  2001211888$w(OCoLC)48166959
+==== UNCb8772458
+=774  08$iContainer of  (manifestation):$aDean Smith, 1931-2015.$dChicago, Illinois : Triumph Books, [2015]$w(OCoLC)908583564
 
 
 

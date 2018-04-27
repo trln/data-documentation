@@ -1,1 +1,43 @@
-blah
+:toc:
+:toc-placement!:
+
+= MARC 76X-78X linking fields processing patterns
+
+These fields are mapped into Argot's https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_work_entry.adoc[work_entry pattern].
+
+Specific Argot fields that employ this patterns include:
+
+* https://github.com/trln/data-documentation/blob/master/argot/spec_docs/included_work.adoc[included_work]
+* https://github.com/trln/data-documentation/blob/master/argot/spec_docs/included_work.adoc[related work]
+
+http://www.loc.gov/marc/bibliographic/bd76x78x.html[MARC specification for this field group]
+
+toc::[]
+
+== Is the field mapped at all?
+These fields serve the purpose of providing information about works related to, included in, or including the work described in the overall record. In order to say anything useful to users about these linked works, at the very least, we need to be able to tell them the title of the related thing.
+
+If a 76X-78X field lacks a title element, it is skipped and not mapped into Argot, because there's not much useful that we can do with it.
+
+Another reason contributing to this decision is that if the cataloger provided title data without coding it properly in a title subfield, the trustworthiness of the data is, in general, in question.
+
+
+== i1: Is field displayed?
+=== 0 - yes
+Hopefully the data in such a field isn't already recorded elsewhere in the record, and it adds useful info to the display.
+
+=== 1 - no
+Typically the data in such fields has also been put in a human readable note somewhere else in the record. We don't need to show this info twice, but we can't do anything useful with the info in the note, so we use this more structured data to do some useful indexing.
+
+== i2: handled per field
+Will be different for each MARC field in this group.
+
+== `[author]`
+
+$a
+
+http://www.loc.gov/marc/bibliographic/bd76x78x.html[The MARC spec] says this should be data that'd be recorded in a 100, 110, or 111 field, which should always be author info.
+
+I'm sure we will see issues where a cataloger didn't provide the proper subfield for a title element, the ILS default-stuck that data in $a, and so there's weirdness in TRLN Discovery. However, this is a data problem to be cleaned up in the underlying data.
+
+We expect this point to be mitigated by excluding fields with NO title element from Argot mapping.

@@ -34,9 +34,9 @@ toc::[]
 ** indexed as `title_related`, `title_included`, `title_series`, or `title_variant_indexed` as appropriate
 ** if present, combined with `author` segment to create indexed `work_citation*` value for in-catalog hyperlink querying and possible use in autosuggest
 ** subelements of the title portion are separated with `||` to allow for adaptive hyperlinking. This delimiter is stripped out of the display.
-* `title_variation` : used to index under non-uniform title when uniform title and title proper are recorded in linking fields
+* `title_variation` : used to index under non-uniform title when uniform title and title proper are recorded in linking fields.
 * `details`: other bib data about related work
-** displayed after the author/title hyperlink, but not included in hyperlink
+** displayed after the author/title hyperlink, but not included in hyperlink. Will include display version of any IDs other than ISBN and ISSN
 ** not indexed
 * `isbn`: ISBN of cited related work.
 ** displayed, with `ISBN:` label, at end of field display
@@ -44,28 +44,73 @@ toc::[]
 * `issn`: ISSN of cited related work.
 ** displayed, with `ISSN:` label, at end of field display
 ** indexed in `issn_related`, `issn_included`, or `issn_series` as appropriate
+* `other_ids` : indexed form of IDs aside from ISBN and ISSN
+** repeatable
 * `display`: boolean; whether data from field should be displayed; default = true
 
-Display should be built as follows:
- `label` + `author` + `title` + `details` + ISBN: `isbn` + ISSN: `issn`
+=== Abstract example, displayed field
 
-Clicking the `author` portion of display, if present, conducts an author phrase seach.
+[source]
+----
+[
+{'type'=>'aaaa',
+ 'label'=>'bbbb',
+ 'author'=>'cccc',
+ 'title'=>'dd||dd||dd',
+ 'title_nonfiling'=>'eeeeee',
+ 'title_variation'=>'ffff',
+ 'details'=>'gggg hhhh',
+ 'isbn'=>'1111',
+ 'issn'=>'2222',
+ 'other_ids'=>['3333','ab99']}
+]
+----
 
-[CAUTION]
-====
-What happens when you click on author part vs. a title part is tricky, and I don't even know if it can be sanely implemented the way I describe it here.
+==== Display/behavior
 
-I have said if you click the author portion, it does a regular author index search on that value.
+*#{display name configured for type aaaa}*: bbbb: http://query.info/author_search[cccc] http://query.info/work_search_author_plus_title_portion_to[dd] http://query.info/work_search_author_plus_title_portion_to[dd] http://query.info/work_search_author_plus_title_portion_to[dd] (Some editions have title: ffff) gggg hhhh ISBN: 1111. ISSN: 2222.
 
-Once you start clicking in the title portion, it's doing a search on the `work_citation` index for precision.
+==== Indexing
+_I don't really care if the Solr fields end up being named aaaa_author or author_aaaa. I'm just picking one here._
 
-*The reason for this is:* Only the FIRST author should ever be included in the kind of name/title entry that will populate the `work_citation` index.
+* aaaa_author: aaaa
+* aaaa_title: dd dd dd, eeeeee, ffff
+* aaaa_work: aaaa dd dd dd
+* aaaa_isbn: 1111
+* aaaa_issn: 2222
+* aaaa_ids: 3333, ab99
 
-If we made clicking the author portion search the `work_citation` index instead of do a general author search, only works where that person was the first/main author will be returned, which is probably NOT what we are looking for. 
-====
+=== Abstract example, field not displayed
+Typically the data in such fields has also been put in a human readable note somewhere else in the record. We don't need to show this info twice, but we can't do anything useful with the info in the note, so we use this more structured data to do some useful indexing.
 
-Clicking the `title` portion of the display conducts an adaptive-hyperlinked `work_citation` starts-with search for `author` + segment of `title` clicked on. 
+[source]
+----
+[
+{'type'=>'aaaa',
+ 'author'=>'cccc',
+ 'title'=>'dd||dd||dd',
+ 'title_nonfiling'=>'eeeeee',
+ 'title_variation'=>'ffff',
+ 'isbn'=>'1111',
+ 'issn'=>'2222',
+ 'other_ids'=>['3333','ab99']
+ 'display'=>'false'}
+]
+----
 
+==== Display/behavior
+
+Not applicable
+
+==== Indexing
+_I don't really care if the Solr fields end up being named aaaa_author or author_aaaa. I'm just picking one here._
+
+* aaaa_author: aaaa
+* aaaa_title: dd dd dd, eeeeee, ffff
+* aaaa_work: aaaa dd dd dd
+* aaaa_isbn: 1111
+* aaaa_issn: 2222
+* aaaa_ids: 3333, ab99
 
 == Argot fields to which this pattern applies
 
