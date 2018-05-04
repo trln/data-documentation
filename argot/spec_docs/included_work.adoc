@@ -18,7 +18,7 @@ toc::[]
 * 730 with ind2=2 (will not include author elements)
 ** Label specifying type of relationship from $i if present
 * 740 with ind2=2 (will not include author elements)
-* 774 with ind1=0 and $t or $s (may or may not include author elements)
+* 774 with $t or $s (may or may not include author elements)
 ** Label specifying type of relationship from $i if present
 
 == Processing notes
