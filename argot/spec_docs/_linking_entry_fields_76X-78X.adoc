@@ -108,3 +108,4 @@ Map value from each of the following subfields as element in array
 
 oruwy
 
+$w special instructions: strip parenthetical prefix and trim leading spaces from resulting value
