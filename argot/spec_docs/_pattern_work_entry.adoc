@@ -7,11 +7,7 @@ The pattern used to create fields for works (i.e. often having name/title charac
 
 This pattern is used in the following Argot fields:
 
-* included_work
-
-*Test records*
-The UNC bib records referred to by bib number in this document are at:
-todo
+* https://github.com/trln/data-documentation/blob/master/argot/spec_docs/included_work.adoc[included_work]
 
 toc::[]
 
@@ -115,6 +111,7 @@ _I don't really care if the Solr fields end up being named aaaa_author or author
 
 = IGNORE BELOW
 This stuff needs to get updated/corrected. 
+
 == Argot fields to which this pattern applies
 
 === work_citation
