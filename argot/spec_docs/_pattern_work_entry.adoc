@@ -60,7 +60,7 @@ toc::[]
  'title_nonfiling'=>'eeeeee',
  'title_variation'=>'ffff',
  'details'=>'gggg hhhh',
- 'isbn'=>'1111',
+ 'isbn'=>['1111'],
  'issn'=>'2222',
  'other_ids'=>['3333','ab99']}
 ]
@@ -91,7 +91,7 @@ Typically the data in such fields has also been put in a human readable note som
  'title'=>'dd||dd||dd',
  'title_nonfiling'=>'eeeeee',
  'title_variation'=>'ffff',
- 'isbn'=>'1111',
+ 'isbn'=>['1111'],
  'issn'=>'2222',
  'other_ids'=>['3333','ab99']
  'display'=>'false'}
