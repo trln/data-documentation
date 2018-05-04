@@ -112,6 +112,9 @@ _I don't really care if the Solr fields end up being named aaaa_author or author
 * aaaa_issn: 2222
 * aaaa_ids: 3333, ab99
 
+
+= IGNORE BELOW
+This stuff needs to get updated/corrected. 
 == Argot fields to which this pattern applies
 
 === work_citation

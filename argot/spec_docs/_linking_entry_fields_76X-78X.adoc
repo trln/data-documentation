@@ -17,20 +17,29 @@ toc::[]
 == Is the field mapped at all?
 These fields serve the purpose of providing information about works related to, included in, or including the work described in the overall record. In order to say anything useful to users about these linked works, at the very least, we need to be able to tell them the title of the related thing.
 
-If a 76X-78X field lacks a title element, it is skipped and not mapped into Argot, because there's not much useful that we can do with it.
+*If a 76X-78X field lacks a title element, it is skipped and not mapped into Argot*, because there's not much useful that we can do with it.
 
 Another reason contributing to this decision is that if the cataloger provided title data without coding it properly in a title subfield, the trustworthiness of the data is, in general, in question.
 
+== `[type]`
+Will be set separately for each MARC field in this group.
 
-== i1: Is field displayed?
-=== 0 - yes
+== `[display]`
+=== true if i1=0
 Hopefully the data in such a field isn't already recorded elsewhere in the record, and it adds useful info to the display.
 
-=== 1 - no
+Defaults to true, so does not need to be explicitly set.
+
+=== false if i1!=0
+==== i1=1
 Typically the data in such fields has also been put in a human readable note somewhere else in the record. We don't need to show this info twice, but we can't do anything useful with the info in the note, so we use this more structured data to do some useful indexing.
 
-== i2: handled per field
-Will be different for each MARC field in this group.
+==== i1!=~/[01]/
+Invalid coding. Likely crappy data that wouldn't display right anyway.
+
+== `[label]`
+
+Will be handled differently for each MARC field in this group.
 
 == `[author]`
 
@@ -41,3 +50,61 @@ http://www.loc.gov/marc/bibliographic/bd76x78x.html[The MARC spec] says this sho
 I'm sure we will see issues where a cataloger didn't provide the proper subfield for a title element, the ILS default-stuck that data in $a, and so there's weirdness in TRLN Discovery. However, this is a data problem to be cleaned up in the underlying data.
 
 We expect this point to be mitigated by excluding fields with NO title element from Argot mapping.
+
+== `[title]`
+=== when $s present
+*Use $s value.* $t, if present, will map to `[title_variation]`.
+
+=== when $t and no $s
+Use $t value.
+
+=== when neither $s nor $t present
+Do not map field to Argot
+
+
+== `[title_nonfiling]`
+Will not be set when data is from 76X-78X field. No non-filing indicators are defined for these fields.
+
+== `[title_variation]`
+Use $t value when `[title]` is set from $s value.
+
+Only set when both $s and $t are present
+
+== `[details]`
+
+Concatenate from the following subfields when present:
+
+bcdghjkmnoruy
+
+Provide labels prefixing the values in the following fields as shown in table below:
+
+[cols=2*,options=header]
+|===
+|Subfield
+|Value prefix
+
+|r
+|Report number:
+
+|u
+|Technical report number:
+
+|y
+|CODEN:
+|===
+
+== `[isbn]`
+Use $z value(s).
+
+$z is repeatable, so this must be an array.
+
+== `[issn]`
+Use $x value
+
+== `[other_ids]`
+Array
+
+Map value from each of the following subfields as element in array
+
+oruwy
+
