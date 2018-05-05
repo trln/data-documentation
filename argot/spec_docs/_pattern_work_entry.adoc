@@ -8,6 +8,7 @@ The pattern used to create fields for works (i.e. often having name/title charac
 This pattern is used in the following Argot fields:
 
 * https://github.com/trln/data-documentation/blob/master/argot/spec_docs/included_work.adoc[included_work]
+* https://github.com/trln/data-documentation/blob/master/argot/spec_!docs/related_work.adoc[related_work]
 
 toc::[]
 

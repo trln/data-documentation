@@ -56,25 +56,25 @@ toc::[]
 |related
 
 |765
-|translation of
+|translation
 
 |767
-|translated as
+|translated
 
 |770
-|has supplement
+|has_supplement
 
 |772
-|supplement parent
+|supplement_parent
 
 |773
-|included in
+|parent
 
 |775
 |edition
 
 |777
-|issued with
+|issued_with
 
 |780
 |earlier
@@ -83,7 +83,7 @@ toc::[]
 |later
 
 |786
-|data source
+|data_source
 
 |787
 |related
