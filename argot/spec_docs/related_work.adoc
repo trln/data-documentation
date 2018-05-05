@@ -1,8 +1,441 @@
 :toc:
 :toc-placement!:
 
+= `related_work` field
+
+"Authorized access point" (or approximation thereof) for *work related to the resource described by the catalog record*
+
+*Uses the https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_work_entry.adoc[`work_entry` Argot pattern]*
+
+toc::[]
+
+== Data sources
+
+* 700, 710, or 711 with ind2!=2 and $t or $k present
+** Label specifying type of relationship from $i if present
+* 730 with ind2!=2 (will not include author elements)
+** Label specifying type of relationship from $i if present
+* 740 with ind2!=2 (will not include author elements)
+* Any of the following fields having a $t or $s (may or may not include author elements), where label specifying type of relationship from $i if present
+** 765
+** 767
+** 770
+** 772
+** 773
+** 775
+** 777
+** 780
+** 785
+** 786
+** 787
+
+== Processing notes
+
+* Segment/subfield delimiter '||' is provided in title portion to facilitate adaptive hyperlinking
+* `display` = defaults to true (so it doesn't need to be set explicitly)
+* `type` = varies by source MARC field, as shown in table below
+
+[cols=2*,options=header]
+|===
+|Source MARC
+|`type` value
+
+|700
+|related
+
+|710
+|related
+
+|711
+|related
+
+|730
+|related
+
+|740
+|related
+
+|765
+|translation of
+
+|767
+|translated as
+
+|770
+|has supplement
+
+|772
+|supplement parent
+
+|773
+|included in
+
+|775
+|edition
+
+|777
+|issued with
+
+|780
+|earlier
+
+|785
+|later
+
+|786
+|data source
+
+|787
+|related
+|===
+
+== Examples (parallel with `included_work`)
+The examples in the section below demonstrate how, for these fields, the processing for `related_work` is nearly identical to that for `included_work`.
+
+The differences are:
+
+* In the MARC, the i2 here is blank instead of 2
+* In the Argot, `type` is 'related' instead of 'included'
 
 
+=== 700
+
+See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_field_X00.adoc[general spec on processing X00 fields]
+
+==== UNCb5976398 mock -- omit relator code
+
+[source]
+----
+=700  1\$aSaint-Saëns, Camille,$d1835-1921.$4cmp$tQuartets,$mviolins (2), viola, cello,$nno. 2, op. 153,$rG major
+----
+
+[source]
+----
+[
+  {'type'=>'related',
+   'author'=>'Saint-Saëns, Camille, 1835-1921.',
+   'title'=>'Quartets,||violins (2), viola, cello,||no. 2, op. 153,||G major'}
+]
+----
+
+==== UNCb8630424 mock -- omit relator term
+
+$e is preceded by ', ' and ends with a period signifying the end of the author name segment.
+
+We want to remove the comma that precedes a $e, but keep or provide a period at the end of the author segment.
+
+[source]
+----
+=700  1\$aSchwenkel, Christina,$eauthor.$tArchitecture and dwelling in the 'war of destruction' in Vietnam.
+----
+
+[source]
+----
+[
+{'type'=>'related',
+ 'author'=>'Schwenkel, Christina.',
+ 'title'=>'Architecture and dwelling in the \'war of destruction\' in Vietnam.'}
+]
+----
+
+==== UNCb8069067 mock -- `label` from $i; `details` from $g
+
+[source]
+----
+=700  1\$iFacsimile of:$aFerrini, Vincent,$d1913-2007.$tTidal wave : poems of the great strikes.$f1945$g(New York : Great-Concord Publishers)
+----
+
+[source]
+----
+[
+{'type'=>'related',
+ 'label'=>'Facsimile of',
+ 'author'=>'Ferrini, Vincent, 1913-2007.',
+ 'title'=>'Tidal wave : poems of the great strikes.||1945',
+ 'details'=>'(New York : Great-Concord Publishers)'}
+]
+----
+
+
+*Display*
+
+*Related items:*
+
+* Facsimile of: http://query.info/on_author[Ferrini, Vincent, 1913-2007.] http://query.info/on_title[Tidal wave : poems of the great strikes.] http://query.info/on_title_to_left_plus[1945] (New York : Great-Concord Publishers)
+
+
+*Indexed as*
+
+`related_author`: Ferrini, Vincent, 1913-2007.
+
+`related_title`: Tidal wave : poems of the great strikes. 1945
+
+`related_work`: Ferrini, Vincent, 1913-2007. Tidal wave : poems of the great strikes. 1945
+
+
+==== UNCb7416515 mock -- label from $3 and $i; special $i processing
+
+See sections of https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_subfield_i.adoc[$i spec] related to deleting WEMI terms and RDA terminology replacements.
+
+[source]
+----
+=700  0\$3Tome 1, volume 1$iContainer of (expression):$aPlotinus.$tPeri tou kalou.$lFrench$s(Achard and Narbonne)
+----
+
+[source]
+----
+[
+{'type'=>'related',
+ 'label'=>'Tome 1, volume 1: Contains',
+ 'author'=>'Plotinus.',
+ 'title'=>'Peri tou kalou.||French||(Achard and Narbonne)'}
+]
+----
+
+==== UNC mock -- $g as part of `author`
+
+[source]
+----
+=700  1\$aName, Author,$g(Test name),$d1944-.$tTest title.
+----
+
+[source]
+----
+[
+{'type'=>'related',
+ 'author'=>'Name, Author, (Test name), 1944-.',
+ 'title'=>'Test title.'}
+]
+----
+
+=== 710
+
+See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_field_X10.adoc[general spec on processing X10 fields]
+
+==== UNCb1619280 mock -- no $t, but has $k
+
+[source]
+----
+=710  2\$aKungliga Biblioteket (Sweden).$kManuscript.$nKB787a.$lChurch Slavic.$f1966.
+----
+
+[source]
+----
+[
+{'type'=>'related',
+ 'author'=>'Kungliga Biblioteket (Sweden).',
+ 'title'=>'Manuscript.||KB787a.||Church Slavic.||1966.'}
+]
+----
+
+==== UNCb1616558 mock -- $n, $d part of `author`
+
+[source]
+----
+=710  1\$aUnited States.$bCongress$n(94th, 2nd session :$d1976).$tMemorial services held in the House of Representatives and Senate of the United States, together with remarks presented in eulogy of Jerry L. Litton, late a Representative from Missouri.$f197.
+----
+
+[source]
+----
+[
+{'type'=>'related',
+ 'author'=>'United States. Congress (94th, 2nd session : 1976).',
+ 'title'=>'Memorial services held in the House of Representatives and Senate of the United States, together with remarks presented in eulogy of Jerry L. Litton, late a Representative from Missouri.||197.'}
+]
+----
+
+==== UNCb1298659 mock -- $n part of `title` 
+
+[source]
+----
+=710  1\$aNorth Carolina.$bBuilding Code Council.$tNorth Carolina state building code.$n1,$pGeneral construction.$n11X,$pMaking buildings and facilities accessible to and usable by the physically handicapped.
+----
+
+[source]
+----
+[
+{'type'=>'related',
+ 'author'=>'North Carolina. Building Code Council.',
+ 'title'=>'North Carolina state building code.||1,||General construction.||11X,||Making buildings and facilities accessible to and usable by the physically handicapped.'}
+]
+----
+
+==== UNCb2383742
+
+[source]
+----
+=710  1\$aGermany (East).$tTreaties, etc.$gGermany (West),$d1990 May 18.$f1990.
+----
+
+[source]
+----
+[
+{'type'=>'related',
+ 'author'=>'Germany (East).',
+ 'title'=>'Treaties, etc.||Germany (West),||1990 May 18.||1990.'}
+]
+----
+
+==== UNCb4364438 mock -- has $4
+
+[source]
+----
+=710  2\$aCafé Tacuba (Musical group)$4prf$t12/12
+----
+
+[source]
+----
+[
+{'type'=>'related',
+ 'author'=>'Café Tacuba (Musical group)',
+ 'title'=>'12/12'}
+]
+----
+
+=== 711
+
+See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_field_X11.adoc[general spec on processing X11 fields]
+
+==== UNCb6256550 mock -- $e kept; $d before $t or k
+[source]
+----
+=711  2\$aGreat Central Fair for the U.S. Sanitary Commission$d(1864 :$cPhiladelphia, Pa.).$eCommittee on Public Charities and Benevolent Institutions.$tPhiladelphia [blank] 1864. 619 Walnut Street. To [blank] ...
+----
+
+[source]
+----
+[
+{'type'=>'related',
+ 'author'=>'Great Central Fair for the U.S. Sanitary Commission (1864 : Philadelphia, Pa.). Committee on Public Charities and Benevolent Institutions.',
+ 'title'=>'Philadelphia [blank] 1864. 619 Walnut Street. To [blank] ...'}
+]
+----
+
+==== UNCb1099159 mock -- $d and $g after $t; $x
+
+[source]
+----
+=711  2\$aDeutsch Foundation Conference$d(1930 :$cUniversity of Chicago).$tCare of the aged.$d2000, $f1972.$gReprint.$x1234-1234
+----
+
+[source]
+----
+[
+{'type'=>'related',
+ 'author'=>'Deutsch Foundation Conference (1930 : University of Chicago).',
+ 'title'=>'Care of the aged.||2000,||1972.',
+ 'details'=>'Reprint.',
+ 'issn'=>'1234-1234'}
+]
+----
+
+=== 730
+
+==== UNCb7339540 mock -- $x
+
+[source]
+----
+=730  0\$aCahiers de civilisation médiévale.$pBibliographie.$x0240-8678
+----
+
+[source]
+----
+[
+{'type'=>'related',
+ 'title'=>'Cahiers de civilisation médiévale.||Bibliographie.',
+ 'issn'=>'0240-8678'}
+]
+----
+
+==== UNCb4873545 mock -- $a and $t in field
+
+[source]
+----
+=730  0\$aJane Pickering's lute book.$tDrewries Accord's;$oarr.
+----
+
+[source]
+----
+[
+{'type'=>'related',
+ 'title'=>'Jane Pickering\'s lute book.||arr.',
+ 'title_variation'=>'Drewries Accord\'s;'}
+]
+----
+
+
+==== UNCb7055039 mock -- i1 not blank or 0
+
+[source]
+----
+=730  0\$iContains (expression):$aMagnificent Ambersons (Motion picture).$lSpanish.
+=730  4\$iContains (expression):$aThe magnificent Ambersons (Motion picture).$lEnglish.
+----
+
+[source]
+----
+[
+{'type'=>'related',
+ 'label'=>'Contains',
+ 'title'=>'Magnificent Ambersons (Motion picture).||Spanish.'},
+ {'type'=>'related',
+ 'label'=>'Contains',
+ 'title'=>'Magnificent Ambersons (Motion picture).||English.',
+ 'title_nonfiling'=>'The magnificent Ambersons (Motion picture). English.'}
+]
+----
+
+==== UNCb7644390 mock -- both $3 and $i in label
+
+[source]
+----
+=730  0\$3Guide:$iBased on (expression):$aDeutsche Geschichte.$nBand 6.
+----
+
+[source]
+----
+[
+{'type'=>'related',
+ 'label'=>'Guide: Based on',
+ 'title'=>'Deutsche Geschichte.||Band 6.'}
+]
+----
+
+=== 740
+
+==== UNCb7182040 mock -- i1 not blank or 0
+
+[source]
+----
+=740  4\$aThe English pilot.$nThe fourth book : describing the West India navigation, from Hudson's-Bay to the river Amazones ...
+----
+
+[source]
+----
+[
+{'type'=>'related',
+ 'title'=>'English pilot.||The fourth book : describing the West India navigation, from Hudson\'s-Bay to the river Amazones ...',
+ 'title_nonfiling'=>'The English pilot. The fourth book : describing the West India navigation, from Hudson\'s-Bay to the river Amazones ...'}
+]
+----
+
+==== UNCb1094156
+
+[source]
+----
+=740  \\$aIndustrial sales management game$p5.
+----
+
+[source]
+----
+[
+{'type'=>'related',
+ 'title'=>'Industrial sales management game||5.'}
+]
+----
+
+= IGNORE THE CONTENT BELOW THIS LINE
+It is from older documentation and contains some good examples, but they need to be worked into the approach we decided to use.
 
 === UNCb8843477 - 710 with $i
 ==== MARC

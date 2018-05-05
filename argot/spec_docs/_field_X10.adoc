@@ -1,0 +1,30 @@
+:toc:
+:toc-placement!:
+
+= MARC field X10
+
+toc::[]
+
+== Author-only vs. Author/title?
+
+If $t or $k is present, process as an author/title field.
+
+Otherwise, process as author-only field.
+
+== Author-only processing specifics
+
+=== relator terms/codes (subfields e, 4)
+
+See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_relator_terms_and_codes.adoc[general spec on processing relator terms and codes]
+
+
+== Author/title processing specifics
+
+=== subfields d, g, n: author or title data?
+
+Data from a subfield d, g, or n is mapped to `author` if it precedes the first $t and/or $k.
+
+If the subfield d, g, or n follows the first $t and/or $k, the subfield data is mapped to `details`
+
+=== discard relator terms/codes (subfields e, 4)
+See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_relator_terms_and_codes.adoc[general spec on processing relator terms and codes]

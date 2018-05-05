@@ -1,0 +1,23 @@
+:toc:
+:toc-placement!:
+
+= MARC relator terms and codes
+
+toc::[]
+
+== What are they?
+Values that specify the relationship between an agent (represented by name recorded in catalog record) and resource described by the catalog record. 
+
+== Processing notes
+
+=== watch out for X11 fields
+In X00 and X10 fields the relator term is recorded in $e.
+
+In X11 the relator term is recorded in $j. In X11, $e is the name of a subordinate unit.
+
+=== drop if included in name/title fields
+Name/title fields are always supposed to be constructed with the main creator in the name portion.
+
+Because the name/title field should follow rules that create structured data, catalogers are not supposed to record relator terms/codes in name/title fields.
+
+If a relator term/code is erroneously included in a name/title field, drop it from the data mapped to Argot.

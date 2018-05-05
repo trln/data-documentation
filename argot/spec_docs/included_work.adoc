@@ -10,29 +10,18 @@
 toc::[]
 
 
-
-== Data sources
-
-* 700, 710, or 711 with ind2=2 and $t or $k present
-** Label specifying type of relationship from $i if present
-* 730 with ind2=2 (will not include author elements)
-** Label specifying type of relationship from $i if present
-* 740 with ind2=2 (will not include author elements)
-* 774 with $t or $s (may or may not include author elements)
-** Label specifying type of relationship from $i if present
-
 == Processing notes
 
-* Relator terms/codes are not supposed to be recorded in analytic added entries. Do not map them (e4 for X00 and X10; j4 for X11) if they are in the data
 * Segment/subfield delimiter '||' is provided in title portion to facilitate adaptive hyperlinking
 * `type` = included
-* `display` = true (so it doesn't need to be set explicitly)
-* In 700, $g is mapped to `author` if it precedes the first $t and/or $k. If $g follows the first $t and/or $k, $g is mapped to `details`
-* In 710, $d, g, or n is mapped to `author` if it precedes the first $t and/or $k. If $d, g, or n follows the first $t and/or $k, it is mapped to `title`
+* `display` = defaults to true (so it doesn't need to be set explicitly)
 
 == Examples
 
 === 700
+
+See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_field_X00.adoc[general spec on processing X00 fields]
+
 ==== UNCb5976398 -- omit relator code
 
 [source]
@@ -141,6 +130,8 @@ See sections of https://github.com/trln/data-documentation/blob/master/argot/spe
 
 === 710
 
+See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_field_X10.adoc[general spec on processing X10 fields]
+
 ==== UNCb1619280 -- no $t, but has $k
 
 [source]
@@ -221,9 +212,11 @@ See sections of https://github.com/trln/data-documentation/blob/master/argot/spe
 ]
 ----
 
-=== 711 -- $e kept; $d before $t or k
+=== 711
 
-==== UNCb6256550
+See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_field_X11.adoc[general spec on processing X11 fields]
+
+==== UNCb6256550 -- $e kept; $d before $t or k
 [source]
 ----
 =711  22$aGreat Central Fair for the U.S. Sanitary Commission$d(1864 :$cPhiladelphia, Pa.).$eCommittee on Public Charities and Benevolent Institutions.$tPhiladelphia [blank] 1864. 619 Walnut Street. To [blank] ...
@@ -256,9 +249,9 @@ See sections of https://github.com/trln/data-documentation/blob/master/argot/spe
 ]
 ----
 
-=== 730 -- $x
+=== 730
 
-==== UNCb7339540
+==== UNCb7339540 -- $x
 
 [source]
 ----
