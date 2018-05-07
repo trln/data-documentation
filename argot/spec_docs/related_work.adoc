@@ -106,14 +106,14 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 
 [source]
 ----
-=700  1\$aSaint-Saëns, Camille,$d1835-1921.$4cmp$tQuartets,$mviolins (2), viola, cello,$nno. 2, op. 153,$rG major
+=700  1\$aSaint-SaÃ«ns, Camille,$d1835-1921.$4cmp$tQuartets,$mviolins (2), viola, cello,$nno. 2, op. 153,$rG major
 ----
 
 [source]
 ----
 [
   {'type'=>'related',
-   'author'=>'Saint-Saëns, Camille, 1835-1921.',
+   'author'=>'Saint-SaÃ«ns, Camille, 1835-1921.',
    'title'=>'Quartets,||violins (2), viola, cello,||no. 2, op. 153,||G major'}
 ]
 ----
@@ -280,14 +280,14 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 
 [source]
 ----
-=710  2\$aCafé Tacuba (Musical group)$4prf$t12/12
+=710  2\$aCafÃ© Tacuba (Musical group)$4prf$t12/12
 ----
 
 [source]
 ----
 [
 {'type'=>'related',
- 'author'=>'Café Tacuba (Musical group)',
+ 'author'=>'CafÃ© Tacuba (Musical group)',
  'title'=>'12/12'}
 ]
 ----
@@ -335,14 +335,14 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 
 [source]
 ----
-=730  0\$aCahiers de civilisation médiévale.$pBibliographie.$x0240-8678
+=730  0\$aCahiers de civilisation mÃ©diÃ©vale.$pBibliographie.$x0240-8678
 ----
 
 [source]
 ----
 [
 {'type'=>'related',
- 'title'=>'Cahiers de civilisation médiévale.||Bibliographie.',
+ 'title'=>'Cahiers de civilisation mÃ©diÃ©vale.||Bibliographie.',
  'issn'=>'0240-8678'}
 ]
 ----
@@ -446,7 +446,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 
 [source]
 ----
-765 0 _ $aChina.$sLaws, etc. (Zhonghua Renmin Gongheguo fa lü hui bian).$tZhonghua Renmin Gongheguo fa lü hui bian$w(DLC)   90645849
+=765 0 _ $aChina.$sLaws, etc. (Zhonghua Renmin Gongheguo fa lÃ¼ hui bian).$tZhonghua Renmin Gongheguo fa lÃ¼ hui bian$w(DLC)   90645849
 ----
 
 [source]
@@ -454,8 +454,8 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 [
   {'type'=>'translation_of',
    'author'=>'China.',
-   'title'=>'Laws, etc. (Zhonghua Renmin Gongheguo fa lü hui bian).',
-   'title_variation'=>'Zhonghua Renmin Gongheguo fa lü hui bian',
+   'title'=>'Laws, etc.||(Zhonghua Renmin Gongheguo fa lÃ¼ hui bian).',
+   'title_variation'=>'Zhonghua Renmin Gongheguo fa lÃ¼ hui bian',
    'other_ids'=>['90645849']}
 ]
 ----
@@ -464,7 +464,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 
 [source]
 ----
-765 0 8 $iOriginally published in France as:$tInnovations médicales en situations humanitaires.$dParis : Harmattan, c2009$z9782296100466$w(OCoLC)465089061
+=765 0 8 $iOriginally published in France as:$tInnovations mÃ©dicales en situations humanitaires.$dParis : Harmattan, c2009$z9782296100466$w(OCoLC)465089061
 ----
 
 [source]
@@ -472,13 +472,30 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 [
   {'type'=>'translation_of',
    'label'=>'Originally published in France as',
-   'title'=>'Innovations médicales en situations humanitaires.',
+   'title'=>'Innovations mÃ©dicales en situations humanitaires.',
    'details'=>'Paris : Harmattan, c2009',
    'isbn'=>['9782296100466'],
    'other_ids'=>['465089061']}
 ]
 ----
 
+==== UNCb3133786 - not displayed
+
+[source]
+----
+=765  1\$tItogi nauki i tekhniki. Seriï¸ iï¸¡a Sovremennye problemy matematiki. FundamentalÊ¹nye napravleniï¸ iï¸¡a$x0233-6723$w(DLC) 87645715$w(OCoLC)14198545
+----
+
+[source]
+----
+[
+  {'type'=>'translation_of',
+   'title'=>'Itogi nauki i tekhniki. Seriï¸ iï¸¡a Sovremennye problemy matematiki. FundamentalÊ¹nye napravleniï¸ iï¸¡a',
+   'issn'=>'0233-6723',
+   'other_ids'=>['87645715', '14198545'],
+   'display'=>'false'}
+]
+----
 
 = IGNORE THE CONTENT BELOW THIS LINE
 It is from older documentation and contains some good examples, but they need to be worked into the approach we decided to use.
@@ -486,7 +503,7 @@ It is from older documentation and contains some good examples, but they need to
 === UNCb8843477 - 710 with $i
 ==== MARC
  100 1 _ $aJacobson, Sidney,$eauthor.
- 245 1 4 $aThe torture report :$ba graphic adaptation /$cSid Jacobson and Ernie Colón ; introduction by Jane Mayer ; afterword by Scott Horton.
+ 245 1 4 $aThe torture report :$ba graphic adaptation /$cSid Jacobson and Ernie ColÃ³n ; introduction by Jane Mayer ; afterword by Scott Horton.
  710 1 _ $iGraphic novelization of (work):$aUnited States.$bCongress.$bSenate.$bSelect Committee on Intelligence.$tSenate Intelligence Committee report on torture.
 
 ==== Argot
@@ -563,10 +580,10 @@ RELATED ITEMS:
 
 === UNCb4914240 - 710 with $g in title
 ==== MARC
- 245 0 0 $aRecueil de pièces de luth en tablature italienne ;$bXVIIe siècle.
- 500 _ _ $aFacsimile of Bibliothèque du Conservatoir Royal de Musique de Bruxelles, Ms. 16.662 -16.663.
- 710 2 _ $iFacsimilie of (manifestation):$aConservatoire royal de musique de Bruxelles.$bBibliothèque.$kManuscript.$g16.662.
- 710 2 _ $iFacsimilie of (manifestation):$aConservatoire royal de musique de Bruxelles.$bBibliothèque.$kManuscript.$g16.663.
+ 245 0 0 $aRecueil de piÃ¨ces de luth en tablature italienne ;$bXVIIe siÃ¨cle.
+ 500 _ _ $aFacsimile of BibliothÃ¨que du Conservatoir Royal de Musique de Bruxelles, Ms. 16.662 -16.663.
+ 710 2 _ $iFacsimilie of (manifestation):$aConservatoire royal de musique de Bruxelles.$bBibliothÃ¨que.$kManuscript.$g16.662.
+ 710 2 _ $iFacsimilie of (manifestation):$aConservatoire royal de musique de Bruxelles.$bBibliothÃ¨que.$kManuscript.$g16.663.
 
 ==== Argot
 [source,javascript]
@@ -575,12 +592,12 @@ RELATED ITEMS:
  "related_name_title": [
  {
   "label": "Facsimilie of:",
-  "author": "Conservatoire royal de musique de Bruxelles. Bibliothèque.",
+  "author": "Conservatoire royal de musique de Bruxelles. BibliothÃ¨que.",
   "title": "Manuscript.||16.662."
  },
  {
   "label": "Facsimilie of:",
-  "author": "Conservatoire royal de musique de Bruxelles. Bibliothèque.",
+  "author": "Conservatoire royal de musique de Bruxelles. BibliothÃ¨que.",
   "title": "Manuscript.||16.663."
  }
  ]
@@ -592,17 +609,17 @@ RELATED ITEMS:
 
 RELATED ITEMS:
 
-- Facsimilie of: http://search.trln.org/search?Nty=1&Ne=2+200043+206472+210899+210956&N=0&Ntk=Author&Ntt=Conservatoire%20royal%20de%20musique%20de%20Bruxelles.%20Biblioth%C3%A8que[Conservatoire royal de musique de Bruxelles. Bibliothèque.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Manuscript.|Conservatoire%20royal%20de%20musique%20de%20Bruxelles.%20Biblioth%C3%A8que&N=0[Manuscript.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Manuscript.%2016.662.|Conservatoire%20royal%20de%20musique%20de%20Bruxelles.%20Biblioth%C3%A8que&N=0[16.662.]
-- Facsimilie of: http://search.trln.org/search?Nty=1&Ne=2+200043+206472+210899+210956&N=0&Ntk=Author&Ntt=Conservatoire%20royal%20de%20musique%20de%20Bruxelles.%20Biblioth%C3%A8que[Conservatoire royal de musique de Bruxelles. Bibliothèque.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Manuscript.|Conservatoire%20royal%20de%20musique%20de%20Bruxelles.%20Biblioth%C3%A8que&N=0[Manuscript.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Manuscript.%2016.663.|Conservatoire%20royal%20de%20musique%20de%20Bruxelles.%20Biblioth%C3%A8que&N=0[16.663.]
+- Facsimilie of: http://search.trln.org/search?Nty=1&Ne=2+200043+206472+210899+210956&N=0&Ntk=Author&Ntt=Conservatoire%20royal%20de%20musique%20de%20Bruxelles.%20Biblioth%C3%A8que[Conservatoire royal de musique de Bruxelles. BibliothÃ¨que.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Manuscript.|Conservatoire%20royal%20de%20musique%20de%20Bruxelles.%20Biblioth%C3%A8que&N=0[Manuscript.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Manuscript.%2016.662.|Conservatoire%20royal%20de%20musique%20de%20Bruxelles.%20Biblioth%C3%A8que&N=0[16.662.]
+- Facsimilie of: http://search.trln.org/search?Nty=1&Ne=2+200043+206472+210899+210956&N=0&Ntk=Author&Ntt=Conservatoire%20royal%20de%20musique%20de%20Bruxelles.%20Biblioth%C3%A8que[Conservatoire royal de musique de Bruxelles. BibliothÃ¨que.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Manuscript.|Conservatoire%20royal%20de%20musique%20de%20Bruxelles.%20Biblioth%C3%A8que&N=0[Manuscript.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Manuscript.%2016.663.|Conservatoire%20royal%20de%20musique%20de%20Bruxelles.%20Biblioth%C3%A8que&N=0[16.663.]
   
 *Combined `name_title_idx_related` index entry for intracatalog linking (and autosuggest?):*
 
-- Conservatoire royal de musique de Bruxelles. Bibliothèque. Manuscript. 16.662.
-- Conservatoire royal de musique de Bruxelles. Bibliothèque. Manuscript. 16.663.
+- Conservatoire royal de musique de Bruxelles. BibliothÃ¨que. Manuscript. 16.662.
+- Conservatoire royal de musique de Bruxelles. BibliothÃ¨que. Manuscript. 16.663.
 
 *`author_related_idx` index entry:*
 
-- Conservatoire royal de musique de Bruxelles. Bibliothèque.
+- Conservatoire royal de musique de Bruxelles. BibliothÃ¨que.
 
 *`title_related_idx` index entry:*
 
@@ -636,7 +653,7 @@ RELATED ITEMS:
  245 1 0 $aIdentity theft and your social security number$h[electronic resource].
  580 _ _ $aIssued also in Spanish.
  580 _ _ $aReports in several languages available via the SSA multilanguage gateway.
- 775 0 8 $iSpanish version:$sIdentity theft and your social security number. Spanish (Online)$tRobo de identidad y su número de seguro social$w(DLC)  2005230022$w(OCoLC)57614487
+ 775 0 8 $iSpanish version:$sIdentity theft and your social security number. Spanish (Online)$tRobo de identidad y su nÃºmero de seguro social$w(DLC)  2005230022$w(OCoLC)57614487
  775 0 8 $iOther language versions:$tIdentity theft and your social security number (Online)$w(DLC)  2006230527$w(OCoLC)64391649$w(DLC)  2006230517$w(OCoLC)64201706$w(DLC)  2006230627$w(OCoLC)64560561$w(DLC)  2006230601$w(OCoLC)64402658$w(DLC)  2006230673$w(OCoLC)65181174$w(DLC)  2006230683$w(OCoLC)65189576$w(DLC)  2006230449$w(OCoLC)63761026
 
 === 787
