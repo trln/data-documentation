@@ -52,15 +52,22 @@ I'm sure we will see issues where a cataloger didn't provide the proper subfield
 We expect this point to be mitigated by excluding fields with NO title element from Argot mapping.
 
 == `[title]`
-=== when $s present
+=== source subfield
+==== when $s present
 *Use $s value.* $t, if present, will map to `[title_variation]`.
 
-=== when $t and no $s
+==== when $t and no $s
 Use $t value.
 
-=== when neither $s nor $t present
+==== when neither $s nor $t present
 Do not map field to Argot
 
+=== segmentation (only necessary when field is `[display]=true`)
+
+[source,ruby]
+----
+segmented = title_subfield_value.gsub(/\./, '.||')
+----
 
 == `[title_nonfiling]`
 Will not be set when data is from 76X-78X field. No non-filing indicators are defined for these fields.
