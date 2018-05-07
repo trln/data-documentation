@@ -56,10 +56,10 @@ toc::[]
 |related
 
 |765
-|translation
+|translation_of
 
 |767
-|translated
+|translated_as
 
 |770
 |has_supplement
@@ -433,6 +433,52 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
  'title'=>'Industrial sales management game||5.'}
 ]
 ----
+
+== Examples (76X-78X fields)
+Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_linking_entry_fields_76X-78X.adoc for general processing pattern for this set of fields.
+
+=== 765
+
+Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_linking_entry_fields_76X-78X.adoc for general processing pattern for this field.
+
+
+==== UNCb3512881
+
+[source]
+----
+765 0 _ $aChina.$sLaws, etc. (Zhonghua Renmin Gongheguo fa lü hui bian).$tZhonghua Renmin Gongheguo fa lü hui bian$w(DLC)   90645849
+----
+
+[source]
+----
+[
+  {'type'=>'translation_of',
+   'author'=>'China.',
+   'title'=>'Laws, etc. (Zhonghua Renmin Gongheguo fa lü hui bian).',
+   'title_variation'=>'Zhonghua Renmin Gongheguo fa lü hui bian',
+   'other_ids'=>['90645849']}
+]
+----
+
+==== UNCb6862243
+
+[source]
+----
+765 0 8 $iOriginally published in France as:$tInnovations médicales en situations humanitaires.$dParis : Harmattan, c2009$z9782296100466$w(OCoLC)465089061
+----
+
+[source]
+----
+[
+  {'type'=>'translation_of',
+   'label'=>'Originally published in France as',
+   'title'=>'Innovations médicales en situations humanitaires.',
+   'details'=>'Paris : Harmattan, c2009',
+   'isbn'=>['9782296100466'],
+   'other_ids'=>['465089061']}
+]
+----
+
 
 = IGNORE THE CONTENT BELOW THIS LINE
 It is from older documentation and contains some good examples, but they need to be worked into the approach we decided to use.
