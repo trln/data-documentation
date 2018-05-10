@@ -89,7 +89,7 @@ toc::[]
 |related
 |===
 
-== Examples (parallel with `included_work`)
+== Examples (parallel with `included_work`-- READY TO IMPLEMENT)
 The examples in the section below demonstrate how, for these fields, the processing for `related_work` is nearly identical to that for `included_work`.
 
 The differences are:
@@ -481,7 +481,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 }
 ----
 
-== Examples (76X-78X fields)
+== Examples (76X-78X fields -- NOT YET READY TO IMPLEMENT)
 Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_linking_entry_fields_76X-78X.adoc for general processing pattern for this set of fields.
 
 === 765 (`type`=translation_of)
