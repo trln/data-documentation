@@ -109,7 +109,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 =700  1\$aSaint-Saëns, Camille,$d1835-1921.$4cmp$tQuartets,$mviolins (2), viola, cello,$nno. 2, op. 153,$rG major
 ----
 
-[source]
+[source,ruby]
 ----
 [
   {'type'=>'related',
@@ -129,7 +129,7 @@ We want to remove the comma that precedes a $e, but keep or provide a period at 
 =700  1\$aSchwenkel, Christina,$eauthor.$tArchitecture and dwelling in the 'war of destruction' in Vietnam.
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'related',
@@ -145,7 +145,7 @@ We want to remove the comma that precedes a $e, but keep or provide a period at 
 =700  1\$iFacsimile of:$aFerrini, Vincent,$d1913-2007.$tTidal wave : poems of the great strikes.$f1945$g(New York : Great-Concord Publishers)
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'related',
@@ -182,7 +182,7 @@ See sections of https://github.com/trln/data-documentation/blob/master/argot/spe
 =700  0\$3Tome 1, volume 1$iContainer of (expression):$aPlotinus.$tPeri tou kalou.$lFrench$s(Achard and Narbonne)
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'related',
@@ -199,7 +199,7 @@ See sections of https://github.com/trln/data-documentation/blob/master/argot/spe
 =700  1\$aName, Author,$g(Test name),$d1944-.$tTest title.
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'related',
@@ -219,7 +219,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 =710  2\$aKungliga Biblioteket (Sweden).$kManuscript.$nKB787a.$lChurch Slavic.$f1966.
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'related',
@@ -235,7 +235,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 =710  1\$aUnited States.$bCongress$n(94th, 2nd session :$d1976).$tMemorial services held in the House of Representatives and Senate of the United States, together with remarks presented in eulogy of Jerry L. Litton, late a Representative from Missouri.$f197.
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'related',
@@ -251,7 +251,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 =710  1\$aNorth Carolina.$bBuilding Code Council.$tNorth Carolina state building code.$n1,$pGeneral construction.$n11X,$pMaking buildings and facilities accessible to and usable by the physically handicapped.
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'related',
@@ -267,7 +267,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 =710  1\$aGermany (East).$tTreaties, etc.$gGermany (West),$d1990 May 18.$f1990.
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'related',
@@ -283,7 +283,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 =710  2\$aCafé Tacuba (Musical group)$4prf$t12/12
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'related',
@@ -302,7 +302,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 =711  2\$aGreat Central Fair for the U.S. Sanitary Commission$d(1864 :$cPhiladelphia, Pa.).$eCommittee on Public Charities and Benevolent Institutions.$tPhiladelphia [blank] 1864. 619 Walnut Street. To [blank] ...
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'related',
@@ -318,7 +318,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 =711  2\$aDeutsch Foundation Conference$d(1930 :$cUniversity of Chicago).$tCare of the aged.$d2000, $f1972.$gReprint.$x1234-1234
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'related',
@@ -338,7 +338,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 =730  0\$aCahiers de civilisation médiévale.$pBibliographie.$x0240-8678
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'related',
@@ -354,7 +354,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 =730  0\$aJane Pickering's lute book.$tDrewries Accord's;$oarr.
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'related',
@@ -368,18 +368,14 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 
 [source]
 ----
-=730  0\$iContains (expression):$aMagnificent Ambersons (Motion picture).$lSpanish.
-=730  4\$iContains (expression):$aThe magnificent Ambersons (Motion picture).$lEnglish.
+=730  4\$iBlah (expression):$aThe magnificent Ambersons (Motion picture).$lEnglish.
 ----
 
-[source]
+[source,ruby]
 ----
 [
-{'type'=>'related',
- 'label'=>'Contains',
- 'title'=>'Magnificent Ambersons (Motion picture).||Spanish.'},
  {'type'=>'related',
- 'label'=>'Contains',
+ 'label'=>'Blah',
  'title'=>'Magnificent Ambersons (Motion picture).||English.',
  'title_nonfiling'=>'The magnificent Ambersons (Motion picture). English.'}
 ]
@@ -392,7 +388,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 =730  0\$3Guide:$iBased on (expression):$aDeutsche Geschichte.$nBand 6.
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'related',
@@ -410,7 +406,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 =740  4\$aThe English pilot.$nThe fourth book : describing the West India navigation, from Hudson's-Bay to the river Amazones ...
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'related',
@@ -426,7 +422,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 =740  \\$aIndustrial sales management game$p5.
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'related',
@@ -436,49 +432,65 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 
 == Examples (7XX additional -- NOT YET READY)
 === 700
-==== UNCb8529982 -- $i present; complex uniform title; $g in title
-=700  12$iFacsimile of (work):$aMozart, Wolfgang Amadeus,$d1756-1791.$tConcertos,$mviolin, orchestra,$nK. 219,$rA major.$gLibrary of Congress. Music Division : ML30.8b .M8 K. 219 Case.
+==== UNCb8529982 mock -- $i present; complex uniform title; $g in title
+
+[source]
+----
+=700  1\$iFacsimile of (work):$aMozart, Wolfgang Amadeus,$d1756-1791.$tConcertos,$mviolin, orchestra,$nK. 219,$rA major.$gLibrary of Congress. Music Division : ML30.8b .M8 K. 219 Case.
+----
+
+[source,ruby]
+----
+[
+{'type'=>'related',
+ 'label'=>'Facsimile of',
+ 'author'=>'Mozart, Wolfgang Amadeus, 1756-1791.',
+ 'title'=>'Concertos,||violin, orchestra,||K. 219,||A major.',
+ 'details'=>'Library of Congress. Music Division : ML30.8b .M8 K. 219 Case.'}
+]
+----
 
 === 710
 ==== UNCb4914240 - $i present; $g in title
- 710 2 _ $iFacsimilie of (manifestation):$aConservatoire royal de musique de Bruxelles.$bBibliothèque.$kManuscript.$g16.662.
- 710 2 _ $iFacsimilie of (manifestation):$aConservatoire royal de musique de Bruxelles.$bBibliothèque.$kManuscript.$g16.663.
 
-==== Argot
-[source,javascript]
+[source]
 ----
-{
- "related_name_title": [
- {
-  "label": "Facsimilie of:",
-  "author": "Conservatoire royal de musique de Bruxelles. Bibliothèque.",
-  "title": "Manuscript.||16.662."
- },
- {
-  "label": "Facsimilie of:",
-  "author": "Conservatoire royal de musique de Bruxelles. Bibliothèque.",
-  "title": "Manuscript.||16.663."
- }
- ]
-}
+710 2 _ $iFacsimilie of (manifestation):$aConservatoire royal de musique de Bruxelles.$bBibliothèque.$kManuscript.$g16.662.
+ 710 2 _ $iFacsimilie of (manifestation):$aConservatoire royal de musique de Bruxelles.$bBibliothèque.$kManuscript.$g16.663.
+----
+
+[source,ruby]
+----
+[
+{'type'=>'related',
+ 'label'=>'Facsimile of',
+ 'author'=>'Conservatoire royal de musique de Bruxelles. Bibliothèque.',
+ 'title'=>'Manuscript.',
+ 'details'=>'16.662.'},
+{'type'=>'related',
+ 'label'=>'Facsimile of',
+ 'author'=>'Conservatoire royal de musique de Bruxelles. Bibliothèque.',
+ 'title'=>'Manuscript.',
+ 'details'=>'16.663.'}
+]
 ----
 
 === 711
 
 ==== UNCb8843477 - $i not present
- 711 2 _ $aWestminster Assembly$d(1643-1652).$tShorter catechism.$f1809.
 
-==== Argot
-[source,javascript]
+[source]
 ----
-{
- "related_name_title": [
- {
-  "author": "Westminster Assembly (1643-1652).",
-  "title": "Shorter catechism.||1809."
- }
- ]
-}
+711 2 _ $aWestminster Assembly$d(1643-1652).$tShorter catechism.$f1809.
+----
+
+[source,ruby]
+----
+[
+{'type'=>'related',
+ 'author'=>'Westminster Assembly (1643-1652).',
+ 'title'=>'Shorter catechism.||1809.'}
+]
 ----
 
 == Examples (76X-78X fields -- NOT YET READY TO IMPLEMENT)
@@ -496,7 +508,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 =765 0 _ $aChina.$sLaws, etc. (Zhonghua Renmin Gongheguo fa lü hui bian).$tZhonghua Renmin Gongheguo fa lü hui bian$w(DLC)   90645849
 ----
 
-[source]
+[source,ruby]
 ----
 [
   {'type'=>'translation_of',
@@ -514,7 +526,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 =765 0 8 $iOriginally published in France as:$tInnovations médicales en situations humanitaires.$dParis : Harmattan, c2009$z9782296100466$w(OCoLC)465089061
 ----
 
-[source]
+[source,ruby]
 ----
 [
   {'type'=>'translation_of',
@@ -533,7 +545,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 =765  1\$tItogi nauki i tekhniki. Seri︠i︡a Sovremennye problemy matematiki. Fundamentalʹnye napravleni︠i︡a$x0233-6723$w(DLC) 87645715$w(OCoLC)14198545
 ----
 
-[source]
+[source,ruby]
 ----
 [
   {'type'=>'translation_of',
@@ -555,7 +567,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 =767  08$iGerman version:$tWissenschaftliche Mitteilungen des Bosnisch-Herzegowinischen Landesmuseums. Heft A, Archäologie$x0352-1990$w(DLC)  2010223203$w(OCoLC)4818533
 ----
 
-[source]
+[source,ruby]
 ----
 [
   {'type'=>'translated_as',
