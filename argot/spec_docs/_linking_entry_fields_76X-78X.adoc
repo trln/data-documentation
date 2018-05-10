@@ -39,7 +39,101 @@ Invalid coding. Likely crappy data that wouldn't display right anyway.
 
 == `[label]`
 
-Will be handled differently for each MARC field in this group.
+=== General guidelines
+
+A few of the individual fields are treated slightly differently. These differences are highlighted per-field below. Individual field instructions override these general guidelines in the case of conflicts.
+
+==== i2=8 or blank and no $i present
+No `[label]` value set. UI display label should provide sufficient context.
+
+==== $i present
+Use $i value, following instructions in https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_subfield_i.adoc
+
+=== 772
+
+==== i2=0
+`label`=> 'Parent item'
+
+=== 773
+
+==== if present, $3 contributes to label
+See "When $i as a label occurs in the same field with a $3, they must be combined in the label" section at https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_subfield_3.adoc[subfield 3 spec]
+
+=== 775
+
+==== If no $i and $e is present
+$e contains language code of alternate language edition. Use default language code lookup (in Traject?) to expand code to name of language. Label is: "#{Language name} language edition"
+
+$efre
+
+'label'=> 'French language edition'
+
+=== 780
+
+[cols=2*,options=header]
+|===
+|i2
+|`label`
+
+|0
+|Continues
+
+|1
+|Continues in part
+
+|2
+|Supersedes
+
+|3
+|Supersedes in part
+
+|4
+|Formed by the union of
+
+|5
+|Absorbed
+
+|6
+|Absorbed in part
+
+|7
+|Separated from
+|===
+
+=== 785
+
+[cols=2*,options=header]
+|===
+|i2
+|`label`
+
+|0
+|Continued by
+
+|1
+|Continued in part by
+
+|2
+|Superseded by
+
+|3
+|Superseded in part by
+
+|4
+|Absorbed by
+
+|5
+|Absorbed in part by
+
+|6
+|Split into
+
+|7
+|Merged with or into
+
+|8
+|Changed back to
+|===
 
 == `[author]`
 
@@ -66,24 +160,48 @@ Do not map field to Argot
 
 [source,ruby]
 ----
-segmented = title_subfield_value.gsub(/([^. ]\.) /, '\1||')
+segmented = title_value.gsub(/([^. ]\.) /, '\1||')
 ----
 
 == `[title_nonfiling]`
-Will not be set when data is from 76X-78X field. No non-filing indicators are defined for these fields.
+Use to index, but not display abbreviated titles from $p
 
 == `[title_variation]`
+=== $t AND $s present
 Use $t value when `[title]` is set from $s value.
 
-Only set when both $s and $t are present
+=== Field does not have *both* $t and $s
+Do not set.
 
 == `[details]`
 
-Concatenate from the following subfields when present:
+=== Subfields that map to `details`
+==== General
+Concatenate from the following subfields when present, applying the processing steps specified below:
 
-bcdghjkmnoruy
+bcdghkmnoruy
 
-Provide labels prefixing the values in the following fields as shown in table below:
+==== 773 (no $c)
+bdghkmnoruy
+
+==== 760 and 762
+bcdghmnoy
+
+* $k undefined
+* $r undefined
+* $u undefined
+
+==== 786 ($v included)
+bcdghkmnoruvy
+
+$j is currently excluded because:
+
+* no example data in UNC catalog to base mapping/processing on
+* no example of how this field is actually used in LC or OCLC MARC specs
+* According to http://experimental.worldcat.org/marcusage/786[MARC Usage in WorldCat], it is only used in ONE record ever
+
+=== Formatting data for `details` display
+==== Prepend in-`details` labels to contextualize the data from some subfields
 
 [cols=2*,options=header]
 |===
@@ -96,14 +214,21 @@ Provide labels prefixing the values in the following fields as shown in table be
 |u
 |Technical report number:
 
+|v
+|Contributed:
+
 |y
 |CODEN:
 |===
+
+==== Wrap series data ($k) in parentheses
 
 == `[isbn]`
 Use $z value(s).
 
 $z is repeatable, so this must be an array.
+
+$z is *not* defined for MARC fields 760 and 762, so should not be extracted from those fields
 
 == `[issn]`
 Use $x value

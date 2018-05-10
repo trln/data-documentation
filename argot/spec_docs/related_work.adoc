@@ -65,13 +65,13 @@ toc::[]
 |has_supplement
 
 |772
-|supplement_parent
+|supplement_to
 
 |773
-|parent
+|host_item
 
 |775
-|edition
+|alt_edition
 
 |777
 |issued_with
@@ -434,10 +434,57 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 ]
 ----
 
+== Examples (7XX additional -- NOT YET READY)
+=== 700
+==== UNCb8529982 -- $i present; complex uniform title; $g in title
+=700  12$iFacsimile of (work):$aMozart, Wolfgang Amadeus,$d1756-1791.$tConcertos,$mviolin, orchestra,$nK. 219,$rA major.$gLibrary of Congress. Music Division : ML30.8b .M8 K. 219 Case.
+
+=== 710
+==== UNCb4914240 - $i present; $g in title
+ 710 2 _ $iFacsimilie of (manifestation):$aConservatoire royal de musique de Bruxelles.$bBibliothèque.$kManuscript.$g16.662.
+ 710 2 _ $iFacsimilie of (manifestation):$aConservatoire royal de musique de Bruxelles.$bBibliothèque.$kManuscript.$g16.663.
+
+==== Argot
+[source,javascript]
+----
+{
+ "related_name_title": [
+ {
+  "label": "Facsimilie of:",
+  "author": "Conservatoire royal de musique de Bruxelles. Bibliothèque.",
+  "title": "Manuscript.||16.662."
+ },
+ {
+  "label": "Facsimilie of:",
+  "author": "Conservatoire royal de musique de Bruxelles. Bibliothèque.",
+  "title": "Manuscript.||16.663."
+ }
+ ]
+}
+----
+
+=== 711
+
+==== UNCb8843477 - $i not present
+ 711 2 _ $aWestminster Assembly$d(1643-1652).$tShorter catechism.$f1809.
+
+==== Argot
+[source,javascript]
+----
+{
+ "related_name_title": [
+ {
+  "author": "Westminster Assembly (1643-1652).",
+  "title": "Shorter catechism.||1809."
+ }
+ ]
+}
+----
+
 == Examples (76X-78X fields)
 Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_linking_entry_fields_76X-78X.adoc for general processing pattern for this set of fields.
 
-=== 765
+=== 765 (`type`=translation_of)
 
 Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_linking_entry_fields_76X-78X.adoc for general processing pattern for this field.
 
@@ -490,282 +537,518 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 ----
 [
   {'type'=>'translation_of',
-   'title'=>'Itogi nauki i tekhniki. Seri︠i︡a Sovremennye problemy matematiki. Fundamentalʹnye napravleni︠i︡a',
+   'title'=>'Itogi nauki i tekhniki.||Seri︠i︡a Sovremennye problemy matematiki.||Fundamentalʹnye napravleni︠i︡a',
    'issn'=>'0233-6723',
    'other_ids'=>['87645715', '14198545'],
    'display'=>'false'}
 ]
 ----
 
-= IGNORE THE CONTENT BELOW THIS LINE
-It is from older documentation and contains some good examples, but they need to be worked into the approach we decided to use.
+=== 767 (`type`=translated_as)
 
-=== UNCb8843477 - 710 with $i
-==== MARC
- 100 1 _ $aJacobson, Sidney,$eauthor.
- 245 1 4 $aThe torture report :$ba graphic adaptation /$cSid Jacobson and Ernie Colón ; introduction by Jane Mayer ; afterword by Scott Horton.
- 710 1 _ $iGraphic novelization of (work):$aUnited States.$bCongress.$bSenate.$bSelect Committee on Intelligence.$tSenate Intelligence Committee report on torture.
+Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_linking_entry_fields_76X-78X.adoc for general processing pattern for this field.
 
-==== Argot
-[source,javascript]
+==== UNCb7043261
+
+[source]
 ----
-{
- "related_name_title": {
-  "label": "Graphic novelization of:",
-  "author": "United States. Congress. Senate. Select Committee on Intelligence.",
-  "title": "Senate Intelligence Committee report on torture."
- }
-}
+=767  08$iGerman version:$tWissenschaftliche Mitteilungen des Bosnisch-Herzegowinischen Landesmuseums. Heft A, Archäologie$x0352-1990$w(DLC)  2010223203$w(OCoLC)4818533
 ----
 
-==== Behavior
-
-*Displayed:*
-
-RELATED ITEMS:
-
-Graphic novelization of: http://search.trln.org/search?Nty=1&Ntk=Author&Ntt=United%20States.%20Congress.%20Senate.%20Select%20Committee%20on%20Intelligence.&N=0[United States. Congress. Senate. Select Committee on Intelligence.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Senate%20Intelligence%20Committee%20report%20on%20torture.|United%20States.%20Congress.%20Senate.%20Select%20Committee%20on%20Intelligence.&N=0[Senate Intelligence Committee report on torture.]
-  
-
-
-*Combined `name_title_idx_related` index entry for intracatalog linking (and autosuggest?):*
-
-- United States. Congress. Senate. Select Committee on Intelligence. Senate Intelligence Committee report on torture.
-
-*`author_related_idx` index entry:*
-
-- United States. Congress. Senate. Select Committee on Intelligence.
-
-*`title_related_idx` index entry:*
-
-- Senate Intelligence Committee report on torture.
-
-=== UNCb8843477 - 711 without label
-==== MARC
- 100 1 _ $aEmerson, Joseph,$d1777-1833.
- 245 1 4 $aThe Evangelical primer$h[microform].
- 711 2 _ $aWestminster Assembly$d(1643-1652).$tShorter catechism.$f1809.
-
-==== Argot
-[source,javascript]
+[source]
 ----
-{
- "related_name_title": [
- {
-  "author": "Westminster Assembly (1643-1652).",
-  "title": "Shorter catechism.||1809."
- }
- ]
-}
+[
+  {'type'=>'translated_as',
+   'label'=>'German version',
+   'title'=>'Wissenschaftliche Mitteilungen des Bosnisch-Herzegowinischen Landesmuseums.||Heft A, Archäologie'
+   'issn'=>'0352-1990',
+   'other_ids'=>['2010223203', '4818533']}
+]
 ----
 
-==== Behavior
-*Displayed:*
+=== 770 (`type`=has_supplement)
 
-RELATED ITEMS:
+Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_linking_entry_fields_76X-78X.adoc for general processing pattern for this field.
 
-- http://search.trln.org/search?Nty=1&Ntk=Author&Ntt=Westminster%20Assembly%20(1643-1652).&N=0[Westminster Assembly (1643-1652).] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Shorter%20catechism.|Westminster%20Assembly%20(1643-1652).&N=0[Shorter catechism.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Shorter%20catechism.%201809.|Westminster%20Assembly%20(1643-1652).&N=0[1809.]
-  
-*Combined `name_title_idx_related` index entry for intracatalog linking (and autosuggest?):*
+==== UNCb9163859
 
-- Westminster Assembly (1643-1652). Shorter catechism. 1809.
-
-*`author_related_idx` index entry:*
-
-- Westminster Assembly (1643-1652).
-
-*`title_related_idx` index entry:*
-
-- Shorter catechism. 1809.
-
-=== UNCb4914240 - 710 with $g in title
-==== MARC
- 245 0 0 $aRecueil de pièces de luth en tablature italienne ;$bXVIIe siècle.
- 500 _ _ $aFacsimile of Bibliothèque du Conservatoir Royal de Musique de Bruxelles, Ms. 16.662 -16.663.
- 710 2 _ $iFacsimilie of (manifestation):$aConservatoire royal de musique de Bruxelles.$bBibliothèque.$kManuscript.$g16.662.
- 710 2 _ $iFacsimilie of (manifestation):$aConservatoire royal de musique de Bruxelles.$bBibliothèque.$kManuscript.$g16.663.
-
-==== Argot
-[source,javascript]
+[source]
 ----
-{
- "related_name_title": [
- {
-  "label": "Facsimilie of:",
-  "author": "Conservatoire royal de musique de Bruxelles. Bibliothèque.",
-  "title": "Manuscript.||16.662."
- },
- {
-  "label": "Facsimilie of:",
-  "author": "Conservatoire royal de musique de Bruxelles. Bibliothèque.",
-  "title": "Manuscript.||16.663."
- }
- ]
-}
+=770  08$isupplement (work):$tInsect pest survey. Special supplement$w(OcoLC)1032826279
 ----
 
-==== Behavior
-*Displayed:*
-
-RELATED ITEMS:
-
-- Facsimilie of: http://search.trln.org/search?Nty=1&Ne=2+200043+206472+210899+210956&N=0&Ntk=Author&Ntt=Conservatoire%20royal%20de%20musique%20de%20Bruxelles.%20Biblioth%C3%A8que[Conservatoire royal de musique de Bruxelles. Bibliothèque.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Manuscript.|Conservatoire%20royal%20de%20musique%20de%20Bruxelles.%20Biblioth%C3%A8que&N=0[Manuscript.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Manuscript.%2016.662.|Conservatoire%20royal%20de%20musique%20de%20Bruxelles.%20Biblioth%C3%A8que&N=0[16.662.]
-- Facsimilie of: http://search.trln.org/search?Nty=1&Ne=2+200043+206472+210899+210956&N=0&Ntk=Author&Ntt=Conservatoire%20royal%20de%20musique%20de%20Bruxelles.%20Biblioth%C3%A8que[Conservatoire royal de musique de Bruxelles. Bibliothèque.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Manuscript.|Conservatoire%20royal%20de%20musique%20de%20Bruxelles.%20Biblioth%C3%A8que&N=0[Manuscript.] http://search.trln.org/search?Nty=1&Ntk=Title|Author&Ntt=Manuscript.%2016.663.|Conservatoire%20royal%20de%20musique%20de%20Bruxelles.%20Biblioth%C3%A8que&N=0[16.663.]
-  
-*Combined `name_title_idx_related` index entry for intracatalog linking (and autosuggest?):*
-
-- Conservatoire royal de musique de Bruxelles. Bibliothèque. Manuscript. 16.662.
-- Conservatoire royal de musique de Bruxelles. Bibliothèque. Manuscript. 16.663.
-
-*`author_related_idx` index entry:*
-
-- Conservatoire royal de musique de Bruxelles. Bibliothèque.
-
-*`title_related_idx` index entry:*
-
-- Manuscript. 16.662.
-- Manuscript. 16.663.
-
-=== 770
-==== MARC
- 210 0 _ $aAm. econ. rev.
- 222 _ 4 $aThe American economic review
- 245 0 4 $aThe American economic review$h[serial].
- 500 _ _ $aEach vol. includes also: Papers and proceedings of the ... Annual Meeting of the American Economic Association.
- 515 _ _ $aVol. 1 called also Bulletin of the American Economic Association, 4th series.
- 515 _ _ $aThe American economic review, with its supplements, forms the 4th series of the Publications of the American Economic Association.
- 525 _ _ $aHas frequent supplements.
- 730 0 _ $aBulletin of the American Economic Association.
- 770 0 _ $aAmerican Economic Association.$tPapers and proceedings of the annual meeting$g1911-$x0065-812X$w(DLC)   01011768$w(OCoLC)1479792
- 776 0 8 $iOnline version$tAmerican economic review (Online)$x1944-7981$w(DLC)sn 97023013$w(OCoLC)35705012
- 776 0 8 $iOnline version:$tAmerican economic review$w(OCoLC)565226305
- 777 0 _ $aAmerican Economic Association.$tPapers and proceedings of the annual meeting$x0065-812X$w(DLC)   01011768$w(OCoLC)1479792
- 780 0 4 $tEconomic bulletin (Baltimore, Md.)$x1536-1489$w(DLC)   09025911$w(OCoLC)1567381
- 780 0 4 $tAmerican Economic Association quarterly$x1532-5059$w(DLC)sn 91026538$w(OCoLC)6483348
-
-=== 772
-=== 765
-=== 767
-=== 773
-=== UNCb4827856 - 775 with $i and $s, no $a
-==== MARC
- 130 0 _ $aIdentity theft and your social security number (Online)
- 245 1 0 $aIdentity theft and your social security number$h[electronic resource].
- 580 _ _ $aIssued also in Spanish.
- 580 _ _ $aReports in several languages available via the SSA multilanguage gateway.
- 775 0 8 $iSpanish version:$sIdentity theft and your social security number. Spanish (Online)$tRobo de identidad y su número de seguro social$w(DLC)  2005230022$w(OCoLC)57614487
- 775 0 8 $iOther language versions:$tIdentity theft and your social security number (Online)$w(DLC)  2006230527$w(OCoLC)64391649$w(DLC)  2006230517$w(OCoLC)64201706$w(DLC)  2006230627$w(OCoLC)64560561$w(DLC)  2006230601$w(OCoLC)64402658$w(DLC)  2006230673$w(OCoLC)65181174$w(DLC)  2006230683$w(OCoLC)65189576$w(DLC)  2006230449$w(OCoLC)63761026
-
-=== 787
-
-=== UNCb6869637 - 740 and 786, somewhat duplicated data
-Because of system limitations for displaying MARC 76X-78X (Linking Entries), the data recorded in 'linking fields' is often duplicated in other fields.
-
-*Ideally we could figure out some way to minimize display of duplicated data.* One idea for this could be:
-
-- Once `related_title` has been completely populated, identify the entries where the `title` element is a duplicate (maybe stripping off terminal punctuation to do some vague normalization)
-- Keep entries with duplicate `title` if they have `label`, but the `label` values differ
-- Prefer entry with a `label` value if some entries with duplicate `title` lack a `label` value
-- If there are multiple entries with duplicate `label` + `title` (`title` with no `label`), prefer the one with more other info
-
-==== MARC
- 245 0 4 $aThe international plant names index$h[electronic resource].
- 500 _ _ $a"The records in IPNI come from three sources: the Index Kewensis (IK), the Gray Card Index (GCI) and the Australian Plant Names Index (APNI)." --"About the index" page (viewed Nov. 10, 2011).
- 740 0 _ $aIndex Kewensis.
- 740 0 _ $aGray card index.
- 740 0 _ $aAustralian plant name index.
- 786 0 _ $tAustralian plant name index.$d[Canberra, A.C.T.] : Australian National Botanic Gardens : Australian National Herbarium$w(DLC)  2009252503$w(OCoLC)64343431
- 786 0 _ $tIndex Kewensis plantarum phanerogamarum. Supplementum$w(DLC)   89659069$w(OCoLC)2992677
- 786 0 _ $tIndex Kewensis. Supplement$w(DLC)sn 88021550$w(OCoLC)16733857
- 786 0 _ $tGray card index.$dCambridge, Mass. : Harvard University Herbraria, [c1992-]$w(OCoLC)43851144
-
-==== Argot (without deduplication)
-[source,javascript]
+[source,ruby]
 ----
-{
- "related_title": [
-  {"title": "Index Kewensis."},
-  {"title": "Gray card index."},
-  {"title": "Australian plant name index."},
- {
-  "label": "Data source:",
-  "title": "Australian plant name index.",
-  "details": "[Canberra, A.C.T.] : Australian National Botanic Gardens : Australian National Herbarium"
- },
- {
-  "label": "Data source:",
-  "title": "Index Kewensis plantarum phanerogamarum. Supplementum"
- },
-  {
-  "label": "Data source:",
-  "title": "Index Kewensis. Supplement"
- },
- {
-  "label": "Data source:",
-  "title": "Gray card index.",
-  "details": "Cambridge, Mass. : Harvard University Herbraria, [c1992-]"
- }
- ]
-}
+[
+{'type'=>'has_supplement',
+ 'label'=>'Supplement',
+ 'title'=>'Insect pest survey.||Special supplement',
+ 'other_ids'=>['1032826279']}
+]
 ----
 
-==== Argot (ideal, deduplicated)
-[source,javascript]
+==== UNCb9147108
+
+[source]
 ----
-{
- "related_title": [
- {"title": "Index Kewensis."},
- {
-  "label": "Data source:",
-  "title": "Australian plant name index.",
-  "details": "[Canberra, A.C.T.] : Australian National Botanic Gardens : Australian National Herbarium"
- },
- {
-  "label": "Data source:",
-  "title": "Index Kewensis plantarum phanerogamarum. Supplementum"
- },
-  {
-  "label": "Data source:",
-  "title": "Index Kewensis. Supplement"
- },
- {
-  "label": "Data source:",
-  "title": "Gray card index.",
-  "details": "Cambridge, Mass. : Harvard University Herbraria, [c1992-]"
- }
- ]
-}
+=770  0\$tBaking equipment$g1979-Dec. 1987$w(OCoLC)15639544
 ----
 
-==== Behavior (based on deduplicated Argot)
-*Displayed:*
+[source,ruby]
+----
+[
+{'type'=>'has_supplement',
+ 'title'=>'Baking equipment',
+ 'details'=>'1979-Dec. 1987',
+ 'other_ids'=>['15639544']}
+]
+----
 
-RELATED ITEMS:
+==== UNCb1256874
 
-- http://search.trln.org/search?Nty=1&Ntk=Title&Ntt=Index%20Kewensis.&N=0[Index Kewensis.]
-- Data source: http://search.trln.org/search?Nty=1&Ntk=Title&Ntt=Australian%20plant%20name%20index.&N=0[Australian plant name index.] [Canberra, A.C.T.] : Australian National Botanic Gardens : Australian National Herbarium
-- Data source: http://search.trln.org/search?Nty=1&Ntk=Title&Ntt=Index%20Kewensis%20plantarum%20phanerogamarum.%20Supplementum&N=0[Index Kewensis plantarum phanerogamarum. Supplementum]
-- Data source: http://search.trln.org/search?Nty=1&Ntk=Title&Ntt=Index%20Kewensis.%20Supplement&N=0[Index Kewensis. Supplement]
-- Data source: http://search.trln.org/search?Nty=1&Ntk=Title&Ntt=Gray%20card%20index.&N=0[Gray card index.] Cambridge, Mass. : Harvard University Herbraria, [c1992-]
-  
+[source]
+----
+=770  1\$tFrench review. Special issue$x0271-3349$g1970-74
+----
 
-*`title_related_idx` index entry:*
+[source,ruby]
+----
+[
+{'type'=>'has_supplement',
+ 'title'=>'French review. Special issue',
+ 'issn'=>'0271-3349',
+ 'display'=>'false'}
+]
+----
 
-- Australian plant name index.
-- Index Kewensis plantarum phanerogamarum. Supplementum
-- Index Kewensis. Supplement
-- Gray card index.
-- Index Kewensis.
+=== 772 (`type`=supplement_to)
+
+Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_linking_entry_fields_76X-78X.adoc for general processing pattern for this field.
+
+==== UNCb7383700 -- display; $r present
+
+[source]
+----
+=772  0\$rReport R1474$tFurnace-type lumber dry-kiln
+----
+
+[source,ruby]
+----
+[
+{'type'=>'supplement_to',
+ 'title'=>'Furnace-type lumber dry-kiln',
+ 'details'=>'Report number: Report R1474'}
+]
+----
+
+==== UNCb9013429
+
+[source]
+----
+=772  1\$6880-01$tBunka jinruigaku$w(DLC)  2005222403$w(OCoLC)55991441
+----
+
+[source,ruby]
+----
+[
+{'type'=>'supplement_to',
+ 'title'=>'Bunka jinruigaku',
+ 'other_ids'=>['2005222403', '55991441'],
+ 'display'=>'false'}
+]
+----
+
+==== UNCb8403445 -- i2=0 (772-specific)
+
+[source]
+----
+=772  00$aKnowlton, Frank Hall, 1860-1926.$tCatalogue of the Mesozoic and Cenozoic plants of North America$w(OCoLC)670360522
+----
+
+[source,ruby]
+----
+[
+{'type'=>'supplement_to',
+ 'label'=>'Parent item',
+ 'author'=>'Knowlton, Frank Hall, 1860-1926.',
+ 'title'=>'Catalogue of the Mesozoic and Cenozoic plants of North America',
+ 'other_ids'=>['670360522']}
+]
+----
+
+=== 773 (`type`=host_item)
+
+Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_linking_entry_fields_76X-78X.adoc for general processing pattern for this field.
+
+==== UNCb2282885 -- display; $i present; $s AND $t present
+
+[source]
+----
+=773  08$7nnas$iDetached from:$sGentleman's magazine (London, England : 1868)$tGentleman's magazine.$gVol. 12 (Apr. 1874)$w(OCoLC)7898234
+----
+
+[source,ruby]
+----
+[
+{'type'=>'host_item',
+ 'label'=>'Detached from',
+ 'title'=>'Gentleman's magazine (London, England : 1868)',
+ 'title_variation'=>'Gentleman's magazine.',
+ 'details'=>'Vol. 12 (Apr. 1874)',
+ 'other_ids'=>['7898234']}
+]
+----
+
+==== UNCb2282885 mock -- display; $i present; $s AND $t present; $3 + $i `label`
+
+[source]
+----
+=773  08$7nnas$iDetached from:$sGentleman's magazine (London, England : 1868)$tGentleman's magazine.$gVol. 12 (Apr. 1874)$w(OCoLC)7898234$3pt 1
+----
+
+[source,ruby]
+----
+[
+{'type'=>'host_item',
+ 'label'=>'Pt 1: Detached from',
+ 'title'=>'Gentleman's magazine (London, England : 1868)',
+ 'title_variation'=>'Gentleman's magazine.',
+ 'details'=>'Vol. 12 (Apr. 1874)',
+ 'other_ids'=>['7898234']}
+]
+----
+
+==== UNCb2282885 mock -- display; $i present; $s AND $t present; $3 label
+
+[source]
+----
+=773  08$7nnas$3pt. 1$sGentleman's magazine (London, England : 1868)$tGentleman's magazine.$gVol. 12 (Apr. 1874)$w(OCoLC)7898234
+----
+
+[source,ruby]
+----
+[
+{'type'=>'host_item',
+ 'label'=>'Pt 1',
+ 'title'=>'Gentleman's magazine (London, England : 1868)',
+ 'title_variation'=>'Gentleman's magazine.',
+ 'details'=>'Vol. 12 (Apr. 1874)',
+ 'other_ids'=>['7898234']}
+]
+----
+
+==== UNCb8571581 -- display; $p present; $y present
 
 
-=== linking field not for display
+[source]
+----
+=773  0\$7c2as$aNational Academy of Sciences (U.S.).$pBiogr. mem.$tBiographical memoirs.$dWashington, National Academy of Sciences, 1938.$g23 cm. vol. XVIII, 7th memoir, 1 p. l., p. 157-174. front. (port)$x0077-2933$yBMNSAC$w(OCoLC)1759017
+----
 
-== Field-specific processing notes
-=== 770
-- Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/76X-78X_linking_entry_processing.adoc[76X-78X linking entry processing procedures].
-- If no $i, `label`  =  `Is supplemented by:`
+[source,ruby]
+----
+[
+{'type'=>'host_item',
+ 'author'=>'National Academy of Sciences (U.S.).',
+ 'title'=>'Biographical memoirs.',
+ 'title_nonfiling'=>'Biogr. mem.',
+ 'details'=>'Washington, National Academy of Sciences, 1938. 23 cm. vol. XVIII, 7th memoir, 1 p. l., p. 157-174. front. (port) CODEN: BMNSAC',
+ 'issn'=>'0077-2933',
+ 'other_ids'=>['BMNSAC', '1759017']}
+]
+----
 
-=== 786
-- Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/76X-78X_linking_entry_processing.adoc[76X-78X linking entry processing procedures].
-- If no $i, `label`  =  `Data source:`
+==== UNCb9162338 - do not display
 
+[source]
+----
+=773  18$tDepartment of Health Behavior and Health Education Master's Papers and Community Diagnosis Projects, 1947-2015.$w(OCoLC)989732850
+----
+
+[source,ruby]
+----
+[
+{'type'=>'host_item',
+ 'title'=>'Department of Health Behavior and Health Education Master's Papers and Community Diagnosis Projects, 1947-2015.',
+ 'other_ids'=>['989732850'],
+ 'display'=>'false'}
+]
+----
+
+=== 775  (`type`=alt_edition)
+
+Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_linking_entry_fields_76X-78X.adoc for general processing pattern for this field.
+
+==== UNCb4827856 - 775 with $i, $s AND $t, no $a
+
+[source]
+----
+=775  08$iSpanish version:$sIdentity theft and your social security number. Spanish (Online)$tRobo de identidad y su número de seguro social$w(DLC)  2005230022$w(OCoLC)57614487
+----
+
+[source,ruby]
+----
+[
+{'type'=>'alt_edition',
+ 'label'=>'Spanish version',
+ 'title'=>'Identity theft and your social security number.||Spanish (Online)',
+ 'title_variation'=>'Robo de identidad y su número de seguro social',
+ 'other_ids'=>['2005230022', '57614487']}
+]
+----
+
+==== UNCb7596773 -- $k present
+
+[source]
+----
+=775  08$iTranslation of:$tRedes femeninas$dRoma : Viella, 2013$kIRCUM-Medieval cultures ; 1$w(OCoLC)830363122
+----
+
+[source,ruby]
+----
+[
+{'type'=>'alt_edition',
+ 'label'=>'Translation of',
+ 'title'=>'Redes femeninas',
+ 'details'=>'Roma : Viella, 2013 (IRCUM-Medieval cultures ; 1)',
+ 'other_ids'=>['830363122']}
+]
+----
+
+==== UNCb8955588 -- $e (language codes)
+
+[source]
+----
+=775  0\$tHighlights of the International Transport Forum$x2218-9750$eeng
+=775  0\$tWeltverkehrsforum : Forum Höhepunkte$x2218-9777$eger
+=775  0\$tFighting Corruption in Transition Economies (Russian version)$x1990-5076$erus
+----
+
+[source,ruby]
+----
+[
+{'type'=>'alt_edition',
+ 'label'=>'English language edition',
+ 'title'=>'Highlights of the International Transport Forum',
+ 'issn'=>'2218-9750'},
+{'type'=>'alt_edition',
+ 'label'=>'German language edition',
+ 'title'=>'Weltverkehrsforum : Forum Höhepunkte',
+ 'issn'=>'2218-9777'},
+ {'type'=>'alt_edition',
+ 'label'=>'Russian language edition',
+ 'title'=>'Fighting Corruption in Transition Economies (Russian version)',
+ 'issn'=>'1990-5076'}
+]
+----
+
+=== 780 (`type`=earlier)
+
+Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_linking_entry_fields_76X-78X.adoc for general processing pattern for this field.
+
+==== UNCb3492794 -- display; $i present; $r present
+
+[source]
+----
+=780  02$iReplacement of (work):$aLudwig, F. L.$tSite selection for the monitoring of photochemical air pollutants.$dResearch Triangle Park, N.C. : U.S. Environmental Protection Agency ; Springfield, Va. : National Technical Information Service [distributor], 1978.$rEPA-450/3-78-013$w(OCoLC)4454556
+----
+
+[source,ruby]
+----
+[
+{'type'=>'earlier',
+ 'label'=>'Replacement of',
+ 'author'=>'Ludwig, F. L.',
+ 'title'=>'Site selection for the monitoring of photochemical air pollutants.',
+ 'details'=>'Research Triangle Park, N.C. : U.S. Environmental Protection Agency ; Springfield, Va. : National Technical Information Service [distributor], 1978. Report number: EPA-450/3-78-013',
+ 'other_ids'=>['4454556']}
+]
+----
+
+==== UNCb8262321 -- display; i2=2 but no $i present
+
+[source]
+----
+=780  02$aVancouver Art Gallery Association.$tVancouver Art Gallery Association annual report.$x0315-4424$w(DLC)cn 77318987$w(OCoLC)3113301
+----
+
+[source,ruby]
+----
+[
+{'type'=>'earlier',
+ 'label'=>'Supersedes',
+ 'author'=>'Vancouver Art Gallery Association.',
+ 'title'=>'Vancouver Art Gallery Association annual report.',
+ 'issn'=>'0315-4424',
+ 'other_ids'=>['cn 77318987', '3113301']}
+]
+----
+
+==== UNCb8971570 -- display; i2=4
+
+[source]
+----
+=780  04$tAlberta English.$dEdmonton, English Language Arts Council of the Alberta Teachers' Association.$x0382-5191$w(DLC)cn 76301138$w(OCoLC)2297987
+=780  04$tVoices (Edmonton, Alta.).$d[Edmonton] : English Language Arts Council of the Alberta Teachers' Association, ©1986-2002$x0832-8315$w(CaOONL) 870315102$w(DLC)cn 87031510
+----
+
+[source,ruby]
+----
+[
+{'type'=>'earlier',
+ 'label'=>'Formed by the union of',
+ 'title'=>'Alberta English.',
+ 'details'=>'Edmonton, English Language Arts Council of the Alberta Teachers' Association.',
+ 'issn'=>'0382-5191',
+ 'other_ids'=>['cn 76301138', '2297987']},
+{'type'=>'earlier',
+ 'label'=>'Formed by the union of',
+ 'title'=>'Voices (Edmonton, Alta.).',
+ 'details'=>'[Edmonton] : English Language Arts Council of the Alberta Teachers' Association, ©1986-2002',
+ 'issn'=>'0832-8315',
+ 'other_ids'=>['870315102', 'cn 87031510']} 
+]
+----
+
+=== 785 (`type`=later)
+
+Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_linking_entry_fields_76X-78X.adoc for general processing pattern for this field.
+
+==== UNCb9162399
+
+[source]
+----
+=785  00$aUnited States.$bAgricultural Stabilization and Conservation Service. Warren County ASCS Office.$tUnion County ASCS ... annual report$w(OCoLC)1028240203
+----
+
+[source,ruby]
+----
+[
+{'type'=>'',
+ 'label'=>'',
+ 'author'=>'',
+ 'title'=>'',
+ 'title_nonfiling'=>'',
+ 'title_variation'=>'',
+ 'details'=>'',
+ 'isbn'=>[''],
+ 'issn'=>'',
+ 'other_ids'=>['']}
+]
+----
+
+==== UNCb9167128 -- not displayed (display handled by 580)
+
+[source]
+----
+=785  17$tActa pathologica, microbiologica et immunologica Scandinavica. Section B, Microbiology$x0108-0180$w(DLC)sc 82005096$w(OCoLC)8246434
+=785  17$tActa pathologica, microbiologica et immunologica Scandinavica. Section C, Immunology$x0108-0202$w(DLC)sc 82005097$w(OCoLC)8276661
+=785  17$tAPMIS$x0903-4641$w(DLC)sn 88026537$w(OCoLC)17476618
+----
+
+[source,ruby]
+----
+[
+{'type'=>'',
+ 'label'=>'',
+ 'author'=>'',
+ 'title'=>'',
+ 'title_nonfiling'=>'',
+ 'title_variation'=>'',
+ 'details'=>'',
+ 'isbn'=>[''],
+ 'issn'=>'',
+ 'other_ids'=>[''],
+ 'display'=>'false'}
+]
+----
+
+=== 786 (`type`=data_source)
+
+Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_linking_entry_fields_76X-78X.adoc for general processing pattern for this field.
+
+==== UNCb6869637 mock
+
+[source]
+----
+=786  0\$tAustralian plant name index.$d[Canberra, A.C.T.] : Australian National Botanic Gardens : Australian National Herbarium$vData for inclusion in initial database at launch$w(DLC)  2009252503$w(OCoLC)64343431
+----
+
+[source,ruby]
+----
+[
+{'type'=>'',
+ 'label'=>'',
+ 'author'=>'',
+ 'title'=>'',
+ 'title_nonfiling'=>'',
+ 'title_variation'=>'',
+ 'details'=>'',
+ 'isbn'=>[''],
+ 'issn'=>'',
+ 'other_ids'=>['']}
+]
+----
+
+=== 787 (`type`=related)
+
+Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_linking_entry_fields_76X-78X.adoc for general processing pattern for this field.
+
+==== UNCb1808070 - $u present
+
+[source]
+----
+=787  0\$aRush, James E.$tTechnical report on development of non-roman alphabet capability for library processes$uOCLC/DD/TR-80/4$w6081468$gFebruary 29, 1980
+----
+
+[source,ruby]
+----
+[
+{'type'=>'',
+ 'label'=>'',
+ 'author'=>'',
+ 'title'=>'',
+ 'title_nonfiling'=>'',
+ 'title_variation'=>'',
+ 'details'=>'',
+ 'isbn'=>[''],
+ 'issn'=>'',
+ 'other_ids'=>['']}
+]
+----
+
+==== UNCb1448729 -- `display`=false, $y present
+
+[source]
+----
+=787  1\$tJournal of chemical research. Synopses$x0308-2342$yJRPSDC
+----
+
+[source,ruby]
+----
+[
+{'type'=>'related',
+ 'title'=>'Journal of chemical research.||Synopses',
+ 'issn'=>'0308-2342',
+ 'other_ids'=>['JRPSDC'],
+ 'display'=>'false'}
+]
+----
+
+==== UNCb5305354 -- display=false, $r present
+
+[source]
+----
+=787  1\$7p1am$aRosenau, William.$tSubversion and insurgency : RAND counterinsurgency study--paper 2$rRAND/OP-172-OSD
+----
+
+[source,ruby]
+----
+[
+{'type'=>'related',
+ 'author'=>'Rosenau, William.',
+ 'title'=>'Subversion and insurgency : RAND counterinsurgency study--paper 2',
+ 'other_ids'=>['RAND/OP-172-OSD'],
+ 'display'=>'false'}
+]
+----
