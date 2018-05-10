@@ -924,16 +924,11 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 [source,ruby]
 ----
 [
-{'type'=>'',
- 'label'=>'',
- 'author'=>'',
- 'title'=>'',
- 'title_nonfiling'=>'',
- 'title_variation'=>'',
- 'details'=>'',
- 'isbn'=>[''],
- 'issn'=>'',
- 'other_ids'=>['']}
+{'type'=>'later',
+ 'label'=>'Continued by',
+ 'author'=>'United States. Agricultural Stabilization and Conservation Service. Warren County ASCS Office.',
+ 'title'=>'Union County ASCS ... annual report',
+ 'other_ids'=>['1028240203']}
 ]
 ----
 
@@ -949,18 +944,22 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 [source,ruby]
 ----
 [
-{'type'=>'',
- 'label'=>'',
- 'author'=>'',
- 'title'=>'',
- 'title_nonfiling'=>'',
- 'title_variation'=>'',
- 'details'=>'',
- 'isbn'=>[''],
- 'issn'=>'',
- 'other_ids'=>[''],
+{'type'=>'later',
+ 'title'=>'Acta pathologica, microbiologica et immunologica Scandinavica. Section B, Microbiology',
+ 'issn'=>'0108-0180',
+ 'other_ids'=>['sc 82005096', '8246434'],
+ 'display'=>'false'},
+{'type'=>'later',
+ 'title'=>'Acta pathologica, microbiologica et immunologica Scandinavica. Section C, Immunology',
+ 'issn'=>'0108-0202',
+ 'other_ids'=>['sc 82005097', '8276661'],
  'display'=>'false'}
-]
+{'type'=>'later',
+ 'title'=>'APMIS',
+ 'issn'=>'0903-4641',
+ 'other_ids'=>['sn 88026537', '17476618'],
+ 'display'=>'false'}
+ ]
 ----
 
 === 786 (`type`=data_source)
@@ -977,16 +976,10 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 [source,ruby]
 ----
 [
-{'type'=>'',
- 'label'=>'',
- 'author'=>'',
- 'title'=>'',
- 'title_nonfiling'=>'',
- 'title_variation'=>'',
- 'details'=>'',
- 'isbn'=>[''],
- 'issn'=>'',
- 'other_ids'=>['']}
+{'type'=>'data_source',
+ 'title'=>'Australian plant name index.',
+ 'details'=>'[Canberra, A.C.T.] : Australian National Botanic Gardens : Australian National Herbarium Contributed: Data for inclusion in initial database at launch',
+ 'other_ids'=>['2009252503', '64343431']}
 ]
 ----
 
@@ -1004,16 +997,11 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 [source,ruby]
 ----
 [
-{'type'=>'',
- 'label'=>'',
- 'author'=>'',
- 'title'=>'',
- 'title_nonfiling'=>'',
- 'title_variation'=>'',
- 'details'=>'',
- 'isbn'=>[''],
- 'issn'=>'',
- 'other_ids'=>['']}
+{'type'=>'related',
+ 'author'=>'Rush, James E.',
+ 'title'=>'Technical report on development of non-roman alphabet capability for library processes',
+ 'details'=>'Techical report number: OCLC/DD/TR-80/4 February 29, 1980',
+ 'other_ids'=>['6081468']}
 ]
 ----
 
