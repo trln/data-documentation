@@ -51,7 +51,7 @@ Use $i value, following instructions in https://github.com/trln/data-documentati
 
 === 772
 
-==== i2=0
+==== i2=0 and no $i or $4 present
 `label`=> 'Parent item'
 
 === 773
@@ -61,7 +61,7 @@ See "When $i as a label occurs in the same field with a $3, they must be combine
 
 === 775
 
-==== If no $i and $e is present
+==== $e is present, but no $i or $4 is present
 $e contains language code of alternate language edition. Use default language code lookup (in Traject?) to expand code to name of language. Label is: "#{Language name} language edition"
 
 $efre

@@ -9,26 +9,6 @@
 
 toc::[]
 
-== Data sources
-
-* 700, 710, or 711 with ind2!=2 and $t or $k present
-** Label specifying type of relationship from $i if present
-* 730 with ind2!=2 (will not include author elements)
-** Label specifying type of relationship from $i if present
-* 740 with ind2!=2 (will not include author elements)
-* Any of the following fields having a $t or $s (may or may not include author elements), where label specifying type of relationship from $i if present
-** 765
-** 767
-** 770
-** 772
-** 773
-** 775
-** 777
-** 780
-** 785
-** 786
-** 787
-
 == Processing notes
 
 * Segment/subfield delimiter '||' is provided in title portion to facilitate adaptive hyperlinking
@@ -851,6 +831,62 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
  'label'=>'Russian language edition',
  'title'=>'Fighting Corruption in Transition Economies (Russian version)',
  'issn'=>'1990-5076'}
+]
+----
+
+=== 777 (`type`=issued_with)
+
+Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_linking_entry_fields_76X-78X.adoc for general processing pattern for this field.
+
+==== UNCb9143546
+
+[source]
+----
+=777  0\$tCosmetic bench reference$x1069-1448$w(DLC)sn 93007310$w(OCoLC)9883467
+----
+
+[source,ruby]
+----
+[
+{'type'=>'issued_with',
+ 'title'=>'Cosmetic bench reference',
+ 'issn'=>'1069-1448',
+ 'other_ids'=>['sn 93007310', '9883467']}
+]
+----
+
+==== UNCb8954030
+
+[source]
+----
+=777  08$iCompanion to:$aUniversity of North Carolina at Chapel Hill. Graduate School.$tGraduate school handbook.$w(OCoLC)45129829
+----
+
+[source,ruby]
+----
+[
+{'type'=>'issued_with',
+ 'label'=>'Companion to',
+ 'author'=>'University of North Carolina at Chapel Hill. Graduate School.',
+ 'title'=>'Graduate school handbook.',
+ 'other_ids'=>['45129829']}
+]
+----
+
+==== UNCb9147108
+
+[source]
+----
+=777  1\$tBakers digest$w(OCoLC)4974418$gJan.-June 1983
+----
+
+[source,ruby]
+----
+[
+{'type'=>'issued_with',
+ 'title'=>'Bakers digest',
+ 'other_ids'=>['4974418'],
+ 'display'=>'false'}
 ]
 ----
 
