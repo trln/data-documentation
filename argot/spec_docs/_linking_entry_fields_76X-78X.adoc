@@ -5,10 +5,11 @@
 
 These fields are mapped into Argot's https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_work_entry.adoc[work_entry pattern].
 
-Specific Argot fields that employ this patterns include:
+Specific Argot fields that employ this pattern include:
 
 * https://github.com/trln/data-documentation/blob/master/argot/spec_docs/included_work.adoc[included_work]
 * https://github.com/trln/data-documentation/blob/master/argot/spec_docs/included_work.adoc[related work]
+* https://github.com/trln/data-documentation/blob/master/argot/spec_docs/series_work.adoc[series work]
 
 http://www.loc.gov/marc/bibliographic/bd76x78x.html[MARC specification for this field group]
 
