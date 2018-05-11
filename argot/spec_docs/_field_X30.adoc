@@ -1,0 +1,34 @@
+:toc:
+:toc-placement!:
+
+= MARC field X30
+
+toc::[]
+
+== uniform title and title proper recorded ($a and $t present)
+
+$a (uniform title) is treated as `title`.
+
+$t (title proper) is treated as `title_variation`.
+
+== relationship designators
+=== 630 - $e and/or $4
+
+=== 730 - $i and/or $4
+
+=== 130 and 830 - NO relationship designators
+The relationship is specified by the MARC tag:
+
+130 = uniform title of this work
+
+830 = uniform series title of the series of which this work is part
+
+== non-filing characters
+=== General
+Value *omitting* non-filing characters is used as `title`.
+
+Value including non-filing characters, if different, is used as `title_nonfiling`.
+
+=== 130, 630, 730 - i1 specifies non-filing characters
+
+=== 830 - i2 specifies non-filing characters

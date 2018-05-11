@@ -118,7 +118,7 @@ We want to remove the comma that precedes a $e, but keep or provide a period at 
 ]
 ----
 
-==== UNCb8069067 mock -- `label` from $i; `details` from $g
+==== UNCb8069067 mock -- `label` from $i; $g in `title`
 
 [source]
 ----
@@ -131,8 +131,7 @@ We want to remove the comma that precedes a $e, but keep or provide a period at 
 {'type'=>'related',
  'label'=>'Facsimile of',
  'author'=>'Ferrini, Vincent, 1913-2007.',
- 'title'=>'Tidal wave : poems of the great strikes.||1945',
- 'details'=>'(New York : Great-Concord Publishers)'}
+ 'title'=>'Tidal wave : poems of the great strikes.||1945||(New York : Great-Concord Publishers)'}
 ]
 ----
 
@@ -240,7 +239,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 ]
 ----
 
-==== UNCb2383742
+==== UNCb2383742 mock -- $g part of `title`
 
 [source]
 ----
@@ -303,13 +302,14 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 [
 {'type'=>'related',
  'author'=>'Deutsch Foundation Conference (1930 : University of Chicago).',
- 'title'=>'Care of the aged.||2000,||1972.',
- 'details'=>'Reprint.',
+ 'title'=>'Care of the aged.||2000,||1972.||Reprint.',
  'issn'=>'1234-1234'}
 ]
 ----
 
 === 730
+
+See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_field_X30.adoc[general spec on processing X30 fields]
 
 ==== UNCb7339540 mock -- $x
 
@@ -410,7 +410,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 ]
 ----
 
-== Examples (7XX additional -- NOT YET READY)
+== Examples (7XX additional)
 === 700
 ==== UNCb8529982 mock -- $i present; complex uniform title; $g in title
 
@@ -425,8 +425,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 {'type'=>'related',
  'label'=>'Facsimile of',
  'author'=>'Mozart, Wolfgang Amadeus, 1756-1791.',
- 'title'=>'Concertos,||violin, orchestra,||K. 219,||A major.',
- 'details'=>'Library of Congress. Music Division : ML30.8b .M8 K. 219 Case.'}
+ 'title'=>'Concertos,||violin, orchestra,||K. 219,||A major.||Library of Congress. Music Division : ML30.8b .M8 K. 219 Case.'}
 ]
 ----
 
@@ -445,13 +444,11 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 {'type'=>'related',
  'label'=>'Facsimile of',
  'author'=>'Conservatoire royal de musique de Bruxelles. Bibliothèque.',
- 'title'=>'Manuscript.',
- 'details'=>'16.662.'},
+ 'title'=>'Manuscript.||16.662.'},
 {'type'=>'related',
  'label'=>'Facsimile of',
  'author'=>'Conservatoire royal de musique de Bruxelles. Bibliothèque.',
- 'title'=>'Manuscript.',
- 'details'=>'16.663.'}
+ 'title'=>'Manuscript.||16.663.'}
 ]
 ----
 

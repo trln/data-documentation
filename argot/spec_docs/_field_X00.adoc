@@ -24,7 +24,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_rela
 
 $g is mapped to `author` if it precedes the first $t and/or $k.
 
-If $g follows the first $t and/or $k, $g is mapped to `details`
+If $g follows the first $t and/or $k, $g is mapped to `title`
 
 === discard relator terms/codes (subfields e, 4)
 See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_relator_terms_and_codes.adoc[general spec on processing relator terms and codes]
