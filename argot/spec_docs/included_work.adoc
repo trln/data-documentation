@@ -26,14 +26,14 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 
 [source]
 ----
-=700  12$aSaint-Saëns, Camille,$d1835-1921.$4cmp$tQuartets,$mviolins (2), viola, cello,$nno. 2, op. 153,$rG major
+=700  12$aSaint-SaÃ«ns, Camille,$d1835-1921.$4cmp$tQuartets,$mviolins (2), viola, cello,$nno. 2, op. 153,$rG major
 ----
 
 [source]
 ----
 [
   {'type'=>'included',
-   'author'=>'Saint-Saëns, Camille, 1835-1921.',
+   'author'=>'Saint-SaÃ«ns, Camille, 1835-1921.',
    'title'=>'Quartets,||violins (2), viola, cello,||no. 2, op. 153,||G major'}
 ]
 ----
@@ -199,14 +199,14 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 
 [source]
 ----
-=710  22$aCafé Tacuba (Musical group)$4prf$t12/12
+=710  22$aCafÃ© Tacuba (Musical group)$4prf$t12/12
 ----
 
 [source]
 ----
 [
 {'type'=>'included',
- 'author'=>'Café Tacuba (Musical group)',
+ 'author'=>'CafÃ© Tacuba (Musical group)',
  'title'=>'12/12'}
 ]
 ----
@@ -255,14 +255,14 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 
 [source]
 ----
-=730  02$aCahiers de civilisation médiévale.$pBibliographie.$x0240-8678
+=730  02$aCahiers de civilisation mÃ©diÃ©vale.$pBibliographie.$x0240-8678
 ----
 
 [source]
 ----
 [
 {'type'=>'included',
- 'title'=>'Cahiers de civilisation médiévale.||Bibliographie.',
+ 'title'=>'Cahiers de civilisation mÃ©diÃ©vale.||Bibliographie.',
  'issn'=>'0240-8678'}
 ]
 ----

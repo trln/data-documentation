@@ -9,6 +9,7 @@ This pattern is used in the following Argot fields:
 
 * https://github.com/trln/data-documentation/blob/master/argot/spec_docs/included_work.adoc[included_work]
 * https://github.com/trln/data-documentation/blob/master/argot/spec_docs/related_work.adoc[related_work]
+* https://github.com/trln/data-documentation/blob/master/argot/spec_docs/series_work.adoc[series_work]
 
 toc::[]
 
@@ -47,7 +48,7 @@ toc::[]
 
 === Abstract example, displayed field
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'aaaa',
@@ -80,7 +81,7 @@ _I don't really care if the Solr fields end up being named aaaa_author or author
 === Abstract example, field not displayed
 Typically the data in such fields has also been put in a human readable note somewhere else in the record. We don't need to show this info twice, but we can't do anything useful with the info in the note, so we use this more structured data to do some useful indexing.
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'aaaa',
