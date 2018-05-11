@@ -69,7 +69,7 @@ toc::[]
 |related
 |===
 
-== Examples (parallel with `included_work`-- READY TO IMPLEMENT)
+== Examples (parallel with `included_work`)
 The examples in the section below demonstrate how, for these fields, the processing for `related_work` is nearly identical to that for `included_work`.
 
 The differences are:
@@ -719,8 +719,8 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 [
 {'type'=>'host_item',
  'label'=>'Pt 1',
- 'title'=>'Gentleman's magazine (London, England : 1868)',
- 'title_variation'=>'Gentleman's magazine.',
+ 'title'=>'Gentleman\'s magazine (London, England : 1868)',
+ 'title_variation'=>'Gentleman\'s magazine.',
  'details'=>'Vol. 12 (Apr. 1874)',
  'other_ids'=>['7898234']}
 ]
