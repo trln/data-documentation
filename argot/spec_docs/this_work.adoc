@@ -31,17 +31,17 @@ Here is the basic logic:
 
 * 100, 110, or 111 field present
 ** 100, 110, or 111 field contains $t
-this_work = name/title entry using name and title portions of the 1XX field
+*** `this_work` = name/title entry using name and title portions of the 1XX field
 ** 240 field present
-this_work = 1XX + 240 (display = true)
+*** `this_work` = 1XX + 240 (display = true)
 ** 240 field NOT present
-this_work = 1XX + title proper (display = false)
+*** `this_work` = 1XX + title proper (display = false)
 
 * 100, 110, or 111 field NOT present
 ** 130 field present 
-this_work = 130 (display = true)
+*** `this_work` = 130 (display = true)
 ** 130 field NOT present
-this_work = title proper (display = false)
+*** `this_work` = title proper (display = false)
 
 == Examples
 
