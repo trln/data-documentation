@@ -1,0 +1,402 @@
+:toc:
+:toc-placement!:
+
+= `this_work` field
+
+"Authorized access point" (or approximation thereof) for *consistent/controlled form for referring to the work described in the record* -- facilitates collocation/retrieval of all manifestations of a work/expression, regardless of what appears on the title page. 
+
+*Uses the https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_work_entry.adoc[`work_entry` Argot pattern]*
+
+toc::[]
+
+
+== Processing notes
+
+* Segment/subfield delimiter '||' is provided in title portion to facilitate adaptive hyperlinking
+* `type` = uniform
+* `display` = defaults to true (so it doesn't need to be set explicitly)
+
+== Summary of logic
+This value is supposed to be a more-or-less unique string referring to a given work. How this value is constructed is laid out in RDA 6.27, and depends on:
+
+* does the work have one or more creators? (the first named creator  will be recorded in a 100, 110, or 111 field)
+* has a preferred title for the work been established for and recorded in the record? (will appear in 240 or 243 if there is a creator recorded, and 130 if there is not)
+
+[NOTE]
+====
+"Title proper" refers to 245 subfields a, f, g, k, n, p
+====
+
+Here is the basic logic:
+
+* 100, 110, or 111 field present
+** 100, 110, or 111 field contains $t
+this_work = name/title entry using name and title portions of the 1XX field
+** 240 field present
+this_work = 1XX + 240 (display = true)
+** 240 field NOT present
+this_work = 1XX + title proper (display = false)
+
+* 100, 110, or 111 field NOT present
+** 130 field present 
+this_work = 130 (display = true)
+** 130 field NOT present
+this_work = title proper (display = false)
+
+== Examples
+
+=== 100
+
+See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_field_X00.adoc[general spec on processing X00 fields]
+
+==== UNCb6989348
+
+[source]
+----
+=100  1\$aKuzmin, M. A.$q(Mikhail Alekseevich),$d1872-1936.$tWorks.$kSelections.$f1977.
+=245  10$aPlava︠i︡ushchie puteshestvu︠i︡ushchie$h[microform]$broman.
+----
+
+[source,ruby]
+----
+[
+  {'type'=>'this',
+   'author'=>'Kuzmin, M. A. (Mikhail Alekseevich), 1872-1936.',
+   'title'=>'Works.||Selections.||1977.'}
+]
+----
+
+=== 110
+
+See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_field_X10.adoc[general spec on processing X10 fields]
+
+==== UNCb7976077
+
+[source]
+----
+=110  1\$aPennsylvania.$tLaws, etc.$f1825.
+=245  13$aAn act to give effect to the provisions of the Constitution of the United States, relative to fugitives from labor, for the protection of free people of color, and to prevent kidnapping$h[electronic resource].
+----
+
+[source,ruby]
+----
+[
+  {'type'=>'this',
+   'author'=>'Pennsylvania.',
+   'title'=>'Laws, etc.||1825.'}
+]
+----
+
+=== 111
+
+See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_field_X11.adoc[general spec on processing X11 fields]
+
+==== UNCb1932542
+
+[source]
+----
+=111  2\$aInternational Congress of Human Sciences in Asia and North Africa$n(30th :$d1976 :$cMexico City, Mexico).$tExpansión hispanoamericana en Asia.$lEnglish.
+=245  14$aThe civilizational project :$bthe visions of the Orient : XXX International Congress of Human Sciences in Asia and North Africa /$ceditor, A. Abdel-Malek.
+----
+
+[source,ruby]
+----
+[
+  {'type'=>'this',
+   'author'=>'International Congress of Human Sciences in Asia and North Africa (30th : 1976 : Mexico City, Mexico).',
+   'title'=>'Expansión hispanoamericana en Asia.||English.'}
+]
+----
+
+
+=== 100 + 240
+
+See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_field_X00.adoc[general spec on processing X00 fields]
+
+==== UNCb9127033 -- 240 i1=0; 100 includes relator term; segment 240
+
+[source]
+----
+=100  1\$aLandis, Thomas D.,$eauthor.
+=240  00$aContainer tree nursery manual.$lSpanish
+=245  10$aManual de viveros para la producción de especies forestales en contenedor /$cThomas D. Landis [and five others] ; Rebecca G. Nisley, editor.
+----
+
+[source,ruby]
+----
+[
+  {'type'=>'this',
+   'author'=>'Landis, Thomas D.',
+   'title'=>'Container tree nursery manual.||Spanish'}
+]
+----
+
+==== UNCb9187455 -- 240 i1=1
+
+[source]
+----
+=100  1\$aCamus, Albert,$d1913-1960.
+=240  10$aÉtranger.$lEnglish
+=245  14$aThe stranger /$cAlbert Camus ; translated from the French by Matthew Ward ; with an introduction by Peter Dunwoodie.
+----
+
+[source,ruby]
+----
+[
+  {'type'=>'this',
+   'author'=>'Camus, Albert, 1913-1960.',
+   'title'=>'Étranger.||English'}
+]
+----
+
+==== UNCb8049794 -- 240 non-filing indicators
+
+[source]
+----
+=100  1\$aBurton, Robert Wilton,$d1848-1917.
+=240  13$aDe remnant truth
+=245  14$aThe Marengo Jake stories$h[electronic resource] :$bthe tales of Jake Mitchell and Robert Wilton Burton /$cJake Mitchell and Robert Wilton Burton.
+----
+
+[source,ruby]
+----
+[
+  {'type'=>'this',
+   'author'=>'Burton, Robert Wilton, 1848-1917.',
+   'title'=>'Remnant truth',
+   'title_nonfiling'=>'De remnant truth'}
+]
+----
+
+=== 110 + 240
+
+See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_field_X10.adoc[general spec on processing X10 fields]
+
+==== UNCb9136855 -- 110 with relator term
+
+[source]
+----
+=110  1\$aEl Salvador,$eenacting jurisdiction.
+=240  10$aConstitución política (1983).$lEnglish
+=245  10$aConstitution of El Salvador 20 December 1983 /$ctranslated by Maria del Carmen Gress, Luis Francisco Valle Velasco & J.J. Ruchti.
+----
+
+[source,ruby]
+----
+[
+  {'type'=>'this',
+   'author'=>'El Salvador',
+   'title'=>'Constitución política (1983).||English'}
+]
+----
+
+=== 111 + 240
+
+See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_field_X11.adoc[general spec on processing X11 fields]
+
+==== UNCb1007251
+
+[source]
+----
+=111  2\$aConsulta Latinoamericana de Iglesia y Sociedad$n(2nd :$d1966 :$cEl Tabo, Chile)
+=240  10$aAmérica hoy.$lEnglish
+=245  10$aSocial justice and the Latin churches.$cTranslated by Jorge Lara-Braud.
+----
+
+[source,ruby]
+----
+[
+  {'type'=>'this',
+   'author'=>'Consulta Latinoamericana de Iglesia y Sociedad (2nd : 1966 : El Tabo, Chile)',
+   'title'=>'América hoy.||English'}
+]
+----
+
+=== 100 + 245 (title proper)
+
+See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_field_X00.adoc[general spec on processing X00 fields]
+
+==== UNCb7259601
+
+[source]
+----
+=100  1\$aMyers, Johnnie Sue.
+=245  14$aThe gathering place :$btraditional Cherokee dishes, wild game recipes & preparation tips, Southern Appalachian cooking.$nVolume 1 /$cJohnnie Sue Myers.
+----
+
+[source,ruby]
+----
+[
+  {'type'=>'this',
+   'author'=>'Myers, Johnnie Sue.',
+   'title'=>'Gathering place||Volume 1',
+   'title_nonfiling'=>'The gathering place Volume 1'}
+]
+----
+
+==== UNCb7294706
+
+[source]
+----
+=100  1\$aRobertson, William,$d1721-1793.
+=245  14$aThe history of America.$nBooks IX and X$h[electronic resource] :$bcontaining the history of Virginia to the year 1688, and the history of New England to the year 1652 /$cby William Robertson.
+----
+
+[source,ruby]
+----
+[
+  {'type'=>'this',
+   'author'=>'Robertson, William, 1721-1793.',
+   'title'=>'History of America.||Books IX and X',
+   'title_nonfiling'=>'The history of America. Books IX and X'}
+]
+----
+
+==== UNCb3917160
+
+[source]
+----
+=100  1\$aBoman, Patrick,$d1948-
+=245  10$aThé de boeuf, radis de cheval :$bde Paris-Montparnasse à Paris-Est en évitant la ligne 4 du métropolitain : journal de voyage /$cPatrick Boman.
+----
+
+[source,ruby]
+----
+[
+  {'type'=>'this',
+   'author'=>'Boman, Patrick, 1948-',
+   'title'=>'Thé de boeuf, radis de cheval'}
+]
+----
+
+
+=== 110 + 245 (title proper)
+
+See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_field_X10.adoc[general spec on processing X10 fields]
+
+==== UNCb9061357
+
+[source]
+----
+=110  1\$aUnited States.$bCongress.$bSenate.$bCommittee on Commerce.$bSubcommittee on the Environment,$eauthor.
+=245  14$aThe Toxic Substances Control Act of 1971 and amendment.$nPart 3,$pAppendix :$bhearings before the Subcommittee on the Environment of the Committee on Commerce, United States Senate, Ninety-second Congress, first session on S. 1478, to amend the Federal Hazardous Substances Act, as amended, and for other purposes.
+----
+
+[source,ruby]
+----
+[
+  {'type'=>'this',
+   'author'=>'United States. Congress. Senate. Committee on Commerce. Subcommittee on the Environment.',
+   'title'=>'Toxic Substances Control Act of 1971 and amendment.||Part 3,||Appendix',
+   'title_nonfiling'=>'The Toxic Substances Control Act of 1971 and amendment. Part 3, Appendix'}
+]
+----
+
+=== 111 + 245 (title proper)
+
+See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_field_X11.adoc[general spec on processing X11 fields]
+
+==== UNCb4840941
+
+[source]
+----
+=111  2\$aInternational Congress of Prehistoric and Protohistoric Sciences$n(14th :$d2001 :$cUniversité de Liège)
+=245  13$aLe problème de l'étain à l'origine de la métallurgie.$nSection 11 :$bAge du Bronze en Europe et en Méditerranée, colloque 11.2 /$cédité par Alessandra Giumlia-Mair, Fulvia Lo Schiavo = The problem of early tin. Section 11 : Bronze Age in Europe and the Mediterranean, symposium 11.2 / edited by Alessandra Giumlia-Mair, Fulvia Lo Schiavo.
+----
+
+[source,ruby]
+----
+[
+  {'type'=>'this',
+   'author'=>'International Congress of Prehistoric and Protohistoric Sciences (14th : 2001 : Université de Liège)',
+   'title'=>'Problème de l\'étain à l\'origine de la métallurgie.||Section 11',
+   'title_nonfiling'=>'Le problème de l\'étain à l\'origine de la métallurgie. Section 11'}
+]
+----
+
+=== 130
+
+See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_field_X30.adoc[general spec on processing X30 fields]
+
+==== UNCb1801716 -- no non-filing characters
+
+[source]
+----
+=130  0\$aBible.$pNew Testament.$lLatin.$sVulgate.$f1541.
+=245  10$aEvangelivm :$bsecundum Matthaeum, secundum Marcum, secundum Lucam, secundum Iohannem. Acta Apostolorvm. Breues variarum tralationũ annotationes, adiecta veterum Latinorũ exemplarium manu scriptorum diuersa lectione.
+----
+
+[source,ruby]
+----
+[
+  {'type'=>'this',
+   'title'=>'Bible.||New Testament.||Latin.||Vulgate.||1541.'}
+]
+----
+
+==== UNCb7687194 - non-filing characters (or, stupid marc tricks)
+
+[source]
+----
+=130  1\$aKressreport (Hamburg : Online)
+=245  10$aKress - report$h[electronic resource].
+----
+
+[source,ruby]
+----
+[
+  {'type'=>'this',
+   'title'=>'ressreport (Hamburg : Online)',
+   'title_nonfiling'=>'Kressreport (Hamburg : Online)'}
+]
+----
+
+==== UNCb4707949 -- $a and $t present
+
+[source]
+----
+=130  0\$aDemographic and Health Surveys preliminary report : Dominican Republic.$tDemographic and Health Surveys preliminary report : Republica Dominicana.
+=245  00$aRepublica Dominicana Encuesta Demografica y de Salud 1986 : informe preliminar.
+----
+
+[source,ruby]
+----
+[
+  {'type'=>'this',
+   'title'=>'Demographic and Health Surveys preliminary report : Dominican Republic.',
+   'title_variation'=>'Demographic and Health Surveys preliminary report : Republica Dominicana.'}
+]
+----
+
+=== 245
+
+==== UNCb7819372 -- no non-filing characters
+
+[source]
+----
+=245  00$aA&E Classroom.$pThe Class of the 20th Century - 1963-1968$h[electronic resource] /$cA&E Television Networks, LLC.
+----
+
+[source,ruby]
+----
+[
+  {'type'=>'this',
+   'title'=>'A&E Classroom.||The Class of the 20th Century - 1963-1968'}
+]
+----
+
+==== UNCb1279828 -- non-filing characters
+
+[source]
+----
+=245  04$aThe Young singer.$pSoprano /$ccompiled and edited by Richard D. Row$h[printed music].
+----
+
+[source,ruby]
+----
+[
+  {'type'=>'this',
+   'title'=>'Young singer.||Soprano',
+   'title_nonfiling'=>'The Young singer. Soprano'}
+]
+----

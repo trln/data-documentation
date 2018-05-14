@@ -8,9 +8,3 @@ b3370111
 490 1 _ $3<1978-1980>:$aList / Office of Governmental and Public Affairs ;$vno. 11$l(Z5075.U5U548)
 490 1 _ $3<1991>:$aList / Office of Public Affairs ;$vno. 11$l(Z5075.U5U548)
 490 1 _ $3<1993->:$aList / Office of Communications ;$vno. 11
-830 _ 0 $aMiscellaneous publication (United States. Department of Agriculture) ;$vno. 60.
-830 _ 0 $aList (United States. Department of Agriculture. Office of Information) ;$vno. 11.
-830 _ 0 $aList (United States. Department of Agriculture. Office of Communication) ;$vno. 11.
-830 _ 0 $aList (United States. Department of Agriculture. Office of Governmental and Public Affairs) ;$vno. 11.
-830 _ 0 $aList (United States. Department of Agriculture. Office of Public Affairs (1989- )) ;$vno. 11.
-830 _ 0 $aList (United States. Department of Agriculture. Office of Communications) ;$vno. 11.
