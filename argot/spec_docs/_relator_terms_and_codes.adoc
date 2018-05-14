@@ -21,3 +21,12 @@ Name/title fields are always supposed to be constructed with the main creator in
 Because the name/title field should follow rules that create structured data, catalogers are not supposed to record relator terms/codes in name/title fields.
 
 If a relator term/code is erroneously included in a name/title field, drop it from the data mapped to Argot.
+
+=== remove comma preceding a dropped relator term
+
+[source]
+----
+=700  1\$aLandis, Thomas D.,$eauthor.$tContainer tree nursery manual.
+----
+
+`author` element should be: `Landis, Thomas D.`
