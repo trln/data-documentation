@@ -10,6 +10,7 @@ This pattern is used in the following Argot fields:
 * https://github.com/trln/data-documentation/blob/master/argot/spec_docs/included_work.adoc[included_work]
 * https://github.com/trln/data-documentation/blob/master/argot/spec_docs/related_work.adoc[related_work]
 * https://github.com/trln/data-documentation/blob/master/argot/spec_docs/series_work.adoc[series_work]
+* https://github.com/trln/data-documentation/blob/master/argot/spec_docs/this_work.adoc[this_work]
 
 toc::[]
 
