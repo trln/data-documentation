@@ -25,6 +25,10 @@ Hyperlinked in display to perform author query.
 
 If the name is of a `type` mapped to the author facet, only the `name` portion is included in the facet value.
 
+==== Processing notes
+
+* Strip ending punctuation (.,) and spaces
+
 === `rel`
 The relator term(s) included in the name entry. Specifies the relationship of the agent represented by the name to the item described.
 
@@ -32,6 +36,14 @@ The relator term(s) included in the name entry. Specifies the relationship of th
 * not required - may be empty
 
 Displayed but not part of hyperlink or resulting query, since names in legacy data are likely to lack relator terms and the search should not be over-specific.
+
+==== Processing notes
+The following steps should be done in order:
+
+* Strip punctuation and spaces from beginning and end of field. Expected punctuation includes period and comma. 
+* Replace relator *codes* with relator *terms* using marc-to-argot/lib/translation_maps/shared/relator_code_to_term.yaml
+* Strip WEMI terms (may be parenthetical) from relator *terms* if present: work, expression, manifestation, item
+* Deduplicate the resulting array (sometimes both the term and the code for the same role is recorded)
 
 === `type`
 Type, or category, of name.
@@ -56,11 +68,22 @@ Names in 7XX fields could be anything and are more likely to be contributors tha
 ====
 
 * Highest relevance rank in author search, included in author facet
-** `creator`
-** `editor`
 ** `director`
+** `creator`
+
+[NOTE]
+====
+`director` is higher than `creator` to account for the fact that we want directors to specifically be mapped to a directors field.
+
+The director is often also a screenwriter, and screenwriter maps to the `creator` category.
+
+If we ranked `creator` above `director` here, such a director would be assigned `type`='creator' instead of type='director'
+
+Aside: I went back and forth about whether, in such cases, there should be both a `creator` AND a `director` indexed field added, but I think that approach is likely to skew relevance in a weird way.
+====
 
 * Slightly lower relevance rank in author search, included in author facet
+** `editor`
 ** `contributor`
 ** `no_rel` 
 
@@ -74,13 +97,27 @@ Names in 7XX fields could be anything and are more likely to be contributors tha
 ** `manufacturer`
 ** `publisher`
 
+==== Processing notes
+
+* If there are no `rel` values
+** If MARC data source is 100, 110, 111
+*** `type`='creator'
+** Otherwise:
+*** `type` = 'no_rel'
+
+* Otherwise:
+** Look up the relator category for each relator term in marc-to-argot/lib/translation_maps/shared/relator_categories.yaml
+*** If relator term is not mapped to a relator category in that file, assign `type`='uncategorized' and ideally emit a warning to a log somewhere that data folks can use to review (cause may be terms from another vocabulary need to be added to mappings, or typo in underlying data needs to be fixed)
+** If the name falls into more than one category, assign the highest category in the `type` hierarchy as the `type` value
+*** For example, the first name in the abstract example below has two relators terms: author (creator category) and illustrator (contributor category). Creator > contributor, so `type` = 'creator'.
+
 == Abstract example of pattern
 === Argot
 
 [source,ruby]
 ----
 [{'name'=>'aaaa',
-  'rel'=>['bbb', 'ccc'],
+  'rel'=>['author', 'illustrator'],
   'type'=>'creator'},
   {'name'=>'dddd'},
   {'name'=>'eeee',
@@ -105,7 +142,7 @@ Names in 7XX fields could be anything and are more likely to be contributors tha
 
 *Authors, etc.*
 
-* http://query.info/author_search[aaaa], bbb, ccc
+* http://query.info/author_search[aaaa], author, illustrator
 * http://query.info/author_search[dddd]
 * http://query.info/author_search[eeee], fff
 * http://query.info/author_search[gggg], hhh
@@ -121,7 +158,7 @@ Names in 7XX fields could be anything and are more likely to be contributors tha
   "aaaa", "dddd", "iiii", "kkkk", "mmmm"
   ],
  "names_tf_stored": [
-   "aaaa||, bbb, ccc",
+   "aaaa||, author, illustrator",
    "dddd",
    "eeee||, fff",
    "gggg||, hhh",
@@ -130,7 +167,7 @@ Names in 7XX fields could be anything and are more likely to be contributors tha
    "mmmm||, editor of complilation"
  ],
  "name_creator_t": [
-   "aaaa, bbb, ccc"
+   "aaaa, author, illustrator"
  ],
  "name_no_rel_t": [
    "dddd"
@@ -162,151 +199,104 @@ We want to test if inclusion of `rel` value in author index negatively affects r
 If this is seen as a problem, we may need to split the values included in author and keywork indexes into separate fields.
 ----
 
-
-== UNCb8893558 - many authors (film)
-=== MARC
-
-[source]
-----
-100 1 _ $aAntonin, Arnold,$efilmmaker.
-245 1 3 $aLe Droit à la Parole /$cUnité audiovisuelle Centre Pétion Bolivar présente ; un film de Arnold Antonin.
-264 _ 1 $a[Haiti] :$bCentre Pétion Bolivar,$c[between 2000 and 2010?]
-700 1 _ $aPierre, Paul, Liliane.
-700 1 _ $aPhilo, Compère.
-700 1 _ $aIsaac, Harold.
-700 1 _ $aPierre-Paul, Jackson.
-700 1 _ $aNicolas, Vivianne.
-700 1 _ $aAlphonse, Henri.
-700 1 _ $aDavius, Raymond.
-700 1 _ $aManmannan, Zombi,$ecomposer (expression)
-700 1 _ $aJean-Claude, Martha,$d1919-$eperformer (expression)
-700 1 _ $aLeon, Eddy,$ecinematographer.
-700 1 _ $aCassuto, Jack,$esound designer.
-700 1 _ $aGarbizu, Oscar,$eeditor of moving image work,$ecinematographer.
-700 1 _ $aHenríquez, Leonardo,$eeditor of moving image work.
-700 1 _ $aBrito, Beatriz,$efilm producer.
-710 2 _ $aCentre Pétion-Bolivar,$epresenter.
-----
-
-=== Display
-
-Le Droit à la Parole / Unité audiovisuelle Centre Pétion Bolivar présente ; un film de Arnold Antonin. +
-Antonin, Arnold, filmmaker. +
-[Haiti] : Centre Pétion Bolivar, [between 2000 and 2010?] +
-
-Films/videos ; DVD
-
-*Where to find it* +
-...
-
-*Authors, etc.* +
-http://www.search.info/author_index_search_on_linked_value[Antonin, Arnold], filmmaker +
-http://www.search.info/author_index_search_on_linked_value[Pwierre, Paul, Liliane] +
-http://www.search.info/author_index_search_on_linked_value[Philo, Compère] +
-http://www.search.info/author_index_search_on_linked_value[Isaac, Harold] +
-http://www.search.info/author_index_search_on_linked_value[Pierre-Paul, Jackson] +
-http://www.search.info/author_index_search_on_linked_value[Nicolas, Vivianne] +
-http://www.search.info/author_index_search_on_linked_value[Alphonse, Henri] +
-http://www.search.info/author_index_search_on_linked_value[Davius, Raymond] +
-http://www.search.info/author_index_search_on_linked_value[Manmannan, Zombi], composer +
-http://www.search.info/author_index_search_on_linked_value[Jean-Claude, Martha, 1919-] performer +
-http://www.search.info/author_index_search_on_linked_value[Leon, Eddy], cinematographer +
-http://www.search.info/author_index_search_on_linked_value[Cassuto, Jack], sound designer +
-http://www.search.info/author_index_search_on_linked_value[Garbizu, Oscar], editor of moving image work, cinematographer +
-http://www.search.info/author_index_search_on_linked_value[Henríquez, Leonardo], editor of moving image work +
-http://www.search.info/author_index_search_on_linked_value[Brito, Beatriz], film producer +
-http://www.search.info/author_index_search_on_linked_value[Centre Pétion-Bolivar], presenter
-
-=== Indexed
-
-* *author_facet*
-** Antonin, Arnold
-** Manmannan, Zombi
-** Pierre, Paul, Liliane
-** Philo, Compère
-** Isaac, Harold
-** Pierre-Paul, Jackson
-** Nicolas, Vivianne
-** Alphonse, Henri
-** Davius, Raymond
-* *author_creator*
-** Antonin, Arnold
-** Manmannan, Zombi
-* *author_undiff*
-** Pierre, Paul, Liliane
-** Philo, Compère
-** Isaac, Harold
-** Pierre-Paul, Jackson
-** Nicolas, Vivianne
-** Alphonse, Henri
-** Davius, Raymond
-* *author_contrib*
-** Jean-Claude, Martha, 1919-
-** Leon, Eddy
-** Garbizu, Oscar
-** Henríquez, Leonardo
-** Brito, Beatriz
-** Centre Pétion-Bolivar
-* *author_uncat*
-** Cassuto, Jack
-* *keyword*
-** Antonin, Arnold, filmmaker
-** Pierre, Paul, Liliane
-** Philo, Compère
-** Isaac, Harold
-** Pierre-Paul, Jackson
-** Nicolas, Vivianne
-** Alphonse, Henri
-** Davius, Raymond
-** Manmannan, Zombi, composer
-** Jean-Claude, Martha, 1919- performer
-** Leon, Eddy, cinematographer
-** Cassuto, Jack, sound designer
-** Garbizu, Oscar, editor of moving image work, cinematographer
-** Henríquez, Leonardo, editor of moving image work
-** Brito, Beatriz, film producer
-** Centre Pétion-Bolivar, presenter
-
-== UNCb - editor
-=== MARC
+== MARC examples
+=== UNCb8893558
 
 [source]
 ----
-100 1 _ $aRaleigh, Walter,$cSir,$d1552?-1618.
-240 1 0 $aPoems
-245 1 4 $aThe poems of Sir Walter Raleigh,$cedited with an introd. by Agnes M. C. Latham.
-260 _ _ $aLondon,$bRoutledge and Paul$c[1951]
-300 _ _ $alxiii, 182 p.$bports.$c18 cm.
-490 1 _ $aThe Muses' library
-504 _ _ $a"Previous publications": p. 175-177.
-700 1 _ $aLatham, Agnes M. C.$q(Agnes Mary Christabel)$4edt$4aui
+=100  \\$aKey, Keegan-Michael
+=245  10$aDon't think twice /$cproduced by Miranda Bailey, Jason Beck, Mike Birbiglia, Ira Glass, Amanda Marshall ; written and directed by Mike Birbiglia.
+=700  1\$aBirbiglia, Mike,$edirector,$escreenwriter,$eproducer,$eactor.
+=700  1\$aJacobs, Gillian,$d1982-$eactor. 
+=700  1\$aMicucci, Kate,$eactor.
+=700  1\$aSagher, Tami,$eactor.
 ----
 
-=== Display
+[source,ruby]
+----
+[{'name'=>'Key, Keegan-Michael',
+  'type'=>'creator'},
+  {'name'=>'Birbiglia, Mike',
+   'rel'=>['director', 'screenwriter', 'producer', 'actor'],
+   'type'=>'director'},
+   {'name'=>'Jacobs, Gillian, 1982-',
+   'rel'=>['actor'],
+   'type'=>'contributor'},
+   {'name'=>'Micucci, Kate',
+   'rel'=>['actor'],
+   'type'=>'contributor'},
+   {'name'=>'Sagher, Tami',
+   'rel'=>['actor'],
+   'type'=>'contributor'}
+  ]
+----
 
-The poems of Sir Walter Raleigh, edited with an introd. by Agnes M. C. Latham. +
-Raleigh, Walter, Sir, 1552?-1618. +
-London, Routledge and Paul [1951]
 
-Book ; Print
+=== UNCb9030005
 
-*Where to find it* +
-...
+[source]
+----
+=100  0\$aJerome,$cSaint,$d-419 or 420,$eauthor.$4aut
+=245  10$aPrÃ©faces aux livres de la Bible /$cJÃ©rÃ´me ; textes latins des Ã©ditions de R. Weber et R. Gryson et de l'Abbaye Saint-JÃ©rÃ´me (Rome), revus et corrigÃ©s ; introduction, traduction et notes rÃ©alisÃ©es en sÃ©minaire sous la direction d'Aline Canellis.
+=700  1\$aCanellis, Aline,$eeditor,$etranslator.$4edt$4trl
+=700  02$iContainer of (expression):$aJerome,$cSaint,$d-419 or 420.$tPrefaces.$lFrench$s(Canellis)
+=700  02$iContainer of (expression):$aJerome,$cSaint,$d-419 or 420.$tPrefaces.$lLatin$s(Canellis)
+----
 
-*Authors, etc.* +
-http://www.search.info/authors_index[Raleigh, Walter, Sir, 1552?-1618] +
-http://www.search.info/authors_index[Latham, Agnes M. C. (Agnes Mary Christabel)], editor, author of introduction
+[source,ruby]
+----
+[{'name'=>'Jerome, Saint, -419 or 420',
+  'rel'=>['author'],
+  'type'=>'creator'},
+  {'name'=>'Canellis, Aline',
+   'rel'=>['editor', 'translator'],
+   'type'=>'editor'}
+  ]
+----
 
+[NOTE]
+====
 
-=== Indexed
+* Importance of cleaning up punctuation around relators and deduplicating
+* Canellis is `type`='editor' because 'editor' > 'contributor'
+* 7XX with $t or $k are ignored -- they are handled as `related_work` or `included_work` fields
 
-* *author_facet*
-** Raleigh, Walter, Sir, 1552?-1618
-** Latham, Agnes M. C. (Agnes Mary Christabel)
-* *author_creator*
-** Raleigh, Walter, Sir, 1552?-1618
-* *editor*
-** Latham, Agnes M. C. (Agnes Mary Christabel)
-* *keyword*
-** Raleigh, Walter, Sir, 1552?-1618
-** Latham, Agnes M. C. (Agnes Mary Christabel), editor, author of introduction
+====
+
+=== UNCb6030502
+
+[source]
+----
+=100  1\$aRobeson, Paul,$d1898-1976.$4prf
+=245  10$aPaul Robeson live at Carnegie Hall$h[sound recording].
+=700  1\$aBooth, Alan,$d1924-1996.$4prf
+=700  12$aAleksandrov, AnatoliÄ­ Nikolaevich,$d1888-1982.$tAkh ty nochka, nochen'ka.
+=700  12$aClutsam, George H.,$d1866-1951.$tMa curly-headed babby.
+=700  12$aFisher, William Arms,$d1861-1948.$tGoin' home.
+=700  12$aKern, Jerome,$d1885-1945.$tShow boat.$pOl' man river;$oarranged.
+=700  12$aMussorgsky, Modest Petrovich,$d1839-1881.$tBoris Godunov (Rimsky-Korsakov).$pMonolog Borisa;$oarranged.
+=700  12$aMussorgsky, Modest Petrovich,$d1839-1881.$tSirotka.
+=700  12$aBach, Johann Sebastian,$d1685-1750.$tChrist lag in Todesbanden (Chorale);$oarranged.
+=700  12$aSchubert, Franz,$d1797-1828.$tWiegenlied.
+=700  12$aRobinson, Earl,$d1910-1991.$tJoe Hill.
+=700  12$aBeethoven, Ludwig van,$d1770-1827.$tSymphonies,$nno. 9, op. 125,$rD minor.$pFreude, schÃ¶ner GÃ¶tterfunken;$oarranged.
+----
+
+[source,ruby]
+----
+[{'name'=>'Robeson, Paul, 1898-1976',
+  'rel'=>['performer'],
+  'type'=>'contributor'},
+  {'name'=>'Booth, Alan, 1924-1996',
+   'rel'=>['performer'],
+   'type'=>'contributor'}
+  ]
+----
+
+[NOTE]
+====
+
+* Robeson is `type`='contributor' despite being recorded in the 100 because 'performer' maps to that category
+* 7XX with $t or $k are ignored -- these will be handled as `included_work`
+
+====
