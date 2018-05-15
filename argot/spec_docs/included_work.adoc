@@ -80,14 +80,14 @@ We want to remove the comma that precedes a $e, but keep or provide a period at 
 
 *This item includes:*
 
-* Facsimile of: http://query.info/on_author[Ferrini, Vincent, 1913-2007.] http://query.info/on_title[Tidal wave : poems of the great strikes.] http://query.info/on_title_to_left_plus[1945] (New York : Great-Concord Publishers)
+* Facsimile of: http://query.info/on_author[Ferrini, Vincent, 1913-2007.] http://query.info/on_title[Tidal wave : poems of the great strikes.] http://query.info/on_title_to_left_plus[1945] http://query.info/on_title_to_left_plus[(New York : Great-Concord Publishers)]
 
 
 *Indexed as*
 
 `included_author`: Ferrini, Vincent, 1913-2007.
 
-`included_title`: Tidal wave : poems of the great strikes. 1945
+`included_title`: Tidal wave : poems of the great strikes. 1945 (New York : Great-Concord Publishers)
 
 `included_work`: Ferrini, Vincent, 1913-2007. Tidal wave : poems of the great strikes. 1945
 
