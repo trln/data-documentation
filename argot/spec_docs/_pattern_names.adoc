@@ -1,0 +1,312 @@
+:toc:
+:toc-placement!:
+
+= Names pattern
+
+The pattern used to create fields for names recorded in the catalog record.
+
+Names recorded in a catalog record include personal, corporate body, and conference/meeting names.
+
+This is called the `names` pattern instead of the author pattern because the names recorded in a catalog record may represent authors, other work creators (such as composers or artists), contributors (such as arrangers or conductors), manufacturers, publishers, and entities playing other uncategorized roles (owner or former owner of the item described; person who donated or inscribed the item described; etc.).
+
+This pattern is used in the following Argot fields:
+* https://github.com/trln/data-documentation/blob/master/argot/spec_docs/names.adoc[names]
+
+toc::[]
+
+== The pattern: Argot elements
+=== `name`
+This is the full name (with any qualifiers) from the source MARC field
+
+* string
+* *required*
+
+Hyperlinked in display to perform author query.
+
+If the name is of a `type` mapped to the author facet, only the `name` portion is included in the facet value.
+
+=== `rel`
+The relator term(s) included in the name entry. Specifies the relationship of the agent represented by the name to the item described.
+
+* array/repeatable
+* not required - may be empty
+
+Displayed but not part of hyperlink or resulting query, since names in legacy data are likely to lack relator terms and the search should not be over-specific.
+
+=== `type`
+Type, or category, of name.
+
+* string
+* required (if not explicitly provided, default to 'no_rel' (i.e. no_relator data)
+
+Serves two major purposes:
+
+* control creation of different indexed fields that can be relevance ranked differently (i.e. creators highest, contributors higher than 'other', etc.) in author search
+* control which names get included in author facet
+
+==== `type` values
+
+[NOTE]
+====
+Legacy MARC data often lacks the relator data required to assign `type` accurately.
+
+We will know for sure that any name in 100, 110, or 111 is a creator.
+
+Names in 7XX fields could be anything and are more likely to be contributors than creators, so names with `type`='no_rel' are treated like names with `type`='contributor'
+====
+
+* Highest relevance rank in author search, included in author facet
+** `creator`
+** `editor`
+** `director`
+
+* Slightly lower relevance rank in author search, included in author facet
+** `contributor`
+** `no_rel` 
+
+* Even lower relevance rank in author search, not included in author facet
+** `other`
+** `owner`
+** `uncategorized`
+
+* Lowest relevance rank in author search. Also include in publisher search. Do not include in author facet
+** `distributor`
+** `manufacturer`
+** `publisher`
+
+== Abstract example of pattern
+=== Argot
+
+[source,ruby]
+----
+[{'name'=>'aaaa',
+  'rel'=>['bbb', 'ccc'],
+  'type'=>'creator'},
+  {'name'=>'dddd'},
+  {'name'=>'eeee',
+   'rel'=>['fff'],
+   'type'=>'owner'},
+   {'name'=>'gggg',
+   'rel'=>['hhh'],
+   'type'=>'manufacturer'},
+   {'name'=>'iiii',
+   'rel'=>['jjj'],
+   'type'=>'contributor'},
+   {'name'=>'kkkk',
+   'rel'=>['film director'],
+   'type'=>'director'},
+   {'name'=>'mmmm',
+   'rel'=>['editor of compilation'],
+   'type'=>'editor'}
+  ]
+----
+
+=== Display/behavior
+
+*Authors, etc.*
+
+* http://query.info/author_search[aaaa], bbb, ccc
+* http://query.info/author_search[dddd]
+* http://query.info/author_search[eeee], fff
+* http://query.info/author_search[gggg], hhh
+* http://query.info/author_search[iiii], jjj
+* http://query.info/author_search[kkkk], director
+* http://query.info/author_search[iiii], editor of compilation
+
+=== Indexing
+
+[source,javascript]
+----
+{"author_facet_tf_stored": [
+  "aaaa", "dddd", "iiii", "kkkk", "mmmm"
+  ],
+ "names_tf_stored": [
+   "aaaa||, bbb, ccc",
+   "dddd",
+   "eeee||, fff",
+   "gggg||, hhh",
+   "iiii||, jjj",
+   "kkkk||, director",
+   "mmmm||, editor of complilation"
+ ],
+ "name_creator_t": [
+   "aaaa, bbb, ccc"
+ ],
+ "name_no_rel_t": [
+   "dddd"
+ ],
+ "name_owner_t": [
+   "eeee, fff"
+ ],
+ "name_manufacturer_t": [
+   "gggg, hhh"
+ ],
+ "name_contributor_t": [
+   "iiii, jjj"
+ ],
+ "name_director_t": [
+   "kkkk, film director"
+ ],
+ "name_editor_t": [
+   "mmmm, editor of compilation"
+ ]  
+}
+----
+
+[NOTE]
+----
+Current plan is to send `name` + `rel` to fields that will be included in both author and keyword indexes.
+
+We want to test if inclusion of `rel` value in author index negatively affects relevance of names with a `rel` value when the query does not include the `rel` value. (Important since hyperlinks in the UI will NOT include `rel` values in their queries, will conduct author queries)
+
+If this is seen as a problem, we may need to split the values included in author and keywork indexes into separate fields.
+----
+
+
+== UNCb8893558 - many authors (film)
+=== MARC
+
+[source]
+----
+100 1 _ $aAntonin, Arnold,$efilmmaker.
+245 1 3 $aLe Droit à la Parole /$cUnité audiovisuelle Centre Pétion Bolivar présente ; un film de Arnold Antonin.
+264 _ 1 $a[Haiti] :$bCentre Pétion Bolivar,$c[between 2000 and 2010?]
+700 1 _ $aPierre, Paul, Liliane.
+700 1 _ $aPhilo, Compère.
+700 1 _ $aIsaac, Harold.
+700 1 _ $aPierre-Paul, Jackson.
+700 1 _ $aNicolas, Vivianne.
+700 1 _ $aAlphonse, Henri.
+700 1 _ $aDavius, Raymond.
+700 1 _ $aManmannan, Zombi,$ecomposer (expression)
+700 1 _ $aJean-Claude, Martha,$d1919-$eperformer (expression)
+700 1 _ $aLeon, Eddy,$ecinematographer.
+700 1 _ $aCassuto, Jack,$esound designer.
+700 1 _ $aGarbizu, Oscar,$eeditor of moving image work,$ecinematographer.
+700 1 _ $aHenríquez, Leonardo,$eeditor of moving image work.
+700 1 _ $aBrito, Beatriz,$efilm producer.
+710 2 _ $aCentre Pétion-Bolivar,$epresenter.
+----
+
+=== Display
+
+Le Droit à la Parole / Unité audiovisuelle Centre Pétion Bolivar présente ; un film de Arnold Antonin. +
+Antonin, Arnold, filmmaker. +
+[Haiti] : Centre Pétion Bolivar, [between 2000 and 2010?] +
+
+Films/videos ; DVD
+
+*Where to find it* +
+...
+
+*Authors, etc.* +
+http://www.search.info/author_index_search_on_linked_value[Antonin, Arnold], filmmaker +
+http://www.search.info/author_index_search_on_linked_value[Pwierre, Paul, Liliane] +
+http://www.search.info/author_index_search_on_linked_value[Philo, Compère] +
+http://www.search.info/author_index_search_on_linked_value[Isaac, Harold] +
+http://www.search.info/author_index_search_on_linked_value[Pierre-Paul, Jackson] +
+http://www.search.info/author_index_search_on_linked_value[Nicolas, Vivianne] +
+http://www.search.info/author_index_search_on_linked_value[Alphonse, Henri] +
+http://www.search.info/author_index_search_on_linked_value[Davius, Raymond] +
+http://www.search.info/author_index_search_on_linked_value[Manmannan, Zombi], composer +
+http://www.search.info/author_index_search_on_linked_value[Jean-Claude, Martha, 1919-] performer +
+http://www.search.info/author_index_search_on_linked_value[Leon, Eddy], cinematographer +
+http://www.search.info/author_index_search_on_linked_value[Cassuto, Jack], sound designer +
+http://www.search.info/author_index_search_on_linked_value[Garbizu, Oscar], editor of moving image work, cinematographer +
+http://www.search.info/author_index_search_on_linked_value[Henríquez, Leonardo], editor of moving image work +
+http://www.search.info/author_index_search_on_linked_value[Brito, Beatriz], film producer +
+http://www.search.info/author_index_search_on_linked_value[Centre Pétion-Bolivar], presenter
+
+=== Indexed
+
+* *author_facet*
+** Antonin, Arnold
+** Manmannan, Zombi
+** Pierre, Paul, Liliane
+** Philo, Compère
+** Isaac, Harold
+** Pierre-Paul, Jackson
+** Nicolas, Vivianne
+** Alphonse, Henri
+** Davius, Raymond
+* *author_creator*
+** Antonin, Arnold
+** Manmannan, Zombi
+* *author_undiff*
+** Pierre, Paul, Liliane
+** Philo, Compère
+** Isaac, Harold
+** Pierre-Paul, Jackson
+** Nicolas, Vivianne
+** Alphonse, Henri
+** Davius, Raymond
+* *author_contrib*
+** Jean-Claude, Martha, 1919-
+** Leon, Eddy
+** Garbizu, Oscar
+** Henríquez, Leonardo
+** Brito, Beatriz
+** Centre Pétion-Bolivar
+* *author_uncat*
+** Cassuto, Jack
+* *keyword*
+** Antonin, Arnold, filmmaker
+** Pierre, Paul, Liliane
+** Philo, Compère
+** Isaac, Harold
+** Pierre-Paul, Jackson
+** Nicolas, Vivianne
+** Alphonse, Henri
+** Davius, Raymond
+** Manmannan, Zombi, composer
+** Jean-Claude, Martha, 1919- performer
+** Leon, Eddy, cinematographer
+** Cassuto, Jack, sound designer
+** Garbizu, Oscar, editor of moving image work, cinematographer
+** Henríquez, Leonardo, editor of moving image work
+** Brito, Beatriz, film producer
+** Centre Pétion-Bolivar, presenter
+
+== UNCb - editor
+=== MARC
+
+[source]
+----
+100 1 _ $aRaleigh, Walter,$cSir,$d1552?-1618.
+240 1 0 $aPoems
+245 1 4 $aThe poems of Sir Walter Raleigh,$cedited with an introd. by Agnes M. C. Latham.
+260 _ _ $aLondon,$bRoutledge and Paul$c[1951]
+300 _ _ $alxiii, 182 p.$bports.$c18 cm.
+490 1 _ $aThe Muses' library
+504 _ _ $a"Previous publications": p. 175-177.
+700 1 _ $aLatham, Agnes M. C.$q(Agnes Mary Christabel)$4edt$4aui
+----
+
+=== Display
+
+The poems of Sir Walter Raleigh, edited with an introd. by Agnes M. C. Latham. +
+Raleigh, Walter, Sir, 1552?-1618. +
+London, Routledge and Paul [1951]
+
+Book ; Print
+
+*Where to find it* +
+...
+
+*Authors, etc.* +
+http://www.search.info/authors_index[Raleigh, Walter, Sir, 1552?-1618] +
+http://www.search.info/authors_index[Latham, Agnes M. C. (Agnes Mary Christabel)], editor, author of introduction
+
+
+=== Indexed
+
+* *author_facet*
+** Raleigh, Walter, Sir, 1552?-1618
+** Latham, Agnes M. C. (Agnes Mary Christabel)
+* *author_creator*
+** Raleigh, Walter, Sir, 1552?-1618
+* *editor*
+** Latham, Agnes M. C. (Agnes Mary Christabel)
+* *keyword*
+** Raleigh, Walter, Sir, 1552?-1618
+** Latham, Agnes M. C. (Agnes Mary Christabel), editor, author of introduction
