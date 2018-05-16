@@ -10,6 +10,7 @@ Names recorded in a catalog record include personal, corporate body, and confere
 This is called the `names` pattern instead of the author pattern because the names recorded in a catalog record may represent authors, other work creators (such as composers or artists), contributors (such as arrangers or conductors), manufacturers, publishers, and entities playing other uncategorized roles (owner or former owner of the item described; person who donated or inscribed the item described; etc.).
 
 This pattern is used in the following Argot fields:
+
 * https://github.com/trln/data-documentation/blob/master/argot/spec_docs/names.adoc[names]
 
 toc::[]
@@ -88,7 +89,7 @@ However, I've opted to handle the `type` assignment in MARC-to-Argot rather than
 ====
 Legacy MARC data often lacks the relator data required to assign `type` accurately.
 
-We will know for sure that any name in 100, 110, or 111 is a creator.
+We will know for sure that any name in 100, 110, or 111 is a creator (unless it has a relator that tells us differently).
 
 Names in 7XX fields could be anything and are more likely to be contributors than creators, so names with `type`='no_rel' are treated like names with `type`='contributor'
 ====
@@ -228,13 +229,13 @@ We can do this gracefully, but it would be great if MARC-to-Argot could report o
 ----
 
 [NOTE]
-----
+====
 Current plan is to send `name` + `rel` to fields that will be included in both author and keyword indexes.
 
 We want to test if inclusion of `rel` value in author index negatively affects relevance of names with a `rel` value when the query does not include the `rel` value. (Important since hyperlinks in the UI will NOT include `rel` values in their queries, will conduct author queries)
 
 If this is seen as a problem, we may need to split the values included in author and keywork indexes into separate fields.
-----
+====
 
 == MARC examples
 === UNCb8893558
