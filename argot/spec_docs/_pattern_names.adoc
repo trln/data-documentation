@@ -513,8 +513,8 @@ Discard fields with non-whitelisted $5 values
 *AUTHOR FACET includes*:
 
 * Telemann, Georg Philipp, 1681-1767
-* Bach, Johann Sebastian, 1685-1750'
-* Schröder, Otto, 1860-1946'
+* Bach, Johann Sebastian, 1685-1750
+* Schröder, Otto, 1860-1946
 
 [NOTE]
 ====
@@ -557,6 +557,7 @@ Discard fields with non-whitelisted $5 values
 ----
 
 *AUTHOR FACET includes*:
+
 * Hincker, Louis
 * Lacheny, Marc
 
@@ -584,6 +585,7 @@ Discard fields with non-whitelisted $5 values
 ----
 
 *AUTHOR FACET includes*:
+
 * Hincker, Louis
 
 [NOTE]
@@ -612,6 +614,7 @@ Discard fields with non-whitelisted $5 values
 ----
 
 *AUTHOR FACET includes*:
+
 * Hincker, Louis
 
 [NOTE]
@@ -642,5 +645,6 @@ Discard fields with non-whitelisted $5 values
 ----
 
 *AUTHOR FACET includes*:
+
 * France
 * Spence, Thomas, 1750-1814
