@@ -30,3 +30,13 @@ If a relator term/code is erroneously included in a name/title field, drop it fr
 ----
 
 `author` element should be: `Landis, Thomas D.`
+
+=== expand relator codes to relator terms
+
+Use translation map: marc-to-argot/lib/translation_maps/shared/relator_code_to_term.yaml
+
+=== relator categories
+
+Relators fall into several categories, some of which are treated differently in relevance ranking or mapping values to the author facet.
+
+See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_work_entry.adoc[`names` pattern/Argot field spec] for details. 

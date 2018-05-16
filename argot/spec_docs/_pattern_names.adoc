@@ -15,6 +15,20 @@ This pattern is used in the following Argot fields:
 toc::[]
 
 == The pattern: Argot elements
+
+[NOTE]
+====
+For processing details, see also:
+
+* https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_relator_terms_and_codes.adoc[spec doc on relators]
+* https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_field_X00.adoc[spec doc on X00 MARC fields]
+* https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_field_X10.adoc[spec doc on X10 MARC fields]
+* https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_field_X11.adoc[spec doc on X11 MARC fields]
+
+The set of tests I created assumes that the details of extracting the name portion of X00, X10, and X11 fields has been worked out already (for use in fields using the https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_work_entry.adoc[work_entry pattern]) and can be reused, so I'm not trying to test all permutations here.
+
+====
+
 === `name`
 This is the full name (with any qualifiers) from the source MARC field
 
@@ -42,6 +56,7 @@ The following steps should be done in order:
 
 * Strip punctuation and spaces from beginning and end of field. Expected punctuation includes period and comma. 
 * Replace relator *codes* with relator *terms* using marc-to-argot/lib/translation_maps/shared/relator_code_to_term.yaml
+** If relator code is not mapped to a relator term in that file, drop that relator. Also see "MARC-to-Argot warnings/logs" section below.
 * Strip WEMI terms (may be parenthetical) from relator *terms* if present: work, expression, manifestation, item
 * Deduplicate the resulting array (sometimes both the term and the code for the same role is recorded)
 
@@ -88,14 +103,14 @@ Aside: I went back and forth about whether, in such cases, there should be both 
 ** `no_rel` 
 
 * Even lower relevance rank in author search, not included in author facet
-** `other`
 ** `owner`
+** `other`
 ** `uncategorized`
 
 * Lowest relevance rank in author search. Also include in publisher search. Do not include in author facet
-** `distributor`
-** `manufacturer`
 ** `publisher`
+** `manufacturer`
+** `distributor`
 
 ==== Processing notes
 
@@ -107,9 +122,20 @@ Aside: I went back and forth about whether, in such cases, there should be both 
 
 * Otherwise:
 ** Look up the relator category for each relator term in marc-to-argot/lib/translation_maps/shared/relator_categories.yaml
-*** If relator term is not mapped to a relator category in that file, assign `type`='uncategorized' and ideally emit a warning to a log somewhere that data folks can use to review (cause may be terms from another vocabulary need to be added to mappings, or typo in underlying data needs to be fixed)
+*** If relator term is not mapped to a relator category in that file, assign `type`='uncategorized'. Also see "MARC-to-Argot warnings/logs" section below.
 ** If the name falls into more than one category, assign the highest category in the `type` hierarchy as the `type` value
 *** For example, the first name in the abstract example below has two relators terms: author (creator category) and illustrator (contributor category). Creator > contributor, so `type` = 'creator'.
+
+== MARC-to-Argot warnings/logs
+The specs show how to handle fields with:
+
+* relator *codes* that do not have translations to relator *terms* for display
+* relators that do not map to a relator category
+
+We can do this gracefully, but it would be great if MARC-to-Argot could report out on these so that data folks can determine whether:
+
+* the underlying data is wrong (typos, etc); or
+* additional relator terms/vocabularies need to be mapped in MARC-to-Argot
 
 == Abstract example of pattern
 === Argot
@@ -231,6 +257,13 @@ If this is seen as a problem, we may need to split the values included in author
   ]
 ----
 
+*AUTHOR FACET includes*:
+
+* Key, Keegan-Michael
+* Birbiglia, Mike
+* Jacobs, Gillian, 1982-
+* Micucci, Kate
+* Sagher, Tami
 
 === UNCb9030005
 
@@ -254,6 +287,11 @@ If this is seen as a problem, we may need to split the values included in author
   ]
 ----
 
+*AUTHOR FACET includes*:
+
+* Jerome, Saint, -419 or 420
+* Canellis, Aline
+
 [NOTE]
 ====
 
@@ -262,6 +300,8 @@ If this is seen as a problem, we may need to split the values included in author
 * 7XX with $t or $k are ignored -- they are handled as `related_work` or `included_work` fields
 
 ====
+
+*FACET*: all names go to author facet
 
 === UNCb6030502
 
@@ -298,5 +338,276 @@ If this is seen as a problem, we may need to split the values included in author
 
 * Robeson is `type`='contributor' despite being recorded in the 100 because 'performer' maps to that category
 * 7XX with $t or $k are ignored -- these will be handled as `included_work`
+
+====
+
+*AUTHOR FACET includes*:
+
+* Robeson, Paul, 1898-1976
+* Booth, Alan, 1924-1996
+
+=== UNCb7446044
+
+[source]
+----
+=245  00$a[Collection of sonatas and other works for violin and piano]
+=700  12$aMozart, Wolfgang Amadeus,$d1756-1791.$tSonatas,$mviolin, piano.$kSelections.
+=700  1\$aBériot, Ch. de$q(Charles),$d1802-1870,$ecomposer.
+=700  1\$aLabarre, Théodore,$d1805-1870,$ecomposer.
+=700  1\$aSheldon, Henry K.,$eformer owner,$ecompiler.
+----
+
+[source,ruby]
+----
+[{'name'=>'Bériot, Ch. de (Charles), 1802-1870',
+  'rel'=>['composer'],
+  'type'=>'creator'},
+  {'name'=>'Labarre, Théodore, 1805-1870',
+  'rel'=>['composer'],
+  'type'=>'creator'},
+  {'name'=>'Sheldon, Henry K.',
+  'rel'=>['former owner', 'compiler'],
+  'type'=>'creator'}
+]
+----
+
+*AUTHOR FACET includes*:
+
+* Bériot, Ch. de (Charles), 1802-1870
+* Labarre, Théodore, 1805-1870
+* Sheldon, Henry K.
+  
+=== UNCb8365604
+
+[source]
+----
+=100  1\$aWilson, James,$d1779-1845,$eauthor.
+=245  10$aBiography of the blind :$bincluding the lives of all who have distinguished themselves as poets, philosophers, artists &c. &c. /$cby James Wilson.
+=700  1\$aShowell, John Whitehouse,$eprinter.
+=700  1\$aHutchinson, Elizabeth,$d1820-1905,$eformer owner,$eautographer$5NcU
+=700  1\$aHutchinson, Sara,$d1775-1835,$einscriber$5NcU
+=700  1\$aReed, Mark L.,$eformer owner$5NcU
+----
+
+[source,ruby]
+----
+[{'name'=>'Wilson, James, 1779-1845',
+  'rel'=>['author'],
+  'type'=>'creator'},
+  {'name'=>'Showell, John Whitehouse',
+  'rel'=>['printer'],
+  'type'=>'manufacturer'},
+  {'name'=>'Hutchinson, Elizabeth, 1820-1905',
+  'rel'=>['former owner', 'autographer'],
+  'type'=>'owner'},
+  {'name'=>'Hutchinson, Sara, 1775-1835',
+  'rel'=>['inscriber'],
+  'type'=>'other'},
+  {'name'=>'Reed, Mark L.',
+  'rel'=>['former owner'],
+  'type'=>'owner'}
+]
+----
+
+*AUTHOR FACET includes*:
+
+* Wilson, James, 1779-1845
+
+=== UNCb9161490
+
+[source]
+----
+=100  1\$aMerrill, James,$d1926-1995,$eauthor.
+=245  14$aThe book of Ephraim /$cJames Merrill ; introduced and annotated by Stephen Yenser.
+=700  1\$aYenser, Stephen,$einscriber.$5DLC
+----
+
+[source,ruby]
+----
+[{'name'=>'Merrill, James, 1926-1995',
+  'rel'=>['author'],
+  'type'=>'creator'}
+]
+----
+
+*AUTHOR FACET includes*:
+
+* Merrill, James, 1926-1995
+
+[NOTE]
+====
+Discard fields with non-whitelisted $5 values
+====
+
+=== UNCb8550621
+
+[source]
+----
+=245  00$aPaul Klee :$birony at work /$cedited by Angela Lampe.
+=700  1\$aLampe, Angela,$eeditor.
+=710  2\$aMusée national d'art moderne (France),$ehost institution.
+=720  \\$aBaumgartner, Michael$4con
+=720  \\$aHaxthausen, Charles W.$4con
+=720  \\$aHopfengart, Christine$4con
+----
+
+[source,ruby]
+----
+[{'name'=>'Lampe, Angela',
+  'rel'=>['editor'],
+  'type'=>'editor'},
+  {'name'=>'Musée national d\'art moderne (France)',
+  'rel'=>['host institution'],
+  'type'=>'other'},
+  {'name'=>'Baumgartner, Michael',
+  'rel'=>['conservator'],
+  'type'=>'uncategorized'},
+  {'name'=>'Haxthausen, Charles W.',
+  'rel'=>['conservator'],
+  'type'=>'uncategorized'},
+  {'name'=>'Hopfengart, Christine',
+  'rel'=>['conservator'],
+  'type'=>'uncategorized'}
+]
+----
+
+*AUTHOR FACET includes*:
+
+* Lampe, Angela
+
+=== UNCb6814634
+
+[source]
+----
+=100  1\$aTelemann, Georg Philipp,$d1681-1767.
+=240  10$aIch weiss, dass mein Erlöser lebt.$sVocal score.$lEnglish & German
+=245  10$aKantate Nr. 160 :$bam ersten Osterfesttage : "Ich weiss, dass mein Erlöser lebt" : für Tenor = Cantata no. 160 : for the first Easter feast-day : "I know that my Redeemer liveth" : for tenor solo : BWV 160 /$cJoh. Seb. Bach ; English version by J. Michael Diack ; Klavierauszug von Otto Schröder.
+=700  1\$aBach, Johann Sebastian,$d1685-1750.
+=700  1\$aSchröder, Otto,$d1860-1946.$4edt
+=700  1\$aBach, Johann Sebastian,$d1685-1750.$tWorks.$f1851.
+----
+
+[source,ruby]
+----
+[{'name'=>'Telemann, Georg Philipp, 1681-1767',
+  'type'=>'creator'},
+  {'name'=>'Bach, Johann Sebastian, 1685-1750',
+  'type'=>'no_rel'},
+  {'name'=>'Schröder, Otto, 1860-1946',
+  'rel'=>['editor'],
+  'type'=>'editor'}
+]
+----
+
+*AUTHOR FACET includes*:
+
+* Telemann, Georg Philipp, 1681-1767
+* Bach, Johann Sebastian, 1685-1750'
+* Schröder, Otto, 1860-1946'
+
+[NOTE]
+====
+
+* Telemann is `type`='creator' because the name is recorded in 1XX without a relator that gives a conflicting categorization.
+* Bach is `type`='no_rel' because we can't assume anything about the type of name recorded in a 7XX.
+
+====
+
+=== UNCb9140472
+
+[source]
+----
+=245  04$aLes archives familiales des écrivains :$bdes matériaux, un motif, une question /$csous la direction de Louis Hincker, Frédérique Amselle, Arnaud Huftier, Marc Lacheny.
+=700  1\$aHincker, Louis,$eeditor.
+=700  1\$aAmselle, Frédérique,$editor.
+=700  1\$aHuftier, Arnaud,$editor.
+=700  1\$aLacheny, Marc,$eeditor.
+=710  2\$aUniversité de Valenciennes et du Hainaut-Cambrésis,$ehost institution.
+----
+
+[source,ruby]
+----
+[{'name'=>'Hincker, Louis',
+  'rel'=>['editor'],
+  'type'=>'editor'},
+  {'name'=>'Amselle, Frédérique',
+  'rel'=>['ditor'],
+  'type'=>'uncategorized'},
+  {'name'=>'Huftier, Arnaud',
+  'rel'=>['ditor'],
+  'type'=>'uncategorized'},
+  {'name'=>'Lacheny, Marc',
+  'rel'=>['editor'],
+  'type'=>'editor'},
+  {'name'=>'Université de Valenciennes et du Hainaut-Cambrésis',
+  'rel'=>['host institution'],
+  'type'=>'other'}
+]
+----
+
+*AUTHOR FACET includes*:
+* Hincker, Louis
+* Lacheny, Marc
+
+[NOTE]
+====
+
+* Entries for Amselle and Huftier have MARC coding error leading the relator term to be 'ditor' instead of 'editor'
+* 'ditor' is not mapped to a relator category, so these names are `type`='uncategorized'
+* Ideally MARC-to-Argot would report these for data folks to look at/fix
+
+====
+
+=== mock (names 10)
+
+[source]
+----
+=245  04$aLes archives familiales des écrivains :$bdes matériaux, un motif, une question /$csous la direction de Louis Hincker, Frédérique Amselle, Arnaud Huftier, Marc Lacheny.
+=700  1\$aHincker, Louis.$4etd
+----
+
+[source,ruby]
+----
+[{'name'=>'Hincker, Louis',
+  'type'=>'no_rel'}
+]
+----
+
+*AUTHOR FACET includes*:
+* Hincker, Louis
+
+[NOTE]
+====
+
+* Entry for Huftier has relator code with typo (etd rather than edt) 
+* etd is not mapped to a human-readable relator term, so there's nothing we can meaningfully show
+* `type`='no_rel' since we don't have one we can work with
+
+====
+
+=== mock (names 11)
+
+[source]
+----
+=245  04$aLes archives familiales des écrivains :$bdes matériaux, un motif, une question /$csous la direction de Louis Hincker, Frédérique Amselle, Arnaud Huftier, Marc Lacheny.
+=700  1\$aHincker, Louis.$4etd$4trl
+----
+
+[source,ruby]
+----
+[{'name'=>'Hincker, Louis',
+  'rel'=>['translator'],
+  'type'=>'contributor'}
+]
+----
+
+*AUTHOR FACET includes*:
+* Hincker, Louis
+
+[NOTE]
+====
+
+* Entry for Huftier has relator code with typo (etd rather than edt) 
+* etd is not mapped to a human-readable relator term, but trl is, so we proceed with the one relator we can work with.
 
 ====

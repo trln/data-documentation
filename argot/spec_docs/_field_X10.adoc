@@ -17,6 +17,8 @@ Otherwise, process as author-only field.
 
 See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_relator_terms_and_codes.adoc[general spec on processing relator terms and codes]
 
+=== subfields mapped to name elements
+abcdgnu
 
 == Author/title processing specifics
 
