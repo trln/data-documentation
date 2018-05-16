@@ -338,3 +338,56 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
    'display'=>'false'}
 ]
 ----
+
+=== 440
+MARC field 440 (obsolete since 2008, but still in plenty of legacy data) serves as *both* a series_work (collocating entry) and a transcription from title page.
+
+==== UNCb3286703 -- no nonfiling characters
+
+[source]
+----
+=245  10$aJames Ritchie Sparkman books (1839-1878), 1925, Georgetown District, South Carolina$h[microform].
+=440  \0$aRecords of ante-bellum southern plantations from the Revolution through the Civil War.$nSeries J,$pSelections from the Southern Historical Collection, Manuscripts Department, Library of the University of North Carolina at Chapel Hill.$nPart 3,$pSouth Carolina ;$vreel 1
+----
+
+[source,ruby]
+----
+[
+  {'type'=>'series',
+   'title'=>'Records of ante-bellum southern plantations from the Revolution through the Civil War.||Series J,||Selections from the Southern Historical Collection, Manuscripts Department, Library of the University of North Carolina at Chapel Hill.||Part 3,||South Carolina',
+   'details'=>'reel 1'}
+]
+----
+
+==== UNCb4947253 -- nonfiling characters
+
+[source]
+----
+=440  \4$aThe Stewart dynasty in Scotland
+----
+
+[source,ruby]
+----
+[
+  {'type'=>'series',
+   'title'=>'Stewart dynasty in Scotland',
+   'title_nonfiling'=>'The Stewart dynasty in Scotland'}
+]
+----
+
+==== UNCb9158976 -- $x present
+
+[source]
+----
+=440  \0$aCompanions to contemporary German culture,$x2193-9659 ;$vv. 3
+----
+
+[source,ruby]
+----
+[
+  {'type'=>'series',
+   'title'=>'Companions to contemporary German culture',
+   'issn'=>'2193-9659',
+   'details'=>'v. 3'}
+]
+----
