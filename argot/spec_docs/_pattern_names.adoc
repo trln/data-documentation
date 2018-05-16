@@ -71,6 +71,17 @@ Serves two major purposes:
 * control creation of different indexed fields that can be relevance ranked differently (i.e. creators highest, contributors higher than 'other', etc.) in author search
 * control which names get included in author facet
 
+[NOTE]
+====
+A different approach to `type` would be to have the `argot-ruby` flattener look it up based on relator values and do what it needs to do based on that result. This would have the benefit of slightly smaller Argot JSON files and perhaps faster MARC-to-Argot performance. Another benefit would be that changes to the relator-to-category mapping could be handled with a reindex, rather than a re-transform, re-ingest and reindex. 
+
+However, I've opted to handle the `type` assignment in MARC-to-Argot rather than later in the data transformations for a couple of reasons:
+
+* One of Argot's raisons-d'etre was to make diagnosing data problems easier. It is going to be *much* easier for data folks to troubleshoot issues/answer questions about behavior of data in the system if they can see the categorization result one step away from the MARC data.
+* Error reporting on issues with relators makes the most sense at the initial data transformation step
+
+====
+
 ==== `type` values
 
 [NOTE]
@@ -491,8 +502,7 @@ Discard fields with non-whitelisted $5 values
 ----
 [{'name'=>'Telemann, Georg Philipp, 1681-1767',
   'type'=>'creator'},
-  {'name'=>'Bach, Johann Sebastian, 1685-1750',
-  'type'=>'no_rel'},
+  {'name'=>'Bach, Johann Sebastian, 1685-1750'},
   {'name'=>'Schröder, Otto, 1860-1946',
   'rel'=>['editor'],
   'type'=>'editor'}
@@ -509,7 +519,7 @@ Discard fields with non-whitelisted $5 values
 ====
 
 * Telemann is `type`='creator' because the name is recorded in 1XX without a relator that gives a conflicting categorization.
-* Bach is `type`='no_rel' because we can't assume anything about the type of name recorded in a 7XX.
+* Bach is `type`='no_rel' (default) because we can't assume anything about the type of name recorded in a 7XX.
 
 ====
 
@@ -568,8 +578,7 @@ Discard fields with non-whitelisted $5 values
 
 [source,ruby]
 ----
-[{'name'=>'Hincker, Louis',
-  'type'=>'no_rel'}
+[{'name'=>'Hincker, Louis'}
 ]
 ----
 
@@ -581,7 +590,7 @@ Discard fields with non-whitelisted $5 values
 
 * Entry for Huftier has relator code with typo (etd rather than edt) 
 * etd is not mapped to a human-readable relator term, so there's nothing we can meaningfully show
-* `type`='no_rel' since we don't have one we can work with
+* `type`='no_rel' (default) since we don't have one we can work with
 
 ====
 
@@ -611,3 +620,26 @@ Discard fields with non-whitelisted $5 values
 * etd is not mapped to a human-readable relator term, but trl is, so we proceed with the one relator we can work with.
 
 ====
+
+=== UNCb7770747
+
+[source]
+----
+=110  1\$aFrance.$tConstitution (1793)
+=245  14$aThe constitution of a perfect commonwealth$h[electronic resource] :$bbeing the French constitution of 1793, amended and rendered entirely conformable to the whole rights of man.
+=700  1\$aSpence, Thomas,$d1750-1814,$ewriter of preface.
+----
+
+[source,ruby]
+----
+[{'name'=>'France',
+  'type'=>'creator'},
+ {'name'=>'Spence, Thomas, 1750-1814',
+  'rel'=>['writer of preface'],
+  'type'=>'contributor'}
+]
+----
+
+*AUTHOR FACET includes*:
+* France
+* Spence, Thomas, 1750-1814
