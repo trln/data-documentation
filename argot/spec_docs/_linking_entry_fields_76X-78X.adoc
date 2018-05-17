@@ -320,7 +320,7 @@ Recluse (St. Mark's Church in-the-Bowery (New York, N.Y.). Poetry Project)
 [source,ruby]
 ----
 ['Recluse',
- '(St. Mark\'s Church in-the-Bowery,
+ '(St. Mark\'s Church in-the-Bowery',
  '(New York, N.Y.)',
  '. Poetry Project)'
  ]
