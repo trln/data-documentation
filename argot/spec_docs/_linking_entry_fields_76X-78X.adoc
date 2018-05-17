@@ -335,7 +335,8 @@ Test No. 228: Determination of Developmental Toxicity of a Test Chemical to Dipt
 
 [source,ruby]
 ----
-['Test No. 228: Determination of Developmental Toxicity of a Test Chemical to Dipteran Dung Flies(Scathophaga stercoraria L.',
+['Test No.',
+ '228: Determination of Developmental Toxicity of a Test Chemical to Dipteran Dung Flies(Scathophaga stercoraria L.',
  '(Scathophagidae)',
  ', Musca autumnalis De Geer',
  '(Muscidae)',
