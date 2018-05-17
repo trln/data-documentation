@@ -159,10 +159,189 @@ Do not map field to Argot
 
 === segmentation (only necessary when field is `[display]=true`)
 
+This is going to be imperfect, given that the separate-subfield coding necessary to do it well is *not* defined for these fields.
+
+==== GENERAL LOGIC
+
+The basic rule is: split at '. ' (or ' . ')
+
+[source]
+----
+Rhythm 'n' blues. Vol. 2, Sweet n' greasy.
+----
+
 [source,ruby]
 ----
-segmented = title_value.gsub(/([^. ]\.) /, '\1||')
+['Rhythm \'n\' blues.',
+ 'Vol. 2, Sweet n\' greasy.']
 ----
+
+However, we do *not* want to split at '. ' in the case of /[. ][a-zA-Z]\./:
+
+[source]
+----
+C.T. Hsia on Chinese literature.
+----
+
+[source,ruby]
+----
+['C.T. Hsia on Chinese literature.']
+----
+
+NOT
+
+[source,ruby]
+----
+['C.T.',
+ 'Hsia on Chinese literature.']
+----
+
+[source]
+----
+Philip C. Jessup International Law Moot Court Competition compendium.
+----
+
+[source,ruby]
+----
+['Philip C. Jessup International Law Moot Court Competition compendium.']
+----
+
+[source]
+----
+Vice President Micheal [i.e. Michael] Pence poses for his official portrait at The White House, in Washington, D.C., on Tuesday, October 24, 2017
+----
+
+[source,ruby]
+----
+['Vice President Micheal [i.e. Michael] Pence poses for his official portrait at The White House, in Washington, D.C., on Tuesday, October 24, 2017']
+----
+
+NOT
+
+[source,ruby]
+----
+['Vice President Micheal [i.e.',
+ 'Michael] Pence poses for his official portrait at The White House, in Washington, D.C., on Tuesday, October 24, 2017']
+----
+
+We also don't want to split on '...':
+
+[source]
+----
+Supplement for ... to Grain and feed statistics
+----
+
+[source,ruby]
+----
+['Supplement for ... to Grain and feed statistics']
+----
+
+NOT
+
+[source,ruby]
+----
+['Supplement for ...',
+ 'to Grain and feed statistics']
+----
+
+[source]
+----
+Cocaine smuggling in ... . Portuguese. Contrabando de cocaina em ...
+----
+
+[source,ruby]
+----
+['Cocaine smuggling in ... .',
+ 'Portuguese.',
+ 'Contrabando de cocaina em ...']
+----
+
+[source]
+----
+Musurgia seu praxis musicae. Illius primo quae instrumentis agitur certa ratio, ab Ottomari Luscinio Argentino duobus libris absoluta. Eiusdem ... de concentus polyphoni, id est, ex plurifarijs vocibus compositi, canonibus, libri totidem.
+----
+
+[source,ruby]
+----
+['Musurgia seu praxis musicae.',
+ 'Illius primo quae instrumentis agitur certa ratio, ab Ottomari Luscinio Argentino duobus libris absoluta.',
+ 'Eiusdem ... de concentus polyphoni, id est, ex plurifarijs vocibus compositi, canonibus, libri totidem.']
+----
+
+==== PARENTHETICALS - exception to above
+
+* Split at ' ('
+* Between ' (' and ')'
+** Ignore '. '
+** Split at ':'
+
+[source]
+----
+Fairmont West Virginian (Fairmont, W. Va. : 1907)
+----
+
+[source,ruby]
+----
+['Fairmont West Virginian',
+ '(Fairmont, W. Va. :',
+ '1907)'
+ ]
+----
+
+[source]
+----
+Seattle post-intelligencer (Seattle, Wash. : 1888 : Weekly)
+----
+
+[source,ruby]
+----
+['Seattle post-intelligencer',
+ '(Seattle, Wash. :',
+ '1888 :',
+ 'Weekly)']
+----
+
+[source]
+----
+Historic documents (United States. Dept. of State)
+----
+
+[source,ruby]
+----
+['Historic documents',
+ '(United States. Dept. of State)']
+----
+
+[source]
+----
+Recluse (St. Mark's Church in-the-Bowery (New York, N.Y.). Poetry Project)
+----
+
+[source,ruby]
+----
+['Recluse',
+ '(St. Mark\'s Church in-the-Bowery,
+ '(New York, N.Y.)',
+ '. Poetry Project)'
+ ]
+----
+
+This will sometimes produce weirdness such as below, however overall it takes advantage of a more-or-less standard method of recording information that will usually work:
+
+[source]
+----
+Test No. 228: Determination of Developmental Toxicity of a Test Chemical to Dipteran Dung Flies(Scathophaga stercoraria L. (Scathophagidae), Musca autumnalis De Geer (Muscidae))
+----
+
+[source,ruby]
+----
+['Test No. 228: Determination of Developmental Toxicity of a Test Chemical to Dipteran Dung Flies(Scathophaga stercoraria L.',
+ '(Scathophagidae)',
+ ', Musca autumnalis De Geer',
+ '(Muscidae)',
+ ')']
+----
+
 
 == `[title_nonfiling]`
 Use to index, but not display abbreviated titles from $p

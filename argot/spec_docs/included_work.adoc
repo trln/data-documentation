@@ -10,7 +10,6 @@
 toc::[]
 == Processing notes
 
-* Segment/subfield delimiter '||' is provided in title portion to facilitate adaptive hyperlinking
 * `type` = included
 * `display` = defaults to true (so it doesn't need to be set explicitly)
 

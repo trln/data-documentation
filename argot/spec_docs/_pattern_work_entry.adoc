@@ -24,10 +24,10 @@ toc::[]
 * `author`: The author name related portion. Some works do not have an author, so will lack this part.
 ** indexed as `author_related`, `author_included`, or `author_series` as appropriate
 ** combined with `title` segment to create indexed `work_citation*` value
-* `title`: The title related portion. All works must have a title, so this segment should always be present. If there is a non-filing characters indicator, the title value omits the specified number of initial characters (and the full title is mapped to `title_nonfiling`)
-** indexed as `title_related`, `title_included`, `title_series`, or `title_variant_indexed` as appropriate
-** if there is no separate `title_filing` element set, combined with `author` segment to create indexed `work_citation*` value for in-catalog hyperlink querying and possible use in autosuggest
-** subelements of the title portion are separated with `||` to allow for adaptive hyperlinking. This delimiter is stripped out of the display.
+* `title`: The title related portion. All works must have a title, so this element is required. If there is a non-filing characters indicator, the title value omits the specified number of initial characters (and the full title is mapped to `title_nonfiling`)
+** indexed as `title_related`, `title_included`, `title_series`, etc. as appropriate
+** combined with `author` segment to create indexed `work_citation*` value for in-catalog hyperlink querying and possible use in autosuggest
+** In Argot, this element is an array. Subelements of the title portion (data in separate subfields or otherwise split) are recorded in separate elements of the array, to support adaptive hyperlinking.
 ** If there is a uniform title and a title proper included in the field, uniform title is mapped to `title` and title proper is mapped to `title_variation`
 * `title_nonfiling` : The title related portion, including any initial article/non-filing characters, if this value would be different than what's in `title`
 ** indexed as `title_related`, `title_included`, `title_series`, or `title_variant_indexed` as appropriate
@@ -55,7 +55,7 @@ toc::[]
 {'type'=>'aaaa',
  'label'=>'bbbb',
  'author'=>'cccc',
- 'title'=>'dd||dd||dd',
+ 'title'=>['dd', 'dd', 'dd'],
  'title_nonfiling'=>'eeeeee',
  'title_variation'=>'ffff',
  'details'=>'gggg hhhh',
@@ -87,7 +87,7 @@ Typically the data in such fields has also been put in a human readable note som
 [
 {'type'=>'aaaa',
  'author'=>'cccc',
- 'title'=>'dd||dd||dd',
+ 'title'=>['dd', 'dd', 'dd'],
  'title_nonfiling'=>'eeeeee',
  'title_variation'=>'ffff',
  'isbn'=>['1111'],
