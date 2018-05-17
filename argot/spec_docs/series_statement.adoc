@@ -1,10 +1,159 @@
-b5754009
-440 _ 0 $aRecords of ante-bellum southern plantations from the Revolution through the Civil War.$nSeries J,$pSelections from the Southern Historical Collection, Manuscript Department, Library of the University of North Carolina at Chapel Hill.$nPart 7,$pAlabama ;$vreel 7:pos.3
+:toc:
+:toc-placement!:
 
-b3370111
-490 1 _ $3<1929-1948>:$aMiscellaneous publication,$x0097-0212 ;$vno. 60$l(S21.A46)
-490 1 _ $3<1954-1971>:$aList / Office of Information,$x0094-341X ;$vno. 11$l(Z5075.U5U548)
-490 1 _ $3<1973-1976>:$aList / Office of Communication,$x0094-3401 ;$vno. 11$l(Z5075.U5U548)
-490 1 _ $3<1978-1980>:$aList / Office of Governmental and Public Affairs ;$vno. 11$l(Z5075.U5U548)
-490 1 _ $3<1991>:$aList / Office of Public Affairs ;$vno. 11$l(Z5075.U5U548)
-490 1 _ $3<1993->:$aList / Office of Communications ;$vno. 11
+= `series_statement` pattern and field
+
+Series statement as transcribed from the item itself. May or may not be the same as the form of series title recorded in `series_work` Argot field.
+
+`series_statement` should be displayed with the basic description of the item described by the record. 
+
+toc::[]
+
+== The pattern: Argot elements
+
+=== `value`
+Series statement as transcribed from work.
+
+* string
+* *required*
+
+==== Processing notes
+
+* Non-filing indicators ignored. Focus is on the full transcribed title.
+
+=== `issn`
+
+* array 
+
+==== Processing notes
+
+* Strip parenthetical qualifiers from the ISSN
+
+=== `other_ids`
+
+* array
+
+==== Processing notes
+
+* Strip parenthetical prefixes and leading spaces from values in this field
+
+=== `label`
+
+* string
+
+==== Processing notes
+
+* See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_subfield_3.adoc[spec on handling $3]
+
+
+== Abstract example of pattern
+=== Argot
+
+[source,ruby]
+----
+[{'value'=>'Series title, 1234-5678 (qual); (LC call number); v. 123',
+  'issn'=>['1234-5678'],
+  'other_ids'=>['98765', '654789'],
+  'label'=>'This volume'}
+  ]
+----
+
+=== Display/behavior
+
+*More details*
+
+* This volume: Series title, 1234-5678 (qual); (LC call number); v. 123
+
+=== Indexing
+
+[source,javascript]
+----
+{"series_statement_a": ["This volume: Series title, 1234-5678 (qual); (LC call number); v. 123"],
+ "series_statement_t": ["Series title, 1234-5678 (qual); (LC call number); v. 123"],
+  "issn_series_statement_indexed": ["1234-5678"],
+  "other_ids_series_statement_indexed": ["98765", "654789"]
+ }
+----
+
+
+== Examples
+
+=== 440
+
+==== UNCb5754009
+
+[source]
+----
+=440  \0$aRecords of ante-bellum southern plantations from the Revolution through the Civil War.$nSeries J,$pSelections from the Southern Historical Collection, Manuscript Department, Library of the University of North Carolina at Chapel Hill.$nPart 7,$pAlabama ;$vreel 7:pos.3
+----
+
+[source,ruby]
+----
+[{'value'=>'Records of ante-bellum southern plantations from the Revolution through the Civil War. Series J, Selections from the Southern Historical Collection, Manuscript Department, Library of the University of North Carolina at Chapel Hill. Part 7, Alabama ; reel 7:pos.3'}
+  ]
+----
+
+==== mock01
+
+[source]
+----
+=440  \4$aThe Creole language library,$x0920-9026 (print);$vv. 47$w(OCoLC)1234567$w(DLC)   cd09876
+----
+
+[source,ruby]
+----
+[{'value'=>'The Creole language library, 0920-9026 ; v. 47',
+  'other_ids'=>['1234567', 'cd09876'],
+  'issn'=>['0920-9026']}
+  ]
+----
+
+=== 490
+
+==== UNCb3370111
+
+[source]
+----
+=490  1\$3<1929-1948>:$aMiscellaneous publication,$x0097-0212 ;$vno. 60$l(S21.A46)
+=490  1\$3<1978-1980>:$aList / Office of Governmental and Public Affairs ;$vno. 11$l(Z5075.U5U548)
+=490  1\$3<1993->:$aList / Office of Communications ;$vno. 11
+----
+
+[source,ruby]
+----
+[{'value'=>'Miscellaneous publication, 0097-0212 ; no. 60 (S21.A46)',
+  'label'=>'<1929-1948>',
+  'issn'=>['0097-0212']},
+ {'value'=>'List / Office of Governmental and Public Affairs ; no. 11 (Z5075.U5U548)',
+  'label'=>'<1978-1980>'},
+ {'value'=>'List / Office of Communications ; no. 11',
+  'label'=>'<1993->'}
+]
+----
+
+==== UNCb8803065
+
+[source]
+----
+=490  1\$aStatistics =$aStatistiques,$x1609-6827 (online)$x1023-8875 (print) ;$vv. 1
+----
+
+[source,ruby]
+----
+[{'value'=>'Statistics = Statistiques, 1609-6827 (online) 1023-8875 (print) ; v. 1',
+  'issn'=>['1609-6827', '1023-8875']}
+]
+----
+
+==== UNCb4391445
+
+[source]
+----
+=490  1\$aMemoirs of the Geological Survey of India ;$vv. 123$l(QE295.A4) =$aBhāratīya Bhūvijñānika Sarvekshaṇa ke saṃsmaraṇa ;$vkhaṇḍa 123
+----
+
+[source,ruby]
+----
+[{'value'=>'Memoirs of the Geological Survey of India ; v. 123 (QE295.A4) = Bhāratīya Bhūvijñānika Sarvekshaṇa ke saṃsmaraṇa ; khaṇḍa 123'}
+]
+----
