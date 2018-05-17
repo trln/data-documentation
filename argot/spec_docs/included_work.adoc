@@ -27,7 +27,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 =700  12$aSaint-Saëns, Camille,$d1835-1921.$4cmp$tQuartets,$mviolins (2), viola, cello,$nno. 2, op. 153,$rG major
 ----
 
-[source]
+[source,ruby]
 ----
 [
   {'type'=>'included',
@@ -47,7 +47,7 @@ We want to remove the comma that precedes a $e, but keep or provide a period at 
 =700  12$aSchwenkel, Christina,$eauthor.$tArchitecture and dwelling in the 'war of destruction' in Vietnam.
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'included',
@@ -63,7 +63,7 @@ We want to remove the comma that precedes a $e, but keep or provide a period at 
 =700  12$iFacsimile of:$aFerrini, Vincent,$d1913-2007.$tTidal wave : poems of the great strikes.$f1945$g(New York : Great-Concord Publishers)
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'included',
@@ -99,7 +99,7 @@ See sections of https://github.com/trln/data-documentation/blob/master/argot/spe
 =700  02$3Tome 1, volume 1$iContainer of (expression):$aPlotinus.$tPeri tou kalou.$lFrench$s(Achard and Narbonne)
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'included',
@@ -116,7 +116,7 @@ See sections of https://github.com/trln/data-documentation/blob/master/argot/spe
 =700  12$aName, Author,$g(Test name),$d1944-.$tTest title.
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'included',
@@ -136,7 +136,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 =710  22$aKungliga Biblioteket (Sweden).$kManuscript.$nKB787a.$lChurch Slavic.$f1966.
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'included',
@@ -152,7 +152,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 =710  12$aUnited States.$bCongress$n(94th, 2nd session :$d1976).$tMemorial services held in the House of Representatives and Senate of the United States, together with remarks presented in eulogy of Jerry L. Litton, late a Representative from Missouri.$f197.
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'included',
@@ -168,7 +168,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 =710  12$aNorth Carolina.$bBuilding Code Council.$tNorth Carolina state building code.$n1,$pGeneral construction.$n11X,$pMaking buildings and facilities accessible to and usable by the physically handicapped.
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'included',
@@ -184,7 +184,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 =710  12$aGermany (East).$tTreaties, etc.$gGermany (West),$d1990 May 18.$f1990.
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'included',
@@ -200,7 +200,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 =710  22$aCafé Tacuba (Musical group)$4prf$t12/12
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'included',
@@ -219,7 +219,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 =711  22$aGreat Central Fair for the U.S. Sanitary Commission$d(1864 :$cPhiladelphia, Pa.).$eCommittee on Public Charities and Benevolent Institutions.$tPhiladelphia [blank] 1864. 619 Walnut Street. To [blank] ...
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'included',
@@ -235,7 +235,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 =711  22$aDeutsch Foundation Conference$d(1930 :$cUniversity of Chicago).$tCare of the aged.$d2000, $f1972.$gReprint.$x1234-1234
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'included',
@@ -256,7 +256,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 =730  02$aCahiers de civilisation médiévale.$pBibliographie.$x0240-8678
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'included',
@@ -272,7 +272,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 =730  02$aJane Pickering's lute book.$tDrewries Accord's;$oarr.
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'included',
@@ -290,7 +290,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 =730  42$iContains (expression):$aThe magnificent Ambersons (Motion picture).$lEnglish.
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'included',
@@ -310,7 +310,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 =730  02$3Guide:$iBased on (expression):$aDeutsche Geschichte.$nBand 6.
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'included',
@@ -328,7 +328,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 =740  42$aThe English pilot.$nThe fourth book : describing the West India navigation, from Hudson's-Bay to the river Amazones ...
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'included',
@@ -344,7 +344,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 =740  \2$aIndustrial sales management game$p5.
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'included',
@@ -363,7 +363,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 =774  08$aMasson, VeNeta.$tRehab at the Florida Avenue Grill.$dWashington, DC : Sage Femme Press, 1999$z0967368804$w(DLC)   99090707$w(OCoLC)43689896
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'included',
@@ -382,7 +382,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 =774  18$aMasson, VeNeta.$tRehab at the Florida Avenue Grill.$dWashington, DC : Sage Femme Press, 1999$z0967368804$w(DLC)   99090707$w(OCoLC)43689896
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'included',
@@ -400,7 +400,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 =774  08$iContainer of (manifestation):$tSports illustrated.$gDean Smith commemorative issue (Feb. 26, 2015)$w(OCoLC)1766364
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'included',
@@ -418,7 +418,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 =774  0\$sBulletin (North Carolina Agricultural Experiment Station)$t1991 NC Agricultural Experiment Station Bulletin$w(OCoLC)1421220
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'included',
@@ -435,7 +435,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 =774  18$tBellevue literary review :$gvol. 2, no. 1 (Spring 2002)$x1537-5048$w(DLC)  2001211888$w(OCoLC)48166959
 ----
 
-[source]
+[source,ruby]
 ----
 [
 {'type'=>'included',
