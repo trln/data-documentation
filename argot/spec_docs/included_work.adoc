@@ -412,6 +412,8 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
  
 ==== UNCb1629451 mock
 
+todo:testupdate title segment?
+
 [source]
 ----
 =774  0\$sBulletin (North Carolina Agricultural Experiment Station)$t1991 NC Agricultural Experiment Station Bulletin$w(OCoLC)1421220
@@ -421,7 +423,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 ----
 [
 {'type'=>'included',
- 'title'=>['Bulletin (North Carolina Agricultural Experiment Station)'],
+ 'title'=>['Bulletin', '(North Carolina Agricultural Experiment Station)'],
  'title_variation'=>'1991 NC Agricultural Experiment Station Bulletin',
  'other_ids'=>['1421220']}
 ]

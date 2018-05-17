@@ -593,6 +593,8 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 
 ==== UNCb1256874
 
+todo:testupdate title segment?
+
 [source]
 ----
 =770  1\$tFrench review. Special issue$x0271-3349$g1970-74
@@ -602,7 +604,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 ----
 [
 {'type'=>'has_supplement',
- 'title'=>['French review. Special issue'],
+ 'title'=>['French review.', 'Special issue'],
  'issn'=>'0271-3349',
  'display'=>'false'}
 ]
@@ -669,6 +671,8 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 
 ==== UNCb2282885 -- display; $i present; $s AND $t present
 
+todo:testupdate title segment?
+
 [source]
 ----
 =773  08$7nnas$iDetached from:$sGentleman's magazine (London, England : 1868)$tGentleman's magazine.$gVol. 12 (Apr. 1874)$w(OCoLC)7898234
@@ -679,7 +683,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 [
 {'type'=>'host_item',
  'label'=>'Detached from',
- 'title'=>['Gentleman\'s magazine (London, England : 1868)'],
+ 'title'=>['Gentleman\'s magazine', '(London, England :', '1868)'],
  'title_variation'=>'Gentleman\'s magazine.',
  'details'=>'Vol. 12 (Apr. 1874)',
  'other_ids'=>['7898234']}
@@ -687,6 +691,8 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 ----
 
 ==== UNCb2282885 mock -- display; $i present; $s AND $t present; $3 + $i `label`
+
+todo:testupdate title segment?
 
 [source]
 ----
@@ -698,7 +704,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 [
 {'type'=>'host_item',
  'label'=>'Pt 1: Detached from',
- 'title'=>['Gentleman\'s magazine (London, England : 1868)'],
+ 'title'=>['Gentleman\'s magazine', '(London, England :', '1868)'],
  'title_variation'=>'Gentleman\'s magazine.',
  'details'=>'Vol. 12 (Apr. 1874)',
  'other_ids'=>['7898234']}
@@ -706,6 +712,8 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 ----
 
 ==== UNCb2282885 mock -- display; $i present; $s AND $t present; $3 label
+
+todo:testupdate title segment?
 
 [source]
 ----
@@ -717,7 +725,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 [
 {'type'=>'host_item',
  'label'=>'Pt 1',
- 'title'=>['Gentleman\'s magazine (London, England : 1868)'],
+ 'title'=>['Gentleman\'s magazine', '(London, England :', '1868)'],
  'title_variation'=>'Gentleman\'s magazine.',
  'details'=>'Vol. 12 (Apr. 1874)',
  'other_ids'=>['7898234']}
@@ -725,7 +733,6 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 ----
 
 ==== UNCb8571581 -- display; $p present; $y present
-
 
 [source]
 ----
@@ -768,6 +775,8 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 
 ==== UNCb4827856 - 775 with $i, $s AND $t, no $a
 
+todo:testupdate title segment?
+
 [source]
 ----
 =775  08$iSpanish version:$sIdentity theft and your social security number. Spanish (Online)$tRobo de identidad y su número de seguro social$w(DLC)  2005230022$w(OCoLC)57614487
@@ -778,7 +787,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 [
 {'type'=>'alt_edition',
  'label'=>'Spanish version',
- 'title'=>['Identity theft and your social security number.', 'Spanish (Online)'],
+ 'title'=>['Identity theft and your social security number.', 'Spanish', '(Online)'],
  'title_variation'=>'Robo de identidad y su número de seguro social',
  'other_ids'=>['2005230022', '57614487']}
 ]
@@ -804,6 +813,8 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 
 ==== UNCb8955588 -- $e (language codes)
 
+todo:testupdate title segment?
+
 [source]
 ----
 =775  0\$tHighlights of the International Transport Forum$x2218-9750$eeng
@@ -824,7 +835,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
  'issn'=>'2218-9777'},
  {'type'=>'alt_edition',
  'label'=>'Russian language edition',
- 'title'=>['Fighting Corruption in Transition Economies (Russian version)'],
+ 'title'=>['Fighting Corruption in Transition Economies', '(Russian version)'],
  'issn'=>'1990-5076'}
 ]
 ----
@@ -929,6 +940,8 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 
 ==== UNCb8971570 -- display; i2=4
 
+todo:testupdate title segment?
+
 [source]
 ----
 =780  04$tAlberta English.$dEdmonton, English Language Arts Council of the Alberta Teachers' Association.$x0382-5191$w(DLC)cn 76301138$w(OCoLC)2297987
@@ -946,7 +959,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
  'other_ids'=>['cn 76301138', '2297987']},
 {'type'=>'earlier',
  'label'=>'Formed by the union of',
- 'title'=>['Voices (Edmonton, Alta.).'],
+ 'title'=>['Voices', '(Edmonton, Alta.).'],
  'details'=>'[Edmonton] : English Language Arts Council of the Alberta Teachers\' Association, ©1986-2002',
  'issn'=>'0832-8315',
  'other_ids'=>['870315102', 'cn 87031510']} 
@@ -977,6 +990,8 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 
 ==== UNCb9167128 -- not displayed (display handled by 580)
 
+todo:testupdate title segment?
+
 [source]
 ----
 =785  17$tActa pathologica, microbiologica et immunologica Scandinavica. Section B, Microbiology$x0108-0180$w(DLC)sc 82005096$w(OCoLC)8246434
@@ -988,12 +1003,12 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 ----
 [
 {'type'=>'later',
- 'title'=>['Acta pathologica, microbiologica et immunologica Scandinavica. Section B, Microbiology'],
+ 'title'=>['Acta pathologica, microbiologica et immunologica Scandinavica.', 'Section B, Microbiology'],
  'issn'=>'0108-0180',
  'other_ids'=>['sc 82005096', '8246434'],
  'display'=>'false'},
 {'type'=>'later',
- 'title'=>['Acta pathologica, microbiologica et immunologica Scandinavica. Section C, Immunology'],
+ 'title'=>['Acta pathologica, microbiologica et immunologica Scandinavica.', 'Section C, Immunology'],
  'issn'=>'0108-0202',
  'other_ids'=>['sc 82005097', '8276661'],
  'display'=>'false'}
@@ -1050,6 +1065,8 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 
 ==== UNCb1448729 -- `display`=false, $y present
 
+todo:testupdate title segment?
+
 [source]
 ----
 =787  1\$tJournal of chemical research. Synopses$x0308-2342$yJRPSDC
@@ -1059,7 +1076,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 ----
 [
 {'type'=>'related',
- 'title'=>['Journal of chemical research. Synopses'],
+ 'title'=>['Journal of chemical research.', 'Synopses'],
  'issn'=>'0308-2342',
  'other_ids'=>['JRPSDC'],
  'display'=>'false'}
