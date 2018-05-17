@@ -12,8 +12,7 @@ toc::[]
 
 == Processing notes
 
-* Segment/subfield delimiter '||' is provided in title portion to facilitate adaptive hyperlinking
-* `type` = uniform
+* `type` = this
 * `display` = defaults to true (so it doesn't need to be set explicitly)
 
 == Summary of logic
@@ -62,7 +61,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 [
   {'type'=>'this',
    'author'=>'Kuzmin, M. A. (Mikhail Alekseevich), 1872-1936.',
-   'title'=>'Works.||Selections.||1977.'}
+   'title'=>['Works.', 'Selections.', '1977.']}
 ]
 ----
 
@@ -83,7 +82,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 [
   {'type'=>'this',
    'author'=>'Pennsylvania.',
-   'title'=>'Laws, etc.||1825.'}
+   'title'=>['Laws, etc.', '1825.']}
 ]
 ----
 
@@ -104,7 +103,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 [
   {'type'=>'this',
    'author'=>'International Congress of Human Sciences in Asia and North Africa (30th : 1976 : Mexico City, Mexico).',
-   'title'=>'Expansión hispanoamericana en Asia.||English.'}
+   'title'=>['Expansión hispanoamericana en Asia.', 'English.']}
 ]
 ----
 
@@ -127,7 +126,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 [
   {'type'=>'this',
    'author'=>'Landis, Thomas D.',
-   'title'=>'Container tree nursery manual.||Spanish'}
+   'title'=>['Container tree nursery manual.', 'Spanish']}
 ]
 ----
 
@@ -145,7 +144,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 [
   {'type'=>'this',
    'author'=>'Camus, Albert, 1913-1960.',
-   'title'=>'Étranger.||English'}
+   'title'=>['Étranger.', 'English']}
 ]
 ----
 
@@ -163,7 +162,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 [
   {'type'=>'this',
    'author'=>'Burton, Robert Wilton, 1848-1917.',
-   'title'=>'Remnant truth',
+   'title'=>['Remnant truth'],
    'title_nonfiling'=>'De remnant truth'}
 ]
 ----
@@ -186,7 +185,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 [
   {'type'=>'this',
    'author'=>'El Salvador',
-   'title'=>'Constitución política (1983).||English'}
+   'title'=>['Constitución política (1983).', 'English']}
 ]
 ----
 
@@ -208,7 +207,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 [
   {'type'=>'this',
    'author'=>'Consulta Latinoamericana de Iglesia y Sociedad (2nd : 1966 : El Tabo, Chile)',
-   'title'=>'América hoy.||English'}
+   'title'=>['América hoy.', 'English']}
 ]
 ----
 
@@ -229,7 +228,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 [
   {'type'=>'this',
    'author'=>'Myers, Johnnie Sue.',
-   'title'=>'Gathering place||Volume 1',
+   'title'=>['Gathering place', 'Volume 1'],
    'title_nonfiling'=>'The gathering place Volume 1'}
 ]
 ----
@@ -247,7 +246,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 [
   {'type'=>'this',
    'author'=>'Robertson, William, 1721-1793.',
-   'title'=>'History of America.||Books IX and X',
+   'title'=>['History of America.', 'Books IX and X'],
    'title_nonfiling'=>'The history of America. Books IX and X'}
 ]
 ----
@@ -265,7 +264,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 [
   {'type'=>'this',
    'author'=>'Boman, Patrick, 1948-',
-   'title'=>'Thé de boeuf, radis de cheval'}
+   'title'=>['Thé de boeuf, radis de cheval']}
 ]
 ----
 
@@ -287,7 +286,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 [
   {'type'=>'this',
    'author'=>'United States. Congress. Senate. Committee on Commerce. Subcommittee on the Environment.',
-   'title'=>'Toxic Substances Control Act of 1971 and amendment.||Part 3,||Appendix',
+   'title'=>['Toxic Substances Control Act of 1971 and amendment.', 'Part 3,', 'Appendix'],
    'title_nonfiling'=>'The Toxic Substances Control Act of 1971 and amendment. Part 3, Appendix'}
 ]
 ----
@@ -309,7 +308,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 [
   {'type'=>'this',
    'author'=>'International Congress of Prehistoric and Protohistoric Sciences (14th : 2001 : Université de Liège)',
-   'title'=>'Problème de l\'étain à l\'origine de la métallurgie.||Section 11',
+   'title'=>['Problème de l\'étain à l\'origine de la métallurgie.', 'Section 11'],
    'title_nonfiling'=>'Le problème de l\'étain à l\'origine de la métallurgie. Section 11'}
 ]
 ----
@@ -330,7 +329,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 ----
 [
   {'type'=>'this',
-   'title'=>'Bible.||New Testament.||Latin.||Vulgate.||1541.'}
+   'title'=>['Bible.', 'New Testament.', 'Latin.', 'Vulgate.', '1541.']}
 ]
 ----
 
@@ -346,7 +345,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 ----
 [
   {'type'=>'this',
-   'title'=>'ressreport (Hamburg : Online)',
+   'title'=>['ressreport (Hamburg : Online)'],
    'title_nonfiling'=>'Kressreport (Hamburg : Online)'}
 ]
 ----
@@ -363,7 +362,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 ----
 [
   {'type'=>'this',
-   'title'=>'Demographic and Health Surveys preliminary report : Dominican Republic.',
+   'title'=>['Demographic and Health Surveys preliminary report : Dominican Republic.'],
    'title_variation'=>'Demographic and Health Surveys preliminary report : Republica Dominicana.'}
 ]
 ----
@@ -381,7 +380,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 ----
 [
   {'type'=>'this',
-   'title'=>'A&E Classroom.||The Class of the 20th Century - 1963-1968'}
+   'title'=>['A&E Classroom.', 'The Class of the 20th Century - 1963-1968']}
 ]
 ----
 
@@ -396,7 +395,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 ----
 [
   {'type'=>'this',
-   'title'=>'Young singer.||Soprano',
+   'title'=>['Young singer.', 'Soprano'],
    'title_nonfiling'=>'The Young singer. Soprano'}
 ]
 ----

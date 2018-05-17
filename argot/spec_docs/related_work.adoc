@@ -11,8 +11,6 @@ toc::[]
 
 == Processing notes
 
-* Segment/subfield delimiter '||' is provided in title portion to facilitate adaptive hyperlinking
-* `display` = defaults to true (so it doesn't need to be set explicitly)
 * `type` = varies by source MARC field, as shown in table below
 
 [cols=2*,options=header]
@@ -94,7 +92,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 [
   {'type'=>'related',
    'author'=>'Saint-Saëns, Camille, 1835-1921.',
-   'title'=>'Quartets,||violins (2), viola, cello,||no. 2, op. 153,||G major'}
+   'title'=>['Quartets,', 'violins (2), viola, cello,', 'no. 2, op. 153,', 'G major']}
 ]
 ----
 
@@ -114,7 +112,7 @@ We want to remove the comma that precedes a $e, but keep or provide a period at 
 [
 {'type'=>'related',
  'author'=>'Schwenkel, Christina.',
- 'title'=>'Architecture and dwelling in the \'war of destruction\' in Vietnam.'}
+ 'title'=>['Architecture and dwelling in the \'war of destruction\' in Vietnam.']}
 ]
 ----
 
@@ -131,7 +129,7 @@ We want to remove the comma that precedes a $e, but keep or provide a period at 
 {'type'=>'related',
  'label'=>'Facsimile of',
  'author'=>'Ferrini, Vincent, 1913-2007.',
- 'title'=>'Tidal wave : poems of the great strikes.||1945||(New York : Great-Concord Publishers)'}
+ 'title'=>['Tidal wave : poems of the great strikes.', '1945', '(New York : Great-Concord Publishers)']}
 ]
 ----
 
@@ -167,7 +165,7 @@ See sections of https://github.com/trln/data-documentation/blob/master/argot/spe
 {'type'=>'related',
  'label'=>'Tome 1, volume 1: Contains',
  'author'=>'Plotinus.',
- 'title'=>'Peri tou kalou.||French||(Achard and Narbonne)'}
+ 'title'=>['Peri tou kalou.', 'French', '(Achard and Narbonne)']}
 ]
 ----
 
@@ -183,7 +181,7 @@ See sections of https://github.com/trln/data-documentation/blob/master/argot/spe
 [
 {'type'=>'related',
  'author'=>'Name, Author, (Test name), 1944-.',
- 'title'=>'Test title.'}
+ 'title'=>['Test title.']}
 ]
 ----
 
@@ -203,7 +201,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 [
 {'type'=>'related',
  'author'=>'Kungliga Biblioteket (Sweden).',
- 'title'=>'Manuscript.||KB787a.||Church Slavic.||1966.'}
+ 'title'=>['Manuscript.', 'KB787a.', 'Church Slavic.', '1966.']}
 ]
 ----
 
@@ -219,7 +217,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 [
 {'type'=>'related',
  'author'=>'United States. Congress (94th, 2nd session : 1976).',
- 'title'=>'Memorial services held in the House of Representatives and Senate of the United States, together with remarks presented in eulogy of Jerry L. Litton, late a Representative from Missouri.||197.'}
+ 'title'=>['Memorial services held in the House of Representatives and Senate of the United States, together with remarks presented in eulogy of Jerry L. Litton, late a Representative from Missouri.', '197.']}
 ]
 ----
 
@@ -235,7 +233,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 [
 {'type'=>'related',
  'author'=>'North Carolina. Building Code Council.',
- 'title'=>'North Carolina state building code.||1,||General construction.||11X,||Making buildings and facilities accessible to and usable by the physically handicapped.'}
+ 'title'=>['North Carolina state building code.', '1,', 'General construction.', '11X,', 'Making buildings and facilities accessible to and usable by the physically handicapped.']}
 ]
 ----
 
@@ -251,7 +249,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 [
 {'type'=>'related',
  'author'=>'Germany (East).',
- 'title'=>'Treaties, etc.||Germany (West),||1990 May 18.||1990.'}
+ 'title'=>['Treaties, etc.', 'Germany (West),', '1990 May 18.', '1990.']}
 ]
 ----
 
@@ -267,7 +265,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 [
 {'type'=>'related',
  'author'=>'Café Tacuba (Musical group)',
- 'title'=>'12/12'}
+ 'title'=>['12/12']}
 ]
 ----
 
@@ -286,7 +284,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 [
 {'type'=>'related',
  'author'=>'Great Central Fair for the U.S. Sanitary Commission (1864 : Philadelphia, Pa.). Committee on Public Charities and Benevolent Institutions.',
- 'title'=>'Philadelphia [blank] 1864. 619 Walnut Street. To [blank] ...'}
+ 'title'=>['Philadelphia [blank] 1864. 619 Walnut Street. To [blank] ...']}
 ]
 ----
 
@@ -302,7 +300,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 [
 {'type'=>'related',
  'author'=>'Deutsch Foundation Conference (1930 : University of Chicago).',
- 'title'=>'Care of the aged.||2000,||1972.||Reprint.',
+ 'title'=>['Care of the aged.', '2000,', '1972.', 'Reprint.'],
  'issn'=>'1234-1234'}
 ]
 ----
@@ -322,7 +320,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 ----
 [
 {'type'=>'related',
- 'title'=>'Cahiers de civilisation médiévale.||Bibliographie.',
+ 'title'=>['Cahiers de civilisation médiévale.', 'Bibliographie.'],
  'issn'=>'0240-8678'}
 ]
 ----
@@ -338,7 +336,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 ----
 [
 {'type'=>'related',
- 'title'=>'Jane Pickering\'s lute book.||arr.',
+ 'title'=>['Jane Pickering\'s lute book.', 'arr.'],
  'title_variation'=>'Drewries Accord\'s;'}
 ]
 ----
@@ -356,7 +354,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 [
  {'type'=>'related',
  'label'=>'Blah',
- 'title'=>'Magnificent Ambersons (Motion picture).||English.',
+ 'title'=>['Magnificent Ambersons (Motion picture).', 'English.'],
  'title_nonfiling'=>'The magnificent Ambersons (Motion picture). English.'}
 ]
 ----
@@ -373,7 +371,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 [
 {'type'=>'related',
  'label'=>'Guide: Based on',
- 'title'=>'Deutsche Geschichte.||Band 6.'}
+ 'title'=>['Deutsche Geschichte.', 'Band 6.']}
 ]
 ----
 
@@ -390,7 +388,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 ----
 [
 {'type'=>'related',
- 'title'=>'English pilot.||The fourth book : describing the West India navigation, from Hudson\'s-Bay to the river Amazones ...',
+ 'title'=>['English pilot.', 'The fourth book : describing the West India navigation, from Hudson\'s-Bay to the river Amazones ...'],
  'title_nonfiling'=>'The English pilot. The fourth book : describing the West India navigation, from Hudson\'s-Bay to the river Amazones ...'}
 ]
 ----
@@ -406,7 +404,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 ----
 [
 {'type'=>'related',
- 'title'=>'Industrial sales management game||5.'}
+ 'title'=>['Industrial sales management game', '5.']}
 ]
 ----
 
@@ -425,7 +423,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 {'type'=>'related',
  'label'=>'Facsimile of',
  'author'=>'Mozart, Wolfgang Amadeus, 1756-1791.',
- 'title'=>'Concertos,||violin, orchestra,||K. 219,||A major.||Library of Congress. Music Division : ML30.8b .M8 K. 219 Case.'}
+ 'title'=>['Concertos,', 'violin, orchestra,', 'K. 219,', 'A major.', 'Library of Congress. Music Division : ML30.8b .M8 K. 219 Case.']}
 ]
 ----
 
@@ -444,11 +442,11 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 {'type'=>'related',
  'label'=>'Facsimile of',
  'author'=>'Conservatoire royal de musique de Bruxelles. Bibliothèque.',
- 'title'=>'Manuscript.||16.662.'},
+ 'title'=>['Manuscript.', '16.662.']},
 {'type'=>'related',
  'label'=>'Facsimile of',
  'author'=>'Conservatoire royal de musique de Bruxelles. Bibliothèque.',
- 'title'=>'Manuscript.||16.663.'}
+ 'title'=>['Manuscript.', '16.663.']}
 ]
 ----
 
@@ -466,7 +464,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 [
 {'type'=>'related',
  'author'=>'Westminster Assembly (1643-1652).',
- 'title'=>'Shorter catechism.||1809.'}
+ 'title'=>['Shorter catechism.', '1809.']}
 ]
 ----
 
@@ -490,7 +488,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 [
   {'type'=>'translation_of',
    'author'=>'China.',
-   'title'=>'Laws, etc.||(Zhonghua Renmin Gongheguo fa lü hui bian).',
+   'title'=>['Laws, etc.', '(Zhonghua Renmin Gongheguo fa lü hui bian).'],
    'title_variation'=>'Zhonghua Renmin Gongheguo fa lü hui bian',
    'other_ids'=>['90645849']}
 ]
@@ -508,7 +506,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 [
   {'type'=>'translation_of',
    'label'=>'Originally published in France as',
-   'title'=>'Innovations médicales en situations humanitaires.',
+   'title'=>['Innovations médicales en situations humanitaires.'],
    'details'=>'Paris : Harmattan, c2009',
    'isbn'=>['9782296100466'],
    'other_ids'=>['465089061']}
@@ -526,7 +524,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 ----
 [
   {'type'=>'translation_of',
-   'title'=>'Itogi nauki i tekhniki.||Seri︠i︡a Sovremennye problemy matematiki.||Fundamentalʹnye napravleni︠i︡a',
+   'title'=>['Itogi nauki i tekhniki.', 'Seri︠i︡a Sovremennye problemy matematiki.', 'Fundamentalʹnye napravleni︠i︡a'],
    'issn'=>'0233-6723',
    'other_ids'=>['87645715', '14198545'],
    'display'=>'false'}
@@ -549,7 +547,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 [
   {'type'=>'translated_as',
    'label'=>'German version',
-   'title'=>'Wissenschaftliche Mitteilungen des Bosnisch-Herzegowinischen Landesmuseums.||Heft A, Archäologie'
+   'title'=>['Wissenschaftliche Mitteilungen des Bosnisch-Herzegowinischen Landesmuseums.', 'Heft A, Archäologie']
    'issn'=>'0352-1990',
    'other_ids'=>['2010223203', '4818533']}
 ]
@@ -571,7 +569,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 [
 {'type'=>'has_supplement',
  'label'=>'Supplement',
- 'title'=>'Insect pest survey.||Special supplement',
+ 'title'=>['Insect pest survey.', 'Special supplement'],
  'other_ids'=>['1032826279']}
 ]
 ----
@@ -587,7 +585,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 ----
 [
 {'type'=>'has_supplement',
- 'title'=>'Baking equipment',
+ 'title'=>['Baking equipment'],
  'details'=>'1979-Dec. 1987',
  'other_ids'=>['15639544']}
 ]
@@ -604,7 +602,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 ----
 [
 {'type'=>'has_supplement',
- 'title'=>'French review. Special issue',
+ 'title'=>['French review. Special issue'],
  'issn'=>'0271-3349',
  'display'=>'false'}
 ]
@@ -625,7 +623,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 ----
 [
 {'type'=>'supplement_to',
- 'title'=>'Furnace-type lumber dry-kiln',
+ 'title'=>['Furnace-type lumber dry-kiln'],
  'details'=>'Report number: Report R1474'}
 ]
 ----
@@ -641,7 +639,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 ----
 [
 {'type'=>'supplement_to',
- 'title'=>'Bunka jinruigaku',
+ 'title'=>['Bunka jinruigaku'],
  'other_ids'=>['2005222403', '55991441'],
  'display'=>'false'}
 ]
@@ -660,7 +658,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 {'type'=>'supplement_to',
  'label'=>'Parent item',
  'author'=>'Knowlton, Frank Hall, 1860-1926.',
- 'title'=>'Catalogue of the Mesozoic and Cenozoic plants of North America',
+ 'title'=>['Catalogue of the Mesozoic and Cenozoic plants of North America'],
  'other_ids'=>['670360522']}
 ]
 ----
@@ -681,7 +679,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 [
 {'type'=>'host_item',
  'label'=>'Detached from',
- 'title'=>'Gentleman\'s magazine (London, England : 1868)',
+ 'title'=>['Gentleman\'s magazine (London, England : 1868)'],
  'title_variation'=>'Gentleman\'s magazine.',
  'details'=>'Vol. 12 (Apr. 1874)',
  'other_ids'=>['7898234']}
@@ -700,7 +698,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 [
 {'type'=>'host_item',
  'label'=>'Pt 1: Detached from',
- 'title'=>'Gentleman\'s magazine (London, England : 1868)',
+ 'title'=>['Gentleman\'s magazine (London, England : 1868)'],
  'title_variation'=>'Gentleman\'s magazine.',
  'details'=>'Vol. 12 (Apr. 1874)',
  'other_ids'=>['7898234']}
@@ -719,7 +717,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 [
 {'type'=>'host_item',
  'label'=>'Pt 1',
- 'title'=>'Gentleman\'s magazine (London, England : 1868)',
+ 'title'=>['Gentleman\'s magazine (London, England : 1868)'],
  'title_variation'=>'Gentleman\'s magazine.',
  'details'=>'Vol. 12 (Apr. 1874)',
  'other_ids'=>['7898234']}
@@ -739,7 +737,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 [
 {'type'=>'host_item',
  'author'=>'National Academy of Sciences (U.S.).',
- 'title'=>'Biographical memoirs.',
+ 'title'=>['Biographical memoirs.'],
  'title_nonfiling'=>'Biogr. mem.',
  'details'=>'Washington, National Academy of Sciences, 1938. 23 cm. vol. XVIII, 7th memoir, 1 p. l., p. 157-174. front. (port) CODEN: BMNSAC',
  'issn'=>'0077-2933',
@@ -758,7 +756,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 ----
 [
 {'type'=>'host_item',
- 'title'=>'Department of Health Behavior and Health Education Master\'s Papers and Community Diagnosis Projects, 1947-2015.',
+ 'title'=>['Department of Health Behavior and Health Education Master\'s Papers and Community Diagnosis Projects, 1947-2015.'],
  'other_ids'=>['989732850'],
  'display'=>'false'}
 ]
@@ -780,7 +778,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 [
 {'type'=>'alt_edition',
  'label'=>'Spanish version',
- 'title'=>'Identity theft and your social security number.||Spanish (Online)',
+ 'title'=>['Identity theft and your social security number.', 'Spanish (Online)'],
  'title_variation'=>'Robo de identidad y su número de seguro social',
  'other_ids'=>['2005230022', '57614487']}
 ]
@@ -798,7 +796,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 [
 {'type'=>'alt_edition',
  'label'=>'Translation of',
- 'title'=>'Redes femeninas',
+ 'title'=>['Redes femeninas'],
  'details'=>'Roma : Viella, 2013 (IRCUM-Medieval cultures ; 1)',
  'other_ids'=>['830363122']}
 ]
@@ -818,15 +816,15 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 [
 {'type'=>'alt_edition',
  'label'=>'English language edition',
- 'title'=>'Highlights of the International Transport Forum',
+ 'title'=>['Highlights of the International Transport Forum'],
  'issn'=>'2218-9750'},
 {'type'=>'alt_edition',
  'label'=>'German language edition',
- 'title'=>'Weltverkehrsforum : Forum Höhepunkte',
+ 'title'=>['Weltverkehrsforum : Forum Höhepunkte'],
  'issn'=>'2218-9777'},
  {'type'=>'alt_edition',
  'label'=>'Russian language edition',
- 'title'=>'Fighting Corruption in Transition Economies (Russian version)',
+ 'title'=>['Fighting Corruption in Transition Economies (Russian version)'],
  'issn'=>'1990-5076'}
 ]
 ----
@@ -846,7 +844,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 ----
 [
 {'type'=>'issued_with',
- 'title'=>'Cosmetic bench reference',
+ 'title'=>['Cosmetic bench reference'],
  'issn'=>'1069-1448',
  'other_ids'=>['sn 93007310', '9883467']}
 ]
@@ -865,7 +863,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 {'type'=>'issued_with',
  'label'=>'Companion to',
  'author'=>'University of North Carolina at Chapel Hill. Graduate School.',
- 'title'=>'Graduate school handbook.',
+ 'title'=>['Graduate school handbook.'],
  'other_ids'=>['45129829']}
 ]
 ----
@@ -881,7 +879,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 ----
 [
 {'type'=>'issued_with',
- 'title'=>'Bakers digest',
+ 'title'=>['Bakers digest'],
  'other_ids'=>['4974418'],
  'display'=>'false'}
 ]
@@ -904,7 +902,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 {'type'=>'earlier',
  'label'=>'Replacement of',
  'author'=>'Ludwig, F. L.',
- 'title'=>'Site selection for the monitoring of photochemical air pollutants.',
+ 'title'=>['Site selection for the monitoring of photochemical air pollutants.'],
  'details'=>'Research Triangle Park, N.C. : U.S. Environmental Protection Agency ; Springfield, Va. : National Technical Information Service [distributor], 1978. Report number: EPA-450/3-78-013',
  'other_ids'=>['4454556']}
 ]
@@ -923,7 +921,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 {'type'=>'earlier',
  'label'=>'Supersedes',
  'author'=>'Vancouver Art Gallery Association.',
- 'title'=>'Vancouver Art Gallery Association annual report.',
+ 'title'=>['Vancouver Art Gallery Association annual report.'],
  'issn'=>'0315-4424',
  'other_ids'=>['cn 77318987', '3113301']}
 ]
@@ -942,13 +940,13 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 [
 {'type'=>'earlier',
  'label'=>'Formed by the union of',
- 'title'=>'Alberta English.',
+ 'title'=>['Alberta English.'],
  'details'=>'Edmonton, English Language Arts Council of the Alberta Teachers\' Association.',
  'issn'=>'0382-5191',
  'other_ids'=>['cn 76301138', '2297987']},
 {'type'=>'earlier',
  'label'=>'Formed by the union of',
- 'title'=>'Voices (Edmonton, Alta.).',
+ 'title'=>['Voices (Edmonton, Alta.).'],
  'details'=>'[Edmonton] : English Language Arts Council of the Alberta Teachers\' Association, ©1986-2002',
  'issn'=>'0832-8315',
  'other_ids'=>['870315102', 'cn 87031510']} 
@@ -972,7 +970,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 {'type'=>'later',
  'label'=>'Continued by',
  'author'=>'United States. Agricultural Stabilization and Conservation Service. Warren County ASCS Office.',
- 'title'=>'Union County ASCS ... annual report',
+ 'title'=>['Union County ASCS ... annual report'],
  'other_ids'=>['1028240203']}
 ]
 ----
@@ -990,17 +988,17 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 ----
 [
 {'type'=>'later',
- 'title'=>'Acta pathologica, microbiologica et immunologica Scandinavica. Section B, Microbiology',
+ 'title'=>['Acta pathologica, microbiologica et immunologica Scandinavica. Section B, Microbiology'],
  'issn'=>'0108-0180',
  'other_ids'=>['sc 82005096', '8246434'],
  'display'=>'false'},
 {'type'=>'later',
- 'title'=>'Acta pathologica, microbiologica et immunologica Scandinavica. Section C, Immunology',
+ 'title'=>['Acta pathologica, microbiologica et immunologica Scandinavica. Section C, Immunology'],
  'issn'=>'0108-0202',
  'other_ids'=>['sc 82005097', '8276661'],
  'display'=>'false'}
 {'type'=>'later',
- 'title'=>'APMIS',
+ 'title'=>['APMIS'],
  'issn'=>'0903-4641',
  'other_ids'=>['sn 88026537', '17476618'],
  'display'=>'false'}
@@ -1022,7 +1020,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 ----
 [
 {'type'=>'data_source',
- 'title'=>'Australian plant name index.',
+ 'title'=>['Australian plant name index.'],
  'details'=>'[Canberra, A.C.T.] : Australian National Botanic Gardens : Australian National Herbarium Contributed: Data for inclusion in initial database at launch',
  'other_ids'=>['2009252503', '64343431']}
 ]
@@ -1044,7 +1042,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 [
 {'type'=>'related',
  'author'=>'Rush, James E.',
- 'title'=>'Technical report on development of non-roman alphabet capability for library processes',
+ 'title'=>['Technical report on development of non-roman alphabet capability for library processes'],
  'details'=>'Techical report number: OCLC/DD/TR-80/4 February 29, 1980',
  'other_ids'=>['6081468']}
 ]
@@ -1061,7 +1059,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 ----
 [
 {'type'=>'related',
- 'title'=>'Journal of chemical research. Synopses',
+ 'title'=>['Journal of chemical research. Synopses'],
  'issn'=>'0308-2342',
  'other_ids'=>['JRPSDC'],
  'display'=>'false'}
@@ -1080,7 +1078,7 @@ Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/
 [
 {'type'=>'related',
  'author'=>'Rosenau, William.',
- 'title'=>'Subversion and insurgency : RAND counterinsurgency study--paper 2',
+ 'title'=>['Subversion and insurgency : RAND counterinsurgency study--paper 2'],
  'other_ids'=>['RAND/OP-172-OSD'],
  'display'=>'false'}
 ]
