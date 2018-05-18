@@ -2189,6 +2189,49 @@ If $3 is present, prepend its value to label assigned via above logic (UNCb90945
 }
 ----
 
+== Examples: note_serial_dates
+=== 362
+
+==== Processing notes
+
+* Map data from subfields a and z
+* Put parentheses around $z value
+* In $z, replace "Cf." at beginning of field with "Data from:"
+
+==== Behavior notes
+
+* not indexed
+* displayed beneath `imprint_main` or `imprint_multiple` data in Other details section.
+* No additional label is needed for display.
+
+==== UNCb9164892
+
+[source]
+----
+=362  1\$aBegan with v. 1 in 1846; ceased in Mar. 1934.$zCf. Union list of serials.
+----
+
+[source,ruby]
+----
+note_serial_dates = [
+  'Began with v. 1 in 1846; ceased in Mar. 1934. (Data from: Union list of serials.)'
+]
+----
+
+==== UNCb9187943
+
+[source]
+----
+=362  0\$aAug. 1, 1959-Aug. 1, 1965.
+----
+
+[source,ruby]
+----
+note_serial_dates = [
+  'Aug. 1, 1959-Aug. 1, 1965.'
+]
+----
+
 == Examples: note_supplement
 
 * Field is NOT indexed
