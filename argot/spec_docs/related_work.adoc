@@ -468,7 +468,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 ]
 ----
 
-== Examples (76X-78X fields -- NOT YET READY TO IMPLEMENT)
+== Examples (76X-78X fields)
 Refer to https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_linking_entry_fields_76X-78X.adoc for general processing pattern for this set of fields.
 
 === 765 (`type`=translation_of)
