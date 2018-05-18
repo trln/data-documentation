@@ -1,11 +1,13 @@
 :toc:
 :toc-placement!:
 
-= Argot misc_id field
+= Argot misc_id pattern and field
 
 toc::[]
 
 There are MANY possible ID types, many of which are only relevant for certain formats or disciplines. Make a general use IDs field so these can be searched and displayed, without having to define every ID type separately.
+
+The Argot field `upc` also leverages this pattern. It is from the 024 MARC field (with ind1=1).
 
 == Argot pattern
 

@@ -10,8 +10,8 @@ description_details_projection,description_details_projection,MARC,n,GEN,345,,,s
 description_details_sound,description_details_sound,MARC,n,GEN,344,,,subelement_to_value,Complex instructions. Refer to linked documentation for this field,documentation needed,description_details_soundGEN344,0,0,y,,
 description_details_video,description_details_video,MARC,n,GEN,346,,,subelement_to_value,Complex instructions. Refer to linked documentation for this field,documentation needed,description_details_videoGEN346,0,0,y,,
 edition,edition,MARC,n,GEN,250,ab3,none,concat_subelements,$3 label,.,editionGEN250ab3none,1,0,y,,
-frequency,frequency[current],MARC,n,GEN,310,ab,none,concat_subelements,x,x,frequency[current]GEN310abnone,0,1,y,y,n
-frequency,frequency[former],MARC,n,GEN,321,ab,none,concat_subelements,x,x,frequency[former]GEN321abnone,0,1,y,y,n
+frequency,frequency[current],MARC,n,GEN,310,ab,none,concat_subelements,x,x,frequency[current]GEN310abnone,0,1,y,y,y
+frequency,frequency[former],MARC,n,GEN,321,ab,none,concat_subelements,x,x,frequency[former]GEN321abnone,0,1,y,y,y
 genre_headings,genre_headings,MARC,y,GEN,382,,,,,,genre_headingsGEN382,0,0,y,,
 genre_headings,genre_headings,MARC,n,GEN,567,b,none,subelement_to_value,x,x,genre_headingsGEN567bnone,0,0,y,n,n
 holdings,holdings[call_no],MARCish,n,UNC,999,hijkm,i1=9 AND i2=3 AND $0=#{holdings_record_id} AND $2='852',concat_subelements,x,x,holdings[call_no]UNC999hijkmi1=9 AND i2=3 AND $0=#{holdings_record_id} AND $2='852',0,0,y,y,y
@@ -574,7 +574,9 @@ title_variant,title_variant[label],MARC,n,GEN,247,{na},[display]='false',DO NOT 
 title_variant,title_variant[type],MARC,n,GEN,247,{na},none,constant,"""type"":""former""",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_title_variant.adoc,title_variant[type]GEN247{na}none,0,0,y,n,n
 title_variant,title_variant[value],MARC,n,GEN,247,abghnp,[display]!='false',concat_subelements,See linked documentation,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_title_variant.adoc,title_variant[value]GEN247abghnp[display]!='false',0,0,y,n,n
 title_variant,title_variant[value],MARC,n,GEN,247,abnp,[display]='false',concat_subelements,See linked documentation,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_title_variant.adoc,title_variant[value]GEN247abnp[display]='false',0,0,y,n,n
-upc,upc[qualifying_info],MARC,n,GEN,024,a,i1=1 and $a data includes parenthetical qualifying info,subelement_to_value,"strip out the actual UPC, remove parentheses from around data",.,upc[qualifying_info]GEN24ai1=1 and $a data includes parenthetical qualifying info,0,0,y,,
-upc,upc[qualifying_info],MARC,n,GEN,024,q,i1=1,concat_subelements,remove parentheses from around data,.,upc[qualifying_info]GEN24qi1=1,0,0,y,,
-upc,upc[value],MARC,n,GEN,024,a,i1=1,subelement_to_value,remove parenthetical qualifier if it's included in $a,.,upc[value]GEN24ai1=1,0,0,y,,
+upc,upc[qual],MARC,n,GEN,024,az,i1=1 and $a or $z data includes parenthetical qualifying info,subelement_to_value,"strip out the actual UPC, remove parentheses from around qualifying data",Follow instructions for 024 in https://github.com/trln/data-documentation/blob/master/argot/spec_docs/misc_id.adoc,upc[qual]GEN24azi1=1 and $a or $z data includes parenthetical qualifying info,0,0,y,y,y
+upc,upc[qual],MARC,n,GEN,024,q,i1=1,concat_subelements,remove parentheses from around data,Follow instructions for 024 in https://github.com/trln/data-documentation/blob/master/argot/spec_docs/misc_id.adoc,upc[qual]GEN24qi1=1,0,0,y,y,y
+upc,upc[type],MARC,n,GEN,024,{na},[value] from $a,constant,"""type"":""UPC""",Follow instructions for 024 in https://github.com/trln/data-documentation/blob/master/argot/spec_docs/misc_id.adoc,upc[type]GEN24{na}[value] from $a,0,0,y,y,y
+upc,upc[type],MARC,n,GEN,024,{na},[value] from $z,constant,"""type"":""UPC (canceled or invalid)""",Follow instructions for 024 in https://github.com/trln/data-documentation/blob/master/argot/spec_docs/misc_id.adoc,upc[type]GEN24{na}[value] from $z,0,0,y,y,y
+upc,upc[value],MARC,n,GEN,024,az,i1=1,subelement_to_value,remove parenthetical qualifier,Follow instructions for 024 in https://github.com/trln/data-documentation/blob/master/argot/spec_docs/misc_id.adoc,upc[value]GEN24azi1=1,0,0,y,y,y
 virtual_collection,virtual_collection,MARCish,n,UNC,919,t,.,subelement_to_value,x,x,virtual_collectionUNC919t.,0,0,y,n,n
