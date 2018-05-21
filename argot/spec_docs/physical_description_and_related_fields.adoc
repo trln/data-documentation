@@ -1,0 +1,66 @@
+:toc:
+:toc-placement!:
+
+= Argot fields related to physical description
+== MARC source fields
+
+* 300 physical description
+* 340 physical description details
+* 342 physical description details
+* 344 physical description details
+* 345 physical description details
+* 346 physical description details
+* 347 physical description details
+* 352 physical description details
+
+
+
+* 382 - medium of performance -- map to genre
+* 383 - map $c, $d to misc_id as Thematic Index Number
+* 384 - map to genre
+
+
+
+toc::[]
+
+== `physical_description`
+
+=== processing details
+
+* `label` = $3 if present
+* `value` = $a, b, c, e, f, g (concatenate subfield values)
+
+=== UNCb9007512
+
+[source]
+----
+=300  \\$3videodiscs$a1 videodisc (107 min.) :$bsound, color ;$c4 3/4 in.
+=300  \\$3volumes$a286 pages :$billustrations ;$c21 cm.
+----
+
+[source,ruby]
+----
+{'label' => 'videodiscs',
+ 'value' => '1 videodisc (107 min.) : sound, color ; 4 3/4 in.'},
+{'label' => 'volumes',
+ 'value' => '286 pages : illustrations ; 21 cm.'}
+----
+
+=== UNCb8511611
+
+[source]
+----
+=300  \\$a1 reel of 1 (18 min., 30 sec.) (656 ft.) :$bopt sd., b&w ;$c16 mm.$3print +$ewith study guide.
+----
+
+[source,ruby]
+----
+{'label' => 'print',
+'value' => '1 reel of 1 (18 min., 30 sec.) (656 ft.) : opt sd., b&w ; 16 mm. + with study guide.'}
+----
+			   
+
+
+== other fields (to do)
+b7331929 - 342, 343, 352
+
