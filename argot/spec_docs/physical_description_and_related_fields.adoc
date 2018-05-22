@@ -98,20 +98,20 @@ toc::[]
 |Subfield delimiter
 |Label value
 
-||a
-||Base/substrate material
+|a
+|Base/substrate material
 
-||b
-||Dimensions
+|b
+|Dimensions
 
-||c
-||Medium
+|c
+|Medium
 
-||d
-||Technique
+|d
+|Technique
 
-||e
-||Support material
+|e
+|Support material
 
 |f
 |Production rate/ratio
@@ -183,3 +183,48 @@ toc::[]
 ]
 ----
 
+==== mock
+
+[source]
+----
+=340  \\$aplastic$ametal$b4 3/4 in.$f1.4 m/s$gpolychrome$gblack and white$hfront cover pocket$joriginal
+=340  \\$apaper tape$dpunched$iIbord Model 74 tape reader
+=340  \\$apaper$dprinted$kdouble sided$kvertical score$mfolio$nlarge print
+=340  \\$aacetate$onegative
+----
+
+[source,ruby]
+----
+{'label' => 'Base/substrate material',
+ 'value' => 'plastic; metal'},
+{'label' => 'Dimensions',
+ 'value' => '4 3/4 in.'},
+{'label' => 'Production rate/ratio',
+ 'value' => '1.4 m/s'},
+{'label' => 'Color characteristics',
+ 'value' => 'polychrome; black and white'},
+{'label' => 'Found in/on',
+ 'value' => 'front cover pocket'},
+{'label' => 'Generation of reproduction',
+ 'value' => 'original'},
+{'label' => 'Base/substrate material',
+ 'value' => 'paper tape'},
+{'label' => 'Technique',
+ 'value' => 'punched'},
+{'label' => 'Use requires',
+ 'value' => 'Ibord Model 74 tape reader'},
+{'label' => 'Base/substrate material',
+ 'value' => 'paper'},
+{'label' => 'Technique',
+ 'value' => 'printed'},
+{'label' => 'Layout',
+ 'value' => 'double sided; vertical score'},
+{'label' => 'Book format',
+ 'value' => 'folio'},
+{'label' => 'Font size',
+ 'value' => 'large print'},
+{'label' => 'Base/substrate material',
+ 'value' => 'acetate'},
+{'label' => 'Polarity',
+ 'value' => 'negative'}
+----
