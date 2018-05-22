@@ -4,7 +4,13 @@
 = Argot fields related to physical description
 == MARC source fields
 
-* 300 physical description
+* 342 physical description details
+* 344 physical description details
+* 345 physical description details
+* 346 physical description details
+* 347 physical description details
+* 352 physical description details
+
 * 340 physical description details
 * 342 physical description details
 * 344 physical description details
@@ -27,8 +33,16 @@ toc::[]
 
 === processing details
 
+* Array
+
+* Follows the `labeled_value` pattern, where:
+** The value should be indexed
+** label + value should be displayed
+
 * `label` = $3 if present
 * `value` = $a, b, c, e, f, g (concatenate subfield values)
+
+* `value` is keyword indexed
 
 === UNCb9007512
 
@@ -59,8 +73,113 @@ toc::[]
 'value' => '1 reel of 1 (18 min., 30 sec.) (656 ft.) : opt sd., b&w ; 16 mm. + with study guide.'}
 ----
 			   
+== `physical_description_details`
+
+=== processing details
+
+* Array
+
+* Follows the `labeled_value` pattern, where:
+** The value should be indexed
+** label + value should be displayed
 
 
-== other fields (to do)
-b7331929 - 342, 343, 352
+* `value` - one element added to field array per unique subfield delimiter. If the same subfield is repeated, the values are concatenated. Subfields defined differ per MARC field below
+* `label` - label is based on subfield value (see table below for each MARC field) and, where present, $3. 
+
+* `value` is keyword indexed
+
+=== 340
+
+*Subfield-to-label translation*
+
+[cols=2*,options=header]
+|===
+|Subfield delimiter
+|Label value
+
+||a
+||Base/substrate material
+
+||b
+||Dimensions
+
+||c
+||Medium
+
+||d
+||Technique
+
+||e
+||Support material
+
+|f
+|Production rate/ratio
+
+|g
+|Color characteristics
+
+|h
+|Found in/on
+
+|i
+|Use requires
+
+|j
+|Generation of reproduction
+
+|k
+|Layout
+
+|m
+|Book format
+
+|n
+|Font size
+
+|o
+|Polarity
+
+...
+|===
+
+==== UNCb7791362
+
+[source]
+----
+=340  \\$3shell pin$awood$b3 x 4 cm$dcarved
+----
+
+[source,ruby]
+----
+[
+  {'label' => 'Shell pin: Base/substrate material',
+   'value' => 'wood'},
+  {'label' => 'Shell pin: Dimensions',
+   'value' => '3 x 4 cm'},
+  {'label' => 'Shell pin: Technique',
+   'value' => 'carved'}
+]
+----
+
+==== UNCb7641857
+
+[source]
+----
+=340  \\$avinyl$aplastic$b35 x 23 x 13 cm$cpaint$ewood$2rda
+----
+
+[source,ruby]
+----
+[
+  {'label' => 'Base/substrate material',
+   'value' => 'vinyl; plastic'},
+  {'label' => 'Dimensions',
+   'value' => '35 x 23 x 13 cm'},
+  {'label' => 'Medium',
+   'value' => 'paint'},
+  {'label' => 'Support material',
+   'value' => 'wood'}
+]
+----
 
