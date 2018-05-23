@@ -353,12 +353,55 @@ toc::[]
 [
   {'label' => 'DVD: Presentation format',
    'value' => 'full screen (1.33:1)'},
-  {'label' => 'Projection speed',
+  {'label' => 'DVD: Projection speed',
    'value' => '24 fps'}
 ]
 ----
 
-* 346 physical description details
+=== 346
+
+==== processing details
+
+* `value`
+** One element added to field array per unique subfield delimiter.
+** If the same subfield is repeated, the values are concatenated (joined with "; ").
+
+* `label`
+* Based on subfield value (see table below) and, where present, $3.
+* If $3 present, prepend to all `label` values for elements derived from this MARC field.
+
+*Subfield-to-label translation*
+
+[cols=2*,options=header]
+|===
+|Subfield delimiter
+|Label value
+
+|a
+|Video format
+
+|b
+|Broadcast standard
+|===
+
+==== UNCb7393361
+
+[source]
+----
+=346  \\$aVHS$bNTSC$2rda
+----
+
+[source,ruby]
+----
+[
+  {'label' => 'Video format',
+   'value' => 'VHS'},
+  {'label' => 'Broadcast standard',
+   'value' => 'NTSC'}
+]
+----
+
+
 * 347 physical description details
 * 352 physical description details
 
