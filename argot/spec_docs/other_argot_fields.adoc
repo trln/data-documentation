@@ -10,7 +10,7 @@ toc::[]
 
 Follows `labeled_value` Argot pattern.
 
-=== 250 with $3 label
+=== UNCb6995648 -- 250 with $3 label
 [source]
 ----
 =245  12$aL'equitazione nell'antica Roma /$cAntonio Sestili.
@@ -20,15 +20,11 @@ Follows `labeled_value` Argot pattern.
 [source,ruby]
 ----
 [
- {'label' => 'Vol. 2',
-  'value' => '1a ed.'
- }
+ {'label' => 'Vol. 2', 'value' => '1a ed.'}
 ]
 ----
 
-=== 250 and 254
-
-==== UNCb8862222
+=== UNCb8862222 -- 250 and 254
 
 [source]
 ----
@@ -45,7 +41,7 @@ Follows `labeled_value` Argot pattern.
 ]
 ----
 
-=== 254 alone
+=== UNCb9060153 -- 254 alone
 
 [source]
 ----
@@ -60,3 +56,17 @@ Follows `labeled_value` Argot pattern.
 ]
 ----
 
+=== UNCb9163893 -- 250 with $b
+
+[source]
+----
+=245  00$aPravāsī Bhāratīya Hindī sāhitya :$bPhījī, Sūrīnāma, Dakshiṇa Aprīkā, aura Môriśasa /$csampādaka, Vimaleśa Kānti Varmā ; saha-sampādaka, Dhīrā Varmā, Bhāvanā Saksainā, Sunandā Vī. Asthānā, Alakā Dhanapata = Pravasi Bharatiya Hindi sahitya : an anthology of creative Hindi writings of Indian diaspora / edited by Dr. Vimlesh Kanit Verma.
+=250  \\$aPrathama saṃskaraṇa =$bFirst edition.
+----
+
+[source,ruby]
+----
+[
+ {'value' => 'Prathama saṃskaraṇa = First edition.'}
+]
+----

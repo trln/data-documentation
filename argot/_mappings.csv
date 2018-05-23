@@ -5,7 +5,9 @@ date_cataloged,date_cataloged,MARCish,n,DUKE,946,b,none,subelement_to_value,"If 
 date_cataloged,date_cataloged,MARCish,n,UNC,999,a,i1=0 AND i2=0,subelement_to_value,"If necessary, convert to ISO 8601 date/timestamp format",.,date_catalogedUNC999ai1=0 AND i2=0,0,1,y,.,.
 date_cataloged,date_cataloged,MARCish,y,NCCU,.,.,none,subelement_to_value,"If necessary, convert to ISO 8601 date/timestamp format",.,date_catalogedNCCU..none,0,1,y,.,.
 derived_work_note,derived_work_note,MARC,n,GEN,581,az3,none,see notes,$3 label; prepend ISBN to $z value,x,derived_work_noteGEN581az3none,0,0,y,,
-edition,edition,MARC,n,GEN,250,ab3,none,concat_subelements,$3 label,.,editionGEN250ab3none,1,0,y,,
+edition,edition[label],MARC,n,GEN,250,3,none,concat_subelements,x,.,edition[label]GEN2503none,0,0,y,n,y
+edition,edition[value],MARC,n,GEN,250,ab,none,concat_subelements,x,.,edition[value]GEN250abnone,0,0,y,n,y
+edition,edition[value],MARC,n,GEN,254,a,none,concat_subelements,x,.,edition[value]GEN254anone,0,0,y,n,y
 frequency,frequency[current],MARC,n,GEN,310,ab,none,concat_subelements,x,x,frequency[current]GEN310abnone,0,1,y,y,y
 frequency,frequency[former],MARC,n,GEN,321,ab,none,concat_subelements,x,x,frequency[former]GEN321abnone,0,1,y,y,y
 genre_headings,genre_headings,MARC,y,GEN,382,todo,todo,todo,todo,todo,genre_headingsGEN382todotodo,0,0,y,,
