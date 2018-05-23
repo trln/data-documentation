@@ -498,6 +498,32 @@ toc::[]
 ]
 ----
 
+=== 352
+
+==== processing details
+
+* `value`
+** All subfields present concatenated into one value
+** Join with " "
+
+* `label`
+* 'Data set graphics details'
+
+==== UNCb7331929
+
+[source]
+----
+=352  \\$aRaster :$bGrid cell$d(20,880 x$e43,200)
+----
+
+[source,ruby]
+----
+[
+  {'label' => 'Data set graphics details',
+   'value' => 'Raster : Grid cell (20,880 x 43,200)'}
+]
+----
+
 
 * 352 physical description details
 
