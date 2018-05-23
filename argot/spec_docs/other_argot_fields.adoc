@@ -10,6 +10,10 @@ toc::[]
 
 Follows `labeled_value` Argot pattern.
 
+Displayed with record summary data, as it is very important for identifying/selecting desired items.
+
+MARC 254 is mapped here because it functions as a specific type of edition-like statement for printed music. 
+
 === UNCb6995648 -- 250 with $3 label
 [source]
 ----
