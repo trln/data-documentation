@@ -523,21 +523,3 @@ toc::[]
    'value' => 'Raster : Grid cell (20,880 x 43,200)'}
 ]
 ----
-
-
-* 352 physical description details
-
-* 340 physical description details
-* 342 physical description details
-* 344 physical description details
-* 345 physical description details
-* 346 physical description details
-* 347 physical description details
-* 352 physical description details
-
-
-
-* 382 - medium of performance -- map to genre
-* 383 - map $c, $d to misc_id as Thematic Index Number
-* 384 - map to genre
-
