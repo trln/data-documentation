@@ -77,11 +77,11 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 
 See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_field_X10.adoc[general spec on processing X10 fields]
 
-==== UNCb5204637 -- $x present
+==== UNCb5204637 mock -- $x present
 
 [source]
 ----
-=810  2\$aCanadian Mathematical Society.$x1613-5237
+=810  2\$tCanadian Mathematical Society.$x1613-5237
 ----
 
 [source,ruby]
