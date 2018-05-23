@@ -401,8 +401,104 @@ toc::[]
 ]
 ----
 
+=== 347
 
-* 347 physical description details
+==== processing details
+
+* `value`
+** One element added to field array per unique subfield delimiter.
+** If the same subfield is repeated, the values are concatenated (joined with "; ").
+
+* `label`
+* Based on subfield value (see table below) and, where present, $3.
+* If $3 present, prepend to all `label` values for elements derived from this MARC field.
+
+*Subfield-to-label translation*
+
+[cols=2*,options=header]
+|===
+|Subfield delimiter
+|Label value
+
+|a
+|File type
+
+|b
+|File format
+
+|c
+|File size
+
+|d
+|Image resolution
+
+|e
+|Regional encoding
+
+|f
+|Bitrate
+|===
+
+==== UNCb9164739
+
+[source]
+----
+=347  \\$avideo file$bDVD video$eall regions$2rda
+----
+
+[source,ruby]
+----
+[
+  {'label' => 'File type',
+   'value' => 'video file'},
+  {'label' => 'File format',
+   'value' => 'DVD video'},
+  {'label' => 'Regional encoding',
+   'value' => 'all regions'}
+]
+----
+
+==== UNCb8362770
+
+[source]
+----
+=347  \\$aimage file$bJPEG$d3.1 megapixels$c1.5 MB$2rda
+----
+
+[source,ruby]
+----
+[
+  {'label' => 'File type',
+   'value' => 'image file'},
+  {'label' => 'File format',
+   'value' => 'JPEG'},
+  {'label' => 'Image resolution',
+   'value' => '3.1 megapixels'},
+  {'label' => 'Image size',
+   'value' => '1.5 MB'}
+]
+----
+
+==== UNCb8746807
+
+[source]
+----
+=347  \\$aaudio file$bMP3$f128 kbps$2rda
+----
+
+[source,ruby]
+----
+[
+  {'label' => 'File type',
+   'value' => 'audio file'},
+  {'label' => 'File format',
+   'value' => 'MP3'},
+  {'label' => 'Bitrate',
+   'value' => '128 kbps'}
+]
+----
+
+
 * 352 physical description details
 
 * 340 physical description details
