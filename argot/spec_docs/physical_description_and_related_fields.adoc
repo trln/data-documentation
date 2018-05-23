@@ -4,29 +4,6 @@
 = Argot fields related to physical description
 == MARC source fields
 
-* 342 physical description details
-* 344 physical description details
-* 345 physical description details
-* 346 physical description details
-* 347 physical description details
-* 352 physical description details
-
-* 340 physical description details
-* 342 physical description details
-* 344 physical description details
-* 345 physical description details
-* 346 physical description details
-* 347 physical description details
-* 352 physical description details
-
-
-
-* 382 - medium of performance -- map to genre
-* 383 - map $c, $d to misc_id as Thematic Index Number
-* 384 - map to genre
-
-
-
 toc::[]
 
 == `physical_description`
@@ -83,13 +60,19 @@ toc::[]
 ** The value should be indexed
 ** label + value should be displayed
 
-
-* `value` - one element added to field array per unique subfield delimiter. If the same subfield is repeated, the values are concatenated. Subfields defined differ per MARC field below
-* `label` - label is based on subfield value (see table below for each MARC field) and, where present, $3. 
-
 * `value` is keyword indexed
 
 === 340
+
+==== processing details
+
+* `value`
+** One element added to field array per unique subfield delimiter.
+** If the same subfield is repeated, the values are concatenated (joined with "; ").
+
+* `label`
+* Based on subfield value (see table below) and, where present, $3.
+* If $3 present, prepend to all `label` values for elements derived from this MARC field.
 
 *Subfield-to-label translation*
 
@@ -226,3 +209,129 @@ toc::[]
 {'label' => 'Polarity',
  'value' => 'negative'}
 ----
+
+=== 344
+
+==== processing details
+
+* `value`
+** One element added to field array per unique subfield delimiter.
+** If the same subfield is repeated, the values are concatenated (joined with "; ").
+
+* `label`
+* Based on subfield value (see table below) and, where present, $3.
+* If $3 present, prepend to all `label` values for elements derived from this MARC field.
+
+*Subfield-to-label translation*
+
+[cols=2*,options=header]
+|===
+|Subfield delimiter
+|Label value
+
+|a
+|Recording type
+
+|b
+|Recording medium
+
+|c
+|Speed
+
+|d
+|Groove
+
+|e
+|Sound track configuration
+
+|f
+|Tape type
+
+|g
+|Channels
+
+|h
+|Special audio characteristics
+|===
+
+==== UNCb7852280
+
+[source]
+----
+=344  \\$aanalog$c1 7/8 ips$f4 track$2rda
+----
+
+[source,ruby]
+----
+[
+  {'label' => 'Recording type',
+   'value' => 'analog'},
+  {'label' => 'Speed',
+   'value' => '1 7/8 ips'},
+  {'label' => 'Tape type',
+   'value' => '4 track'}
+]
+----
+
+==== UNCb8509125 mock
+
+[source]
+----
+=344  \\$aanalog$bmagnetic$gstereo$gsurround$hDolby-B encoded$2rda
+----
+
+[source,ruby]
+----
+[
+  {'label' => 'Recording type',
+   'value' => 'analog'},
+  {'label' => 'Recording medium',
+   'value' => 'magnetic'},
+  {'label' => 'Channels',
+   'value' => 'stereo; surround'},
+  {'label' => 'Special audio characteristics',
+   'value' => 'Dolby-B encoded'}
+]
+----
+
+==== UNCb8423372
+
+[source]
+----
+=344  \\$aanalog$c78 rpm$dcoarse groove$eedge track$2rda
+----
+
+[source,ruby]
+----
+[
+  {'label' => 'Recording type',
+   'value' => 'analog'},
+  {'label' => 'Speed',
+   'value' => '78 rpm'},
+  {'label' => 'Groove',
+   'value' => 'coarse groove'},
+  {'label' => 'Sound track configuration',
+   'value' => 'edge track'}
+]
+----
+
+
+* 345 physical description details
+* 346 physical description details
+* 347 physical description details
+* 352 physical description details
+
+* 340 physical description details
+* 342 physical description details
+* 344 physical description details
+* 345 physical description details
+* 346 physical description details
+* 347 physical description details
+* 352 physical description details
+
+
+
+* 382 - medium of performance -- map to genre
+* 383 - map $c, $d to misc_id as Thematic Index Number
+* 384 - map to genre
+
