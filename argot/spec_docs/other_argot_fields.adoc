@@ -1,0 +1,62 @@
+:toc:
+:toc-placement!:
+
+= Other Argot fields
+Documentation of miscellaneous simpler Argot fields.
+
+toc::[]
+
+== edition
+
+Follows `labeled_value` Argot pattern.
+
+=== 250 with $3 label
+[source]
+----
+=245  12$aL'equitazione nell'antica Roma /$cAntonio Sestili.
+=250  \\$3Vol. 2:$a1a ed.
+----
+
+[source,ruby]
+----
+[
+ {'label' => 'Vol. 2',
+  'value' => '1a ed.'
+ }
+]
+----
+
+=== 250 and 254
+
+==== UNCb8862222
+
+[source]
+----
+=245  00$aGather /$c[Kelly Dobbs Mickus, executive editor ; Kathryn R. Cuddy, Diana Macalintal, Dominic Trumfio, editors].
+=250  \\$a3rd ed.
+=254  \\$aChoir edition.
+----
+
+[source,ruby]
+----
+[
+ {'value' => '3rd ed.'},
+ {'value' => 'Choir edition.'}
+]
+----
+
+=== 254 alone
+
+[source]
+----
+=245  10$aViolin concerto :$bthe bulls of Bashan : 2000 /$cGavin Bryars.
+=254  \\$aStudy score.
+----
+
+[source,ruby]
+----
+[
+ {'value' => 'Study score.'}
+]
+----
+
