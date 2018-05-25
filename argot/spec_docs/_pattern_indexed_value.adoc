@@ -1,0 +1,68 @@
+:toc:
+:toc-placement!:
+
+= `indexed_value` pattern
+
+The pattern used to create fields where:
+
+* The value of the field should be displayed and indexed; but
+* Sometimes there is data in the field that needs to be treated as a non-indexed (but displayed) label
+
+This pattern is used in the following Argot fields:
+
+* https://github.com/trln/data-documentation/blob/master/argot/spec_docs/other_argot_fields.adoc#edition[`edition`]
+* https://github.com/trln/data-documentation/blob/master/argot/spec_docs/physical_description_and_related_fields.adoc#code-physical_description-code[`physical_description`]
+* https://github.com/trln/data-documentation/blob/master/argot/spec_docs/physical_description_and_related_fields.adoc#code-physical_description_details-code[`physical_description_details`]
+
+toc::[]
+
+== The pattern: Argot elements
+
+=== `value`
+
+The non-label, actual value portion of the field that should be indexed
+
+* string
+* *required*
+
+=== `label`
+
+The label part of the field, which should be displayed but not indexed
+
+* string
+* optional
+
+== Abstract example of pattern
+
+=== Argot
+
+[source,ruby]
+----
+'fieldname' => [
+  {'label' => 'aaa',
+   'value' => 'bbbbb'},
+  {'value' => 'ccccc'}
+    ]
+----
+
+=== Display/behavior
+
+*My displayed field*
+
+* aaa: bbbbb
+* ccccc
+
+=== Indexing
+
+As of 2018-05-25, our indexing treatment of this pattern seems inconsistent. One option, which takes up more space because it includes a lot of repeated information:
+
+* "fieldname_display": "aaa: bbbbb", "ccccc"
+* "fieldname_index": "bbbbb", "ccccc"
+
+Another option, where the accurate building of display values requires explicit empty values for `label` and keeping the occurrences in order:
+
+* "fieldname_label": "aaa", ""
+* "fieldname_value": "bbbbb", "ccccc"
+
+
+
