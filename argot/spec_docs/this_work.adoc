@@ -345,7 +345,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 ----
 [
   {'type'=>'this',
-   'title'=>['ressreport (Hamburg : Online)'],
+   'title'=>['Ressreport (Hamburg : Online)'],
    'title_nonfiling'=>'Kressreport (Hamburg : Online)'}
 ]
 ----
