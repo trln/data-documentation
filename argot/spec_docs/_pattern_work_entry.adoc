@@ -32,7 +32,6 @@ toc::[]
 * `title_nonfiling` : The title related portion, including any initial article/non-filing characters, if this value would be different than what's in `title`
 ** indexed as `title_related`, `title_included`, `title_series`, or `title_variant_indexed` as appropriate
 ** if present, combined with `author` segment to create indexed `work_citation*` value for in-catalog hyperlink querying and possible use in autosuggest
-** subelements of the title portion are separated with `||` to allow for adaptive hyperlinking. This delimiter is stripped out of the display.
 * `title_variation` : used to index under non-uniform title when uniform title and title proper are recorded in linking fields.
 * `details`: other bib data about related work
 ** displayed after the author/title hyperlink, but not included in hyperlink. Will include display version of any IDs other than ISBN and ISSN
