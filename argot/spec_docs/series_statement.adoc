@@ -102,7 +102,7 @@ Series statement as transcribed from work.
 
 [source,ruby]
 ----
-[{'value'=>'The Creole language library, 0920-9026 ; v. 47',
+[{'value'=>'The Creole language library, 0920-9026 (print); v. 47',
   'other_ids'=>['1234567', 'cd09876'],
   'issn'=>['0920-9026']}
   ]
