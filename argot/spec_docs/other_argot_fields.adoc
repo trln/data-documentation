@@ -79,6 +79,18 @@ MARC 254 is mapped here because it functions as a specific type of edition-like 
 
 * Array because there may be one or more vernacular versions of the title in 245
 
+[NOTE]
+====
+$h omitted because:
+
+* It's not actually part of the title
+** Which means inclusion of $h in main title can mess up known item searching/relevance ranking
+* $h is no longer added to the 245 in RDA.
+** This means it's there in a lot of older records, but NOT there in many/most new records.
+** Displaying it gives users a false signal to latch onto to determine the format of items, since not all e-resources will have '[electronic resource]' in the title, and not all serials will have '[serial]' in the title, etc.
+
+====
+
 === UNCb7371039
 
 [source]
@@ -93,6 +105,38 @@ MARC 254 is mapped here because it functions as a specific type of edition-like 
 ]
 ----
 
+[NOTE]
+====
+Ideally, retain non-']' punctuation/symbols at the end of $h. More details on this https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_punctuation_preceding_subfield.adoc[here].
+
+If this is too complicated, skip it for now and accept result with ':' missing.
+====
+
+=== UNCb1142419
+
+[NOTE]
+====
+This is an example to show why this field is structured as it is.
+
+It doesn't need to be included in the MARC-to-Argot spec/tests.
+
+There will be separate tests written for vernacular processing.
+====
+
+[source]
+----
+=245  10$6880-02$aP︠i︡ata︠i︡a ︠i︡azva =$bThe fifth pestilence /$cAlekseĭ Remizov = A.M. Remizov ; introduction by J.D. West.
+=880  10$6245-02/(N$aПятая язва =$bThe fifth pestilence /$cАлексей Ремизов = A.M. Remizov ; introduction by J.D. West.
+----
+
+[source,ruby]
+----
+[
+ {'value' => 'P︠i︡ata︠i︡a ︠i︡azva = The fifth pestilence'},
+ {'value' => 'Пятая язва =$bThe fifth pestilence',
+  'lang' => 'rus'} 
+]
+----
 
 == `title_sort`
 
