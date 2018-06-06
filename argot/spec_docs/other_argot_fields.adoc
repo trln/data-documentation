@@ -6,7 +6,7 @@ Documentation of miscellaneous simpler Argot fields.
 
 toc::[]
 
-== edition
+== `edition`
 
 Follows `labeled_value` Argot pattern.
 
@@ -74,3 +74,43 @@ MARC 254 is mapped here because it functions as a specific type of edition-like 
  {'value' => 'Prathama saṃskaraṇa = First edition.'}
 ]
 ----
+
+== `title_main`
+
+* Array because there may be one or more vernacular versions of the title in 245
+
+=== UNCb7371039
+
+[source]
+----
+=245  04$aThe Whitechapel murders papers$h[electronic resource] :$bletters relating to the "Jack the Ripper" killings,$f1888-1889.
+----
+
+[source,ruby]
+----
+[
+ {'value' => 'The Whitechapel murders papers : letters relating to the "Jack the Ripper" killings, 1888-1889.'}
+]
+----
+
+
+== `title_sort`
+
+The value used to sort results by title.
+
+Limit to only one value.
+
+Value should be the title portion of 245 field with non-filing characters removed
+
+=== UNCb7371039
+
+[source]
+----
+=245  04$aThe Whitechapel murders papers$h[electronic resource] :$bletters relating to the "Jack the Ripper" killings,$f1888-1889.
+----
+
+[source,ruby]
+----
+'Whitechapel murders papers : letters relating to the "Jack the Ripper" killings, 1888-1889.'
+----
+
