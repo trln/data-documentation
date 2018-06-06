@@ -3,6 +3,15 @@
 
 = Handling punctuation preceding subfield delimiter
 
+[NOTE]
+====
+This spec is a place for Kristina to keep track of known punctuation issues.
+
+We are not trying to do this perfectly initially.
+
+Issues that we believe are being handled properly are noted as such below.
+====
+
 toc::[]
 
 == MARC background
