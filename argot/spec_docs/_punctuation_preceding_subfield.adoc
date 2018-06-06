@@ -1,0 +1,107 @@
+:toc:
+:toc-placement!:
+
+= Handling punctuation preceding subfield delimiter
+
+toc::[]
+
+== MARC background
+
+One of the more hideous aspects of MARC is the way that punctuation often carries a semantic meaning about the data following the punctuation mark.
+
+This is especially true for punctuation directly preceding a subfield delimiter.
+
+[source]
+----
+=245  00$aMusic to my ears :$ba collection of music for children of all ages /$c[music composed by various composers].
+----
+
+In the above title, the $b is a subtitle.
+
+[source]
+----
+=245  10$aPoemas humanos =$bHuman Poems /$cby César Vallejo ; translated by Clayton Eshleman.
+----
+
+In the above title, the $b records a parallel title
+
+[source]
+----
+=245  10$aKranken-Demonstrationen =$bPrésentations cliniques = Clinical demonstrations = Presentación de enfermos /$cXIII. Congressus Internationalis Dermatologiae, München, 31.7.-5.8.1967.
+----
+
+The same punctuation may be used within an individual subfield to indicate the same semantic meaning. Above, the $b contains 3 separate parallel titles which appeared on the work.
+
+This _fun_ aspect of MARC is covered nicely in Jason Thomale's Code4Lib article http://journal.code4lib.org/articles/3832[Interpreting MARC: Where’s the Bibliographic Data?].
+
+
+== Why care?
+
+While it's true no one but catalogers knows what ':' vs '=' means in a 245 field, or '+' means in a 300 field, there seems to be value in maintaining the display convention consistently.
+
+There's little problem when we just concatenate an entire MARC field.
+
+Problems pop up when not all the subfields get mapped into Argot, or one or more subfields get pulled out and treated differently in Argot.
+
+=== Examples
+==== 1XX and 7XX name entry fields
+
+[source]
+----
+=700  1\$aBittker, Boris I.,$eauthor.
+----
+
+Without accounting for punctuation preceding the $e, the author facet value becomes:
+
+`Bittker, Boris I.,`
+
+Better:
+
+`Bittker, Boris I.`
+
+[NOTE]
+====
+This is already handled in current (2018-06-06) MARC-to-Argot.
+====
+
+
+==== 245
+When $h is dropped from title (given that it's not actually part of the title), the punctuation preceding $b (or whatever follows) is often lost.
+
+[source]
+----
+=245  10$aExploring Mathematics$h[electronic resource] :$bProblem-Solving and Proof /$cby Daniel Grieser.
+----
+
+Ignoring the punctuation issue, we get title_main value:
+
+`Exploring Mathematics Problem-Solving and Proof /`
+
+Better:
+
+`Exploring Mathematics : Problem-Solving and Proof`
+
+
+
+==== 300
+
+[source]
+----
+=300  \\$a1 reel of 1 (18 min., 30 sec.) (656 ft.) :$bopt sd., b&w ;$c16 mm.$3print +$ewith study guide.
+----
+
+With default treatment of punctuation:
+
+[source,ruby]
+----
+{'label' => 'print +',
+ 'value' => '1 reel of 1 (18 min., 30 sec.) (656 ft.) : opt sd., b&w ; 16 mm. with study guide.'}
+----
+
+Preferred:
+
+[source,ruby]
+----
+{'label' => 'print',
+ 'value' => '1 reel of 1 (18 min., 30 sec.) (656 ft.) : opt sd., b&w ; 16 mm. + with study guide.'}
+----
