@@ -1,11 +1,12 @@
 :toc:
+:toclevels: 5
 :toc-placement!:
 
 = Handling vernacular script data in Argot
 Summary of approach with some examples
 
 toc::[]
-:toclevels: 5
+
 
 == Goals
 
