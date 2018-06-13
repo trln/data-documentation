@@ -139,7 +139,10 @@ In the above record, the vernacular title is in Basic Greek, but the rest of the
 
 In the above record, most of the main fields are recorded in Basic Cyrillic. However, some are recorded in Extended Latin or Basic Arabic. There are no 880s, and thus no per-field character set codes, present in this record.
 
-*066 values can be used to limit the alternative character set detection functions needed on the fields in a Model B record*
+[TIP]
+====
+066 values can be used to limit the alternative character set detection functions needed on the fields in a Model B record
+====
 
 ===== Code translation
 
@@ -198,12 +201,12 @@ This means techically properly coded MARC written/stored in Unicode/UTF-8 will l
 
 I leave the best method for doing this to the devs to figure out.
 
-.Possible simplification?
-****
+[TIP]
+====
 As described above in "Why explicit MARC coding is not sufficient," we are going to need to figure this out for some situations, at least for some character sets/scripts we're prioritizing
 
 If we are figuring this out and applying it across-the-board-ish, *does it make sense to skip processing the explicit MARC coding altogether, and just rely on the alternative method?*
-****
+====
 
 If the alternative method(s) are so resource-intensive that we need to minimize their use, they ideally should be applied to:
 
