@@ -112,7 +112,7 @@ In general:
 
 [TIP]
 ====
-In all cases, it's probably safe to get all 066 subfields, throw out any codes that map to Basic Latin or Extended Latin, and set the results in the Traject clipboard for the record, for later reference.
+In all cases, it's _probably_ safe to get all 066 subfields, throw out any codes that map to Basic Latin or Extended Latin, and set the results in the Traject clipboard for the record, for later reference.
 ====
 
 [source]
@@ -209,6 +209,8 @@ This means techically properly coded MARC written/stored in Unicode/UTF-8 will l
 
 ===== Records using Model B may lack any explicit character set coding
 
+There is nothing except the vernacular characters present in the fields themselves to indicate that vernacular characters are present.
+
 ==== Alternative character set detection
 
 I leave the best method for doing this to the devs to figure out.
@@ -230,3 +232,63 @@ If the alternative method(s) are so resource-intensive that we need to minimize 
 * important fieldsfootnoteref:[impfields] when there are no 066 or 880 fields in the record (at the very least, check for CJK-ness)
 
 === Argot structure
+==== Basic idea
+Any field value indexed for search may have a `lang` assigned. When `lang` is not assigned, no non-standard language parsing will be applied.
+
+[WARNING]
+====
+This will require changes to the structure of many already-implemented Argot fields.
+====
+
+==== Field-specific examples
+
+===== `title_main`
+
+====== Vernacular in 880
+
+[source]
+====
+=245  10$6880-02$aUrbilder ;$bBlossoming ; Kalligraphie ; O Mensch, bewein' dein' Sünde gross (Arrangement) : for string quartet /$cToshio Hosokawa.
+=880  10$6245-02/{dollar}1$a原像 ;$b開花 ; 書 （カリグラフィー） ほか : 弦楽四重奏のための /$c細川俊夫.
+====
+
+[source,ruby]
+====
+[
+{'value'=>'Urbilder ; Blossoming ; Kalligraphie ; O Mensch, bewein\' dein\' Sünde gross (Arrangement) : for string quartet'},
+{'value'=>'原像 ;$b開花 ; 書 （カリグラフィー） ほか : 弦楽四重奏のための',
+ 'lang'=>'cjk'}
+]
+====
+
+====== Vernacular in 245
+
+[source]
+----
+=001  \\sseb026776854
+=003  \\WaSeSS
+=005  \\20170307180154.0
+=040  \\$aWaSeSS$beng$cWaSeSS$dWaSeSS
+=100  1\$aRekho.
+=245  10$a近代日本文学研究の問題点$h[electronic resource] /$cRekho.
+=250  \\$a14
+=260  \\$a[S.l.] :$b国際日本文化研究センター,$c1992.
+=300  \\$a1 online resource
+=506  0\$fUnlimited simultaneous users
+=588  0\$aTitle from content provider.
+=590  \\$aProvider: ERDB Project in Japan (Provisional)
+=590  \\$aVendor supplied catalog record.
+----
+
+This record http://search.trln.org/search?id=UNCb8821064[exists in SearchTRLN], but http://search.trln.org/search?N=0&Nty=1&Ntk=Title&Ntt=%E8%BF%91%E4%BB%A3%E6%97%A5%E6%9C%AC%E6%96%87%E5%AD%A6%E7%A0%94%E7%A9%B6%E3%81%AE%E5%95%8F%E9%A1%8C%E7%82%B9&sugg=[you cannot find it by searching for the title] because the vernacular data in the 245 isn't recognized/processed as CJK.
+
+
+[source,ruby]
+====
+[
+{'value'=>'近代日本文学研究の問題点',
+ 'lang'=>'cjk'}
+]
+====
+
+
