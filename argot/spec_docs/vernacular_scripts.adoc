@@ -34,6 +34,52 @@ According to Duke and UNC, the priority scripts are:
 * Cyrillic
 * Arabic
 
+=== Anti-goal -- explicitly keeping data values from linked fields together in Solr
+
+In the interest of keeping things as simple as possible (HA!) we are assuming that processing the fields (main MARC and linked 880) in order will give a sufficiently meaningful display that we can live with.
+
+This is actually better than what we are doing in Endeca, where, unless controlled by special sequence indicators, the order of values in a multi-value field defaults to alphabetical order.
+
+For example:
+
+[source]
+----
+=700  1\$6880-05$aYang, Ziqiong.
+=700  1\$6880-06$aMei, Yanfang.
+=700  1\$6880-07$aZhang, Manyu.
+=700  1\$6880-08$aTo, Johnny.
+=710  2\$aTai Seng Video Marketing Inc.
+=710  2\$6880-09$aBai jia feng ying ye zhi zuo gong si.
+=720  1\$aChing, Siu-Tung.$4drt
+=720  1\$aTo, Johnnie.$4drt
+=880  1\$6700-05/$1$a楊紫瓊.
+=880  1\$6700-06/$1$a梅艷芳.
+=880  1\$6700-07/$1$a張曼玉.
+=880  1\$6700-08/$1$a杜琪峯.
+=880  2\$6710-09/$1$a百嘉峰影業製作公司.
+----
+
+.TRLN Discovery display
+====
+
+* Yang, Ziqiong.
+* Mei, Yanfang.
+* Zhang, Manyu.
+* To, Johnny.
+* Tai Seng Video Marketing Inc.
+* Bai jia feng ying ye zhi zuo gong si.
+* Ching, Siu-Tung, director.
+* To, Johnnie, director.
+* 楊紫瓊.
+* 梅艷芳.
+* 張曼玉.
+* 杜琪峯.
+* 百嘉峰影業製作公司.
+
+====
+
+Compare with the display in http://search.trln.org/search?id=UNCb3171140[SearchTRLN] and https://search.lib.unc.edu/search?R=UNCb3171140[UNC Endeca].
+
 == Approach
 === Character set detection logic
 The purpose of character set detection in MARC-to-Argot is to ensure the proper language parser is applied to the data in Solr. 
@@ -62,7 +108,7 @@ In these cases, there may be useful information in an 066, which is used to reco
 In general:
 
 * In Model A records (having 880s), we only care about what's in 066$c (alternate script(s))
-* In Model B records, the main fields of the record may be in a vernacular script, so we need to care about what's in $a, $b, _or_ $c
+, $b, _or_ $c
 
 *In all cases, it's probably safe to get all 066 subfields, throw out any codes that map to Basic Latin or Extended Latin, and set the results in the Traject clipboard for the record, for later reference.*
 
@@ -152,12 +198,14 @@ This means techically properly coded MARC written/stored in Unicode/UTF-8 will l
 
 I leave the best method for doing this to the devs to figure out.
 
-One thought I have:
+.Possible simplification?
+====
+As described above in "Why explicit MARC coding is not sufficient," we are going to need to figure this out for some situations, at least for some character sets/scripts we're prioritizing
 
-* As described above in "Why explicit MARC coding is not sufficient," we are going to need to figure this out for some situations, at least for some character sets/scripts we're prioritizing
-** If we are figuring this out and applying it across-the-board-ish, *does it make sense to skip processing the explicit MARC coding altogether, and just rely on the alternative method?*
+If we are figuring this out and applying it across-the-board-ish, *does it make sense to skip processing the explicit MARC coding altogether, and just rely on the alternative method?*
+====
 
-If the alternative method(s) are so resource-intensive that we absolutely want to minimize their use, they ideally should be applied to:
+If the alternative method(s) are so resource-intensive that we need to minimize their use, they ideally should be applied to:
 
 * 880 fields lacking charset codes when there is no 066$c
 * 880 fields lacking charset codes when there are multiple 066$c values
@@ -166,3 +214,4 @@ If the alternative method(s) are so resource-intensive that we absolutely want t
 ** No 880s present
 * important fieldsfootnoteref:[impfields] when there are no 066 or 880 fields in the record (at the very least, check for CJK-ness)
 
+=== Argot structure
