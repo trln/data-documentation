@@ -37,7 +37,7 @@ According to Duke and UNC, the priority scripts are:
 ==== Explicitly coded in MARC data
 It would be great if we could rely on this, however, the MARC standard specifies:
 
-[quote, http://www.loc.gov/marc/specifications/speccharucs.html[CHARACTER SETS AND ENCODING OPTIONS: Part 3. Unicode Encoding Environment]
+[quote, http://www.loc.gov/marc/specifications/speccharucs.html[CHARACTER SETS AND ENCODING OPTIONS: Part 3. Unicode Encoding Environment]]
 ____
 Field 066 (Character Sets Present) is not used in Unicode-encoded MARC 21 records in the Unicode environment. During conversion of MARC 21 records from MARC-8 encoding to Unicode, field 066 should be deleted.
 
