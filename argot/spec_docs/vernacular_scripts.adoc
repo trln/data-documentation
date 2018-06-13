@@ -96,7 +96,7 @@ Every 880 field should contain a $6, structured as follows:
 (2:: May or may not be present. Graphic character set used in this 880 field, in this case, Basic Hebrew
 /r:: May or may not be present. Text directionality code (right-to-left)
 
-Extract the two characters following `/\d{3}-\d{2}/` and match them using the code translation table below.
+*Extract the two characters following `/\d{3}-\d{2}/` and match them using the code translation table below.*
 
 ===== Per record
 In the section above, note that the graphic character set may be missing from a given 880 field.
@@ -110,7 +110,10 @@ In general:
 * In Model A records (having 880s), we only care about what's in 066$c (alternate script(s))
 , $b, _or_ $c
 
-*In all cases, it's probably safe to get all 066 subfields, throw out any codes that map to Basic Latin or Extended Latin, and set the results in the Traject clipboard for the record, for later reference.*
+[TIP]
+====
+In all cases, it's probably safe to get all 066 subfields, throw out any codes that map to Basic Latin or Extended Latin, and set the results in the Traject clipboard for the record, for later reference.
+====
 
 [source]
 ----
@@ -119,9 +122,15 @@ In general:
 
 In the above record, all 880 fields are expected to be in CJK scripts.
 
-*When there is an 066 with a single $c value it might be a useful shortcut to use that value and skip the per-880 field character set detection.*
+[TIP]
+====
+When there is an 066 with a single $c value it might be a useful shortcut to use that value and skip the per-880 field character set detection.
+====
 
+[CAUTION]
+====
 Note that 066$c is repeatable. When repeated, 066$c data may be insufficient to identify the language parser that should be applied to a given field. 
+====
 
 [source]
 ----
@@ -130,7 +139,10 @@ Note that 066$c is repeatable. When repeated, 066$c data may be insufficient to 
 
 In the above record, the vernacular title is in Basic Greek, but the rest of the 880s are recorded in Cyrillic.
 
-*When there is an 066 with multiple $c values, use per-880 graphic character codes if present. If per-880 codes are _not_ present, the 066$c values could be used to apply only the necessary alternative character set detection functions on each 880 field.*
+[TIP]
+====
+When there is an 066 with multiple $c values, use per-880 graphic character codes if present. If per-880 codes are _not_ present, the 066$c values could be used to apply only the necessary alternative character set detection functions on each 880 field.
+====
 
 [source]
 ----
