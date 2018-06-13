@@ -45,7 +45,7 @@ toc::[]
 * `other_ids` : indexed form of IDs aside from ISBN and ISSN
 ** repeatable
 * `display`: boolean; whether data from field should be displayed; default = true
-
+* `lang`: script/character set indicating language parser to be applied to this field. Optional
 === Abstract example, displayed field
 
 [source,ruby]
@@ -60,7 +60,8 @@ toc::[]
  'details'=>'gggg hhhh',
  'isbn'=>['1111'],
  'issn'=>'2222',
- 'other_ids'=>['3333','ab99']}
+ 'other_ids'=>['3333','ab99'],
+}
 ]
 ----
 
@@ -78,7 +79,7 @@ _I don't really care if the Solr fields end up being named aaaa_author or author
 * aaaa_issn: 2222
 * aaaa_ids: 3333, ab99
 
-=== Abstract example, field not displayed
+=== Abstract example, field not displayed, `lang` value present
 Typically the data in such fields has also been put in a human readable note somewhere else in the record. We don't need to show this info twice, but we can't do anything useful with the info in the note, so we use this more structured data to do some useful indexing.
 
 [source,ruby]
@@ -92,7 +93,9 @@ Typically the data in such fields has also been put in a human readable note som
  'isbn'=>['1111'],
  'issn'=>'2222',
  'other_ids'=>['3333','ab99']
- 'display'=>'false'}
+ 'display'=>'false',
+ 'lang'=>'cjk'
+}
 ]
 ----
 
@@ -103,9 +106,9 @@ Not applicable
 ==== Indexing
 _I don't really care if the Solr fields end up being named aaaa_author or author_aaaa. I'm just picking one here._
 
-* aaaa_author: aaaa
-* aaaa_title: dd dd dd, eeeeee, ffff
-* aaaa_work: aaaa dd dd dd
+* aaaa_author_cjk_v: aaaa
+* aaaa_title_cjk_v: dd dd dd, eeeeee, ffff
+* aaaa_work_cjk_v: aaaa dd dd dd
 * aaaa_isbn: 1111
 * aaaa_issn: 2222
 * aaaa_ids: 3333, ab99
