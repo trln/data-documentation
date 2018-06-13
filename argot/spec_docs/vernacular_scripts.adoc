@@ -199,11 +199,11 @@ This means techically properly coded MARC written/stored in Unicode/UTF-8 will l
 I leave the best method for doing this to the devs to figure out.
 
 .Possible simplification?
-====
+****
 As described above in "Why explicit MARC coding is not sufficient," we are going to need to figure this out for some situations, at least for some character sets/scripts we're prioritizing
 
 If we are figuring this out and applying it across-the-board-ish, *does it make sense to skip processing the explicit MARC coding altogether, and just rely on the alternative method?*
-====
+****
 
 If the alternative method(s) are so resource-intensive that we need to minimize their use, they ideally should be applied to:
 
