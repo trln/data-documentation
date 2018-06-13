@@ -93,10 +93,11 @@ Every 880 field should contain a $6, structured as follows:
 830:: Should always be present. MARC tag of field linked to this one. This is a vernacular representation of data in an 830 field
 -:: Should always be present. Separates MARC field tag and occurrence number
 06:: Should always be present. Occurrence number for linking. This 880 field corresponds to the 830 field that has a $6 beginning with 880-06
+/:: Escape character
 (2:: May or may not be present. Graphic character set used in this 880 field, in this case, Basic Hebrew
 /r:: May or may not be present. Text directionality code (right-to-left)
 
-*Extract the two characters following `/\d{3}-\d{2}/` and match them using the code translation table below.*
+*Extract the two characters following `/\d{3}-\d{2}\//` and match them using the code translation table below.*
 
 ===== Per record
 In the section above, note that the graphic character set may be missing from a given 880 field.
@@ -254,7 +255,7 @@ This will require changes to the structure of many already-implemented Argot fie
 
 [source,ruby]
 ----
-[
+argot['title_main'] = [
 {'value'=>'Urbilder ; Blossoming ; Kalligraphie ; O Mensch, bewein\' dein\' Sünde gross (Arrangement) : for string quartet'},
 {'value'=>'原像 ;$b開花 ; 書 （カリグラフィー） ほか : 弦楽四重奏のための',
  'lang'=>'cjk'}
@@ -285,10 +286,126 @@ This record http://search.trln.org/search?id=UNCb8821064[exists in SearchTRLN], 
 
 [source,ruby]
 ----
-[
+argot['title_main'] = [
 {'value'=>'近代日本文学研究の問題点',
  'lang'=>'cjk'}
 ]
 ----
 
 
+===== `this_work`
+
+====== Author and title portions in 100, 240, and 2 880s linked to 100 & 240
+
+[source]
+----
+=100  1\$6880-01$aHan, Fei,$d-233 B.C.
+=240  10$6880-02$aHan Feizi
+=245  10$6880-03$aHan Feizi ji shi :$b[20 juan] /$cChen Qiyou jiao zhu,Zhonghua shu ju Shanghai bian ji suo bian ji.
+=880  1\$6100-01/$1$a韓非,$d-233 B.C.$wln
+=880  10$6240-02/$1$a韓非子
+=880  10$6245-03/$1$a韓非子集釋 :$b[20卷] /$c陳奇猷校注, 中华书局上海编辑所编辑.
+----
+
+[source,ruby]
+----
+argot['this_work'] = [
+ {'type'=>'this',
+  'author'=>'Han, Fei, -233 B.C.',
+  'title'=>['Han Feizi']},
+ {'type'=>'this',
+  'author'=>'韓非, -233 B.C.',
+  'title'=>['韓非子'],
+  'lang'=>'cjk'}
+]
+----
+
+====== Author and title portions in 100, 240, and 880 linked to 240 portion only
+
+[source]
+----
+=100  1\$aŌkuma, Kotomichi,$d1798-1868.
+=240  10$6880-02$aSōkeishū.$kSelections.$lEnglish
+=245  12$aA grass path :$bselected poems from Sōkeishū /$cby Kotomichi Ōkuma ; translated by Yukuo Uyehara [and] Marjorie Sinclair ; illustrated by Shikō Munakata.
+=880  10$6240-02/$1$a草徑集.$kSelections.$lEnglish
+----
+
+[source,ruby]
+----
+argot['this_work'] = [
+ {'type'=>'this',
+  'author'=>'Ōkuma, Kotomichi, 1798-1868.',
+  'title'=>['Sōkeishū.', 'Selections.', 'English']},
+ {'type'=>'this',
+  'author'=>'Ōkuma, Kotomichi, 1798-1868.',
+  'title'=>['草徑集.', 'Selections.', 'English'],
+  'lang'=>'cjk'}
+]
+----
+
+====== Author and title portions in 100, 240, and 880 linked to 100 only
+
+[source]
+----
+=100  0\$6880-01$aBingxin,$d1900-1999.
+=240  10$aWorks.$f1982
+=245  10$6880-02$aBingxin wen ji.
+=880  10$6245-02/$1$a冰心文集.
+=880  0\$6100-01/$1$a冰心,$d1900-1999.
+----
+
+[source,ruby]
+----
+argot['this_work'] = [
+ {'type'=>'this',
+  'author'=>'Bingxin, 1900-1999.',
+  'title'=>['Works.', '1982']},
+ {'type'=>'this',
+  'author'=>'冰心, 1900-1999.',
+  'title'=>['Works.', '1982'],
+  'lang'=>'cjk'}
+]
+----
+
+====== Author portion in 100 only, title portions in 245 and 880 linked to it
+
+[source]
+----
+=100  1\$aMif, P.$q(Pavel),$d1901-
+=245  10$6880-01$aFa zhan zhuo de Zhongguo ge ming gao chao /$cMifu zhu. Zhongguo xin ge ming gao chao de qi dian / "Zhen li bao" pian shou lun wen.
+=880  10$6245-01/$1$a發展著的中國革命高潮 /$c米夫著. 中國新革命高潮的起點 / 《真理報》篇 首論文.
+----
+
+[source,ruby]
+----
+argot['this_work'] = [
+ {'type'=>'this',
+  'author'=>'Mif, P.$q(Pavel), 1901-',
+  'title'=>['Fa zhan zhuo de Zhongguo ge ming gao chao']
+ },
+ {'type'=>'this',
+  'author'=>'Mif, P.$q(Pavel), 1901-',
+  'title'=>['發展著的中國革命高潮'],
+  'lang'=>'cjk'
+ }
+]
+----
+
+====== Vernacular author and title portions in 100 and 245 only (no 880s)
+
+[source]
+----
+=100  1\$a高田, 時雄.
+=245  10$a梵蒂岡圖書館所藏漢籍目録補編$h[electronic resource] /$c高田, 時雄.
+----
+
+[source,ruby]
+----
+argot['this_work'] = [
+ {'type'=>'this',
+  'author'=>'高田, 時雄.',
+  'title'=>['梵蒂岡圖書館所藏漢籍目録補編'],
+  'lang'=>'cjk'
+ }
+]
+----
