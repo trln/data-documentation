@@ -1,0 +1,24 @@
+:toc:
+:toc-placement!:
+
+= Handling vernacular script data in Argot
+Summary of approach with some examples
+
+toc::[]
+
+== Goals
+
+* Treat vernacular data in an 880 field as we would the corresponding data in the linked MARC field.
+** Do not select a few Argot fields that will get special vernacular treatment, as we did in Endeca
+** Reuse the main MARC-to-Argot logic for data in the 880s -- that is, treat an 880 with $6 beginning with 700 like you would a 700 field, except also identify the lang/script of the field
+
+* Handle vernacular data in non-880 fields. I.e. http://www.loc.gov/marc/bibliographic/ecbdmulti.html#modelb[Model B Multiscript records] as defined in the MARC standard.
+** Currently titles cataloged via Model B are not retrievable at all by title or author if those data are recorded in CJK scripts. Search performance for such titles featuring other scripts is compromised.
+** Vendor-provided MARC records (especially SerialsSolutions brief records) often use this model. 
+** MARC and its successor(s) for bibliographic description are leaning toward this model and away from the "practices that favored converted Latin-script text over the original script and limited the number of scripts that could be used" (i.e. transliterated data in normal MARC fields, with vernacular recorded in linked 880s).footnote:[See https://www.eventscribe.com/2018/ALA-Annual/fsPopup.asp?Mode=presInfo&PresentationID=352464[New Directions in Non-Latin Script Access]]
+** See spreadsheet at https://github.com/trln/data-documentation/blob/master/meta/unc_vernacular.xlsx for data on prevalence Model B non-Roman data in the UNC Catalog
+
+* According to Duke and UNC, the priority scripts are:
+** CJK
+** Cyrillic
+** Arabic
