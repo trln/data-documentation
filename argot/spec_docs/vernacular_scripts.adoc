@@ -8,17 +8,40 @@ toc::[]
 
 == Goals
 
-* Treat vernacular data in an 880 field as we would the corresponding data in the linked MARC field.
-** Do not select a few Argot fields that will get special vernacular treatment, as we did in Endeca
-** Reuse the main MARC-to-Argot logic for data in the 880s -- that is, treat an 880 with $6 beginning with 700 like you would a 700 field, except also identify the lang/script of the field
+=== Treat vernacular data in an 880 field as we would the corresponding data in the linked MARC field.
+* Do not select a few Argot fields that will get data from 880 fields, as we did in Endeca.
+** All vernacular data from the MARC record should display (but script detection should not be needed to make this happen)
+** Vernacular data mapping into _indexed_ fields should have script detected and a `lang` element added.
+* Reuse the main MARC-to-Argot logic for data in the 880s -- that is, treat an 880 with $6 beginning with 700 like you would a 700 field, except also identify the lang/script of the field
 
-* Handle vernacular data in non-880 fields. I.e. http://www.loc.gov/marc/bibliographic/ecbdmulti.html#modelb[Model B Multiscript records] as defined in the MARC standard.
-** Currently titles cataloged via Model B are not retrievable at all by title or author if those data are recorded in CJK scripts. Search performance for such titles featuring other scripts is compromised.
-** Vendor-provided MARC records (especially SerialsSolutions brief records) often use this model. 
-** MARC and its successor(s) for bibliographic description are leaning toward this model and away from the "practices that favored converted Latin-script text over the original script and limited the number of scripts that could be used" (i.e. transliterated data in normal MARC fields, with vernacular recorded in linked 880s).footnote:[See https://www.eventscribe.com/2018/ALA-Annual/fsPopup.asp?Mode=presInfo&PresentationID=352464[New Directions in Non-Latin Script Access]]
-** See spreadsheet at https://github.com/trln/data-documentation/blob/master/meta/unc_vernacular.xlsx for data on prevalence Model B non-Roman data in the UNC Catalog
+=== Handle vernacular data in non-880 fields, i.e. http://www.loc.gov/marc/bibliographic/ecbdmulti.html#modelb[Model B Multiscript records]
 
-* According to Duke and UNC, the priority scripts are:
-** CJK
-** Cyrillic
-** Arabic
+* Model B is a valid method of coding non-Roman script data in a MARC record, according to the MARC standard.
+* Currently titles cataloged via Model B are not retrievable at all by title or author if those data are recorded in CJK scripts. Search performance for such titles featuring other scripts is compromised.
+* Vendor-provided MARC records (especially SerialsSolutions brief records) often use this model. 
+* MARC and its successor(s) for bibliographic description are leaning toward this model and away from the "practices that favored converted Latin-script text over the original script and limited the number of scripts that could be used" (i.e. transliterated data in normal MARC fields, with vernacular recorded in linked 880s).footnote:[See https://www.eventscribe.com/2018/ALA-Annual/fsPopup.asp?Mode=presInfo&PresentationID=352464[New Directions in Non-Latin Script Access]]
+* See spreadsheet at https://github.com/trln/data-documentation/blob/master/meta/unc_vernacular.xlsx for data on prevalence Model B non-Roman data in the UNC Catalog
+
+If is is not feasible to detect non-Roman scripts in all MARC fields across the board, we can greatly improve what we have now by focusing on the Argot fields most important for retrieval of known itemsfootnote:[title_main, names, this_work, included_work], and CJK.footnote:[The segmentation needed for properly indexing CJK causes these records to be unretrievable.] 
+
+=== Priority scripts
+
+According to Duke and UNC, the priority scripts are:
+
+* CJK (Including CJK Unified Ideographs, CJK Compatibility Ideographs, Katakana, Hangul Syllables, Hiragana)
+* Cyrillic
+* Arabic
+
+== Approach
+=== Script detection logic
+==== Explicitly coded in MARC data
+It would be great if we could rely on this, however, the MARC standard specifies:
+
+[quote, http://www.loc.gov/marc/specifications/speccharucs.html[CHARACTER SETS AND ENCODING OPTIONS: Part 3. Unicode Encoding Environment]
+____
+Field 066 (Character Sets Present) is not used in Unicode-encoded MARC 21 records in the Unicode environment. During conversion of MARC 21 records from MARC-8 encoding to Unicode, field 066 should be deleted.
+
+The script identification code should be dropped from subfield $6 when converting to Unicode from MARC-8 encoding.
+____
+
+
