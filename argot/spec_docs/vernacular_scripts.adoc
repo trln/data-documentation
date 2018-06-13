@@ -78,7 +78,7 @@ For example:
 
 ====
 
-Compare with the display in http://search.trln.org/search?id=UNCb3171140[SearchTRLN] and https://search.lib.unc.edu/search?R=UNCb3171140[UNC Endeca].
+Compare with the display in http://search.trln.org/search?id=UNCb3171140[SearchTRLN] and https://search.lib.unc.edu/search?R=UNCb3171140[UNC Endeca] where the fields are all out of order.
 
 == Approach
 === Character set detection logic
@@ -108,7 +108,7 @@ In these cases, there may be useful information in an 066, which is used to reco
 In general:
 
 * In Model A records (having 880s), we only care about what's in 066$c (alternate script(s))
-, $b, _or_ $c
+* In Model B records, we may need to care about 066 $a, $b, _or_ $c
 
 [TIP]
 ====
