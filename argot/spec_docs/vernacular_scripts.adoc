@@ -5,6 +5,7 @@
 Summary of approach with some examples
 
 toc::[]
+:toclevels: 5
 
 == Goals
 
@@ -91,6 +92,8 @@ In the above record, the vernacular title is in Basic Greek, but the rest of the
 
 In the above record, most of the main fields are recorded in Basic Cyrillic. However, some are recorded in Extended Latin or Basic Arabic. There are no 880s, and thus no per-field character set codes, present in this record.
 
+*066 values can be used to limit the alternative character set detection functions needed on the fields in a Model B record*
+
 ===== Code translation
 
 .http://www.loc.gov/marc/specifications/speccharmarc8.html#technique2[Graphic character set code translations]
@@ -139,6 +142,7 @@ Field 066 (Character Sets Present) is not used in Unicode-encoded MARC 21 record
 The subfield $6 script identification code in MARC-8-encoded MARC 21 records identifies MARC-8 character sets, rather than scripts per se; hence the code is irrelevant in the Unicode environment because the character set is always UCS, which has no script identification code value. The script identification code should be dropped from subfield $6 when converting to Unicode from MARC-8 encoding.
 ____
 
+
 This means techically properly coded MARC written/stored in Unicode/UTF-8 will lack any explicit coding of the character sets present in the record.
 
 ===== Records using Model B may lack any explicit character set coding
@@ -150,7 +154,7 @@ I leave the best method for doing this to the devs to figure out.
 One thought I have:
 
 * As described above in "Why explicit MARC coding is not sufficient," we are going to need to figure this out for some situations, at least for some character sets/scripts we're prioritizing
-** If we are figuring this out and applying it across-the-board-ish, does it make sense to skip processing the explicit MARC coding altogether, and just rely on the alternative method?
+** If we are figuring this out and applying it across-the-board-ish, *does it make sense to skip processing the explicit MARC coding altogether, and just rely on the alternative method?*
 
 If the alternative method(s) are so resource-intensive that we absolutely want to minimize their use, they ideally should be applied to:
 
@@ -159,5 +163,5 @@ If the alternative method(s) are so resource-intensive that we absolutely want t
 * All fields when:
 ** 066 with non-Latin code(s) present; AND
 ** No 880s present
-* important fieldsfootnoteref:[impfields] when there are no 066 or 880 fields in the record
+* important fieldsfootnoteref:[impfields] when there are no 066 or 880 fields in the record (at the very least, check for CJK-ness)
 
