@@ -247,19 +247,19 @@ This will require changes to the structure of many already-implemented Argot fie
 ====== Vernacular in 880
 
 [source]
-====
+----
 =245  10$6880-02$aUrbilder ;$bBlossoming ; Kalligraphie ; O Mensch, bewein' dein' Sünde gross (Arrangement) : for string quartet /$cToshio Hosokawa.
 =880  10$6245-02/{dollar}1$a原像 ;$b開花 ; 書 （カリグラフィー） ほか : 弦楽四重奏のための /$c細川俊夫.
-====
+----
 
 [source,ruby]
-====
+----
 [
 {'value'=>'Urbilder ; Blossoming ; Kalligraphie ; O Mensch, bewein\' dein\' Sünde gross (Arrangement) : for string quartet'},
 {'value'=>'原像 ;$b開花 ; 書 （カリグラフィー） ほか : 弦楽四重奏のための',
  'lang'=>'cjk'}
 ]
-====
+----
 
 ====== Vernacular in 245
 
@@ -284,11 +284,11 @@ This record http://search.trln.org/search?id=UNCb8821064[exists in SearchTRLN], 
 
 
 [source,ruby]
-====
+----
 [
 {'value'=>'近代日本文学研究の問題点',
  'lang'=>'cjk'}
 ]
-====
+----
 
 
