@@ -22,7 +22,7 @@ toc::[]
 * MARC and its successor(s) for bibliographic description are leaning toward this model and away from the "practices that favored converted Latin-script text over the original script and limited the number of scripts that could be used" (i.e. transliterated data in normal MARC fields, with vernacular recorded in linked 880s).footnote:[See https://www.eventscribe.com/2018/ALA-Annual/fsPopup.asp?Mode=presInfo&PresentationID=352464[New Directions in Non-Latin Script Access]]
 * See spreadsheet at https://github.com/trln/data-documentation/blob/master/meta/unc_vernacular.xlsx for data on prevalence Model B non-Roman data in the UNC Catalog
 
-If is is not feasible to detect non-Roman scripts in all MARC fields across the board, we can greatly improve what we have now by focusing on the Argot fields most important for retrieval of known itemsfootnote:[title_main, names, this_work, included_work], and CJK.footnote:[The segmentation needed for properly indexing CJK causes these records to be unretrievable.] 
+If is is not feasible to detect non-Roman scripts in all MARC fields across the board, we can greatly improve what we have now by focusing on the Argot fields most important for retrieval of known items!footnoteref:[impfields,title_main, names, this_work, included_work], and CJK.footnote:[The segmentation needed for properly indexing CJK causes these records to be unretrievable.] 
 
 === Priority scripts
 
@@ -33,15 +33,131 @@ According to Duke and UNC, the priority scripts are:
 * Arabic
 
 == Approach
-=== Script detection logic
+=== Character set detection logic
+The purpose of character set detection in MARC-to-Argot is to ensure the proper language parser is applied to the data in Solr. 
+
 ==== Explicitly coded in MARC data
-It would be great if we could rely on this, however, the MARC standard specifies:
+===== Per 880 field
+Every 880 field should contain a $6, structured as follows:
+
+`$6830-06(2/r`
+
+830:: Should always be present. MARC tag of field linked to this one. This is a vernacular representation of data in an 830 field
+-:: Should always be present. Separates MARC field tag and occurrence number
+06:: Should always be present. Occurrence number for linking. This 880 field corresponds to the 830 field that has a $6 beginning with 880-06
+(2:: May or may not be present. Graphic character set used in this 880 field, in this case, Basic Hebrew
+/r:: May or may not be present. Text directionality code (right-to-left)
+
+Extract the two characters following `/\d{3}-\d{2}/` and match them using the code translation table below.
+
+===== Per record
+In the section above, note that the graphic character set may be missing from a given 880 field.
+
+Also, if Model B for multiscript records was used, the vernacular data may be in regular MARC fields such as 245 or 100, which lack per-field character set codes.
+
+In these cases, there may be useful information in an 066, which is used to record the character set(s) present in a record.
+
+In general:
+
+* In Model A records (having 880s), we only care about what's in 066$c (alternate script(s))
+* In Model B records, the main fields of the record may be in a vernacular script, so we need to care about what's in $a, $b, _or_ $c
+
+*In all cases, it's probably safe to get all 066 subfields, throw out any codes that map to Basic Latin or Extended Latin, and set the results in the Traject clipboard for the record, for later reference.*
+
+[source]
+----
+=066  \\$c$1
+----
+
+In the above record, all 880 fields are expected to be in CJK scripts.
+
+*When there is an 066 with a single $c value it might be a useful shortcut to use that value and skip the per-880 field character set detection.*
+
+Note that 066$c is repeatable. When repeated, 066$c data may be insufficient to identify the language parser that should be applied to a given field. 
+
+[source]
+----
+=066  \\$c(N$c(S$c(Q
+----
+
+In the above record, the vernacular title is in Basic Greek, but the rest of the 880s are recorded in Cyrillic.
+
+*When there is an 066 with multiple $c values, use per-880 graphic character codes if present. If per-880 codes are _not_ present, the 066$c values could be used to apply only the necessary alternative character set detection functions on each 880 field.*
+
+[source]
+----
+=066  \\$b(N$c(B$c(3
+----
+
+In the above record, most of the main fields are recorded in Basic Cyrillic. However, some are recorded in Extended Latin or Basic Arabic. There are no 880s, and thus no per-field character set codes, present in this record.
+
+===== Code translation
+
+.http://www.loc.gov/marc/specifications/speccharmarc8.html#technique2[Graphic character set code translations]
+[%header,cols=2*] 
+|===
+|Code
+|Character set
+
+|$1
+|CJK (Chinese, Japanese, Korean (EACC))
+
+|(3
+|Basic Arabic
+
+|(4
+|Extended Arabic
+
+|(B
+|Basic Latin
+
+|(!E
+|Extended Latin
+
+|(N
+|Basic Cyrillic
+
+|(Q
+|Extended Cyrillic
+
+|(S
+|Basic Greek
+
+|(2
+|Basic Hebrew
+
+|===
+
+==== Why explicit MARC coding is not sufficient
+===== The MARC specification hurts us here
+As more and more MARC providers and ILSs support UTF-8, we run into the following:
 
 [quote, CHARACTER SETS AND ENCODING OPTIONS: Part 3. Unicode Encoding Environment, http://www.loc.gov/marc/specifications/speccharucs.html ]
 ____
 Field 066 (Character Sets Present) is not used in Unicode-encoded MARC 21 records in the Unicode environment. During conversion of MARC 21 records from MARC-8 encoding to Unicode, field 066 should be deleted.
 
-The script identification code should be dropped from subfield $6 when converting to Unicode from MARC-8 encoding.
+The subfield $6 script identification code in MARC-8-encoded MARC 21 records identifies MARC-8 character sets, rather than scripts per se; hence the code is irrelevant in the Unicode environment because the character set is always UCS, which has no script identification code value. The script identification code should be dropped from subfield $6 when converting to Unicode from MARC-8 encoding.
 ____
 
+This means techically properly coded MARC written/stored in Unicode/UTF-8 will lack any explicit coding of the character sets present in the record.
+
+===== Records using Model B may lack any explicit character set coding
+
+==== Alternative character set detection
+
+I leave the best method for doing this to the devs to figure out.
+
+One thought I have:
+
+* As described above in "Why explicit MARC coding is not sufficient," we are going to need to figure this out for some situations, at least for some character sets/scripts we're prioritizing
+** If we are figuring this out and applying it across-the-board-ish, does it make sense to skip processing the explicit MARC coding altogether, and just rely on the alternative method?
+
+If the alternative method(s) are so resource-intensive that we absolutely want to minimize their use, they ideally should be applied to:
+
+* 880 fields lacking charset codes when there is no 066$c
+* 880 fields lacking charset codes when there are multiple 066$c values
+* All fields when:
+** 066 with non-Latin code(s) present; AND
+** No 880s present
+* important fieldsfootnoteref:[impfields] when there are no 066 or 880 fields in the record
 
