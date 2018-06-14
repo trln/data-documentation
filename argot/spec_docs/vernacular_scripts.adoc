@@ -422,8 +422,87 @@ Not an indexed field, so we do NOT need to do character set identification or se
 
 [source,ruby]
 ----
-argot[note_system_details] = [
+argot['note_system_details'] = [
  'Xi tong yao qiu: Blu-ray bo fang she bei ji xiang guan ruan jian.',
  '系统要求: Blu-ray播放设备及相关软件.'
+]
+----
+
+===== `names`
+
+====== 100 has linked vernacular
+
+[source]
+----
+=100  1\$6880-01$aLi, Cha.
+=880  1\$6100-01/$1$a李察.
+----
+
+[source,ruby]
+----
+argot['names'] = [
+ {
+  'name'=>'Li, Cha.',
+  'type'=>'creator'
+  },
+  {
+   'name'=>'李察.',
+   'type'=>'creator',
+   'lang'=>'cjk'
+   }
+]
+----
+
+====== Multiple 700s with linked vernacular
+
+[source]
+----
+=245  00$aGuide to Japanese taxes$h[serial].
+=700  1\$6880-03$aHayashi, Taizō,$d1922-
+=700  1\$6880-04$aGomi, Yūji,$d1928-
+=880  1\$6700-03/$1$a林大造,$d1922-
+=880  1\$6700-04/$1$a五味, 雄治,$d1928-
+----
+
+[source,ruby]
+----
+argot['names'] = [
+ {
+  'name'=>'Hayashi, Taizō, 1922-',
+  'type'=>'no_rel'
+  },
+  {
+   'name'=>'Gomi, Yūji, 1928-',
+   'type'=>'no_rel'
+  },
+  {
+   'name'=>'林大造, 1922-',
+   'type'=>'no_rel',
+   'lang'=>'cjk'
+   },
+  {
+   'name'=>'五味, 雄治, 1928-',
+   'type'=>'no_rel',
+   'lang'=>'cjk'
+   }
+]
+----
+
+====== Vernacular name in 100 field
+
+[source]
+----
+=100  1\$aお茶の水女子大学グローバル教育センター.
+=245  10$a震災復興と国際連携$h[electronic resource] :$b世界の災害、その時あなたは何ができますか? /$cお茶の水女子大学グローバル教育センター.
+----
+
+[source,ruby]
+----
+argot['names'] = [
+ {
+  'name'=>'お茶の水女子大学グローバル教育センター.',
+  'type'=>'creator'
+  'lang'=>'cjk'
+   }
 ]
 ----
