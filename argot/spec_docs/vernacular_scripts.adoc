@@ -506,3 +506,35 @@ argot['names'] = [
    }
 ]
 ----
+
+===== `isbn`
+The numeric portion of the `isbn` field is indexed but the qualifier is only for display. The qualifier is the part that may be given in vernacular characters.
+
+Therefore, we don't need script detection in the `isbn` field.
+
+====== ISBNs + qualifiers from 020 and linked 880
+
+[source]
+----
+=020  \\$6880-01$a9575433742 (ping zhuang)
+=020  \\$a9789575433741 (ping zhuang)
+=880  \\$6020-01/$1$a9575433742 (平裝)
+----
+
+[source,ruby]
+----
+argot['isbn'] = [
+ {
+  'number'=>'9575433742',
+  'qualifying_info'=>'ping zhuang'
+ },
+ {
+  'number'=>'9789575433741',
+  'qualifying_info'=>'ping zhuang'
+ },
+ {
+  'number'=>'9575433742',
+  'qualifying_info'=>'平裝'
+ } 
+]
+----
