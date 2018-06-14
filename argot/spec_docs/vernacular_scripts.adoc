@@ -409,3 +409,21 @@ argot['this_work'] = [
  }
 ]
 ----
+
+===== `note_system_details`
+
+Not an indexed field, so we do NOT need to do character set identification or set a `lang` element.
+
+[source]
+----
+=538  \\$6880-10$aXi tong yao qiu: Blu-ray bo fang she bei ji xiang guan ruan jian.
+=880  \\$6538-10$a系统要求: Blu-ray播放设备及相关软件.
+----
+
+[source,ruby]
+----
+argot[note_system_details] = [
+ 'Xi tong yao qiu: Blu-ray bo fang she bei ji xiang guan ruan jian.',
+ '系统要求: Blu-ray播放设备及相关软件.'
+]
+----
