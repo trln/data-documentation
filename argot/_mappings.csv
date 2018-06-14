@@ -145,7 +145,6 @@ misc_id,misc_id[type],MARC,n,GEN,088,{na},value is from $a,constant,"""type"":""
 misc_id,misc_id[type],MARC,n,GEN,088,{na},value is from $z,constant,"""type"":""Report Number (canceled or invalid)""",https://github.com/trln/data-documentation/blob/master/argot/spec_docs/misc_id.adoc,misc_id[type]GEN88{na}value is from $z,0,0,y,n,n
 misc_id,misc_id[value],MARC,n,GEN,088,az,none,subelement_to_value,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/misc_id.adoc,misc_id[value]GEN88aznone,0,0,y,n,n
 misc_id,misc_id[type],MARC,n,GEN,383,todo,todo,todo,todo,"$c, $d => Thematic index number",misc_id[type]GEN383todotodo,0,0,y,y,y
-musical_presentation_statement,musical_presentation_statement,MARC,n,GEN,254,a,none,concat_subelements,.,x,musical_presentation_statementGEN254anone,0,0,y,n,n
 names,names[name],MARC,n,GEN,100,abcdgjqu,none,concat_subelements,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[name]GEN100abcdgjqunone,0,0,y,n,y
 names,names[rel],MARC,n,GEN,100,e4,none,see documentation,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[rel]GEN100e4none,0,0,y,n,y
 names,names[type],MARC,n,GEN,100,{na},none,see documentation,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[type]GEN100{na}none,0,0,y,n,y
