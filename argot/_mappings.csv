@@ -170,10 +170,13 @@ note_access_restriction,note_access_restriction,MARC,n,GEN,506,abcdefu3,none,con
 note_admin_history,note_admin_history,MARC,n,GEN,545,abu,i1=1,concat_subelements,x,x,note_admin_historyGEN545abui1=1,0,0,y,,
 note_binding,note_binding[label],MARC,n,GEN,563,3,none,subelement_to_value,x,x,note_binding[label]GEN5633none,0,0,y,,
 note_binding,note_binding[value],MARC,n,GEN,563,au,none,concat_subelements,x,x,note_binding[value]GEN563aunone,0,0,y,,
-note_biographical,note_biographical,MARC,n,GEN,545,abu,i1=~/[ 0],concat_subelements,x,x,note_biographicalGEN545abui1=~/[ 0],0,0,y,,
+note_biographical,note_biographical,MARC,n,GEN,545,abu,i1=~/[ 0]/,concat_subelements,x,x,note_biographicalGEN545abui1=~/[ 0]/,0,0,y,,
 note_cited_in,note_cited_in,MARC,n,GEN,510,abcux3,none,concat_subelements,$3 label,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_cited_inGEN510abcux3none,0,0,y,n,y
 note_copy_version,note_copy_version,MARC,n,GEN,562,abcde3,none,concat_subelements,$3 label,x,note_copy_versionGEN562abcde3none,0,0,y,,
 note_data_quality,note_data_quality,MARC,n,GEN,514,abcdefghijkmuz,none,concat_subelements,Complex instructions. Refer to linked documentation for this field,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_data_qualityGEN514abcdefghijkmuznone,0,0,y,n,n
+note_described_by,note_described_by,MARC,n,GEN,555,abcdu3,i1=blank,concat_subelements,"Prepend to field (after any $3 label): ""Indexes: """,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_described_byGEN555abcdu3i1=blank,0,0,y,n,y
+note_described_by,note_described_by,MARC,n,GEN,555,abcdu3,i1=0,concat_subelements,"Prepend to field (after any $3 label): ""Finding aids: """,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_described_byGEN555abcdu3i1=0,0,0,y,n,y
+note_described_by,note_described_by,MARC,n,GEN,555,abcdu3,i1!=~/[ 0]/,concat_subelements,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_described_byGEN555abcdu3i1!=~/[ 0]/,0,0,y,n,y
 note_dissertation,note_dissertation,MARC,n,GEN,502,abcdg,none,concat_subelements,Complex instructions. Refer to linked documentation for this field,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_dissertationGEN502abcdgnone,0,0,y,n,n
 note_file_type,note_file_type,MARC,n,GEN,516,a,none,concat_subelements,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_file_typeGEN516anone,0,0,y,,
 note_former_title,note_former_title,MARC,n,GEN,547,a,none,subelement_to_value,x,x,note_former_titleGEN547anone,0,0,y,,

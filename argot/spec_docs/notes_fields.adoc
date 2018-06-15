@@ -591,6 +591,67 @@ From http://www.loc.gov/marc/bibliographic/bd514.html
 }
 ----
 
+== Examples: note_described_by
+
+* This note is NOT indexed
+
+* If ind1 is blank, prepend "Indexes: " to field (or insert it after any $3 label present)
+* If ind1 = 0, prepend "Finding aids: " to field (or insert it after any $3 label present)
+
+=== 555
+
+==== UNCb4157517
+
+[source]
+----
+=555  0\$aList of items in front of folder 39.
+----
+
+[source,javascript]
+----
+{
+  "note_described_by":[
+      'Finding aids: List of items in front of folder 39.'
+  ]
+}
+----
+
+==== UNCb1206579 mock
+
+[source]
+----
+=555  \\$31961-1973$aAnnual index published separately each year.
+=555  \\$31974-$aAnnual index published with the last issue of each year.
+=555  \\$3v. 1-10, 1962-1971$aCumulative index published separately in 1 volume.
+----
+
+[source,javascript]
+----
+{
+  "note_described_by":[
+    '1961-1973: Indexes: Annual index published separately each year.',
+    '1974-: Indexes: Annual index published with the last issue of each year.',
+    'v. 1-10, 1962-1971: Indexes: Cumulative index published separately in 1 volume.'
+  ]
+}
+----
+
+==== UNCb1302201 mock
+
+[source]
+----
+=555  8\$aCumulative title, document number and subject index available online with links to select online titles.
+----
+
+[source,javascript]
+----
+{
+  "note_described_by":[
+    'Cumulative title, document number and subject index available online with links to select online titles.'
+  ]
+}
+----
+
 == Examples: note_dissertation
 === 502
 ==== Complex processing rules
