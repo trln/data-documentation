@@ -297,6 +297,64 @@ Field is NOT indexed.
 }
 ----
 
+== Examples: note_cited_in
+
+* Field is NOT indexed
+
+=== 510
+
+==== UNCb1189165
+
+* Provide display label for $x 
+
+===== MARC
+
+[source]
+----
+=510  2\$aChemical abstracts$x0009-2258$b1968-1986
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_cited_in":[
+    'Chemical abstracts ISSN 0009-2258 1968-1986'
+    ]
+}
+----
+
+==== UNCb5157750
+
+* Set label from $3
+
+===== MARC
+
+[source]
+----
+=510  4\$3Arcadelt, Quinto libro$aRISM B/I,$cB1544-16
+=510  4\$3Arcadelt, Quinto libro$aRISM A/I,$cA1382
+=510  4\$3Arcadelt, Secondo libro$aRISM A/I,$cA1371
+=510  4\$3Arcadelt, Terzo libro$aRISM B/I,$c1539-23
+=510  4\$3Arcadelt, Terzo libro$aRISM A/I,$cA1374
+----
+
+===== Argot
+
+[source,javascript]
+----
+{
+  "note_cited_in":[
+    'Arcadelt, Quinto libro: RISM B/I, B1544-16',
+    'Arcadelt, Quinto libro: RISM A/I, A1382',
+    'Arcadelt, Secondo libro: RISM A/I, A1371',
+    'Arcadelt, Terzo libro: RISM B/I, 1539-23',
+    'Arcadelt, Terzo libro: RISM A/I, A1374'
+   ]
+}
+----
+
 == Examples: note_copy_version
 
 * Field is not indexed
