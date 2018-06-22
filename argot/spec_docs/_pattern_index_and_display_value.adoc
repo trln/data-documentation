@@ -1,0 +1,57 @@
+:toc:
+:toc-placement!:
+
+= `index_and_display_value` pattern
+
+The pattern used to create fields where:
+
+* The value of the field should be displayed and indexed
+
+
+This pattern is used in the following Argot fields:
+
+kmstodo
+
+toc::[]
+
+== The pattern: Argot elements
+
+=== `value`
+
+The non-label, actual value portion of the field that should be indexed
+
+* string
+* *required*
+
+=== `lang`
+
+The script/character set indicating language parser to be applied to this field.
+
+* string
+* optional, used only on vernacular script fields
+
+== Abstract example of pattern
+
+=== Argot
+
+[source,ruby]
+----
+'fieldname' => [
+  {'value' => 'bbbbb'},
+  {'value' => 'ccccc',
+   'lang' => 'aaa'}
+    ]
+----
+
+=== Display/behavior
+
+*My displayed field*
+
+* bbbbb
+* ccccc
+
+=== Indexing
+
+* fieldname: bbbbb
+* fieldname_vern: ccccc
+

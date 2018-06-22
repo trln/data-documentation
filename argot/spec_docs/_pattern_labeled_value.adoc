@@ -1,7 +1,7 @@
 :toc:
 :toc-placement!:
 
-= `indexed_value` pattern
+= `labeled_value` pattern
 
 The pattern used to create fields where:
 
