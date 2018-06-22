@@ -5,6 +5,8 @@ date_cataloged,date_cataloged,MARCish,n,DUKE,946,b,none,subelement_to_value,"If 
 date_cataloged,date_cataloged,MARCish,n,UNC,999,a,i1=0 AND i2=0,subelement_to_value,"If necessary, convert to ISO 8601 date/timestamp format",.,date_catalogedUNC999ai1=0 AND i2=0,0,1,y,.,.
 date_cataloged,date_cataloged,MARCish,y,NCCU,.,.,none,subelement_to_value,"If necessary, convert to ISO 8601 date/timestamp format",.,date_catalogedNCCU..none,0,1,y,.,.
 derived_work_note,derived_work_note,MARC,n,GEN,581,az3,none,see notes,$3 label; prepend ISBN to $z value,x,derived_work_noteGEN581az3none,0,0,y,,
+donor,donor[value],MARC,n,UNC,790,abcdgqu,ind 1 = 0,concat_subelements,"Prepend: ""Donated by """,.,donor[value]UNC790abcdgquind 1 = 0,0,0,y,y,y
+donor,donor[value],MARC,n,UNC,791,abcdfg,ind 1 = 2,concat_subelements,"Prepend: ""Purchased using funds from the """,.,donor[value]UNC791abcdfgind 1 = 2,0,0,y,y,y
 edition,edition[label],MARC,n,GEN,250,3,none,concat_subelements,x,.,edition[label]GEN2503none,0,0,y,n,y
 edition,edition[value],MARC,n,GEN,250,ab,none,concat_subelements,x,.,edition[value]GEN250abnone,0,0,y,n,y
 edition,edition[value],MARC,n,GEN,254,a,none,concat_subelements,x,.,edition[value]GEN254anone,0,0,y,n,y
@@ -221,6 +223,8 @@ note_local,note_local[label],MARC,n,GEN,561,3,ind1 != 0 and $3 present,concat_su
 note_local,note_local[label],MARC,n,GEN,561,.,ind1 != 0 and $3 NOT present,constant,"""label"":""Ownership history""",,note_local[label]GEN561.ind1 != 0 and $3 NOT present,0,0,y,,
 note_local,note_local[value],MARC,n,GEN,561,a,ind1 != 0,concat_subelements,.,.,note_local[value]GEN561aind1 != 0,0,0,y,n,n
 note_local,note_local[value],MARC,n,GEN,590,a,none,concat_subelements,.,.,note_local[value]GEN590anone,0,0,y,n,n
+note_local,note_local[value],MARC,n,UNC,790,abcdgqu,ind 1 = 0,concat_subelements,"Prepend: ""Donated by """,.,note_local[value]UNC790abcdgquind 1 = 0,0,0,y,y,y
+note_local,note_local[value],MARC,n,UNC,791,abcdfg,ind 1 = 2,concat_subelements,"Prepend: ""Purchased using funds from the """,.,note_local[value]UNC791abcdfgind 1 = 2,0,0,y,y,y
 note_methodology,note_methodology,MARC,n,GEN,567,a,none,concat_subelements,x,x,note_methodologyGEN567anone,0,0,y,,
 note_numbering,note_numbering,MARC,n,GEN,515,a,none,concat_subelements,x,x,note_numberingGEN515anone,0,0,y,n,n
 note_organization,note_organization,MARC,n,GEN,351,abc3,none,concat_subelements,Create label from $3,x,note_organizationGEN351abc3none,0,0,y,n,n
