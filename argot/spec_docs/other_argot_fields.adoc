@@ -24,6 +24,7 @@ Donor names for display should be mapped to `names` or `note_local` field as app
 7XX name fields with relator term or code for donor are already mapped to `names`.
 ====
 
+
 == `edition`
 
 Follows `labeled_value` Argot pattern.

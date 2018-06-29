@@ -1,0 +1,130 @@
+:toc:
+:toc-placement!:
+
+= Subject and genre-related fields
+
+toc::[]
+
+== Two types of subject and genre fields
+
+Argot has two types of subject/genre fields: headings fields and facet fields.
+
+=== Headings fields
+
+Headings fields include:
+
+* `genre_headings`
+* `subject_headings`
+
+These fields:
+
+* Contain the full field data from source data subject fields (MARC 6XX, etc.)
+* Are displayed as progressive hyperlinks in the full record view, so clicking a segment of the heading will conduct a query for the heading _up to and including that segment_.
+* Are included in the subject search index. User-entered queries will search in these fields. 
+** This requires script detection and language parsing when vernacular scripts are present
+
+=== Facet fields
+
+Facet fields include:
+
+* `subject_chronological`
+* `subject_genre`
+* `subject_geographic`
+* `subject_topic_lcsh`
+
+These fields:
+
+* Contain individual subdivision/subfield values from the source data subject fields. That is, a MARC 650 with chronological, geographic, and genre/form subdivisions will have each of its segments assigned to the appropriate facet field.
+* Populate the three subject-related facets and the genre facet.
+* Are *not* included in the subject search index. User-entered queries will *not* search in these fields.
+** Anything in these fields will also be part of a value included in a `subject_headings` or `genre_headings` field, so searching these would be redundant.
+** Script detection and language parsing is therefore *not* required when vernacular scripts are present.
+
+== Different subject heading vocabularies
+
+Initially, product owners decided that all subject headings---LCSH, MeSH, and any others present---will be treated the same.
+
+The `subject_headings` fields will contain all headings from all vocabularies, and the TRLN Discovery application will not know anything about the source vocabulary.
+
+There is initially no separate MeSH Subject facet in TRLN Discovery.
+
+This could change in future releases based on stakeholder feedback.
+
+== MARC field-to-Argot field mappings
+
+A few selected mapping examples appear below.
+
+For full details on the MARC-to-Argot mappings, consult the mappings tab of https://github.com/trln/data-documentation/blob/master/argot/argot.xlsx[the Argot specification spreadsheet] or the https://github.com/trln/data-documentation/blob/master/argot/_mappings.csv[mappings .csv derived from it].
+
+=== Special handling for `subject_genre`
+
+==== 008 and 006 values
+
+For language materials (coded as such in LDR or an 006), set `subject_genre` based on Literary form (006/16, 008/33) and Biography (006/17, 008/34) codes.
+
+==== Primary sources value
+
+If one or more of the following values is written to the `subject_genre` facet values for a record, "Primary sources" is also added to the `subject_genre` facet values.
+
+* Archival resources
+* Archives
+* Correspondence
+* Diaries
+* Interviews
+* Interview
+* Notebooks, sketchbooks, etc.
+* Personal narratives
+* Sources
+* Speeches, addresses, etc.
+
+
+== Examples
+
+[source]
+----
+=600  10$aAsperger, Hans.
+=650  \0$aAsperger's syndrome in children$xPatients$zAustria$zVienna$xHistory.
+=650  \0$aAsperger's syndrome in children$zAustria$zVienna$xDiagnosis$y20th century.
+=650  \0$aAsperger's syndrome in children$zAustria$zVienna$xHistory$y20th century.
+=650  \7$aMEDICAL / Pediatrics.$2bisacsh
+=650  \2$aAsperger Syndrome$xhistory.
+=655  \4$aNonfiction.
+=655  \7$aNonfiction.$2lcgft
+----
+
+[source,ruby]
+----
+{
+"subject_headings" => [
+    { "value" => "Asperger, Hans" },
+    { "value" => "Asperger's syndrome in children -- Patients -- Austria -- Vienna -- History" },
+    { "value" => "Asperger's syndrome in children -- Austria -- Vienna -- Diagnosis -- 20th century" },
+    { "value" => "Asperger's syndrome in children -- Austria -- Vienna -- History -- 20th century" },
+    { "value" => "MEDICAL / Pediatrics" },
+    { "value" => "Asperger Syndrome -- history" }
+    ],
+  "genre_headings" => [
+    { "value" => "Nonfiction" }
+  ],
+  "subject_genre" => [
+    "Nonfiction"
+  ],
+  "subject_geographic" => [
+    "Austria",
+    "Vienna"
+  ],
+  "subject_topical" => [
+    "Asperger, Hans",
+    "Asperger's syndrome in children",
+    "Patients",
+    "History",
+    "Diagnosis",
+    "MEDICAL / Pediatrics",
+    "Asperger Syndrome"
+  ],
+  "subject_chronological" => [
+    "20th century"
+  ]
+}
+----
+
