@@ -98,8 +98,20 @@ MARC 254 is mapped here because it functions as a specific type of edition-like 
 
 [NOTE]
 ====
-If starting from scratch, I would NOT model ISSN this way. But given we're in crunch time for 2018-08-01 release, I am leaving it structured as is.
+If starting from scratch, I would NOT model ISSN this way. This is how it was initially structured by Luke based on Endeca treatment. Given that we are currently in crunch time for 2018-08-01 release, I am leaving it structured as is.
 ====
+
+The `issn` field has two sub-elements:
+
+* primary
+** the primary ISSN referring specifically to the format/media version described by this record
+** displayed
+** indexed
+
+* linking
+** the ISSN used to link/gather multiple format/media versions of the title
+** NOT displayed (will often be recorded in the MARC record in fields where this ISSN will be displayed/indexed as part of a related work
+** indexed
 
 === UNCb1323841
 
