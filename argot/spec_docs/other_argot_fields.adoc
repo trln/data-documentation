@@ -94,6 +94,39 @@ MARC 254 is mapped here because it functions as a specific type of edition-like 
 ]
 ----
 
+== `issn`
+
+[NOTE]
+====
+If starting from scratch, I would NOT model ISSN this way. But given we're in crunch time for 2018-08-01 release, I am leaving it structured as is.
+====
+
+=== UNCb1323841
+
+[source]
+----
+=022  \\$a0140-6736$z0023-7507
+=022  \\$a0099-5355
+----
+
+[source,ruby]
+----
+'issn' => {'primary' = ['0140-6736', '0099-5355'] }
+----
+
+=== UNCb7821842
+
+[source]
+----
+=022  \\$a2213-9109$l2213-9095
+----
+
+[source,ruby]
+----
+'issn' => {'primary' = ['2213-9109'],
+           'linking' = ['2213-9095']}
+----
+
 == `title_main`
 
 * Array because there may be one or more vernacular versions of the title in 245
