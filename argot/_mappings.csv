@@ -1,18 +1,18 @@
 parentfield,field,source data format,provisional?,institution,element/field,subelement/field(s),constraints,processing_type,processing instructions,notes,mapping_id,mapping issue ct,field issue ct,field defined?,done in mta?,tests done?
 available,available,MARCish,n,UNC,999,s,i1=9 AND i2=1 and $d IS blank,map subelement to value,"""available"":""Available"" if status label = 'Ask the MRC', 'Available', 'Contact library for status', or 'In-Library Use Only'. For status code, to status label, see: maps/item_status_ils_to_argot.json[""UNC""]",,availableUNC999si1=9 AND i2=1 and $d IS blank,0,0,n,,
 barcodes,barcodes,MARCish,n,UNC,999,b,i1=9 AND i2=1,subelement_to_value,x,x,barcodesUNC999bi1=9 AND i2=1,0,0,n,,
-date_cataloged,date_cataloged,MARCish,n,NCSU,909,a,none,subelement_to_value,"If necessary, convert to ISO 8601 date/timestamp format",.,date_catalogedNCSU909anone,0,1,n,.,.
-date_cataloged,date_cataloged,MARCish,n,DUKE,946,b,none,subelement_to_value,"If necessary, convert to ISO 8601 date/timestamp format",.,date_catalogedDUKE946bnone,0,1,n,.,.
-date_cataloged,date_cataloged,MARCish,n,UNC,999,a,i1=0 AND i2=0,subelement_to_value,"If necessary, convert to ISO 8601 date/timestamp format",.,date_catalogedUNC999ai1=0 AND i2=0,0,1,n,.,.
-date_cataloged,date_cataloged,MARCish,y,NCCU,.,.,none,subelement_to_value,"If necessary, convert to ISO 8601 date/timestamp format",.,date_catalogedNCCU..none,0,1,n,.,.
+date_cataloged,date_cataloged,MARCish,n,NCSU,909,a,none,subelement_to_value,"If necessary, convert to ISO 8601 date/timestamp format",.,date_catalogedNCSU909anone,0,0,n,.,.
+date_cataloged,date_cataloged,MARCish,n,DUKE,946,b,none,subelement_to_value,"If necessary, convert to ISO 8601 date/timestamp format",.,date_catalogedDUKE946bnone,0,0,n,.,.
+date_cataloged,date_cataloged,MARCish,n,UNC,999,a,i1=0 AND i2=0,subelement_to_value,"If necessary, convert to ISO 8601 date/timestamp format",.,date_catalogedUNC999ai1=0 AND i2=0,0,0,n,.,.
+date_cataloged,date_cataloged,MARCish,y,NCCU,.,.,none,subelement_to_value,"If necessary, convert to ISO 8601 date/timestamp format",.,date_catalogedNCCU..none,0,0,n,.,.
 derived_work_note,derived_work_note,MARC,n,GEN,581,az3,none,see notes,$3 label; prepend ISBN to $z value,x,derived_work_noteGEN581az3none,0,0,n,,
 donor,donor[value],MARC,n,UNC,790,abcdgqu,ind 1 = 0,concat_subelements,"Prepend: ""Donated by """,.,donor[value]UNC790abcdgquind 1 = 0,0,0,n,y,y
 donor,donor[value],MARC,n,UNC,791,abcdfg,ind 1 = 2,concat_subelements,"Prepend: ""Purchased using funds from the """,.,donor[value]UNC791abcdfgind 1 = 2,0,0,n,y,y
 edition,edition[label],MARC,n,GEN,250,3,none,concat_subelements,x,.,edition[label]GEN2503none,0,0,n,n,y
 edition,edition[value],MARC,n,GEN,250,ab,none,concat_subelements,x,.,edition[value]GEN250abnone,0,0,n,n,y
 edition,edition[value],MARC,n,GEN,254,a,none,concat_subelements,x,.,edition[value]GEN254anone,0,0,n,n,y
-frequency,frequency[current],MARC,n,GEN,310,ab,none,concat_subelements,x,x,frequency[current]GEN310abnone,0,1,n,y,y
-frequency,frequency[former],MARC,n,GEN,321,ab,none,concat_subelements,x,x,frequency[former]GEN321abnone,0,1,n,y,y
+frequency,frequency[current],MARC,n,GEN,310,ab,none,concat_subelements,x,x,frequency[current]GEN310abnone,0,0,n,y,y
+frequency,frequency[former],MARC,n,GEN,321,ab,none,concat_subelements,x,x,frequency[former]GEN321abnone,0,0,n,y,y
 genre_headings,genre_headings[value],MARC,y,GEN,382,abdp,none,subelement_to_value,x,x,genre_headings[value]GEN382abdpnone,0,0,n,y,y
 genre_headings,genre_headings[value],MARC,y,GEN,384,a,none,subelement_to_value,x,x,genre_headings[value]GEN384anone,0,0,y,y,y
 genre_headings,genre_headings[value],MARC,n,GEN,567,b,none,subelement_to_value,x,x,genre_headings[value]GEN567bnone,0,0,n,y,y
@@ -97,20 +97,20 @@ issn,issn[primary],MARC,n,GEN,022,a,none,subelement_to_value,"issn[type] = ""ISS
 issn_related,issn_related,MARC,n,GEN,534,x,none,subelement_to_value,x,x,issn_relatedGEN534xnone,0,0,n,,
 items,items[type],MARCish,n,Duke,940,r,.,.,.,Used in setting item[status] value,items[type]Duke940r.,0,0,n,,
 items,items[call_no],MARCish,n,UNC,999,q,i1=9 AND i2=1,concat_subelements,See https://github.com/trln/data-documentation/blob/master/argot/examples/items.md#item_call_number-unc,.,items[call_no]UNC999qi1=9 AND i2=1,0,0,n,y,y
-items,items[copy_no],MARCish,n,UNC,999,c,i1=9 AND i2=1 AND value != '1',subelement_to_value,.,.,items[copy_no]UNC999ci1=9 AND i2=1 AND value != '1',0,1,n,y,y
+items,items[copy_no],MARCish,n,UNC,999,c,i1=9 AND i2=1 AND value != '1',subelement_to_value,.,.,items[copy_no]UNC999ci1=9 AND i2=1 AND value != '1',0,0,n,y,y
 items,items[due_date],MARCish,n,UNC,999,d,i1=9 AND i2=1,subelement_to_value,.,Will be blank if item is NOT checked out,items[due_date]UNC999di1=9 AND i2=1,0,1,n,y,y
 items,items[item_id],MARCish,n,UNC,999,i,i1=9 AND i2=1,subelement_to_value,.,.,items[item_id]UNC999ii1=9 AND i2=1,0,0,n,y,y
 items,items[loc_b],MARCish,n,UNC,999,f,i1=9 AND i2=4 AND NOT EXIST (tag=999 AND i1=9 and i2=1),subelement_to_value,See https://github.com/trln/data-documentation/blob/master/argot/questions_issues/location.md#one-idea-for-data-mappingtransformation,.,items[loc_b]UNC999fi1=9 AND i2=4 AND NOT EXIST (tag=999 AND i1=9 and i2=1),0,0,n,.,.
 items,items[loc_b],MARCish,n,UNC,999,l,i1=9 AND i2=1,subelement_to_value,See https://github.com/trln/data-documentation/blob/master/argot/questions_issues/location.md#one-idea-for-data-mappingtransformation,.,items[loc_b]UNC999li1=9 AND i2=1,0,0,n,y,y
 items,items[loc_n],MARCish,n,UNC,999,f,i1=9 AND i2=4 AND NOT EXIST (tag=999 AND i1=9 and i2=1),subelement_to_value,See https://github.com/trln/data-documentation/blob/master/argot/questions_issues/location.md#one-idea-for-data-mappingtransformation,.,items[loc_n]UNC999fi1=9 AND i2=4 AND NOT EXIST (tag=999 AND i1=9 and i2=1),0,0,n,.,.
 items,items[loc_n],MARCish,n,UNC,999,l,i1=9 AND i2=1,subelement_to_value,See https://github.com/trln/data-documentation/blob/master/argot/questions_issues/location.md#one-idea-for-data-mappingtransformation,.,items[loc_n]UNC999li1=9 AND i2=1,0,0,n,y,y
-items,items[notes],MARCish,n,UNC,999,n,i1=9 AND i2=1,subelement_to_value,.,.,items[notes]UNC999ni1=9 AND i2=1,0,1,n,y,y
+items,items[notes],MARCish,n,UNC,999,n,i1=9 AND i2=1,subelement_to_value,.,.,items[notes]UNC999ni1=9 AND i2=1,0,0,n,y,y
 items,items[status],MARCish,n,UNC,999,a,i1=9 AND i2=4 AND NOT EXIST (tag=999 AND i1=9 and i2=1),constant,"value = ""On Order""",Order record data (999 94) should only be output if there is no item or holdings data output,items[status]UNC999ai1=9 AND i2=4 AND NOT EXIST (tag=999 AND i1=9 and i2=1),0,0,n,.,.
 items,items[status],MARCish,n,UNC,999,d,i1=9 AND i2=1 and $d IS NOT blank,constant,"value = ""Checked Out""",.,items[status]UNC999di1=9 AND i2=1 and $d IS NOT blank,0,0,n,y,y
 items,items[status],MARCish,n,UNC,999,s,i1=9 AND i2=1 and $d IS blank,map subelement to value,"See maps/item_status_ils_to_argot.json[""UNC""]",.,items[status]UNC999si1=9 AND i2=1 and $d IS blank,0,0,n,y,y
 items,items[type],MARCish,n,NCSU,999,t,.,.,.,Used in setting resource_type and physical_media values,items[type]NCSU999t.,0,0,n,,
 items,items[type],MARCish,n,NCCU,999,t,.,.,.,.,items[type]NCCU999t.,0,0,n,,
-items,items[vol],MARCish,n,UNC,999,v,i1=9 AND i2=1,subelement_to_value,.,.,items[vol]UNC999vi1=9 AND i2=1,0,1,n,y,y
+items,items[vol],MARCish,n,UNC,999,v,i1=9 AND i2=1,subelement_to_value,.,.,items[vol]UNC999vi1=9 AND i2=1,0,0,n,y,y
 items,items[type],{na},n,UNC,{na},{na},none,{na},{na},UNC is not populating this element because we don't plan to use it for anything,items[type]UNC{na}{na}none,0,0,n,,
 language,language,MARC,n,GEN,008,35-37,none,map_subelement_to_value,x,documentation needed,languageGEN835-37none,0,0,n,,
 language,language,MARC,n,GEN,041,adeg,i1=1 and $a contains only one code,map_subelement_to_value,x,documentation needed,languageGEN41adegi1=1 and $a contains only one code,0,0,n,,
@@ -595,26 +595,26 @@ subject_chronological,subject_chronological,MARC,n,GEN,653,a,i2 = 4,subelement_t
 subject_chronological,subject_chronological,MARC,n,GEN,655,y,none,subelement_to_value,.,.,subject_chronologicalGEN655ynone,0,1,n,y,.
 subject_chronological,subject_chronological,MARC,n,GEN,656,y,none,subelement_to_value,.,.,subject_chronologicalGEN656ynone,0,1,n,y,.
 subject_chronological,subject_chronological,MARC,n,GEN,657,y,none,subelement_to_value,.,.,subject_chronologicalGEN657ynone,0,1,n,y,.
-subject_genre,subject_genre,MARC,n,GEN,006,16,006/00 =~ [at],subelement_to_value,"map a value from 008_literary_form.json if there is a match. If there is no match, don't populate",.,subject_genreGEN616006/00 =~ [at],0,3,n,y,y
-subject_genre,subject_genre,MARC,n,GEN,006,17,006/00 =~ [at],subelement_to_value,"if =~ [abcd], value = Biography",. ,subject_genreGEN617006/00 =~ [at],0,3,n,y,i
-subject_genre,subject_genre,MARC,n,GEN,008,33,LDR/06 = a AND LDR/07 =~ [acdm],subelement_to_value,"map a value from 008_literary_form.json if there is a match. If there is no match, don't populate",.,subject_genreGEN833LDR/06 = a AND LDR/07 =~ [acdm],0,3,n,y,i
-subject_genre,subject_genre,MARC,n,GEN,008,34,LDR/06 = a AND LDR/07 =~ [acdm],subelement_to_value,"if =~ [abcd], value = Biography",. ,subject_genreGEN834LDR/06 = a AND LDR/07 =~ [acdm],0,3,n,y,y
-subject_genre,subject_genre,MARC,y,GEN,382,abdp,none,subelement_to_value,x,x,subject_genreGEN382abdpnone,0,3,n,y,y
+subject_genre,subject_genre,MARC,n,GEN,006,16,006/00 =~ [at],subelement_to_value,"map a value from 008_literary_form.json if there is a match. If there is no match, don't populate",.,subject_genreGEN616006/00 =~ [at],0,2,n,y,y
+subject_genre,subject_genre,MARC,n,GEN,006,17,006/00 =~ [at],subelement_to_value,"if =~ [abcd], value = Biography",. ,subject_genreGEN617006/00 =~ [at],0,2,n,y,i
+subject_genre,subject_genre,MARC,n,GEN,008,33,LDR/06 = a AND LDR/07 =~ [acdm],subelement_to_value,"map a value from 008_literary_form.json if there is a match. If there is no match, don't populate",.,subject_genreGEN833LDR/06 = a AND LDR/07 =~ [acdm],0,2,n,y,i
+subject_genre,subject_genre,MARC,n,GEN,008,34,LDR/06 = a AND LDR/07 =~ [acdm],subelement_to_value,"if =~ [abcd], value = Biography",. ,subject_genreGEN834LDR/06 = a AND LDR/07 =~ [acdm],0,2,n,y,y
+subject_genre,subject_genre,MARC,y,GEN,382,abdp,none,subelement_to_value,x,x,subject_genreGEN382abdpnone,0,2,n,y,y
 subject_genre,subject_genre,MARC,y,GEN,384,a,none,subelement_to_value,x,x,subject_genreGEN382todotodo,0,3,y,y,y
-subject_genre,subject_genre,MARC,n,GEN,600,v,none,subelement_to_value,.,.,subject_genreGEN600vnone,0,3,n,y,.
-subject_genre,subject_genre,MARC,n,GEN,610,v,none,subelement_to_value,.,.,subject_genreGEN610vnone,0,3,n,y,.
-subject_genre,subject_genre,MARC,n,GEN,611,v,none,subelement_to_value,.,.,subject_genreGEN611vnone,0,3,n,y,.
-subject_genre,subject_genre,MARC,n,GEN,630,v,none,subelement_to_value,.,.,subject_genreGEN630vnone,0,3,n,y,.
-subject_genre,subject_genre,MARC,y,GEN,647,v,none,subelement_to_value,.,UNC doesn't have this field in our catalog at all yet. It was added to MARC in 2016-11 and probably hasn't been implemented by OCLC yet. We can hold off on including it.,subject_genreGEN647vnone,0,3,n,y,.
-subject_genre,subject_genre,MARC,y,GEN,648,v,none,subelement_to_value,.,UNC doesn't have any occurrences of this subfield (regardless of term source),subject_genreGEN648vnone,0,3,n,y,.
-subject_genre,subject_genre,MARC,n,GEN,650,v,none,subelement_to_value,.,.,subject_genreGEN650vnone,0,3,n,y,.
-subject_genre,subject_genre,MARC,n,GEN,651,v,none,subelement_to_value,.,.,subject_genreGEN651vnone,0,3,n,y,.
-subject_genre,subject_genre,MARC,y,GEN,653,a,i2 = 6,subelement_to_value,.,"UNC doesn't have any occurrences of these subfields (regardless of term source). Check w/other institutions re: current needs here. Can/should be mapped eventually, depending on how use of field evolves",subject_genreGEN653ai2 = 6,0,3,n,y,y
-subject_genre,subject_genre,MARC,y,GEN,655,ax,none,concat_subelements,"Separate subelements with ""--"", not "" """,Need to consult with metadata experts at other institutions to verify this is the best way to handle $x;;;Need PO approval to include non-LCSH vocabularies,subject_genreGEN655axnone,0,3,n,y,y
-subject_genre,subject_genre,MARC,y,GEN,655,ax,i2=7 AND $2 =~ /rbbin|rbgenr|rbmscv|rbpap|rbpri|rbprov|rbpub|rbtyp/,concat_subelements,"Separate subelements with ""--"", not "" ""; Delete parenthetical Binding|Genre|Paper|Printing|Publishing|Provenance|Type values from field; chomp "".""; deduplicate field when all values have been assigned.","Need PO approval to include non-LCSH vocabularies: Binding terms: a thesaurus for use in rare book and special collections cataloguing (Chicago: Association of College and Research Libraries, ALA) -- Important for rare/special library materials -- 6064 headings in UNC cat on 2017-08-16",subject_genreGEN655axi2=7 AND $2 =~ /rbbin|rbgenr|rbmscv|rbpap|rbpri|rbprov|rbpub|rbtyp/,0,3,n,y,y
-subject_genre,subject_genre,MARC,n,GEN,655,v,none,subelement_to_value,.,.,subject_genreGEN655vnone,0,3,n,y,.
-subject_genre,subject_genre,MARC,y,GEN,656,kv,none,subelement_to_value,.,"UNC doesn't have any occurrences of these subfields (regardless of term source). Check w/other institutions re: current needs here. Can/should be mapped eventually, depending on how use of field evolves",subject_genreGEN656kvnone,0,3,n,y,y
-subject_genre,subject_genre,MARC,y,GEN,657,v,none,subelement_to_value,.,"UNC doesn't have any occurrences of these subfields (regardless of term source). Check w/other institutions re: current needs here. Can/should be mapped eventually, depending on how use of field evolves",subject_genreGEN657vnone,0,3,n,y,.
+subject_genre,subject_genre,MARC,n,GEN,600,v,none,subelement_to_value,.,.,subject_genreGEN600vnone,0,2,n,y,.
+subject_genre,subject_genre,MARC,n,GEN,610,v,none,subelement_to_value,.,.,subject_genreGEN610vnone,0,2,n,y,.
+subject_genre,subject_genre,MARC,n,GEN,611,v,none,subelement_to_value,.,.,subject_genreGEN611vnone,0,2,n,y,.
+subject_genre,subject_genre,MARC,n,GEN,630,v,none,subelement_to_value,.,.,subject_genreGEN630vnone,0,2,n,y,.
+subject_genre,subject_genre,MARC,y,GEN,647,v,none,subelement_to_value,.,UNC doesn't have this field in our catalog at all yet. It was added to MARC in 2016-11 and probably hasn't been implemented by OCLC yet. We can hold off on including it.,subject_genreGEN647vnone,0,2,n,y,.
+subject_genre,subject_genre,MARC,y,GEN,648,v,none,subelement_to_value,.,UNC doesn't have any occurrences of this subfield (regardless of term source),subject_genreGEN648vnone,0,2,n,y,.
+subject_genre,subject_genre,MARC,n,GEN,650,v,none,subelement_to_value,.,.,subject_genreGEN650vnone,0,2,n,y,.
+subject_genre,subject_genre,MARC,n,GEN,651,v,none,subelement_to_value,.,.,subject_genreGEN651vnone,0,2,n,y,.
+subject_genre,subject_genre,MARC,y,GEN,653,a,i2 = 6,subelement_to_value,.,"UNC doesn't have any occurrences of these subfields (regardless of term source). Check w/other institutions re: current needs here. Can/should be mapped eventually, depending on how use of field evolves",subject_genreGEN653ai2 = 6,0,2,n,y,y
+subject_genre,subject_genre,MARC,y,GEN,655,ax,none,concat_subelements,"Separate subelements with ""--"", not "" """,Need to consult with metadata experts at other institutions to verify this is the best way to handle $x;;;Need PO approval to include non-LCSH vocabularies,subject_genreGEN655axnone,0,2,n,y,y
+subject_genre,subject_genre,MARC,y,GEN,655,ax,i2=7 AND $2 =~ /rbbin|rbgenr|rbmscv|rbpap|rbpri|rbprov|rbpub|rbtyp/,concat_subelements,"Separate subelements with ""--"", not "" ""; Delete parenthetical Binding|Genre|Paper|Printing|Publishing|Provenance|Type values from field; chomp "".""; deduplicate field when all values have been assigned.","Need PO approval to include non-LCSH vocabularies: Binding terms: a thesaurus for use in rare book and special collections cataloguing (Chicago: Association of College and Research Libraries, ALA) -- Important for rare/special library materials -- 6064 headings in UNC cat on 2017-08-16",subject_genreGEN655axi2=7 AND $2 =~ /rbbin|rbgenr|rbmscv|rbpap|rbpri|rbprov|rbpub|rbtyp/,0,2,n,y,y
+subject_genre,subject_genre,MARC,n,GEN,655,v,none,subelement_to_value,.,.,subject_genreGEN655vnone,0,2,n,y,.
+subject_genre,subject_genre,MARC,y,GEN,656,kv,none,subelement_to_value,.,"UNC doesn't have any occurrences of these subfields (regardless of term source). Check w/other institutions re: current needs here. Can/should be mapped eventually, depending on how use of field evolves",subject_genreGEN656kvnone,0,2,n,y,y
+subject_genre,subject_genre,MARC,y,GEN,657,v,none,subelement_to_value,.,"UNC doesn't have any occurrences of these subfields (regardless of term source). Check w/other institutions re: current needs here. Can/should be mapped eventually, depending on how use of field evolves",subject_genreGEN657vnone,0,2,n,y,.
 subject_geographic,subject_geographic,MARC,n,GEN,600,z,none,subelement_to_value,.,.,subject_geographicGEN600znone,0,1,n,y,.
 subject_geographic,subject_geographic,MARC,n,GEN,610,z,none,subelement_to_value,.,.,subject_geographicGEN610znone,0,1,n,y,.
 subject_geographic,subject_geographic,MARC,n,GEN,611,z,none,subelement_to_value,.,.,subject_geographicGEN611znone,0,1,n,y,.
@@ -660,9 +660,6 @@ subject_topical,subject_topical,MARC,y,GEN,656,a,none,subelement_to_value,.,"UNC
 subject_topical,subject_topical,MARC,y,GEN,656,x,none,subelement_to_value,.,"UNC doesn't have any occurrences of these subfields (regardless of term source). Check w/other institutions re: current needs here. Can/should be mapped eventually, depending on how use of field evolves",subject_topicalGEN656xnone,0,0,n,y,.
 subject_topical,subject_topical,MARC,y,GEN,657,a,none,subelement_to_value,.,"UNC doesn't have any occurrences of this field (regardless of term source). Check w/other institutions re: needs here. May need to handle at some point in the future, depending on how field use evolves in practice. ",subject_topicalGEN657anone,0,0,n,y,.
 subject_topical,subject_topical,MARC,y,GEN,657,x,none,subelement_to_value,.,"UNC doesn't have any occurrences of this field (regardless of term source). Check w/other institutions re: needs here. May need to handle at some point in the future, depending on how field use evolves in practice. ",subject_topicalGEN657xnone,0,0,n,y,.
-syndetics_id,syndetics_id,MARC,n,GEN,020,az,none,subelement_to_value,x,x,syndetics_idGEN20aznone,0,0,n,,
-syndetics_id,syndetics_id,MARC,n,GEN,024,a,i1=1,subelement_to_value,x,x,syndetics_idGEN24ai1=1,0,0,n,,
-syndetics_id,syndetics_id,MARC,n,GEN,776,z,none,subelement_to_value,x,x,syndetics_idGEN776znone,0,0,n,,
 this_work,this_work[author],MARC,n,GEN,100,abcd(g)jqu,none,concat_subelements,See linked documentation,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/this_work.adoc,this_work[author]GEN100abcd(g)jqunone,0,0,n,n,y
 this_work,this_work[title],MARC,n,GEN,100,f(g)hklnpt,100$t,array_from_subelements,See linked documentation,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/this_work.adoc,this_work[title]GEN100f(g)hklnpt100$t,0,0,n,n,y
 this_work,this_work[author],MARC,n,GEN,110,abc(d)(g)(n)u,none,concat_subelements,See linked documentation,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/this_work.adoc,this_work[author]GEN110abc(d)(g)(n)unone,0,0,n,n,y

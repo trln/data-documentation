@@ -11,20 +11,6 @@ rollup_id,Create documentation in this repo,.,.
 rollup_id,SerSol number rollup; UNC is sending data through. Alert others.,.,.
 copyright_year,MARC-to-Argot fix: copyright_year vs. copyright_data (and what does this field DO in the system?),.,https://trlnmain.atlassian.net/browse/TD-498
 copyright_year,If we are keeping this we probably need to pull from 008 or something? ,.,.
-date_cataloged,MARC-to-Argot check/fix: date_cataloged element no longer being set,.,https://trlnmain.atlassian.net/browse/TD-500
-director,"MARC-to-Argot fix: director element not being set, at least in some cases",.,https://trlnmain.atlassian.net/browse/TD-501
-director,MARC-to-Argot fix: names mapped to director should not also be mapped to authors[other],.,https://trlnmain.atlassian.net/browse/TD-502
-director,"relator code stuff needs to be handled. Consider a person with multiple roles, including director: https://ingest.discovery.trln.org/record/search?id=UNCb7398974",.,.
-editor,not being extracted by MARC-to-Argot: https://ingest.discovery.trln.org/record/search?id=UNCb8950615,.,.
-editor,"relator code stuff needs to be handled. Consider a person with multiple roles, including editor: b8680910",.,.
-frequency[current],"MARC-to-Argot fix: frequency[current] and frequency[former] -- create separate value per FIELD, not subfield; current not repeatable",.,https://trlnmain.atlassian.net/browse/TD-503
-frequency[former],"MARC-to-Argot fix: frequency[current] and frequency[former] -- create separate value per FIELD, not subfield; current not repeatable",.,https://trlnmain.atlassian.net/browse/TD-503
 isbn[qualifying_info],Display details: isbn[qualifying_info] not displaying,.,https://trlnmain.atlassian.net/browse/TD-504
-items[copy_no],not displaying. Example: https://discovery.trln.org/catalog/UNCb2127657,,
 items[due_date],not displaying. Example: https://discovery.trln.org/catalog/UNCb3257917,,
-items[notes],not displaying. Example: https://discovery.trln.org/catalog/UNCb7034513,,
-items[vol],not displaying. Example: https://discovery.trln.org/catalog/UNCb1919669,,
 note_summary,ensure label is being provided based on indicator value,,
-subject_genre,construct primary source value in this facet,.,https://trlnmain.atlassian.net/browse/TD-270
-subject_topic_lcsh,MARC-to-Argot fix: rename subject_topic_lcsh to subject_topic; tweak mappings as necessary,.,https://trlnmain.atlassian.net/browse/TD-511
-title[main][value],MARC-to-Argot change: title field,.,https://trlnmain.atlassian.net/browse/TD-513

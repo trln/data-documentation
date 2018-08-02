@@ -43,7 +43,6 @@ The following IDs (and ID-like elements) are handled in their own separate field
 * oclc number
 * rollup id
 * sersol number
-* syndetics id
 * upc
 * vendor marc id
 

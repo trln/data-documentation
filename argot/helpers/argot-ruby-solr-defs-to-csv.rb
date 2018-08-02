@@ -12,6 +12,7 @@ INT_TYPES = %w[i float long double].freeze
 
 fields_config.each do |f|
   #default type is t according to https://github.com/trln/argot-ruby/blob/eddde57a13f21ae2101b9538e73ce0fc494b178d/lib/argot/suffixer.rb#L43
+
   sf = SolrField.new(f[0], 't', '', '', '', f[0])
   fhash = f[1]
   sf.type = fhash['type'] if fhash['type']
