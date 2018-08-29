@@ -30,14 +30,14 @@ Facet fields include:
 * `subject_chronological`
 * `subject_genre`
 * `subject_geographic`
-* `subject_topic_lcsh`
+* `subject_topic`
 
 These fields:
 
 * Contain individual subdivision/subfield values from the source data subject fields. That is, a MARC 650 with chronological, geographic, and genre/form subdivisions will have each of its segments assigned to the appropriate facet field.
 * Populate the three subject-related facets and the genre facet.
 * Are *not* included in the subject search index. User-entered queries will *not* search in these fields.
-** Anything in these fields will also be part of a value included in a `subject_headings` or `genre_headings` field, so searching these would be redundant.
+** Anything in these fields will also be part of a value included in a `subject_headings` or `genre_headings` field, so searching these would be redundant. footnote:[The exception to this statement is the special addition of "Primary Sources" and "Reference" based on certain other facet values as discussed below, and cases where `subject_genre` values are provided based on 008 or 006 coding only.]
 ** Script detection and language parsing is therefore *not* required when vernacular scripts are present.
 
 == Different subject heading vocabularies
@@ -77,6 +77,20 @@ If one or more of the following values is written to the `subject_genre` facet v
 * Sources
 * Speeches, addresses, etc.
 
+==== Reference value
+
+If one or more of the following values is written to the `subject_genre` facet values for a record, "Reference" is also added to the `subject_genre` facet values.
+
+* Bibliography
+* Bio-bibliography
+* Dictionaries
+* Directories
+* Encyclopedias
+* Handbooks, manuals, etc.
+* Handbooks, manuals, etc
+* Identification
+* Indexes
+* Style manuals
 
 == Examples
 
