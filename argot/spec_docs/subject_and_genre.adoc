@@ -23,6 +23,19 @@ These fields:
 * Are included in the subject search index. User-entered queries will search in these fields. 
 ** This requires script detection and language parsing when vernacular scripts are present
 
+`subject_headings` fields are displayed in the "This item is about" section of the record display.
+
+[NOTE]
+====
+*Known issue we can't do anything about:*
+
+In some cases, such as short story collections, LC instructs catalogers to record genre/form in a subject heading (650) field. Because such headings are coded as *subjects*, they will appear under "This item is about" even though they are not really subjects. Here is https://discovery.trln.org/catalog/UNCb5340468[an example].
+
+We didn't have this issue when we lumped subjects and genre/form headings together. However, labeling all genre/form headings as subjects was a much more widespread issue than what we've introduced by actually treating subject headings as though they are subjects.
+====
+
+`genre_headings` are currently being displayed as "Genre or form" in the "Other details" section of the record display.
+
 === Facet fields
 
 Facet fields include:
@@ -141,4 +154,3 @@ If one or more of the following values is written to the `subject_genre` facet v
   ]
 }
 ----
-
