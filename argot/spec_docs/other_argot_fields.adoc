@@ -197,7 +197,7 @@ There will be separate tests written for vernacular processing.
 ----
 [
  {'value' => 'P︠i︡ata︠i︡a ︠i︡azva = The fifth pestilence'},
- {'value' => 'Пятая язва =$bThe fifth pestilence',
+ {'value' => 'Пятая язва = The fifth pestilence',
   'lang' => 'rus'} 
 ]
 ----
