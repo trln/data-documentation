@@ -72,6 +72,11 @@ Serves two major purposes:
 * control creation of different indexed fields that can be relevance ranked differently (i.e. creators highest, contributors higher than 'other', etc.) in author search
 * control which names get included in author facet
 
+=== `lang`
+Code identifying language/script for non-roman character fields.
+
+See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/vernacular_scripts.adoc#code-names-code[vernacular scripts documentation] for details.
+
 [NOTE]
 ====
 A different approach to `type` would be to have the `argot-ruby` flattener look it up based on relator values and do what it needs to do based on that result. This would have the benefit of slightly smaller Argot JSON files and perhaps faster MARC-to-Argot performance. Another benefit would be that changes to the relator-to-category mapping could be handled with a reindex, rather than a re-transform, re-ingest and reindex. 
@@ -159,20 +164,24 @@ We can do this gracefully, but it would be great if MARC-to-Argot could report o
   'type'=>'creator'},
   {'name'=>'dddd'},
   {'name'=>'eeee',
-   'rel'=>['fff'],
+   'rel'=>['former owner'],
    'type'=>'owner'},
    {'name'=>'gggg',
-   'rel'=>['hhh'],
+   'rel'=>['printer'],
    'type'=>'manufacturer'},
    {'name'=>'iiii',
-   'rel'=>['jjj'],
+   'rel'=>['illustrator'],
    'type'=>'contributor'},
    {'name'=>'kkkk',
    'rel'=>['film director'],
    'type'=>'director'},
    {'name'=>'mmmm',
    'rel'=>['editor of compilation'],
-   'type'=>'editor'}
+   'type'=>'editor'},
+   {'name'=>'林大造, 1922-',
+   'rel'=>['editor of compilation'],
+   'type'=>'editor',
+   'lang'=>'cjk'}
   ]
 ----
 
@@ -182,27 +191,29 @@ We can do this gracefully, but it would be great if MARC-to-Argot could report o
 
 * http://query.info/author_search[aaaa], author, illustrator
 * http://query.info/author_search[dddd]
-* http://query.info/author_search[eeee], fff
-* http://query.info/author_search[gggg], hhh
-* http://query.info/author_search[iiii], jjj
+* http://query.info/author_search[eeee], former owner
+* http://query.info/author_search[gggg], printer
+* http://query.info/author_search[iiii], illustrator
 * http://query.info/author_search[kkkk], director
 * http://query.info/author_search[iiii], editor of compilation
+* http://query.info/author_search[林大造, 1922-] editor of compilation
 
 === Indexing
 
 [source,javascript]
 ----
 {"author_facet_tf_stored": [
-  "aaaa", "dddd", "iiii", "kkkk", "mmmm"
+  "aaaa", "dddd", "iiii", "kkkk", "mmmm", "林大造, 1922-"
   ],
  "names_tf_stored": [
    "aaaa||, author, illustrator",
    "dddd",
-   "eeee||, fff",
-   "gggg||, hhh",
-   "iiii||, jjj",
+   "eeee||, former owner",
+   "gggg||, printer",
+   "iiii||, illustrator",
    "kkkk||, director",
-   "mmmm||, editor of complilation"
+   "mmmm||, editor of compilation",
+   "林大造, 1922-|| editor of compilation"
  ],
  "name_creator_t": [
    "aaaa, author, illustrator"
@@ -211,20 +222,23 @@ We can do this gracefully, but it would be great if MARC-to-Argot could report o
    "dddd"
  ],
  "name_owner_t": [
-   "eeee, fff"
+   "eeee, former owner"
  ],
  "name_manufacturer_t": [
-   "gggg, hhh"
+   "gggg, printer"
  ],
  "name_contributor_t": [
-   "iiii, jjj"
+   "iiii, illustrator"
  ],
  "name_director_t": [
    "kkkk, film director"
  ],
  "name_editor_t": [
    "mmmm, editor of compilation"
- ]  
+ ],
+  "name_editor_v_cjk": [
+   "林大造, 1922- editor of compilation"
+ ]
 }
 ----
 
@@ -282,7 +296,7 @@ If this is seen as a problem, we may need to split the values included in author
 [source]
 ----
 =100  0\$aJerome,$cSaint,$d-419 or 420,$eauthor.$4aut
-=245  10$aPréfaces aux livres de la Bible /$cJérôme ; textes latins des éditions de R. Weber et R. Gryson et de l'Abbaye Saint-Jérôme (Rome), revus et corrigés ; introduction, traduction et notes réalisées en séminaire sous la direction d'Aline Canellis.
+=245  10$aPrÃ©faces aux livres de la Bible /$cJÃ©rÃ´me ; textes latins des Ã©ditions de R. Weber et R. Gryson et de l'Abbaye Saint-JÃ©rÃ´me (Rome), revus et corrigÃ©s ; introduction, traduction et notes rÃ©alisÃ©es en sÃ©minaire sous la direction d'Aline Canellis.
 =700  1\$aCanellis, Aline,$eeditor,$etranslator.$4edt$4trl
 =700  02$iContainer of (expression):$aJerome,$cSaint,$d-419 or 420.$tPrefaces.$lFrench$s(Canellis)
 =700  02$iContainer of (expression):$aJerome,$cSaint,$d-419 or 420.$tPrefaces.$lLatin$s(Canellis)
@@ -322,7 +336,7 @@ If this is seen as a problem, we may need to split the values included in author
 =100  1\$aRobeson, Paul,$d1898-1976.$4prf
 =245  10$aPaul Robeson live at Carnegie Hall$h[sound recording].
 =700  1\$aBooth, Alan,$d1924-1996.$4prf
-=700  12$aAleksandrov, Anatoliĭ Nikolaevich,$d1888-1982.$tAkh ty nochka, nochen'ka.
+=700  12$aAleksandrov, AnatoliÄ­ Nikolaevich,$d1888-1982.$tAkh ty nochka, nochen'ka.
 =700  12$aClutsam, George H.,$d1866-1951.$tMa curly-headed babby.
 =700  12$aFisher, William Arms,$d1861-1948.$tGoin' home.
 =700  12$aKern, Jerome,$d1885-1945.$tShow boat.$pOl' man river;$oarranged.
@@ -331,7 +345,7 @@ If this is seen as a problem, we may need to split the values included in author
 =700  12$aBach, Johann Sebastian,$d1685-1750.$tChrist lag in Todesbanden (Chorale);$oarranged.
 =700  12$aSchubert, Franz,$d1797-1828.$tWiegenlied.
 =700  12$aRobinson, Earl,$d1910-1991.$tJoe Hill.
-=700  12$aBeethoven, Ludwig van,$d1770-1827.$tSymphonies,$nno. 9, op. 125,$rD minor.$pFreude, schöner Götterfunken;$oarranged.
+=700  12$aBeethoven, Ludwig van,$d1770-1827.$tSymphonies,$nno. 9, op. 125,$rD minor.$pFreude, schÃ¶ner GÃ¶tterfunken;$oarranged.
 ----
 
 [source,ruby]
@@ -364,17 +378,17 @@ If this is seen as a problem, we may need to split the values included in author
 ----
 =245  00$a[Collection of sonatas and other works for violin and piano]
 =700  12$aMozart, Wolfgang Amadeus,$d1756-1791.$tSonatas,$mviolin, piano.$kSelections.
-=700  1\$aBériot, Ch. de$q(Charles),$d1802-1870,$ecomposer.
-=700  1\$aLabarre, Théodore,$d1805-1870,$ecomposer.
+=700  1\$aBÃ©riot, Ch. de$q(Charles),$d1802-1870,$ecomposer.
+=700  1\$aLabarre, ThÃ©odore,$d1805-1870,$ecomposer.
 =700  1\$aSheldon, Henry K.,$eformer owner,$ecompiler.
 ----
 
 [source,ruby]
 ----
-[{'name'=>'Bériot, Ch. de (Charles), 1802-1870',
+[{'name'=>'BÃ©riot, Ch. de (Charles), 1802-1870',
   'rel'=>['composer'],
   'type'=>'creator'},
-  {'name'=>'Labarre, Théodore, 1805-1870',
+  {'name'=>'Labarre, ThÃ©odore, 1805-1870',
   'rel'=>['composer'],
   'type'=>'creator'},
   {'name'=>'Sheldon, Henry K.',
@@ -385,8 +399,8 @@ If this is seen as a problem, we may need to split the values included in author
 
 *AUTHOR FACET includes*:
 
-* Bériot, Ch. de (Charles), 1802-1870
-* Labarre, Théodore, 1805-1870
+* BÃ©riot, Ch. de (Charles), 1802-1870
+* Labarre, ThÃ©odore, 1805-1870
 * Sheldon, Henry K.
   
 === UNCb8365604
@@ -457,7 +471,7 @@ Discard fields with non-whitelisted $5 values
 ----
 =245  00$aPaul Klee :$birony at work /$cedited by Angela Lampe.
 =700  1\$aLampe, Angela,$eeditor.
-=710  2\$aMusée national d'art moderne (France),$ehost institution.
+=710  2\$aMusÃ©e national d'art moderne (France),$ehost institution.
 =720  \\$aBaumgartner, Michael$4con
 =720  \\$aHaxthausen, Charles W.$4con
 =720  \\$aHopfengart, Christine$4con
@@ -468,7 +482,7 @@ Discard fields with non-whitelisted $5 values
 [{'name'=>'Lampe, Angela',
   'rel'=>['editor'],
   'type'=>'editor'},
-  {'name'=>'Musée national d\'art moderne (France)',
+  {'name'=>'MusÃ©e national d\'art moderne (France)',
   'rel'=>['host institution'],
   'type'=>'other'},
   {'name'=>'Baumgartner, Michael',
@@ -492,10 +506,10 @@ Discard fields with non-whitelisted $5 values
 [source]
 ----
 =100  1\$aTelemann, Georg Philipp,$d1681-1767.
-=240  10$aIch weiss, dass mein Erlöser lebt.$sVocal score.$lEnglish & German
-=245  10$aKantate Nr. 160 :$bam ersten Osterfesttage : "Ich weiss, dass mein Erlöser lebt" : für Tenor = Cantata no. 160 : for the first Easter feast-day : "I know that my Redeemer liveth" : for tenor solo : BWV 160 /$cJoh. Seb. Bach ; English version by J. Michael Diack ; Klavierauszug von Otto Schröder.
+=240  10$aIch weiss, dass mein ErlÃ¶ser lebt.$sVocal score.$lEnglish & German
+=245  10$aKantate Nr. 160 :$bam ersten Osterfesttage : "Ich weiss, dass mein ErlÃ¶ser lebt" : fÃ¼r Tenor = Cantata no. 160 : for the first Easter feast-day : "I know that my Redeemer liveth" : for tenor solo : BWV 160 /$cJoh. Seb. Bach ; English version by J. Michael Diack ; Klavierauszug von Otto SchrÃ¶der.
 =700  1\$aBach, Johann Sebastian,$d1685-1750.
-=700  1\$aSchröder, Otto,$d1860-1946.$4edt
+=700  1\$aSchrÃ¶der, Otto,$d1860-1946.$4edt
 =700  1\$aBach, Johann Sebastian,$d1685-1750.$tWorks.$f1851.
 ----
 
@@ -504,7 +518,7 @@ Discard fields with non-whitelisted $5 values
 [{'name'=>'Telemann, Georg Philipp, 1681-1767',
   'type'=>'creator'},
   {'name'=>'Bach, Johann Sebastian, 1685-1750'},
-  {'name'=>'Schröder, Otto, 1860-1946',
+  {'name'=>'SchrÃ¶der, Otto, 1860-1946',
   'rel'=>['editor'],
   'type'=>'editor'}
 ]
@@ -514,7 +528,7 @@ Discard fields with non-whitelisted $5 values
 
 * Telemann, Georg Philipp, 1681-1767
 * Bach, Johann Sebastian, 1685-1750
-* Schröder, Otto, 1860-1946
+* SchrÃ¶der, Otto, 1860-1946
 
 [NOTE]
 ====
@@ -528,12 +542,12 @@ Discard fields with non-whitelisted $5 values
 
 [source]
 ----
-=245  04$aLes archives familiales des écrivains :$bdes matériaux, un motif, une question /$csous la direction de Louis Hincker, Frédérique Amselle, Arnaud Huftier, Marc Lacheny.
+=245  04$aLes archives familiales des Ã©crivains :$bdes matÃ©riaux, un motif, une question /$csous la direction de Louis Hincker, FrÃ©dÃ©rique Amselle, Arnaud Huftier, Marc Lacheny.
 =700  1\$aHincker, Louis,$eeditor.
-=700  1\$aAmselle, Frédérique,$editor.
+=700  1\$aAmselle, FrÃ©dÃ©rique,$editor.
 =700  1\$aHuftier, Arnaud,$editor.
 =700  1\$aLacheny, Marc,$eeditor.
-=710  2\$aUniversité de Valenciennes et du Hainaut-Cambrésis,$ehost institution.
+=710  2\$aUniversitÃ© de Valenciennes et du Hainaut-CambrÃ©sis,$ehost institution.
 ----
 
 [source,ruby]
@@ -541,7 +555,7 @@ Discard fields with non-whitelisted $5 values
 [{'name'=>'Hincker, Louis',
   'rel'=>['editor'],
   'type'=>'editor'},
-  {'name'=>'Amselle, Frédérique',
+  {'name'=>'Amselle, FrÃ©dÃ©rique',
   'rel'=>['ditor'],
   'type'=>'uncategorized'},
   {'name'=>'Huftier, Arnaud',
@@ -550,7 +564,7 @@ Discard fields with non-whitelisted $5 values
   {'name'=>'Lacheny, Marc',
   'rel'=>['editor'],
   'type'=>'editor'},
-  {'name'=>'Université de Valenciennes et du Hainaut-Cambrésis',
+  {'name'=>'UniversitÃ© de Valenciennes et du Hainaut-CambrÃ©sis',
   'rel'=>['host institution'],
   'type'=>'other'}
 ]
@@ -574,7 +588,7 @@ Discard fields with non-whitelisted $5 values
 
 [source]
 ----
-=245  04$aLes archives familiales des écrivains :$bdes matériaux, un motif, une question /$csous la direction de Louis Hincker, Frédérique Amselle, Arnaud Huftier, Marc Lacheny.
+=245  04$aLes archives familiales des Ã©crivains :$bdes matÃ©riaux, un motif, une question /$csous la direction de Louis Hincker, FrÃ©dÃ©rique Amselle, Arnaud Huftier, Marc Lacheny.
 =700  1\$aHincker, Louis.$4etd
 ----
 
@@ -601,7 +615,7 @@ Discard fields with non-whitelisted $5 values
 
 [source]
 ----
-=245  04$aLes archives familiales des écrivains :$bdes matériaux, un motif, une question /$csous la direction de Louis Hincker, Frédérique Amselle, Arnaud Huftier, Marc Lacheny.
+=245  04$aLes archives familiales des Ã©crivains :$bdes matÃ©riaux, un motif, une question /$csous la direction de Louis Hincker, FrÃ©dÃ©rique Amselle, Arnaud Huftier, Marc Lacheny.
 =700  1\$aHincker, Louis.$4etd$4trl
 ----
 
