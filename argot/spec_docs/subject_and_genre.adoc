@@ -175,3 +175,20 @@ If one or more of the following values is written to the `subject_genre` facet v
   ],
 
 ----
+
+=== UNC - non-Roman subject_headings
+
+[source]
+----
+=650  07$6880-04$aAn mo liao fa (zhong yi)$vJiao cai$2cct.
+=880  07$6650-04/{dollar}1$a按摩疗法(中医)$v教材$2cct.
+----
+
+[source,ruby]
+----
+'subject_headings' => [
+  { 'value' => 'An mo liao fa (zhong yi) -- Jiao cai' },
+  { 'value' => '按摩疗法(中医) -- 教材',
+    'lang' => 'cjk' }
+]
+----
