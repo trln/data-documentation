@@ -107,6 +107,7 @@ If one or more of the following values is written to the `subject_genre` facet v
 
 == Examples
 
+=== Multi-field
 [source]
 ----
 =600  10$aAsperger, Hans.
@@ -153,4 +154,24 @@ If one or more of the following values is written to the `subject_genre` facet v
     "20th century"
   ]
 }
+----
+
+=== UNCb8430921 - non-Roman genre_headings
+
+[source]
+----
+  <datafield tag='880' ind1=' ' ind2='7'>
+    <subfield code='6'>655-10/r</subfield>
+    <subfield code='a'>التراجم الذاتية.</subfield>
+    <subfield code='2'>qrmak</subfield>
+  </datafield>
+----
+
+[source,ruby]
+----
+  "genre_headings" => [
+    { "value" => "التراجم الذاتية.",
+      "lang" => "ara"}
+  ],
+
 ----
