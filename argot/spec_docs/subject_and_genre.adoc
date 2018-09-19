@@ -176,7 +176,7 @@ If one or more of the following values is written to the `subject_genre` facet v
 
 ----
 
-=== UNC - non-Roman subject_headings
+=== UNCb4591956 - non-Roman subject_headings
 
 [source]
 ----
