@@ -1,0 +1,77 @@
+:toc:
+:toc-placement!:
+
+= Argot fields related to publication, distribution, manufacture, and production
+
+toc::[]
+
+== MARC source fields
+
+* 260
+* 264
+
+== Argot field overview
+
+=== `imprint_main`
+The contents of the entire 260/4 field.
+
+If there is only one 260/4 field, we use it for `imprint_main` and do NOT populate `imprint_multiple`.
+
+If there are multiple 260/4 fields, we make our best attempt to select *the most current publication statement* for use in `imprint_main`. If we cannot identify the most current publication statement, we use the first 260/4 field appearing in the record. 
+
+
+`imprint_main` is displayed:
+
+* In search results/brief record view
+* In the record summary shown at the top of the full record page
+* In the "Other details" > "Published" section, but *only if there is NO `imprint_multiple` field in the record*
+
+*Not searchable*
+
+=== `imprint_multiple`
+The entire contents of multiple 260/4 fields.
+
+If there are multiple 260/4 fields, we collect them all (including the one chosen as `imprint_main`), in the order in which they appear in the record, in `imprint_multiple`.
+
+`imprint_multiple` is *not* populated if there is only one 260/4 field in the source record.
+
+If `imprint_multiple` is populated, it is displayed:
+
+* In the "Other details" > "Published" section
+
+*Not searchable*
+
+=== `publisher`
+Not displayed, but powers publisher search in Advanced Search.
+
+Collects all values from:
+
+* 260 b and f
+* 264 b
+
+This field contains manufacturer, producer, and distributor names as well as publisher names.
+
+== Argot field structure
+
+=== `imprint_main` and `imprint_multiple`
+Array of hashes.
+
+Each 260/4 field is transformed into a hash with the following structure:
+
+* `type` : type of field (publication, distribution, production, manufacture, or copyright. If we don't know from the data, type = imprint)
+* `label` : (OPTIONAL) contextualizing data specific to this field, generally taken from $3
+* `value` : The field data
+* `lang` : (OPTIONAL) script/language code of non-Roman script occurring in `value`
+
+==== Why do we need the `label` element and what do we do with it?
+The publication information for *continuing resources* often changes over time. The date range for the data recorded in each field is entered in $3.
+
+If record describes a *multipart resource where the publication, etc. details are different for constituent parts*, $3 may be used to indicate which part the data in the rest of the field describes.
+
+We map these $3 values to the `label` element so that we can visually style this contextualizing information to distinguish it in the display. 
+
+
+=== `publisher`
+Array of strings.
+
+Should be deduplicated. Any values ending in "not identified" should be deleted. 
