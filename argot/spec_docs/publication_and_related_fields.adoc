@@ -54,14 +54,14 @@ This field contains manufacturer, producer, and distributor names as well as pub
 == Argot field structure
 
 === `imprint_main` and `imprint_multiple`
-Array of hashes.
-
 Each 260/4 field is transformed into a hash with the following structure:
 
 * `type` : type of field (publication, distribution, production, manufacture, or copyright. If we can't determine type from the data (as is usual with 260s), type = imprint)
 * `label` : (OPTIONAL) contextualizing data specific to this field, generally taken from $3
 * `value` : The field data
 * `lang` : (OPTIONAL) script/language code of non-Roman script occurring in `value`
+
+`imprint_main` is a single hash. `imprint_multiple` is an array of hashes.
 
 ==== Why do we need the `type` element and what do we do with it?
 The `type` element tells us how to label the field for display.
