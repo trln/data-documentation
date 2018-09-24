@@ -7,7 +7,7 @@ Documentation of miscellaneous simpler Argot fields.
 toc::[]
 
 == `donor`
-Follows `index_and_display_value` Argot pattern.
+Follows https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_index_only_value.adoc[`index_only_value`] Argot pattern.
 
 Indexed field used to power electronic bookplates or other institution-specific donor-related features.
 
@@ -138,6 +138,11 @@ The `issn` field has two sub-elements:
 'issn' => {'primary' = ['2213-9109'],
            'linking' = ['2213-9095']}
 ----
+
+== `statement_of_responsibility`
+
+Follows https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_index_and_display_value.adoc[`index_and_display_value`] Argot pattern.
+
 
 == `title_main`
 

@@ -1,16 +1,16 @@
 :toc:
 :toc-placement!:
 
-= `index_and_display_value` pattern
+= `index_only_value` pattern
 
 The pattern used to create fields where:
 
-* The value of the field should be displayed and indexed
+* The value of the field should be indexed but not displayed
 
 
 This pattern is used in the following Argot fields:
 
-* statement_of_responsibility
+* donor
 
 toc::[]
 
@@ -47,8 +47,7 @@ The script/character set indicating language parser to be applied to this field.
 
 *My displayed field*
 
-* bbbbb
-* ccccc
+*no display*
 
 === Indexing
 
