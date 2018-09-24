@@ -143,6 +143,53 @@ The `issn` field has two sub-elements:
 
 Follows https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_index_and_display_value.adoc[`index_and_display_value`] Argot pattern.
 
+=== UNCb1000019
+
+[source]
+----
+=245  04$aThe Philosophy of C. I. Lewis.$cEdited by Paul Arthur Schilpp.
+----
+
+[source,ruby]
+----
+'statement_of_responsibility' => [
+   { 'value' => 'Edited by Paul Arthur Schilpp.' }
+ ]
+----
+
+=== UNCb1042217
+
+[source]
+----
+=245  10$6880-02$aNachalo veka =$bBeginning of the century /$cAndreĭ Belyĭ.
+=880  10$6245-02/(N$aНачало века =$bBeginning of the century /$cАндрей Белый.
+----
+
+[source,ruby]
+----
+'statement_of_responsibility' => [
+   { 'value' => 'Andreĭ Belyĭ.' },
+   { 'value' => 'Андрей Белый.',
+     'lang' => 'rus' }
+ ]
+----
+
+
+=== UNCb8453596
+
+[source]
+----
+=245  10$aShirley$h[electronic resource] :$bA Tale /$c杨丹.
+----
+
+[source,ruby]
+----
+'statement_of_responsibility' => [
+   { 'value' => '杨丹.',
+     'lang' => 'cjk' }
+ ]
+----
+
 
 == `title_main`
 
