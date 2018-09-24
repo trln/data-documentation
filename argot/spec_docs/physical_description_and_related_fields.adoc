@@ -12,7 +12,7 @@ toc::[]
 
 * Array
 
-* Follows the `labeled_value` pattern, where:
+* Follows the https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_index_and_display_value.adoc[`labeled_indexed_value`] pattern, where:
 ** The value should be indexed
 ** label + value should be displayed
 
@@ -56,7 +56,7 @@ toc::[]
 
 * Array
 
-* Follows the `labeled_value` pattern, where:
+* Follows the https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_index_and_display_value.adoc[`labeled_indexed_value`] pattern, where:
 ** The value should be indexed
 ** label + value should be displayed
 

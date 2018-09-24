@@ -27,11 +27,11 @@ Donor names for display should be mapped to `names` or `note_local` field as app
 
 == `edition`
 
-Follows `labeled_value` Argot pattern.
+Follows https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_labeled_indexed_value.adoc[`labeled_indexed_value`] Argot pattern.
 
 Displayed with record summary data, as it is very important for identifying/selecting desired items.
 
-MARC 254 is mapped here because it functions as a specific type of edition-like statement for printed music. 
+MARC 254 is mapped here along with the expected 250 field data because it functions as a specific type of edition-like statement for printed music. 
 
 === UNCb6995648 -- 250 with $3 label
 [source]
@@ -93,6 +93,39 @@ MARC 254 is mapped here because it functions as a specific type of edition-like 
  {'value' => 'Prathama saṃskaraṇa = First edition.'}
 ]
 ----
+
+=== UNCb1513078 -- 250 with linked 880
+
+[source]
+----
+=250  \\$6880-04$a︠I︡Ubileĭnoe izd.
+=880  \\$6250-04/(N$aЮбилейное изд.
+----
+
+[source,ruby]
+----
+'edition' => [
+  { 'value' => '︠I︡Ubileĭnoe izd.' },
+  { 'value' => 'Юбилейное изд.',
+    'lang' => 'rus' }
+]
+----
+
+=== UNCb8679039 -- non-Roman characters in 250
+
+[source]
+----
+=250  \\$a2015年デジタル版
+----
+
+[source,ruby]
+----
+'edition' => [
+  { 'value' => '2015年デジタル版',
+    'lang' => 'cjk' }
+]
+----
+
 
 == `issn`
 
