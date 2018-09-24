@@ -58,10 +58,57 @@ Array of hashes.
 
 Each 260/4 field is transformed into a hash with the following structure:
 
-* `type` : type of field (publication, distribution, production, manufacture, or copyright. If we don't know from the data, type = imprint)
+* `type` : type of field (publication, distribution, production, manufacture, or copyright. If we can't determine type from the data (as is usual with 260s), type = imprint)
 * `label` : (OPTIONAL) contextualizing data specific to this field, generally taken from $3
 * `value` : The field data
 * `lang` : (OPTIONAL) script/language code of non-Roman script occurring in `value`
+
+==== Why do we need the `type` element and what do we do with it?
+The `type` element tells us how to label the field for display.
+
+[cols=4*,options=header]
+|===
+|Field tag
+|ind 2 value
+|`type` value
+|Display label
+
+|260
+|n/a
+|imprint
+|blank
+
+|264
+|0
+|production
+|Produced:
+
+|264
+|1
+|publication
+|blank
+
+|264
+|2
+|distribution
+|Distributed:
+
+|264
+|3
+|manufacture
+|Manufactured:
+
+|264
+|4
+|copyright
+|blank
+|===
+
+Multiple statements can be coded in one 260. 260 provides no way to code (for machine processing) what type of statement is entered, so we can't do anything more specific with these fields. 260s including non-publisher info usually say in the text of the field what role the named entities played, so it is usually relatively clear.
+
+Publication is the default assumption and it's the label in the "Other details" section, so we don't provide a label for known publication statements.
+
+Copyright statements are identifiable as such because they begin with ℗ or ©. They are not given an additional label.
 
 ==== Why do we need the `label` element and what do we do with it?
 The publication information for *continuing resources* often changes over time. The date range for the data recorded in each field is entered in $3.
