@@ -32,6 +32,13 @@ The label part of the field, which should be displayed but not indexed
 * string
 * optional
 
+=== `lang`
+
+Script family/language code of data in `value`
+
+* string
+* optional -- only include if `value` includes non-Roman characters
+
 == Abstract example of pattern
 
 === Argot
@@ -41,7 +48,9 @@ The label part of the field, which should be displayed but not indexed
 'fieldname' => [
   {'label' => 'aaa',
    'value' => 'bbbbb'},
-  {'value' => 'ccccc'}
+  {'value' => 'ccccc'},
+  {'value' => 'ddddd',
+   'lang' => 'eee'}
     ]
 ----
 
@@ -51,18 +60,14 @@ The label part of the field, which should be displayed but not indexed
 
 * aaa: bbbbb
 * ccccc
+* ddddd
 
 === Indexing
 
-As of 2018-05-25, our indexing treatment of this pattern seems inconsistent. One option, which takes up more space because it includes a lot of repeated information:
-
-* "fieldname_display": "aaa: bbbbb", "ccccc"
+* "fieldname_display": "aaa: bbbbb", "ccccc", "ddddd"
 * "fieldname_index": "bbbbb", "ccccc"
+* "fieldname_index_v_eee": "ddddd" 
 
-Another option, where the accurate building of display values requires explicit empty values for `label` and keeping the occurrences in order:
-
-* "fieldname_label": "aaa", ""
-* "fieldname_value": "bbbbb", "ccccc"
 
 
 
