@@ -279,7 +279,7 @@ https://discovery.trln.org/catalog/UNCb1225829[Current display in TRLN Discovery
 
 https://discovery.trln.org/catalog/UNCb1583793[Current display in TRLN Discovery]
 
-=== UNCb8517360 - 3 264s
+=== UNCb8517360 -- 3 264s
 
 [source]
 ----
@@ -350,7 +350,7 @@ https://discovery.trln.org/catalog/UNCb1583793[Current display in TRLN Discovery
 
 https://discovery.trln.org/catalog/UNCb1661867[Current display in TRLN Discovery]
 
-=== UNCb8428292 - 3 260s
+=== UNCb8428292 -- 3 260s
 
 [source]
 ----
