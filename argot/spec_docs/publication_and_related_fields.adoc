@@ -144,10 +144,10 @@ The IDs after each refer to the examples later in this document.
 
 == MARC transformation details: spacing and punctuation
 
-# Strip leading/trailing spaces from all subfield values
-# $3 only: Strip colon or other non-enclosing punctuation (except hyphens, which are retained) from end of subfield
-# For `value`, join subfields with ' ' (space) as separator
-# Strip ending comma or semicolon from end of joined `value`
+. Strip leading/trailing spaces from all subfield values
+. $3 only: Strip colon or other non-enclosing punctuation (except hyphens, which are retained) from end of subfield
+. For `value`, join subfields with ' ' (space) as separator
+. Strip ending comma or semicolon from end of joined `value`
 
 == Argot examples
 These examples show how the 3 fields discussed on this page work together.
