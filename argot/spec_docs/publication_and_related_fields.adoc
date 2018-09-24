@@ -106,7 +106,7 @@ The `type` element tells us how to label the field for display.
 
 Multiple statements can be coded in one 260. 260 provides no way to code (for machine processing) what type of statement is entered, so we can't do anything more specific with these fields. 260s including non-publisher info usually say in the text of the field what role the named entities played, so it is usually relatively clear.
 
-Publication is the default assumption and it's the label in the "Other details" section, so we don't provide a label for known publication statements.
+Publication is the default assumption and it's the section label in the "Other details" section, so we don't provide a label for known publication statements.
 
 Copyright statements are identifiable as such because they begin with ℗ or ©. They are not given an additional label.
 
@@ -122,3 +122,305 @@ We map these $3 values to the `label` element so that we can visually style this
 Array of strings.
 
 Should be deduplicated. Any values ending in "not identified" should be deleted. 
+
+== Logic for choosing `imprint_main` from multiple 260/4 fields
+
+The IDs after each refer to the examples later in this document.
+
+* Choosing between multiple 260s
+** If one has ind1 = 3, use that one (UNCb1225829)
+** Otherwise, use the last-occurring 260 (UNCb1583793)
+
+* Choosing between multiple 264s
+** Best choice: ind1=3 AND ind2=1 (if count > 1, take the last one, though there should only be 1 with this combination of indicators in a given record)
+** Elsif there's one or more with ind2=1, take the last one (UNCb8517360)
+** Elsif: ind1=3 AND ind2~= [023] (if count > 1, take the last one) (UNCb8428292)
+** Else: take last one where ind2 !=4 (UNCb7087531)
+
+* If there are 260s and 264s in same record (UNCb1661867)
+** First, note that this is unholy and suspicious
+** Just take the last field 
+
+
+== MARC transformation details: spacing and punctuation
+
+# Strip leading/trailing spaces from all subfield values
+# $3 only: Strip colon or other non-enclosing punctuation (except hyphens, which are retained) from end of subfield
+# For `value`, join subfields with ' ' (space) as separator
+# Strip ending comma or semicolon from end of joined `value`
+
+== Argot examples
+These examples show how the 3 fields discussed on this page work together.
+
+=== UNCb8979535 -- 1 260 
+
+[source]
+----
+=260  \\$aLondon :$bWriters and Readers Pub. Cooperative Society ;$aNew York, N.Y. :$bDistributed in the U.S.A. by W.W. Norton,$c1980$g(1982 printing)
+----
+
+[source,ruby]
+----
+'imprint_main': {
+  'type': 'imprint',
+  'value': 'London : Writers and Readers Pub. Cooperative Society ; New York, N.Y. : Distributed in the U.S.A. by W.W. Norton, 1980 (1982 printing)'
+},
+'publisher': [
+  'Writers and Readers Pub. Cooperative Society',
+  'Distributed in the U.S.A. by W.W. Norton'
+]
+----
+
+https://discovery.trln.org/catalog/UNCb8979535[Current display in TRLN Discovery]
+
+=== UNCb1225829 -- 5 260s coded well
+
+[source]
+----
+=245  00$aSouthern poetry review$h[serial].
+=260  \\$aRaleigh, N.C. :$bPublished by the editors in cooperation with the School of Liberal Arts at North Carolina State of the University of North Carolina,$c[1964-
+=260  2\$3Spring 1978-winter 1995$aCharlotte, N.C. :$bEnglish Dept., UNCC
+=260  2\$3Summer 1996-winter 1999$aCharlotte, N.C. :$bAdvancment Studies, CPCC
+=260  2\$3Summer 2000-summer 2001$aCharlotte, N.C. :$bEnglish Dept., CPCC
+=260  3\$3Fall/Winter 2002-$aSavannah, GA :$bDept. of Languages, Literature & Philosophy, Armstrong Atlantic State University
+----
+
+[source,ruby]
+----
+'imprint_main': {
+  'type': 'imprint',
+  'label': 'Fall/Winter 2002-',
+  'value': 'Savannah, GA : Dept. of Languages, Literature & Philosophy, Armstrong Atlantic State University'
+},
+'imprint_multiple': [
+  {
+    'type': 'imprint',
+    'value': 'Raleigh, N.C. : Published by the editors in cooperation with the School of Liberal Arts at North Carolina State of the University of North Carolina, [1964-'
+  },
+  {
+    'type': 'imprint',
+    'label': 'Spring 1978-winter 1995',
+    'value': 'Charlotte, N.C. : English Dept., UNCC'
+  },
+  {
+    'type': 'imprint',
+    'label': 'Summer 1996-winter 1999',
+    'value': 'Charlotte, N.C. : Advancment Studies, CPCC'
+  },
+   {
+    'type': 'imprint',
+    'label': 'Summer 2000-summer 2001',
+    'value': 'Charlotte, N.C. : English Dept., CPCC'
+  },  
+  {
+    'type': 'imprint',
+    'label': 'Fall/Winter 2002-',
+    'value': 'Savannah, GA : Dept. of Languages, Literature & Philosophy, Armstrong Atlantic State University'
+  },  
+],
+'publisher': [
+  'Published by the editors in cooperation with the School of Liberal Arts at North Carolina State of the University of North Carolina',
+  'English Dept., UNCC',
+  'Advancment Studies, CPCC',
+  'English Dept., CPCC',
+  'Dept. of Languages, Literature & Philosophy, Armstrong Atlantic State University'
+]
+----
+
+https://discovery.trln.org/catalog/UNCb1225829[Current display in TRLN Discovery]
+
+
+=== UNCb1583793 -- 4 260s, coded poorly
+
+[source]
+----
+=245  04$aThe Best short plays$h[serial].
+=260  \\$aNew York :$bDodd, Mead,$c1953-c1989.
+=260  2\$aBoston :$bBeacon Press,$31968-1971, 1973-1985.
+=260  2\$aPhiladelphia ;$aNew York :$bChilton Book Co.,$3<1972>
+=260  2\$aNew York :$bApplause Theater Book Publishers,$31986-1989.
+----
+
+[source,ruby]
+----
+'imprint_main': {
+  'type': 'imprint',
+  'label': '1986-1989.',
+  'value': 'New York : Applause Theater Book Publishers'
+},
+'imprint_multiple': [
+  {
+    'type': 'imprint',
+    'value': 'New York : Dodd, Mead, 1953-c1989.'
+  },
+  {
+    'type': 'imprint',
+    'label': '1968-1971, 1973-1985.',
+    'value': 'Boston : Beacon Press'
+  },
+  {
+    'type': 'imprint',
+    'label': '<1972>',
+    'value': 'Philadelphia ; New York : Chilton Book Co.,'
+  },
+   {
+    'type': 'imprint',
+    'label': '1986-1989.',
+    'value': 'New York : Applause Theater Book Publishers'
+  }
+],
+'publisher': [
+  'Dodd, Mead',
+  'Beacon Press',
+  'Chilton Book Co.',
+  'Applause Theater Book Publishers'
+]
+----
+
+https://discovery.trln.org/catalog/UNCb1583793[Current display in TRLN Discovery]
+
+=== UNCb8517360 - 3 264s
+
+[source]
+----
+=245  00$aFestivals :$bDay of the Dead, Mexico /$cChannel Four (Great Britain).
+=264  \1$a[Place of publication not identified] :$bChannel Four (Great Britain), $c[2014]
+=264  \4$c©2014
+=264  32$aNew York, N.Y. :$bFilms Media Group, $c2015
+----
+
+[source,ruby]
+----
+imprint_main: {
+  'type': 'publication',
+  'value': '[Place of publication not identified] : Channel Four (Great Britain), [2014]'
+},
+imprint_multiple: [
+  {
+  'type': 'publication',
+  'value': '[Place of publication not identified] : Channel Four (Great Britain), [2014]'
+  },
+  {
+  'type': 'copyright',
+  'value': '©2014'
+  },
+ {
+  'type': 'distribution',
+  'value': 'New York, N.Y. : Films Media Group, 2015'
+  },
+],
+publisher: [
+  'Channel Four (Great Britain)',
+  'Films Media Group'
+]
+----
+
+https://discovery.trln.org/catalog/UNCb1583793[Current display in TRLN Discovery]
+
+=== UNCb1661867 -- 260 and 264 present
+
+[source]
+----
+=245  00$aJournal of African civilizations$h[serial].
+=260  \\$a[New Brunswick, N.J. :$bDouglass College, Rutgers University,$c1979-
+=264  30$aNew Brunswick :$bTransaction Publishers,$c-1994.
+----
+
+[source,ruby]
+----
+'imprint_main': {
+  'type': 'production',
+  'value': 'New Brunswick : Transaction Publishers, -1994.'
+},
+'imprint_multiple': [
+  {
+  'type': 'imprint',
+  'value': 'New Brunswick, N.J. : Douglass College, Rutgers University, 1979-'
+  },
+ {
+  'type': 'production',
+  'value': 'New Brunswick : Transaction Publishers, -1994.'
+ }
+],
+'publisher': [
+  'Douglass College, Rutgers University',
+  'Transaction Publishers'
+]
+----
+
+https://discovery.trln.org/catalog/UNCb1661867[Current display in TRLN Discovery]
+
+=== UNCb8428292 - 3 260s
+
+[source]
+----
+=245  00$6880-01$aNovai︠a︡ niva$h[serial].
+=264  \0$6880-02$aRiga :$b"N. Niva, "
+=264  20$6880-03$3<1927, no. 5-16> :$aParis :$bO.D. Strokʺ
+=264  30$3<1927, no. 18-19> :$aRīgā :$b[publisher not identified]
+----
+
+[source,ruby]
+----
+'imprint_main': {
+  'type': 'production',
+  'label': '<1927, no. 18-19>',
+  'value': 'Rīgā : [publisher not identified]'
+},
+'imprint_multiple': [
+  {
+  'type': 'production',
+  'value': 'Riga : "N. Niva, "'
+  },
+ {
+  'type': 'production',
+  'label': '<1927, no. 5-16>',
+  'value': 'Paris : O.D. Strok"'
+ },
+ {
+  'type': 'production',
+  'label': '<1927, no. 18-19>',
+  'value': 'Rīgā : [publisher not identified]'
+ }
+],
+'publisher': [
+  '"N. Niva, "',
+  'O.D. Strok"'
+]
+----
+
+https://discovery.trln.org/catalog/UNCb8428292[Current display in TRLN Discovery]
+
+=== UNCb7087531 -- 2 264s (both distributors)
+This is a less-than-good example, as the 2 264s are strangely redundant, but it's the first one I found with this particular coding.
+
+[source]
+----
+=245 14$aThe Immigration Act of 1990 :$ba legislative history of Pub. L. No. 101-649 /$cby Igor I. Kavass and Bernard D. Reams, Jr.
+=264 \2$aBuffalo, New York :$bWilliam S. Hein & Co.,$c1997.
+=264 \2$a[Buffalo, NY] :$bWilliam S. Hein & Company,$c[2009]
+----
+
+[source,ruby]
+----
+'imprint_main': {
+  'type': 'distribution',
+  'value': '[Buffalo, NY] : William S. Hein & Company, [2009]'
+},
+'imprint_multiple': [
+  {
+  'type': 'distribution',
+  'value': 'Buffalo, New York : William S. Hein & Co., 1997.'
+  },
+ {
+  'type': 'distribution',
+  'value': '[Buffalo, NY] : William S. Hein & Company, [2009]'
+ }
+],
+'publisher': [
+  'William S. Hein & Co.',
+  'William S. Hein & Company'
+]
+----
+
+https://discovery.trln.org/catalog/UNCb7087531[Current display in TRLN Discovery]
