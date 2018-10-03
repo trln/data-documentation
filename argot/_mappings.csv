@@ -25,6 +25,7 @@ holdings,holdings[loc_b],MARCish,n,UNC,999,b,i1=9 and i2=2,subelement_to_value,d
 holdings,holdings[loc_n],MARCish,n,UNC,999,b,i1=9 and i2=2,subelement_to_value,See https://github.com/trln/data-documentation/blob/master/argot/questions_issues/location.md#one-idea-for-data-mappingtransformation,,holdings[loc_n]UNC999bi1=9 and i2=2,0,0,n,y,y
 holdings,holdings[notes],MARCish,n,UNC,999,lz,i1=9 AND i2=3 AND $0=#{holdings_record_id} AND $2='852',subelement_to_value,x,x,holdings[notes]UNC999lzi1=9 AND i2=3 AND $0=#{holdings_record_id} AND $2='852',0,0,n,y,y
 holdings,holdings[summary],MARCish,n,UNC,999,a,i1=9 AND i2=3 AND $0=#{holdings_record_id} AND $2='866',subelement_to_value,x,x,holdings[summary]UNC999ai1=9 AND i2=3 AND $0=#{holdings_record_id} AND $2='866',0,0,n,y,y
+holdings,holdings[latest_received_text],MARC,y,NCSU,599,b,Unlinked text that indicates latest issue received.  ,subelement_to_value,x,x,holdings[latest_received_text]NCSU599bUnlinked text that indicates latest issue received.  ,0,0,n,y,y
 id,id,MARCish,n,UNC,907,a,none,subelement_to_value,prepend 'UNC' to $a value,x,idUNC907anone,0,0,n,,
 id,id,MARCish,n,Duke,001,.,.,.,.,.,idDuke1..,0,0,n,,
 id,id,MARCish,n,NCCU,001,{na},none,subelement_to_value,first value only; prepend 'NCCU' to value,.,idNCCU1{na}none,0,0,n,,
