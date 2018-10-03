@@ -17,6 +17,8 @@ The contents of the entire 260/4 field.
 
 If there is only one 260/4 field, we use it for `imprint_main` and do NOT populate `imprint_multiple`.
 
+If there is a single 260/4 field and it is linked to a non-Roman 880 field, the 880 field data also gets mapped to `imprint_main`.
+
 If there are multiple 260/4 fields, we make our best attempt to select *the most current publication statement* for use in `imprint_main`. If we cannot identify the most current publication statement, we use the first 260/4 field appearing in the record. 
 
 
@@ -35,13 +37,13 @@ If there are multiple 260/4 fields, we collect them all (including the one chose
 
 `imprint_multiple` is *not* populated if there is only one 260/4 field in the source record.
 
-If `imprint_multiple` is populated, it is displayed:
-
-* In the "Other details" > "Published" section
+If `imprint_multiple` is populated, it is displayed in the "Other details" > "Published" section
 
 *Not searchable*
 
 === `publisher`
+Follows https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_index_only_value.adoc[`index_only_value`] Argot pattern.
+
 Not displayed, but powers publisher search in Advanced Search.
 
 Collects all values from:
@@ -59,9 +61,10 @@ Each 260/4 field is transformed into a hash with the following structure:
 * `type` : type of field (publication, distribution, production, manufacture, or copyright. If we can't determine type from the data (as is usual with 260s), type = imprint)
 * `label` : (OPTIONAL) contextualizing data specific to this field, generally taken from $3
 * `value` : The field data
-* `lang` : (OPTIONAL) script/language code of non-Roman script occurring in `value`
 
-`imprint_main` is a single hash. `imprint_multiple` is an array of hashes.
+`imprint_main` and `imprint_multiple` are both arrays of JSON hashes-as-strings.
+
+In most cases the `imprint_main` array should contain only a single hash-as-string. A second hash-as-string populated from the linked non-Roman (880 field) version of the main 260/4 field is added to `imprint_main` if such a linked field is present.
 
 ==== Why do we need the `type` element and what do we do with it?
 The `type` element tells us how to label the field for display.
@@ -119,9 +122,9 @@ We map these $3 values to the `label` element so that we can visually style this
 
 
 === `publisher`
-Array of strings.
+See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_index_only_value.adoc[`index_only_value`] Argot pattern for documentation of this field's structure.
 
-Should be deduplicated. Any values ending in "not identified" should be deleted. 
+Elements of the array should be deduplicated. Array elements where `publisher[value]` ends with "not identified" should be deleted. 
 
 == Logic for choosing `imprint_main` from multiple 260/4 fields
 
@@ -161,13 +164,12 @@ These examples show how the 3 fields discussed on this page work together.
 
 [source,ruby]
 ----
-'imprint_main': {
-  'type': 'imprint',
-  'value': 'London : Writers and Readers Pub. Cooperative Society ; New York, N.Y. : Distributed in the U.S.A. by W.W. Norton, 1980 (1982 printing)'
-},
+'imprint_main': [
+  "{\"type\":\"imprint\",\"value\":\"London : Writers and Readers Pub. Cooperative Society ; New York, N.Y. : Distributed in the U.S.A. by W.W. Norton, 1980 (1982 printing)\"}"
+],
 'publisher': [
-  'Writers and Readers Pub. Cooperative Society',
-  'Distributed in the U.S.A. by W.W. Norton'
+  {'value': 'Writers and Readers Pub. Cooperative Society'},
+  {'value': 'Distributed in the U.S.A. by W.W. Norton'}
 ]
 ----
 
@@ -187,43 +189,22 @@ https://discovery.trln.org/catalog/UNCb8979535[Current display in TRLN Discovery
 
 [source,ruby]
 ----
-'imprint_main': {
-  'type': 'imprint',
-  'label': 'Fall/Winter 2002-',
-  'value': 'Savannah, GA : Dept. of Languages, Literature & Philosophy, Armstrong Atlantic State University'
-},
+'imprint_main': [
+  "{\"type\": \"imprint\",\"label\": \"Fall/Winter 2002-\",\"value\": \"Savannah, GA : Dept. of Languages, Literature & Philosophy, Armstrong Atlantic State University\"}"
+],
 'imprint_multiple': [
-  {
-    'type': 'imprint',
-    'value': 'Raleigh, N.C. : Published by the editors in cooperation with the School of Liberal Arts at North Carolina State of the University of North Carolina, [1964-'
-  },
-  {
-    'type': 'imprint',
-    'label': 'Spring 1978-winter 1995',
-    'value': 'Charlotte, N.C. : English Dept., UNCC'
-  },
-  {
-    'type': 'imprint',
-    'label': 'Summer 1996-winter 1999',
-    'value': 'Charlotte, N.C. : Advancment Studies, CPCC'
-  },
-   {
-    'type': 'imprint',
-    'label': 'Summer 2000-summer 2001',
-    'value': 'Charlotte, N.C. : English Dept., CPCC'
-  },  
-  {
-    'type': 'imprint',
-    'label': 'Fall/Winter 2002-',
-    'value': 'Savannah, GA : Dept. of Languages, Literature & Philosophy, Armstrong Atlantic State University'
-  },  
+  "{\"type\": \"imprint\",\"value\": \"Raleigh, N.C. : Published by the editors in cooperation with the School of Liberal Arts at North Carolina State of the University of North Carolina, [1964-\"}",
+  "{\"type\": \"imprint\",\"label\": \"Spring 1978-winter 1995\",\"value\": \"Charlotte, N.C. : English Dept., UNCC\"}",
+  "{\"type\": \"imprint\",\"label\": \"Summer 1996-winter 1999\",\"value\": \"Charlotte, N.C. : Advancment Studies, CPCC\"}",
+   "{\"type\": \"imprint\",\"label\": \"Summer 2000-summer 2001\",\"value\": \"Charlotte, N.C. : English Dept., CPCC\"}",  
+  "{\"type\": \"imprint\",\"label\": \"Fall/Winter 2002-\",\"value\": \"Savannah, GA : Dept. of Languages, Literature & Philosophy, Armstrong Atlantic State University\"}"
 ],
 'publisher': [
-  'Published by the editors in cooperation with the School of Liberal Arts at North Carolina State of the University of North Carolina',
-  'English Dept., UNCC',
-  'Advancment Studies, CPCC',
-  'English Dept., CPCC',
-  'Dept. of Languages, Literature & Philosophy, Armstrong Atlantic State University'
+  {'value': 'Published by the editors in cooperation with the School of Liberal Arts at North Carolina State of the University of North Carolina'},
+  {'value': 'English Dept., UNCC'},
+  {'value': 'Advancment Studies, CPCC'},
+  {'value': 'English Dept., CPCC'},
+  {'value': 'Dept. of Languages, Literature & Philosophy, Armstrong Atlantic State University'}
 ]
 ----
 
@@ -243,37 +224,20 @@ https://discovery.trln.org/catalog/UNCb1225829[Current display in TRLN Discovery
 
 [source,ruby]
 ----
-'imprint_main': {
-  'type': 'imprint',
-  'label': '1986-1989.',
-  'value': 'New York : Applause Theater Book Publishers'
-},
+'imprint_main': [
+  "{\"type\": \"imprint\",\"label\": \"1986-1989.\",\"value\": \"New York : Applause Theater Book Publishers\"}"
+],
 'imprint_multiple': [
-  {
-    'type': 'imprint',
-    'value': 'New York : Dodd, Mead, 1953-c1989.'
-  },
-  {
-    'type': 'imprint',
-    'label': '1968-1971, 1973-1985.',
-    'value': 'Boston : Beacon Press'
-  },
-  {
-    'type': 'imprint',
-    'label': '<1972>',
-    'value': 'Philadelphia ; New York : Chilton Book Co.,'
-  },
-   {
-    'type': 'imprint',
-    'label': '1986-1989.',
-    'value': 'New York : Applause Theater Book Publishers'
-  }
+  "{\"type\": \"imprint\",\"value\": \"New York : Dodd, Mead, 1953-c1989.\"}",
+  "{\"type\": \"imprint\",\"label\": \"1968-1971, 1973-1985.\",\"value\": \"Boston : Beacon Press\"}",
+  "{\"type\": \"imprint\",\"label\": \"<1972>\",\"value\": \"Philadelphia ; New York : Chilton Book Co.,\"}",
+  "{\"type\": \"imprint\",\"label\": \"1986-1989.\",\"value\": \"New York : Applause Theater Book Publishers\"}"
 ],
 'publisher': [
-  'Dodd, Mead',
-  'Beacon Press',
-  'Chilton Book Co.',
-  'Applause Theater Book Publishers'
+  {'value': 'Dodd, Mead'},
+  {'value': 'Beacon Press'},
+  {'value': 'Chilton Book Co.'},
+  {'value': 'Applause Theater Book Publishers'}
 ]
 ----
 
@@ -291,27 +255,17 @@ https://discovery.trln.org/catalog/UNCb1583793[Current display in TRLN Discovery
 
 [source,ruby]
 ----
-imprint_main: {
-  'type': 'publication',
-  'value': '[Place of publication not identified] : Channel Four (Great Britain), [2014]'
-},
-imprint_multiple: [
-  {
-  'type': 'publication',
-  'value': '[Place of publication not identified] : Channel Four (Great Britain), [2014]'
-  },
-  {
-  'type': 'copyright',
-  'value': '©2014'
-  },
- {
-  'type': 'distribution',
-  'value': 'New York, N.Y. : Films Media Group, 2015'
-  },
+'imprint_main': [
+  "{\"type\": \"publication\",\"value\": \"[Place of publication not identified] : Channel Four (Great Britain), [2014]\"}"
 ],
-publisher: [
-  'Channel Four (Great Britain)',
-  'Films Media Group'
+'imprint_multiple': [
+  "{\"type\": \"publication\",\"value\": \"[Place of publication not identified] : Channel Four (Great Britain), [2014]\"}",
+  "{\"type\": \"copyright\",\"value\": \"©2014\"}",
+  "{\"type\": \"distribution\",\"value\": \"New York, N.Y. : Films Media Group, 2015\"}"
+],
+'publisher': [
+  {'value': 'Channel Four (Great Britain)'},
+  {'value': 'Films Media Group'}
 ]
 ----
 
@@ -328,23 +282,16 @@ https://discovery.trln.org/catalog/UNCb1583793[Current display in TRLN Discovery
 
 [source,ruby]
 ----
-'imprint_main': {
-  'type': 'production',
-  'value': 'New Brunswick : Transaction Publishers, -1994.'
-},
+'imprint_main': [
+  "{\"type\": \"production\",\"value\": \"New Brunswick : Transaction Publishers, -1994.\"}"
+],
 'imprint_multiple': [
-  {
-  'type': 'imprint',
-  'value': 'New Brunswick, N.J. : Douglass College, Rutgers University, 1979-'
-  },
- {
-  'type': 'production',
-  'value': 'New Brunswick : Transaction Publishers, -1994.'
- }
+  "{\"type\": \"imprint\",\"value\": \"New Brunswick, N.J. : Douglass College, Rutgers University, 1979-\"}",
+  "{\"type\": \"production\",\"value\": \"New Brunswick : Transaction Publishers, -1994.\"}"
 ],
 'publisher': [
-  'Douglass College, Rutgers University',
-  'Transaction Publishers'
+  {'value': 'Douglass College, Rutgers University'},
+  {'value': 'Transaction Publishers'}
 ]
 ----
 
@@ -362,30 +309,17 @@ https://discovery.trln.org/catalog/UNCb1661867[Current display in TRLN Discovery
 
 [source,ruby]
 ----
-'imprint_main': {
-  'type': 'production',
-  'label': '<1927, no. 18-19>',
-  'value': 'Rīgā : [publisher not identified]'
-},
+'imprint_main': [
+  "{\"type\": \"production\",\"label\": \"<1927, no. 18-19>\",\"value\": \"Rīgā : [publisher not identified]\"}"
+],
 'imprint_multiple': [
-  {
-  'type': 'production',
-  'value': 'Riga : "N. Niva, "'
-  },
- {
-  'type': 'production',
-  'label': '<1927, no. 5-16>',
-  'value': 'Paris : O.D. Strok"'
- },
- {
-  'type': 'production',
-  'label': '<1927, no. 18-19>',
-  'value': 'Rīgā : [publisher not identified]'
- }
+ "{\"type\": \"production\",\"value\": \"Riga : "N. Niva, "\"}",
+ "{\"type\": \"production\",\"label\": \"<1927, no. 5-16>\",\"value\": \"Paris : O.D. Strok"\"}",
+ "{\"type\": \"production\",\"label\": \"<1927, no. 18-19>\",\"value\": \"Rīgā : [publisher not identified]\"}"
 ],
 'publisher': [
-  '"N. Niva, "',
-  'O.D. Strok"'
+  {'value': '"N. Niva, "'},
+  {'value': 'O.D. Strok"'}
 ]
 ----
 
@@ -403,24 +337,64 @@ This is a less-than-good example, as the 2 264s are strangely redundant, but it'
 
 [source,ruby]
 ----
-'imprint_main': {
-  'type': 'distribution',
-  'value': '[Buffalo, NY] : William S. Hein & Company, [2009]'
-},
+'imprint_main': [
+  "{\"type\": \"distribution\",\"value\": \"[Buffalo, NY] : William S. Hein & Company, [2009]\"}"
+],
 'imprint_multiple': [
-  {
-  'type': 'distribution',
-  'value': 'Buffalo, New York : William S. Hein & Co., 1997.'
-  },
- {
-  'type': 'distribution',
-  'value': '[Buffalo, NY] : William S. Hein & Company, [2009]'
- }
+"{\"type\": \"distribution\",\"value\": \"Buffalo, New York : William S. Hein & Co., 1997.\"}",
+"{\"type\": \"distribution\",\"value\": \"[Buffalo, NY] : William S. Hein & Company, [2009]\"}"
 ],
 'publisher': [
-  'William S. Hein & Co.',
-  'William S. Hein & Company'
+  {'value': 'William S. Hein & Co.'},
+  {'value': 'William S. Hein & Company'}
 ]
 ----
 
 https://discovery.trln.org/catalog/UNCb7087531[Current display in TRLN Discovery]
+
+=== UNCb4420296 - non-Roman imprint in 880 fields linked to 260s
+
+[source]
+----
+=260  \\$6880-02$aMoskva :$bIn-t vseobshcheĭ istorii RAN,$c2000-
+=260  2\$6880-03$3vyp. 4-$aMoskva :$bNauka
+=880  \\$6260-02/(N$aМосква :$bИн-т всеобщей истории РАН,$c2000-
+=880  2\$6260-03/(N$3вып. 4-$aМосква :$bНаука
+----
+
+[source,ruby]
+----
+'imprint_main': [
+  "{\"type\": \"imprint\",\"label\": \"vyp. 4-\",\"value\": \"Moskva : Nauka\"}",
+  "{\"type\": \"imprint\",\"label\": \"вып. 4-\",\"value\": \"Москва : Наука\"}"
+],
+`imprint_multiple`: [
+  "{\"type\": \"imprint\",\"value\": \"Moskva : In-t vseobshcheĭ istorii RAN, 2000-\"}",
+  "{\"type\": \"imprint\",\"label\": \"vyp. 4-\",\"value\": \"Moskva : \"}",
+  "{\"type\": \"imprint\",\"value\": \"Москва : Ин-т всеобщей истории РАН, 2000-\"}",
+  "{\"type\": \"imprint\",\"label\": \"вып. 4-\",\"value\": \"Москва : Наука\"}"
+],
+'publisher': [
+{'value': 'In-t vseobshcheĭ istorii RAN'},
+{'value': 'Nauka'},
+{'value': 'Ин-т всеобщей истории РАН', 'lang': 'rus'},
+{'value': 'Наука', 'lang': 'rus'}
+]
+----
+
+=== UNCb6784055 - non-Roman imprint in 260
+
+[source]
+----
+=260  \\$a[S.l.] :$b秋田大学教育文化学部附属教育実践総合センター
+----
+
+[source,ruby]
+----
+'imprint_main': [
+  "{\"type\": \"imprint\",\"value\": \"[S.l.] : 秋田大学教育文化学部附属教育実践総合センター\"}"
+],
+'publisher': [
+{'value': '秋田大学教育文化学部附属教育実践総合センター', 'lang': 'cjk'}
+]
+----

@@ -11,6 +11,7 @@ The pattern used to create fields where:
 This pattern is used in the following Argot fields:
 
 * donor
+* publisher
 
 toc::[]
 
