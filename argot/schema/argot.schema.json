@@ -1,0 +1,92 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://github.com/trln/data-documentation/tree/master/argot/schema/argot.schema.json",
+    "title": "Argot record schema",
+    "description": "Defining structure of an Argot record for the TRLN Discovery project",
+    "definitions": {
+	"index_only_value": {
+	    "type": "object",
+	    "properties": {
+		"value": {
+		    "type": "string",
+		    "minLength": 1
+		},
+		"lang": { "$ref": "#/definitions/lang" }
+	    },
+	    "required": ["value"]
+	},
+        "lang": {
+	    "description": "Code for language or script family present in 'value' property. Triggers special language parsing for non-Roman script data.",
+	    "type": "string",
+	    "enum": ["ara", "per", "hin", "jpn", "cjk", "rus", "tha"]
+	}
+    },
+    "type": "object",
+    "properties": {
+	"available": {
+	    "description": "Indication of the fact that one or more copies/volumes of the described resource is currently available for use. This property is used to populate the Availability facet. If this property does not exist, it is assumed no copies of the resource are currently available for use. The property is derived from examining all item statuses associated with bibliographic record. There is insitution-specific logic for mapping individual/specific item statuses (such as \"At the Bindery\" or \"Use request form\") to binary available/not available values in order to determine how to populate this property.",
+	    "type": "string",
+	    "enum": [ "Available" ]
+	},
+	"barcodes": {
+	    "description": "Item barcodes associated with bibliographic resource described. Searchable as keyword or ISBN/ISSN/barcode. Not included in record display in default shared Argon configuration.",
+	    "type": "array",
+	    "items": {
+		"type": "string"
+	    },
+	    "minItems": 1,
+	    "uniqueItems": true
+	},
+	"id": {
+	    "description": "The unique document ID of the record in the TRLN Discovery index. Begins with institution code of owning institution (in all caps), followed by ILS record id (for records from ILS) or other unique identifier (for records from non-ILS sources).",
+	    "type": "string",
+	    "pattern": "^(DUKE|NCCU|NCSU|UNC).*",
+	    "examples": [
+		"UNCb2028602",
+		"UNCDataverseOdumhdl190229D30917",
+		"DUKE005684529",
+		"NCSU642977",
+		"NCCUu103474"
+		]
+	},
+	"institution": {
+	    "description": "Institution code(s) of the institutions for which the resource should appear in their local (i.e. not expanded to TRLN) interface. Presumably this property will only have more than one value in TRLN Shared Records (where one institution maintains a record for a resource known to be available at more than one institution), or potentially in records for open access materials or digital collections.",
+	    "type": "array",
+	    "items": {
+		"type": "string",
+		"enum": [ "duke", "nccu", "ncsu", "unc" ]
+	    },
+	    "minItems": 1,
+	    "maxItems": 4,
+	    "uniqueItems": true
+	},
+	"owner": {
+	    "description": "Code of institution responsible for submitting record to and maintaining record in TRLN Discovery",
+	    "type": "string",
+	    "pattern": "^(duke|nccu|ncsu|unc)$"
+	},
+	"title_main": {
+	    "description": "The main display title of the resource described by the record. Displayed prominently in search results view and at the top of full record page. Heavy relevance boosting applied. Used as the title when exporting data from TRLN Discovery. Two objects are allowed only the record includes an alternate script version of the main title.",
+	    "type": "array",
+	    "items": [
+		{ "$ref": "#/definitions/index_only_value" }
+	    ],
+	    "minItems": 1,
+	    "maxItems": 2,
+	    "uniqueItems": true
+	},
+	"title_sort": {
+	    "description": "Version of main title used for sorting. Derived from title_main, with initial articles removed (following non-filing characters instructions in source data if applicable). Not displayed.",
+	    "type": "string",
+	    "minLength": 1
+	}
+    },
+    "additionalProperties": false,
+    "required": [
+	"id",
+	"institution",
+	"owner",
+	"title_main",
+	"title_sort"
+    ]
+}
