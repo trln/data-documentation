@@ -1,0 +1,128 @@
+[
+  {
+    "306": {
+      "omission_type": "permanent",
+      "omission_reason_category": "data unusable",
+      "omission_details": "Usually duplicates data recorded in 300 and/or 505. Recorded in a cryptic manner and there's no way to specify which duration recorded goes with which part of the described item, if it's a multi-part thing"
+    }
+  },
+  {
+    "307": {
+      "omission_type": "permanent",
+      "omission_reason_category": "irrelevant",
+      "omission_details": "No fields in UNC catalog. Hours an item is available is kind of a weird concept in the catalog, too."
+    }
+  },
+  {
+    "343": {
+      "omission_type": "temporary",
+      "omission_reason_category": "infrequently used",
+      "omission_details": "only 2 records in UNC catalog"
+    }
+  },
+  {
+    "348": {
+      "omission_type": "temporary",
+      "omission_reason_category": "low priority",
+      "omission_details": "Look into whether it should map to genre"
+    }
+  },
+  {
+    "355": {
+      "omission_type": "permanent",
+      "omission_reason_category": "irrelevant",
+      "omission_details": "No records in UNC catalog"
+    }
+  },
+  {
+    "357": {
+      "omission_type": "permanent",
+      "omission_reason_category": "irrelevant",
+      "omission_details": "No records in UNC catalog"
+    }
+  },
+  {
+    "363": {
+      "omission_type": "permanent",
+      "omission_reason_category": "data unusable",
+      "omission_details": "Holdings-like hell format specifying exact dates; only 10 in UNC catalog, most look like they should be 362s"
+    }
+  },
+  {
+    "370": {
+      "omission_type": "temporary",
+      "omission_reason_category": "infrequently used",
+      "omission_details": "22 fields in UNC catalog -- maybe one day map to a subject-ish geographical entry or something?"
+    }
+  },
+  {
+    "377": {
+      "omission_type": "temporary",
+      "omission_reason_category": "infrequently used",
+      "omission_details": "1 field in UNC catalog -- maybe one day map to language facet if it adds unique info"
+    }
+  },
+  {
+    "380": {
+      "omission_type": "temporary",
+      "omission_reason_category": "low priority",
+      "omission_details": "Look into mapping to genre"
+    }
+  },
+  {
+    "381": {
+      "omission_type": "permanent",
+      "omission_reason_category": "data unusable",
+      "omission_details": "Mishmash of different kinds of data issuing body, arranged statement of music, version, or a geographic term with no coding that tells you what the data is"
+    }
+  },
+  {
+    "385": {
+      "omission_type": "temporary",
+      "omission_reason_category": "low priority",
+      "omission_details": "Look into mapping to `note_general` with label `For audiences`"
+    }
+  },
+  {
+    "386": {
+      "omission_type": "temporary",
+      "omission_reason_category": "infrequently used",
+      "omission_details": "Could eventually leverage in some \"Works by\" field, but only 248 fields in UNC's catalog today 2018-05-18"
+    }
+  },
+  {
+    "388": {
+      "omission_type": "temporary",
+      "omission_reason_category": "infrequently used",
+      "omission_details": "Only 3 fields in UNC catalog on 2018-05-18. Eventually could be mapped as a chronological subect or something. "
+    }
+  },
+  {
+    "336": {
+      "omission_type": "temporary",
+      "omission_reason_category": "low priority",
+      "omission_details": "Terms used are not user-friendly; this information is usually better expressed elsewhere in the record"
+    }
+  },
+  {
+    "337": {
+      "omission_type": "temporary",
+      "omission_reason_category": "low priority",
+      "omission_details": "Terms used are not user-friendly; this information is usually better expressed elsewhere in the record"
+    }
+  },
+  {
+    "338": {
+      "omission_type": "temporary",
+      "omission_reason_category": "low priority",
+      "omission_details": "Terms used are not user-friendly; this information is usually better expressed elsewhere in the record"
+    }
+  },
+  {
+    "342": {
+      "omission_type": "temporary",
+      "omission_reason_category": "low priority",
+      "omission_details": "Complex data mapping; appears in <2000 records in UNC catalog on 2018-05-21. Need to assess if this adds useful info, and if so, how to map."
+    }
+  }
+]
