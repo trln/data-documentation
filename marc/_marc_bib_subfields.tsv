@@ -900,12 +900,14 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 377	ASSOCIATED LANGUAGE	R	.	0	Authority record control number or standard number	R	.
 377	ASSOCIATED LANGUAGE	R	.	1	Real World Object URI	R	.
 377	ASSOCIATED LANGUAGE	R	.	2	Source	NR	.
+377	ASSOCIATED LANGUAGE	R	.	3	Materials specified	NR	.
 377	ASSOCIATED LANGUAGE	R	.	6	Linkage	NR	.
 377	ASSOCIATED LANGUAGE	R	.	8	Field link and sequence number	R	.
 380	FORM OF WORK	R	.	a	Form of work	R	.
 380	FORM OF WORK	R	.	0	Authority record control number or standard number	R	.
 380	FORM OF WORK	R	.	1	Real World Object URI	R	.
 380	FORM OF WORK	R	.	2	Source of term	NR	.
+380	FORM OF WORK	R	.	3	Materials specified	NR	.
 380	FORM OF WORK	R	.	6	Linkage	NR	.
 380	FORM OF WORK	R	.	8	Field link and sequence number	R	.
 381	OTHER DISTINGUISHING CHARACTERISTICS OF WORK OR EXPRESSION	R	.	a	Other distinguishing characteristic	R	.
@@ -914,6 +916,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 381	OTHER DISTINGUISHING CHARACTERISTICS OF WORK OR EXPRESSION	R	.	0	Authority record control number or standard number	R	.
 381	OTHER DISTINGUISHING CHARACTERISTICS OF WORK OR EXPRESSION	R	.	1	Real World Object URI	R	.
 381	OTHER DISTINGUISHING CHARACTERISTICS OF WORK OR EXPRESSION	R	.	2	Source of term	NR	.
+381	OTHER DISTINGUISHING CHARACTERISTICS OF WORK OR EXPRESSION	R	.	3	Materials specified	NR	.
 381	OTHER DISTINGUISHING CHARACTERISTICS OF WORK OR EXPRESSION	R	.	6	Linkage	NR	.
 381	OTHER DISTINGUISHING CHARACTERISTICS OF WORK OR EXPRESSION	R	.	8	Field link and sequence number	R	.
 382	MEDIUM OF PERFORMANCE	R	.	a	Medium of performance	R	.
@@ -938,6 +941,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 383	NUMERIC DESIGNATION OF MUSICAL WORK	R	.	d	Thematic index code	NR	.
 383	NUMERIC DESIGNATION OF MUSICAL WORK	R	.	e	Publisher associated with opus number	NR	.
 383	NUMERIC DESIGNATION OF MUSICAL WORK	R	.	2	Source	NR	.
+383	NUMERIC DESIGNATION OF MUSICAL WORK	R	.	3	Materials secified	NR	.
 383	NUMERIC DESIGNATION OF MUSICAL WORK	R	.	6	Linkage	NR	.
 383	NUMERIC DESIGNATION OF MUSICAL WORK	R	.	8	Field link and sequence number	R	.
 384	KEY	R	.	a	Key	NR	.
@@ -1849,6 +1853,7 @@ MARC tag	Field name	Field repeatability	Field note	Subfield delimiter	Subfield n
 730	ADDED ENTRY--UNIFORM TITLE	R	.	0	Authority record control number or standard number	R	.
 730	ADDED ENTRY--UNIFORM TITLE	R	.	1	Real World Object URI	R	.
 730	ADDED ENTRY--UNIFORM TITLE	R	.	3	Materials specified	NR	.
+730	ADDED ENTRY--UNIFORM TITLE	R	.	4	Relationship	R	.
 730	ADDED ENTRY--UNIFORM TITLE	R	.	5	Institution to which field applies	NR	.
 730	ADDED ENTRY--UNIFORM TITLE	R	.	6	Linkage	NR	.
 730	ADDED ENTRY--UNIFORM TITLE	R	.	8	Field link and sequence number	R	.
