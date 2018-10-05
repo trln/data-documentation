@@ -7,7 +7,7 @@
     "026": {
 	"omission_type": "permanent",
 	"omission_reason_category": "internal",
-	"omission_details": "Used to assist in the identification of antiquarian books by recording information comprising groups of characters taken from specified positions on specified pages of the book. Example: 026 	##$ae-s- 11as$bs,me crth 3$c1797.$dv.1"
+	"omission_details": "Used to assist in the identification of antiquarian books by recording information comprising groups of characters taken from specified positions on specified pages of the book. Example: 026 ##$ae-s- 11as$bs,me crth 3$c1797.$dv.1"
     },
     "032": {
 	"omission_type": "permanent",
