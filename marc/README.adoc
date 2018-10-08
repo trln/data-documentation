@@ -1,0 +1,24 @@
+:toc:
+:toc-placement!:
+
+The scripts/files in this directory are related to MARC specification and its relationship to Argot.
+
+*View this file:*
+
+* *unmapped_marc.ipynb* - reports on all MARC fields and subfields *not* mapped to Argot
+
+*Edit these files:*
+
+* *unmapped_marc_subfields.json* - record decision to exclude a subfield from Argot mappings
+* *unmapped_marc_tags.json* - record decision to exclude a field from Argot mappings
+
+*Leave these files alone:*
+
+* *extract_marc_bib_spec.rb* - used by unmapped_marc.ipynb. Grabs current MARC specification from http://www.loc.gov/marc/bibliographic/ecbdlist.html
+* *marc_definition.json* - result of running extract_marc_bib_spec.rb. Is overwritten when that script is run.
+
+== About Jupyter notebooks (.ipynb files)
+* The reason for using Jupyter notebooks is that this documentation needs to be refreshed periodically and it is based on multiple data sources -- the notebook clarifies how the documentation is built while allowing it to be updated quickly with little effort (just re-run all the notebook cells).
+* You can view the static notebook output here on Github.
+* These notebooks are using https://github.com/SciRuby/iruby[the Ruby kernel (iRuby)].
+* To make changes and rebuild/refresh the documentation, you need to install http://jupyter.org/install[Jupyter Notebook] and https://github.com/SciRuby/iruby[iRuby]. (Ideally a Jupyter Notebook with dependencies gets containerized with Docker, but setting that up is a bit beyond what I know how to do at this point.)
