@@ -1,0 +1,177 @@
+:toc:
+:toc-placement!:
+
+= `publication_year` field
+
+NOT displayed.
+
+Used for:
+
+* Sorting by date
+* Publication year facet? (or setting value of that field)
+* Advanced search publication year limiting
+
+May be output in citations generated from TRLN Discovery.
+
+== General rules
+
+* prefer 008 date if possible
+* if that is not available, attempt to extract a date from 260$c or 264\1$c
+* valid minimum year: 500
+* valid maximum year: this year plus 6 years (exception: we can set publication_year to 9999 in some cases to indicate ongoing-ness)
+* if a date is less than valid minimum year or greater than valid maximum year, it is ignored
+* uncertain dates not specific to century or decade (i.e. 1uuu or 2uuu) are ignored
+* If it is a date range (including uncertain dates which imply a range), assign midpoint of range as the date (rounded down).
+
+== Date type rules
+Date type is from 008/06
+
+MARC has complex rules for what date types are valid for specific types of materials. We are not checking this logic. We are using the 008 date coding as-is.
+
+=== b - No dates given; B.C. date involved.
+*Ignore for now.* Most of UNC's records with this date type look to be in error. It seems unlikely that we have many items with a B.C. date!
+
+=== e - Detailed date
+Use Date1 value only (year)
+
+20120232 = 2013
+
+197611uu = 1976
+
+=== s - Single known date/probable date
+Use Date1
+
+1987\\\\ = 1987
+
+198u\\\\ = 1984
+
+19uu\\\\ = 1949
+
+1uuu\\\\ = not set
+
+=== i - Inclusive dates of collection
+Use Date1
+
+The reason we are not using a range is: remembering that `publication_year` is not displayed but 260/264 is:
+
+The first sort order below looks better than the second:
+
+.Using Date1
+[options="header"]
+|=====
+|displayed dates|`publication_year` value
+|1900 - 1999|1900
+|1910 - 1950|1910
+|1940 - 1949|1940
+|=====
+
+.Using midpoint of range
+[options="header"]
+|=====
+|displayed dates|`publication_year` value
+|1910 - 1950|1930
+|1940 - 1949|1944
+|1900 - 1999|1949
+|=====
+
+
+=== k - Range of years of bulk of collection
+Use Date1
+
+See DateType = i for explanation of why we use Date1 instead of midpoint of range
+
+=== m - Multiple dates
+*If Date2 is NOT 9999* use Date2
+
+*If Date2 = 9999 or other unusable date* use Date1
+
+19951999 = 1999
+
+19669999 = 1966
+
+uuuu1981 = 1981
+
+1943197u = 1974
+
+=== p - Date of distribution/release/issue and date of production/recording session when different
+Use Date2 if present and usable -- we care about the original date of a film, not when it was released on a given format
+
+Fall back to Date1 if Date2 not present or usable
+
+=== r - Reprint/reissue date and original date
+Use Date2 if present and usable (date of original, which reflects age of intellectual content)
+
+Fall back to Date1 if Date2 not present or usable
+
+19661741 = 1741
+
+1866uuuu = 1866
+
+=== t - Publication date and copyright date
+
+Use Date1 (publication date)
+
+=== n - Dates unknown
+We've found many records coded DateType n that *do* have usable dates in Date1 and/or Date2
+
+If both Date1 and Date2 present and usable, find midpoint of range.
+
+Else use whichever date value is present usable.
+
+17859999 = 1785
+
+18501900 = 1875
+
+189u\\\\ = 1894
+
+18uu18uu = 1849
+
+=== q - Questionable date
+If both Date1 and Date2 present and usable, find midpoint of range.
+
+Else use whichever date value is present usable.
+
+\\\\1932 = 1932
+
+10001199 = 1099
+
+=== c - Continuing resource currently published
+Currently published is defined as an item for which an issue or update has been received within the last three years.
+
+We want to reflect there is relatively current content.
+
+Use Date2 (should be 9999)
+
+=== d - Continuing resource ceased publication
+Use Date2 -- reflect date of newest content available
+
+If Date2 is range, ensure start of range is > Date1
+
+194519uu = 1972 (1900 (normal range start is < Date1, so use Date1 as start of range, 1999 as end)
+
+1945196u = 1964 (range start is 1960, which is NOT < Date1)
+
+=== u - Continuing resource status unknown
+
+If Date2 = 9999 use that (assumed miscoded current item)
+
+Use Date2 if present and usable. Else use Date1
+
+20uu9999 = 9999
+
+20uuuuuu = 2009 (If range end is greater than current year, substitute current year as range end)
+
+uuuu2006 = 2006
+
+== Variable fields 260 and 264
+If the 008-based logic leaves `publication_year` empty, we attempt to extract a date from 260$c or 264$c if present.
+
+If using 264, indicator 2 must = 1.
+
+If there are multiple 260/264s, use the one coded with indicator 1 = 3. If none have that coding, use the one appearing last in the record.
+
+Extract first occurrence of 4 consecutive digits, 3 digits followed by -, or 2 digits followed by --
+
+If hyphens are present in date, treat it as a range and take midpoint.
+
+Otherwise just set the date from the capture.
