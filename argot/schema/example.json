@@ -43,6 +43,7 @@
   ],
   "physical_description_details": [
     {
+      "label": "File type",
       "value": "text file"
     },
     {

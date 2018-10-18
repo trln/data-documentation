@@ -1,211 +1,248 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://github.com/trln/data-documentation/tree/master/argot/schema/argot.schema.json",
-    "title": "Argot record schema",
-    "description": "Defining structure of an Argot record for the TRLN Discovery project",
-    "definitions": {
-	"index_only_value": {
-	    "description": "Fields following this pattern are not displayed to users, but are indexed for search. Because they are indexed, they need to support non-Roman script parsing by including lang subelement.",
-	    "type": "object",
-	    "properties": {
-		"value": {
-		    "type": "string",
-		    "minLength": 1
-		},
-		"lang": { "$ref": "#/definitions/lang" }
-	    },
-	    "required": ["value"]
-	},
-	"index_and_display_value": {
-	    "description": "Fields following this pattern are displayed to users and are indexed for search. Because they are indexed, they need to support non-Roman script parsing by including lang subelement.",
-	    "type": "object",
-	    "properties": {
-		"value": {
-		    "type": "string",
-		    "minLength": 1
-		},
-		"lang": { "$ref": "#/definitions/lang" }
-	    },
-	    "required": ["value"]
-	},
-	"labeled_indexed_value": {
-	    "description": "Fields following this pattern are displayed and indexed. The value is indexed. There may be a label contextualizing the field value, which is displayed but NOT indexed. Because these fields have indexed values, they support non-Roman script parsing by including lang subelement.",
-	    "type": "object",
-	    "properties": {
-		"label": {
-		    "description": "Contextualizing information for field value. Examples include date range to which data in a serials record applies, or the volume number for which different or additional bibliographic data is recorded. The display provides styling and end-of-label punctuation, so terminal colon is not included in the data.",
-		    "type": "string",
-		    "minLength": 1,
-		    "pattern": ".*[^:]$"
-		},
-		"value": {
-		    "type": "string",
-		    "minLength": 1
-		},
-		"lang": { "$ref": "#/definitions/lang" }
-	    },
-	    "required": ["value"]
-	},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/trln/data-documentation/tree/master/argot/schema/argot.schema.json",
+  "title": "Argot record schema",
+  "description": "Defining structure of an Argot record for the TRLN Discovery project",
+  "definitions": {
+    "index_only_value": {
+      "description": "Fields following this pattern are not displayed to users, but are indexed for search. Because they are indexed, they need to support non-Roman script parsing by including lang subelement.",
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string",
+          "minLength": 1
+        },
         "lang": {
-	    "description": "Code for language or script family present in 'value' property. Triggers special language parsing for non-Roman script data.",
-	    "type": "string",
-	    "enum": ["ara", "per", "hin", "jpn", "cjk", "rus", "tha"]
-	}
+          "$ref": "#/definitions/lang"
+        }
+      },
+      "required": [
+        "value"
+      ]
     },
-    "type": "object",
-    
-    "properties": {
-	"available": {
-	    "description": "Indication of the fact that one or more copies/volumes of the described resource is currently available for use. This property is used to populate the Availability facet. If this property does not exist, it is assumed no copies of the resource are currently available for use. The property is derived from examining all item statuses associated with bibliographic record. There is insitution-specific logic for mapping individual/specific item statuses (such as \"At the Bindery\" or \"Use request form\") to binary available/not available values in order to determine how to populate this property.",
-	    "type": "string",
-	    "enum": [ "Available" ]
-	},
-	"barcodes": {
-	    "description": "Item barcodes associated with bibliographic resource described. Searchable as keyword or ISBN/ISSN/barcode. Not included in record display in default shared Argon configuration.",
-	    "type": "array",
-	    "items": {
-		"type": "string"
-	    },
-	    "minItems": 1,
-	    "uniqueItems": true
-	},
-	"date_cataloged": {
-	    "description": "Date a fully cataloged source record was created in data source. Used to populate \"New Titles\" facet. This value should NOT be updated when an existing cataloged record is modified. Note for ILS-MARC sourced data: libraries often have cataloging workflows where provisional records are brought into the catalog and are only considered \"cataloged\" after the record has been reviewed/finalized by staff. Sometimes provisional records are suppressed from public view, in which case they will NOT make it into TRLN Discovery at all. Some libraries want to allow patrons to discover books that are on order, so provisional records for such titles will be in TRLN Discovery. Provisional records should not have a date_cataloged set. Note for non-ILS-MARC data: This field should represent when the record was added to the collection.",
-	    "type": ["null", "array"],
-	    "items" : {
-		"type": "string",
-		"format": "date-time"
-	    },
-	    "minItems": 1,
-	    "maxItems": 1
-	},
-	"edition": {
-	    "description": "Distinguishes a work with substantial content differences from another work with the same title/author. Important for identifying and selecting items in the catalog.",
-	    "type": "array",
-	    "items": [
-		{ "$ref": "#/definitions/labeled_indexed_value" }
-	    ],
-	    "minItems": 1,
-	    "uniqueItems": true
-	},
-	"frequency": {
-	    "description": "Current and/or former publication frequency.",
-	    "type": "object",
-	    "properties": {
-		"current": {
-		    "type": "array",
-		    "items": {
-			"type": "string"
-		    },
-		    "minItems": 1,
-		    "maxItems": 1
-		},
-		"former": {
-		    "type": "array",
-		    "items": {
-			"type": "string"
-		    },
-		    "minItems": 1
-		}
-	    }
-	},
-	"genre_headings": {
-	    "description": "Genre headings (entire post-coordinate strings, if applicable) describing what the item is or what form it takes.",
-	    "type": "array",
-	    "items": [
-		{ "$ref": "#/definitions/index_and_display_value" }
-	    ],
-	    "minItems": 1,
-	    "uniqueItems": true
-	},
-	"id": {
-	    "description": "The unique document ID of the record in the TRLN Discovery index. Begins with institution code of owning institution (in all caps), followed by ILS record id (for records from ILS) or other unique identifier (for records from non-ILS sources).",
-	    "type": "string",
-	    "pattern": "^(DUKE|NCCU|NCSU|UNC).*",
-	    "examples": [
-		"UNCb2028602",
-		"UNCDataverseOdumhdl190229D30917",
-		"DUKE005684529",
-		"NCSU642977",
-		"NCCUu103474"
-		]
-	},
-	"institution": {
-	    "description": "Institution code(s) of the institutions for which the resource should appear in their local (i.e. not expanded to TRLN) interface. Presumably this property will only have more than one value in TRLN Shared Records (where one institution maintains a record for a resource known to be available at more than one institution), or potentially in records for open access materials or digital collections.",
-	    "type": "array",
-	    "items": {
-		"type": "string",
-		"enum": [ "duke", "nccu", "ncsu", "unc" ]
-	    },
-	    "minItems": 1,
-	    "maxItems": 4,
-	    "uniqueItems": true
-	},
-	"owner": {
-	    "description": "Code of institution responsible for submitting record to and maintaining record in TRLN Discovery",
-	    "type": "string",
-	    "pattern": "^(duke|nccu|ncsu|unc)$"
-	},
-	"physical_description": {
-	    "description": "Combined physical description of the described item, including its extent, dimensions, and such other physical details as a description of any accompanying materials and unit type and size.",
-	    "type": "array",
-	    "items": [
-		{ "$ref": "#/definitions/labeled_indexed_value" }
-	    ],
-	    "minItems": 1,
-	    "uniqueItems": true,
-	    "examples": [
-		{ "label": "dupe neg nitrate (copy 2)",
-		  "value": "8 reels of 8 (7557 ft.) : sd., col. ; 35 mm" },
-		{ "value": "11 volumes : illustrations ; 24 cm" }
-	    ]
-	},
-	"physical_description_details": {
-	    "description": "Discrete statements about the physical description of the described item. Note: It is NOT currently enforced by this schema, but it is expected that every item in this field will have a label subelement.",
-	    "type": "array",
-	    "items": [
-		{ "$ref": "#/definitions/labeled_indexed_value" }
-	    ],
-	    "minItems": 1,
-	    "uniqueItems": true,
-	    "examples": [
-		{ "label": "Playing speed",
-		  "value": "78 rpm" },
-		{ "label": "Encoding format",
-		  "value": "XML" }
-		]
-	},
-	"subject_headings": {
-	    "description": "Subject headings (entire post-coordinate strings, if applicable) describing what the item is about.",
-	    "type": "array",
-	    "items": [
-		{ "$ref": "#/definitions/index_and_display_value" }
-	    ],
-	    "minItems": 1,
-	    "uniqueItems": true
-	},
-	"title_main": {
-	    "description": "The main display title of the resource described by the record. Displayed prominently in search results view and at the top of full record page. Heavy relevance boosting applied. Used as the title when exporting data from TRLN Discovery. Two objects are allowed only the record includes an alternate script version of the main title.",
-	    "type": "array",
-	    "items": [
-		{ "$ref": "#/definitions/index_only_value" }
-	    ],
-	    "minItems": 1,
-	    "maxItems": 2,
-	    "uniqueItems": true
-	},
-	"title_sort": {
-	    "description": "Version of main title used for sorting. Derived from title_main, with initial articles removed (following non-filing characters instructions in source data if applicable). Not displayed.",
-	    "type": "string",
-	    "minLength": 1
-	}
+    "index_and_display_value": {
+      "description": "Fields following this pattern are displayed to users and are indexed for search. Because they are indexed, they need to support non-Roman script parsing by including lang subelement.",
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string",
+          "minLength": 1
+        },
+        "lang": {
+          "$ref": "#/definitions/lang"
+        }
+      },
+      "required": [
+        "value"
+      ]
     },
-    "additionalProperties": false,
-    "required": [
-	"id",
-	"institution",
-	"owner",
-	"title_main",
-	"title_sort"
-    ]
+    "labeled_indexed_value": {
+      "description": "Fields following this pattern are displayed and indexed. The value is indexed. There may be a label contextualizing the field value, which is displayed but NOT indexed. Because these fields have indexed values, they support non-Roman script parsing by including lang subelement.",
+      "type": "object",
+      "properties": {
+        "label": {
+          "description": "Contextualizing information for field value. Examples include date range to which data in a serials record applies, or the volume number for which different or additional bibliographic data is recorded. The display provides styling and end-of-label punctuation, so terminal colon is not included in the data.",
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*[^:]$"
+        },
+        "value": {
+          "type": "string",
+          "minLength": 1
+        },
+        "lang": {
+          "$ref": "#/definitions/lang"
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "lang": {
+      "description": "Code for language or script family present in 'value' property. Triggers special language parsing for non-Roman script data.",
+      "type": "string",
+      "enum": [
+        "ara",
+        "per",
+        "hin",
+        "jpn",
+        "cjk",
+        "rus",
+        "tha"
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "available": {
+      "description": "Indication of the fact that one or more copies/volumes of the described resource is currently available for use. This property is used to populate the Availability facet. If this property does not exist, it is assumed no copies of the resource are currently available for use. The property is derived from examining all item statuses associated with bibliographic record. There is insitution-specific logic for mapping individual/specific item statuses (such as \"At the Bindery\" or \"Use request form\") to binary available/not available values in order to determine how to populate this property.",
+      "type": "string",
+      "enum": [
+        "Available"
+      ]
+    },
+    "barcodes": {
+      "description": "Item barcodes associated with bibliographic resource described. Searchable as keyword or ISBN/ISSN/barcode. Not included in record display in default shared Argon configuration.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "date_cataloged": {
+      "description": "Date a fully cataloged source record was created in data source. Used to populate \"New Titles\" facet. This value should NOT be updated when an existing cataloged record is modified. Note for ILS-MARC sourced data: libraries often have cataloging workflows where provisional records are brought into the catalog and are only considered \"cataloged\" after the record has been reviewed/finalized by staff. Sometimes provisional records are suppressed from public view, in which case they will NOT make it into TRLN Discovery at all. Some libraries want to allow patrons to discover books that are on order, so provisional records for such titles will be in TRLN Discovery. Provisional records should not have a date_cataloged set. Note for non-ILS-MARC data: This field should represent when the record was added to the collection.",
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "minItems": 1,
+      "maxItems": 1
+    },
+    "edition": {
+      "description": "Distinguishes a work with substantial content differences from another work with the same title/author. Important for identifying and selecting items in the catalog.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/labeled_indexed_value"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "frequency": {
+      "description": "Current and/or former publication frequency.",
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "maxItems": 1
+        },
+        "former": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "genre_headings": {
+      "description": "Genre headings (entire post-coordinate strings, if applicable) describing what the item is or what form it takes.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/index_and_display_value"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "id": {
+      "description": "The unique document ID of the record in the TRLN Discovery index. Begins with institution code of owning institution (in all caps), followed by ILS record id (for records from ILS) or other unique identifier (for records from non-ILS sources).",
+      "type": "string",
+      "pattern": "^(DUKE|NCCU|NCSU|UNC).*",
+      "examples": [
+        "UNCb2028602",
+        "UNCDataverseOdumhdl190229D30917",
+        "DUKE005684529",
+        "NCSU642977",
+        "NCCUu103474"
+      ]
+    },
+    "institution": {
+      "description": "Institution code(s) of the institutions for which the resource should appear in their local (i.e. not expanded to TRLN) interface. Presumably this property will only have more than one value in TRLN Shared Records (where one institution maintains a record for a resource known to be available at more than one institution), or potentially in records for open access materials or digital collections.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "duke",
+          "nccu",
+          "ncsu",
+          "unc"
+        ]
+      },
+      "minItems": 1,
+      "maxItems": 4,
+      "uniqueItems": true
+    },
+    "owner": {
+      "description": "Code of institution responsible for submitting record to and maintaining record in TRLN Discovery",
+      "type": "string",
+      "pattern": "^(duke|nccu|ncsu|unc)$"
+    },
+    "physical_description": {
+      "description": "Combined physical description of the described item, including its extent, dimensions, and such other physical details as a description of any accompanying materials and unit type and size.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/labeled_indexed_value"
+      },
+      "minItems": 1,
+      "uniqueItems": true,
+      "examples": [
+        {
+          "label": "dupe neg nitrate (copy 2)",
+          "value": "8 reels of 8 (7557 ft.) : sd., col. ; 35 mm"
+        },
+        {
+          "value": "11 volumes : illustrations ; 24 cm"
+        }
+      ]
+    },
+    "physical_description_details": {
+      "description": "Discrete statements about the physical description of the described item. Note: It is NOT currently enforced by this schema, but it is expected that every item in this field will have a label subelement.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/labeled_indexed_value"
+      },
+      "minItems": 1,
+      "uniqueItems": true,
+      "examples": [
+        {
+          "label": "Playing speed",
+          "value": "78 rpm"
+        },
+        {
+          "label": "Encoding format",
+          "value": "XML"
+        }
+      ]
+    },
+    "subject_headings": {
+      "description": "Subject headings (entire post-coordinate strings, if applicable) describing what the item is about.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/index_and_display_value"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "title_main": {
+      "description": "The main display title of the resource described by the record. Displayed prominently in search results view and at the top of full record page. Heavy relevance boosting applied. Used as the title when exporting data from TRLN Discovery. Two objects are allowed only the record includes an alternate script version of the main title.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/index_only_value"
+      },
+      "minItems": 1,
+      "maxItems": 2,
+      "uniqueItems": true
+    },
+    "title_sort": {
+      "description": "Version of main title used for sorting. Derived from title_main, with initial articles removed (following non-filing characters instructions in source data if applicable). Not displayed.",
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "institution",
+    "owner",
+    "title_main",
+    "title_sort"
+  ]
 }
