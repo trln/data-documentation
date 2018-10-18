@@ -5,8 +5,27 @@
     "description": "Defining structure of an Argot record for the TRLN Discovery project",
     "definitions": {
 	"index_only_value": {
+	    "description": "Fields following this pattern are not displayed to users, but are indexed for search. Because they are indexed, they need to support non-Roman script parsing by including lang subelement.",
 	    "type": "object",
 	    "properties": {
+		"value": {
+		    "type": "string",
+		    "minLength": 1
+		},
+		"lang": { "$ref": "#/definitions/lang" }
+	    },
+	    "required": ["value"]
+	},
+	"labeled_indexed_value": {
+	    "description": "Fields following this pattern are displayed and indexed. The value is indexed. There may be a label contextualizing the field value, which is displayed but NOT indexed. Because these fields have indexed values, they support non-Roman script parsing by including lang subelement.",
+	    "type": "object",
+	    "properties": {
+		"label": {
+		    "description": "Contextualizing information for field value. Examples include date range to which data in a serials record applies, or the volume number for which different or additional bibliographic data is recorded. The display provides styling and end-of-label punctuation, so terminal colon is not included in the data.",
+		    "type": "string",
+		    "minLength": 1,
+		    "pattern": ".*[^:]$"
+		},
 		"value": {
 		    "type": "string",
 		    "minLength": 1
@@ -34,6 +53,25 @@
 	    "items": {
 		"type": "string"
 	    },
+	    "minItems": 1,
+	    "uniqueItems": true
+	},
+	"date_cataloged": {
+	    "description": "Date a fully cataloged source record was created in data source. Used to populate \"New Titles\" facet. This value should NOT be updated when an existing cataloged record is modified. Note for ILS-MARC sourced data: libraries often have cataloging workflows where provisional records are brought into the catalog and are only considered \"cataloged\" after the record has been reviewed/finalized by staff. Sometimes provisional records are suppressed from public view, in which case they will NOT make it into TRLN Discovery at all. Some libraries want to allow patrons to discover books that are on order, so provisional records for such titles will be in TRLN Discovery. Provisional records should not have a date_cataloged set. Note for non-ILS-MARC data: This field should represent when the record was added to the collection.",
+	    "type": ["null", "array"],
+	    "items" : {
+		"type": "string",
+		"format": "date-time"
+	    },
+	    "minItems": 1,
+	    "maxItems": 1
+	},
+	"edition": {
+	    "description": "Edition statement.",
+	    "type": "array",
+	    "items": [
+		{ "$ref": "#/definitions/labeled_indexed_value" }
+	    ],
 	    "minItems": 1,
 	    "uniqueItems": true
 	},
