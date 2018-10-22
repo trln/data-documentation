@@ -32,10 +32,10 @@ Now we create a more complex data structure out of our mappings, so that we can 
                           :processing instructions => x,
                           :notes => x,
                           :provisional => x }
-     }
+        }
+      }
     }
-   }
-}
+  }
 
 First we set up the MARC TAGs for population...
 =end
@@ -78,12 +78,12 @@ end
 # Then we build a hash out of the Argot field data we want to merge into mappings statements...
 field_hash = {}
 fields_d.each do |f|
-field_hash[f[0]] = {:indexes => f[11],
-                    :facet => f[13],
-                    :disp_b => f[14],
-                    :disp_f => f[15],
-                    :disp_note => f[16],
-                    :doc => f[23]}  
+  field_hash[f[0]] = {:indexes => f[11],
+                      :facet => f[13],
+                      :disp_b => f[14],
+                      :disp_f => f[15],
+                      :disp_note => f[16],
+                      :doc => f[23]}  
 end
 
 # From these two hashes, we generate a human-readable report in HTML. Here, we create the HTML file and all the parts of it that come before the dump of data.
@@ -151,14 +151,14 @@ map_hash.sort.each do |tag, insthash|
             end
             
             case m[:processing_type]
-              when 'array_from_subelements'
-               xform_type = 'Contents of each subfield becomes separate element in array. <i>Example: $a cat $b dog $c fish => ["cat", "dog", "fish"]</i>'
-              when 'concat_subelements'
-               xform_type = 'Contents of subfields joined together into one string, separated by space. <i>Example: $a cat $b dog $c fish => "cat dog fish"</i>'
-              when 'map subelement to value'
-               xform_type = 'Subfield value is a code, which is translated into a human readable value and becomes element in array. <i>Example: $a eng $b ger=> ["English", "German"]</i>'
-              when 'map indicator value'
-               xform_type = 'Indicator value is translated into human readable value. <i>Example: 246 i2=4 => "Cover title"</i>'
+            when 'array_from_subelements'
+              xform_type = 'Contents of each subfield becomes separate element in array. <i>Example: $a cat $b dog $c fish => ["cat", "dog", "fish"]</i>'
+            when 'concat_subelements'
+              xform_type = 'Contents of subfields joined together into one string, separated by space. <i>Example: $a cat $b dog $c fish => "cat dog fish"</i>'
+            when 'map subelement to value'
+              xform_type = 'Subfield value is a code, which is translated into a human readable value and becomes element in array. <i>Example: $a eng $b ger=> ["English", "German"]</i>'
+            when 'map indicator value'
+              xform_type = 'Indicator value is translated into human readable value. <i>Example: 246 i2=4 => "Cover title"</i>'
             end
             
             unless m[:processing_type] == 'constant'
