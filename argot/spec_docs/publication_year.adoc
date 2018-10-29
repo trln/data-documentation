@@ -31,23 +31,31 @@ MARC has complex rules for what date types are valid for specific types of mater
 === b - No dates given; B.C. date involved.
 *Ignore for now.* Most of UNC's records with this date type look to be in error. It seems unlikely that we have many items with a B.C. date!
 
+
+=== c - Continuing resource currently published
+Currently published is defined as an item for which an issue or update has been received within the last three years.
+
+We want to reflect there is relatively current content.
+
+Use Date2 (should be 9999)
+
+=== d - Continuing resource ceased publication
+Use Date2 -- reflect date of newest content available
+
+If Date2 is range, ensure start of range is > Date1
+
+194519uu = 1972 (1900 (normal range start is < Date1, so use Date1 as start of range, 1999 as end)
+
+1945196u = 1964 (range start is 1960, which is NOT < Date1)
+
+19459999 = current year (at time of data transformation) -- if the 'd' type is the miscoding, and the resource is still ongoing, this puts the title relatively close to present in sort. If it's actually ceased, but the 9999 was not updated, this keeps the title from sorting with the most recent/currently received titles. 
+
 === e - Detailed date
 Use Date1 value only (year)
 
 20120232 = 2013
 
 197611uu = 1976
-
-=== s - Single known date/probable date
-Use Date1
-
-1987\\\\ = 1987
-
-198u\\\\ = 1984
-
-19uu\\\\ = 1949
-
-1uuu\\\\ = not set
 
 === i - Inclusive dates of collection
 Use Date1
@@ -93,24 +101,6 @@ uuuu1981 = 1981
 
 1943197u = 1974
 
-=== p - Date of distribution/release/issue and date of production/recording session when different
-Use Date2 if present and usable -- we care about the original date of a film, not when it was released on a given format
-
-Fall back to Date1 if Date2 not present or usable
-
-=== r - Reprint/reissue date and original date
-Use Date2 if present and usable (date of original, which reflects age of intellectual content)
-
-Fall back to Date1 if Date2 not present or usable
-
-19661741 = 1741
-
-1866uuuu = 1866
-
-=== t - Publication date and copyright date
-
-Use Date1 (publication date)
-
 === n - Dates unknown
 We've found many records coded DateType n that *do* have usable dates in Date1 and/or Date2
 
@@ -126,6 +116,11 @@ Else use whichever date value is present usable.
 
 18uu18uu = 1849
 
+=== p - Date of distribution/release/issue and date of production/recording session when different
+Use Date2 if present and usable -- we care about the original date of a film, not when it was released on a given format
+
+Fall back to Date1 if Date2 not present or usable
+
 === q - Questionable date
 If both Date1 and Date2 present and usable, find midpoint of range.
 
@@ -135,21 +130,29 @@ Else use whichever date value is present usable.
 
 10001199 = 1099
 
-=== c - Continuing resource currently published
-Currently published is defined as an item for which an issue or update has been received within the last three years.
+=== r - Reprint/reissue date and original date
+Use Date2 if present and usable (date of original, which reflects age of intellectual content)
 
-We want to reflect there is relatively current content.
+Fall back to Date1 if Date2 not present or usable
 
-Use Date2 (should be 9999)
+19661741 = 1741
 
-=== d - Continuing resource ceased publication
-Use Date2 -- reflect date of newest content available
+1866uuuu = 1866
 
-If Date2 is range, ensure start of range is > Date1
+=== s - Single known date/probable date
+Use Date1
 
-194519uu = 1972 (1900 (normal range start is < Date1, so use Date1 as start of range, 1999 as end)
+1987\\\\ = 1987
 
-1945196u = 1964 (range start is 1960, which is NOT < Date1)
+198u\\\\ = 1984
+
+19uu\\\\ = 1949
+
+1uuu\\\\ = not set
+
+=== t - Publication date and copyright date
+
+Use Date1 (publication date)
 
 === u - Continuing resource status unknown
 
@@ -175,3 +178,20 @@ Extract first occurrence of 4 consecutive digits, 3 digits followed by -, or 2 d
 If hyphens are present in date, treat it as a range and take midpoint.
 
 Otherwise just set the date from the capture.
+
+1999 = 1999
+
+c1999 = 1999
+
+-2018 = 2018
+
+[197-?] = 1974 (Treat 197- as range 1970-1979 and take midpoint)
+
+197-- = 1974
+
+[2017];©2018 = 2017
+
+[between 1950 and 1959?] = 1950 (takes first date found)
+
+-December 16, 2014. = 2014
+
