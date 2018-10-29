@@ -1,0 +1,81 @@
+:toc:
+:toc-placement!:
+
+= `url` field
+Argot field is output as an array of non-flattened, serialized JSON strings.
+
+NOT indexed.
+
+Display behavior is dependent on `type` and `restricted` elements, as well as context in the UI (user's assumed home institution, whether they are in 'expanded to TRLN' mode or not).
+
+== Processing notes
+
+Mapping of source data to Argot will be highly institutionu-specific.
+
+
+== Field structure
+
+=== `href`
+
+ * required
+ * the URL (or URL template) that is used by the UI to generate a link (or pull in content)
+
+=== `type`
+
+ * type of URL
+ * required
+
+*URL types*
+
+
+fulltext:: URL (or URL template) pointing to full or substantial version of the item described. Not literally required to link to text--may link to a full viewable streaming video. Priority link display. May be labeled as "available online"
+
+findingaid:: URL pointing to a finding aid or collection guide for the resource described in the record. Link displayed prominently, but not as prominently as a `fulltext` link. Label is configurable in UI.
+
+thumbnail:: URL pointing at an image that should be served up as the thumbnail image for the record (instead of a SyndeticsSolutions book cover image). Link itself is not displayed.
+
+related:: URL pointing to a related resource considered worth a prominent display with information about other related resources in the record. Examples of this type might be: link to downloadable code or data available for the book described in the record; link to errata or extra practice exercises for a textbook described in the record; link to the libretto for an opera described in the record.
+
+other:: URL is of some other type. Link will be shown non-prominently, with 'Other details.' Examples include: link to textual table of contents of the item described in the record, link to a record in another catalog or database for the item described in the record.
+
+=== `text`
+
+* not required
+* if provided, may be displayed as the clickable link text:
+
+[source,html]
+----
+<a href="href element value">text element value</a>
+----
+
+[NOTE]
+====
+Institutions may or may not choose to use the `text` element in their own records.
+
+An institution making use of the `text` element in a record should not assume that text will be seen on all views of that record: in their expanded-to-TRLN view, institution A may choose to display all `restricted` URLs from institutions B, C, and D with a standard text (like: "Institution B only") instead of the `text` value institution B may have provided in the record. 
+====
+
+=== `restricted`
+
+* boolean value
+* applicable only to urls with `type = fulltext`
+* *defaults to true if not set*
+* `restricted = true` (or blank) indicates that accessing material at the link requires institutional affiliation (IP-range restrictions and/or user authentication)
+* `restricted = false` indicates the material at the link is freely available to anyone
+* may be used to determine what links from institutions A, B, C are displayed to users (and/or how they are displayed) in the institution D instance while viewing expanded-to-TRLN results
+* when false, may also be used to label freely available links as such
+
+[NOTE]
+====
+In our dev meeting to figure out URLs in the system, we agreed to implement an `openaccess` element in urls of `type = fulltext`.
+
+I'm switching this to a `restricted` element instead for the following reasons:
+
+* All our other Boolean elements default to true if not explicitly set. I want this element to behave consistently, but using `openaccess = true` as a default is problematic because:
+** I would guess the majority of full text materials in our catalogs is restricted content. We'd have to say `openaccess = false` more often than we'd get to rely on the default
+** All the `url` fields already in the Solr index lack this element. They should NOT all be assumed to be open access because that's default behavior. Using a `restricted` element instead makes more graceful the transition to all data being updated in the system. 
+** The effect of labeling an actually-restricted link as open access seems more frustrating to users than the effect of not labeling a freely available link as such.
+* A `restricted` element is clearer and more meaningful than an `openaccess` element, given that what we meant by `openaccess` was simply "without institutional affiliation restrictions," and not any formal definition of "open access."
+* Most of the special link behavior we are planning to implement is for restricted urls. It seems more logically straightforward and readable to test for restrictedness rather than to test for negation of openaccess.
+====
+
