@@ -102,3 +102,18 @@ Link to a freely available government document. No `text` element.
     "{\"href\":\"http://purl.fdlp.gov/GPO/gpo69873\",\"type\":\"fulltext\",\"restricted\":\"false\"}"
   ],
 ----
+
+Link to a restricted ebook, using URL template to support shared records:
+
+[source,javascript]
+----
+ "url": [
+ "{\"href\":\"{proxyPrefix}http://find.galegroup.com/ecco/infomark.do?contentSet=ECCOArticles&docType=ECCOArticles&bookId=1119300300&type=getFullCitation&tabID=T001&prodId=ECCO&docLevel=TEXT_GRAPHICS&version=1.0&source=library&userGroupName={ECCOInstitutionCode}\",\"type\":\"fulltext\"}"
+----
+
+[NOTE]
+====
+The above example is not part of a current TRLN Shared Records set. It is from a set we _wanted_ to make a shared records set in Endeca, but could not because of the institution code required in the URL.
+====
+
+TODO: determine where configs for the URL template parameters will live, what format they'll be in, and link to that from here. 
