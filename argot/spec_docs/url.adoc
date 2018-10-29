@@ -117,3 +117,8 @@ The above example is not part of a current TRLN Shared Records set. It is from a
 ====
 
 TODO: determine where configs for the URL template parameters will live, what format they'll be in, and link to that from here. 
+
+For instance, in the link above, for UNC:
+
+* proxyPrefix = http://libproxy.lib.unc.edu/login?url=
+* ECCOInstitutionCode = unc_main
