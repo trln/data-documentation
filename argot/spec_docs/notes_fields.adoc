@@ -299,7 +299,7 @@ Field is NOT indexed.
 
 == Examples: note_cited_in
 
-* Field is NOT indexed
+* Field is indexed
 
 === 510
 
@@ -320,8 +320,11 @@ Field is NOT indexed.
 ----
 {
   "note_cited_in":[
-    'Chemical abstracts ISSN 0009-2258 1968-1986.'
-    ]
+  {
+    "value":"Chemical abstracts ISSN 0009-2258 1968-1986.",
+    "indexed_value":"Chemical abstracts 1968-1986."
+   }
+ ]
 }
 ----
 
@@ -346,12 +349,27 @@ Field is NOT indexed.
 ----
 {
   "note_cited_in":[
-    'Arcadelt, Terzo libro: RISM A/I, A1374.',
-    'Arcadelt, Terzo libro: RISM B/I, 1539-23.',
-    'Arcadelt, Secondo libro: RISM A/I, A1371.',
-    'Arcadelt, Quinto libro: RISM A/I, A1382.',
-    'Arcadelt, Quinto libro: RISM B/I, B1544-16.'
-   ]
+  {
+    "label":"Arcadelt, Terzo libro",
+    "value":"RISM A/I, A1374."
+  },
+  {
+    "label":"Arcadelt, Terzo libro",
+    "value":"RISM B/I, 1539-23."
+  },
+  {
+    "label":"Arcadelt, Secondo libro",
+    "value":"RISM A/I, A1371."
+  },
+  {
+    "label":"Arcadelt, Quinto libro",
+    "value":"RISM A/I, A1382."
+  },
+  {
+    "label":"Arcadelt, Quinto libro",
+    "value":"RISM B/I, B1544-16."
+  }
+ ]
 }
 ----
 
