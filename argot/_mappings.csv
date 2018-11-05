@@ -185,7 +185,7 @@ names,names[type],MARC,n,GEN,700,{na},!($t OR $k),complex,x,https://github.com/t
 names,names[type],MARC,n,GEN,710,{na},!($t OR $k),complex,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[type]GEN710{na}!($t OR $k),0,0,n,n,y
 names,names[type],MARC,n,GEN,711,{na},!($t OR $k),complex,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[type]GEN711{na}!($t OR $k),0,0,n,n,y
 names,names[type],MARC,n,GEN,720,{na},none,complex,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[type]GEN720{na}none,0,0,n,n,y
-note_access_restriction,note_access_restriction,MARC,n,GEN,506,abcdefu3,none,concat_subelements,"If $3 present, process as label",x,note_access_restrictionGEN506abcdefu3none,0,0,n,n,n
+note_access_restrictions,note_access_restrictions,MARC,n,GEN,506,abcdefu3,none,concat_subelements,"If $3 present, process as label",x,note_access_restrictionsGEN506abcdefu3none,0,0,n,n,n
 note_admin_history,note_admin_history,MARC,n,GEN,545,abu,i1=1,concat_subelements,x,x,note_admin_historyGEN545abui1=1,0,0,n,,
 note_binding,note_binding[label],MARC,n,GEN,563,3,none,subelement_to_value,x,x,note_binding[label]GEN5633none,0,0,n,,
 note_binding,note_binding[value],MARC,n,GEN,563,au,none,concat_subelements,x,x,note_binding[value]GEN563aunone,0,0,n,,
