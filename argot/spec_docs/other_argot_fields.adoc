@@ -207,7 +207,6 @@ Follows https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_
  ]
 ----
 
-
 === UNCb8453596
 
 [source]
@@ -223,6 +222,19 @@ Follows https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_
  ]
 ----
 
+=== no 245$c
+[source]
+----
+=100  1\$aQ, Dr.
+=245  10$aThe end
+----
+
+[source,ruby]
+----
+'statement_of_responsibility' => [
+   { 'value' => 'Q, Dr.' }
+ ]
+----
 
 == `title_main`
 

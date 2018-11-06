@@ -585,6 +585,9 @@ series_work,series_work[type],MARC,n,GEN,830,{na},none,constant, = series,https:
 series_work,series_work[type],MARC,n,GEN,762,{na},$t OR $s,constant, = subseries,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/series_work.adoc,series_work[type]GEN762{na}$t OR $s,0,0,n,n,y
 sersol_number,sersol_number,MARC,n,UNC,001,{whole field},value =~ /^ss([ej]|[ie]b)\d+$/,subelement_to_value,x,x,sersol_numberUNC1{whole field}value =~ /^ss([ej]|[ie]b)\d+$/,0,0,n,,
 statement_of_responsibility,statement_of_responsibility,MARC,n,GEN,245,c,none,concat_subelements,x,Is concat_subelements in case some bad data exists with repeated $c,statement_of_responsibilityGEN245cnone,0,0,n,y,
+statement_of_responsibility,statement_of_responsibility,MARC,n,GEN,100,abcdgjqu,no 245$c present,concat_subelements,x,x,statement_of_responsibilityGEN100abcdgjquno 245$c present,0,0,n,n,y
+statement_of_responsibility,statement_of_responsibility,MARC,n,GEN,110,abcdgnu,no 245$c present,concat_subelements,x,x,statement_of_responsibilityGEN110abcdgnuno 245$c present,0,0,n,n,y
+statement_of_responsibility,statement_of_responsibility,MARC,n,GEN,111,acdegnqu,no 245$c present,concat_subelements,x,x,statement_of_responsibilityGEN111acdegnquno 245$c present,0,0,n,n,y
 subject_chronological,subject_chronological,MARC,y,GEN,648,a,none,subelement_to_value,.,"Need PO approval to include FAST terms -- seems they will be used much more than LCSH ever will in this field. On 2017-08-16, UNC has 33302 instances of FAST terms used here and 0 LCSH terms used in this field.;;;Verify with other institutions that this mapping works with this field for them.",subject_chronologicalGEN648anone,0,1,n,y,.
 subject_chronological,subject_chronological,MARC,n,GEN,600,y,none,subelement_to_value,.,.,subject_chronologicalGEN600ynone,0,1,n,y,.
 subject_chronological,subject_chronological,MARC,n,GEN,610,y,none,subelement_to_value,.,.,subject_chronologicalGEN610ynone,0,1,n,y,.
