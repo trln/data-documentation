@@ -69,6 +69,15 @@ A few selected mapping examples appear below.
 
 For full details on the MARC-to-Argot mappings, consult the mappings tab of https://github.com/trln/data-documentation/blob/master/argot/argot.xlsx[the Argot specification spreadsheet] or the https://github.com/trln/data-documentation/blob/master/argot/_mappings.csv[mappings .csv derived from it].
 
+=== Explanation of weird 653 handling
+In the 653 field, 2nd indicator = 4 means "This is a chronological term"
+
+Thus it'd follow that we map 653 values with 2nd indicator = 4 to the `subject_chronological` facet.
+
+However, we are mapping it to `subject_topical` facet instead. Why?
+
+Because, in almost all other MARC fields from which we take subject data, 2nd indicator = 4 means "We don't know what controlled vocabulary this term came from." And usually 653 terms come from an unidentified vocabulary. And people (and vendors) are sloppy. So we have *way too many* topical 653s coded as chronological, which junks up the chronological subject facet if we try to use the indicator as it is defined.
+
 === Special handling for `subject_genre`
 
 ==== 008 and 006 values

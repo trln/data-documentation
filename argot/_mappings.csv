@@ -190,9 +190,9 @@ note_admin_history,note_admin_history,MARC,n,GEN,545,abu,i1=1,concat_subelements
 note_binding,note_binding[label],MARC,n,GEN,563,3,none,subelement_to_value,x,x,note_binding[label]GEN5633none,0,0,n,,
 note_binding,note_binding[value],MARC,n,GEN,563,au,none,concat_subelements,x,x,note_binding[value]GEN563aunone,0,0,n,,
 note_biographical,note_biographical,MARC,n,GEN,545,abu,i1=~/[ 0]/,concat_subelements,x,x,note_biographicalGEN545abui1=~/[ 0]/,0,0,n,,
+note_cited_in,note_cited_in[indexed_value],MARC,n,GEN,510,abc,$u OR $x present,concat_subelements,x,x,note_cited_in[indexed_value]GEN510abc$u OR $x present,0,0,n,n,y
 note_cited_in,note_cited_in[label],MARC,n,GEN,510,3,none,concat_subelements,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_cited_in[label]GEN5103none,0,0,n,n,y
 note_cited_in,note_cited_in[value],MARC,n,GEN,510,abcux,none,concat_subelements,"prepend ""ISSN "" to $x value",x,note_cited_in[value]GEN510abcuxnone,0,0,n,n,y
-note_cited_in,note_cited_in[indexed_value],MARC,n,GEN,510,abc,$u OR $x present,concat_subelements,x,x,note_cited_in[indexed_value]GEN510abc$u OR $x present,0,0,n,n,y
 note_copy_version,note_copy_version,MARC,n,GEN,562,abcde3,none,concat_subelements,$3 label,x,note_copy_versionGEN562abcde3none,0,0,n,,
 note_data_quality,note_data_quality,MARC,n,GEN,514,abcdefghijkmuz,none,concat_subelements,Complex instructions. Refer to linked documentation for this field,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_data_qualityGEN514abcdefghijkmuznone,0,0,n,n,n
 note_described_by,note_described_by,MARC,n,GEN,555,abcdu3,i1=0,concat_subelements,"Prepend to field (after any $3 label): ""Finding aids: """,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_described_byGEN555abcdu3i1=0,0,0,n,n,y
@@ -234,6 +234,8 @@ note_general,note_general[value],MARC,n,GEN,518,adop,none,concat_subelements,x,x
 note_general,note_general[value],MARC,n,GEN,556,a,none,concat_subelements,,,note_general[value]GEN556anone,0,0,n,,
 note_issuance,note_issuance,MARC,n,GEN,550,a,none,concat_subelements,x,x,note_issuanceGEN550anone,0,0,n,,
 note_local,note_local[indexed],MARC,n,UNC,541,{na},none,DO NOT SET,x,default if not set = true; all UNC's local notes are at least partially indexed,note_local[indexed]UNC541{na}none,0,0,n,,
+note_local,note_local[indexed],MARC,n,UNC,790,{na},none,DO NOT SET,x,default if not set = true; all UNC's local notes are at least partially indexed,note_local[indexed]UNC790{na}none,0,0,n,,
+note_local,note_local[indexed],MARC,n,UNC,791,{na},none,DO NOT SET,x,default if not set = true; all UNC's local notes are at least partially indexed,note_local[indexed]UNC791{na}none,0,0,n,,
 note_local,note_local[indexed_value],MARC,n,UNC,541,a,none,subelement_to_value,.,.,note_local[indexed_value]UNC541anone,0,0,n,n,n
 note_local,note_local[label],MARC,n,GEN,561,{na},ind1 != 0 and $3 NOT present,constant, = Ownership history,,note_local[label]GEN561{na}ind1 != 0 and $3 NOT present,0,0,n,,
 note_local,note_local[label],MARC,n,GEN,561,3,ind1 != 0 and $3 present,concat_subelements, = Ownership history: #{$3 value(s)},.,note_local[label]GEN5613ind1 != 0 and $3 present,0,0,n,,
@@ -245,8 +247,6 @@ note_local,note_local[value],MARC,n,GEN,590,a,none,concat_subelements,.,.,note_l
 note_local,note_local[value],MARC,n,UNC,541,abcdefhno3,none,concat_subelements,DO NOT use $3 to create label,.,note_local[value]UNC541abcdefhno3none,0,0,n,n,n
 note_local,note_local[value],MARC,n,UNC,790,abcdgqu,ind 1 = 0,concat_subelements,"Prepend: ""Donated by """,.,note_local[value]UNC790abcdgquind 1 = 0,0,0,n,y,y
 note_local,note_local[value],MARC,n,UNC,791,abcdfg,ind 1 = 2,concat_subelements,"Prepend: ""Purchased using funds from the """,.,note_local[value]UNC791abcdfgind 1 = 2,0,0,n,y,y
-note_local,note_local[indexed],MARC,n,UNC,790,{na},none,DO NOT SET,x,default if not set = true; all UNC's local notes are at least partially indexed,note_local[indexed]UNC790{na}none,0,0,n,,
-note_local,note_local[indexed],MARC,n,UNC,791,{na},none,DO NOT SET,x,default if not set = true; all UNC's local notes are at least partially indexed,note_local[indexed]UNC791{na}none,0,0,n,,
 note_methodology,note_methodology,MARC,n,GEN,567,a,none,concat_subelements,x,x,note_methodologyGEN567anone,0,0,n,,
 note_numbering,note_numbering,MARC,n,GEN,515,a,none,concat_subelements,x,x,note_numberingGEN515anone,0,0,n,n,n
 note_organization,note_organization,MARC,n,GEN,351,abc3,none,concat_subelements,Create label from $3,x,note_organizationGEN351abc3none,0,0,n,n,n
@@ -586,7 +586,6 @@ series_work,series_work[type],MARC,n,GEN,762,{na},$t OR $s,constant, = subseries
 sersol_number,sersol_number,MARC,n,UNC,001,{whole field},value =~ /^ss([ej]|[ie]b)\d+$/,subelement_to_value,x,x,sersol_numberUNC1{whole field}value =~ /^ss([ej]|[ie]b)\d+$/,0,0,n,,
 statement_of_responsibility,statement_of_responsibility,MARC,n,GEN,245,c,none,concat_subelements,x,Is concat_subelements in case some bad data exists with repeated $c,statement_of_responsibilityGEN245cnone,0,0,n,y,
 subject_chronological,subject_chronological,MARC,y,GEN,648,a,none,subelement_to_value,.,"Need PO approval to include FAST terms -- seems they will be used much more than LCSH ever will in this field. On 2017-08-16, UNC has 33302 instances of FAST terms used here and 0 LCSH terms used in this field.;;;Verify with other institutions that this mapping works with this field for them.",subject_chronologicalGEN648anone,0,1,n,y,.
-subject_chronological,subject_chronological,MARC,n,GEN,653,a,i2 = 4,subelement_to_value,.,.,subject_chronologicalGEN653ai2 = 4,0,1,n,y,.
 subject_chronological,subject_chronological,MARC,n,GEN,600,y,none,subelement_to_value,.,.,subject_chronologicalGEN600ynone,0,1,n,y,.
 subject_chronological,subject_chronological,MARC,n,GEN,610,y,none,subelement_to_value,.,.,subject_chronologicalGEN610ynone,0,1,n,y,.
 subject_chronological,subject_chronological,MARC,n,GEN,611,y,none,subelement_to_value,.,.,subject_chronologicalGEN611ynone,0,1,n,y,.
@@ -641,6 +640,7 @@ subject_headings,subject_headings[value],MARC,y,GEN,647,acdgvxyz,none,concat_sub
 subject_headings,subject_headings[value],MARC,y,GEN,630,adfghklmnoprstvxyz,none,concat_subelements,"Separate subelements with ""--"", not "" ""; chomp "".""; deduplicate field when all values have been assigned.",.,subject_headings[value]GEN630adfghklmnoprstvxyznone,0,0,n,y,y
 subject_headings,subject_headings[value],MARC,y,GEN,651,agvxyz,none,concat_subelements,"Separate subelements with ""--"", not "" ""; chomp "".""; deduplicate field when all values have been assigned.",.,subject_headings[value]GEN651agvxyznone,0,0,n,y,y
 subject_headings,subject_headings[value],MARC,y,GEN,648,avxyz,none,concat_subelements,"Separate subelements with ""--"", not "" ""; chomp "".""; deduplicate field when all values have been assigned.",.,subject_headings[value]GEN648avxyznone,0,0,n,y,y
+subject_topical,subject_topical,MARC,n,GEN,653,a,i2 = 4,subelement_to_value,.,"This *should* map to subject_chronological, BUT too many sloppy catalog records mis-code this 2nd indicator value",subject_topicalGEN653ai2 = 4,0,0,n,y,.
 subject_topical,subject_topical,MARC,n,GEN,653,a,i2 =~ /[ 0123]/,subelement_to_value,.,.,subject_topicalGEN653ai2 =~ /[ 0123]/,0,0,n,y,.
 subject_topical,subject_topical,MARC,y,GEN,656,a,none,subelement_to_value,.,"UNC only has 4 LCSH occurrences. Check w/other institutions re: current needs here. Can/should be mapped eventually, depending on how use of field evolves",subject_topicalGEN656anone,0,0,n,y,.
 subject_topical,subject_topical,MARC,y,GEN,657,a,none,subelement_to_value,.,"UNC doesn't have any occurrences of this field (regardless of term source). Check w/other institutions re: needs here. May need to handle at some point in the future, depending on how field use evolves in practice. ",subject_topicalGEN657anone,0,0,n,y,.
@@ -706,10 +706,10 @@ upc,upc[qual],MARC,n,GEN,024,az,i1=1 and $a or $z data includes parenthetical qu
 upc,upc[type],MARC,n,GEN,024,{na},[value] from $z,constant, = UPC (canceled or invalid),Follow instructions for 024 in https://github.com/trln/data-documentation/blob/master/argot/spec_docs/misc_id.adoc,upc[type]GEN24{na}[value] from $z,0,0,n,y,y
 upc,upc[type],MARC,n,GEN,024,{na},[value] from $a,constant, = UPC,Follow instructions for 024 in https://github.com/trln/data-documentation/blob/master/argot/spec_docs/misc_id.adoc,upc[type]GEN24{na}[value] from $a,0,0,n,y,y
 upc,upc[value],MARC,n,GEN,024,adz,i1=1,subelement_to_value,remove parenthetical qualifier,Follow instructions for 024 in https://github.com/trln/data-documentation/blob/master/argot/spec_docs/misc_id.adoc,upc[value]GEN24adzi1=1,0,0,n,y,y
+url,url[href],MARC,n,UNC,856,u,none,subelement_to_value,only first $u in field will be processed,x,url[href]UNC856unone,0,0,n,,
 url,url[restricted],MARC,n,UNC,856,{na},$u does not meet criteria to be coded as restricted (see other mappings),constant, = false,x,url[restricted]UNC856{na}$u does not meet criteria to be coded as restricted (see other mappings),0,0,n,,
 url,url[restricted],MARC,n,UNC,856,{na},$u.include?('libproxy.lib.unc'),DO NOT SET,x,defaults to true,url[restricted]UNC856{na}$u.include?('libproxy.lib.unc'),0,0,n,,
 url,url[restricted],MARC,n,UNC,856,{na},$u.include?('unc.kanopystreaming.com'),DO NOT SET,x,defaults to true,url[restricted]UNC856{na}$u.include?('unc.kanopystreaming.com'),0,0,n,,
-url,url[href],MARC,n,UNC,856,u,none,subelement_to_value,only first $u in field will be processed,x,url[href]UNC856unone,0,0,n,,
 url,url[text],MARC,n,UNC,856,3y,none,concat_subelements,"concatenate 3, then y, separated with "" -- """,x,url[text]UNC8563ynone,0,0,n,,
 url,url[type],MARC,n,UNC,856,{na},"i2=2 AND $3 has ""Finding aid""",constant, = findingaid,x,"url[type]UNC856{na}i2=2 AND $3 has ""Finding aid""",0,0,n,,
 url,url[type],MARC,n,GEN,856,{na},i2=~/[01],constant, = fulltext,x,url[type]GEN856{na}i2=~/[01],0,0,n,,
