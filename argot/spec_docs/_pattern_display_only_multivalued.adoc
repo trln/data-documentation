@@ -1,0 +1,37 @@
+:toc:
+:toc-placement!:
+
+= display_only_multivalued pattern
+
+The pattern used to create fields where:
+
+* field may have more than one value
+* field is NOT indexed
+
+This pattern is used in the following Argot fields:
+
+* https://github.com/trln/data-documentation/blob/master/argot/spec_docs/names.adoc[names]
+
+toc::[]
+
+== The pattern: Argot elements
+
+[source,javascript]
+----
+{
+  "field_name":[
+   "Value 1",
+   "Label: Value 2"
+  ]
+}
+----
+
+Each element in the field is a string.
+
+=== Display/behavior
+* Value 1
+* Label: Value 2
+
+=== Indexing
+
+None. 

@@ -1,0 +1,67 @@
+:toc:
+:toc-placement!:
+
+= Notes pattern
+
+The pattern used to create some types of notes and other fields where:
+
+* field may be indexed or not indexed
+* there may be a field label (which should not be indexed)
+* the displayed value of the field (excluding any label present) may be different from the indexed value of the field
+* field value may contain non-Roman scripts requiring special language parsing
+
+This pattern is used in the following Argot fields:
+
+* https://github.com/trln/data-documentation/blob/master/argot/spec_docs/names.adoc[names]
+
+toc::[]
+
+== The pattern: Argot elements
+
+[source,javascript]
+----
+{
+  "note_field_name":[
+    {
+      "label":"Label for the note",
+      "value":"The displayed content of the note",
+      "indexed_value":"The part of above value that should be indexed, if it is different from value",
+      "indexed":"Boolean: true or false",
+      "lang":"Script/language code of value"
+    }
+  ]
+}
+----
+
+* `label`: Optional. May be set from $3, $i, and/or MARC field tag + indicator values.
+* `value`: *Required.* The note that will be displayed. If there is no `indexed_value` and `indexed` is not false, this is also the indexed note content.
+* `indexed_value`: Optional. This should only be populated if:
+** `indexed` == true; AND
+** `indexed_value` needs to be different than `value`
+* `indexed`: Optional. If not explicitly set, assumed to equal true. In other words, default assumption is that a note field will be indexed.
+* `lang`: Script/language code for non-Roman values, to trigger special language parsing in Solr
+
+== Abstract example of pattern
+=== Argot
+
+[source,ruby]
+----
+[{'label' => 'aaa',
+  'value' => 'Part to index and display. Part to display only.',
+  'indexed_value' => 'Part to index and display.'},
+  {'value' => 'Non-Roman script content',
+   'lang' => 'cjk' },
+  {'value' => 'Local note sometimes not indexed.',
+   'indexed' => 'false'}
+]
+----
+
+=== Display/behavior
+* _aaa:_ Part to index and display. Part to display only.
+* Non-Roman script content
+* Local note sometimes not indexed
+
+=== Indexing
+
+* field_indexed: Part to index and display.
+* field_indexed_cjk: Non-Roman script content

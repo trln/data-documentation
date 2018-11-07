@@ -136,7 +136,8 @@ One example is the 518 where you have the option of putting a natural language n
       "label":"Label for the note",
       "value":"The displayed content of the note",
       "indexed_value":"The part of above value that should be indexed, if it is different from value",
-      "indexed":"Boolean: true or false"
+      "indexed":"Boolean: true or false",
+      "lang":"Script/language code of value"
     }
   ]
 }
@@ -148,6 +149,7 @@ One example is the 518 where you have the option of putting a natural language n
 ** `indexed` == true; AND
 ** `indexed_value` needs to be different than `value`
 * `indexed`: Optional. If not explicitly set, assumed to equal true. In other words, default assumption is that a note field will be indexed.
+* `lang`: Script/language code for non-Roman values, to trigger special language parsing in Solr
 
 [NOTE]
 ====
