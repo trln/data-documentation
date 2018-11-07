@@ -45,6 +45,10 @@ Series statement as transcribed from work.
 
 * See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_subfield_3.adoc[spec on handling $3]
 
+=== `lang`
+Language/script code of value
+
+* string
 
 == Abstract example of pattern
 === Argot
@@ -75,6 +79,32 @@ Series statement as transcribed from work.
  }
 ----
 
+== Abstract example of pattern (non-Roman)
+=== Argot
+
+[source,ruby]
+----
+[{'value'=>'CJK title, 1234-5678 (qual); v. 123',
+  'issn'=>['1234-5678'],
+  'lang'=>'cjk'
+  ]
+----
+
+=== Display/behavior
+
+*More details*
+
+* CJK title, 1234-5678 (qual); v. 123
+
+=== Indexing
+
+[source,javascript]
+----
+{"series_statement_a": ["CJK title, 1234-5678 (qual); v. 123"],
+ "series_statement_cjk_v": ["This volume: Series title, 1234-5678 (qual); (LC call number); v. 123"],
+  "issn_series_statement_indexed": ["1234-5678"]
+ }
+----
 
 == Examples
 
