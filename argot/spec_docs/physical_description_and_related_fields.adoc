@@ -12,9 +12,10 @@ toc::[]
 
 * Array
 
-* Follows the https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_index_and_display_value.adoc[`labeled_indexed_value`] pattern, where:
+* Follows the https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_labeled_indexed_value.adoc[`labeled_indexed_value`] pattern, where:
 ** The value should be indexed
 ** label + value should be displayed
+** non-Roman scripts are tagged for special language parsing
 
 * `label` = $3 if present
 * `value` = $a, b, c, e, f, g (concatenate subfield values)
@@ -56,9 +57,10 @@ toc::[]
 
 * Array
 
-* Follows the https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_index_and_display_value.adoc[`labeled_indexed_value`] pattern, where:
+* Follows the https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_labeled_indexed_value.adoc[`labeled_indexed_value`] pattern, where:
 ** The value should be indexed
 ** label + value should be displayed
+** non-Roman scripts are tagged for special language parsing
 
 * `value` is keyword indexed
 
