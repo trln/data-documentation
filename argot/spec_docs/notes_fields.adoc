@@ -259,6 +259,7 @@ Uses pattern: https://github.com/trln/data-documentation/blob/master/argot/spec_
 == Examples: note_biographical
 
 * Field is indexed
+* Uses pattern: https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_index_and_display_value.adoc[`index_and_display_value`]
 
 === 545 (ind1=~/ 0/)
 ==== UNCb3784489
