@@ -126,40 +126,6 @@ One example is the 518 where you have the option of putting a natural language n
 ** b8966892a: 	518 _ _ $aBroadcast$dFriday, November 18 (10:01-11:00 p.m. Est), on ABC.
 * If no $a... $o 
 
-== Argot note pattern
-
-[source,javascript]
-----
-{
-  "note_field_name":[
-    {
-      "label":"Label for the note",
-      "value":"The displayed content of the note",
-      "indexed_value":"The part of above value that should be indexed, if it is different from value",
-      "indexed":"Boolean: true or false",
-      "lang":"Script/language code of value"
-    }
-  ]
-}
-----
-
-* `label`: Optional. May be set from $3, $i, and/or MARC field tag + indicator values.
-* `value`: *Required.* The note that will be displayed. If there is no `indexed_value` and `indexed` is not false, this is also the indexed note content.
-* `indexed_value`: Optional. This should only be populated if:
-** `indexed` == true; AND
-** `indexed_value` needs to be different than `value`
-* `indexed`: Optional. If not explicitly set, assumed to equal true. In other words, default assumption is that a note field will be indexed.
-* `lang`: Script/language code for non-Roman values, to trigger special language parsing in Solr
-
-[NOTE]
-====
-Only *some* Argot notes fields utilize the notes pattern.
-
-Some notes use:
-
-* https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_index_and_display_value.adoc[`index_and_display_value`] pattern
-
-====
 
 == Organization of examples
 
@@ -175,6 +141,8 @@ Some notes use:
 == Examples: note_access_restrictions
 
 Field is NOT indexed.
+
+Uses pattern: https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_display_only_multivalued.adoc[`display_only_multivalued`]
 
 === 506
 ==== UNCb4320053
@@ -199,7 +167,7 @@ Field is NOT indexed.
 == Examples: note_admin_history
 
 * Field is indexed
-* Uses https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_index_and_display_value.adoc[`index_and_display_value`] pattern
+* Uses pattern: https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_index_and_display_value.adoc[`index_and_display_value`]
 
 === 545 (ind1=1)
 ==== UNCb5251752
@@ -210,7 +178,7 @@ Field is NOT indexed.
 545 1 _ $aSpurlock-Neal Company started out as a drug store in Nashville, Tennessee in 1868, expanding later into a wholesale distributor of products from cough medicine and sarsaparilla to candies and syrups. By 1910, the company had become one of the largest retail druggists in the South.
 -----
 
-===== Argot
+===== Argot	
 [source,javascript]
 ----
 {
@@ -223,6 +191,7 @@ Field is NOT indexed.
 == Examples: note_binding
 
 * Field is indexed
+* Uses pattern: https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_labeled_indexed_value.adoc[`labeled_indexed_value`]
 
 === 563
 
@@ -280,7 +249,7 @@ Field is NOT indexed.
 {
   "note_binding":[
     {
-      "label":"(Health Sciences Library, c. 1):",
+      "label":"(Health Sciences Library, c. 1)",
       "value":"Some pages uncut."
     }
   ]
