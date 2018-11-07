@@ -831,6 +831,9 @@ From http://www.loc.gov/marc/bibliographic/bd514.html
 ----
 
 == Examples: note_general
+* Whether field is indexed or not depends on source data field.
+* Uses pattern: https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_notes.adoc[`notes`]
+
 === 500
 
 [NOTE]
