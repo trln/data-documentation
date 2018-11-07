@@ -189,7 +189,7 @@ note_access_restrictions,note_access_restrictions,MARC,n,GEN,506,abcdefu3,none,c
 note_admin_history,note_admin_history[value],MARC,n,GEN,545,abu,i1=1,concat_subelements,x,x,note_admin_history[value]GEN545abui1=1,0,0,n,,
 note_binding,note_binding[label],MARC,n,GEN,563,3,none,subelement_to_value,x,x,note_binding[label]GEN5633none,0,0,n,,
 note_binding,note_binding[value],MARC,n,GEN,563,au,none,concat_subelements,x,x,note_binding[value]GEN563aunone,0,0,n,,
-note_biographical,note_biographical,MARC,n,GEN,545,abu,i1=~/[ 0]/,concat_subelements,x,x,note_biographicalGEN545abui1=~/[ 0]/,0,0,n,,
+note_biographical,note_biographical[value],MARC,n,GEN,545,abu,i1=~/[ 0]/,concat_subelements,x,x,note_biographical[value]GEN545abui1=~/[ 0]/,0,0,n,,
 note_cited_in,note_cited_in[indexed_value],MARC,n,GEN,510,abc,$u OR $x present,concat_subelements,x,x,note_cited_in[indexed_value]GEN510abc$u OR $x present,0,0,n,n,y
 note_cited_in,note_cited_in[label],MARC,n,GEN,510,3,none,concat_subelements,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_cited_in[label]GEN5103none,0,0,n,n,y
 note_cited_in,note_cited_in[value],MARC,n,GEN,510,abcux,none,concat_subelements,"prepend ""ISSN "" to $x value",x,note_cited_in[value]GEN510abcuxnone,0,0,n,n,y
