@@ -149,6 +149,16 @@ One example is the 518 where you have the option of putting a natural language n
 ** `indexed_value` needs to be different than `value`
 * `indexed`: Optional. If not explicitly set, assumed to equal true. In other words, default assumption is that a note field will be indexed.
 
+[NOTE]
+====
+Only *some* Argot notes fields utilize the notes pattern.
+
+Some notes use:
+
+* https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_index_and_display_value.adoc[`index_and_display_value`] pattern
+
+====
+
 == Organization of examples
 
 * Argot field
@@ -187,6 +197,7 @@ Field is NOT indexed.
 == Examples: note_admin_history
 
 * Field is indexed
+* Uses https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_index_and_display_value.adoc[`index_and_display_value`] pattern
 
 === 545 (ind1=1)
 ==== UNCb5251752
@@ -202,7 +213,7 @@ Field is NOT indexed.
 ----
 {
   "note_admin_history":[
-      "Spurlock-Neal Company started out as a drug store in Nashville, Tennessee in 1868, expanding later into a wholesale distributor of products from cough medicine and sarsaparilla to candies and syrups. By 1910, the company had become one of the largest retail druggists in the South."
+      { "value" => "Spurlock-Neal Company started out as a drug store in Nashville, Tennessee in 1868, expanding later into a wholesale distributor of products from cough medicine and sarsaparilla to candies and syrups. By 1910, the company had become one of the largest retail druggists in the South." }
   ]
 }
 ----
