@@ -232,7 +232,7 @@ note_general,note_general[value],MARC,n,GEN,546,ab,none,concat_subelements,x,x,n
 note_general,note_general[value],MARC,n,GEN,536,abcdefgh,none,concat_subelements,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc,note_general[value]GEN536abcdefghnone,0,0,n,,
 note_general,note_general[value],MARC,n,GEN,518,adop,none,concat_subelements,x,x,note_general[value]GEN518adopnone,0,0,n,,
 note_general,note_general[value],MARC,n,GEN,556,a,none,concat_subelements,,,note_general[value]GEN556anone,0,0,n,,
-note_issuance,note_issuance,MARC,n,GEN,550,a,none,concat_subelements,x,x,note_issuanceGEN550anone,0,0,n,,
+note_issuance,note_issuance[value],MARC,n,GEN,550,a,none,concat_subelements,x,x,note_issuance[value]GEN550anone,0,0,n,,
 note_local,note_local[indexed],MARC,n,UNC,541,{na},none,DO NOT SET,x,default if not set = true; all UNC's local notes are at least partially indexed,note_local[indexed]UNC541{na}none,0,0,n,,
 note_local,note_local[indexed],MARC,n,UNC,790,{na},none,DO NOT SET,x,default if not set = true; all UNC's local notes are at least partially indexed,note_local[indexed]UNC790{na}none,0,0,n,,
 note_local,note_local[indexed],MARC,n,UNC,791,{na},none,DO NOT SET,x,default if not set = true; all UNC's local notes are at least partially indexed,note_local[indexed]UNC791{na}none,0,0,n,,
