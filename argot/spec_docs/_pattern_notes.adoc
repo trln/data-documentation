@@ -12,7 +12,7 @@ The pattern used to create some types of notes and other fields where:
 
 This pattern is used in the following Argot fields:
 
-* .
+* https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc#examples-note_cited_in[`note_cited_in`]
 
 toc::[]
 

@@ -283,6 +283,7 @@ Uses pattern: https://github.com/trln/data-documentation/blob/master/argot/spec_
 == Examples: note_cited_in
 
 * Field is indexed
+* Uses pattern: https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_notes.adoc[`notes`]
 
 === 510
 
@@ -654,6 +655,10 @@ From http://www.loc.gov/marc/bibliographic/bd514.html
 ----
 
 == Examples: note_dissertation
+
+* Indexed
+* Uses pattern: https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_index_and_display_value.adoc[`index_and_display_value`]
+
 === 502
 ==== Complex processing rules
 *See _Shift off subfield list before further processing_ section of https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_subfield_6.adoc[$6 spec sheet]*

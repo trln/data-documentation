@@ -12,6 +12,7 @@ This pattern is used in the following Argot fields:
 
 * https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc#examples-note_admin_history[`note_admin_history`]
 * https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc#examples-note_biographical[`note_biographical`]
+* https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc#examples-note_dissertation[`note_dissertation`]
 * https://github.com/trln/data-documentation/blob/master/argot/spec_docs/other_argot_fields.adoc#code-statement_of_responsibility-code[`statement_of_responsibility`]
 
 toc::[]
