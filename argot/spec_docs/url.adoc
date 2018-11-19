@@ -55,6 +55,17 @@ Institutions may or may not choose to use the `text` element in their own record
 An institution making use of the `text` element in a record *should not* assume that text will be seen on all views of that record: in their expanded-to-TRLN view, institution A may choose to display all `restricted` URLs from institutions B, C, and D with a standard text (like: "Institution B only") instead of the `text` value institution B may have provided in the record. 
 ====
 
+=== `note`
+* not required
+* if provided, may be displayed as a note with the URL, but will *NOT* be part of the clickable link text
+
+[NOTE]
+====
+Added to support NCSU preferences for link display.
+
+If you populate this element, do not assume the note will be showed with your URLs in other institutions' instances when they are expanded to TRLN.
+====
+
 === `restricted`
 
 * boolean value
