@@ -57,14 +57,10 @@ An institution making use of the `text` element in a record *should not* assume 
 
 === `note`
 * not required
-* if provided, may be displayed as a note with the URL, but will *NOT* be part of the clickable link text
+* if provided, will be displayed as a note with the URL, but will *NOT* be part of the clickable link text
+* expectation is that this note will always be displayed with the URL, in every context. (local and expand to TRLN)
 
-[NOTE]
-====
-Added to support NCSU preferences for link display.
-
-If you populate this element, do not assume the note will be showed with your URLs in other institutions' instances when they are expanded to TRLN.
-====
+If possible, materials specified should be mapped to `note` so that records with multiple URLs will have useful labels (v.1 vs v.2; English vs Spanish; PDF vs MOBI vs EPUB; etc)
 
 === `restricted`
 
