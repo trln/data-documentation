@@ -1,0 +1,20 @@
+= README
+
+Data documentation and tools for the TRLN Discovery project.
+
+WARNING: Files whose names begin with _ are generated based on other data files. *Do not edit them directly, or you will lose your edits.*
+
+== argot
+Argot is the core data language for the TRLN Discovery project. This folder contains Argot documentation, including mappings from other formats into Argot.
+
+== endeca
+Endeca is the catalog project TRLN Discovery is replacing. This folder contains documentation of the Endeca data model.
+
+== marc
+Refers to the http://www.loc.gov/marc/bibliographic/[MARC bibliographic standard]. As the standard changes over time, the stuff in this folder is used to compare MARC fields with Argot to identify gaps in mappings.
+
+== marc_to_endeca
+Details on how MARC bibliographic fields and subfields are mapped into Endeca, for initial Argot/Argon data model analysis and decisionmaking
+
+== meta
+Various files used or created in the process, which do not belong elsewhere
