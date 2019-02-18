@@ -1,0 +1,221 @@
+= Argot documentation
+
+Argot is the core data language for the TRLN Discovery project.
+
+WARNING: Please **do not** directly edit files beginning with "_". They are generated from other files and any changes you make will be overwritten. 
+
+== About Argot
+Argot is the core data language for the TRLN Discovery project.
+
+TRLN Discovery's shared index contains records and data from various sources, with different source metadata formats (MARC, Dublin Core, DDI, EAD, etc.). All source data must be transformed into valid Argot for ingest into TRLN Discovery.
+
+Argot is a nested/hierarchical JSON format, designed with the following goals in mind:
+
+* define a standard set of elements supporting the search, browse, and discovery features/behaviors desired in the target system -- an abstraction away from the original source description formats, focused on how each element will behave in TRLN Discovery
+* each Argot element follows a data pattern
+* provide a human-friendly format for reviewing and troubleshooting initial data transformations (i.e. source data-to-Argot transformations)
+* be as succinct and non-repetitive as possible, to reduce complication in the transformation logic and minimize file size (for transfer to and storage in central system)
+
+=== The Argot ecosystem
+==== Source data to Argot
+===== MARC
+Most of the data in our shared index comes from MARC bibliographic catalog records (and attached item, holdings, and order records) stored in the individual institutions' integrated library systems (ILSs).
+
+Our previous shared catalog project required each individual institution to transform their ILS data into the shared data format completely independently. This required a lot of duplication of effort, given that MARC bibliographic is a standard data format still under active development. If a new MARC field or subfield was added to the standard, each institution would have to update their transformation code to handle that element.
+
+For TRLN Discovery, we decided to develop and maintain https://github.com/trln/marc-to-argot[MARC-to-Argot], a shared application to convert MARC (binary files or MARC-XML) into Argot.
+
+MARC-to-Argot handles the basic transformation of standard MARC into Argot for all institutions. Future changes to the MARC standard will only need to be addressed in one place.
+
+The standard/shared MARC-to-Argot transformation logic for any Argot field may also be overridden by an individual institution. Each institution sends its item, holdings, and order data in a different, non-standard way and overrides are used to process this data. Local MARC fields and non-standard data patterns at an individual institution can also be handled by overrides. This architecture reduces duplication of effort while handling institutional idiosyncracies.
+
+===== Other data formats
+Historically, some institutions have represented the following in the shared catalog for a unified discovery experience:
+
+* records for items in digital collections
+* records for items in institutional repositories
+* records for items in collections for which external metadata is provided (ICPSR data sets, Odum Institute Dataverse)
+
+The metadata provision methods and formats for this content varies.
+
+Each institution will be responsible for transforming this metadata into valid Argot for inclusion in the TRLN Discovery shared index as desired.
+
+==== Argot to Solr
+===== Transforming Argot to a Solr document
+As a nested, hierarchical data format, Argot cannot be directly ingested into Solr.
+
+https://github.com/trln/argot-ruby[argot-ruby] performs basic validation of Argot, and transforms Argot into a Solr document:
+
+* the nested, hierarchical Argot elements are exploded out into flat key-value pairs
+* depending on the data pattern associated with the Argot element, new field names are provided
+* field name suffixes are added
+* in many cases, seeming repetition is added, as Solr may need the same data to occur in multiple fields for different uses
+
+The argot-ruby result for each Argot document is viewable as "Enriched Argot (what Solr ingests)" in the https://ingest.discovery.trln.org/[TRLN Discovery Ingest web application].
+
+===== Indexing Solr document with a highly dynamic Solr schema
+The https://github.com/trln/argot-ruby/blob/master/lib/data/solr_schema.xml[TRLN Discovery Solr schema] makes heavy use of _copyField_ and _dynamicField_ typing.
+
+The result is that the field names submitted in the Enriched Argot document are *not* the field names that end up in the Solr index. 
+
+=== Argot example: names
+==== Source data
+Names data occurs in the following fields in MARC: 100, 110, 111, 700, 710, 711, 720, 880. It may appear in various elements in other source metadata schema. 
+
+MARC and some other metadata schema:
+
+* distinguish between personal, corporate body, and meeting names. We don't make these distinctions in TRLN Discovery, so we don't need that level of detail
+* support recording one or more *relator terms* or codes with each name, in order to clarify the relationship between the entity named and the resource described in the record (i.e. this person is an author of the work vs. this person wrote an inscription in the front of this book)
+** ideally, the relator terms/codes used in records adhere to http://id.loc.gov/vocabulary/relators.html[MARC code list for relators] or some other controlled scheme. Such schemes map individual relators to larger categories: _artist_ and _author_ are _creators_. _translator_ and _illustrator_ are _contributors_. Other relators such as _rubricator_ and _former owner_ are uncategorized.
+
+==== TRLN Discovery behaviors/features
+The following TRLN Discovery behaviors/features are driven by data in the Argot _names_ element:
+
+* author and keyword searches
+** leverage relator data to improve relevance ranking: creators/authors should be more highly relevant than illustrators, who should be more highly relevant than former owners or inscribers.
+** lack of relator terms in the underlying data should not negatively impact relevance---many legacy records don't include relator data
+** the full name + relator phrase should be searchable (example: finding all records where a person was the former owner) 
+
+* display of the _Authors, etc._ section of the record
+** clicking on a hyperlinked name here conducts and author search
+** relator terms should be displayed here, but not included as part of the hyperlink queries
+
+* author facet
+** relator terms should not be included as part of the author facet values
+
+* author name search-suggestions-as-you-type
+** relator terms should not be included in search suggestions
+
+Finally, names should be displayed and searchable in romanized and non-Roman forms.
+
+==== Argot definition for _names_
+
+The _names_ element is an array of one or more hashes. Each hash represents one name.
+
+Four subelements for name hashes are defined:
+
+* *name* -- string -- (required) -- The name itself
+* *rel* -- array of strings -- Relator term(s)
+* *type* -- string -- Category derived from relator term(s)
+* *lang* -- string -- (required if name is non-Roman characters) Language code for non-Roman processing
+
+==== _names_ Argot
+The source data for the following Argot was a MARC 100 field with its linked 880 (non-Roman representation).
+
+The _lang_ element is provided for the name from the 880 field.
+
+The _type_ element is "creator" because one of the _rel_ values in each name is "author."
+
+[source,javascript]
+----
+"names": [
+    {
+      "rel": [
+        "author",
+        "photographer"
+      ],
+      "name": "Li, Yang",
+      "type": "creator"
+    },
+    {
+      "rel": [
+        "author",
+        "photographer"
+      ],
+      "lang": "cjk",
+      "name": "李扬",
+      "type": "creator"
+    }
+  ]
+----
+
+==== Enriched Argot result
+argot-ruby has all the logic about the _names_ Argot pattern, and transforms the above Argot to:
+
+[source,javascript]
+----
+"names_creator_t": "Li, Yang, author, photographer",
+"names_creator_cjk_v": "李扬, author, photographer",
+"author_suggest": [
+    "Li, Yang",
+    "李扬"
+  ],
+"author_facet_f": [
+    "Li, Yang",
+    "李扬"
+  ],
+"names_a": [
+    "{\"name\":\"Li, Yang\",\"rel\":\"author, photographer\"}",
+    "{\"name\":\"李扬\",\"rel\":\"author, photographer\"}"
+  ]
+----
+
+==== Final Solr fields
+
+[source,javascript]
+----
+"names_creator_t": "Li, Yang, author, photographer",
+"names_creator_cjk_v": "李扬, author, photographer",
+"names_creator_vern": "李扬, author, photographer",
+"author_suggest": [
+    "Li, Yang",
+    "李扬"
+  ],
+"author_facet_f": [
+    "Li, Yang",
+    "李扬"
+  ],
+"names_a": [
+    "{\"name\":\"Li, Yang\",\"rel\":\"author, photographer\"}",
+    "{\"name\":\"李扬\",\"rel\":\"author, photographer\"}"
+  ],
+----
+
+==== Behavior in TRLN Discovery
+_names_creator_t_ is indexed as author and keyword value, using standard processing
+
+_names_creator_cjk_v_ is indexed as author and keyword value, using CJK-specific processing
+
+_names_creator_vern_ appears to be unused in actual application and may be removed
+
+_author_suggest_ adds these values to suggest-as-you-type
+
+_author_facet_f_ adds these values to the author facet
+
+_names_a_ is used to generate the "Authors, etc." display in the catalog record view
+
+
+
+
+# File list
+- **argot.xlsx** - working master document 
+
+- **csvsplit.ps1** - script that splits *argot.xlsx* into csv files
+
+- **_fields.csv** - Argot fields defined. Columns documented in *_fields.md*. Outstanding issues/questions about fields in *_fields_issues.csv*.
+
+- **_mappings.csv** - Mappings from MARC (and eventually other formats) elements/subelements to Argot fields. Columns documented in *_mappings.md*. Outstanding issues/questions about mappings in *_mappings_issues.csv*.
+
+- **processing_rules_and_procedures.md** - instructions for routine processing that applies to all fields, or to categories of fields
+
+- **README.md** - this file.
+
+## Why the .xlsx and .csv?
+The .xlsx format is easy for Kristina (and probably other data/metadata folks) to use, but has drawbacks. Pros/cons: 
+- PRO: has some checks/validatation stuff built in to flag fields/mappings with issues, etc.
+- PRO: use tables and formulas to flexibly/easily link up the worksheets for analysis/checking work
+- PRO: maintain formatting between work sessions
+- CON: can't be meaningfully version controlled via Git without unzipping into hideous Microsoft XML, which is more opaque than anything here (however, I'll keep the binary file tracked here to make sure I'm never the only person who has it)
+- CON: can't be opened/worked with any tool but Excel without losing data/messing up formulas
+
+The *csvsplit.ps1* script is used to generate one .csv file per worksheet in *argot.xlsx*. The .csv files are intended to provide: 
+- a record of how the data model changed over time (they are plain text, and thus version-controllable)
+- quick/easy reference for anyone to check on a field or a mapping without needing the whole .xslx file or access to Excel
+
+# Directory list
+
+- **helpers** - scripts/etc to pull down data/mappings from other sources for use in data transformations
+
+- **maps** - mappings (json)
+
+- **questions_issues** - explanations/examples of things about which there are questions

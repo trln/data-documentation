@@ -1,4 +1,4 @@
-= README
+= TRLN Discovery Data Documentation
 
 Data documentation and tools for the TRLN Discovery project.
 
