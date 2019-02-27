@@ -164,26 +164,26 @@ misc_id,misc_id[value],MARC,n,GEN,027,a,none,subelement_to_value,x,https://githu
 misc_id,misc_id[value],MARC,n,GEN,027,az,none,subelement_to_value,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/misc_id.adoc,misc_id[value]GEN27aznone,0,0,n,n,n
 misc_id,misc_id[value],MARC,n,GEN,030,az,none,subelement_to_value,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/misc_id.adoc,misc_id[value]GEN30aznone,0,0,n,n,n
 misc_id,misc_id[value],MARC,n,GEN,088,az,none,subelement_to_value,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/misc_id.adoc,misc_id[value]GEN88aznone,0,0,n,n,n
-names,names[name],MARC,n,GEN,720,a,none,concat_subelements,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[name]GEN720anone,0,0,n,n,y
 names,names[name],MARC,n,GEN,100,abcdgjqu,none,concat_subelements,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[name]GEN100abcdgjqunone,0,0,n,n,y
-names,names[name],MARC,n,GEN,700,abcdgjqu,!($t OR $k),concat_subelements,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[name]GEN700abcdgjqu!($t OR $k),0,0,n,n,y
-names,names[name],MARC,n,GEN,110,abcdgnu,none,concat_subelements,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[name]GEN110abcdgnunone,0,0,n,n,y
-names,names[name],MARC,n,GEN,710,abcdgnu,!($t OR $k),concat_subelements,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[name]GEN710abcdgnu!($t OR $k),0,0,n,n,y
-names,names[name],MARC,n,GEN,111,acdegnqu,none,concat_subelements,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[name]GEN111acdegnqunone,0,0,n,n,y
-names,names[name],MARC,n,GEN,711,acdegnqu,!($t OR $k),concat_subelements,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[name]GEN711acdegnqu!($t OR $k),0,0,n,n,y
 names,names[rel],MARC,n,GEN,100,e4,none,see documentation,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[rel]GEN100e4none,0,0,n,n,y
-names,names[rel],MARC,n,GEN,110,e4,none,see documentation,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[rel]GEN110e4none,0,0,n,n,y
-names,names[rel],MARC,n,GEN,700,e4,!($t OR $k),complex,See linked documentation,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[rel]GEN700e4!($t OR $k),0,0,n,n,y
-names,names[rel],MARC,n,GEN,710,e4,!($t OR $k),see documentation,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[rel]GEN710e4!($t OR $k),0,0,n,n,y
-names,names[rel],MARC,n,GEN,720,e4,none,see documentation,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[rel]GEN720e4none,0,0,n,n,y
-names,names[rel],MARC,n,GEN,111,j4,none,see documentation,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[rel]GEN111j4none,0,0,n,n,y
-names,names[rel],MARC,n,GEN,711,j4,!($t OR $k),see documentation,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[rel]GEN711j4!($t OR $k),0,0,n,n,y
 names,names[type],MARC,n,GEN,100,{na},none,complex,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[type]GEN100{na}none,0,0,n,n,y
+names,names[name],MARC,n,GEN,110,abcdgnu,none,concat_subelements,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[name]GEN110abcdgnunone,0,0,n,n,y
+names,names[rel],MARC,n,GEN,110,e4,none,see documentation,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[rel]GEN110e4none,0,0,n,n,y
 names,names[type],MARC,n,GEN,110,{na},none,complex,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[type]GEN110{na}none,0,0,n,n,y
+names,names[name],MARC,n,GEN,111,acdegnqu,none,concat_subelements,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[name]GEN111acdegnqunone,0,0,n,n,y
+names,names[rel],MARC,n,GEN,111,j4,none,see documentation,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[rel]GEN111j4none,0,0,n,n,y
 names,names[type],MARC,n,GEN,111,{na},none,complex,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[type]GEN111{na}none,0,0,n,n,y
+names,names[name],MARC,n,GEN,700,abcdgjqu,!($t OR $k),concat_subelements,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[name]GEN700abcdgjqu!($t OR $k),0,0,n,n,y
+names,names[rel],MARC,n,GEN,700,e4,!($t OR $k),complex,See linked documentation,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[rel]GEN700e4!($t OR $k),0,0,n,n,y
 names,names[type],MARC,n,GEN,700,{na},!($t OR $k),complex,See linked documentation,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[type]GEN700{na}!($t OR $k),0,0,n,n,y
+names,names[name],MARC,n,GEN,710,abcdgnu,!($t OR $k),concat_subelements,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[name]GEN710abcdgnu!($t OR $k),0,0,n,n,y
+names,names[rel],MARC,n,GEN,710,e4,!($t OR $k),see documentation,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[rel]GEN710e4!($t OR $k),0,0,n,n,y
 names,names[type],MARC,n,GEN,710,{na},!($t OR $k),complex,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[type]GEN710{na}!($t OR $k),0,0,n,n,y
+names,names[name],MARC,n,GEN,711,acdegnqu,!($t OR $k),concat_subelements,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[name]GEN711acdegnqu!($t OR $k),0,0,n,n,y
+names,names[rel],MARC,n,GEN,711,j4,!($t OR $k),see documentation,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[rel]GEN711j4!($t OR $k),0,0,n,n,y
 names,names[type],MARC,n,GEN,711,{na},!($t OR $k),complex,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[type]GEN711{na}!($t OR $k),0,0,n,n,y
+names,names[name],MARC,n,GEN,720,a,none,concat_subelements,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[name]GEN720anone,0,0,n,n,y
+names,names[rel],MARC,n,GEN,720,e4,none,see documentation,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[rel]GEN720e4none,0,0,n,n,y
 names,names[type],MARC,n,GEN,720,{na},none,complex,x,https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_names.adoc,names[type]GEN720{na}none,0,0,n,n,y
 note_access_restrictions,note_access_restrictions,MARC,n,GEN,506,abcdefu3,none,concat_subelements,"If $3 present, process as label",x,note_access_restrictionsGEN506abcdefu3none,0,0,n,n,n
 note_admin_history,note_admin_history[value],MARC,n,GEN,545,abu,i1=1,concat_subelements,x,x,note_admin_history[value]GEN545abui1=1,0,0,n,,
@@ -721,4 +721,8 @@ url,url[type],MARC,n,UNC,856,{na},"i2=2 AND $3 does NOT have ""Finding aid"" or 
 url,url[type],MARC,n,UNC,856,{na},"i2=2 AND $3 has ""Thumbnail""",constant, = thumbnail,x,"url[type]UNC856{na}i2=2 AND $3 has ""Thumbnail""",0,0,n,,
 vendor_marc_id,vendor_marc_id,MARC,n,UNC,001,{whole field},value does not meet criteria to be OCLC Number or Sersol Number,subelement_to_value,x,x,vendor_marc_idUNC1{whole field}value does not meet criteria to be OCLC Number or Sersol Number,0,0,n,,
 virtual_collection,virtual_collection,MARCish,n,UNC,919,t,none,subelement_to_value,x,x,virtual_collectionUNC919tnone,0,0,n,n,n
-,,,,,,,,,,,,,,,,
+this_work_search,this_work_search[value],MARC,,,110,abc(d)(g)(n)u,110$t not present AND 240 not field present,concat_subelements,See linked documentation,.,this_work_search[value]110abc(d)(g)(n)u110$t not present AND 240 not field present,0,0,n,n,y
+this_work_search,this_work_search[value],MARC,,,100,abcd(g)jqu,100$t not present AND 240 not field present,concat_subelements,See linked documentation,.,this_work_search[value]100abcd(g)jqu100$t not present AND 240 not field present,0,0,n,n,y
+this_work_search,this_work_search[value],MARC,,,111,ac(d)e(g)(n)qu,111$t not present AND 240 not field present,concat_subelements,See linked documentation,.,this_work_search[value]111ac(d)e(g)(n)qu111$t not present AND 240 not field present,0,0,n,n,y
+this_work_search,this_work_search[value],MARC,n,GEN,245,(a)fgknp,1xx not present AND 240 not present AND 130 not present AND 245 i2=~/[1-9]/,array_from_subelements,Strip non-filing characters; Capitalize 1st remaining character; See linked documentation,.,this_work_search[value]GEN245(a)fgknp1xx not present AND 240 not present AND 130 not present AND 245 i2=~/[1-9]/,0,0,n,n,y
+this_work_search,this_work_search[value],MARC,n,GEN,245,afgknp,1xx not present AND 240 not present AND 130 not present AND 245 i2=~/[0 ]/,array_from_subelements,See linked documentation,.,this_work_search[value]GEN245afgknp1xx not present AND 240 not present AND 130 not present AND 245 i2=~/[0 ]/,0,0,n,n,y

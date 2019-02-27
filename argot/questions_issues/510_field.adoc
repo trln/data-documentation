@@ -2,6 +2,9 @@
 :toc-placement!:
 
 = Request for feedback: treatment of 510 (Citation/References) and 555 (Cumulative Index/Finding Aids) notes in public catalog
+
+*We initially did NOT include data from the 510 in mappings to Argot. However, we later agreed to do so after strong requests from Special Collections stakeholders*
+
 Kristina Spurgin
 2018-02-28
 

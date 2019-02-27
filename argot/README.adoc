@@ -1,3 +1,6 @@
+:toc:
+:toc-placement!:
+
 = Argot documentation
 
 Argot is the core data language for the TRLN Discovery project.
@@ -176,7 +179,7 @@ _names_creator_t_ is indexed as author and keyword value, using standard process
 
 _names_creator_cjk_v_ is indexed as author and keyword value, using CJK-specific processing
 
-_names_creator_vern_ appears to be unused in actual application and may be removed
+_names_creator_vern_ created by copyField/dynamicField rules in Solr schema. Not used in application for this field, but is used for some other fields
 
 _author_suggest_ adds these values to suggest-as-you-type
 
@@ -187,35 +190,37 @@ _names_a_ is used to generate the "Authors, etc." display in the catalog record 
 
 
 
-# File list
-- **argot.xlsx** - working master document 
+== What's here?
+=== Files
 
-- **csvsplit.ps1** - script that splits *argot.xlsx* into csv files
+* *argot.xlsx* - main, *editable* documentation of all Argot elements, including:
+** definition and rationale for element
+** expected behavior of data in this element in the target system (note that there is NOT a 1-to-1 correspondence between Argot elements and fields in Solr, so this is somewhat inexact)
+** mappings from MARC to Argot
 
-- **_fields.csv** - Argot fields defined. Columns documented in *_fields.md*. Outstanding issues/questions about fields in *_fields_issues.csv*.
+* *_fields.csv*, *_fields_issues.csv*, *_mappings.csv*, and *_mappings_issues.csv* - CSV representations of the tabs present in the *argot.xlsx* spreadsheet.
+** Provides better version control of this data than can be accomplished with the .xlsx file
+** Anyone can quickly view the data from the tab on the web without needing Excel
+** *Edits made to these files will be overwritten!*
 
-- **_mappings.csv** - Mappings from MARC (and eventually other formats) elements/subelements to Argot fields. Columns documented in *_mappings.md*. Outstanding issues/questions about mappings in *_mappings_issues.csv*.
+* *argot_spreadsheet_documentation.adoc* - how to read/interpret the *argot.xlsx* spreadsheet and its derivative CSVs
 
-- **processing_rules_and_procedures.md** - instructions for routine processing that applies to all fields, or to categories of fields
+* *processing_rules_and_procedures.md* - general data processing/transformation patterns that apply to more than one Argot field. Referenced in *argot.xlsx*
 
-- **README.md** - this file.
+* *csvsplit.ps1* - script to split *argot.xlsx* into csv files
 
-## Why the .xlsx and .csv?
-The .xlsx format is easy for Kristina (and probably other data/metadata folks) to use, but has drawbacks. Pros/cons: 
-- PRO: has some checks/validatation stuff built in to flag fields/mappings with issues, etc.
-- PRO: use tables and formulas to flexibly/easily link up the worksheets for analysis/checking work
-- PRO: maintain formatting between work sessions
-- CON: can't be meaningfully version controlled via Git without unzipping into hideous Microsoft XML, which is more opaque than anything here (however, I'll keep the binary file tracked here to make sure I'm never the only person who has it)
-- CON: can't be opened/worked with any tool but Excel without losing data/messing up formulas
+=== Directories
 
-The *csvsplit.ps1* script is used to generate one .csv file per worksheet in *argot.xlsx*. The .csv files are intended to provide: 
-- a record of how the data model changed over time (they are plain text, and thus version-controllable)
-- quick/easy reference for anyone to check on a field or a mapping without needing the whole .xslx file or access to Excel
+* helpers - random, poorly documented scripts/etc to:
+** create initial data/mappings from other sources for use in data transformations
+** compile data for use in specifying or documenting Argot
 
-# Directory list
+* *maps* - JSON mappings referred to in *argot.xlsx* or other Argot specification documents
 
-- **helpers** - scripts/etc to pull down data/mappings from other sources for use in data transformations
+* questions_issues - documents prepared to support discussion/decision-making about how to define Argot.
 
-- **maps** - mappings (json)
+* *schema* - JSON schema for validating Argot (work in progress)
 
-- **questions_issues** - explanations/examples of things about which there are questions
+* *spec_docs* - The documents and examples given to developers to help in translation of the mappings captured in *argot.xlsx* into MARC-to-Argot code
+
+* working_docs - home for documents supporting the Argot specification work, but that won't be needed long-term
