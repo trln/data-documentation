@@ -5,3 +5,4 @@
 *confluence*
 *.n3
 */.ipynb_checkpoints/*
+argot/*_issues.csv
