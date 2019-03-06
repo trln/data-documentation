@@ -305,7 +305,16 @@ The value used to sort results by title.
 
 Limit to only one value.
 
-Value should be the title portion of 245 field with non-filing characters removed
+Value should be the title portion of 245 field with the following transformations/normalizations applied:
+
+* non-filing characters removed
+* entire value downcased
+* NFKD normalization applied -- See http://www.unicode.org/reports/tr15/tr15-29.html
+* Replace '&' with 'and'
+* Replace common ligatures with separate letters
+* Normalize punctuation and spaces
+
+For the full details, search for "def normalize_string_for_sorting(str)" in https://github.com/trln/marc-to-argot/blob/master/lib/marc_to_argot/macros/shared/title.rb
 
 === UNCb7371039
 
@@ -316,6 +325,6 @@ Value should be the title portion of 245 field with non-filing characters remove
 
 [source,ruby]
 ----
-'Whitechapel murders papers : letters relating to the "Jack the Ripper" killings, 1888-1889.'
+'whitechapel murders papers letters relating to the jack the ripper killings 1888 1889'
 ----
 

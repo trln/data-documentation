@@ -233,6 +233,11 @@ Metadata format of source data.
 * *MARC-to-Argot* - hard-coded in or derived by the MARC-to-Argot application
 
 === provisional?
+Whether or not this is a provisional mapping
+
+* y : I'm proposing this, but it isn't approved, or putting it in as a placeholder until a question is answered
+* n : proceed with as much confidence as we can muster for anything... :-) 
+
 === institution
 === source data element
 === source data subelement
@@ -255,15 +260,8 @@ Columns and values are defined below:
 ## Argot field
  - Should match a field specified in https://github.com/trln/data-documentation/blob/master/argot/argot_fields.tsv
 
-## source data format 
- - Source data schema. 
- - Values:
-   - MARC
-   - MARCish -- not standard MARC, but included in MARC bib data extracts (item, holdings, etc fields mapped into institution-specific, locally-defined MARC fields
 
 ## provisional?
- - y : I'm proposing this, but it isn't approved, or putting it in as a placeholder until a question is answered
- - n : proceed with as much confidence as we can muster for anything... :-) 
 
 ## institution
  - standard : based on current MARC standard and known legacy MARC data practices. Should apply more or less consistently to any MARC from any institution.
