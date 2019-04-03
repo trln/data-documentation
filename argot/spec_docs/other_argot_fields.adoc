@@ -6,6 +6,9 @@ Documentation of miscellaneous simpler Argot fields.
 
 toc::[]
 
+== `creator_main`
+...
+
 == `donor`
 Follows https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_pattern_index_only_value.adoc[`index_only_value`] Argot pattern.
 
