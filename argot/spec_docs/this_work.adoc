@@ -13,14 +13,14 @@ toc::[]
 == Processing notes
 
 * `type` = this
-* `display` = defaults to true (so it doesn't need to be set explicitly)
+* `display` = defaults to true (so it doesn't need to be set explicitly unless index-only this_work entry is being created from 245 and 100, 110, or 111 if present)
 
 == Summary of logic
 This value is supposed to be a more-or-less unique string referring to a given work. How this value is constructed is laid out in RDA 6.27, and depends on:
 
 * does the work have one or more creators? (the first named creator  will be recorded in a 100, 110, or 111 field)
 * has a preferred title for the work been established for and recorded in the record? (will appear in 240 or 243 if there is a creator recorded, and 130 if there is not)
-
+* in the absence of a uniform title in the bib record, an index-only author/title entry is created from any 100, 110, or 111 field plus the 245 field, to ensure the work_entry index includes all titles. 
 [NOTE]
 ====
 "Title proper" refers to 245 subfields a, f, g, k, n, p
@@ -59,9 +59,10 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 [source,ruby]
 ----
 [
-  {'type'=>'this',
-   'author'=>'Kuzmin, M. A. (Mikhail Alekseevich), 1872-1936.',
-   'title'=>['Works.', 'Selections.', '1977.']}
+  {'type'=> 'this',
+   'author'=> 'Kuzmin, M. A. (Mikhail Alekseevich), 1872-1936.',
+   'title'=>['Works.', 'Selections.', '1977.'],
+   'display' => 'false'}
 ]
 ----
 
@@ -82,7 +83,8 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 [
   {'type'=>'this',
    'author'=>'Pennsylvania.',
-   'title'=>['Laws, etc.', '1825.']}
+   'title'=>['Laws, etc.', '1825.'],
+   'display' => 'false'}
 ]
 ----
 
@@ -103,7 +105,8 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 [
   {'type'=>'this',
    'author'=>'International Congress of Human Sciences in Asia and North Africa (30th : 1976 : Mexico City, Mexico).',
-   'title'=>['Expansión hispanoamericana en Asia.', 'English.']}
+   'title'=>['Expansión hispanoamericana en Asia.', 'English.'],
+   'display' => 'false'}
 ]
 ----
 
@@ -229,7 +232,8 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
   {'type'=>'this',
    'author'=>'Myers, Johnnie Sue.',
    'title'=>['Gathering place', 'Volume 1'],
-   'title_nonfiling'=>'The gathering place Volume 1'}
+   'title_nonfiling'=>'The gathering place Volume 1',
+   'display' => 'false'}
 ]
 ----
 
@@ -247,7 +251,8 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
   {'type'=>'this',
    'author'=>'Robertson, William, 1721-1793.',
    'title'=>['History of America.', 'Books IX and X'],
-   'title_nonfiling'=>'The history of America. Books IX and X'}
+   'title_nonfiling'=>'The history of America. Books IX and X',
+   'display' => 'false'}
 ]
 ----
 
@@ -264,7 +269,8 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 [
   {'type'=>'this',
    'author'=>'Boman, Patrick, 1948-',
-   'title'=>['Thé de boeuf, radis de cheval']}
+   'title'=>['Thé de boeuf, radis de cheval'],
+   'display' => 'false'}
 ]
 ----
 
@@ -287,7 +293,8 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
   {'type'=>'this',
    'author'=>'United States. Congress. Senate. Committee on Commerce. Subcommittee on the Environment.',
    'title'=>['Toxic Substances Control Act of 1971 and amendment.', 'Part 3,', 'Appendix'],
-   'title_nonfiling'=>'The Toxic Substances Control Act of 1971 and amendment. Part 3, Appendix'}
+   'title_nonfiling'=>'The Toxic Substances Control Act of 1971 and amendment. Part 3, Appendix',
+   'display' => 'false'}
 ]
 ----
 
@@ -309,7 +316,8 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
   {'type'=>'this',
    'author'=>'International Congress of Prehistoric and Protohistoric Sciences (14th : 2001 : Université de Liège)',
    'title'=>['Problème de l\'étain à l\'origine de la métallurgie.', 'Section 11'],
-   'title_nonfiling'=>'Le problème de l\'étain à l\'origine de la métallurgie. Section 11'}
+   'title_nonfiling'=>'Le problème de l\'étain à l\'origine de la métallurgie. Section 11',
+   'display' => 'false'}
 ]
 ----
 
@@ -380,7 +388,8 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 ----
 [
   {'type'=>'this',
-   'title'=>['A&E Classroom.', 'The Class of the 20th Century - 1963-1968']}
+   'title'=>['A&E Classroom.', 'The Class of the 20th Century - 1963-1968'],
+   'display' => 'false'}
 ]
 ----
 
@@ -396,6 +405,7 @@ See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/_fiel
 [
   {'type'=>'this',
    'title'=>['Young singer.', 'Soprano'],
-   'title_nonfiling'=>'The Young singer. Soprano'}
+   'title_nonfiling'=>'The Young singer. Soprano',
+   'display' => 'false'}
 ]
 ----
