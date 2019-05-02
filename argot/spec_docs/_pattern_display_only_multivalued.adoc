@@ -10,6 +10,7 @@ The pattern used to create fields where:
 
 This pattern is used in the following Argot fields:
 
+* https://github.com/trln/data-documentation/blob/master/argot/spec_docs/other_argot_fields.adoc#code-creator_main-code[`creator_main`]
 * https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc#examples-note_access_restrictions[`note_access_restrictions`]
 
 toc::[]
