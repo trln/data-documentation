@@ -1,84 +1,93 @@
 {
-  "available": "Available",
-  "barcodes": [
-    "123",
-    "345"
-  ],
-  "institution": [
-    "unc",
-    "duke"
-  ],
-  "edition": [
-    {
-      "value": "Version 1.10.",
-      "label": "v. 1"
-    }
-  ],
-  "frequency": {
-    "current": [
-      "Monthly"
+    "available": "Available",
+    "barcodes": [
+	"123",
+	"345"
     ],
-    "former": [
-      "Bimonthly",
-      "Quarterly"
-    ]
-  },
-  "genre_headings": [
-    {
-      "value": "History"
+    "edition": [
+	{
+	    "value": "Version 1.10.",
+	    "label": "v. 1"
+	}
+    ],
+    "frequency": {
+	"current": [
+	    "Monthly"
+	],
+	"former": [
+	    "Bimonthly",
+	    "Quarterly"
+	]
     },
-    {
-      "value": "Sources"
-    },
-    {
-      "value": "American Literature -- Adaptations"
-    }
-  ],
-  "id": "UNCb1234567",
-  "owner": "unc",
-  "physical_description": [
-    {
-      "value": "1 online resource (49 pages)"
-    }
-  ],
-  "physical_description_details": [
-    {
-      "label": "File type",
-      "value": "text file"
-    },
-    {
-      "label": "File format",
-      "value": "PDF"
-    }
-  ],
-  "subject_headings": [
-    {
-      "value": "United States. Bureau of Transportation Statistics"
-    },
-    {
-      "value": "Transportation -- United States -- Statistical services"
-    },
-    {
-      "value": "Statistical services"
-    },
-    {
-      "value": "Transportation -- Statistical services"
-    },
-    {
-      "value": "United States Statistical services"
-    },
-    {
-      "value": "United States"
-    }
-  ],
-  "title_main": [
-    {
-      "value": "The title in Roman characters"
-    },
-    {
-      "value": "The title in Arabic characters",
-      "lang": "ara"
-    }
-  ],
-  "title_sort": "title in Roman characters"
+    "genre_headings": [
+	{
+	    "value": "History"
+	},
+	{
+	    "value": "Sources"
+	},
+	{
+	    "value": "American Literature -- Adaptations"
+	}
+    ],
+    "id": "UNCb1234567",
+    "imprint_main": [
+	"{\"type\":\"imprint\",\"value\":\"Frankfurt/Main : Posev, 1974, c1966.\"}",
+	"{\"type\":\"imprint\",\"value\":\"Frankfurt/Main : Посев, 1974, c1966.\"}"
+    ],
+    "imprint_multiple": [
+	"{\"type\":\"imprint\",\"label\":\"1969-\",\"value\":\"Amsterdam : N. Israel, [s.n.] 1969-\"}",
+	"{\"type\":\"imprint\",\"label\":\"1981-\",\"value\":\"Detroit : Wayne State University Press\"}",
+	"{\"type\":\"imprint\",\"label\":\"2010-\",\"value\":\"Leeds, England : Maney Publishing\"}"
+    ],
+    "institution": [
+	"unc",
+	"duke"
+    ],
+    "owner": "unc",
+    "physical_description": [
+	{
+	    "value": "1 online resource (49 pages)"
+	}
+    ],
+    "physical_description_details": [
+	{
+	    "label": "File type",
+	    "value": "text file"
+	},
+	{
+	    "label": "File format",
+	    "value": "PDF"
+	}
+    ],
+    "subject_headings": [
+	{
+	    "value": "United States. Bureau of Transportation Statistics"
+	},
+	{
+	    "value": "Transportation -- United States -- Statistical services"
+	},
+	{
+	    "value": "Statistical services"
+	},
+	{
+	    "value": "Transportation -- Statistical services"
+	},
+	{
+	    "value": "United States Statistical services"
+	},
+	{
+	    "value": "United States"
+	}
+    ],
+    "title_main": [
+	{
+	    "value": "The title in Roman characters"
+	},
+	{
+	    "value": "The title in Arabic characters",
+	    "lang": "ara"
+	}
+    ],
+    "title_sort": "title in Roman characters"
 }
