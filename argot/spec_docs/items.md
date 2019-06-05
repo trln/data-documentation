@@ -19,10 +19,18 @@ The Argot *items* field is an array of item elements. Each item element is an an
   * The *items* field may contain multiple elements representing multiple item records attached to the bib
   * The order of item elements in the *items* field should represent the display order of items desired
 
+* Blank subelements -- it's best practice not to send a subelement through at all if you aren't sending a value. The following are unnecessary: 
+
+```
+call_no: ""
+cn_scheme: ""
+notes: []
+```
+
 ## Subelements
 * **call_no**
   * full call number, including any volume and/or copy designators
-  * required
+  * not required (for instance, journals shelved by title may not have call numbers. E-resources may also lack item call numbers.)
 * **cn_scheme**
   * code representing call number or classification number scheme
     * **ALPHANUM** - local or other classification schemes sorted alphanumerically
@@ -31,7 +39,7 @@ The Argot *items* field is an array of item elements. Each item element is an an
     * **NAL** - National Agrigulture Library Classification
     * **NLM** - National Library of Medicine Classification
     * **SUDOC** - Superintendent of Documents Classification System
-  * required
+  * required if call_no is populated
 * **due_date**
   * Optional
   * Only populate if status = Checked out
