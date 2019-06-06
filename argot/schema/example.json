@@ -4,6 +4,9 @@
 	"123",
 	"345"
     ],
+    "creator_main": [
+	"Jewitt, John R. (John Rodgers), 1783-1821"
+    ],
     "edition": [
 	{
 	    "value": "Version 1.10.",
@@ -30,6 +33,19 @@
 	    "value": "American Literature -- Adaptations"
 	}
     ],
+    "genre_unc_mrc": [
+	"Education, Teaching & Schools.",
+	"Geography.",
+	"Politics & Government.",
+	"Social Sciences.",
+	"South Asia Studies."
+    ],
+    "holdings": [
+	"{\"loc_n\":\"STACKS\",\"loc_b\":\"DHHILL\",\"call_no\":\"F209 .C762 200\",\"summary\":\"Issues from 2004 - 2006.\"}",
+	"{\"holdings_id\":\"c14315769\",\"loc_b\":\"ksta\",\"loc_n\":\"ksta\",\"call_no\":\"KF1035 .H54 6th \",\"notes\":[\"Releases\"],\"summary\":\"Rel.1 (June 2014) - Rel.5 (May 2018)\"}",
+	"{\"loc_n\":\"STACKS\",\"loc_b\":\"DHHILL\",\"call_no\":\"SB13 .C45 NO.6\",\"summary\":\"Issues from 2006 - 2013\",\"latest_received_text\":\"V. 67 MAR 2013\"}",
+	"{\"loc_b\":\"DUKIR\",\"loc_n\":\"LAW\"}"
+  ],
     "id": "UNCb1234567",
     "imprint_main": [
 	"{\"type\":\"imprint\",\"value\":\"Frankfurt/Main : Posev, 1974, c1966.\"}",
@@ -43,6 +59,12 @@
     "institution": [
 	"unc",
 	"duke"
+    ],
+    "items": [
+	"{\"call_no\":\"\",\"cn_scheme\":\"AUTO\",\"item_id\":\"3768863-1001\",\"loc_n\":\"NET\",\"loc_b\":\"ONLINE\",\"type\":\"EBOOK\",\"copy_no\":\"\",\"status\":\"Available\"}",
+	"{\"call_no\":\"XX(1254255.1)\",\"cn_scheme\":\"MOML-ELEC\",\"copy_no\":\"1\",\"item_id\":\"1254255-1001\",\"loc_n\":\"MOMLAW\",\"loc_b\":\"LAW\",\"type\":\"MOML-ELEC\",\"status\":\"Available\"}",
+	"{\"item_id\":\"i10903117\",\"loc_b\":\"ddda\",\"loc_n\":\"ddda\",\"status\":\"Checked out\",\"due_date\":\"20200814\",\"cn_scheme\":\"LC\",\"call_no\":\"PR4034 .E5 2015\"}",
+	"{\"loc_b\":\"LSC\",\"loc_n\":\"PSK\",\"cn_scheme\":\"LC\",\"call_no\":\"F2805 .R58 1936\",\"copy_no\":\"c.1\",\"notes\":[\"Primera serie bound with segunda serie in a single volume.\"],\"type\":\"BOOK\",\"item_id\":\"D04363358W\",\"status\":\"Available\"}"
     ],
     "owner": "unc",
     "physical_description": [

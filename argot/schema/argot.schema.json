@@ -7,7 +7,7 @@
 	"imprint": {
 	    "description": "Valid escaped JSON string patterns for use as values in imprint_main and imprint_multiple",
 	    "type": "string",
-"pattern": "^.\\\"type\\\":\\\"(imprint|production|publication|distribution|manufacture|copyright)\\\",(\\\"label\\\":\\\".+\\\",)?\\\"value\\\":\\\".+\\\".$"	    
+"pattern": "^{\\\"type\\\":\\\"(imprint|production|publication|distribution|manufacture|copyright)\\\",(\\\"label\\\":\\\".+\\\",)?\\\"value\\\":\\\".+\\\"}$"
 	},
 	"index_only_value": {
 	    "description": "Fields following this pattern are not displayed to users, but are indexed for search. Because they are indexed, they need to support non-Roman script parsing by including lang subelement.",
@@ -81,7 +81,10 @@
     "properties": {
 	"available": {
 	    "description": "Indication of the fact that one or more copies/volumes of the described resource is currently available for use. This property is used to populate the Availability facet. If this property does not exist, it is assumed no copies of the resource are currently available for use. The property is derived from examining all item statuses associated with bibliographic record. There is insitution-specific logic for mapping individual/specific item statuses (such as \"At the Bindery\" or \"Use request form\") to binary available/not available values in order to determine how to populate this property.",
-	    "type": "string",
+	    "type": [
+		"null",
+		"string"
+		],
 	    "enum": [
 		"Available"
 	    ]
@@ -94,6 +97,18 @@
 	    },
 	    "minItems": 1,
 	    "uniqueItems": true
+	},
+	"creator_main": {
+	    "description": "Name from 1XX field in MARC, or first explicitly named creator in other data source. Cataloging rules specify that only creators should be recorded in 1XX field, while creators, contributors, former owners, etc. can be recorded in 7XXs. This is a non-indexed field used for display in search results and top-of-full-record page citation view when the record lacks a statement_of_responsibility field. If a linked non-Roman form of this name exists in an 880, the values of both fields are included in creator_main, non-Roman first, separated by ' / '. Not all records have creators, this field is not required. The searchable version of this data is in the names field.",
+	    "type": [
+		"null",
+		"array"
+	    ],
+	    "items": {
+		"type": "string"
+	    },
+	    "minItems": 1,
+	    "maxItems": 1
 	},
 	"date_cataloged": {
 	    "description": "Date a fully cataloged source record was created in data source. Used to populate \"New Titles\" facet. This value should NOT be updated when an existing cataloged record is modified. Note for ILS-MARC sourced data: libraries often have cataloging workflows where provisional records are brought into the catalog and are only considered \"cataloged\" after the record has been reviewed/finalized by staff. Sometimes provisional records are suppressed from public view, in which case they will NOT make it into TRLN Discovery at all. Some libraries want to allow patrons to discover books that are on order, so provisional records for such titles will be in TRLN Discovery. Provisional records should not have a date_cataloged set. Note for non-ILS-MARC data: This field should represent when the record was added to the collection.",
@@ -110,7 +125,10 @@
 	},
 	"edition": {
 	    "description": "Distinguishes a work with substantial content differences from another work with the same title/author. Important for identifying and selecting items in the catalog.",
-	    "type": "array",
+	    "type": [
+		"null",
+		"array"
+	    ],
 	    "items": {
 		"$ref": "#/definitions/labeled_indexed_value"
 	    },
@@ -119,7 +137,10 @@
 	},
 	"frequency": {
 	    "description": "Current and/or former publication frequency.",
-	    "type": "object",
+	    "type": [
+		"null",
+		"object"
+		],
 	    "properties": {
 		"current": {
 		    "type": "array",
@@ -146,6 +167,28 @@
 	    },
 	    "minItems": 1,
 	    "uniqueItems": true
+	},
+	"genre_unc_mrc": {
+	    "description": "UNC field to support scoped film search/browse for Media Resources Center (MRC). MRC wants users to be able to limit/filter by a subset of ~250 'genres' taken from their local genre and subject terms lists. This field supports this limiting in a special scoped 'Filmfinder' advanced search.",
+	    "type": [
+		"null",
+		"array"
+	    ],
+	    "items": {
+		"type": "string"
+	    },
+	    "minItems": 1
+	},
+	"holdings": {
+	    "description": "Data summarizing copies, volumes, issues, or parts held in a location. May be from a MARC holdings record or other data source. Most commonly used for serials/continuing resources, but may also be used for monographic series/sets or in other situations. In general, presence of holdings data collapses/summarizes the info available in the item listing for a location. However, a holdings statement may be used in lieu of creating an item for each issue/volume, OR items may be created for each issue/volume with no summarizing holdings data created. The elements required are loc_n (string) and loc_b (string). Other allowed elements are: call_no (string; not required because 'shelved by title' serials may not have a call number); holdings_id (string; used by UNC to link into ILS-based catalog's Latest Received view); latest_received_text (string; used by NCSU as custom link text for \"latest received\" links); notes (array of strings; to be shown to the public); and summary (string; the summary holdings statement itself, if present.",
+	    "type": [
+		"null",
+		"array"
+		],
+	    "items": {
+		"pattern": "^{((\\\"(call_no|holdings_id|latest_received_text|summary)\\\":\\\"[^\"]+\\\"|\\\"notes\\\":[[]\\\".+\\\"[]]),){0,5}(\\\"loc_b\\\":\\\"[^\"]+\\\",\\\"loc_n\\\":\\\"[^\"]+\\\"|\\\"loc_n\\\":\\\"[^\"]+\\\",\\\"loc_b\\\":\\\"[^\"]+\\\")(,(\\\"(call_no|holdings_id|latest_received_text|summary)\\\":\\\"[^\"]+\\\"|\\\"notes\\\":[[]\\\".+\\\"[]])){0,5}}$"
+	    },
+	    "minItems": 1,
 	},
 	"id": {
 	    "description": "The unique document ID of the record in the TRLN Discovery index. Begins with institution code of owning institution (in all caps), followed by ILS record id (for records from ILS) or other unique identifier (for records from non-ILS sources).",

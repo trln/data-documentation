@@ -28,6 +28,10 @@ notes: []
 ```
 
 ## Subelements
+* **barcode**
+  * barcode of item record
+  * not required
+  * not displayed, but is searchable
 * **call_no**
   * full call number, including any volume and/or copy designators
   * not required (for instance, journals shelved by title may not have call numbers. E-resources may also lack item call numbers.)
