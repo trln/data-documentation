@@ -223,5 +223,25 @@
 	"omission_type": "temporary",
 	"omission_reason_category": "infrequently used",
 	"omission_details": "Only 3 fields in UNC catalog on 2018-05-18. Eventually could be mapped as a chronological subject or something."
+    },
+    "530": {
+	"omission_type": "permanent",
+	"omission_reason_category": "limited public use",
+	"omission_details": "Patrons do not care if item is available in another format if they cannot get to that format from our catalog. Midleading if not adjusted and kept current with our holdings"
+    },
+    "583": {
+	"omission_type": "permanent",
+	"omission_reason_category": "internal",
+	"omission_details": "Only select librarians can interpret and understand what this field means. Important for internal library work. Irrelevant for discovery."
+    },
+    "588": {
+	"omission_type": "permanent",
+	"omission_reason_category": "limited public use",
+	"omission_details": "Public does not care what part of an item was used to create catalog description."
+    },
+    "776": {
+	"omission_type": "permanent",
+	"omission_reason_category": "limited public use",
+	"omission_details": "Patrons do not care if item is available in another format if they cannot get to that format from our catalog. Midleading if not adjusted and kept current with our holdings"
     }
 }
