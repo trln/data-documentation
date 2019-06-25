@@ -1102,7 +1102,7 @@
         "context": ""
       },
       "j": {
-        "name": "Language code of subtitles or captions",
+        "name": "Language code of subtitles",
         "repeat": "R",
         "context": ""
       },
@@ -1118,6 +1118,21 @@
       },
       "n": {
         "name": "Language code of original libretto",
+        "repeat": "R",
+        "context": ""
+      },
+      "p": {
+        "name": "Language code of captions",
+        "repeat": "R",
+        "context": ""
+      },
+      "q": {
+        "name": "Language code of accessible audio",
+        "repeat": "R",
+        "context": ""
+      },
+      "r": {
+        "name": "Language code of accessible visual language",
         "repeat": "R",
         "context": ""
       },
@@ -2222,6 +2237,11 @@
         "repeat": "R",
         "context": ""
       },
+      "2": {
+        "name": "Source of heading or term",
+        "repeat": "NR",
+        "context": ""
+      },
       "4": {
         "name": "Relationship",
         "repeat": "R",
@@ -2317,6 +2337,11 @@
       "1": {
         "name": "Real World Object URI",
         "repeat": "R",
+        "context": ""
+      },
+      "2": {
+        "name": "Source of heading or term",
+        "repeat": "NR",
         "context": ""
       },
       "4": {
@@ -2426,6 +2451,11 @@
         "repeat": "R",
         "context": ""
       },
+      "2": {
+        "name": "Source of heading or term",
+        "repeat": "NR",
+        "context": ""
+      },
       "4": {
         "name": "Relationship",
         "repeat": "R",
@@ -2526,6 +2556,11 @@
       "1": {
         "name": "Real World Object URI",
         "repeat": "R",
+        "context": ""
+      },
+      "2": {
+        "name": "Source of heading or term",
+        "repeat": "NR",
         "context": ""
       },
       "6": {
@@ -2728,6 +2763,11 @@
       "1": {
         "name": "Real World Object URI",
         "repeat": "R",
+        "context": ""
+      },
+      "2": {
+        "name": "Source of heading or term",
+        "repeat": "NR",
         "context": ""
       },
       "6": {
@@ -3131,6 +3171,48 @@
       },
       "b": {
         "name": "Remainder of edition statement",
+        "repeat": "NR",
+        "context": ""
+      },
+      "3": {
+        "name": "Materials specified",
+        "repeat": "NR",
+        "context": ""
+      },
+      "6": {
+        "name": "Linkage",
+        "repeat": "NR",
+        "context": ""
+      },
+      "8": {
+        "name": "Field link and sequence number",
+        "repeat": "R",
+        "context": ""
+      }
+    }
+  },
+  "251": {
+    "name": "VERSION INFORMATION ",
+    "repeat": "R",
+    "context": "",
+    "subfields": {
+      "a": {
+        "name": "Version",
+        "repeat": "R",
+        "context": ""
+      },
+      "0": {
+        "name": "Authority record control number or standard number",
+        "repeat": "R",
+        "context": ""
+      },
+      "1": {
+        "name": "Real World Object URI",
+        "repeat": "R",
+        "context": ""
+      },
+      "2": {
+        "name": "Source",
         "repeat": "NR",
         "context": ""
       },
@@ -4208,6 +4290,58 @@
       "1": {
         "name": "Real World Object URI",
         "repeat": "",
+        "context": ""
+      },
+      "2": {
+        "name": "Source",
+        "repeat": "NR",
+        "context": ""
+      },
+      "3": {
+        "name": "Materials specified",
+        "repeat": "NR",
+        "context": ""
+      },
+      "6": {
+        "name": "Linkage",
+        "repeat": "NR",
+        "context": ""
+      },
+      "8": {
+        "name": "Field link and sequence number",
+        "repeat": "R",
+        "context": ""
+      }
+    }
+  },
+  "341": {
+    "name": "ACCESSIBILITY CONTENT ",
+    "repeat": "R",
+    "context": "",
+    "subfields": {
+      "a": {
+        "name": "Content access mode",
+        "repeat": "NR",
+        "context": ""
+      },
+      "b": {
+        "name": "Textual assistive features",
+        "repeat": "R",
+        "context": ""
+      },
+      "c": {
+        "name": "Visual assistive features",
+        "repeat": "R",
+        "context": ""
+      },
+      "d": {
+        "name": "Auditory assistive features",
+        "repeat": "R",
+        "context": ""
+      },
+      "e": {
+        "name": "Tactile assistive features",
+        "repeat": "R",
         "context": ""
       },
       "2": {
@@ -6423,6 +6557,16 @@
         "repeat": "R",
         "context": ""
       },
+      "g": {
+        "name": "Availability date",
+        "repeat": "R",
+        "context": ""
+      },
+      "q": {
+        "name": "Supplying agency",
+        "repeat": "R",
+        "context": ""
+      },
       "u": {
         "name": "Uniform Resource Identifier",
         "repeat": "R",
@@ -7145,6 +7289,28 @@
       }
     }
   },
+  "532": {
+    "name": "ACCESSIBILITY NOTE ",
+    "repeat": "R",
+    "context": "",
+    "subfields": {
+      "a": {
+        "name": "Summary of accessibility",
+        "repeat": "NR",
+        "context": ""
+      },
+      "6": {
+        "name": "Linkage",
+        "repeat": "NR",
+        "context": ""
+      },
+      "8": {
+        "name": "Field link and sequence number",
+        "repeat": "R",
+        "context": ""
+      }
+    }
+  },
   "533": {
     "name": "REPRODUCTION NOTE ",
     "repeat": "R",
@@ -7497,9 +7663,29 @@
         "repeat": "NR",
         "context": ""
       },
+      "f": {
+        "name": "Use and reproduction rights",
+        "repeat": "R",
+        "context": ""
+      },
+      "g": {
+        "name": "Availability date",
+        "repeat": "R",
+        "context": ""
+      },
+      "q": {
+        "name": "Supplying agency",
+        "repeat": "NR",
+        "context": ""
+      },
       "u": {
         "name": "Uniform Resource Identifier",
         "repeat": "R",
+        "context": ""
+      },
+      "2": {
+        "name": "Source of term",
+        "repeat": "NR",
         "context": ""
       },
       "3": {
@@ -7682,7 +7868,7 @@
         "context": ""
       },
       "q": {
-        "name": "Assigning agency",
+        "name": "Supplying agency",
         "repeat": "NR",
         "context": ""
       },
@@ -10153,6 +10339,11 @@
         "repeat": "R",
         "context": ""
       },
+      "2": {
+        "name": "Source of heading or term",
+        "repeat": "NR",
+        "context": ""
+      },
       "3": {
         "name": "Materials specified",
         "repeat": "NR",
@@ -10387,6 +10578,11 @@
         "repeat": "R",
         "context": ""
       },
+      "2": {
+        "name": "Source of heading or term",
+        "repeat": "NR",
+        "context": ""
+      },
       "3": {
         "name": "Materials specified",
         "repeat": "NR",
@@ -10522,6 +10718,11 @@
       "1": {
         "name": "Real World Object URI",
         "repeat": "R",
+        "context": ""
+      },
+      "2": {
+        "name": "Source of heading or term",
+        "repeat": "NR",
         "context": ""
       },
       "3": {
@@ -10763,6 +10964,11 @@
       "1": {
         "name": "Real World Object URI",
         "repeat": "R",
+        "context": ""
+      },
+      "2": {
+        "name": "Source of heading or term",
+        "repeat": "NR",
         "context": ""
       },
       "3": {
@@ -11137,6 +11343,11 @@
       "1": {
         "name": "Real World Object URI",
         "repeat": "R",
+        "context": ""
+      },
+      "2": {
+        "name": "Source of heading or term",
+        "repeat": "NR",
         "context": ""
       },
       "3": {
@@ -13176,6 +13387,11 @@
         "repeat": "R",
         "context": ""
       },
+      "2": {
+        "name": "Source of heading or term",
+        "repeat": "NR",
+        "context": ""
+      },
       "3": {
         "name": "Materials specified",
         "repeat": "NR",
@@ -13328,6 +13544,11 @@
         "repeat": "R",
         "context": ""
       },
+      "2": {
+        "name": "Source of heading or term",
+        "repeat": "NR",
+        "context": ""
+      },
       "3": {
         "name": "Materials specified",
         "repeat": "NR",
@@ -13470,6 +13691,11 @@
         "repeat": "R",
         "context": ""
       },
+      "2": {
+        "name": "Source of heading or term",
+        "repeat": "NR",
+        "context": ""
+      },
       "3": {
         "name": "Materials specified",
         "repeat": "NR",
@@ -13600,6 +13826,11 @@
       "1": {
         "name": "Real World Object URI",
         "repeat": "R",
+        "context": ""
+      },
+      "2": {
+        "name": "Source of heading or term",
+        "repeat": "NR",
         "context": ""
       },
       "3": {

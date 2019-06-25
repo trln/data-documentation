@@ -237,6 +237,17 @@
 	    "maxItems": 4,
 	    "uniqueItems": true
 	},
+	"items": {
+	    "description": "",
+	    "type": [
+		"null",
+		"array"
+		],
+	    "items": {
+		"pattern": "^{((\\\"(call_no|cn_scheme|copy_no|due_date|item_id|type|status)\\\":\\\"[^\"]+\\\"|\\\"notes\\\":[[]\\\".+\\\"[]]),){0,5}(\\\"loc_b\\\":\\\"[^\"]+\\\",\\\"loc_n\\\":\\\"[^\"]+\\\"|\\\"loc_n\\\":\\\"[^\"]+\\\",\\\"loc_b\\\":\\\"[^\"]+\\\")(,(\\\"(call_no|cn_scheme|item_id|type|copy_no|status)\\\":\\\"[^\"]+\\\"|\\\"notes\\\":[[]\\\".+\\\"[]])){0,5}}$"
+	    },
+	    "minItems": 1,
+	},
 	"owner": {
 	    "description": "Code of institution responsible for submitting record to and maintaining record in TRLN Discovery",
 	    "type": "string",

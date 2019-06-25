@@ -1,18 +1,68 @@
 {
+    "013": {
+	"omission_type": "temporary",
+	"omission_reason_category": "infrequently used",
+	"omission_details": "60 instances in UNC catalog on 2019-06-14. Most look like miscoded fields. Also of limited public use?"
+    },
+    "016": {
+	"omission_type": "temporary",
+	"omission_reason_category": "low priority",
+	"omission_details": "Over 244,000 instances in UNC catalog on 2019-06-14. Could map to misc_id, but this was initially considereed a low priority."
+    },
+    "017": {
+	"omission_type": "temporary",
+	"omission_reason_category": "infrequently used",
+	"omission_details": "154 instances in UNC catalog as of 2019-06-14. At least in our catalog, users can't expect to find this information consistently. Could map to misc_id if necessary."
+    },
     "018": {
 	"omission_type": "permanent",
 	"omission_reason_category": "limited public use",
 	"omission_details": "Unique identification code for component parts appearing in monographs or continuing resources. Cryptic. Unlikely to assist with discovery."
+    },
+    "025": {
+	"omission_type": "permanent",
+	"omission_reason_category": "internal",
+	"omission_details": "Internal to Library of Congress. Means nothing for our institutions."
     },
     "026": {
 	"omission_type": "permanent",
 	"omission_reason_category": "internal",
 	"omission_details": "Used to assist in the identification of antiquarian books by recording information comprising groups of characters taken from specified positions on specified pages of the book. Example: 026 ##$ae-s- 11as$bs,me crth 3$c1797.$dv.1"
     },
+    "031": {
+	"omission_type": "temporary",
+	"omission_reason_category": "infrequently used",
+	"omission_details": "Only 5 instances of field in UNC catalog on 2019-06-14. Very cryptic and would take a lot of work to transform into something useful to end user. Could be useful in an eventual specialized music discovery tool, but this information might be coded elsewhere in the record in more usable ways."
+    },
     "032": {
 	"omission_type": "permanent",
 	"omission_reason_category": "internal",
 	"omission_details": "Number assigned to a publication for which the specified postal service permits the use of a special mailing class privilege."
+    },
+    "033": {
+	"omission_type": "temporary",
+	"omission_reason_category": "limited public use",
+	"omission_details": "15,564 occurrences in UNC catalog on 2019-06-14. Could be useful, but this isn't really a chronological *subject* and it's not a publication, etc. date either. Would need to make decisions about whether this is useful for discovery and how to best use it."
+    },
+    "034": {
+	"omission_type": "temporary",
+	"omission_reason_category": "limited public use",
+	"omission_details": "56,450 occurrences in UNC catalog on 2019-06-14. Could be useful in specialized cartographic discovery tool, but doesn't contribute much in the context of our general discovery application. Cryptic, not easily translated into user-sensible display. Information is usually recorded in less structured, more user-readable way elsewhere in record."
+    },
+    "036": {
+	"omission_type": "temporary",
+	"omission_reason_category": "infrequently used",
+	"omission_details": "5 occurrences in UNC catalog on 2019-06-14, all miscodings. Could fairly easily be mapped to misc_id if anyone else had more of this data and thought users would expect to search on or find this data in the catalog."
+    },
+    "037": {
+	"omission_type": "permanent",
+	"omission_reason_category": "internal",
+	"omission_details": "."
+    },
+    "038": {
+	"omission_type": "permanent",
+	"omission_reason_category": "infrequently used",
+	"omission_details": "3 occurrences in UNC catalog on 2019-06-14. Highly unlikely to be kept updated/consistent in a library catalog. Of limited use for typical library discovery."
     },
     "040": {
 	"omission_type": "permanent",
@@ -24,40 +74,60 @@
 	"omission_reason_category": "internal",
 	"omission_details": "Cataloger use only"
     },
+    "043": {
+	"omission_type": "temporary",
+	"omission_reason_category": "redundant",
+	"omission_details": "Choice of geographic area code is usually based on the geographic names and/or subdivisions in 6XX subject added entry and index term fields. Revisit this decision if that practice ever changes."
+    },
+    "045": {
+	"omission_type": "temporary",
+	"omission_reason_category": "complex",
+	"omission_details": "This could be very useful for discovery, but it'd be challenging to do it well. The field means something different for different formats, so we'd need to present it differently per format. Also the data is recorded in a cryptic way that would require complex transformation. Finally, we'd need to figure out how to present different types of dates (dates depicted, dates of content, dates of data generation, date of original composition (music), etc.)"
+    },
+    "046": {
+	"omission_type": "temporary",
+	"omission_reason_category": "complex",
+	"omission_details": "Could be useful, but the assumptions of the current catalog include one main publication date. We have few materials that need to use this field in lieu of 008 because of BCE dates. Would need to tangle with how to usefully surface inclusive/bulk dates in UI."
+    },
+    "048": {
+	"omission_type": "temporary",
+	"omission_reason_category": "complex",
+	"omission_details": "Structured, coded form of data usually recorded in a human-readable, less machine-actionable form elsewhere in the record. If we ever support more advanced limits/structured searching for music display, map this field."
+    },
     "055": {
 	"omission_type": "permanent",
 	"omission_reason_category": "limited public use",
-	"omission_details": ""
+	"omission_details": "."
     },
     "066": {
 	"omission_type": "permanent",
 	"omission_reason_category": "internal",
-	"omission_details": ""
+	"omission_details": "."
     },
     "070": {
 	"omission_type": "permanent",
 	"omission_reason_category": "limited public use",
-	"omission_details": ""
+	"omission_details": "."
     },
     "071": {
 	"omission_type": "permanent",
 	"omission_reason_category": "limited public use",
-	"omission_details": ""
+	"omission_details": "."
     },
     "072": {
 	"omission_type": "permanent",
 	"omission_reason_category": "limited public use",
-	"omission_details": ""
+	"omission_details": "."
     },
     "080": {
 	"omission_type": "permanent",
 	"omission_reason_category": "limited public use",
-	"omission_details": ""
+	"omission_details": "."
     },
     "084": {
 	"omission_type": "permanent",
 	"omission_reason_category": "limited public use",
-	"omission_details": ""
+	"omission_details": "."
     },
     "306": {
 	"omission_type": "permanent",

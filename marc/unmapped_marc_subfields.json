@@ -1,26 +1,37 @@
 {
-  "567": {
-    "b": {
-      "omission_type": "temporary",
-      "omission_reason_category": "low priority",
-      "omission_details": "UNC has no data in this subfield. Consider mapping to genre_headings and subject_genre if ever meaningfully populated"
-    }
-  },
-  "022": {
-    "m": {
-      "omission_type": null,
-      "omission_reason_category": null,
-      "omission_details": null
+    "044": {
+	"b": {
+	    "omission_type": "temporary",
+	    "omission_reason_category": "low priority",
+	    "omission_details": "UNC has no data in this subfield. Consider mapping to origin_place fields if $2 value is set and use of subfield increases"
+	},
+	"c": {
+	    "omission_type": "temporary",
+	    "omission_reason_category": "low priority",
+	    "omission_details": "UNC 835 instances of 044s with this subfield on 2019-06-14. Many of them recode teh country coded in the $a. Consider mapping to origin_place fields if amount of unique data in this subfield increases."
+	},
+    "567": {
+	"b": {
+	    "omission_type": "temporary",
+	    "omission_reason_category": "low priority",
+	    "omission_details": "UNC has no data in this subfield. Consider mapping to genre_headings and subject_genre if ever meaningfully populated"
+	}
     },
-    "y": {
-      "omission_type": null,
-      "omission_reason_category": null,
-      "omission_details": null
-    },
-    "z": {
-      "omission_type": null,
-      "omission_reason_category": null,
-      "omission_details": null
+    "022": {
+	"m": {
+	    "omission_type": null,
+	    "omission_reason_category": null,
+	    "omission_details": null
+	},
+	"y": {
+	    "omission_type": null,
+	    "omission_reason_category": null,
+	    "omission_details": null
+	},
+	"z": {
+	    "omission_type": null,
+	    "omission_reason_category": null,
+	    "omission_details": null
+	}
     }
-  }
 }
