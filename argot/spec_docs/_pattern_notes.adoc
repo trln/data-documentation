@@ -12,22 +12,44 @@ The pattern used to create some types of notes and other fields where:
 
 This pattern is used in the following Argot fields:
 
+* `note_binding`
 * https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc#examples-note_cited_in[`note_cited_in`]
 * https://github.com/trln/data-documentation/blob/master/argot/spec_docs/notes_fields.adoc#examples-note_general[`note_general`]
+* `note_local`
+* `note_performer_credits`
+* `note_related_work`
+* `note_reproduction`
 
 toc::[]
 
 == The pattern: Argot elements
+
+For displayed notes which may or may not be indexed, and which may be indexed differently than they are displayed
 
 [source,javascript]
 ----
 {
   "note_field_name":[
     {
-      "label":"Label for the note",
+      "label":"Contextualizing label displayed at the beginning of the note, but not indexed",
       "value":"The displayed content of the note",
       "indexed_value":"The part of above value that should be indexed, if it is different from value",
-      "indexed":"Boolean: true or false",
+      "indexed":"Boolean: true or false. Defaults to true. Should not be false if indexed_value is populated.",
+      "lang":"Script/language code of value"
+    }
+  ]
+}
+----
+
+OR, for index-only notes which will not be displayed.
+
+[source,javascript]
+----
+{
+  "note_field_name":[
+    {
+      "indexed_value":"The part of above value that should be indexed, if it is different from value",
+      "indexed":"Boolean: true or false. Defaults to true. Should not be false if indexed_value is populated.",
       "lang":"Script/language code of value"
     }
   ]
@@ -35,11 +57,11 @@ toc::[]
 ----
 
 * `label`: Optional. May be set from $3, $i, and/or MARC field tag + indicator values.
-* `value`: *Required.* The note that will be displayed. If there is no `indexed_value` and `indexed` is not false, this is also the indexed note content.
-* `indexed_value`: Optional. This should only be populated if:
+* `value`: *Required if the note is to display; Optional otherwise* The note that will be displayed. If there is no `indexed_value` and `indexed` is not false, this is also the indexed note content.
+* `indexed_value`: *Required if `value` is not populated and will create an indexed-only note; Optional otherwise* This should only be populated if:
 ** `indexed` == true; AND
-** `indexed_value` needs to be different than `value`
-* `indexed`: Optional. If not explicitly set, assumed to equal true. In other words, default assumption is that a note field will be indexed.
+** `indexed_value` needs to be different than `value` OR note will be indexed but not displayed
+* `indexed`: Optional. If not explicitly set, assumed to equal true. In other words, default assumption is that a note field will be indexed. Do *not* set to false if you are populating `indexed_value`.
 * `lang`: Script/language code for non-Roman values, to trigger special language parsing in Solr
 
 == Abstract example of pattern
