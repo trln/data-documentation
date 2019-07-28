@@ -72,6 +72,8 @@ Serves two major purposes:
 * control creation of different indexed fields that can be relevance ranked differently (i.e. creators highest, contributors higher than 'other', etc.) in author search
 * control which names get included in author facet
 
+The `type` element was also intended to be available to applications integrating with Argon, such as citation builders, so that authors can be distinguished from editors and handled better in citations. 
+
 === `lang`
 Code identifying language/script for non-roman character fields.
 
