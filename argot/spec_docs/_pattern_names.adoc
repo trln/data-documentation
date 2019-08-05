@@ -61,6 +61,19 @@ The following steps should be done in order:
 * Strip WEMI terms (may be parenthetical) from relator *terms* if present: work, expression, manifestation, item
 * Deduplicate the resulting array (sometimes both the term and the code for the same role is recorded)
 
+=== `lang`
+Code identifying language/script for non-roman character fields.
+
+See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/vernacular_scripts.adoc#code-names-code[vernacular scripts documentation] for details.
+
+=== `label`
+Displayed, non-indexed, non-linked label that contextualizes the name in relation to the resource being described.
+
+* string
+
+==== Processing notes
+Strip : off the end. This should be provided in display.
+
 === `type`
 Type, or category, of name.
 
@@ -73,11 +86,6 @@ Serves two major purposes:
 * control which names get included in author facet
 
 The `type` element was also intended to be available to applications integrating with Argon, such as citation builders, so that authors can be distinguished from editors and handled better in citations. 
-
-=== `lang`
-Code identifying language/script for non-roman character fields.
-
-See https://github.com/trln/data-documentation/blob/master/argot/spec_docs/vernacular_scripts.adoc#code-names-code[vernacular scripts documentation] for details.
 
 [NOTE]
 ====

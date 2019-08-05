@@ -4,162 +4,149 @@ marc tag	subfield	omission type	omission reason category	omission details
 044	b	temporary	low priority	UNC has no data in this subfield. Consider mapping to origin_place fields if $2 value is set and use of subfield increases
 044	c	temporary	low priority	UNC 835 instances of 044s with this subfield on 2019-06-14. Many of them recode teh country coded in the $a. Consider mapping to origin_place fields if amount of unique data in this subfield increases.
 567	b	temporary	low priority	UNC has no data in this subfield. Consider mapping to genre_headings and subject_genre if ever meaningfully populated
-015	z	blah	blah	blah
-020	c	blah	blah	blah
-022	m	blah	blah	blah
-022	y	blah	blah	blah
-022	z	blah	blah	blah
-024	c	blah	blah	blah
-028	a	blah	blah	blah
-035	z	blah	blah	blah
-041	b	blah	blah	blah
-041	f	blah	blah	blah
-041	h	blah	blah	blah
-041	j	blah	blah	blah
-041	k	blah	blah	blah
-041	m	blah	blah	blah
-041	n	blah	blah	blah
-041	p	blah	blah	blah
-041	q	blah	blah	blah
-041	r	blah	blah	blah
-044	b	blah	blah	blah
-044	c	blah	blah	blah
-050	b	blah	blah	blah
-050	3	blah	blah	blah
-090	b	blah	blah	blah
-210	b	blah	blah	blah
-245	h	blah	blah	blah
-246	5	blah	blah	blah
-340	3	blah	blah	blah
-344	3	blah	blah	blah
-345	3	blah	blah	blah
-346	3	blah	blah	blah
-347	3	blah	blah	blah
-382	e	blah	blah	blah
-382	n	blah	blah	blah
-382	r	blah	blah	blah
-382	s	blah	blah	blah
-382	t	blah	blah	blah
-382	v	blah	blah	blah
-382	3	blah	blah	blah
-384	3	blah	blah	blah
-500	5	blah	blah	blah
-501	5	blah	blah	blah
-502	o	blah	blah	blah
-505	u	blah	blah	blah
-506	g	blah	blah	blah
-506	q	blah	blah	blah
-506	5	blah	blah	blah
-520	u	blah	blah	blah
-526	i	blah	blah	blah
-526	x	blah	blah	blah
-526	5	blah	blah	blah
-533	5	blah	blah	blah
-533	7	blah	blah	blah
-538	5	blah	blah	blah
-540	5	blah	blah	blah
-541	5	blah	blah	blah
-556	z	blah	blah	blah
-561	u	blah	blah	blah
-561	5	blah	blah	blah
-562	5	blah	blah	blah
-563	5	blah	blah	blah
-585	5	blah	blah	blah
-590	b	blah	blah	blah
-590	d	blah	blah	blah
-600	e	blah	blah	blah
-600	3	blah	blah	blah
-600	4	blah	blah	blah
-610	e	blah	blah	blah
-610	3	blah	blah	blah
-610	4	blah	blah	blah
-611	j	blah	blah	blah
-611	3	blah	blah	blah
-611	4	blah	blah	blah
-630	e	blah	blah	blah
-630	3	blah	blah	blah
-630	4	blah	blah	blah
-647	3	blah	blah	blah
-648	3	blah	blah	blah
-650	e	blah	blah	blah
-650	3	blah	blah	blah
-650	4	blah	blah	blah
-651	e	blah	blah	blah
-651	3	blah	blah	blah
-651	4	blah	blah	blah
-655	b	blah	blah	blah
-655	c	blah	blah	blah
-655	3	blah	blah	blah
-655	5	blah	blah	blah
-656	3	blah	blah	blah
-657	3	blah	blah	blah
-662	e	blah	blah	blah
-662	4	blah	blah	blah
-700	5	blah	blah	blah
-710	5	blah	blah	blah
-711	5	blah	blah	blah
-730	4	blah	blah	blah
-730	5	blah	blah	blah
-740	5	blah	blah	blah
-752	e	blah	blah	blah
-752	4	blah	blah	blah
-760	4	blah	blah	blah
-762	4	blah	blah	blah
-765	4	blah	blah	blah
-767	4	blah	blah	blah
-770	4	blah	blah	blah
-772	4	blah	blah	blah
-773	q	blah	blah	blah
-773	4	blah	blah	blah
-774	4	blah	blah	blah
-775	f	blah	blah	blah
-775	4	blah	blah	blah
-777	4	blah	blah	blah
-780	4	blah	blah	blah
-785	4	blah	blah	blah
-786	j	blah	blah	blah
-786	4	blah	blah	blah
-787	4	blah	blah	blah
-800	e	blah	blah	blah
-800	v	blah	blah	blah
-800	w	blah	blah	blah
-800	4	blah	blah	blah
-800	5	blah	blah	blah
-810	e	blah	blah	blah
-810	v	blah	blah	blah
-810	w	blah	blah	blah
-810	4	blah	blah	blah
-810	5	blah	blah	blah
-811	j	blah	blah	blah
-811	q	blah	blah	blah
-811	v	blah	blah	blah
-811	w	blah	blah	blah
-811	4	blah	blah	blah
-811	5	blah	blah	blah
-830	v	blah	blah	blah
-830	w	blah	blah	blah
-830	5	blah	blah	blah
-856	a	blah	blah	blah
-856	b	blah	blah	blah
-856	c	blah	blah	blah
-856	d	blah	blah	blah
-856	f	blah	blah	blah
-856	h	blah	blah	blah
-856	i	blah	blah	blah
-856	j	blah	blah	blah
-856	k	blah	blah	blah
-856	l	blah	blah	blah
-856	m	blah	blah	blah
-856	n	blah	blah	blah
-856	o	blah	blah	blah
-856	p	blah	blah	blah
-856	q	blah	blah	blah
-856	r	blah	blah	blah
-856	s	blah	blah	blah
-856	t	blah	blah	blah
-856	v	blah	blah	blah
-856	w	blah	blah	blah
-856	x	blah	blah	blah
-856	z	blah	blah	blah
-856	2	blah	blah	blah
-856	7	blah	blah	blah
+015	z	temporary	low priority	"Cancelled/invalid numbers seemed less important to map. Could be mapped to misc_id field, with ""(canceled or invalid)"" added to the type value, as with the 024"
+022	m	temporary	low priority	"Cancelled/invalid numbers seemed less important to map. Could be mapped to misc_id field, with ""(canceled or invalid)"" added to the type value, as with the 024"
+022	y	temporary	low priority	"Cancelled/invalid numbers seemed less important to map. Could be mapped to misc_id field, with ""(canceled or invalid)"" added to the type value, as with the 024"
+022	z	temporary	low priority	"Cancelled/invalid numbers seemed less important to map. Could be mapped to misc_id field, with ""(canceled or invalid)"" added to the type value, as with the 024"
+035	z	temporary	low priority	"Cancelled/invalid numbers seemed less important to map. Could be mapped to misc_id field, with ""(canceled or invalid)"" added to the type value, as with the 024"
+041	b	permanent	irrelevant	Language of summary is not language of the item described
+041	f	permanent	irrelevant	Language of TOC is not language of the item described
+041	h	permanent	irrelevant	Language of original is not language of the translated item described
+041	j	permanent	irrelevant	UNC received feedback that all films with English subtitles available should NOT get English assigned as one of the languages of the film. Including language of subtitles as language of the item would render the language facet useless for identifying films that *are* in a given language. Could map this to a different field to support advanced film discovery (language_accessibility or something)
+041	k	permanent	irrelevant	Language of intermediate translations is not language of the translated item described
+041	m	permanent	irrelevant	Language of minor accompanying material  is not language of the item described
+041	n	permanent	irrelevant	Language of original libretto is not language of the libretto for item described
+041	p	permanent	irrelevant	"UNC received feedback that all films with English captions available should NOT get English assigned as one of the languages of the film. Including language of captions as language of the item would render the language facet useless for identifying films that *are* in a given language. Could map this to a different field to support advanced film discovery (language_accessibility or something). This subfield is used specifically in moving image records, for SDH or CC captions"
+041	q	permanent	irrelevant	Not the main language of the item described. Could map this to a different field to support advanced discovery (language_accessibility or something).
+041	r	permanent	irrelevant	Not the main language of the item described. Could map this to a different field to support advanced discovery (language_accessibility or something).
+210	b	temporary	low priority; needs review	"100 occurrences in UNC catalog on 2019-07-31, most of them just ""(Online)"" -- the qualifier seemed unlikely to be searched for"
+245	h	permanent	irrelevant	"No longer a part of current cataloging standards. Gives users a 'false' thing to look for to identify the ""format"" of an item---false because it isn't used consistently. We set resource_type and physical_media values from other parts of the record (physical_media logic does in some cases take GMD into account)"
+246	5	leveraged but not mapped	leveraged but not mapped	title_variant is not set from any field having a $5 that is not in that institution's config
+382	e	temporary	complex; needs review	"Music-specific field; often this field duplicates information given in an already human-readable field elsewhere in the record. Currently the textual part of this field (e.g. violin) gets mapped to subject_genre and genre_headings. Is it worth the trouble to process this data so the value sent through for something like ""|atrumpet|n2|trombone|n2"" is ['Music for 2 trumpet(s)', 'Music for 2 trombone(s)'] instead of just ['Trumpet', 'Trombone'], as is currently happening?"
+382	n	temporary	complex; needs review	"Music-specific field; often this field duplicates information given in an already human-readable field elsewhere in the record. Currently the textual part of this field (e.g. violin) gets mapped to subject_genre and genre_headings. Is it worth the trouble to process this data so the value sent through for something like ""|atrumpet|n2|trombone|n2"" is ['Music for 2 trumpet(s)', 'Music for 2 trombone(s)'] instead of just ['Trumpet', 'Trombone'], as is currently happening?"
+382	r	temporary	complex; needs review	"Music-specific field; often this field duplicates information given in an already human-readable field elsewhere in the record. Currently the textual part of this field (e.g. violin) gets mapped to subject_genre and genre_headings. Is it worth the trouble to process this data so the value sent through for something like ""|atrumpet|n2|trombone|n2"" is ['Music for 2 trumpet(s)', 'Music for 2 trombone(s)'] instead of just ['Trumpet', 'Trombone'], as is currently happening?"
+382	s	temporary	complex; needs review	"Music-specific field; often this field duplicates information given in an already human-readable field elsewhere in the record. Currently the textual part of this field (e.g. violin) gets mapped to subject_genre and genre_headings. Is it worth the trouble to process this data so the value sent through for something like ""|atrumpet|n2|trombone|n2"" is ['Music for 2 trumpet(s)', 'Music for 2 trombone(s)'] instead of just ['Trumpet', 'Trombone'], as is currently happening?"
+382	t	temporary	complex; needs review	"Music-specific field; often this field duplicates information given in an already human-readable field elsewhere in the record. Currently the textual part of this field (e.g. violin) gets mapped to subject_genre and genre_headings. Is it worth the trouble to process this data so the value sent through for something like ""|atrumpet|n2|trombone|n2"" is ['Music for 2 trumpet(s)', 'Music for 2 trombone(s)'] instead of just ['Trumpet', 'Trombone'], as is currently happening?"
+382	v	temporary	needs review;low priority	"Occurrences in UNC catalog on 2019-07-31: 845. Not frequently used. 382 currently only maps to genre_headings and subject_genre, where inclusion of a note doesn't work. Need music cataloger input. Is this important information that isn't recorded elsewhere in the record?"
+382	3	temporary	needs review	Currently there is no genre_headings[label] element defined. Should it be added? Occurrences of this subfield in UNC catalog on 2019-07-31: 562
+384	3	temporary	needs review	Currently there is no genre_headings[label] element defined. Should it be added? Occurrences of this subfield in UNC catalog on 2019-07-31: 5
+500	5	leveraged but not mapped	leveraged but not mapped	note_general is not set from any field having a $5 that is not in that institution's config
+501	5	TO DO	TO DO	https://trlnmain.atlassian.net/browse/TD-940
+502	o			
+505	u			
+506	g			
+506	q			
+506	5	leveraged but not mapped	leveraged but not mapped	note_access_restrictions is not set from any field having a $5 that is not in that institution's config
+520	u			
+526	i			
+526	x			
+526	5	leveraged but not mapped	leveraged but not mapped	note_general is not set from any field having a $5 that is not in that institution's config
+533	5	leveraged but not mapped	leveraged but not mapped	note_reproduction is not set from any field having a $5 that is not in that institution's config
+533	7			
+538	5	leveraged but not mapped	leveraged but not mapped	note_system_details is not set from any field having a $5 that is not in that institution's config
+540	5	leveraged but not mapped	leveraged but not mapped	note_use_terms is not set from any field having a $5 that is not in that institution's config
+541	5	leveraged but not mapped	leveraged but not mapped	note_local is not set from any field having a $5 that is not in that institution's config
+556	z	temporary	low priority	MARC documentation shows no example of the ISBN included in a 556. 0 occurrences of this subfield in UNC catalog on 2019-07-31. Could be mapped to displayed (not indexed) part of note_general with ISBN label appended. Current method of populating related_isbn_isbn (flattened Argot) for indexing involves setting related_work values. Is there a way to populate this field directly for searching?
+561	u			
+561	5	leveraged but not mapped	leveraged but not mapped	note_local is not set from any field having a $5 that is not in that institution's config
+562	5	leveraged but not mapped	leveraged but not mapped	note_copy_version is not set from any field having a $5 that is not in that institution's config
+563	5	leveraged but not mapped	leveraged but not mapped	note_binding is not set from any field having a $5 that is not in that institution's config
+585	5	leveraged but not mapped	leveraged but not mapped	note_general is not set from any field having a $5 that is not in that institution's config
+590	b			
+590	d			
+600	e			
+600	3	temporary	needs review	Currently there is no subject_headings[label] element defined. Should it be added? Occurrences of this subfield in UNC catalog on 2019-07-31: 3
+600	4			
+610	e			
+610	3	temporary	needs review	Currently there is no subject_headings[label] element defined. Should it be added? Occurrences of this subfield in UNC catalog on 2019-07-31: 0
+610	4			
+611	j			
+611	3	temporary	needs review	Currently there is no subject_headings[label] element defined. Should it be added? Occurrences of this subfield in UNC catalog on 2019-07-31: 0
+611	4			
+630	e			
+630	3	temporary	needs review	Currently there is no subject_headings[label] element defined. Should it be added? Occurrences of this subfield in UNC catalog on 2019-07-31: 0
+630	4			
+647	3	temporary	needs review	Currently there is no subject_headings[label] element defined. Should it be added? Occurrences of this subfield in UNC catalog on 2019-07-31: 0
+648	3	temporary	needs review	Currently there is no subject_headings[label] element defined. Should it be added? Occurrences of this subfield in UNC catalog on 2019-07-31: 0
+650	e			
+650	3	temporary	needs review	Currently there is no subject_headings[label] element defined. Should it be added? Occurrences of this subfield in UNC catalog on 2019-07-31: 6
+650	4			
+651	e			
+651	3	temporary	needs review	Currently there is no subject_headings[label] element defined. Should it be added? Occurrences of this subfield in UNC catalog on 2019-07-31: 3
+651	4			
+655	b			
+655	c			
+655	3	temporary	needs review	Currently there is no genre_headings[label] element defined. Should it be added? Occurrences of this subfield in UNC catalog on 2019-07-31: 7
+655	5			
+656	3	temporary	needs review	Currently there is no subject_headings[label] element defined. Should it be added? Occurrences of this subfield in UNC catalog on 2019-07-31: 0
+657	3	temporary	needs review	Currently there is no subject_headings[label] element defined. Should it be added? Occurrences of this subfield in UNC catalog on 2019-07-31: 0
+662	e			
+662	4			
+700	5			
+710	5			
+711	5			
+730	4			
+730	5			
+740	5			
+752	e			
+752	4			
+760	4			
+762	4			
+765	4			
+767	4			
+770	4			
+772	4			
+773	q			
+773	4			
+774	4			
+775	f			
+775	4			
+777	4			
+780	4			
+785	4			
+786	j			
+786	4			
+787	4			
+800	e			
+800	v			
+800	w			
+800	4			
+800	5			
+810	e			
+810	v			
+810	w			
+810	4			
+810	5			
+811	j			
+811	q			
+811	v			
+811	w			
+811	4			
+811	5			
+830	v			
+830	w			
+830	5			
+856	a			
+856	b			
+856	c			
+856	d			
+856	f			
+856	h			
+856	i			
+856	j			
+856	k			
+856	l			
+856	m			
+856	n			
+856	o			
+856	p			
+856	q			
+856	r			
+856	s			
+856	t			
+856	v			
+856	w			
+856	x			
+856	z	permanent	irrelevant	None of the institutions needs to map this subfield to obtain desired behavior
+856	2			
+856	7			

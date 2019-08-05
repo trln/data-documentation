@@ -7,7 +7,7 @@
 	"imprint": {
 	    "description": "Valid escaped JSON string patterns for use as values in imprint_main and imprint_multiple",
 	    "type": "string",
-"pattern": "^{\\\"type\\\":\\\"(imprint|production|publication|distribution|manufacture|copyright)\\\",(\\\"label\\\":\\\".+\\\",)?\\\"value\\\":\\\".+\\\"}$"
+	    "pattern": "^{\\\"type\\\": *\\\"(imprint|production|publication|distribution|manufacture|copyright)\\\",(\\\"label\\\": *\\\".+\\\",)?\\\"value\\\":\\\".+\\\"}$"
 	},
 	"index_only_value": {
 	    "description": "Fields following this pattern are not displayed to users, but are indexed for search. Because they are indexed, they need to support non-Roman script parsing by including lang subelement.",
@@ -237,21 +237,80 @@
 	    "maxItems": 4,
 	    "uniqueItems": true
 	},
-	"items": {
-	    "description": "",
-	    "type": [
-		"null",
-		"array"
-		],
+	"names": {
+	    "description": "Structured data used to produce displayable and indexed values for each controlled nameheading in the record. For some types of names, also used to produce author facet values and autosuggest values. Excludes names from name/title entries.",
+	    "type": "array",
 	    "items": {
-		"pattern": "^{((\\\"(call_no|cn_scheme|copy_no|due_date|item_id|type|status)\\\":\\\"[^\"]+\\\"|\\\"notes\\\":[[]\\\".+\\\"[]]),){0,5}(\\\"loc_b\\\":\\\"[^\"]+\\\",\\\"loc_n\\\":\\\"[^\"]+\\\"|\\\"loc_n\\\":\\\"[^\"]+\\\",\\\"loc_b\\\":\\\"[^\"]+\\\")(,(\\\"(call_no|cn_scheme|item_id|type|copy_no|status)\\\":\\\"[^\"]+\\\"|\\\"notes\\\":[[]\\\".+\\\"[]])){0,5}}$"
+		"type": "object",
+		"properties": {
+		    "name": {
+			"description": "The controlled form name, minus any relator terms, labels, or other non-name inforamation appearing with it.",
+			"type": "string",
+			"minLength": 1
+		    },
+		    "rel": {
+			"description": "Relator terms associated with name. May be derived from realtor codes.",
+			"type": "array",
+			"items": {
+			    "type": "string"
+			},
+			"minItems": 1,
+			"uniqueItems": true
+		    },
+		    "type": {
+			"description": "Category the name belongs to, used to determine whether to facet and autosuggest the name. Used to create field names of indexed fields so some types of name get more relevance boost than others. If not provided, will default to 'no_rel,' which means there was no relator information for the name.",
+			"type": "string",
+			"enum": [
+			    'creator',
+			    'editor',
+			    'director',
+			    'contributor',
+			    'no_rel',
+			    'owner',
+			    'uncategorized',
+			    'publisher',
+			    'manufacturer',
+			    'distributor'
+			],
+			"minLength": 1
+		    },
+		    "lang": {
+			"$ref": "#/definitions/lang"
+		    },
+		    "label": {
+			"type": "string",
+			"minLength": 1
+		    }
+		}
 	    },
 	    "minItems": 1,
-	},
+	    "required": [
+		"name"
+		]
+	    },
 	"owner": {
 	    "description": "Code of institution responsible for submitting record to and maintaining record in TRLN Discovery",
 	    "type": "string",
 	    "pattern": "^(duke|nccu|ncsu|unc)$"
+	},
+	"local_id":{
+	    "description": "ID as it appears in local system",
+	    "type": "object",
+	    "properties": {
+		"value": {
+		    "type": "string",
+		    "minLength": 1
+		},
+		"other": {
+		    "type": "array",
+		    "items": {
+			"type": "string"
+		    }
+		},
+	    },
+		"required": [
+		    "value"
+		]
 	},
 	"physical_description": {
 	    "description": "Combined physical description of the described item, including its extent, dimensions, and such other physical details as a description of any accompanying materials and unit type and size.",
@@ -290,6 +349,22 @@
 		}
 	    ]
 	},
+      "rollup_id": {
+        "description": "ID used for deduplicating (rolling up) records in expand-to-TRLN mode. Usually OCLC number, but may also be SerialsSolutions number or other vendor record ID",
+          "type": "string",
+	  "pattern": "^(OCLC|ss(j|ib))[0-9]+",
+          "maxItems": 1
+      },
+	"statement_of_responsibility": {
+	    "description": "Who the item says is responsible for its content, usually transcribed (possibly abbreviating or ommitting some terms) directly from the title page or other information source. Not all items have a statement of responsibility.",
+	    "type": "array",
+	    "items": {
+		"$ref": "#/definitions/index_and_display_value"
+	    },
+	    "minItems": 0,
+	    "maxItems": 2,
+	    "uniqueItems": true
+	},
 	"subject_headings": {
 	    "description": "Subject headings (entire post-coordinate strings, if applicable) describing what the item is about.",
 	    "type": "array",
@@ -319,6 +394,7 @@
     "required": [
 	"id",
 	"institution",
+	"local_id",
 	"owner",
 	"title_main",
 	"title_sort"
