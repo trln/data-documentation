@@ -48,6 +48,8 @@ Use https://ingest.discovery.trln.org/ to view the further-transformed data in t
 * the flattened/enriched version of Argot produced by https://github.com/trln/argot-ruby[argot-ruby] ("Enriched Content (what gets sent to Solr)")
 * the stored Solr fields available to the Argon application for display or other non-search purposes ("Solr Document").
 
+You can also see the stored Solr fields available to the Argon application by adding '.json' to the end of any catalog record page you are viewing: https://discovery.trln.org/catalog/UNCb5990361.json
+
 [NOTE]
 ====
 You cannot view the actual content of the indexed fields in Solr, because they have undergone extensive special analysis for indexing and are unfit for human viewing unless you are doing some deep-dive diagnosis.
@@ -63,6 +65,27 @@ To understand how the "Enriched Content (what gets sent to Solr)" gets turned in
 * consult the https://github.com/trln/trln-config/blob/master/solr/trlnbib/schema/dynamic_fields.xml[dynamic fields section of our Solr schema] (This information or a version of it---not sure how in sync these are kept---is publicly available https://github.com/trln/argot-ruby/blob/master/lib/data/solr_schema.xml[here], but you have to scroll/find in page to get to it)
 
 
+*Querying Solr directly* can be extremely helpful for:
 
+* performing searches not supported by UI
+** search on specific field(s) instead of fields grouped by search index
+** searches using negation
 
+This is useful for:
+* finding examples of data issues/problems
+* exporting ids needing update
+* etc
+
+Access to query Solr directly is limited by IP range, but seems to include staff IP ranges for all institutions. If you need to query Solr but can't, contact the main catalog support person at your institution.
+
+There's a poorly formatted/organized https://github.com/trln/data-documentation/blob/master/solr/solr_query_cheatsheet.adoc[*cheatsheet of Solr queries*] we've found useful for data work at UNC. 
+
+=== Argon search and relevance ranking
+The title search in the catalog application is actually searching many fields. 
+
+The search options available in the catalog application are specified https://github.com/trln/trln_argon/blob/e7594bd9d7c0d1e4a41e46f19ea41938b4a6ccef/lib/trln_argon/controller_override.rb#L424[here].
+
+There are https://www.google.com/search?q=solr+qf+pf[qf and pf values] for each search type (except 'all_fields', which really isn't all fields, but uses the default qf/pf labels)
+
+To see all the fields included in each search type, along with the relevance boost applied to each field, look that search type's qf/pf values up https://github.com/trln/trln-config/blob/master/solr/trlnbib/config/select_edismax.xml[here].
 
