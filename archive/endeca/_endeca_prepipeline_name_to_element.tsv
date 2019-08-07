@@ -1,0 +1,261 @@
+Prepipeline label	Element name	Endeca dmod name	Facet on element?	Indexed in
+008PubDate	PubDateSort	PubDateSort	no	not indexed
+008PubDate	Publication Year	Publication Year	yes	not indexed
+020	ISBN	ISBN	no	ISBN, Keyword
+Syndetics_ISBN	Syndetics ISBN	Syndetics_ISBN	no	not indexed
+022	ISSN	ISSN	no	ISBN, Keyword
+024	ISBN	ISBN	no	ISBN, Keyword
+UPC	UPC	UPC	no	ISBN, Keyword
+028	Publisher Number	Publisher Number	no	Keyword
+100	Main Author	Main Author	no	Author, Author_Brief, Keyword, Keyword_Brief
+110	Main Author	Main Author	no	Author, Author_Brief, Keyword, Keyword_Brief
+110	Author	Author	yes	Author, Author_Brief, Keyword
+111	Main Author	Main Author	no	Author, Author_Brief, Keyword, Keyword_Brief
+111	Author	Author	yes	Author, Author_Brief, Keyword
+130_journal	Journal Uniform Title	Journal Uniform Title	no	Journal_Concise, Journal_Title
+130	Main Uniform Title	Main Uniform Title	no	Keyword, Keyword_Brief, Title, Title_Brief
+210_journal	Journal Title Abbreviation	Journal Title Abbreviation	no	Journal_Concise, Journal_Title
+210	Title Index	Title Index	no	Keyword, Keyword_Brief, Title
+240	Uniform Title	Uniform Title	no	Keyword, Keyword_Brief, Title
+242c	Other Author Translation	Other Author Translation	no	Author, Keyword, Keyword_Brief
+242	Other Title Translation	Other Title Translation	no	Keyword, Keyword_Brief, Title
+243	Collective Uniform Title	Collective Uniform Title	no	not indexed
+245a_journal	Journal Title Index	Journal Title Index	no	Journal_Concise, Journal_Title, Title_Brief
+245c	Statement of Responsibility	Statement of Responsibility	no	Author, Keyword
+245	Main Title	Main Title	no	Keyword, Keyword_Brief, Title, Title_Brief
+245sort	Title Sort	Title Sort	no	not indexed
+246_journal	Journal Varying Title	Journal Varying Title	no	Journal_Title
+246	Varying Titles	Varying Titles	no	Keyword, Keyword_Brief, Title, Title_Brief
+247_journal	Journal Varying Title	Journal Varying Title	no	Journal_Title
+247	Varying Titles	Varying Titles	no	Keyword, Keyword_Brief, Title, Title_Brief
+250	Edition	Edition	no	Keyword
+254	Musical Presentation	Musical Presentation	no	not indexed
+255	Cartographic Data	Cartographic Data	no	Keyword
+260b	Publisher	Publisher	no	Keyword, Keyword_Brief, Publisher
+260c	Published	Published	no	not indexed
+260	Imprint	Imprint	no	not indexed
+262b	Sound Recording Imprint	Sound Recording Imprint	no	Keyword, Keyword_Brief
+262	Imprint	Imprint	no	not indexed
+264a1	Imprint	Imprint	no	not indexed
+264b1	Publisher	Publisher	no	Keyword, Keyword_Brief, Publisher
+264c1	Published	Published	no	not indexed
+264a0	Production Statement	Production Statement	no	not indexed
+264b0	Producer	Producer	no	Keyword, Publisher
+264a2	Distribution Statement	Distribution Statement	no	not indexed
+264b2	Distributor	Distributor	no	Keyword, Publisher
+264a3	Manufacturer Statement	Manufacturer Statement	no	not indexed
+264b3	Manufacturer	Manufacturer	no	Keyword, Publisher
+264c4	Copyright	Copyright	no	not indexed
+264c4_display	Copyright Statement	Copyright Statement	no	not indexed
+300	Material	Material	no	Keyword
+310	Current Frequency	Current Frequency	no	not indexed
+321	Former Frequency	Former Frequency	no	not indexed
+344	Material Details	Material Details	no	not indexed
+345	Material Details	Material Details	no	not indexed
+346	Material Details	Material Details	no	not indexed
+347	Material Details	Material Details	no	not indexed
+351	Organization	Organization	no	not indexed
+362	Volumes	Volumes	no	not indexed
+440	Series Statement	Series Statement	no	Keyword, Keyword_Brief, Title
+440x	Series ISSN	Series ISSN	no	ISBN
+440x	Series ISSN	Series ISSN	no	ISBN
+490	Series Statement	Series Statement	no	Keyword, Keyword_Brief, Title
+490x	Series ISSN	Series ISSN	no	ISBN
+490x	Series ISSN	Series ISSN	no	ISBN
+500	Indexed Notes	Indexed Notes	no	Keyword
+501	Indexed Notes	Indexed Notes	no	Keyword
+502	Indexed Notes	Indexed Notes	no	Keyword
+504	Indexed Notes	Indexed Notes	no	Keyword
+505r	Table of Contents author index	Table of Contents author index	no	not indexed
+505	Table of Contents	Table of Contents	no	Keyword
+506	Access Restrictions	Access Restriction	no	not indexed
+507	Indexed Notes	Indexed Notes	no	Keyword
+508	Production Credits	Production Credits	no	Author, Author_Brief, Keyword, Keyword_Brief
+510	Notes	Notes	no	not indexed
+511	Performer Credits	Performer Credits	no	Author, Author_Brief, Keyword, Keyword_Brief
+513	Notes	Notes	no	not indexed
+514	Notes	Notes	no	not indexed
+515	Notes	Notes	no	not indexed
+516	Notes	Notes	no	not indexed
+518	Notes	Notes	no	not indexed
+520	Summary	Summary	no	Keyword
+521	Notes	Notes	no	not indexed
+522	Indexed Notes	Indexed Notes	no	Keyword
+524	Notes	Notes	no	not indexed
+525	Notes	Notes	no	not indexed
+530	Other Format	Other Format	no	not indexed
+533i	Indexed Notes	Indexed Notes	no	Keyword
+533d	Notes	Notes	no	not indexed
+534	Indexed Notes	Indexed Notes	no	Keyword
+535	Notes	Notes	no	not indexed
+536	Indexed Notes	Indexed Notes	no	Keyword
+538	System Details	System Details	no	not indexed
+540	Notes	Notes	no	not indexed
+541	Source of Acquisition	Source of Acquisition	no	not indexed
+541a	Indexed Notes	Indexed Notes	no	Keyword
+544	Related Collections	Related Collections	no	Keyword, Keyword_Brief
+545	Biographical Sketch	Biographical Sketch	no	Keyword, Keyword_Brief
+546	Notes	Notes	no	not indexed
+547	Notes	Notes	no	not indexed
+550	Notes	Notes	no	not indexed
+555	Cumulative Indexes	Cumulative Indexes	no	not indexed
+556	Notes	Notes	no	not indexed
+561_indexed	Indexed Notes	Indexed Notes	no	Keyword
+561_indexed	Indexed Notes	Indexed Notes	no	Keyword
+565	Notes	Notes	no	not indexed
+567	Notes	Notes	no	not indexed
+580	Notes	Notes	no	not indexed
+581	Indexed Notes	Indexed Notes	no	Keyword
+585	Indexed Notes	Indexed Notes	no	Keyword
+586	Indexed Notes	Indexed Notes	no	Keyword
+588	Notes	Notes	no	not indexed
+590_indexed	Indexed Notes	Indexed Notes	no	Keyword
+590	Notes	Notes	no	not indexed
+599	Most Recently Arrived	Most Recently Arrived	no	not indexed
+600	Subjects	Subjects	no	not indexed
+600	Subject Headings	Subject Headings	yes	Keyword, Keyword_Brief, Subject
+610	Subjects	Subjects	no	not indexed
+610	Subject Headings	Subject Headings	yes	Keyword, Keyword_Brief, Subject
+611	Subjects	Subjects	no	not indexed
+611	Subject Headings	Subject Headings	yes	Keyword, Keyword_Brief, Subject
+630	Subjects	Subjects	no	not indexed
+630	Subject Headings	Subject Headings	yes	Keyword, Keyword_Brief, Subject
+650	Subjects	Subjects	no	not indexed
+650	Subject Headings	Subject Headings	yes	Keyword, Keyword_Brief, Subject
+651	Subjects	Subjects	no	not indexed
+651	Subject Headings	Subject Headings	yes	Keyword, Keyword_Brief, Subject
+653	Subjects	Subjects	no	not indexed
+653	Subject Headings	Subject Headings	yes	Keyword, Keyword_Brief, Subject
+690	Subjects	Subjects	no	not indexed
+690	Subject Headings	Subject Headings	yes	Keyword, Keyword_Brief, Subject
+691	Subjects	Subjects	no	not indexed
+691	Subject Headings	Subject Headings	yes	Keyword, Keyword_Brief, Subject
+695	Uncontrolled Subject	Uncontrolled Subject	no	Keyword, Keyword_Brief
+Director	Director	Director	no	Author, Author_Brief, Keyword, Keyword_Brief
+700a	Other Authors	Other Authors	no	Author, Keyword, Keyword_Brief
+700t	Other Titles	Other Titles	no	Keyword, Keyword_Brief, Title
+710a	Other Authors	Other Authors	no	Author, Keyword, Keyword_Brief
+710t	Other Titles	Other Titles	no	Keyword, Keyword_Brief, Title
+711a	Other Authors	Other Authors	no	Author, Keyword, Keyword_Brief
+711t	Other Titles	Other Titles	no	Keyword, Keyword_Brief, Title
+720	Uncontrolled Author	Uncontrolled Author	no	not indexed
+730	Uniform Title	Uniform Title	no	Keyword, Keyword_Brief, Title
+740	Varying Titles	Varying Titles	no	Keyword, Keyword_Brief, Title, Title_Brief
+752	Notes	Notes	no	not indexed
+760	Main Series Linking	Main Series Linking	no	not indexed
+762	Subseries Linking	Subseries Linking	no	Keyword
+765	Translation of Linking	Translation of Linking	no	Keyword, Keyword_Brief
+765x	Linking ISSN	Linking_ISSN	no	ISBN
+767	Translated as Linking	Translated as Linking	no	Keyword, Keyword_Brief
+767x	Linking ISSN	Linking_ISSN	no	ISBN
+770	Has Supplement Linking	Has Supplement Linking	no	Keyword
+772	Supplement to Linking	Supplement to Linking	no	not indexed
+773	Host Item Linking	Host Item Linking	no	Keyword, Keyword_Brief
+773x	Linking ISSN	Linking_ISSN	no	ISBN
+774	Constituent Unit Linking	Constituent Unit Linking	no	Keyword
+774x	Linking ISSN	Linking_ISSN	no	ISBN
+775	Other Edition	Other Edition	no	not indexed
+780_journal	Journal Earlier Title	Journal Earlier Title	no	Journal_Concise, Journal_Title
+780x	Linking ISSN	Linking_ISSN	no	ISBN
+780	Earlier Title	Earlier Title	no	Keyword, Keyword_Brief, Title
+785_journal	Journal Later Title	Journal Later Title	no	Journal_Concise, Journal_Title
+785x	Linking ISSN	Linking_ISSN	no	ISBN
+785	Later Title	Later Title	no	Keyword, Keyword_Brief, Title
+790	Other Authors	Other Authors	no	Author, Keyword, Keyword_Brief
+791	Other Authors	Other Authors	no	Author, Keyword, Keyword_Brief
+Name_Title	Name Title	Name Title	no	not indexed
+800t	Series Title Index	Series title index	no	Keyword, Keyword_Brief, Title
+800	Series	Series	no	not indexed
+810t	Series Title Index	Series title index	no	Keyword, Keyword_Brief, Title
+810	Series	Series	no	not indexed
+811t	Series Title Index	Series title index	no	Keyword, Keyword_Brief, Title
+811	Series	Series	no	not indexed
+830t	Series Title Index	Series title index	no	Keyword, Keyword_Brief, Title
+830	Series	Series	no	not indexed
+852HoldingsNote	Holdings Note	HoldingsNote	no	not indexed
+Secondary_URL	Secondary URL	Secondary URL	no	not indexed
+Primary_URL	Primary URL	Primary URL	no	not indexed
+FindingAid_URL	Finding Aid URL	Finding Aid URL	no	not indexed
+863HoldingsNote	Serial Holdings Summary	SerialHoldingsSummary	no	not indexed
+866HoldingsNote	Serial Holdings Summary	SerialHoldingsSummary	no	not indexed
+909	DateCataloged	DateCataloged	no	not indexed
+999CallNo	Call Number	Call Number	no	not indexed
+CallNoSort	Call Number Sort	Call Number sort	no	not indexed
+999Circ	Circulation Level	Circulation Level	no	not indexed
+999DocType	DocType	DocType	no	not indexed
+999ItemDueDate	Item Due Date	ItemDueDate	no	not indexed
+999ItemNote	Item Notes	ItemNotes	no	not indexed
+999ItemType_orig	Item Types	ItemTypes	no	not indexed
+999Lib_orig	Libraries	Libraries	no	not indexed
+999Loc	Location property	Location_property	no	not indexed
+999Status_orig	Statuses	Statuses	no	not indexed
+LocalId	LocalId	LocalId	no	Keyword
+OtherLocalId	Other LocalId	Other LocalId	no	Keyword
+Rollup	Rollup	Rollup	no	not indexed
+UniqueId	UniqueId	UniqueId	no	not indexed
+OCLCNumber	OCLCNumber	OCLCNumber	no	Keyword
+EAD ID	EAD ID	EAD ID	no	Keyword
+EAD ID	EAD ID	EAD ID	no	Keyword
+Donor	Donor	Donor	no	Keyword
+LocalNumbers	Local System Number	Local System Number	no	not indexed
+EAD Access Restrictions	EAD Access Restrictions	EAD Access Restrictions	no	not indexed
+EAD Acquisitions Info	EAD Acquisitions Info	EAD Acquisitions Info	no	not indexed
+EAD Biographical Note	EAD Biographical History	EAD Biographical Note	no	Keyword
+EAD Overview	EAD Overview	EAD Overview	no	Keyword
+EAD Preferred Citation	EAD Preferred Citation	EAD Preferred Citation	no	not indexed
+EAD Scope Content	EAD Scope Content	EAD Scope Content	no	Keyword
+EAD Unit Title	EAD Unit Title	EAD Unit Title	no	Keyword
+EAD Use Restrictions	EAD Use Restrictions	EAD Use Restrictions	no	not indexed
+EAD Element Flag	EAD Element Flag	EAD Element Flag	no	not indexed
+EAD Element List	EAD Element List	EAD Element List	no	not indexed
+008BookFiction	Genre	Subject: Genre	yes	Keyword, Keyword_Brief, Subject
+008Lang	Language	Language	yes	not indexed
+008SerialType	Format	Format	yes	not indexed
+100_Facet	Author	Author	yes	Author, Author_Brief, Keyword
+600v	Genre	Subject: Genre	yes	Keyword, Keyword_Brief, Subject
+610v	Genre	Subject: Genre	yes	Keyword, Keyword_Brief, Subject
+611v	Genre	Subject: Genre	yes	Keyword, Keyword_Brief, Subject
+630v	Genre	Subject: Genre	yes	Keyword, Keyword_Brief, Subject
+650v	Genre	Subject: Genre	yes	Keyword, Keyword_Brief, Subject
+651v	Genre	Subject: Genre	yes	Keyword, Keyword_Brief, Subject
+655a	Genre	Subject: Genre	yes	Keyword, Keyword_Brief, Subject
+690x	Genre	Subject: Genre	yes	Keyword, Keyword_Brief, Subject
+600z	Region	Subject: Region	yes	not indexed
+610z	Region	Subject: Region	yes	not indexed
+611z	Region	Subject: Region	yes	not indexed
+630z	Region	Subject: Region	yes	not indexed
+650z	Region	Subject: Region	yes	not indexed
+651a	Region	Subject: Region	yes	not indexed
+651z	Region	Subject: Region	yes	not indexed
+655z	Region	Subject: Region	yes	not indexed
+600y	Time Period	Subject: Time Period	yes	not indexed
+610y	Time Period	Subject: Time Period	yes	not indexed
+611y	Time Period	Subject: Time Period	yes	not indexed
+630y	Time Period	Subject: Time Period	yes	not indexed
+650y	Time Period	Subject: Time Period	yes	not indexed
+650a2	Medical Subject	Medical Subject: Topic	yes	not indexed
+651y	Time Period	Subject: Time Period	yes	not indexed
+600a	Subject	Subject: Topic	yes	not indexed
+650x2	Medical Subject	Medical Subject: Topic	yes	not indexed
+600x	Subject	Subject: Topic	yes	not indexed
+610a	Subject	Subject: Topic	yes	not indexed
+610x	Subject	Subject: Topic	yes	not indexed
+611a	Subject	Subject: Topic	yes	not indexed
+611x	Subject	Subject: Topic	yes	not indexed
+630a	Subject	Subject: Topic	yes	not indexed
+630x	Subject	Subject: Topic	yes	not indexed
+650a	Subject	Subject: Topic	yes	not indexed
+650x	Subject	Subject: Topic	yes	not indexed
+651x	Subject	Subject: Topic	yes	not indexed
+700_facet	Author	Author	yes	Author, Author_Brief, Keyword
+800a	Author	Author	yes	Author, Author_Brief, Keyword
+810a	Author	Author	yes	Author, Author_Brief, Keyword
+811a	Author	Author	yes	Author, Author_Brief, Keyword
+995	Institution	Institution	yes	not indexed
+999ItemType	Format	Format	yes	not indexed
+ItemCallNo	Call Number Range	Call Number Range	yes	not indexed
+999Lib	Location	Location	yes	not indexed
+999Lib	Location	Location	yes	not indexed
+999Status	Availability	Availability	yes	not indexed
+BibCallNo	Call Number Range	Call Number Range	yes	not indexed
+Source	Source	Source	yes	not indexed

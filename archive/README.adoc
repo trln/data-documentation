@@ -1,0 +1,6 @@
+== endeca
+Endeca is the catalog project TRLN Discovery is replacing. This folder contains documentation of the Endeca data model.
+
+== marc_to_endeca
+Details on how MARC bibliographic fields and subfields are mapped into Endeca, for initial Argot/Argon data model analysis and decisionmaking
+

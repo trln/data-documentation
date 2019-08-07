@@ -1,0 +1,1100 @@
+MARC tag	Field name	Field repeatability	Field note	SF delimiter	SF name	SF repeatability	SF note	Subfield	Endeca element	i1	i2	Other constraint	Institution
+020	INTERNATIONAL STANDARD BOOK NUMBER	R	.	a	International Standard Book Number	NR	.	020a	ISBN	.	.	.	TRLN-
+020	INTERNATIONAL STANDARD BOOK NUMBER	R	.	a	International Standard Book Number	NR	.	020a	ISBN	.	.	.	UNC
+020	INTERNATIONAL STANDARD BOOK NUMBER	R	.	a	International Standard Book Number	NR	.	020a	Syndetics ISBN	.	.	.	TRLN
+020	INTERNATIONAL STANDARD BOOK NUMBER	R	.	a	International Standard Book Number	NR	.	020a	Syndetics ISBN	.	.	.	TRLN-
+020	INTERNATIONAL STANDARD BOOK NUMBER	R	.	q	Qualifying information	R	.	020q	ISBN	.	.	.	UNC
+020	INTERNATIONAL STANDARD BOOK NUMBER	R	.	z	Canceled/invalid ISBN	R	.	020z	ISBN	.	.	.	TRLN-
+020	INTERNATIONAL STANDARD BOOK NUMBER	R	.	z	Canceled/invalid ISBN	R	.	020z	ISBN	.	.	.	UNC
+020	INTERNATIONAL STANDARD BOOK NUMBER	R	.	z	Canceled/invalid ISBN	R	.	020z	Syndetics ISBN	.	.	.	TRLN-
+022	INTERNATIONAL STANDARD SERIAL NUMBER	R	.	a	International Standard Serial Number	NR	.	022a	ISSN	.	.	.	TRLN
+022	INTERNATIONAL STANDARD SERIAL NUMBER	R	.	y	Incorrect ISSN	R	.	022y	ISSN	.	.	.	TRLN
+022	INTERNATIONAL STANDARD SERIAL NUMBER	R	.	z	Canceled ISSN	R	.	022z	ISSN	.	.	.	TRLN
+024	OTHER STANDARD IDENTIFIER	R	.	a	Standard number or code	NR	.	024a	ISBN	.	.	.	TRLN
+024	OTHER STANDARD IDENTIFIER	R	.	a	Standard number or code	NR	.	024a	UPC	1	.	.	TRLN
+028	PUBLISHER NUMBER OR DISTRIBUTOR NUMBER	R	.	a	Publisher or distributor number	NR	.	028a	Publisher Number	.	.	.	TRLN
+028	PUBLISHER NUMBER OR DISTRIBUTOR NUMBER	R	.	b	Source	NR	.	028b	Publisher Number	.	.	.	TRLN
+041	LANGUAGE CODE	R	.	a	Language code of text/sound track or separate title	R	.	041a	Language	.	b	complex constraints specified in transformation code are met	UNC
+041	LANGUAGE CODE	R	.	d	Language code of sung or spoken text	R	.	041d	Language	.	b	complex constraints specified in transformation code are met	UNC
+041	LANGUAGE CODE	R	.	e	Language code of librettos	R	.	041e	Language	.	b	complex constraints specified in transformation code are met	UNC
+041	LANGUAGE CODE	R	.	g	Language code of accompanying material other than librettos	R	.	041g	Language	.	b	complex constraints specified in transformation code are met	UNC
+041	LANGUAGE CODE	R	.	j	Language code of subtitles or captions	R	.	041j	Language	.	b	complex constraints specified in transformation code are met	UNC
+050	LIBRARY OF CONGRESS CALL NUMBER	R	.	a	Classification number	R	.	050a	Call Number Range	.	.	a 'good' LC# hasn't been extracted from elsewhere	UNC
+050	LIBRARY OF CONGRESS CALL NUMBER	R	.	b	Item number	NR	.	050b	Call Number Range	.	.	a 'good' LC# hasn't been extracted from elsewhere	UNC
+100	MAIN ENTRY--PERSONAL NAME	NR	.	a	Personal name	NR	.	100a	Author	.	.	.	TRLN
+100	MAIN ENTRY--PERSONAL NAME	NR	.	a	Personal name	NR	.	100a	Main Author	.	.	.	TRLN
+100	MAIN ENTRY--PERSONAL NAME	NR	.	b	Numeration	NR	.	100b	Author	.	.	.	TRLN
+100	MAIN ENTRY--PERSONAL NAME	NR	.	b	Numeration	NR	.	100b	Main Author	.	.	.	TRLN
+100	MAIN ENTRY--PERSONAL NAME	NR	.	c	Titles and other words associated with a name	R	.	100c	Author	.	.	.	TRLN
+100	MAIN ENTRY--PERSONAL NAME	NR	.	c	Titles and other words associated with a name	R	.	100c	Main Author	.	.	.	TRLN
+100	MAIN ENTRY--PERSONAL NAME	NR	.	d	Dates associated with a name	NR	.	100d	Author	.	.	.	TRLN
+100	MAIN ENTRY--PERSONAL NAME	NR	.	d	Dates associated with a name	NR	.	100d	Main Author	.	.	.	TRLN
+100	MAIN ENTRY--PERSONAL NAME	NR	.	e	Relator term	R	.	100e	Main Author	.	.	.	TRLN
+100	MAIN ENTRY--PERSONAL NAME	NR	.	g	Miscellaneous information	R	.	100g	Main Author	.	.	.	TRLN
+100	MAIN ENTRY--PERSONAL NAME	NR	.	q	Fuller form of name	NR	.	100q	Author	.	.	.	TRLN
+100	MAIN ENTRY--PERSONAL NAME	NR	.	q	Fuller form of name	NR	.	100q	Main Author	.	.	.	TRLN
+110	MAIN ENTRY--CORPORATE NAME	NR	.	a	Corporate name or jurisdiction name as entry element	NR	.	110a	Author	.	.	.	TRLN
+110	MAIN ENTRY--CORPORATE NAME	NR	.	a	Corporate name or jurisdiction name as entry element	NR	.	110a	Main Author	.	.	.	TRLN
+110	MAIN ENTRY--CORPORATE NAME	NR	.	b	Subordinate unit	R	.	110b	Author	.	.	.	TRLN
+110	MAIN ENTRY--CORPORATE NAME	NR	.	b	Subordinate unit	R	.	110b	Main Author	.	.	.	TRLN
+110	MAIN ENTRY--CORPORATE NAME	NR	.	c	Location of meeting	R	.	110c	Author	.	.	.	TRLN
+110	MAIN ENTRY--CORPORATE NAME	NR	.	c	Location of meeting	R	.	110c	Main Author	.	.	.	TRLN
+110	MAIN ENTRY--CORPORATE NAME	NR	.	d	Date of meeting or treaty signing	R	.	110d	Author	.	.	.	TRLN
+110	MAIN ENTRY--CORPORATE NAME	NR	.	d	Date of meeting or treaty signing	R	.	110d	Main Author	.	.	.	TRLN
+110	MAIN ENTRY--CORPORATE NAME	NR	.	e	Relator term	R	.	110e	Author	.	.	.	TRLN
+110	MAIN ENTRY--CORPORATE NAME	NR	.	e	Relator term	R	.	110e	Main Author	.	.	.	TRLN
+110	MAIN ENTRY--CORPORATE NAME	NR	.	f	Date of a work	NR	.	110f	Author	.	.	.	TRLN
+110	MAIN ENTRY--CORPORATE NAME	NR	.	f	Date of a work	NR	.	110f	Main Author	.	.	.	TRLN
+110	MAIN ENTRY--CORPORATE NAME	NR	.	g	Miscellaneous information	R	.	110g	Author	.	.	.	TRLN
+110	MAIN ENTRY--CORPORATE NAME	NR	.	g	Miscellaneous information	R	.	110g	Main Author	.	.	.	TRLN
+110	MAIN ENTRY--CORPORATE NAME	NR	.	n	Number of part/section/meeting	R	.	110n	Main Author	.	.	.	TRLN
+111	MAIN ENTRY--MEETING NAME	NR	.	a	Meeting name or jurisdiction name as entry element	NR	.	111a	Author	.	.	.	TRLN
+111	MAIN ENTRY--MEETING NAME	NR	.	a	Meeting name or jurisdiction name as entry element	NR	.	111a	Main Author	.	.	.	TRLN
+111	MAIN ENTRY--MEETING NAME	NR	.	b	Number	.	[OBSOLETE]	111b	Main Author	.	.	.	TRLN
+111	MAIN ENTRY--MEETING NAME	NR	.	c	Location of meeting	R	.	111c	Author	.	.	.	TRLN
+111	MAIN ENTRY--MEETING NAME	NR	.	c	Location of meeting	R	.	111c	Main Author	.	.	.	TRLN
+111	MAIN ENTRY--MEETING NAME	NR	.	d	Date of meeting	NR	.	111d	Author	.	.	.	TRLN
+111	MAIN ENTRY--MEETING NAME	NR	.	d	Date of meeting	NR	.	111d	Main Author	.	.	.	TRLN
+111	MAIN ENTRY--MEETING NAME	NR	.	e	Subordinate unit	R	.	111e	Author	.	.	.	TRLN
+111	MAIN ENTRY--MEETING NAME	NR	.	e	Subordinate unit	R	.	111e	Main Author	.	.	.	TRLN
+111	MAIN ENTRY--MEETING NAME	NR	.	f	Date of a work	NR	.	111f	Author	.	.	.	TRLN
+111	MAIN ENTRY--MEETING NAME	NR	.	f	Date of a work	NR	.	111f	Main Author	.	.	.	TRLN
+111	MAIN ENTRY--MEETING NAME	NR	.	g	Miscellaneous information	R	.	111g	Main Author	.	.	.	TRLN
+111	MAIN ENTRY--MEETING NAME	NR	.	n	Number of part/section/meeting	R	.	111n	Author	.	.	.	TRLN
+111	MAIN ENTRY--MEETING NAME	NR	.	n	Number of part/section/meeting	R	.	111n	Main Author	.	.	.	TRLN
+111	MAIN ENTRY--MEETING NAME	NR	.	q	Name of meeting following jurisdiction name entry element	NR	.	111q	Author	.	.	.	TRLN
+111	MAIN ENTRY--MEETING NAME	NR	.	q	Name of meeting following jurisdiction name entry element	NR	.	111q	Main Author	.	.	.	TRLN
+130	MAIN ENTRY--UNIFORM TITLE	NR	.	a	Uniform title	NR	.	130a	Main Uniform Title	.	.	.	TRLN
+130	MAIN ENTRY--UNIFORM TITLE	NR	.	a	Uniform title	NR	.	130a	Journal Uniform Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+130	MAIN ENTRY--UNIFORM TITLE	NR	.	d	Date of treaty signing	R	.	130d	Main Uniform Title	.	.	.	TRLN
+130	MAIN ENTRY--UNIFORM TITLE	NR	.	d	Date of treaty signing	R	.	130d	Journal Uniform Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+130	MAIN ENTRY--UNIFORM TITLE	NR	.	f	Date of a work	NR	.	130f	Main Uniform Title	.	.	.	TRLN
+130	MAIN ENTRY--UNIFORM TITLE	NR	.	f	Date of a work	NR	.	130f	Journal Uniform Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+130	MAIN ENTRY--UNIFORM TITLE	NR	.	g	Miscellaneous information	R	.	130g	Main Uniform Title	.	.	.	TRLN
+130	MAIN ENTRY--UNIFORM TITLE	NR	.	g	Miscellaneous information	R	.	130g	Journal Uniform Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+130	MAIN ENTRY--UNIFORM TITLE	NR	.	h	Medium	NR	.	130h	Main Uniform Title	.	.	.	TRLN
+130	MAIN ENTRY--UNIFORM TITLE	NR	.	h	Medium	NR	.	130h	Journal Uniform Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+130	MAIN ENTRY--UNIFORM TITLE	NR	.	k	Form subheading	R	.	130k	Main Uniform Title	.	.	.	TRLN
+130	MAIN ENTRY--UNIFORM TITLE	NR	.	k	Form subheading	R	.	130k	Journal Uniform Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+130	MAIN ENTRY--UNIFORM TITLE	NR	.	l	Language of a work	NR	.	130l	Main Uniform Title	.	.	.	TRLN
+130	MAIN ENTRY--UNIFORM TITLE	NR	.	l	Language of a work	NR	.	130l	Journal Uniform Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+130	MAIN ENTRY--UNIFORM TITLE	NR	.	m	Medium of performance for music	R	.	130m	Main Uniform Title	.	.	.	TRLN
+130	MAIN ENTRY--UNIFORM TITLE	NR	.	m	Medium of performance for music	R	.	130m	Journal Uniform Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+130	MAIN ENTRY--UNIFORM TITLE	NR	.	n	Number of part/section of a work	R	.	130n	Main Uniform Title	.	.	.	TRLN
+130	MAIN ENTRY--UNIFORM TITLE	NR	.	n	Number of part/section of a work	R	.	130n	Journal Uniform Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+130	MAIN ENTRY--UNIFORM TITLE	NR	.	o	Arranged statement for music	NR	.	130o	Main Uniform Title	.	.	.	TRLN
+130	MAIN ENTRY--UNIFORM TITLE	NR	.	o	Arranged statement for music	NR	.	130o	Journal Uniform Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+130	MAIN ENTRY--UNIFORM TITLE	NR	.	p	Name of part/section of a work	R	.	130p	Main Uniform Title	.	.	.	TRLN
+130	MAIN ENTRY--UNIFORM TITLE	NR	.	p	Name of part/section of a work	R	.	130p	Journal Uniform Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+130	MAIN ENTRY--UNIFORM TITLE	NR	.	r	Key for music	NR	.	130r	Main Uniform Title	.	.	.	TRLN
+130	MAIN ENTRY--UNIFORM TITLE	NR	.	r	Key for music	NR	.	130r	Journal Uniform Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+130	MAIN ENTRY--UNIFORM TITLE	NR	.	s	Version	NR	.	130s	Main Uniform Title	.	.	.	TRLN
+130	MAIN ENTRY--UNIFORM TITLE	NR	.	s	Version	NR	.	130s	Journal Uniform Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+210	ABBREVIATED TITLE	R	.	a	Abbreviated title	NR	.	210a	Title Index	.	.	.	TRLN
+210	ABBREVIATED TITLE	R	.	a	Abbreviated title	NR	.	210a	Journal Title Abbreviation	.	.	LDR/07=s && 008/21=[pP]	TRLN
+210	ABBREVIATED TITLE	R	.	b	Qualifying information	NR	.	210b	Title Index	.	.	.	TRLN
+210	ABBREVIATED TITLE	R	.	b	Qualifying information	NR	.	210b	Journal Title Abbreviation	.	.	LDR/07=s && 008/21=[pP]	TRLN
+240	UNIFORM TITLE	NR	.	a	Uniform title	NR	.	240a	Uniform Title	.	.	.	TRLN
+240	UNIFORM TITLE	NR	.	d	Date of treaty signing	R	.	240d	Uniform Title	.	.	.	TRLN
+240	UNIFORM TITLE	NR	.	f	Date of a work	NR	.	240f	Uniform Title	.	.	.	TRLN
+240	UNIFORM TITLE	NR	.	g	Miscellaneous information	R	.	240g	Uniform Title	.	.	.	TRLN
+240	UNIFORM TITLE	NR	.	h	Medium	NR	.	240h	Uniform Title	.	.	.	TRLN
+240	UNIFORM TITLE	NR	.	k	Form subheading	R	.	240k	Uniform Title	.	.	.	TRLN
+240	UNIFORM TITLE	NR	.	l	Language of a work	NR	.	240l	Uniform Title	.	.	.	TRLN
+240	UNIFORM TITLE	NR	.	m	Medium of performance for music	R	.	240m	Uniform Title	.	.	.	TRLN
+240	UNIFORM TITLE	NR	.	n	Number of part/section of a work	R	.	240n	Uniform Title	.	.	.	TRLN
+240	UNIFORM TITLE	NR	.	o	Arranged statement for music	NR	.	240o	Uniform Title	.	.	.	TRLN
+240	UNIFORM TITLE	NR	.	p	Name of part/section of a work	R	.	240p	Uniform Title	.	.	.	TRLN
+240	UNIFORM TITLE	NR	.	r	Key for music	NR	.	240r	Uniform Title	.	.	.	TRLN
+240	UNIFORM TITLE	NR	.	s	Version	NR	.	240s	Uniform Title	.	.	.	TRLN
+242	TRANSLATION OF TITLE BY CATALOGING AGENCY	R	.	a	Title	NR	.	242a	Other Title Translation	.	.	.	TRLN
+242	TRANSLATION OF TITLE BY CATALOGING AGENCY	R	.	b	Remainder of title	NR	.	242b	Other Title Translation	.	.	.	TRLN
+242	TRANSLATION OF TITLE BY CATALOGING AGENCY	R	.	c	Statement of responsibility, etc.	NR	.	242c	Other Author Translation	.	.	.	TRLN
+242	TRANSLATION OF TITLE BY CATALOGING AGENCY	R	.	h	Medium	NR	.	242h	Other Title Translation	.	.	.	TRLN
+242	TRANSLATION OF TITLE BY CATALOGING AGENCY	R	.	n	Number of part/section of a work	R	.	242n	Other Title Translation	.	.	.	TRLN
+242	TRANSLATION OF TITLE BY CATALOGING AGENCY	R	.	p	Name of part/section of a work	R	.	242p	Other Title Translation	.	.	.	TRLN
+243	COLLECTIVE UNIFORM TITLE	NR	.	a	Uniform title	NR	.	243a	Collective Uniform Title	.	.	.	TRLN
+243	COLLECTIVE UNIFORM TITLE	NR	.	d	Date of treaty signing	R	.	243d	Collective Uniform Title	.	.	.	TRLN
+243	COLLECTIVE UNIFORM TITLE	NR	.	f	Date of a work	NR	.	243f	Collective Uniform Title	.	.	.	TRLN
+243	COLLECTIVE UNIFORM TITLE	NR	.	k	Form subheading	R	.	243k	Collective Uniform Title	.	.	.	TRLN
+243	COLLECTIVE UNIFORM TITLE	NR	.	l	Language of a work	NR	.	243l	Collective Uniform Title	.	.	.	TRLN
+243	COLLECTIVE UNIFORM TITLE	NR	.	m	Medium of performance for music	R	.	243m	Collective Uniform Title	.	.	.	TRLN
+243	COLLECTIVE UNIFORM TITLE	NR	.	n	Number of part/section of a work	R	.	243n	Collective Uniform Title	.	.	.	TRLN
+243	COLLECTIVE UNIFORM TITLE	NR	.	o	Arranged statement for music	NR	.	243o	Collective Uniform Title	.	.	.	TRLN
+243	COLLECTIVE UNIFORM TITLE	NR	.	p	Name of part/section of a work	R	.	243p	Collective Uniform Title	.	.	.	TRLN
+243	COLLECTIVE UNIFORM TITLE	NR	.	r	Key for music	NR	.	243r	Collective Uniform Title	.	.	.	TRLN
+243	COLLECTIVE UNIFORM TITLE	NR	.	s	Version	NR	.	243s	Collective Uniform Title	.	.	.	TRLN
+245	TITLE STATEMENT	NR	.	a	Title	NR	.	245a	Main Title	.	.	.	TRLN
+245	TITLE STATEMENT	NR	.	a	Title	NR	.	245a	Title Sort	.	.	.	TRLN
+245	TITLE STATEMENT	NR	.	a	Title	NR	.	245a	Journal Title Index	.	.	LDR/07=s && 008/21=[pP]	TRLN
+245	TITLE STATEMENT	NR	.	b	Remainder of title	NR	.	245b	Main Title	.	.	.	TRLN
+245	TITLE STATEMENT	NR	.	b	Remainder of title	NR	.	245b	Title Sort	.	.	.	TRLN
+245	TITLE STATEMENT	NR	.	b	Remainder of title	NR	.	245b	Journal Title Index	.	.	LDR/07=s && 008/21=[pP]	TRLN
+245	TITLE STATEMENT	NR	.	c	Statement of responsibility, etc.	NR	.	245c	Statement of Responsibility	.	.	.	TRLN
+245	TITLE STATEMENT	NR	.	f	Inclusive dates	NR	.	245f	Main Title	.	.	.	TRLN
+245	TITLE STATEMENT	NR	.	f	Inclusive dates	NR	.	245f	Title Sort	.	.	.	TRLN
+245	TITLE STATEMENT	NR	.	g	Bulk dates	NR	.	245g	Main Title	.	.	.	TRLN
+245	TITLE STATEMENT	NR	.	g	Bulk dates	NR	.	245g	Title Sort	.	.	.	TRLN
+245	TITLE STATEMENT	NR	.	h	Medium	NR	.	245h	Main Title	.	.	.	TRLN
+245	TITLE STATEMENT	NR	.	h	Medium	NR	.	245h	Title Sort	.	.	.	TRLN
+245	TITLE STATEMENT	NR	.	k	Form	R	.	245k	Main Title	.	.	.	TRLN
+245	TITLE STATEMENT	NR	.	k	Form	R	.	245k	Title Sort	.	.	.	TRLN
+245	TITLE STATEMENT	NR	.	n	Number of part/section of a work	R	.	245n	Main Title	.	.	.	TRLN
+245	TITLE STATEMENT	NR	.	n	Number of part/section of a work	R	.	245n	Title Sort	.	.	.	TRLN
+245	TITLE STATEMENT	NR	.	n	Number of part/section of a work	R	.	245n	Journal Title Index	.	.	LDR/07=s && 008/21=[pP]	TRLN
+245	TITLE STATEMENT	NR	.	p	Name of part/section of a work	R	.	245p	Main Title	.	.	.	TRLN
+245	TITLE STATEMENT	NR	.	p	Name of part/section of a work	R	.	245p	Title Sort	.	.	.	TRLN
+245	TITLE STATEMENT	NR	.	p	Name of part/section of a work	R	.	245p	Journal Title Index	.	.	LDR/07=s && 008/21=[pP]	TRLN
+245	TITLE STATEMENT	NR	.	s	Version	NR	.	245s	Main Title	.	.	.	TRLN
+245	TITLE STATEMENT	NR	.	s	Version	NR	.	245s	Title Sort	.	.	.	TRLN
+246	VARYING FORM OF TITLE	R	.	a	Title proper/short title	NR	.	246a	Varying Titles	.	.	.	TRLN
+246	VARYING FORM OF TITLE	R	.	a	Title proper/short title	NR	.	246a	Journal Varying Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+246	VARYING FORM OF TITLE	R	.	b	Remainder of title	NR	.	246b	Varying Titles	.	.	.	TRLN
+246	VARYING FORM OF TITLE	R	.	b	Remainder of title	NR	.	246b	Journal Varying Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+246	VARYING FORM OF TITLE	R	.	h	Medium	NR	.	246h	Varying Titles	.	.	.	TRLN
+246	VARYING FORM OF TITLE	R	.	h	Medium	NR	.	246h	Journal Varying Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+246	VARYING FORM OF TITLE	R	.	n	Number of part/section of a work	R	.	246n	Varying Titles	.	.	.	TRLN
+246	VARYING FORM OF TITLE	R	.	n	Number of part/section of a work	R	.	246n	Journal Varying Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+246	VARYING FORM OF TITLE	R	.	p	Name of part/section of a work	R	.	246p	Varying Titles	.	.	.	TRLN
+246	VARYING FORM OF TITLE	R	.	p	Name of part/section of a work	R	.	246p	Journal Varying Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+247	FORMER TITLE	R	.	a	Title	NR	.	247a	Varying Titles	.	.	.	TRLN
+247	FORMER TITLE	R	.	a	Title	NR	.	247a	Journal Varying Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+247	FORMER TITLE	R	.	b	Remainder of title	NR	.	247b	Varying Titles	.	.	.	TRLN
+247	FORMER TITLE	R	.	b	Remainder of title	NR	.	247b	Journal Varying Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+247	FORMER TITLE	R	.	f	Date or sequential designation	NR	.	247f	Varying Titles	.	.	.	TRLN
+247	FORMER TITLE	R	.	f	Date or sequential designation	NR	.	247f	Journal Varying Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+247	FORMER TITLE	R	.	h	Medium	NR	.	247h	Varying Titles	.	.	.	TRLN
+247	FORMER TITLE	R	.	h	Medium	NR	.	247h	Journal Varying Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+247	FORMER TITLE	R	.	n	Number of part/section of a work	R	.	247n	Varying Titles	.	.	.	TRLN
+247	FORMER TITLE	R	.	n	Number of part/section of a work	R	.	247n	Journal Varying Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+247	FORMER TITLE	R	.	p	Name of part/section of a work	R	.	247p	Varying Titles	.	.	.	TRLN
+247	FORMER TITLE	R	.	p	Name of part/section of a work	R	.	247p	Journal Varying Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+250	EDITION STATEMENT	R	.	a	Edition statement	NR	.	250a	Edition	.	.	.	TRLN
+250	EDITION STATEMENT	R	.	b	Remainder of edition statement	NR	.	250b	Edition	.	.	.	TRLN
+254	MUSICAL PRESENTATION STATEMENT	NR	.	a	Musical presentation statement	NR	.	254a	Musical Presentation	.	.	.	TRLN
+255	CARTOGRAPHIC MATHEMATICAL DATA	R	.	a	Statement of scale	NR	.	255a	Cartographic Data	.	.	.	TRLN
+255	CARTOGRAPHIC MATHEMATICAL DATA	R	.	b	Statement of projection	NR	.	255b	Cartographic Data	.	.	.	TRLN
+255	CARTOGRAPHIC MATHEMATICAL DATA	R	.	c	Statement of coordinates	NR	.	255c	Cartographic Data	.	.	.	TRLN
+255	CARTOGRAPHIC MATHEMATICAL DATA	R	.	d	Statement of zone	NR	.	255d	Cartographic Data	.	.	.	TRLN
+255	CARTOGRAPHIC MATHEMATICAL DATA	R	.	e	Statement of equinox	NR	.	255e	Cartographic Data	.	.	.	TRLN
+255	CARTOGRAPHIC MATHEMATICAL DATA	R	.	f	Outer G-ring coordinate pairs	NR	.	255f	Cartographic Data	.	.	.	TRLN
+255	CARTOGRAPHIC MATHEMATICAL DATA	R	.	g	Exclusion G-ring coordinate pairs	NR	.	255g	Cartographic Data	.	.	.	TRLN
+260	PUBLICATION, DISTRIBUTION, ETC.	R	.	a	Place of publication, distribution, etc.	R	.	260a	Imprint	.	.	.	TRLN
+260	PUBLICATION, DISTRIBUTION, ETC.	R	.	b	Name of publisher, distributor, etc.	R	.	260b	Imprint	.	.	.	TRLN
+260	PUBLICATION, DISTRIBUTION, ETC.	R	.	b	Name of publisher, distributor, etc.	R	.	260b	Publisher	.	.	.	TRLN
+260	PUBLICATION, DISTRIBUTION, ETC.	R	.	c	Date of publication, distribution, etc.	R	.	260c	Imprint	.	.	.	TRLN
+260	PUBLICATION, DISTRIBUTION, ETC.	R	.	c	Date of publication, distribution, etc.	R	.	260c	Published	.	.	.	TRLN
+260	PUBLICATION, DISTRIBUTION, ETC.	R	.	e	Place of manufacture	R	.	260e	Imprint	.	.	.	TRLN
+260	PUBLICATION, DISTRIBUTION, ETC.	R	.	f	Manufacturer	R	.	260f	Imprint	.	.	.	TRLN
+260	PUBLICATION, DISTRIBUTION, ETC.	R	.	f	Manufacturer	R	.	260f	Publisher	.	.	.	TRLN
+260	PUBLICATION, DISTRIBUTION, ETC.	R	.	g	Date of manufacture	R	.	260g	Imprint	.	.	.	TRLN
+262	IMPRINT STATEMENT FOR SOUND RECORDINGS	NR	[LOCAL]	a	Place of production, release, etc.	NR	.	262a	Imprint	.	.	.	TRLN
+262	IMPRINT STATEMENT FOR SOUND RECORDINGS	NR	[LOCAL]	b	Publisher or trade name	NR	.	262b	Imprint	.	.	.	TRLN
+262	IMPRINT STATEMENT FOR SOUND RECORDINGS	NR	[LOCAL]	b	Publisher or trade name	NR	.	262b	Sound Recording Imprint	.	.	.	TRLN
+262	IMPRINT STATEMENT FOR SOUND RECORDINGS	NR	[LOCAL]	c	Date of production, release, etc.	NR	.	262c	Imprint	.	.	.	TRLN
+264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	a	Place of production, publication, distribution, manufacture	R	.	264a	Distribution Statement	.	2	.	TRLN
+264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	a	Place of production, publication, distribution, manufacture	R	.	264a	Imprint	.	1	.	TRLN
+264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	a	Place of production, publication, distribution, manufacture	R	.	264a	Manufacturer Statement	.	3	.	TRLN
+264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	a	Place of production, publication, distribution, manufacture	R	.	264a	Production Statement	.	0	.	TRLN
+264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	b	Name of producer, publisher, distributor, manufacturer	R	.	264b	Distribution Statement	.	2	.	TRLN
+264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	b	Name of producer, publisher, distributor, manufacturer	R	.	264b	Distributor	.	2	.	TRLN
+264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	b	Name of producer, publisher, distributor, manufacturer	R	.	264b	Imprint	.	1	.	TRLN
+264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	b	Name of producer, publisher, distributor, manufacturer	R	.	264b	Manufacturer	.	3	.	TRLN
+264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	b	Name of producer, publisher, distributor, manufacturer	R	.	264b	Manufacturer Statement	.	3	.	TRLN
+264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	b	Name of producer, publisher, distributor, manufacturer	R	.	264b	Producer	.	0	.	TRLN
+264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	b	Name of producer, publisher, distributor, manufacturer	R	.	264b	Production Statement	.	0	.	TRLN
+264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	b	Name of producer, publisher, distributor, manufacturer	R	.	264b	Publisher	.	1	.	TRLN
+264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	c	Date of production, publication, distribution, manufacture, or copyright notice	R	.	264c	Copyright	.	4	.	TRLN
+264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	c	Date of production, publication, distribution, manufacture, or copyright notice	R	.	264c	Copyright Statement	.	4	.	TRLN
+264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	c	Date of production, publication, distribution, manufacture, or copyright notice	R	.	264c	Distribution Statement	.	2	.	TRLN
+264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	c	Date of production, publication, distribution, manufacture, or copyright notice	R	.	264c	Imprint	.	1	.	TRLN
+264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	c	Date of production, publication, distribution, manufacture, or copyright notice	R	.	264c	Manufacturer Statement	.	3	.	TRLN
+264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	c	Date of production, publication, distribution, manufacture, or copyright notice	R	.	264c	Production Statement	.	0	.	TRLN
+264	PRODUCTION, PUBLICATION, DISTRIBUTION, MANUFACTURE, AND COPYRIGHT NOTICE	R	.	c	Date of production, publication, distribution, manufacture, or copyright notice	R	.	264c	Published	.	1	.	TRLN
+300	PHYSICAL DESCRIPTION	R	.	a	Extent	R	.	300a	Material	.	.	.	TRLN
+300	PHYSICAL DESCRIPTION	R	.	b	Other physical details	NR	.	300b	Material	.	.	.	TRLN
+300	PHYSICAL DESCRIPTION	R	.	c	Dimensions	R	.	300c	Material	.	.	.	TRLN
+300	PHYSICAL DESCRIPTION	R	.	e	Accompanying material	NR	.	300e	Material	.	.	.	TRLN
+300	PHYSICAL DESCRIPTION	R	.	f	Type of unit	R	.	300f	Material	.	.	.	TRLN
+300	PHYSICAL DESCRIPTION	R	.	g	Size of unit	R	.	300g	Material	.	.	.	TRLN
+310	CURRENT PUBLICATION FREQUENCY	NR	.	a	Current publication frequency	NR	.	310a	Current Frequency	.	.	.	TRLN
+310	CURRENT PUBLICATION FREQUENCY	NR	.	b	Date of current publication frequency	NR	.	310b	Current Frequency	.	.	.	TRLN
+321	FORMER PUBLICATION FREQUENCY	R	.	a	Former publication frequency	NR	.	321a	Former Frequency	.	.	.	TRLN
+321	FORMER PUBLICATION FREQUENCY	R	.	b	Dates of former publication frequency	NR	.	321b	Former Frequency	.	.	.	TRLN
+344	SOUND CHARACTERISTICS	R	.	a	Type of recording	R	.	344a	Material Details	.	.	.	TRLN
+344	SOUND CHARACTERISTICS	R	.	b	Recording medium	R	.	344b	Material Details	.	.	.	TRLN
+344	SOUND CHARACTERISTICS	R	.	c	Playing speed	R	.	344c	Material Details	.	.	.	TRLN
+344	SOUND CHARACTERISTICS	R	.	d	Groove characteristic	R	.	344d	Material Details	.	.	.	TRLN
+344	SOUND CHARACTERISTICS	R	.	e	Track configuration	R	.	344e	Material Details	.	.	.	TRLN
+344	SOUND CHARACTERISTICS	R	.	f	Tape configuration	R	.	344f	Material Details	.	.	.	TRLN
+344	SOUND CHARACTERISTICS	R	.	g	Configuration of playback channels	R	.	344g	Material Details	.	.	.	TRLN
+344	SOUND CHARACTERISTICS	R	.	h	Special playback characteristics	R	.	344h	Material Details	.	.	.	TRLN
+344	SOUND CHARACTERISTICS	R	.	3	Materials specified	NR	.	3443	Material Details	.	.	.	TRLN
+345	PROJECTION CHARACTERISTICS OF MOVING IMAGE	R	.	a	Presentation format	R	.	345a	Material Details	.	.	.	TRLN
+345	PROJECTION CHARACTERISTICS OF MOVING IMAGE	R	.	b	Projection speed	R	.	345b	Material Details	.	.	.	TRLN
+345	PROJECTION CHARACTERISTICS OF MOVING IMAGE	R	.	3	Materials specified	NR	.	3453	Material Details	.	.	.	TRLN
+346	VIDEO CHARACTERISTICS	R	.	a	Video format	R	.	346a	Material Details	.	.	.	TRLN
+346	VIDEO CHARACTERISTICS	R	.	b	Broadcast standard	R	.	346b	Material Details	.	.	.	TRLN
+346	VIDEO CHARACTERISTICS	R	.	3	Materials specified	NR	.	3463	Material Details	.	.	.	TRLN
+347	DIGITAL FILE CHARACTERISTICS	R	.	a	File type	R	.	347a	Material Details	.	.	.	TRLN
+347	DIGITAL FILE CHARACTERISTICS	R	.	b	Encoding format	R	.	347b	Material Details	.	.	.	TRLN
+347	DIGITAL FILE CHARACTERISTICS	R	.	c	File size	R	.	347c	Material Details	.	.	.	TRLN
+347	DIGITAL FILE CHARACTERISTICS	R	.	d	Resolution	R	.	347d	Material Details	.	.	.	TRLN
+347	DIGITAL FILE CHARACTERISTICS	R	.	e	Regional encoding	R	.	347e	Material Details	.	.	.	TRLN
+347	DIGITAL FILE CHARACTERISTICS	R	.	f	Encoded bitrate	R	.	347f	Material Details	.	.	.	TRLN
+347	DIGITAL FILE CHARACTERISTICS	R	.	3	Materials specified	NR	.	3473	Material Details	.	.	.	TRLN
+351	ORGANIZATION AND ARRANGEMENT OF MATERIALS	R	.	a	Organization	R	.	351a	Organization	.	.	.	TRLN
+362	DATES OF PUBLICATION AND/OR SEQUENTIAL DESIGNATION	R	.	a	Dates of publication and/or sequential designation	NR	.	362a	Volumes	.	.	.	TRLN
+440	SERIES STATEMENT/ADDED ENTRY--TITLE	R	[OBSOLETE]	a	Title	NR	.	440a	Series Statement	.	.	.	TRLN
+440	SERIES STATEMENT/ADDED ENTRY--TITLE	R	[OBSOLETE]	n	Number of part/section of a work	R	.	440n	Series Statement	.	.	.	TRLN
+440	SERIES STATEMENT/ADDED ENTRY--TITLE	R	[OBSOLETE]	p	Name of part/section of a work	R	.	440p	Series Statement	.	.	.	TRLN
+440	SERIES STATEMENT/ADDED ENTRY--TITLE	R	[OBSOLETE]	v	Volume number/sequential designation 	NR	.	440v	Series Statement	.	.	.	TRLN
+440	SERIES STATEMENT/ADDED ENTRY--TITLE	R	[OBSOLETE]	x	International Standard Serial Number	NR	.	440x	Series ISSN	.	.	.	TRLN
+440	SERIES STATEMENT/ADDED ENTRY--TITLE	R	[OBSOLETE]	x	International Standard Serial Number	NR	.	440x	Series Statement	.	.	.	TRLN
+490	SERIES STATEMENT	R	.	a	Series statement	R	.	490a	Series Statement	.	.	.	TRLN
+490	SERIES STATEMENT	R	.	v	Volume number/sequential designation 	R	.	490v	Series Statement	.	.	.	TRLN
+490	SERIES STATEMENT	R	.	x	International Standard Serial Number	R	.	490x	Series ISSN	.	.	.	TRLN
+490	SERIES STATEMENT	R	.	x	International Standard Serial Number	R	.	490x	Series Statement	.	.	.	TRLN
+500	GENERAL NOTE	R	.	a	General note	NR	.	500a	Indexed Notes	.	.	.	TRLN
+501	WITH NOTE	R	.	a	With note	NR	.	501a	Indexed Notes	.	.	.	TRLN
+502	DISSERTATION NOTE	R	.	a	Dissertation note	NR	.	502a	Indexed Notes	.	.	.	TRLN
+504	BIBLIOGRAPHY, ETC. NOTE	R	.	a	Bibliography, etc. note	NR	.	504a	Indexed Notes	.	.	.	TRLN
+505	FORMATTED CONTENTS NOTE	R	.	a	Formatted contents note	NR	.	505a	Table of Contents	.	.	.	TRLN
+505	FORMATTED CONTENTS NOTE	R	.	g	Miscellaneous information	R	.	505g	Table of Contents	.	.	.	TRLN
+505	FORMATTED CONTENTS NOTE	R	.	r	Statement of responsibility	R	.	505r	Table of Contents	.	.	.	TRLN
+505	FORMATTED CONTENTS NOTE	R	.	r	Statement of responsibility	R	.	505r	Table of Contents author index	.	.	.	TRLN
+505	FORMATTED CONTENTS NOTE	R	.	t	Title	R	.	505t	Table of Contents	.	.	.	TRLN
+506	RESTRICTIONS ON ACCESS NOTE	R	.	a	Terms governing access	NR	.	506a	Access Restrictions	.	.	.	TRLN
+506	RESTRICTIONS ON ACCESS NOTE	R	.	b	Jurisdiction	R	.	506b	Access Restrictions	.	.	.	TRLN
+506	RESTRICTIONS ON ACCESS NOTE	R	.	c	Physical access provisions	R	.	506c	Access Restrictions	.	.	.	TRLN
+506	RESTRICTIONS ON ACCESS NOTE	R	.	d	Authorized users	R	.	506d	Access Restrictions	.	.	.	TRLN
+506	RESTRICTIONS ON ACCESS NOTE	R	.	e	Authorization	R	.	506e	Access Restrictions	.	.	.	TRLN
+506	RESTRICTIONS ON ACCESS NOTE	R	.	f	Standardized terminology for access restriction	R	.	506f	Access Restrictions	.	.	.	TRLN
+506	RESTRICTIONS ON ACCESS NOTE	R	.	u	Uniform Resource Identifier	R	.	506u	Access Restrictions	.	.	.	TRLN
+507	SCALE NOTE FOR GRAPHIC MATERIAL	NR	.	a	Representative fraction of scale note	NR	.	507a	Indexed Notes	.	.	.	TRLN
+507	SCALE NOTE FOR GRAPHIC MATERIAL	NR	.	b	Remainder of scale note	NR	.	507b	Indexed Notes	.	.	.	TRLN
+508	CREATION/PRODUCTION CREDITS NOTE	R	.	a	Creation/production credits note	NR	.	508a	Production Credits	.	.	.	TRLN
+510	CITATION/REFERENCES NOTE	R	.	a	Name of source	NR	.	510a	Notes	.	.	.	TRLN
+510	CITATION/REFERENCES NOTE	R	.	b	Coverage of source	NR	.	510b	Notes	.	.	.	TRLN
+510	CITATION/REFERENCES NOTE	R	.	c	Location within source	NR	.	510c	Notes	.	.	.	TRLN
+510	CITATION/REFERENCES NOTE	R	.	x	International Standard Serial Number	NR	.	510x	Notes	.	.	.	TRLN
+511	PARTICIPANT OR PERFORMER NOTE	R	.	a	Participant or performer note	NR	.	511a	Performer Credits	.	.	.	TRLN
+513	TYPE OF REPORT AND PERIOD COVERED NOTE	R	.	a	Type of report	NR	.	513a	Notes	.	.	.	TRLN
+513	TYPE OF REPORT AND PERIOD COVERED NOTE	R	.	b	Period covered	NR	.	513b	Notes	.	.	.	TRLN
+514	DATA QUALITY NOTE	NR	.	a	Attribute accuracy report	NR	.	514a	Notes	.	.	.	TRLN
+514	DATA QUALITY NOTE	NR	.	b	Attribute accuracy value	R	.	514b	Notes	.	.	.	TRLN
+514	DATA QUALITY NOTE	NR	.	c	Attribute accuracy explanation	R	.	514c	Notes	.	.	.	TRLN
+514	DATA QUALITY NOTE	NR	.	d	Logical consistency report	NR	.	514d	Notes	.	.	.	TRLN
+514	DATA QUALITY NOTE	NR	.	e	Completeness report	NR	.	514e	Notes	.	.	.	TRLN
+514	DATA QUALITY NOTE	NR	.	f	Horizontal position accuracy report	NR	.	514f	Notes	.	.	.	TRLN
+514	DATA QUALITY NOTE	NR	.	g	Horizontal position accuracy value	R	.	514g	Notes	.	.	.	TRLN
+514	DATA QUALITY NOTE	NR	.	h	Horizontal position accuracy explanation	R	.	514h	Notes	.	.	.	TRLN
+514	DATA QUALITY NOTE	NR	.	i	Vertical positional accuracy report	NR	.	514i	Notes	.	.	.	TRLN
+514	DATA QUALITY NOTE	NR	.	j	Vertical positional accuracy value	R	.	514j	Notes	.	.	.	TRLN
+514	DATA QUALITY NOTE	NR	.	k	Vertical positional accuracy explanation	R	.	514k	Notes	.	.	.	TRLN
+514	DATA QUALITY NOTE	NR	.	m	Cloud cover	NR	.	514m	Notes	.	.	.	TRLN
+514	DATA QUALITY NOTE	NR	.	u	Uniform Resource Identifier	R	.	514u	Notes	.	.	.	TRLN
+514	DATA QUALITY NOTE	NR	.	z	Display note	R	.	514z	Notes	.	.	.	TRLN
+515	NUMBERING PECULIARITIES NOTE	R	.	a	Numbering peculiarities note	NR	.	515a	Notes	.	.	.	TRLN
+516	TYPE OF COMPUTER FILE OR DATA NOTE	R	.	a	Type of computer file or data note	NR	.	516a	Notes	.	.	.	TRLN
+518	DATE/TIME AND PLACE OF AN EVENT NOTE	R	.	a	Date/time and place of an event note	NR	.	518a	Notes	.	.	.	TRLN
+520	SUMMARY, ETC.	R	.	a	Summary, etc. note	NR	.	520a	Summary	.	.	.	TRLN
+520	SUMMARY, ETC.	R	.	b	Expansion of summary note	NR	.	520b	Summary	.	.	.	TRLN
+520	SUMMARY, ETC.	R	.	u	Uniform Resource Identifier	R	.	520u	Summary	.	.	.	TRLN
+521	TARGET AUDIENCE NOTE	R	.	a	Target audience note	R	.	521a	Notes	.	.	.	TRLN
+521	TARGET AUDIENCE NOTE	R	.	b	Source	NR	.	521b	Notes	.	.	.	TRLN
+522	GEOGRAPHIC COVERAGE NOTE	R	.	a	Geographic coverage note	NR	.	522a	Indexed Notes	.	.	.	TRLN
+524	PREFERRED CITATION OF DESCRIBED MATERIALS NOTE	R	.	a	Preferred citation of described materials note	NR	.	524a	Notes	.	.	.	TRLN
+525	SUPPLEMENT NOTE	R	.	a	Supplement note	NR	.	525a	Notes	.	.	.	TRLN
+530	ADDITIONAL PHYSICAL FORM AVAILABLE NOTE	R	.	a	Additional physical form available note	NR	.	530a	Other Format	.	.	.	TRLN
+530	ADDITIONAL PHYSICAL FORM AVAILABLE NOTE	R	.	b	Availability source	NR	.	530b	Other Format	.	.	.	TRLN
+530	ADDITIONAL PHYSICAL FORM AVAILABLE NOTE	R	.	c	Availability conditions	NR	.	530c	Other Format	.	.	.	TRLN
+530	ADDITIONAL PHYSICAL FORM AVAILABLE NOTE	R	.	u	Uniform Resource Identifier	R	.	530u	Other Format	.	.	.	TRLN
+533	REPRODUCTION NOTE	R	.	a	Type of reproduction	NR	.	533a	Notes	.	.	.	TRLN
+533	REPRODUCTION NOTE	R	.	b	Place of reproduction	R	.	533b	Notes	.	.	.	TRLN
+533	REPRODUCTION NOTE	R	.	c	Agency responsible for reproduction	R	.	533c	Indexed Notes	.	.	.	TRLN
+533	REPRODUCTION NOTE	R	.	c	Agency responsible for reproduction	R	.	533c	Notes	.	.	.	TRLN
+533	REPRODUCTION NOTE	R	.	d	Date of reproduction	NR	.	533d	Notes	.	.	.	TRLN
+533	REPRODUCTION NOTE	R	.	e	Physical description of reproduction	NR	.	533e	Notes	.	.	.	TRLN
+533	REPRODUCTION NOTE	R	.	f	Series statement of reproduction	R	.	533f	Indexed Notes	.	.	.	TRLN
+533	REPRODUCTION NOTE	R	.	f	Series statement of reproduction	R	.	533f	Notes	.	.	.	TRLN
+533	REPRODUCTION NOTE	R	.	m	Dates and/or sequential designation of issues reproduced	R	.	533m	Notes	.	.	.	TRLN
+533	REPRODUCTION NOTE	R	.	n	Note about reproduction	R	.	533n	Notes	.	.	.	TRLN
+534	ORIGINAL VERSION NOTE	R	.	a	Main entry of original	NR	.	534a	Indexed Notes	.	.	.	TRLN
+534	ORIGINAL VERSION NOTE	R	.	b	Edition statement of original	NR	.	534b	Indexed Notes	.	.	.	TRLN
+534	ORIGINAL VERSION NOTE	R	.	c	Publication, distribution, etc. of original	NR	.	534c	Indexed Notes	.	.	.	TRLN
+534	ORIGINAL VERSION NOTE	R	.	e	Physical description, etc. of original	NR	.	534e	Indexed Notes	.	.	.	TRLN
+534	ORIGINAL VERSION NOTE	R	.	f	Series statement of original	R	.	534f	Indexed Notes	.	.	.	TRLN
+534	ORIGINAL VERSION NOTE	R	.	n	Note about original	R	.	534n	Indexed Notes	.	.	.	TRLN
+534	ORIGINAL VERSION NOTE	R	.	p	Introductory phrase	NR	.	534p	Indexed Notes	.	.	.	TRLN
+534	ORIGINAL VERSION NOTE	R	.	t	Title statement of original	NR	.	534t	Indexed Notes	.	.	.	TRLN
+535	LOCATION OF ORIGINALS/DUPLICATES NOTE	R	.	a	Custodian	NR	.	535a	Notes	.	.	.	TRLN
+535	LOCATION OF ORIGINALS/DUPLICATES NOTE	R	.	b	Postal address	R	.	535b	Notes	.	.	.	TRLN
+535	LOCATION OF ORIGINALS/DUPLICATES NOTE	R	.	c	Country	R	.	535c	Notes	.	.	.	TRLN
+535	LOCATION OF ORIGINALS/DUPLICATES NOTE	R	.	d	Telecommunications address	R	.	535d	Notes	.	.	.	TRLN
+535	LOCATION OF ORIGINALS/DUPLICATES NOTE	R	.	d	Telecommunications address	R	.	535d	Notes	.	.	.	TRLN
+535	LOCATION OF ORIGINALS/DUPLICATES NOTE	R	.	g	Repository location code	NR	.	535g	Notes	.	.	.	TRLN
+536	FUNDING INFORMATION NOTE	R	.	a	Text of note	NR	.	536a	Indexed Notes	.	.	.	TRLN
+536	FUNDING INFORMATION NOTE	R	.	b	Contract number	R	.	536b	Indexed Notes	.	.	.	TRLN
+536	FUNDING INFORMATION NOTE	R	.	c	Grant number	R	.	536c	Indexed Notes	.	.	.	TRLN
+536	FUNDING INFORMATION NOTE	R	.	d	Undifferentiated number	R	.	536d	Indexed Notes	.	.	.	TRLN
+536	FUNDING INFORMATION NOTE	R	.	e	Program element number	R	.	536e	Indexed Notes	.	.	.	TRLN
+536	FUNDING INFORMATION NOTE	R	.	f	Project number	R	.	536f	Indexed Notes	.	.	.	TRLN
+536	FUNDING INFORMATION NOTE	R	.	g	Task number	R	.	536g	Indexed Notes	.	.	.	TRLN
+536	FUNDING INFORMATION NOTE	R	.	h	Work unit number	R	.	536h	Indexed Notes	.	.	.	TRLN
+538	SYSTEM DETAILS NOTE	R	.	a	System details note	NR	.	538a	System Details	.	.	.	TRLN
+538	SYSTEM DETAILS NOTE	R	.	i	Display text	NR	.	538i	System Details	.	.	.	TRLN
+538	SYSTEM DETAILS NOTE	R	.	u	Uniform Resource Identifier	R	.	538u	System Details	.	.	.	TRLN
+540	TERMS GOVERNING USE AND REPRODUCTION NOTE	R	.	a	Terms governing use and reproduction	NR	.	540a	Notes	.	.	.	TRLN
+540	TERMS GOVERNING USE AND REPRODUCTION NOTE	R	.	b	Jurisdiction	NR	.	540b	Notes	.	.	.	TRLN
+540	TERMS GOVERNING USE AND REPRODUCTION NOTE	R	.	u	Uniform Resource Identifier	R	.	540u	Notes	.	.	.	TRLN
+540	TERMS GOVERNING USE AND REPRODUCTION NOTE	R	.	3	Materials specified	NR	.	5403	Notes	.	.	.	TRLN
+541	IMMEDIATE SOURCE OF ACQUISITION NOTE	R	.	a	Source of acquisition	NR	.	541a	Indexed Notes	.	.	.	TRLN
+541	IMMEDIATE SOURCE OF ACQUISITION NOTE	R	.	a	Source of acquisition	NR	.	541a	Source of Acquisition	.	.	.	TRLN
+541	IMMEDIATE SOURCE OF ACQUISITION NOTE	R	.	b	Address	NR	.	541b	Source of Acquisition	.	.	.	TRLN
+541	IMMEDIATE SOURCE OF ACQUISITION NOTE	R	.	c	Method of acquisition	NR	.	541c	Source of Acquisition	.	.	.	TRLN
+541	IMMEDIATE SOURCE OF ACQUISITION NOTE	R	.	d	Date of acquisition	NR	.	541d	Source of Acquisition	.	.	.	TRLN
+541	IMMEDIATE SOURCE OF ACQUISITION NOTE	R	.	e	Accession number	NR	.	541e	Source of Acquisition	.	.	.	TRLN
+541	IMMEDIATE SOURCE OF ACQUISITION NOTE	R	.	f	Owner	NR	.	541f	Source of Acquisition	.	.	.	TRLN
+541	IMMEDIATE SOURCE OF ACQUISITION NOTE	R	.	h	Purchase price	NR	.	541h	Source of Acquisition	.	.	.	TRLN
+541	IMMEDIATE SOURCE OF ACQUISITION NOTE	R	.	n	Extent	R	.	541n	Source of Acquisition	.	.	.	TRLN
+541	IMMEDIATE SOURCE OF ACQUISITION NOTE	R	.	o	Type of unit	R	.	541o	Source of Acquisition	.	.	.	TRLN
+544	LOCATION OF OTHER ARCHIVAL MATERIALS NOTE	R	.	a	Custodian	R	.	544a	Related Collections	.	.	.	TRLN
+544	LOCATION OF OTHER ARCHIVAL MATERIALS NOTE	R	.	b	Address	R	.	544b	Related Collections	.	.	.	TRLN
+544	LOCATION OF OTHER ARCHIVAL MATERIALS NOTE	R	.	c	Country	R	.	544c	Related Collections	.	.	.	TRLN
+544	LOCATION OF OTHER ARCHIVAL MATERIALS NOTE	R	.	d	Title	R	.	544d	Related Collections	.	.	.	TRLN
+544	LOCATION OF OTHER ARCHIVAL MATERIALS NOTE	R	.	e	Provenance	R	.	544e	Related Collections	.	.	.	TRLN
+544	LOCATION OF OTHER ARCHIVAL MATERIALS NOTE	R	.	n	Note	R	.	544n	Related Collections	.	.	.	TRLN
+545	BIOGRAPHICAL OR HISTORICAL DATA	R	.	a	Biographical or historical note	NR	.	545a	Biographical Sketch	.	.	.	TRLN
+545	BIOGRAPHICAL OR HISTORICAL DATA	R	.	b	Expansion	NR	.	545b	Biographical Sketch	.	.	.	TRLN
+545	BIOGRAPHICAL OR HISTORICAL DATA	R	.	u	Uniform Resource Identifier	R	.	545u	Biographical Sketch	.	.	.	TRLN
+546	LANGUAGE NOTE	R	.	a	Language note	NR	.	546a	Notes	.	.	.	TRLN
+546	LANGUAGE NOTE	R	.	b	Information code or alphabet	R	.	546b	Notes	.	.	.	TRLN
+547	FORMER TITLE COMPLEXITY NOTE	R	.	a	Former title complexity note	NR	.	547a	Notes	.	.	.	TRLN
+550	ISSUING BODY NOTE	R	.	a	Issuing body note	NR	.	550a	Notes	.	.	.	TRLN
+555	CUMULATIVE INDEX/FINDING AIDS NOTE	R	.	a	Cumulative index/finding aids note	NR	.	555a	Cumulative Indexes	.	.	.	TRLN
+555	CUMULATIVE INDEX/FINDING AIDS NOTE	R	.	b	Availability source	R	.	555b	Cumulative Indexes	.	.	.	TRLN
+555	CUMULATIVE INDEX/FINDING AIDS NOTE	R	.	c	Degree of control	NR	.	555c	Cumulative Indexes	.	.	.	TRLN
+555	CUMULATIVE INDEX/FINDING AIDS NOTE	R	.	d	Bibliographic reference	NR	.	555d	Cumulative Indexes	.	.	.	TRLN
+555	CUMULATIVE INDEX/FINDING AIDS NOTE	R	.	u	Uniform Resource Identifier	R	.	555u	Cumulative Indexes	.	.	.	TRLN
+556	INFORMATION ABOUT DOCUMENTATION NOTE	R	.	a	Information about documentation note	NR	.	556a	Notes	.	.	.	TRLN
+561	OWNERSHIP AND CUSTODIAL HISTORY	R	.	a	History	NR	.	561a	Indexed Notes	.	.	.	TRLN
+563	BINDING INFORMATION	R	.	a	Binding note	NR	.	563a	Indexed Notes	.	.	.	TRLN
+565	CASE FILE CHARACTERISTICS NOTE	R	.	a	Number of cases/variables	NR	.	565a	Notes	.	.	.	TRLN
+565	CASE FILE CHARACTERISTICS NOTE	R	.	b	Name of variable	R	.	565b	Notes	.	.	.	TRLN
+565	CASE FILE CHARACTERISTICS NOTE	R	.	c	Unit of analysis	R	.	565c	Notes	.	.	.	TRLN
+565	CASE FILE CHARACTERISTICS NOTE	R	.	d	Universe of data	R	.	565d	Notes	.	.	.	TRLN
+565	CASE FILE CHARACTERISTICS NOTE	R	.	e	Filing scheme or code	R	.	565e	Notes	.	.	.	TRLN
+567	METHODOLOGY NOTE	R	.	a	Methodology note	NR	.	567a	Notes	.	.	.	TRLN
+580	LINKING ENTRY COMPLEXITY NOTE	R	.	a	Linking entry complexity note	NR	.	580a	Notes	.	.	.	TRLN
+581	PUBLICATIONS ABOUT DESCRIBED MATERIALS NOTE	R	.	a	Publications about described materials note	NR	.	581a	Indexed Notes	.	.	.	TRLN
+585	EXHIBITIONS NOTE	R	.	a	Exhibitions note	NR	.	585a	Indexed Notes	.	.	.	TRLN
+586	AWARDS NOTE	R	.	a	Awards note	NR	.	586a	Indexed Notes	.	.	.	TRLN
+588	SOURCE OF DESCRIPTION NOTE	R	.	a	Source of description note	NR	.	588a	Notes	.	.	.	TRLN
+590	LOCAL NOTE	.	[OBSOLETE]	a	Local note	NR	.	590a	Indexed Notes	.	.	.	TRLN
+590	LOCAL NOTE	.	[OBSOLETE]	a	Local note	NR	.	590a	Notes	.	.	.	TRLN
+590	RECEIPT DATE NOTE	.	[OBSOLETE]	a	Receipt date	NR	.	590a	Indexed Notes	.	.	.	TRLN
+590	RECEIPT DATE NOTE	.	[OBSOLETE]	a	Receipt date	NR	.	590a	Notes	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	a	Personal name	NR	.	600a	Subject	.	[12347]	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	a	Personal name	NR	.	600a	Subject Headings	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	a	Personal name	NR	.	600a	Subjects	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	b	Numeration	NR	.	600b	Subject Headings	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	b	Numeration	NR	.	600b	Subjects	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	c	Titles and other words associated with a name	R	.	600c	Subject Headings	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	c	Titles and other words associated with a name	R	.	600c	Subjects	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	d	Dates associated with a name	NR	.	600d	Subject Headings	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	d	Dates associated with a name	NR	.	600d	Subjects	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	e	Relator term	R	.	600e	Subject Headings	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	e	Relator term	R	.	600e	Subjects	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	f	Date of a work	NR	.	600f	Subject Headings	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	f	Date of a work	NR	.	600f	Subjects	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	g	Miscellaneous information	R	.	600g	Subject Headings	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	g	Miscellaneous information	R	.	600g	Subjects	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	h	Medium	NR	.	600h	Subject Headings	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	h	Medium	NR	.	600h	Subjects	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	j	Attribution qualifier	R	.	600j	Subject Headings	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	j	Attribution qualifier	R	.	600j	Subjects	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	k	Form subheading	R	.	600k	Subject Headings	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	k	Form subheading	R	.	600k	Subjects	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	l	Language of a work	NR	.	600l	Subject Headings	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	l	Language of a work	NR	.	600l	Subjects	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	m	Medium of performance for music	R	.	600m	Subject Headings	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	m	Medium of performance for music	R	.	600m	Subjects	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	n	Number of part/section of a work	R	.	600n	Subject Headings	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	n	Number of part/section of a work	R	.	600n	Subjects	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	o	Arranged statement for music	NR	.	600o	Subject Headings	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	o	Arranged statement for music	NR	.	600o	Subjects	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	p	Name of part/section of a work	R	.	600p	Subject Headings	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	p	Name of part/section of a work	R	.	600p	Subjects	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	q	Fuller form of name	NR	.	600q	Subject Headings	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	q	Fuller form of name	NR	.	600q	Subjects	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	r	Key for music	NR	.	600r	Subject Headings	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	r	Key for music	NR	.	600r	Subjects	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	s	Version	NR	.	600s	Subject Headings	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	s	Version	NR	.	600s	Subjects	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	t	Title of a work	NR	.	600t	Subject Headings	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	t	Title of a work	NR	.	600t	Subjects	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	v	Form subdivision	R	.	600v	Genre	.	[12347]	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	v	Form subdivision	R	.	600v	Subject Headings	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	v	Form subdivision	R	.	600v	Subjects	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	x	General subdivision	R	.	600x	Subject	.	[12347]	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	x	General subdivision	R	.	600x	Subject Headings	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	x	General subdivision	R	.	600x	Subjects	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	y	Chronological subdivision	R	.	600y	Subject Headings	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	y	Chronological subdivision	R	.	600y	Subjects	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	y	Chronological subdivision	R	.	600y	Time Period	.	[12347]	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	z	Geographic subdivision	R	.	600z	Region	.	[12347]	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	z	Geographic subdivision	R	.	600z	Subject Headings	.	.	.	TRLN
+600	SUBJECT ADDED ENTRY--PERSONAL NAME	R	.	z	Geographic subdivision	R	.	600z	Subjects	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	a	Corporate name or jurisdiction name as entry element	NR	.	610a	Subject	.	[12347]	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	a	Corporate name or jurisdiction name as entry element	NR	.	610a	Subject Headings	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	a	Corporate name or jurisdiction name as entry element	NR	.	610a	Subjects	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	b	Subordinate unit	R	.	610b	Subject Headings	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	b	Subordinate unit	R	.	610b	Subjects	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	c	Location of meeting	R	.	610c	Subject Headings	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	c	Location of meeting	R	.	610c	Subjects	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	d	Date of meeting or treaty signing	R	.	610d	Subject Headings	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	d	Date of meeting or treaty signing	R	.	610d	Subjects	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	e	Relator term	R	.	610e	Subject Headings	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	e	Relator term	R	.	610e	Subjects	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	f	Date of a work	NR	.	610f	Subject Headings	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	f	Date of a work	NR	.	610f	Subjects	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	g	Miscellaneous information	R	.	610g	Subject Headings	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	g	Miscellaneous information	R	.	610g	Subjects	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	h	Medium	NR	.	610h	Subject Headings	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	h	Medium	NR	.	610h	Subjects	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	k	Form subheading	R	.	610k	Subject Headings	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	k	Form subheading	R	.	610k	Subjects	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	l	Language of a work	NR	.	610l	Subject Headings	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	l	Language of a work	NR	.	610l	Subjects	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	m	Medium of performance for music	R	.	610m	Subject Headings	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	m	Medium of performance for music	R	.	610m	Subjects	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	n	Number of part/section/meeting	R	.	610n	Subject Headings	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	n	Number of part/section/meeting	R	.	610n	Subjects	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	o	Arranged statement for music	NR	.	610o	Subject Headings	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	o	Arranged statement for music	NR	.	610o	Subjects	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	p	Name of part/section of a work	R	.	610p	Subject Headings	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	p	Name of part/section of a work	R	.	610p	Subjects	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	r	Key for music	NR	.	610r	Subject Headings	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	r	Key for music	NR	.	610r	Subjects	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	s	Version	NR	.	610s	Subject Headings	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	s	Version	NR	.	610s	Subjects	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	t	Title of a work	NR	.	610t	Subject Headings	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	t	Title of a work	NR	.	610t	Subjects	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	v	Form subdivision	R	.	610v	Genre	.	[12347]	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	v	Form subdivision	R	.	610v	Subject Headings	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	v	Form subdivision	R	.	610v	Subjects	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	x	General subdivision	R	.	610x	Subject	.	[12347]	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	x	General subdivision	R	.	610x	Subject Headings	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	x	General subdivision	R	.	610x	Subjects	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	y	Chronological subdivision	R	.	610y	Subject Headings	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	y	Chronological subdivision	R	.	610y	Subjects	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	y	Chronological subdivision	R	.	610y	Time Period	.	[12347]	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	z	Geographic subdivision	R	.	610z	Region	.	[12347]	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	z	Geographic subdivision	R	.	610z	Subject Headings	.	.	.	TRLN
+610	SUBJECT ADDED ENTRY--CORPORATE NAME	R	.	z	Geographic subdivision	R	.	610z	Subjects	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	a	Meeting name or jurisdiction name as entry element	NR	.	611a	Subject	.	[12347]	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	a	Meeting name or jurisdiction name as entry element	NR	.	611a	Subject Headings	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	a	Meeting name or jurisdiction name as entry element	NR	.	611a	Subjects	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	c	Location of meeting	R	.	611c	Subject Headings	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	c	Location of meeting	R	.	611c	Subjects	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	d	Date of meeting	NR	.	611d	Subject Headings	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	d	Date of meeting	NR	.	611d	Subjects	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	e	Subordinate unit	R	.	611e	Subject Headings	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	e	Subordinate unit	R	.	611e	Subjects	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	f	Date of a work	NR	.	611f	Subject Headings	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	f	Date of a work	NR	.	611f	Subjects	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	g	Miscellaneous information	R	.	611g	Subject Headings	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	g	Miscellaneous information	R	.	611g	Subjects	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	h	Medium	NR	.	611h	Subject Headings	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	h	Medium	NR	.	611h	Subjects	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	j	Relator term	R	.	611j	Subject Headings	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	j	Relator term	R	.	611j	Subjects	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	k	Form subheading	R	.	611k	Subject Headings	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	k	Form subheading	R	.	611k	Subjects	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	l	Language of a work	NR	.	611l	Subject Headings	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	l	Language of a work	NR	.	611l	Subjects	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	n	Number of part/section/meeting	R	.	611n	Subject Headings	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	n	Number of part/section/meeting	R	.	611n	Subjects	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	p	Name of part/section of a work	R	.	611p	Subject Headings	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	p	Name of part/section of a work	R	.	611p	Subjects	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	q	Name of meeting following jurisdiction name entry element	NR	.	611q	Subject Headings	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	q	Name of meeting following jurisdiction name entry element	NR	.	611q	Subjects	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	s	Version	NR	.	611s	Subject Headings	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	s	Version	NR	.	611s	Subjects	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	t	Title of a work	NR	.	611t	Subject Headings	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	t	Title of a work	NR	.	611t	Subjects	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	v	Form subdivision	R	.	611v	Genre	.	[12347]	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	v	Form subdivision	R	.	611v	Subject Headings	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	v	Form subdivision	R	.	611v	Subjects	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	x	General subdivision	R	.	611x	Subject	.	[12347]	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	x	General subdivision	R	.	611x	Subject Headings	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	x	General subdivision	R	.	611x	Subjects	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	y	Chronological subdivision	R	.	611y	Subject Headings	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	y	Chronological subdivision	R	.	611y	Subjects	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	y	Chronological subdivision	R	.	611y	Time Period	.	[12347]	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	z	Geographic subdivision	R	.	611z	Region	.	[12347]	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	z	Geographic subdivision	R	.	611z	Subject Headings	.	.	.	TRLN
+611	SUBJECT ADDED ENTRY--MEETING NAME	R	.	z	Geographic subdivision	R	.	611z	Subjects	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	a	Uniform title	NR	.	630a	Subject	.	[12347]	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	a	Uniform title	NR	.	630a	Subject Headings	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	a	Uniform title	NR	.	630a	Subjects	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	d	Date of treaty signing	R	.	630d	Subject Headings	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	d	Date of treaty signing	R	.	630d	Subjects	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	f	Date of a work	NR	.	630f	Subject Headings	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	f	Date of a work	NR	.	630f	Subjects	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	g	Miscellaneous information	R	.	630g	Subject Headings	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	g	Miscellaneous information	R	.	630g	Subjects	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	h	Medium	NR	.	630h	Subject Headings	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	h	Medium	NR	.	630h	Subjects	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	k	Form subheading	R	.	630k	Subject Headings	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	k	Form subheading	R	.	630k	Subjects	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	l	Language of a work	NR	.	630l	Subject Headings	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	l	Language of a work	NR	.	630l	Subjects	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	m	Medium of performance for music	R	.	630m	Subject Headings	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	m	Medium of performance for music	R	.	630m	Subjects	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	n	Number of part/section of a work	R	.	630n	Subject Headings	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	n	Number of part/section of a work	R	.	630n	Subjects	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	o	Arranged statement for music	NR	.	630o	Subject Headings	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	o	Arranged statement for music	NR	.	630o	Subjects	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	p	Name of part/section of a work	R	.	630p	Subject Headings	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	p	Name of part/section of a work	R	.	630p	Subjects	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	r	Key for music	NR	.	630r	Subject Headings	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	r	Key for music	NR	.	630r	Subjects	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	s	Version	NR	.	630s	Subject Headings	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	s	Version	NR	.	630s	Subjects	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	t	Title of a work	NR	.	630t	Subject Headings	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	t	Title of a work	NR	.	630t	Subjects	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	v	Form subdivision	R	.	630v	Genre	.	[12347]	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	v	Form subdivision	R	.	630v	Subject Headings	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	v	Form subdivision	R	.	630v	Subjects	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	x	General subdivision	R	.	630x	Subject	.	[12347]	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	x	General subdivision	R	.	630x	Subject Headings	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	x	General subdivision	R	.	630x	Subjects	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	y	Chronological subdivision	R	.	630y	Subject Headings	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	y	Chronological subdivision	R	.	630y	Subjects	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	y	Chronological subdivision	R	.	630y	Time Period	.	[12347]	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	z	Geographic subdivision	R	.	630z	Region	.	[12347]	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	z	Geographic subdivision	R	.	630z	Subject Headings	.	.	.	TRLN
+630	SUBJECT ADDED ENTRY--UNIFORM TITLE	R	.	z	Geographic subdivision	R	.	630z	Subjects	.	.	.	TRLN
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	a	Topical term or geographic name as entry element	NR	.	650a	Medical Subject	.	2	.	TRLN
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	a	Topical term or geographic name as entry element	NR	.	650a	Subject	.	[12347]	.	TRLN
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	a	Topical term or geographic name as entry element	NR	.	650a	Subject Headings	.	.	.	TRLN
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	a	Topical term or geographic name as entry element	NR	.	650a	Subjects	.	.	.	TRLN
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	b	Topical term following geographic name as entry element	NR	.	650b	Subject Headings	.	.	.	TRLN
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	b	Topical term following geographic name as entry element	NR	.	650b	Subjects	.	.	.	TRLN
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	c	Location of event	NR	.	650c	Subject Headings	.	.	.	TRLN
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	c	Location of event	NR	.	650c	Subjects	.	.	.	TRLN
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	d	Active dates	NR	.	650d	Subject Headings	.	.	.	TRLN
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	d	Active dates	NR	.	650d	Subjects	.	.	.	TRLN
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	e	Relator term	NR	.	650e	Subject Headings	.	.	.	TRLN
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	e	Relator term	NR	.	650e	Subjects	.	.	.	TRLN
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	v	Form subdivision	R	.	650v	Genre	.	[12347]	.	TRLN
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	v	Form subdivision	R	.	650v	Subject Headings	.	.	.	TRLN
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	v	Form subdivision	R	.	650v	Subjects	.	.	.	TRLN
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	x	General subdivision	R	.	650x	Medical Subject	.	2	.	TRLN
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	x	General subdivision	R	.	650x	Subject	.	[12347]	.	TRLN
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	x	General subdivision	R	.	650x	Subject Headings	.	.	.	TRLN
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	x	General subdivision	R	.	650x	Subjects	.	.	.	TRLN
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	y	Chronological subdivision	R	.	650y	Subject Headings	.	.	.	TRLN
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	y	Chronological subdivision	R	.	650y	Subjects	.	.	.	TRLN
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	y	Chronological subdivision	R	.	650y	Time Period	.	[12347]	.	TRLN
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	z	Geographic subdivision	R	.	650z	Region	.	[12347]	.	TRLN
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	z	Geographic subdivision	R	.	650z	Subject Headings	.	.	.	TRLN
+650	SUBJECT ADDED ENTRY--TOPICAL TERM	R	.	z	Geographic subdivision	R	.	650z	Subjects	.	.	.	TRLN
+651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	a	Geographic name	NR	.	651a	Region	.	[12347]	.	TRLN
+651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	a	Geographic name	NR	.	651a	Subject Headings	.	.	.	TRLN
+651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	a	Geographic name	NR	.	651a	Subjects	.	.	.	TRLN
+651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	v	Form subdivision	R	.	651v	Genre	.	[12347]	.	TRLN
+651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	v	Form subdivision	R	.	651v	Subject Headings	.	.	.	TRLN
+651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	v	Form subdivision	R	.	651v	Subjects	.	.	.	TRLN
+651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	x	General subdivision	R	.	651x	Subject	.	[12347]	.	TRLN
+651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	x	General subdivision	R	.	651x	Subject Headings	.	.	.	TRLN
+651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	x	General subdivision	R	.	651x	Subjects	.	.	.	TRLN
+651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	y	Chronological subdivision	R	.	651y	Subject Headings	.	.	.	TRLN
+651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	y	Chronological subdivision	R	.	651y	Subjects	.	.	.	TRLN
+651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	y	Chronological subdivision	R	.	651y	Time Period	.	[12347]	.	TRLN
+651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	z	Geographic subdivision	R	.	651z	Region	.	[12347]	.	TRLN
+651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	z	Geographic subdivision	R	.	651z	Subject Headings	.	.	.	TRLN
+651	SUBJECT ADDED ENTRY--GEOGRAPHIC NAME	R	.	z	Geographic subdivision	R	.	651z	Subjects	.	.	.	TRLN
+653	INDEX TERM--UNCONTROLLED	R	.	a	Uncontrolled term	R	.	653a	Subject Headings	.	.	.	TRLN
+653	INDEX TERM--UNCONTROLLED	R	.	a	Uncontrolled term	R	.	653a	Subjects	.	.	.	TRLN
+655	INDEX TERM--GENRE/FORM	R	.	a	Genre/form data or focus term	NR	.	655a	Genre	.	[12347]	.	TRLN
+655	INDEX TERM--GENRE/FORM	R	.	a	Genre/form data or focus term	NR	.	655a	Subject Headings	.	.	.	TRLN
+655	INDEX TERM--GENRE/FORM	R	.	b	Non-focus term	R	.	655b	Subject Headings	.	.	.	TRLN
+655	INDEX TERM--GENRE/FORM	R	.	v	Form subdivision	R	.	655v	Subject Headings	.	.	.	TRLN
+655	INDEX TERM--GENRE/FORM	R	.	x	General subdivision	R	.	655x	Subject Headings	.	.	.	TRLN
+655	INDEX TERM--GENRE/FORM	R	.	y	Chronological subdivision	R	.	655y	Subject Headings	.	.	.	TRLN
+655	INDEX TERM--GENRE/FORM	R	.	z	Geographic subdivision	R	.	655z	Region	.	[12347]	.	TRLN
+655	INDEX TERM--GENRE/FORM	R	.	z	Geographic subdivision	R	.	655z	Subject Headings	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	a	Personal name	NR	.	700a	Author	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	a	Personal name	NR	.	700a	Name Title	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	a	Personal name	NR	.	700a	Other Authors	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	b	Numeration	NR	.	700b	Author	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	b	Numeration	NR	.	700b	Name Title	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	b	Numeration	NR	.	700b	Other Authors	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	c	Titles and other words associated with a name	R	.	700c	Author	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	c	Titles and other words associated with a name	R	.	700c	Name Title	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	c	Titles and other words associated with a name	R	.	700c	Other Authors	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	d	Dates associated with a name	NR	.	700d	Author	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	d	Dates associated with a name	NR	.	700d	Name Title	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	d	Dates associated with a name	NR	.	700d	Other Authors	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	e	Relator term	R	.	700e	Name Title	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	e	Relator term	R	.	700e	Other Authors	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	f	Date of a work	NR	.	700f	Name Title	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	f	Date of a work	NR	.	700f	Other Titles	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	g	Miscellaneous information	R	.	700g	Name Title	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	g	Miscellaneous information	R	.	700g	Other Titles	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	h	Medium	NR	.	700h	Name Title	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	h	Medium	NR	.	700h	Other Titles	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	i	Relationship information	R	.	700i	Name Title	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	i	Relationship information	R	.	700i	Other Titles	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	j	Attribution qualifier	R	.	700j	Name Title	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	j	Attribution qualifier	R	.	700j	Other Titles	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	k	Form subheading	R	.	700k	Name Title	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	k	Form subheading	R	.	700k	Other Titles	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	l	Language of a work	NR	.	700l	Name Title	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	l	Language of a work	NR	.	700l	Other Titles	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	m	Medium of performance for music	R	.	700m	Name Title	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	m	Medium of performance for music	R	.	700m	Other Titles	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	n	Number of part/section of a work	R	.	700n	Name Title	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	n	Number of part/section of a work	R	.	700n	Other Titles	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	o	Arranged statement for music	NR	.	700o	Name Title	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	o	Arranged statement for music	NR	.	700o	Other Titles	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	p	Name of part/section of a work	R	.	700p	Name Title	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	p	Name of part/section of a work	R	.	700p	Other Titles	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	q	Fuller form of name	NR	.	700q	Author	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	q	Fuller form of name	NR	.	700q	Name Title	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	q	Fuller form of name	NR	.	700q	Other Authors	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	r	Key for music	NR	.	700r	Name Title	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	r	Key for music	NR	.	700r	Other Titles	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	s	Version	NR	.	700s	Name Title	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	s	Version	NR	.	700s	Other Titles	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	t	Title of a work	NR	.	700t	Name Title	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	t	Title of a work	NR	.	700t	Other Titles	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	u	Affiliation	NR	.	700u	Name Title	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	x	International Standard Serial Number	NR	.	700x	Name Title	.	.	.	TRLN
+700	ADDED ENTRY--PERSONAL NAME	R	.	4	Relationship	R	.	7004	Name Title	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	a	Corporate name or jurisdiction name as entry element	NR	.	710a	Name Title	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	a	Corporate name or jurisdiction name as entry element	NR	.	710a	Other Authors	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	b	Subordinate unit	R	.	710b	Name Title	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	b	Subordinate unit	R	.	710b	Other Authors	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	c	Location of meeting	R	.	710c	Name Title	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	c	Location of meeting	R	.	710c	Other Authors	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	d	Date of meeting or treaty signing	R	.	710d	Name Title	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	d	Date of meeting or treaty signing	R	.	710d	Other Authors	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	e	Relator term	R	.	710e	Name Title	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	e	Relator term	R	.	710e	Other Authors	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	f	Date of a work	NR	.	710f	Name Title	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	f	Date of a work	NR	.	710f	Other Titles	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	g	Miscellaneous information	R	.	710g	Name Title	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	g	Miscellaneous information	R	.	710g	Other Titles	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	h	Medium	NR	.	710h	Name Title	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	h	Medium	NR	.	710h	Other Titles	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	i	Relationship information	R	.	710i	Name Title	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	k	Form subheading	R	.	710k	Name Title	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	k	Form subheading	R	.	710k	Other Titles	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	l	Language of a work	NR	.	710l	Name Title	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	l	Language of a work	NR	.	710l	Other Titles	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	m	Medium of performance for music	R	.	710m	Name Title	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	m	Medium of performance for music	R	.	710m	Other Titles	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	n	Number of part/section/meeting	R	.	710n	Name Title	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	n	Number of part/section/meeting	R	.	710n	Other Titles	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	o	Arranged statement for music	NR	.	710o	Name Title	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	o	Arranged statement for music	NR	.	710o	Other Titles	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	p	Name of part/section of a work	R	.	710p	Name Title	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	p	Name of part/section of a work	R	.	710p	Other Titles	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	r	Key for music	NR	.	710r	Name Title	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	r	Key for music	NR	.	710r	Other Titles	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	s	Version	NR	.	710s	Name Title	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	s	Version	NR	.	710s	Other Titles	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	t	Title of a work	NR	.	710t	Name Title	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	t	Title of a work	NR	.	710t	Other Titles	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	u	Affiliation	NR	.	710u	Name Title	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	x	International Standard Serial Number	NR	.	710x	Name Title	.	.	.	TRLN
+710	ADDED ENTRY--CORPORATE NAME	R	.	4	Relationship	R	.	7104	Name Title	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	a	Meeting name or jurisdiction name as entry element	NR	.	711a	Name Title	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	a	Meeting name or jurisdiction name as entry element	NR	.	711a	Other Authors	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	b	Number	.	[OBSOLETE]	711b	Other Authors	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	c	Location of meeting	R	.	711c	Name Title	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	c	Location of meeting	R	.	711c	Other Authors	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	d	Date of meeting	NR	.	711d	Name Title	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	d	Date of meeting	NR	.	711d	Other Authors	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	e	Subordinate unit	R	.	711e	Name Title	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	e	Subordinate unit	R	.	711e	Other Authors	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	f	Date of a work	NR	.	711f	Name Title	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	f	Date of a work	NR	.	711f	Other Titles	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	g	Miscellaneous information	R	.	711g	Name Title	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	g	Miscellaneous information	R	.	711g	Other Titles	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	h	Medium	NR	.	711h	Name Title	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	h	Medium	NR	.	711h	Other Titles	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	i	Relationship information	R	.	711i	Name Title	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	j	Relator term	R	.	711j	Name Title	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	k	Form subheading	R	.	711k	Name Title	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	k	Form subheading	R	.	711k	Other Titles	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	l	Language of a work	NR	.	711l	Name Title	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	l	Language of a work	NR	.	711l	Other Titles	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	n	Number of part/section/meeting	R	.	711n	Name Title	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	n	Number of part/section/meeting	R	.	711n	Other Titles	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	p	Name of part/section of a work	R	.	711p	Name Title	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	p	Name of part/section of a work	R	.	711p	Other Titles	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	q	Name of meeting following jurisdiction name entry element	NR	.	711q	Name Title	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	q	Name of meeting following jurisdiction name entry element	NR	.	711q	Other Authors	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	s	Version	NR	.	711s	Name Title	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	s	Version	NR	.	711s	Other Titles	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	t	Title of a work	NR	.	711t	Name Title	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	t	Title of a work	NR	.	711t	Other Titles	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	u	Affiliation	NR	.	711u	Name Title	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	x	International Standard Serial Number	NR	.	711x	Name Title	.	.	.	TRLN
+711	ADDED ENTRY--MEETING NAME	R	.	4	Relationship	R	.	7114	Name Title	.	.	.	TRLN
+720	ADDED ENTRY--UNCONTROLLED NAME	R	.	a	Name	NR	.	720a	Uncontrolled Author	.	.	.	TRLN
+730	ADDED ENTRY--UNIFORM TITLE	R	.	a	Uniform title	NR	.	730a	Uniform Title	.	.	.	TRLN
+730	ADDED ENTRY--UNIFORM TITLE	R	.	d	Date of treaty signing	R	.	730d	Uniform Title	.	.	.	TRLN
+730	ADDED ENTRY--UNIFORM TITLE	R	.	f	Date of a work	NR	.	730f	Uniform Title	.	.	.	TRLN
+730	ADDED ENTRY--UNIFORM TITLE	R	.	g	Miscellaneous information	R	.	730g	Uniform Title	.	.	.	TRLN
+730	ADDED ENTRY--UNIFORM TITLE	R	.	h	Medium	NR	.	730h	Uniform Title	.	.	.	TRLN
+730	ADDED ENTRY--UNIFORM TITLE	R	.	k	Form subheading	R	.	730k	Uniform Title	.	.	.	TRLN
+730	ADDED ENTRY--UNIFORM TITLE	R	.	l	Language of a work	NR	.	730l	Uniform Title	.	.	.	TRLN
+730	ADDED ENTRY--UNIFORM TITLE	R	.	m	Medium of performance for music	R	.	730m	Uniform Title	.	.	.	TRLN
+730	ADDED ENTRY--UNIFORM TITLE	R	.	n	Number of part/section of a work	R	.	730n	Uniform Title	.	.	.	TRLN
+730	ADDED ENTRY--UNIFORM TITLE	R	.	o	Arranged statement for music	NR	.	730o	Uniform Title	.	.	.	TRLN
+730	ADDED ENTRY--UNIFORM TITLE	R	.	p	Name of part/section of a work	R	.	730p	Uniform Title	.	.	.	TRLN
+730	ADDED ENTRY--UNIFORM TITLE	R	.	r	Key for music	NR	.	730r	Uniform Title	.	.	.	TRLN
+730	ADDED ENTRY--UNIFORM TITLE	R	.	s	Version	NR	.	730s	Uniform Title	.	.	.	TRLN
+730	ADDED ENTRY--UNIFORM TITLE	R	.	t	Title of a work	NR	.	730t	Uniform Title	.	.	.	TRLN
+740	ADDED ENTRY--UNCONTROLLED RELATED/ANALYTICAL TITLE	R	.	a	Uncontrolled related/analytical title	NR	.	740a	Varying Titles	.	.	.	TRLN
+740	ADDED ENTRY--UNCONTROLLED RELATED/ANALYTICAL TITLE	R	.	h	Medium	NR	.	740h	Varying Titles	.	.	.	TRLN
+740	ADDED ENTRY--UNCONTROLLED RELATED/ANALYTICAL TITLE	R	.	n	Number of part/section of a work	R	.	740n	Varying Titles	.	.	.	TRLN
+740	ADDED ENTRY--UNCONTROLLED RELATED/ANALYTICAL TITLE	R	.	p	Name of part/section of a work	R	.	740p	Varying Titles	.	.	.	TRLN
+752	ADDED ENTRY--HIERARCHICAL PLACE NAME	R	.	a	Country or larger entity	R	.	752a	Notes	.	.	.	TRLN
+752	ADDED ENTRY--HIERARCHICAL PLACE NAME	R	.	b	First-order political jurisdiction	NR	.	752b	Notes	.	.	.	TRLN
+752	ADDED ENTRY--HIERARCHICAL PLACE NAME	R	.	c	Intermediate political jurisdiction	R	.	752c	Notes	.	.	.	TRLN
+752	ADDED ENTRY--HIERARCHICAL PLACE NAME	R	.	d	City	NR	.	752d	Notes	.	.	.	TRLN
+760	MAIN SERIES ENTRY	R	.	a	Main entry heading	NR	.	760a	Main Series Linking	.	.	.	TRLN
+760	MAIN SERIES ENTRY	R	.	b	Edition	NR	.	760b	Main Series Linking	.	.	.	TRLN
+760	MAIN SERIES ENTRY	R	.	c	Qualifying information	NR	.	760c	Main Series Linking	.	.	.	TRLN
+760	MAIN SERIES ENTRY	R	.	d	Place, publisher, and date of publication	NR	.	760d	Main Series Linking	.	.	.	TRLN
+760	MAIN SERIES ENTRY	R	.	g	Related parts	R	.	760g	Main Series Linking	.	.	.	TRLN
+760	MAIN SERIES ENTRY	R	.	h	Physical description	NR	.	760h	Main Series Linking	.	.	.	TRLN
+760	MAIN SERIES ENTRY	R	.	i	Relationship information	R	.	760i	Main Series Linking	.	.	.	TRLN
+760	MAIN SERIES ENTRY	R	.	m	Material-specific details	NR	.	760m	Main Series Linking	.	.	.	TRLN
+760	MAIN SERIES ENTRY	R	.	n	Note	R	.	760n	Main Series Linking	.	.	.	TRLN
+760	MAIN SERIES ENTRY	R	.	o	Other item identifier	R	.	760o	Main Series Linking	.	.	.	TRLN
+760	MAIN SERIES ENTRY	R	.	s	Uniform title	NR	.	760s	Main Series Linking	.	.	.	TRLN
+760	MAIN SERIES ENTRY	R	.	t	Title	NR	.	760t	Main Series Linking	.	.	.	TRLN
+760	MAIN SERIES ENTRY	R	.	w	Record control number	R	.	760w	Main Series Linking	.	.	.	TRLN
+760	MAIN SERIES ENTRY	R	.	x	International Standard Serial Number	NR	.	760x	Main Series Linking	.	.	.	TRLN
+760	MAIN SERIES ENTRY	R	.	y	CODEN designation	NR	.	760y	Main Series Linking	.	.	.	TRLN
+762	SUBSERIES ENTRY	R	.	a	Main entry heading	NR	.	762a	Subseries Linking	.	.	.	TRLN
+762	SUBSERIES ENTRY	R	.	b	Edition	NR	.	762b	Subseries Linking	.	.	.	TRLN
+762	SUBSERIES ENTRY	R	.	c	Qualifying information	NR	.	762c	Subseries Linking	.	.	.	TRLN
+762	SUBSERIES ENTRY	R	.	d	Place, publisher, and date of publication	NR	.	762d	Subseries Linking	.	.	.	TRLN
+762	SUBSERIES ENTRY	R	.	g	Related parts	R	.	762g	Subseries Linking	.	.	.	TRLN
+762	SUBSERIES ENTRY	R	.	h	Physical description	NR	.	762h	Subseries Linking	.	.	.	TRLN
+762	SUBSERIES ENTRY	R	.	i	Relationship information	R	.	762i	Subseries Linking	.	.	.	TRLN
+762	SUBSERIES ENTRY	R	.	m	Material-specific details	NR	.	762m	Subseries Linking	.	.	.	TRLN
+762	SUBSERIES ENTRY	R	.	n	Note	R	.	762n	Subseries Linking	.	.	.	TRLN
+762	SUBSERIES ENTRY	R	.	o	Other item identifier	R	.	762o	Subseries Linking	.	.	.	TRLN
+762	SUBSERIES ENTRY	R	.	s	Uniform title	NR	.	762s	Subseries Linking	.	.	.	TRLN
+762	SUBSERIES ENTRY	R	.	t	Title	NR	.	762t	Subseries Linking	.	.	.	TRLN
+762	SUBSERIES ENTRY	R	.	w	Record control number	R	.	762w	Subseries Linking	.	.	.	TRLN
+762	SUBSERIES ENTRY	R	.	x	International Standard Serial Number	NR	.	762x	Subseries Linking	.	.	.	TRLN
+762	SUBSERIES ENTRY	R	.	y	CODEN designation	NR	.	762y	Subseries Linking	.	.	.	TRLN
+765	ORIGINAL LANGUAGE ENTRY	R	.	a	Main entry heading	NR	.	765a	Translation of Linking	.	.	.	TRLN
+765	ORIGINAL LANGUAGE ENTRY	R	.	b	Edition	NR	.	765b	Translation of Linking	.	.	.	TRLN
+765	ORIGINAL LANGUAGE ENTRY	R	.	c	Qualifying information	NR	.	765c	Translation of Linking	.	.	.	TRLN
+765	ORIGINAL LANGUAGE ENTRY	R	.	d	Place, publisher, and date of publication	NR	.	765d	Translation of Linking	.	.	.	TRLN
+765	ORIGINAL LANGUAGE ENTRY	R	.	g	Related parts	R	.	765g	Translation of Linking	.	.	.	TRLN
+765	ORIGINAL LANGUAGE ENTRY	R	.	h	Physical description	NR	.	765h	Translation of Linking	.	.	.	TRLN
+765	ORIGINAL LANGUAGE ENTRY	R	.	i	Relationship information	R	.	765i	Translation of Linking	.	.	.	TRLN
+765	ORIGINAL LANGUAGE ENTRY	R	.	k	Series data for related item	R	.	765k	Translation of Linking	.	.	.	TRLN
+765	ORIGINAL LANGUAGE ENTRY	R	.	m	Material-specific details	NR	.	765m	Translation of Linking	.	.	.	TRLN
+765	ORIGINAL LANGUAGE ENTRY	R	.	n	Note	R	.	765n	Translation of Linking	.	.	.	TRLN
+765	ORIGINAL LANGUAGE ENTRY	R	.	o	Other item identifier	R	.	765o	Translation of Linking	.	.	.	TRLN
+765	ORIGINAL LANGUAGE ENTRY	R	.	r	Report number	R	.	765r	Translation of Linking	.	.	.	TRLN
+765	ORIGINAL LANGUAGE ENTRY	R	.	s	Uniform title	NR	.	765s	Translation of Linking	.	.	.	TRLN
+765	ORIGINAL LANGUAGE ENTRY	R	.	t	Title	NR	.	765t	Translation of Linking	.	.	.	TRLN
+765	ORIGINAL LANGUAGE ENTRY	R	.	u	Standard Technical Report Number	NR	.	765u	Translation of Linking	.	.	.	TRLN
+765	ORIGINAL LANGUAGE ENTRY	R	.	w	Record control number	R	.	765w	Translation of Linking	.	.	.	TRLN
+765	ORIGINAL LANGUAGE ENTRY	R	.	x	International Standard Serial Number	NR	.	765x	Linking ISSN	.	.	.	TRLN
+765	ORIGINAL LANGUAGE ENTRY	R	.	x	International Standard Serial Number	NR	.	765x	Translation of Linking	.	.	.	TRLN
+765	ORIGINAL LANGUAGE ENTRY	R	.	y	CODEN designation	NR	.	765y	Translation of Linking	.	.	.	TRLN
+765	ORIGINAL LANGUAGE ENTRY	R	.	z	International Standard Book Number	R	.	765z	Linking ISSN	.	.	.	TRLN
+765	ORIGINAL LANGUAGE ENTRY	R	.	z	International Standard Book Number	R	.	765z	Translation of Linking	.	.	.	TRLN
+767	TRANSLATION ENTRY	R	.	a	Main entry heading	NR	.	767a	Translated as Linking	.	.	.	TRLN
+767	TRANSLATION ENTRY	R	.	b	Edition	NR	.	767b	Translated as Linking	.	.	.	TRLN
+767	TRANSLATION ENTRY	R	.	c	Qualifying information	NR	.	767c	Translated as Linking	.	.	.	TRLN
+767	TRANSLATION ENTRY	R	.	d	Place, publisher, and date of publication	NR	.	767d	Translated as Linking	.	.	.	TRLN
+767	TRANSLATION ENTRY	R	.	g	Related parts	R	.	767g	Translated as Linking	.	.	.	TRLN
+767	TRANSLATION ENTRY	R	.	h	Physical description	NR	.	767h	Translated as Linking	.	.	.	TRLN
+767	TRANSLATION ENTRY	R	.	i	Relationship information	R	.	767i	Translated as Linking	.	.	.	TRLN
+767	TRANSLATION ENTRY	R	.	k	Series data for related item	R	.	767k	Translated as Linking	.	.	.	TRLN
+767	TRANSLATION ENTRY	R	.	m	Material-specific details	NR	.	767m	Translated as Linking	.	.	.	TRLN
+767	TRANSLATION ENTRY	R	.	n	Note	R	.	767n	Translated as Linking	.	.	.	TRLN
+767	TRANSLATION ENTRY	R	.	o	Other item identifier	R	.	767o	Translated as Linking	.	.	.	TRLN
+767	TRANSLATION ENTRY	R	.	r	Report number	R	.	767r	Translated as Linking	.	.	.	TRLN
+767	TRANSLATION ENTRY	R	.	s	Uniform title	NR	.	767s	Translated as Linking	.	.	.	TRLN
+767	TRANSLATION ENTRY	R	.	t	Title	NR	.	767t	Translated as Linking	.	.	.	TRLN
+767	TRANSLATION ENTRY	R	.	u	Standard Technical Report Number	NR	.	767u	Translated as Linking	.	.	.	TRLN
+767	TRANSLATION ENTRY	R	.	w	Record control number	R	.	767w	Translated as Linking	.	.	.	TRLN
+767	TRANSLATION ENTRY	R	.	x	International Standard Serial Number	NR	.	767x	Linking ISSN	.	.	.	TRLN
+767	TRANSLATION ENTRY	R	.	x	International Standard Serial Number	NR	.	767x	Translated as Linking	.	.	.	TRLN
+767	TRANSLATION ENTRY	R	.	y	CODEN designation	NR	.	767y	Translated as Linking	.	.	.	TRLN
+767	TRANSLATION ENTRY	R	.	z	International Standard Book Number	R	.	767z	Linking ISSN	.	.	.	TRLN
+767	TRANSLATION ENTRY	R	.	z	International Standard Book Number	R	.	767z	Translated as Linking	.	.	.	TRLN
+770	SUPPLEMENT/SPECIAL ISSUE ENTRY	R	.	a	Main entry heading	NR	.	770a	Has Supplement Linking	.	.	.	TRLN
+770	SUPPLEMENT/SPECIAL ISSUE ENTRY	R	.	b	Edition	NR	.	770b	Has Supplement Linking	.	.	.	TRLN
+770	SUPPLEMENT/SPECIAL ISSUE ENTRY	R	.	c	Qualifying information	NR	.	770c	Has Supplement Linking	.	.	.	TRLN
+770	SUPPLEMENT/SPECIAL ISSUE ENTRY	R	.	d	Place, publisher, and date of publication	NR	.	770d	Has Supplement Linking	.	.	.	TRLN
+770	SUPPLEMENT/SPECIAL ISSUE ENTRY	R	.	g	Related parts	R	.	770g	Has Supplement Linking	.	.	.	TRLN
+770	SUPPLEMENT/SPECIAL ISSUE ENTRY	R	.	h	Physical description	NR	.	770h	Has Supplement Linking	.	.	.	TRLN
+770	SUPPLEMENT/SPECIAL ISSUE ENTRY	R	.	i	Relationship information	R	.	770i	Has Supplement Linking	.	.	.	TRLN
+770	SUPPLEMENT/SPECIAL ISSUE ENTRY	R	.	k	Series data for related item	R	.	770k	Has Supplement Linking	.	.	.	TRLN
+770	SUPPLEMENT/SPECIAL ISSUE ENTRY	R	.	m	Material-specific details	NR	.	770m	Has Supplement Linking	.	.	.	TRLN
+770	SUPPLEMENT/SPECIAL ISSUE ENTRY	R	.	n	Note	R	.	770n	Has Supplement Linking	.	.	.	TRLN
+770	SUPPLEMENT/SPECIAL ISSUE ENTRY	R	.	o	Other item identifier	R	.	770o	Has Supplement Linking	.	.	.	TRLN
+770	SUPPLEMENT/SPECIAL ISSUE ENTRY	R	.	r	Report number	R	.	770r	Has Supplement Linking	.	.	.	TRLN
+770	SUPPLEMENT/SPECIAL ISSUE ENTRY	R	.	s	Uniform title	NR	.	770s	Has Supplement Linking	.	.	.	TRLN
+770	SUPPLEMENT/SPECIAL ISSUE ENTRY	R	.	t	Title	NR	.	770t	Has Supplement Linking	.	.	.	TRLN
+770	SUPPLEMENT/SPECIAL ISSUE ENTRY	R	.	u	Standard Technical Report Number	NR	.	770u	Has Supplement Linking	.	.	.	TRLN
+770	SUPPLEMENT/SPECIAL ISSUE ENTRY	R	.	w	Record control number	R	.	770w	Has Supplement Linking	.	.	.	TRLN
+770	SUPPLEMENT/SPECIAL ISSUE ENTRY	R	.	x	International Standard Serial Number	NR	.	770x	Has Supplement Linking	.	.	.	TRLN
+770	SUPPLEMENT/SPECIAL ISSUE ENTRY	R	.	y	CODEN designation	NR	.	770y	Has Supplement Linking	.	.	.	TRLN
+770	SUPPLEMENT/SPECIAL ISSUE ENTRY	R	.	z	International Standard Book Number	R	.	770z	Has Supplement Linking	.	.	.	TRLN
+772	SUPPLEMENT PARENT ENTRY	R	.	a	Main entry heading	NR	.	772a	Supplement to Linking	.	.	.	TRLN
+772	SUPPLEMENT PARENT ENTRY	R	.	b	Edition	NR	.	772b	Supplement to Linking	.	.	.	TRLN
+772	SUPPLEMENT PARENT ENTRY	R	.	c	Qualifying information	NR	.	772c	Supplement to Linking	.	.	.	TRLN
+772	SUPPLEMENT PARENT ENTRY	R	.	d	Place, publisher, and date of publication	NR	.	772d	Supplement to Linking	.	.	.	TRLN
+772	SUPPLEMENT PARENT ENTRY	R	.	g	Related parts	R	.	772g	Supplement to Linking	.	.	.	TRLN
+772	SUPPLEMENT PARENT ENTRY	R	.	h	Physical description	NR	.	772h	Supplement to Linking	.	.	.	TRLN
+772	SUPPLEMENT PARENT ENTRY	R	.	i	Relationship information	R	.	772i	Supplement to Linking	.	.	.	TRLN
+772	SUPPLEMENT PARENT ENTRY	R	.	k	Series data for related item	R	.	772k	Supplement to Linking	.	.	.	TRLN
+772	SUPPLEMENT PARENT ENTRY	R	.	m	Material-specific details	NR	.	772m	Supplement to Linking	.	.	.	TRLN
+772	SUPPLEMENT PARENT ENTRY	R	.	n	Note	R	.	772n	Supplement to Linking	.	.	.	TRLN
+772	SUPPLEMENT PARENT ENTRY	R	.	o	Other item identifier	R	.	772o	Supplement to Linking	.	.	.	TRLN
+772	SUPPLEMENT PARENT ENTRY	R	.	r	Report number	R	.	772r	Supplement to Linking	.	.	.	TRLN
+772	SUPPLEMENT PARENT ENTRY	R	.	s	Uniform title	NR	.	772s	Supplement to Linking	.	.	.	TRLN
+772	SUPPLEMENT PARENT ENTRY	R	.	t	Title	NR	.	772t	Supplement to Linking	.	.	.	TRLN
+772	SUPPLEMENT PARENT ENTRY	R	.	u	Standard Technical Report Number	NR	.	772u	Supplement to Linking	.	.	.	TRLN
+772	SUPPLEMENT PARENT ENTRY	R	.	w	Record control number	R	.	772w	Supplement to Linking	.	.	.	TRLN
+772	SUPPLEMENT PARENT ENTRY	R	.	x	International Standard Serial Number	NR	.	772x	Supplement to Linking	.	.	.	TRLN
+772	SUPPLEMENT PARENT ENTRY	R	.	y	CODEN designation	NR	.	772y	Supplement to Linking	.	.	.	TRLN
+772	SUPPLEMENT PARENT ENTRY	R	.	z	International Stan dard Book Number	R	.	772z	Supplement to Linking	.	.	.	TRLN
+773	HOST ITEM ENTRY	R	.	a	Main entry heading	NR	.	773a	Host Item Linking	.	.	.	TRLN
+773	HOST ITEM ENTRY	R	.	b	Edition	NR	.	773b	Host Item Linking	.	.	.	TRLN
+773	HOST ITEM ENTRY	R	.	d	Place, publisher, and date of publication	NR	.	773d	Host Item Linking	.	.	.	TRLN
+773	HOST ITEM ENTRY	R	.	g	Related parts	R	.	773g	Host Item Linking	.	.	.	TRLN
+773	HOST ITEM ENTRY	R	.	h	Physical description	NR	.	773h	Host Item Linking	.	.	.	TRLN
+773	HOST ITEM ENTRY	R	.	i	Relationship information	R	.	773i	Host Item Linking	.	.	.	TRLN
+773	HOST ITEM ENTRY	R	.	k	Series data for related item	R	.	773k	Host Item Linking	.	.	.	TRLN
+773	HOST ITEM ENTRY	R	.	m	Material-specific details	NR	.	773m	Host Item Linking	.	.	.	TRLN
+773	HOST ITEM ENTRY	R	.	n	Note	R	.	773n	Host Item Linking	.	.	.	TRLN
+773	HOST ITEM ENTRY	R	.	o	Other item identifier	R	.	773o	Host Item Linking	.	.	.	TRLN
+773	HOST ITEM ENTRY	R	.	p	Abbreviated title	NR	.	773p	Host Item Linking	.	.	.	TRLN
+773	HOST ITEM ENTRY	R	.	q	Enumeration and first page	NR	.	773q	Host Item Linking	.	.	.	TRLN
+773	HOST ITEM ENTRY	R	.	r	Report number	R	.	773r	Host Item Linking	.	.	.	TRLN
+773	HOST ITEM ENTRY	R	.	s	Uniform title	NR	.	773s	Host Item Linking	.	.	.	TRLN
+773	HOST ITEM ENTRY	R	.	t	Title	NR	.	773t	Host Item Linking	.	.	.	TRLN
+773	HOST ITEM ENTRY	R	.	u	Standard Technical Report Number	NR	.	773u	Host Item Linking	.	.	.	TRLN
+773	HOST ITEM ENTRY	R	.	w	Record control number	R	.	773w	Host Item Linking	.	.	.	TRLN
+773	HOST ITEM ENTRY	R	.	x	International Standard Serial Number	NR	.	773x	Host Item Linking	.	.	.	TRLN
+773	HOST ITEM ENTRY	R	.	x	International Standard Serial Number	NR	.	773x	Linking ISSN	.	.	.	TRLN
+773	HOST ITEM ENTRY	R	.	y	CODEN designation	NR	.	773y	Host Item Linking	.	.	.	TRLN
+773	HOST ITEM ENTRY	R	.	z	International Standard Book Number	R	.	773z	Host Item Linking	.	.	.	TRLN
+773	HOST ITEM ENTRY	R	.	z	International Standard Book Number	R	.	773z	Linking ISSN	.	.	.	TRLN
+774	CONSTITUENT UNIT ENTRY	R	.	a	Main entry heading	NR	.	774a	Constituent Unit Linking	.	.	.	TRLN
+774	CONSTITUENT UNIT ENTRY	R	.	b	Edition	NR	.	774b	Constituent Unit Linking	.	.	.	TRLN
+774	CONSTITUENT UNIT ENTRY	R	.	c	Qualifying information	NR	.	774c	Constituent Unit Linking	.	.	.	TRLN
+774	CONSTITUENT UNIT ENTRY	R	.	d	Place, publisher, and date of publication	NR	.	774d	Constituent Unit Linking	.	.	.	TRLN
+774	CONSTITUENT UNIT ENTRY	R	.	g	Related parts	R	.	774g	Constituent Unit Linking	.	.	.	TRLN
+774	CONSTITUENT UNIT ENTRY	R	.	h	Physical description	NR	.	774h	Constituent Unit Linking	.	.	.	TRLN
+774	CONSTITUENT UNIT ENTRY	R	.	i	Relationship information	R	.	774i	Constituent Unit Linking	.	.	.	TRLN
+774	CONSTITUENT UNIT ENTRY	R	.	k	Series data for related item	R	.	774k	Constituent Unit Linking	.	.	.	TRLN
+774	CONSTITUENT UNIT ENTRY	R	.	m	Material-specific details	NR	.	774m	Constituent Unit Linking	.	.	.	TRLN
+774	CONSTITUENT UNIT ENTRY	R	.	n	Note	R	.	774n	Constituent Unit Linking	.	.	.	TRLN
+774	CONSTITUENT UNIT ENTRY	R	.	o	Other item identifier	R	.	774o	Constituent Unit Linking	.	.	.	TRLN
+774	CONSTITUENT UNIT ENTRY	R	.	r	Report number	R	.	774r	Constituent Unit Linking	.	.	.	TRLN
+774	CONSTITUENT UNIT ENTRY	R	.	s	Uniform title	NR	.	774s	Constituent Unit Linking	.	.	.	TRLN
+774	CONSTITUENT UNIT ENTRY	R	.	t	Title	NR	.	774t	Constituent Unit Linking	.	.	.	TRLN
+774	CONSTITUENT UNIT ENTRY	R	.	u	Standard Technical Report Number	NR	.	774u	Constituent Unit Linking	.	.	.	TRLN
+774	CONSTITUENT UNIT ENTRY	R	.	w	Record control number	R	.	774w	Constituent Unit Linking	.	.	.	TRLN
+774	CONSTITUENT UNIT ENTRY	R	.	x	International Standard Serial Number	NR	.	774x	Constituent Unit Linking	.	.	.	TRLN
+774	CONSTITUENT UNIT ENTRY	R	.	x	International Standard Serial Number	NR	.	774x	Linking ISSN	.	.	.	TRLN
+774	CONSTITUENT UNIT ENTRY	R	.	y	CODEN designation	NR	.	774y	Constituent Unit Linking	.	.	.	TRLN
+774	CONSTITUENT UNIT ENTRY	R	.	z	International Standard Book Number	R	.	774z	Constituent Unit Linking	.	.	.	TRLN
+774	CONSTITUENT UNIT ENTRY	R	.	z	International Standard Book Number	R	.	774z	Linking ISSN	.	.	.	TRLN
+775	OTHER EDITION ENTRY	R	.	a	Main entry heading	NR	.	775a	Other Edition	.	.	.	TRLN
+775	OTHER EDITION ENTRY	R	.	b	Edition	NR	.	775b	Other Edition	.	.	.	TRLN
+775	OTHER EDITION ENTRY	R	.	d	Place, publisher, and date of publication	NR	.	775d	Other Edition	.	.	.	TRLN
+775	OTHER EDITION ENTRY	R	.	g	Related parts	R	.	775g	Other Edition	.	.	.	TRLN
+775	OTHER EDITION ENTRY	R	.	h	Physical description	NR	.	775h	Other Edition	.	.	.	TRLN
+775	OTHER EDITION ENTRY	R	.	i	Relationship information	R	.	775i	Other Edition	.	.	.	TRLN
+775	OTHER EDITION ENTRY	R	.	n	Note	R	.	775n	Other Edition	.	.	.	TRLN
+775	OTHER EDITION ENTRY	R	.	t	Title	NR	.	775t	Other Edition	.	.	.	TRLN
+780	PRECEDING ENTRY	R	.	a	Main entry heading	NR	.	780a	Earlier Title	.	.	.	TRLN
+780	PRECEDING ENTRY	R	.	a	Main entry heading	NR	.	780a	Journal Earlier Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+780	PRECEDING ENTRY	R	.	b	Edition	NR	.	780b	Earlier Title	.	.	.	TRLN
+780	PRECEDING ENTRY	R	.	b	Edition	NR	.	780b	Journal Earlier Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+780	PRECEDING ENTRY	R	.	c	Qualifying information	NR	.	780c	Earlier Title	.	.	.	TRLN
+780	PRECEDING ENTRY	R	.	c	Qualifying information	NR	.	780c	Journal Earlier Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+780	PRECEDING ENTRY	R	.	d	Place, publisher, and date of publication	NR	.	780d	Earlier Title	.	.	.	TRLN
+780	PRECEDING ENTRY	R	.	d	Place, publisher, and date of publication	NR	.	780d	Journal Earlier Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+780	PRECEDING ENTRY	R	.	g	Related parts	R	.	780g	Earlier Title	.	.	.	TRLN
+780	PRECEDING ENTRY	R	.	g	Related parts	R	.	780g	Journal Earlier Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+780	PRECEDING ENTRY	R	.	h	Physical description	NR	.	780h	Earlier Title	.	.	.	TRLN
+780	PRECEDING ENTRY	R	.	h	Physical description	NR	.	780h	Journal Earlier Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+780	PRECEDING ENTRY	R	.	k	Series data for related item	R	.	780k	Earlier Title	.	.	.	TRLN
+780	PRECEDING ENTRY	R	.	k	Series data for related item	R	.	780k	Journal Earlier Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+780	PRECEDING ENTRY	R	.	n	Note	R	.	780n	Earlier Title	.	.	.	TRLN
+780	PRECEDING ENTRY	R	.	n	Note	R	.	780n	Journal Earlier Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+780	PRECEDING ENTRY	R	.	s	Uniform title	NR	.	780s	Earlier Title	.	.	.	TRLN
+780	PRECEDING ENTRY	R	.	s	Uniform title	NR	.	780s	Journal Earlier Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+780	PRECEDING ENTRY	R	.	t	Title	NR	.	780t	Earlier Title	.	.	.	TRLN
+780	PRECEDING ENTRY	R	.	t	Title	NR	.	780t	Journal Earlier Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+780	PRECEDING ENTRY	R	.	x	International Standard Serial Number	NR	.	780x	Earlier Title	.	.	.	TRLN
+780	PRECEDING ENTRY	R	.	x	International Standard Serial Number	NR	.	780x	Linking ISSN	.	.	.	TRLN
+780	PRECEDING ENTRY	R	.	x	International Standard Serial Number	NR	.	780x	Journal Earlier Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+780	PRECEDING ENTRY	R	.	z	International Standard Book Number	R	.	780z	Earlier Title	.	.	.	TRLN
+780	PRECEDING ENTRY	R	.	z	International Standard Book Number	R	.	780z	Linking ISSN	.	.	.	TRLN
+780	PRECEDING ENTRY	R	.	z	International Standard Book Number	R	.	780z	Journal Earlier Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+785	SUCCEEDING ENTRY	R	.	a	Main entry heading	NR	.	785a	Later Title	.	.	.	TRLN
+785	SUCCEEDING ENTRY	R	.	a	Main entry heading	NR	.	785a	Journal Later Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+785	SUCCEEDING ENTRY	R	.	b	Edition	NR	.	785b	Later Title	.	.	.	TRLN
+785	SUCCEEDING ENTRY	R	.	b	Edition	NR	.	785b	Journal Later Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+785	SUCCEEDING ENTRY	R	.	c	Qualifying information	NR	.	785c	Later Title	.	.	.	TRLN
+785	SUCCEEDING ENTRY	R	.	c	Qualifying information	NR	.	785c	Journal Later Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+785	SUCCEEDING ENTRY	R	.	d	Place, publisher, and date of publication	NR	.	785d	Later Title	.	.	.	TRLN
+785	SUCCEEDING ENTRY	R	.	d	Place, publisher, and date of publication	NR	.	785d	Journal Later Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+785	SUCCEEDING ENTRY	R	.	g	Related parts	R	.	785g	Later Title	.	.	.	TRLN
+785	SUCCEEDING ENTRY	R	.	g	Related parts	R	.	785g	Journal Later Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+785	SUCCEEDING ENTRY	R	.	h	Physical description	NR	.	785h	Later Title	.	.	.	TRLN
+785	SUCCEEDING ENTRY	R	.	h	Physical description	NR	.	785h	Journal Later Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+785	SUCCEEDING ENTRY	R	.	i	Relationship information	R	.	785i	Later Title	.	.	.	TRLN
+785	SUCCEEDING ENTRY	R	.	i	Relationship information	R	.	785i	Journal Later Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+785	SUCCEEDING ENTRY	R	.	k	Series data for related item	R	.	785k	Later Title	.	.	.	TRLN
+785	SUCCEEDING ENTRY	R	.	k	Series data for related item	R	.	785k	Journal Later Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+785	SUCCEEDING ENTRY	R	.	m	Material-specific details	NR	.	785m	Later Title	.	.	.	TRLN
+785	SUCCEEDING ENTRY	R	.	m	Material-specific details	NR	.	785m	Journal Later Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+785	SUCCEEDING ENTRY	R	.	n	Note	R	.	785n	Later Title	.	.	.	TRLN
+785	SUCCEEDING ENTRY	R	.	n	Note	R	.	785n	Journal Later Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+785	SUCCEEDING ENTRY	R	.	s	Uniform title	NR	.	785s	Later Title	.	.	.	TRLN
+785	SUCCEEDING ENTRY	R	.	s	Uniform title	NR	.	785s	Journal Later Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+785	SUCCEEDING ENTRY	R	.	t	Title	NR	.	785t	Later Title	.	.	.	TRLN
+785	SUCCEEDING ENTRY	R	.	t	Title	NR	.	785t	Journal Later Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+785	SUCCEEDING ENTRY	R	.	x	International Standard Serial Number	NR	.	785x	Later Title	.	.	.	TRLN
+785	SUCCEEDING ENTRY	R	.	x	International Standard Serial Number	NR	.	785x	Linking ISSN	.	.	.	TRLN
+785	SUCCEEDING ENTRY	R	.	x	International Standard Serial Number	NR	.	785x	Journal Later Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+785	SUCCEEDING ENTRY	R	.	z	International Standard Book Number	R	.	785z	Later Title	.	.	.	TRLN
+785	SUCCEEDING ENTRY	R	.	z	International Standard Book Number	R	.	785z	Linking ISSN	.	.	.	TRLN
+785	SUCCEEDING ENTRY	R	.	z	International Standard Book Number	R	.	785z	Journal Later Title	.	.	LDR/07=s && 008/21=[pP]	TRLN
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	a	Personal name	NR	.	800a	Author	.	.	.	TRLN
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	a	Personal name	NR	.	800a	Series	.	.	.	TRLN
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	b	Numeration	NR	.	800b	Author	.	.	.	TRLN
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	b	Numeration	NR	.	800b	Series	.	.	.	TRLN
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	c	Titles and other words associated with a name	R	.	800c	Author	.	.	.	TRLN
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	c	Titles and other words associated with a name	R	.	800c	Series	.	.	.	TRLN
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	d	Dates associated with a name	NR	.	800d	Author	.	.	.	TRLN
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	d	Dates associated with a name	NR	.	800d	Series	.	.	.	TRLN
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	e	Relator term	R	.	800e	Author	.	.	.	TRLN
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	e	Relator term	R	.	800e	Series	.	.	.	TRLN
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	f	Date of a work	NR	.	800f	Series	.	.	.	TRLN
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	f	Date of a work	NR	.	800f	Series Title Index	.	.	.	TRLN
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	g	Miscellaneous information	R	.	800g	Author	.	.	.	TRLN
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	h	Medium	NR	.	800h	Series	.	.	.	TRLN
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	k	Form subheading	R	.	800k	Series	.	.	.	TRLN
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	k	Form subheading	R	.	800k	Series Title Index	.	.	.	TRLN
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	l	Language of a work	NR	.	800l	Series	.	.	.	TRLN
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	l	Language of a work	NR	.	800l	Series Title Index	.	.	.	TRLN
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	m	Medium of performance for music	R	.	800m	Series	.	.	.	TRLN
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	n	Number of part/section of a work 	R	.	800n	Series	.	.	.	TRLN
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	n	Number of part/section of a work 	R	.	800n	Series Title Index	.	.	.	TRLN
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	o	Arranged statement for music	NR	.	800o	Series	.	.	.	TRLN
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	p	Name of part/section of a work	R	.	800p	Series	.	.	.	TRLN
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	p	Name of part/section of a work	R	.	800p	Series Title Index	.	.	.	TRLN
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	q	Fuller form of name	NR	.	800q	Author	.	.	.	TRLN
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	q	Fuller form of name	NR	.	800q	Series	.	.	.	TRLN
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	r	Key for music	NR	.	800r	Series	.	.	.	TRLN
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	s	Version	NR	.	800s	Series	.	.	.	TRLN
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	t	Title of a work	NR	.	800t	Series	.	.	.	TRLN
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	t	Title of a work	NR	.	800t	Series Title Index	.	.	.	TRLN
+800	SERIES ADDED ENTRY--PERSONAL NAME	R	.	v	Volume/sequential designation 	NR	.	800v	Series	.	.	.	TRLN
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	a	Corporate name or jurisdiction name as entry element	NR	.	810a	Author	.	.	.	TRLN
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	a	Corporate name or jurisdiction name as entry element	NR	.	810a	Series	.	.	.	TRLN
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	b	Subordinate unit	R	.	810b	Author	.	.	.	TRLN
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	b	Subordinate unit	R	.	810b	Series	.	.	.	TRLN
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	c	Location of meeting	R	.	810c	Series	.	.	.	TRLN
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	d	Date of meeting or treaty signing	R	.	810d	Series	.	.	.	TRLN
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	e	Relator term	R	.	810e	Series	.	.	.	TRLN
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	f	Date of a work	NR	.	810f	Series	.	.	.	TRLN
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	h	Medium	NR	.	810h	Series	.	.	.	TRLN
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	k	Form subheading	R	.	810k	Series	.	.	.	TRLN
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	l	Language of a work	NR	.	810l	Series	.	.	.	TRLN
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	l	Language of a work	NR	.	810l	Series Title Index	.	.	.	TRLN
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	m	Medium of performance for music	R	.	810m	Series	.	.	.	TRLN
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	m	Medium of performance for music	R	.	810m	Series Title Index	.	.	.	TRLN
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	n	Number of part/section/meeting	R	.	810n	Series	.	.	.	TRLN
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	n	Number of part/section/meeting	R	.	810n	Series Title Index	.	.	.	TRLN
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	o	Arranged statement for music	NR	.	810o	Series	.	.	.	TRLN
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	o	Arranged statement for music	NR	.	810o	Series Title Index	.	.	.	TRLN
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	p	Name of part/section of a work	R	.	810p	Series	.	.	.	TRLN
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	p	Name of part/section of a work	R	.	810p	Series Title Index	.	.	.	TRLN
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	r	Key for music	NR	.	810r	Series	.	.	.	TRLN
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	r	Key for music	NR	.	810r	Series Title Index	.	.	.	TRLN
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	s	Version	NR	.	810s	Series	.	.	.	TRLN
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	s	Version	NR	.	810s	Series Title Index	.	.	.	TRLN
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	t	Title of a work	NR	.	810t	Series	.	.	.	TRLN
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	t	Title of a work	NR	.	810t	Series Title Index	.	.	.	TRLN
+810	SERIES ADDED ENTRY--CORPORATE NAME	R	.	v	Volume/sequential designation	NR	.	810v	Series	.	.	.	TRLN
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	a	Meeting name or jurisdiction name as entry element	NR	.	811a	Author	.	.	.	TRLN
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	a	Meeting name or jurisdiction name as entry element	NR	.	811a	Series	.	.	.	TRLN
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	c	Location of meeting	R	.	811c	Author	.	.	.	TRLN
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	c	Location of meeting	R	.	811c	Series	.	.	.	TRLN
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	d	Date of meeting	NR	.	811d	Author	.	.	.	TRLN
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	d	Date of meeting	NR	.	811d	Series	.	.	.	TRLN
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	e	Subordinate unit	R	.	811e	Series	.	.	.	TRLN
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	f	Date of a work	NR	.	811f	Series	.	.	.	TRLN
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	h	Medium	NR	.	811h	Series	.	.	.	TRLN
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	k	Form subheading	R	.	811k	Series	.	.	.	TRLN
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	l	Language of a work	NR	.	811l	Series	.	.	.	TRLN
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	l	Language of a work	NR	.	811l	Series Title Index	.	.	.	TRLN
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	n	Number of part/section/meeting	R	.	811n	Series	.	.	.	TRLN
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	n	Number of part/section/meeting	R	.	811n	Series Title Index	.	.	.	TRLN
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	p	Name of part/section of a work	R	.	811p	Series	.	.	.	TRLN
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	p	Name of part/section of a work	R	.	811p	Series Title Index	.	.	.	TRLN
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	q	Name of meeting following jurisdiction name entry element	NR	.	811q	Series	.	.	.	TRLN
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	s	Version	NR	.	811s	Series	.	.	.	TRLN
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	s	Version	NR	.	811s	Series Title Index	.	.	.	TRLN
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	t	Title of a work	NR	.	811t	Series	.	.	.	TRLN
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	t	Title of a work	NR	.	811t	Series Title Index	.	.	.	TRLN
+811	SERIES ADDED ENTRY--MEETING NAME	R	.	v	Volume/sequential designation	NR	.	811v	Series	.	.	.	TRLN
+830	SERIES ADDED ENTRY--UNIFORM TITLE	R	.	a	Uniform title	NR	.	830a	Series	.	.	.	TRLN
+830	SERIES ADDED ENTRY--UNIFORM TITLE	R	.	a	Uniform title	NR	.	830a	Series Title Index	.	.	.	TRLN
+830	SERIES ADDED ENTRY--UNIFORM TITLE	R	.	d	Date of treaty signing	R	.	830d	Series	.	.	.	TRLN
+830	SERIES ADDED ENTRY--UNIFORM TITLE	R	.	f	Date of a work	NR	.	830f	Series	.	.	.	TRLN
+830	SERIES ADDED ENTRY--UNIFORM TITLE	R	.	g	Miscellaneous information	R	.	830g	Series	.	.	.	TRLN
+830	SERIES ADDED ENTRY--UNIFORM TITLE	R	.	h	Medium	NR	.	830h	Series	.	.	.	TRLN
+830	SERIES ADDED ENTRY--UNIFORM TITLE	R	.	h	Medium	NR	.	830h	Series Title Index	.	.	.	TRLN
+830	SERIES ADDED ENTRY--UNIFORM TITLE	R	.	k	Form subheading	R	.	830k	Series	.	.	.	TRLN
+830	SERIES ADDED ENTRY--UNIFORM TITLE	R	.	l	Language of a work	NR	.	830l	Series	.	.	.	TRLN
+830	SERIES ADDED ENTRY--UNIFORM TITLE	R	.	m	Medium of performance for music	R	.	830m	Series	.	.	.	TRLN
+830	SERIES ADDED ENTRY--UNIFORM TITLE	R	.	n	Number of part/section of a work	R	.	830n	Series	.	.	.	TRLN
+830	SERIES ADDED ENTRY--UNIFORM TITLE	R	.	n	Number of part/section of a work	R	.	830n	Series Title Index	.	.	.	TRLN
+830	SERIES ADDED ENTRY--UNIFORM TITLE	R	.	o	Arranged statement for music	NR	.	830o	Series	.	.	.	TRLN
+830	SERIES ADDED ENTRY--UNIFORM TITLE	R	.	p	Name of part/section of a work	R	.	830p	Series	.	.	.	TRLN
+830	SERIES ADDED ENTRY--UNIFORM TITLE	R	.	p	Name of part/section of a work	R	.	830p	Series Title Index	.	.	.	TRLN
+830	SERIES ADDED ENTRY--UNIFORM TITLE	R	.	r	Key for music	NR	.	830r	Series	.	.	.	TRLN
+830	SERIES ADDED ENTRY--UNIFORM TITLE	R	.	s	Version	NR	.	830s	Series	.	.	.	TRLN
+830	SERIES ADDED ENTRY--UNIFORM TITLE	R	.	v	Volume/sequential designation	NR	.	830v	Series	.	.	.	TRLN
+830	SERIES ADDED ENTRY--UNIFORM TITLE	R	.	v	Volume/sequential designation	NR	.	830v	Series Title Index	.	.	.	TRLN
+856	ELECTRONIC LOCATION AND ACCESS	R	.	u	Uniform Resource Identifier	R	.	856u	Primary URL	.	[b01]	.	TRLN
+856	ELECTRONIC LOCATION AND ACCESS	R	.	u	Uniform Resource Identifier	R	.	856u	Secondary URL	.	[28]	.	TRLN
+856	ELECTRONIC LOCATION AND ACCESS	R	.	u	Uniform Resource Identifier	R	.	856u	Finding Aid URL	.	[b012]	3=Finding aid	TRLN
+856	ELECTRONIC LOCATION AND ACCESS	R	.	y	Link text	R	.	856y	Primary URL	.	[b01]	.	TRLN
+856	ELECTRONIC LOCATION AND ACCESS	R	.	y	Link text	R	.	856y	Secondary URL	.	[28]	.	TRLN
+856	ELECTRONIC LOCATION AND ACCESS	R	.	y	Link text	R	.	856y	Finding Aid URL	.	[b012]	3=Finding aid	TRLN
+856	ELECTRONIC LOCATION AND ACCESS	R	.	z	Public note	R	.	856z	Primary URL	.	[b01]	.	TRLN
+856	ELECTRONIC LOCATION AND ACCESS	R	.	z	Public note	R	.	856z	Secondary URL	.	[28]	.	TRLN
+856	ELECTRONIC LOCATION AND ACCESS	R	.	z	Public note	R	.	856z	Finding Aid URL	.	[b012]	3=Finding aid	TRLN
+856	ELECTRONIC LOCATION AND ACCESS	R	.	3	Materials specified	NR	.	8563	Primary URL	.	[b01]	.	TRLN
+856	ELECTRONIC LOCATION AND ACCESS	R	.	3	Materials specified	NR	.	8563	Secondary URL	.	[28]	.	TRLN
+856	ELECTRONIC LOCATION AND ACCESS	R	.	3	Materials specified	NR	.	8563	Finding Aid URL	.	[b012]	3=Finding aid	TRLN

@@ -1,20 +1,64 @@
 = TRLN Discovery Data Documentation
 
-Data documentation and tools for the TRLN Discovery project.
-
-WARNING: Files whose names begin with _ are generated based on other data files. *Do not edit them directly, or you will lose your edits.*
-
-== argot
+== Organization of this repo
+=== argot
 Argot is the core data language for the TRLN Discovery project. This folder contains Argot documentation, including mappings from other formats into Argot.
 
-== endeca
-Endeca is the catalog project TRLN Discovery is replacing. This folder contains documentation of the Endeca data model.
+=== marc
+Contains tools to compare MARC fields with Argot to identify gaps in mappings as the http://www.loc.gov/marc/bibliographic/[MARC bibliographic standard] changes over time. Our decisions about which MARC fields/subfields NOT to map to the Argot data model are kept here.
 
-== marc
-Refers to the http://www.loc.gov/marc/bibliographic/[MARC bibliographic standard]. As the standard changes over time, the stuff in this folder is used to compare MARC fields with Argot to identify gaps in mappings.
+== Data quickstart
 
-== marc_to_endeca
-Details on how MARC bibliographic fields and subfields are mapped into Endeca, for initial Argot/Argon data model analysis and decisionmaking
+=== Argot data model
+Argot is the core data language for the TRLN Discovery project. All source data must be transformed into valid Argot for ingest into TRLN Discovery.
 
-== meta
-Various files used or created in the process, which do not belong elsewhere
+See https://github.com/trln/data-documentation/tree/master/argot[argot directory README] for full explanation of underlying Argot concepts and data transformation steps (initial hierarchical Argot -> Enriched Argot -> stored Solr fields)
+
+*Argot elements and subelements* (i.e. fields)  and the system behavior they are intended to support are defined on the `elements` tab of argot.xlsx.
+
+[NOTE]
+====
+KMS, 2019-08-07: I'd mentioned hoping to convert the .xlsx file to a Google Sheet before my departure, but later realized https://github.com/trln/data-documentation/blob/master/marc/unmapped_marc.ipynb[unmapped_marc.ipynb] is pulling in data from the .xlsx. I do not have time to update that to pull from a Google Sheet, and don't want to leave that broken (and am not convinced a Jupyter Notebook is the best way to maintain that tool long term), so I am leaving the spreadsheet in Excel.
+
+My recommendation would be that the spreadsheet get moved to the TRLN Drive space because this provides a better way for multiple people to work with and update this file over time. It should be editable only by TRLN folks. It should be publicly viewable, since staff across TRLN institutions may want to refer to it.
+====
+
+*Mappings from MARC and other metadata schemes to each Argot element/subelement* are on the `mappings` tab of the spreadsheet.
+
+The `elements` and `mappings` tabs have been being converted to .csv files in the argot directory to support referring to this information online.
+
+https://github.com/trln/data-documentation/blob/master/argot/argot_spreadsheet_documentation.adoc[*An explanation of the columns/values used in the spreadsheet*] exists, but is in sorry shape. Apparently I got interrupted working on it and didn't get back to it. Sorry!
+
+I've represented the general types of *data transformations for each mapping* in the spreadsheet, but for the exact details on how data gets transformed, see the code and tests. 
+
+To understand the Argot data patterns, refer to https://github.com/trln/data-documentation/tree/master/argot/spec_docs[spec_docs files starting with `_pattern`].
+
+I quit writing up spec docs for individual elements as I began instead writing tests for the transformations in MARC-to-Argot.
+
+==== Important/special topics
+https://trlnmain.atlassian.net/wiki/spaces/TD/pages/503283717/Shared+records[TRLN Shared Records]:: *Needs to be migrated from Confluence to this repo.* This information should be publicly available because staff at the institutions refer to the queries for pulling stats
+https://trlnmain.atlassian.net/wiki/spaces/TD/pages/45056001/Location+item+holding+location+and+location+facet[Location data]:: How locations get handled in TRLN Discovery: broader location (loc_b), narrower location (loc_n), and location facet. *Needs to be migrated from Confluence to this repo*
+https://trlnmain.atlassian.net/wiki/spaces/TD/pages/2667101/Statuses+and+Availability[Status and availability]:: describes the old Endeca catalog, but we've mirrored a lot of this in TRLN Discovery and these concepts may be useful
+
+=== Tracing data transformations
+*Source data to Argot* transformations are going to be institution-specific, though much of the MARC transformation logic is shared and handled by https://github.com/trln/marc-to-argot[MARC-to-Argot]. https://github.com/trln/marc-to-argot/tree/master/spec[The tests] serve as a form of documentation, some more complete and/or easier to read than others.
+
+Use https://ingest.discovery.trln.org/ to view the further-transformed data in the system. For each record, you can see:
+* the latest Argot submitted ("Argot")
+* the flattened/enriched version of Argot produced by https://github.com/trln/argot-ruby[argot-ruby] ("Enriched Content (what gets sent to Solr)")
+* the stored Solr fields available to the Argon application for display or other non-search purposes ("Solr Document").
+
+[NOTE]
+====
+You cannot view the actual content of the indexed fields in Solr, because they have undergone extensive special analysis for indexing and are unfit for human viewing unless you are doing some deep-dive diagnosis.
+
+See: https://www.google.com/search?q=solr+indexed+vs+stored[indexed vs. stored fields in Solr]
+
+To experiment with how data gets transformed (stemmed, tokenized, etc.) for search in Solr, use the  https://admin.discovery.trln.org/solr/[Solr admin] > collection = trlnbib > Analysis tool. Adam Constabaris maintains access to the Solr admin interface.
+====
+
+=== Solr
+
+
+
+

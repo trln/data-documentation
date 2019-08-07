@@ -1,0 +1,100 @@
+Element name	Indexed in
+Author	Author, Author_Brief, Keyword
+Authors Normalized	Author, Keyword, Keyword_Brief
+Biographical Sketch	Keyword, Keyword_Brief
+Cartographic Data	Keyword
+Company	Keyword, Keyword_Brief
+Constituent Unit Linking	Keyword
+Digital Collection	Keyword, Keyword_Brief
+Director	Author, Author_Brief, Keyword, Keyword_Brief
+Distributor	Keyword, Publisher
+Donor	Keyword
+EAD Biographical History	Keyword
+EAD ID	Keyword
+EAD Overview	Keyword
+EAD Scope Content	Keyword
+EAD Unit Title	Keyword
+Earlier Title	Keyword, Keyword_Brief, Title
+Edition	Keyword
+Edition Vernacular	Keyword
+Edition Vernacular Segmented	Keyword
+Genre	Keyword, Keyword_Brief, Subject
+Has Supplement Linking	Keyword
+Host Item Linking	Keyword, Keyword_Brief
+ICE Chapter Author	Author, Keyword
+ICE Chapter Title	Keyword
+Indexed Notes	Keyword
+ISBN	ISBN, Keyword
+ISSN	ISBN, Keyword
+Journal Earlier Title	Journal_Concise, Journal_Title
+Journal Later Title	Journal_Concise, Journal_Title
+Journal Title Abbreviation	Journal_Concise, Journal_Title
+Journal Title Index	Journal_Concise, Journal_Title, Title_Brief
+Journal Title Normalized	Journal_Title
+Journal Uniform Title	Journal_Concise, Journal_Title
+Journal Varying Title	Journal_Title
+Later Title	Keyword, Keyword_Brief, Title
+Linking ISSN	ISBN
+LocalId	Keyword
+Main Author	Author, Author_Brief, Keyword, Keyword_Brief
+Main Author Normalized	Author, Author_Brief, Keyword, Keyword_Brief
+Main Author Vernacular	Author, Author_Brief, Keyword, Keyword_Brief
+Main Author Vernacular Segmented	Author, Author_Brief, Keyword, Keyword_Brief
+Main Title	Keyword, Keyword_Brief, Title, Title_Brief
+Main Title Normalized	Keyword, Keyword_Brief, Title, Title_Brief
+Main Uniform Title	Keyword, Keyword_Brief, Title, Title_Brief
+Main Uniform Title Vernacular	Keyword, Keyword_Brief, Title, Title_Brief
+Main Uniform Title Vernacular Segmented	Keyword, Keyword_Brief, Title, Title_Brief
+Manufacturer	Keyword, Publisher
+Material	Keyword
+Notes Normalized	Keyword
+OCLCNumber	Keyword
+Other Author Translation	Author, Keyword, Keyword_Brief
+Other Authors	Author, Keyword, Keyword_Brief
+Other Authors Vernacular Segmented	Author, Keyword
+Other LocalId	Keyword
+Other Title Translation	Keyword, Keyword_Brief, Title
+Other Titles	Keyword, Keyword_Brief, Title
+Other Titles Vernacular Segmented	Keyword, Title
+Performer Credits	Author, Author_Brief, Keyword, Keyword_Brief
+Producer	Keyword, Publisher
+Product	Keyword, Keyword_Brief
+Production Credits	Author, Author_Brief, Keyword, Keyword_Brief
+Publisher	Keyword, Keyword_Brief, Publisher
+Publisher Normalized	Keyword, Keyword_Brief, Publisher
+Publisher Number	Keyword
+Related Collections	Keyword, Keyword_Brief
+Series ISSN	ISBN
+Series Normalized	Keyword, Keyword_Brief, Title
+Series Statement	Keyword, Keyword_Brief, Title
+Series Statement Vernacular	Keyword, Keyword_Brief, Title
+Series Statement Vernacular Segmented	Keyword, Keyword_Brief, Title
+Series Title Index	Keyword, Keyword_Brief, Title
+Sound Recording Imprint	Keyword, Keyword_Brief
+Statement of Responsibility	Author, Keyword
+Statement of Responsibility Vernacular	Author, Keyword
+Statement of Responsibility Vernacular Segmented	Author, Keyword
+Subject Headings	Keyword, Keyword_Brief, Subject
+Subjects Normalized	Keyword, Keyword_Brief, Subject
+Subjects Vernacular Segmented	Keyword, Keyword_Brief, Subject
+Subseries Linking	Keyword
+Summary	Keyword
+Table of Contents	Keyword
+Table of Contents Vernacular Segmented	Keyword
+Title Index	Keyword, Keyword_Brief, Title
+Title Vernacular	Keyword, Keyword_Brief, Title, Title_Brief
+Title Vernacular Segmented	Keyword, Keyword_Brief, Title, Title_Brief
+Title1	Title_Brief
+Title2	Title_Brief
+Title3	Title_Brief
+Title4	Title_Brief
+Titles Normalized	Keyword, Title, Title_Brief
+Translated as Linking	Keyword, Keyword_Brief
+Translation of Linking	Keyword, Keyword_Brief
+Uncontrolled Subject	Keyword, Keyword_Brief
+Uniform Title	Keyword, Keyword_Brief, Title
+Uniform Title Vernacular	Keyword, Keyword_Brief, Title
+Uniform Title Vernacular Segmented	Keyword, Keyword_Brief, Title
+UPC	ISBN, Keyword
+Varying Titles	Keyword, Keyword_Brief, Title, Title_Brief
+Varying Titles Vernacular Segmented	Keyword, Keyword_Brief, Title, Title_Brief

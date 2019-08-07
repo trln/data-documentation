@@ -1,0 +1,22 @@
+Dimension name	Source Type	Classify	Display	Search	Label	Has child nodes	Note	Public Display	Facet Sort Type	Stats Num_Records	Dynamic Ranking Ct	Dynamic Ranking More	Dynamic Ranking Top Refinement Sort	Dynamic Ranking Type	DVAL_COLLAPSE_THRESHOLD
+Access Facet	Internal	FALSE	TRUE	FALSE	Access Facet	TRUE	.	n	ALPHA	FALSE	.	.	.	.	.
+Author	Autogen	FALSE	TRUE	FALSE	Author	FALSE	.	y	ALPHA	TRUE	30	FALSE	DYNAMIC_RANK	FREQUENCY	.
+Availability	Internal	FALSE	TRUE	FALSE	Availability	TRUE	.	y	ALPHA	TRUE	.	.	.	.	10
+Call Number Range	Internal	TRUE	TRUE	TRUE	Call Number Range	TRUE	.	y	ALPHA	TRUE	.	.	.	.	.
+Company	Autogen	FALSE	TRUE	FALSE	Company	FALSE	.	y	ALPHA	TRUE	30	FALSE	DYNAMIC_RANK	FREQUENCY	.
+Digital Collection	Internal	FALSE	TRUE	FALSE	Digital Collection	TRUE	.	y	ALPHA	TRUE	.	.	.	.	.
+Format	Internal	FALSE	TRUE	FALSE	Format	TRUE	.	y	ALPHA	TRUE	50	FALSE	DYNAMIC_RANK	FREQUENCY	.
+Genre	Autogen	FALSE	TRUE	FALSE	Genre	TRUE	From subject heading; listed as Subject: Genre in Endeca data model	y	ALPHA	TRUE	30	FALSE	DYNAMIC_RANK	FREQUENCY	.
+Institution	Internal	FALSE	TRUE	FALSE	Institution	TRUE	.	n	ALPHA	FALSE	.	.	.	.	.
+Language	Internal	TRUE	TRUE	TRUE	Language	TRUE	.	y	ALPHA	TRUE	30	FALSE	DYNAMIC_RANK	FREQUENCY	.
+Location	Internal	FALSE	TRUE	FALSE	Location	TRUE	.	y	ALPHA	TRUE	.	.	.	.	.
+Medical Subject	Autogen	FALSE	TRUE	FALSE	Medical Subject	FALSE	"In Endeca data model as ""Medical Subject: Topic"""	y	ALPHA	TRUE	30	FALSE	DEFAULT	FREQUENCY	.
+New Titles	Internal	FALSE	TRUE	FALSE	New Titles	TRUE	.	y	ALPHA	TRUE	.	.	.	.	.
+Primary Source	Internal	FALSE	TRUE	FALSE	Primary Source	TRUE	.	n	ALPHA	FALSE	.	.	.	.	.
+Product	Autogen	FALSE	TRUE	FALSE	Product	FALSE	.	y	ALPHA	TRUE	30	FALSE	DYNAMIC_RANK	FREQUENCY	.
+Publication Year	Internal	FALSE	TRUE	FALSE	Publication Year	TRUE	.	y	ALPHA	TRUE	.	.	.	.	.
+Region	Autogen	FALSE	TRUE	FALSE	Region	FALSE	From subject heading; listed as Subject: Region in Endeca data model	y	ALPHA	TRUE	30	FALSE	DYNAMIC_RANK	FREQUENCY	.
+Source	Internal	FALSE	TRUE	FALSE	Source	TRUE	.	n	ALPHA	FALSE	.	.	.	.	.
+Subject	Autogen	FALSE	TRUE	FALSE	Subject	FALSE	From subject heading; listed as Subject: Topic in Endeca data model	y	ALPHA	TRUE	30	FALSE	DYNAMIC_RANK	FREQUENCY	.
+Subject Headings	Autogen	FALSE	TRUE	FALSE	Subject Headings	FALSE	.	n	ALPHA	TRUE	6	FALSE	DYNAMIC_RANK	FREQUENCY	.
+Time Period	Autogen	FALSE	TRUE	FALSE	Time Period	FALSE	From subject heading; listed as Subject: Time Period in Endeca data model	y	ALPHA	TRUE	30	FALSE	DYNAMIC_RANK	FREQUENCY	.
