@@ -31,7 +31,7 @@ https://github.com/trln/data-documentation/blob/master/argot/argot_spreadsheet_d
 
 I've represented the general types of *data transformations for each mapping* in the spreadsheet, but for the exact details on how data gets transformed, see the code and tests. 
 
-To understand the Argot data patterns, refer to https://github.com/trln/data-documentation/tree/master/argot/spec_docs[spec_docs files starting with `_pattern`].
+To understand the Argot data patterns, refer to https://github.com/trln/data-documentation/tree/master/argot/spec_docs[spec_docs files starting with `_pattern`]. To see what fields get handled by special flatteners in argot-ruby, look https://github.com/trln/argot-ruby/blob/master/lib/data/flattener_config.yml[here]. To see exactly how each flattener works, consult https://github.com/trln/argot-ruby/tree/master/lib/argot/flatten[the code].
 
 I quit writing up spec docs for individual elements as I began instead writing tests for the transformations in MARC-to-Argot.
 
@@ -58,6 +58,10 @@ To experiment with how data gets transformed (stemmed, tokenized, etc.) for sear
 ====
 
 === Solr
+To understand how the "Enriched Content (what gets sent to Solr)" gets turned into the actual Solr fields, you will need to consult:
+* understand 'dynamic fields' in Solr
+* consult the https://github.com/trln/trln-config/blob/master/solr/trlnbib/schema/dynamic_fields.xml[dynamic fields section of our Solr schema] (This information or a version of it---not sure how in sync these are kept---is publicly available https://github.com/trln/argot-ruby/blob/master/lib/data/solr_schema.xml[here], but you have to scroll/find in page to get to it)
+
 
 
 
