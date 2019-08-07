@@ -1,0 +1,72 @@
+= TRLN Shared Records
+This page updates the Endeca-specific http://archive.trln.org/endeca/shared-records-technical-details.html[TRLN Shared Records Program - Technical Details] page for TRLN Discovery.
+
+See http://archive.trln.org/endeca/shared-records.html[TRLN Shared Records Program documentation] for background on the shared records program and details of the shared records collections.
+
+The major difference in shared record set handling in TRLN Discovery is we no longer need to create a separate data pipeline for each shared record set. This greatly lowers the overhead for creating and maintaining a shared record set.
+
+In TRLN Discovery, each institution responsible for a shared record set must ensure their relevant source-data-to-Argot process inserts the required data (specified in detail for each collection below) in all records that are part of shared record sets.
+
+== Argot for shared records
+The Argot fields salient to shared records are:
+
+* `institution` - must include each institution for whom the record should appear as though it belongs to them (The Argot owner field will contain the institution responsible for maintaining the record)
+* `url[href]` - institution-specific parts of URL (proxy prefix, institution code, etc.) must be templated
+* `url[text]` - should not be institution-specific
+* `url[restricted]` - must be set to false if the resources in set are freely available
+* `items` - institution-specific items must not be attached to shared records, or the host institution's location will start showing up in everyone's location facet
+* `holdings` - institution-specific holdings must not be attached to shared records
+* `record_data_source` - must include:
+** source data type
+** "Shared Records"
+** shared record set code
+* `virtual collection` - must include: "TRLN Shared Records. {Human readable name of shared record set/collection}."
+
+== MARC shared record sets
+
+Data transformation will be handled by MARC-to-Argot.
+
+Each institution responsible for shared records must ensure their MARC-to-Argot config handles shared records appropriately.
+
+This gives the option for shared records to be treated like any other record in the host ILS – handled on the same update schedule, deleted as necessary without complication. (This is notable if you ever had to deal with a shared record set in Endeca!)
+
+[cols=8*, options=header]
+|===
+|Record set
+|Record count
+|`owner`
+|`institution`
+|`url` handling
+|`record_data_source`
+|`virtual_collection`
+|Other notes
+
+|Alexander Street Press
+|https://query.discovery.trln.org/trlnbib/select?q=virtual_collection_t:%22TRLN%20Shared%20Records.%20Alexander%20Street%20Press%20videos.%22&uf=*&rows=0[count]
+|unc
+|[duke, unc]
+|`href`: proxy prefix templated
+
+`text`: URL text element values will be overwritten in expand to TRLN mode.
+
+`note`: "Materials specified" labeling should be sent through in the note element. Examples of "materials specified" labels: English version, Spanish version, PDF version, Text file version, v. 271, v. 272, etc.
+
+`restricted`: not set – defaults to true
+|['ILSMARC', 'Shared Records', 'ASP']
+|['TRLN Shared Records. Alexander Street Press videos.']
+|.
+
+|Center for Research Libraries E-Resources
+|https://query.discovery.trln.org/trlnbib/select?q=virtual_collection_t:%22TRLN%20Shared%20Records.%20Center%20for%20Research%20Libraries%20(CRL)%20e-resources.%22&uf=*&rows=0[count]
+|unc
+|['duke', 'ncsu', 'unc']
+|`href`: proxy prefix templated
+
+`text`: URL text element values will be overwritten in expand to TRLN mode.
+
+`note`: "Materials specified" (856$3) labeling should be sent through in the note element. This information is particularly important for this set because it contains records for newspapers and serials where ONLY SOME of the volumes/issues have been digitized. This note will be how users know if the content they are interested in is available.
+
+`restricted`: not set – defaults to true
+|['ILSMARC', 'Shared Records', 'CRL']
+|['TRLN Shared Records. Center for Research Libraries (CRL) e-resources.']
+|===
