@@ -1,3 +1,6 @@
+:toc:
+:toc-placement!:
+
 = TRLN Shared Records
 This page updates the Endeca-specific http://archive.trln.org/endeca/shared-records-technical-details.html[TRLN Shared Records Program - Technical Details] page for TRLN Discovery.
 
