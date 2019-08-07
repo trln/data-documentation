@@ -227,3 +227,74 @@ This gives the option for shared records to be treated like any other record in 
 |['TRLN Shared Records. Oxford University Press print titles.']
 |===
 
+[NOTE]
+====
+These physical items are stored at the LSC and are assigned a "TRLN" location code in the UNC ILS.
+
+We do **not** set TRLN as part of the location facet hierarchy in these records in TRLN Discovery. They just show up as if they belonged to each institution.
+====
+
+== Non-MARC shared record sets
+
+Data transformation will be handled by local institutional processes.
+
+Each institution responsible for shared records must ensure their Argot is output appropriately.
+
+=== Inter-University Consortium for Political and Social Research Datasets
+
+[cols=2*]
+|===
+|record count
+|https://query.discovery.trln.org/trlnbib/select?q=virtual_collection_t:%22TRLN%20Shared%20Records.%20ICPSR.%22&uf=*&rows=0[count]
+
+|`owner`
+|unc
+
+|`institution`
+|['duke', 'ncsu', 'unc']
+
+|`url` handling
+|`href`: proxy prefix templated
+
+`text`: URL text element values will be overwritten in expand to TRLN mode.
+
+`note`: "Materials specified" labeling should be sent through in the note element. Examples of "materials specified" labels: English version, Spanish version, PDF version, Text file version, v. 271, v. 272, etc.
+
+`restricted`: not set – defaults to true
+
+URLs with `type`=related are sent through for how to get ICPSR help at each institution. The url['text'] subelement is retained for display at TRLN level when url['type'] = related.
+
+|`record_data_source`
+|['DDI-XML', 'Shared Records', 'ICPSR']
+
+|`virtual_collection`
+|['TRLN Shared Records. ICPSR.']
+|===
+
+=== Statistical Datasets from the Odum Institute Dataverse
+
+[cols=2*]
+|===
+|record count
+|https://query.discovery.trln.org/trlnbib/select?q=virtual_collection_t:%22TRLN%20Shared%20Records.%20Odum%20Institute%20Dataverse.%22&uf=*&rows=0[count]
+
+|`owner`
+|unc
+
+|`institution`
+|['duke', 'nccu', 'ncsu', 'unc']
+
+|`url` handling
+|`href`: no proxy needed
+
+`text`: URL text element values will be overwritten in expand to TRLN mode.
+
+`note`: "Materials specified" labeling should be sent through in the note element. Examples of "materials specified" labels: English version, Spanish version, PDF version, Text file version, v. 271, v. 272, etc.
+
+`restricted`: false
+|`record_data_source`
+|['OAI DC', 'Shared Records', 'Dataverse']
+
+|`virtual_collection`
+|['TRLN Shared Records. Odum Institute Dataverse.']
+|===
