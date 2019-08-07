@@ -59,16 +59,171 @@ This gives the option for shared records to be treated like any other record in 
 |['TRLN Shared Records. Alexander Street Press videos.']
 |===
 
-=== Center for Research Libraries E-Resources https://query.discovery.trln.org/trlnbib/select?q=virtual_collection_t:%22TRLN%20Shared%20Records.%20Center%20for%20Research%20Libraries%20(CRL)%20e-resources.%22&uf=*&rows=0[count]
+=== Center for Research Libraries E-Resources
+
+[cols=2*]
+|===
+|record count
+|https://query.discovery.trln.org/trlnbib/select?q=virtual_collection_t:%22TRLN%20Shared%20Records.%20Center%20for%20Research%20Libraries%20(CRL)%20e-resources.%22&uf=*&rows=0[count]
+
+|`owner`
 |unc
+
+|`institution`
 |['duke', 'ncsu', 'unc']
+
+|`url` handling
 |`href`: proxy prefix templated
 
 `text`: URL text element values will be overwritten in expand to TRLN mode.
 
-`note`: "Materials specified" (856$3) labeling should be sent through in the note element. This information is particularly important for this set because it contains records for newspapers and serials where ONLY SOME of the volumes/issues have been digitized. This note will be how users know if the content they are interested in is available.
+`note`: "Materials specified" (856$3) labeling should be sent through in the note element. **This information is particularly important for this set** because it contains records for newspapers and serials where ONLY SOME of the volumes/issues have been digitized. This note will be how users know if the content they are interested in is available.
 
 `restricted`: not set – defaults to true
+
+|`record_data_source`
 |['ILSMARC', 'Shared Records', 'CRL']
+
+|`virtual_collection`
 |['TRLN Shared Records. Center for Research Libraries (CRL) e-resources.']
 |===
+
+=== Documents Without Shelves
+
+[cols=2*]
+|===
+|record count
+|https://query.discovery.trln.org/trlnbib/select?q=virtual_collection_t:%22TRLN%20Shared%20Records.%20Documents%20without%20shelves.%22&uf=*&rows=0[count]
+
+|`owner`
+|unc
+
+|`institution`
+|['duke', 'nccu', 'ncsu', 'unc']
+
+|`url` handling
+|`href`: None. Raw URL sent through to Argot.
+
+`text`: URL text element values will be overwritten in expand to TRLN mode.
+
+`note`: "Materials specified" labeling should be sent through in the note element. Examples of "materials specified" labels: English version, Spanish version, PDF version, Text file version, v. 271, v. 272, etc.
+
+`restricted`: false
+
+|`record_data_source`
+|['ILSMARC', 'Shared Records', 'DWS']
+
+|`virtual_collection`
+|['TRLN Shared Records. Documents without shelves.']
+|===
+
+=== Early English Books Online
+
+[cols=2*]
+|===
+|record count
+|https://query.discovery.trln.org/trlnbib/select?q=virtual_collection_t:%22TRLN%20Shared%20Records.%20Early%20English%20Books%20Online.%22&uf=*&rows=0[count]
+
+|`owner`
+|ncsu
+
+|`institution`
+|['duke', 'ncsu', 'unc']
+
+|`url` handling
+|`href`: proxy prefix templated
+
+`text`: URL text element values will be overwritten in expand to TRLN mode.
+
+`note`: "Materials specified" labeling should be sent through in the note element. Examples of "materials specified" labels: English version, Spanish version, PDF version, Text file version, v. 271, v. 272, etc.
+
+`restricted`: not set – defaults to true
+
+|`record_data_source`
+|['ILSMARC', 'Shared Records', 'EEBO']
+
+|`virtual_collection`
+|['TRLN Shared Records. Early English Books Online.']
+|===
+
+=== NC LIVE video collection 
+
+[cols=2*]
+|===
+|record count
+|https://query.discovery.trln.org/trlnbib/select?q=virtual_collection_t:%22TRLN%20Shared%20Records.%20NC%20LIVE%20videos.%22&uf=*&rows=0[count]
+
+|`owner`
+|ncsu
+
+|`institution`
+|['duke', 'nccu', 'ncsu', 'unc']
+
+|`url` handling
+|`href`: proxy prefix templated
+
+`text`: URL text element values will be overwritten in expand to TRLN mode.
+
+`note`: "Materials specified" labeling should be sent through in the note element. Examples of "materials specified" labels: English version, Spanish version, PDF version, Text file version, v. 271, v. 272, etc.
+
+`restricted`: not set – defaults to true
+
+|`record_data_source`
+|['ILSMARC', 'Shared Records', 'NCLIVE']
+
+|`virtual_collection`
+|['TRLN Shared Records. NC LIVE videos.']
+|===
+
+=== Oxford University Press Ebooks
+
+[cols=2*]
+|===
+|record count
+|https://query.discovery.trln.org/trlnbib/select?q=virtual_collection_t:%22TRLN%20Shared%20Records.%20Oxford%20University%20Press%20online%20titles.%22&uf=*&rows=0[count]
+
+|`owner`
+|duke
+
+|`institution`
+|['duke', 'nccu', 'ncsu', 'unc']
+
+|`url` handling
+|`href`: proxy prefix templated
+
+`text`: URL text element values will be overwritten in expand to TRLN mode.
+
+`note`: "Materials specified" labeling should be sent through in the note element. Examples of "materials specified" labels: English version, Spanish version, PDF version, Text file version, v. 271, v. 272, etc.
+
+`restricted`: not set – defaults to true
+
+|`record_data_source`
+|['ILSMARC', 'Shared Records', 'OUPE']
+
+|`virtual_collection`
+|['TRLN Shared Records. Oxford University Press online titles.']
+|===
+
+=== Oxford University Press Print
+
+[cols=2*]
+|===
+|record count
+|https://query.discovery.trln.org/trlnbib/select?q=virtual_collection_t:%22TRLN%20Shared%20Records.%20Oxford%20University%20Press%20print%20titles.%22&uf=*&rows=0[count]
+
+|`owner`
+|unc
+
+|`institution`
+|['duke', 'nccu', 'ncsu', 'unc']
+
+|`url` handling
+|None. Print materials should not have fulltext URLs. Any with `type` = `related` will be sent through as usual.
+
+|`record_data_source`
+|['ILSMARC', 'Shared Records', 'OUPP']
+
+|`virtual_collection`
+|['TRLN Shared Records. Oxford University Press print titles.']
+|===
+
