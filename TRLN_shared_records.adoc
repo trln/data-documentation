@@ -32,18 +32,18 @@ This gives the option for shared records to be treated like any other record in 
 
 === Alexander Street Press
 
-[cols=6*,options=header]
+[cols=2*]
 |===
 |record count
-|`owner`
-|`institution`
-|`url` handling
-|`record_data_source`
-|`virtual_collection`
-
 |https://query.discovery.trln.org/trlnbib/select?q=virtual_collection_t:%22TRLN%20Shared%20Records.%20Alexander%20Street%20Press%20videos.%22&uf=*&rows=0[count]
+
+|`owner`
 |unc
+
+|`institution`
 |['duke', 'unc']
+
+|`url` handling
 |`href`: proxy prefix templated
 
 `text`: URL text element values will be overwritten in expand to TRLN mode.
@@ -51,7 +51,11 @@ This gives the option for shared records to be treated like any other record in 
 `note`: "Materials specified" labeling should be sent through in the note element. Examples of "materials specified" labels: English version, Spanish version, PDF version, Text file version, v. 271, v. 272, etc.
 
 `restricted`: not set – defaults to true
+
+|`record_data_source`
 |['ILSMARC', 'Shared Records', 'ASP']
+
+|`virtual_collection`
 |['TRLN Shared Records. Alexander Street Press videos.']
 |===
 
