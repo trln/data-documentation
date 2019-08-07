@@ -30,21 +30,20 @@ Each institution responsible for shared records must ensure their MARC-to-Argot 
 
 This gives the option for shared records to be treated like any other record in the host ILS – handled on the same update schedule, deleted as necessary without complication. (This is notable if you ever had to deal with a shared record set in Endeca!)
 
-[cols=8*, options=header]
+=== Alexander Street Press
+
+[cols=6*,options=header]
 |===
-|Record set
-|Record count
+|record count
 |`owner`
 |`institution`
 |`url` handling
 |`record_data_source`
 |`virtual_collection`
-|Other notes
 
-|Alexander Street Press
 |https://query.discovery.trln.org/trlnbib/select?q=virtual_collection_t:%22TRLN%20Shared%20Records.%20Alexander%20Street%20Press%20videos.%22&uf=*&rows=0[count]
 |unc
-|[duke, unc]
+|['duke', 'unc']
 |`href`: proxy prefix templated
 
 `text`: URL text element values will be overwritten in expand to TRLN mode.
@@ -54,10 +53,9 @@ This gives the option for shared records to be treated like any other record in 
 `restricted`: not set – defaults to true
 |['ILSMARC', 'Shared Records', 'ASP']
 |['TRLN Shared Records. Alexander Street Press videos.']
-|.
+|===
 
-|Center for Research Libraries E-Resources
-|https://query.discovery.trln.org/trlnbib/select?q=virtual_collection_t:%22TRLN%20Shared%20Records.%20Center%20for%20Research%20Libraries%20(CRL)%20e-resources.%22&uf=*&rows=0[count]
+=== Center for Research Libraries E-Resources https://query.discovery.trln.org/trlnbib/select?q=virtual_collection_t:%22TRLN%20Shared%20Records.%20Center%20for%20Research%20Libraries%20(CRL)%20e-resources.%22&uf=*&rows=0[count]
 |unc
 |['duke', 'ncsu', 'unc']
 |`href`: proxy prefix templated
