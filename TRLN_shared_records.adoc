@@ -10,6 +10,8 @@ The major difference in shared record set handling in TRLN Discovery is we no lo
 
 In TRLN Discovery, each institution responsible for a shared record set must ensure their relevant source-data-to-Argot process inserts the required data (specified in detail for each collection below) in all records that are part of shared record sets.
 
+toc::[]
+
 == Argot for shared records
 The Argot fields salient to shared records are:
 
