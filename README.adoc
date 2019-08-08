@@ -1,11 +1,15 @@
+:toc:
+:toc-placement!:
+
 = TRLN Discovery Data Documentation
 
-== Organization of this repo
-=== argot
-Argot is the core data language for the TRLN Discovery project. This folder contains Argot documentation, including mappings from other formats into Argot.
+toc::[]
 
-=== marc
-Contains tools to compare MARC fields with Argot to identify gaps in mappings as the http://www.loc.gov/marc/bibliographic/[MARC bibliographic standard] changes over time. Our decisions about which MARC fields/subfields NOT to map to the Argot data model are kept here.
+== Organization of this repo
+archive:: Old stuff for reference
+argot:: Argot is the core data language for the TRLN Discovery project. This folder contains Argot documentation, including mappings from other formats into Argot.
+marc:: Contains tools to compare MARC fields with Argot to identify gaps in mappings as the http://www.loc.gov/marc/bibliographic/[MARC bibliographic standard] changes over time. Our decisions about which MARC fields/subfields NOT to map to the Argot data model are kept here.
+solr:: Resources for working with Solr from the metadata side of the projectg
 
 == Data quickstart
 

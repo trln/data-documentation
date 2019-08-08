@@ -12,6 +12,14 @@ In TRLN Discovery, each institution responsible for a shared record set must ens
 
 toc::[]
 
+== Diagnosing and reporting problems with shared records
+
+You may hear from staff: "Why is this {other institution} record showing up in our catalog?"
+
+Add `.json` to the end of the catalog record URL and look for the `record_data_source` or `virtual_collection` fields associated with shared records.
+
+If there is a problem with the record and your institution is not the record owner, look up who to contact https://github.com/trln/TRLN-Discovery-Technical-Documentation/blob/master/TRLN-shared-records-contacts.md[here].
+
 == Argot for shared records
 The Argot fields salient to shared records are:
 
