@@ -32,8 +32,8 @@ marc tag	subfield	omission type	omission reason category	omission details
 384	3	temporary	needs review	Currently there is no genre_headings[label] element defined. Should it be added? Occurrences of this subfield in UNC catalog on 2019-07-31: 5
 500	5	leveraged but not mapped	leveraged but not mapped	note_general is not set from any field having a $5 that is not in that institution's config
 501	5	TO DO	TO DO	https://trlnmain.atlassian.net/browse/TD-940
-502	o			
-505	u			
+502	o	temporary	needs review;low priority	No occurrences in UNC catalog on 2019-08-09
+505	u	permanent	not a hyperlinking field	"URL would not function as a link in this field, which would be weird"
 506	g			
 506	q			
 506	5	leveraged but not mapped	leveraged but not mapped	note_access_restrictions is not set from any field having a $5 that is not in that institution's config
@@ -52,42 +52,42 @@ marc tag	subfield	omission type	omission reason category	omission details
 562	5	leveraged but not mapped	leveraged but not mapped	note_copy_version is not set from any field having a $5 that is not in that institution's config
 563	5	leveraged but not mapped	leveraged but not mapped	note_binding is not set from any field having a $5 that is not in that institution's config
 585	5	leveraged but not mapped	leveraged but not mapped	note_general is not set from any field having a $5 that is not in that institution's config
-590	b			
-590	d			
-600	e			
+590	b	permanent	obsolete subfield	"http://www.loc.gov/marc/bibliographic/bd59x.html -- local field, subfields not consistently defined"
+590	d	permanent	obsolete subfield	"http://www.loc.gov/marc/bibliographic/bd59x.html -- local field, subfields not consistently defined"
+600	e	temporary	needs review	Should we be mapping relator/relationship terms/codes from subject fields?
 600	3	temporary	needs review	Currently there is no subject_headings[label] element defined. Should it be added? Occurrences of this subfield in UNC catalog on 2019-07-31: 3
-600	4			
-610	e			
+600	4	temporary	needs review	Should we be mapping relator/relationship terms/codes from subject fields?
+610	e	temporary	needs review	Should we be mapping relator/relationship terms/codes from subject fields?
 610	3	temporary	needs review	Currently there is no subject_headings[label] element defined. Should it be added? Occurrences of this subfield in UNC catalog on 2019-07-31: 0
-610	4			
-611	j			
+610	4	temporary	needs review	Should we be mapping relator/relationship terms/codes from subject fields?
+611	j	temporary	needs review	Should we be mapping relator/relationship terms/codes from subject fields?
 611	3	temporary	needs review	Currently there is no subject_headings[label] element defined. Should it be added? Occurrences of this subfield in UNC catalog on 2019-07-31: 0
-611	4			
-630	e			
+611	4	temporary	needs review	Should we be mapping relator/relationship terms/codes from subject fields?
+630	e	temporary	needs review	Should we be mapping relator/relationship terms/codes from subject fields?
 630	3	temporary	needs review	Currently there is no subject_headings[label] element defined. Should it be added? Occurrences of this subfield in UNC catalog on 2019-07-31: 0
-630	4			
+630	4	temporary	needs review	Should we be mapping relator/relationship terms/codes from subject fields?
 647	3	temporary	needs review	Currently there is no subject_headings[label] element defined. Should it be added? Occurrences of this subfield in UNC catalog on 2019-07-31: 0
 648	3	temporary	needs review	Currently there is no subject_headings[label] element defined. Should it be added? Occurrences of this subfield in UNC catalog on 2019-07-31: 0
-650	e			
+650	e	temporary	needs review	Should we be mapping relator/relationship terms/codes from subject fields?
 650	3	temporary	needs review	Currently there is no subject_headings[label] element defined. Should it be added? Occurrences of this subfield in UNC catalog on 2019-07-31: 6
-650	4			
-651	e			
+650	4	temporary	needs review	Should we be mapping relator/relationship terms/codes from subject fields?
+651	e	temporary	needs review	Should we be mapping relator/relationship terms/codes from subject fields?
 651	3	temporary	needs review	Currently there is no subject_headings[label] element defined. Should it be added? Occurrences of this subfield in UNC catalog on 2019-07-31: 3
-651	4			
+651	4	temporary	needs review	Should we be mapping relator/relationship terms/codes from subject fields?
 655	b			
 655	c			
 655	3	temporary	needs review	Currently there is no genre_headings[label] element defined. Should it be added? Occurrences of this subfield in UNC catalog on 2019-07-31: 7
-655	5			
+655	5	TO DO	TO DO	https://trlnmain.atlassian.net/browse/TD-941
 656	3	temporary	needs review	Currently there is no subject_headings[label] element defined. Should it be added? Occurrences of this subfield in UNC catalog on 2019-07-31: 0
 657	3	temporary	needs review	Currently there is no subject_headings[label] element defined. Should it be added? Occurrences of this subfield in UNC catalog on 2019-07-31: 0
 662	e			
 662	4			
-700	5			
-710	5			
-711	5			
+700	5	leveraged but not mapped	leveraged but not mapped	"names, included_work, and related_work are not set from any field having a $5 that is not in that institution's config"
+710	5	leveraged but not mapped	leveraged but not mapped	"names, included_work, and related_work are not set from any field having a $5 that is not in that institution's config"
+711	5	leveraged but not mapped	leveraged but not mapped	"names, included_work, and related_work are not set from any field having a $5 that is not in that institution's config"
 730	4			
-730	5			
-740	5			
+730	5	leveraged but not mapped	leveraged but not mapped	"names, included_work, and related_work are not set from any field having a $5 that is not in that institution's config"
+740	5	leveraged but not mapped	leveraged but not mapped	"names, included_work, and related_work are not set from any field having a $5 that is not in that institution's config"
 752	e			
 752	4			
 760	4			
@@ -111,21 +111,21 @@ marc tag	subfield	omission type	omission reason category	omission details
 800	v			
 800	w			
 800	4			
-800	5			
+800	5	leveraged but not mapped	leveraged but not mapped	series_statement and series_work are not set from any field having a $5 that is not in that institution's config
 810	e			
 810	v			
 810	w			
 810	4			
-810	5			
+810	5	leveraged but not mapped	leveraged but not mapped	series_statement and series_work are not set from any field having a $5 that is not in that institution's config
 811	j			
 811	q			
 811	v			
 811	w			
 811	4			
-811	5			
+811	5	leveraged but not mapped	leveraged but not mapped	series_statement and series_work are not set from any field having a $5 that is not in that institution's config
 830	v			
 830	w			
-830	5			
+830	5	leveraged but not mapped	leveraged but not mapped	series_statement and series_work are not set from any field having a $5 that is not in that institution's config
 856	a			
 856	b			
 856	c			
