@@ -1,0 +1,21 @@
+﻿argot field,dataverse field,etd/masters field ,icpsr field
+date_cataloged,datestamp,datestamp,date
+edition,,,date
+genre_headings,type,,dataKind
+imprint_main,"publisher, date","publisher, date","producer, distDate"
+language,,language,
+names,"creator, publisher","creator, publisher","AuthEnty, producer"
+note_access_restrictions,,,conditions
+note_general,description,,"stdyDscr, geogUnit, timePrd"
+note_methodolody,type,,"dataKind, collMode"
+note_summary,description,description,stdyInfo
+publication_year,date,date,date
+publisher,publisher,publisher,
+series_work,,,serName
+statement_of_responsibility,creator,creator,AuthEnty
+subject_genre,type,,dataKind
+subject_geographic,,,geogCover
+subject_headings,subject,subject,"keyword, topcClas, geogCover"
+subject_topical,subject,subject,"keyword, topcClas"
+title_main,title,title,titlStmt
+title_sort,title,title,titlStmt
