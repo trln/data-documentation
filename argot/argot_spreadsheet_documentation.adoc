@@ -5,6 +5,7 @@
 
 How to use/interpret argot.xlsx and the CSV files derived from it.
 
+WARNING: Argot.xlsx is a supplemental aid for quickly digesting information about the Argot model and mappings. It is not meant to be a source of truth or to be 100% accurate. The marc-to-argot code itself is the canonical form of documentation.
 
 == Tabs
 
