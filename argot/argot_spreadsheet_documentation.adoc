@@ -294,11 +294,11 @@ Either way:
 
 .Example subelement to value
 ====
-Example subelement/field(s) specified: ax
+*Example subelement/field(s) specified*: ax
 
-Example incoming data: "650 _ 0 $aMapuche Indians$zPatagonia (Argentina and Chile)$xRites and ceremonies$xHistory."
+*Example incoming data*: "650 _ 0 $aMapuche Indians$zPatagonia (Argentina and Chile)$xRites and ceremonies$xHistory."
 
-Example mapped data: ["Mapuche Indians", "Rites and ceremonies", "History"]
+*Example mapped data*: ["Mapuche Indians", "Rites and ceremonies", "History"]
 ====
 
 
