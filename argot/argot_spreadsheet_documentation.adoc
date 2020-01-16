@@ -314,7 +314,24 @@ Either way:
 - will be used to link up these mapping rules with fields, issues, examples and maybe, ambitiously, tests
 
 === mapping issue ct
+Number of issues recorded for this mapping in the _mappings_issues_ tab.
+
+Working column. Can eventually go away.
+
 === field issue ct
+Number of issues recorded for the Argot element in the _elements_issues_ tab.
+
+Working column. Can eventually go away.
+
 === field defined?
+Dunno, but all values are "yes", so probably not useful information.
+
 === done in mta?
+Whether the mapping is implemented in MARC-to-Argot
+
+This column has been used and updated spottily and should not be trusted overall.
+
 === tests done?
+Whether data transformation tests have been written for this mapping in MARC-to-Argot.
+
+This column has been used and updated spottily and should not be trusted overall.
