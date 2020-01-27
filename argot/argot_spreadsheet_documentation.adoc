@@ -2,13 +2,15 @@
 :toc-placement!:
 
 = Argot spreadsheet documentation
+
 How to use/interpret argot.xlsx and the CSV files derived from it.
 
+WARNING: Argot.xlsx is a supplemental aid for quickly digesting information about the Argot model and mappings. It is not meant to be a source of truth or to be 100% accurate. The marc-to-argot code itself is the canonical form of documentation.
 
 == Tabs
 
 * *elements* - Defines all Argot elements and subelements
-* *mappings* - Records rules for mapping MARC (and other source data) to Argot. 
+* *mappings* - Records rules for mapping MARC (and other source data) to Argot.
 * elements_issues - place to record and track outstanding questions or issues related to Argot elements
 * mappings_issues - place to record and track outstanding questions or issues related to specific mapping rules
 
@@ -19,7 +21,7 @@ Cells should not be left blank because a blank cell has an ambiguous meaning.
 * n : no
 * x : not applicable, so no (used instead of n/a to minimize Excel "helpfully" suggesting "n/a" when you type "n" or vice versa)
 * ? : don't know -- outstanding question(s) or will determine later
-* . : blank because it hasn't been examined yet. 
+* . : blank because it hasn't been examined yet.
 
 When these codes have a more specific meaning in a given column, they are defined for that column below.
 
@@ -34,6 +36,7 @@ Subelements are included in square brackets after the name of their parent eleme
 _items_ is an element.
 
 _items[call_no]_ is the call_co subelement of _items_.
+====
 
 === parent element
 For subelements: name of parent element
@@ -65,7 +68,7 @@ Note that any institution may opt to override any element that is handled in the
 * shared - the mappings from standard data format to this field should be mostly applicable to all institutions providing data in that format.
 
 ## Clarifications on selected columns
-  
+
 === obligation
 Represents optionality and cardinality of the element.
 
@@ -73,8 +76,8 @@ When recorded for a top-level (simple or parent) element, the second number refe
 
 When recorded for a subelement, the second number refers to how many values may occur for that subelement in a given instance.
 
-For example:
-
+.Example
+====
 url (parent element) = {0,n} = A record may have no urls, in which case there should not be a _url_ element in the record. Or a record may have any number of urls, each of which will be described using a set of the url subelements.
 
 url[href] = {1} = for every url value recorded, there must be one and only one url[href] value recorded.
@@ -83,6 +86,7 @@ url[href] = {1} = for every url value recorded, there must be one and only one u
 * {0, 1} : not required. If provided, must be single value
 * {0, n} : not required. Any number of values may be provided
 * {1, n} : required. One or more values may be provided
+====
 
 === searchable in
 Index in which this element's data is expected to be searchable.
@@ -149,9 +153,9 @@ Whether the element has subelements or not.
 === vernacular treatment
 How non-Roman character data in the element is treated.
 
-* na - no vernacular expected : we don't expect any non-Roman data in this element, so we don't do any special processing on it. 
+* na - no vernacular expected : we don't expect any non-Roman data in this element, so we don't do any special processing on it.
 * na - parent element -- see subelements : non-Roman processing is handled only in simple elements and subelements
-* pass through/store vernacular -- no special processing : special non-Roman processing is only needed for searchable elements. 
+* pass through/store vernacular -- no special processing : special non-Roman processing is only needed for searchable elements.
 * vernacular processing needed : there is special non-Roman processing for this element
 
 === vernacular status
@@ -194,7 +198,7 @@ Count of how many rows in _mappings_ tab are mappings to this element.
 
 Working/validation column -- every non-parent element should have at least one mapping.
 
-Also possibly of interest to keep around. 
+Also possibly of interest to keep around.
 
 === done in mta?
 Whether the field is implemented in MARC-to-Argot
@@ -213,7 +217,7 @@ This column is updated consistently and is trustworthy.
 
 
 == _mappings_ tab
-Records the rules for mapping from MARC/ICE/EAD/whatever into Argot. Does this in a structured way that will allow us to compare our transformation logic to source data specifications to check coverage as standards change. 
+Records the rules for mapping from MARC/ICE/EAD/whatever into Argot. Does this in a structured way that will allow us to compare our transformation logic to source data specifications to check coverage as standards change.
 
 === parent element
 The parent Argot element into which source data will be mapped.
@@ -236,45 +240,20 @@ Metadata format of source data.
 Whether or not this is a provisional mapping
 
 * y : I'm proposing this, but it isn't approved, or putting it in as a placeholder until a question is answered
-* n : proceed with as much confidence as we can muster for anything... :-) 
+* n : proceed with as much confidence as we can muster for anything... :-)
 
 === institution
+- standard : based on current MARC standard and known legacy MARC data practices. Should apply more or less consistently to any MARC from any institution.
+- DUKE|NCCU|NCSU|UNC : institution-specific mapping
+
 === source data element
-=== source data subelement
-=== constraints
-=== processing_type
-=== processing instructions
-=== notes
-=== mapping_id
-=== mapping issue ct
-=== field issue ct
-=== field defined?
-=== done in mta?
-=== tests done?
-
--=-----------------------------------------
-
-# mappings.csv = 
-Columns and values are defined below: 
-
-## Argot field
- - Should match a field specified in https://github.com/trln/data-documentation/blob/master/argot/argot_fields.tsv
-
-
-## provisional?
-
-## institution
- - standard : based on current MARC standard and known legacy MARC data practices. Should apply more or less consistently to any MARC from any institution.
- - DUKE|NCCU|NCSU|UNC : institution-specific mapping
-
-## element/field
 - main field tag (MARC) or element (other schema) from which data is mapped
 
-## subelement/field(s)
+=== source data subelement
 - subfield(s) (MARC variable fields), byte positions (MARC fixed fields), or element refinement/qualification/subelement (other schema) from which data is to be mapped
 
-## constraints
- - further defines which fields data will be mapped from, based on MARC indicator values, values in subfields in the fields, or values in other parts of the record.
+=== constraints
+- further defines which fields data will be mapped from, based on MARC indicator values, values in subfields in the fields, or values in other parts of the record.
 
 *Conventions used here*
  - i1, i2 = MARC indicators 1, 2 (in the field being examined)
@@ -283,43 +262,77 @@ Columns and values are defined below:
  - LDR/06-07 = the concatenated values of byte positions 06 and 07 of the MARC LDR
  - I've tried to follow a clear/simple method of logical expression, with logical operators in all caps and parentheses used to set up sub-logic
 
-## processing_type
- - Basic pattern of processing that is followed. Values explained: 
-### concat_subelements 
- - concatenate the contents of any subelements listed
- - keep original order of subelements
- - repeating subelements are fine
+=== processing_type
+- Basic pattern of processing that is followed. Values explained:
 
-The other way of putting this: 
- - take the whole field
- - remove any subelements not included in list
- - remove subfield/subelement delimiters 
+#### concat_subelements
+- concatenate the contents of any subelements listed
+- keep original order of subelements
+- repeating subelements are fine
 
-Either way: 
- - keep any punctuation provided in between subelements
- - /unless otherwise specified/, add a space at the end of each subelement
+The other way of putting this:
 
-Example subelement/field(s) specified: abcde(g)jqu4
+- take the whole field
+- remove any subelements not included in list
+- remove subfield/subelement delimiters
 
-Example incoming data: "700 1 2 $aVaughan Williams, Ralph,$d1872-1958,$ecomposer.$tNorfolk rhapsody,$nno. 1.$0http://id.loc.gov/authorities/names/n79139255$0http://viaf.org/viaf/89801735"
+Either way:
 
-Example mapped data: "Vaughan Williams, Ralph, 1872-1958, composer."
-### subelement_to_value
- - each instance of listed subelement(s) mapped to separate value (in multivalue field)
+- keep any punctuation provided in between subelements
+- /unless otherwise specified/, add a space at the end of each subelement
 
-Example subelement/field(s) specified: ax
+.Example concat subelements
+====
+*Example subelement/field(s) specified*: abcde(g)jqu4
 
-Example incoming data: "650 _ 0 $aMapuche Indians$zPatagonia (Argentina and Chile)$xRites and ceremonies$xHistory."
+*Example incoming data*: "700 1 2 $aVaughan Williams, Ralph,$d1872-1958,$ecomposer.$tNorfolk rhapsody,$nno. 1.$0http://id.loc.gov/authorities/names/n79139255$0http://viaf.org/viaf/89801735"
 
-Example mapped data: ["Mapuche Indians", "Rites and ceremonies", "History"]
+*Example mapped data*: "Vaughan Williams, Ralph, 1872-1958, composer."
+====
 
-## processing instructions
- - special instructions beyond the general processing rules listed below
+#### subelement_to_value
+- each instance of listed subelement(s) mapped to separate value (in multivalue field)
 
-## notes
- - notes of any type
- - separate individual notes in field with ";;;"
+.Example subelement to value
+====
+*Example subelement/field(s) specified*: ax
 
-## mapping_id
- - string derived from concatenating other columns
- - will be used to link up these mapping rules with fields, issues, examples and maybe, ambitiously, tests
+*Example incoming data*: "650 _ 0 $aMapuche Indians$zPatagonia (Argentina and Chile)$xRites and ceremonies$xHistory."
+
+*Example mapped data*: ["Mapuche Indians", "Rites and ceremonies", "History"]
+====
+
+
+=== processing instructions
+- special instructions beyond the general processing rules listed below
+
+=== notes
+- notes of any type
+- separate individual notes in field with ";;;"
+
+=== mapping_id
+- string derived from concatenating other columns
+- will be used to link up these mapping rules with fields, issues, examples and maybe, ambitiously, tests
+
+=== mapping issue ct
+Number of issues recorded for this mapping in the _mappings_issues_ tab.
+
+Working column. Can eventually go away.
+
+=== field issue ct
+Number of issues recorded for the Argot element in the _elements_issues_ tab.
+
+Working column. Can eventually go away.
+
+=== field defined?
+Dunno, but all values are "yes", so probably not useful information.
+
+=== done in mta?
+Whether the mapping is implemented in MARC-to-Argot
+
+This column has been used and updated spottily and should not be trusted overall.
+
+=== tests done?
+Whether data transformation tests have been written for this mapping in MARC-to-Argot.
+
+This column has been used and updated spottily and should not be trusted overall.
