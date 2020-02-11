@@ -8,7 +8,6 @@ date_cataloged,date_cataloged,MARCish,n,NCCU,909,a,none,subelement_to_value,"If 
 date_cataloged,date_cataloged,MARCish,n,NCSU,909,a,none,subelement_to_value,"If necessary, convert to ISO 8601 date/timestamp format",.,date_catalogedNCSU909anone,0,0,y,.,.,,,,,
 date_cataloged,date_cataloged,MARCish,n,DUKE,946,b,none,subelement_to_value,"If necessary, convert to ISO 8601 date/timestamp format",.,date_catalogedDUKE946bnone,0,0,y,.,.,,,,,
 date_cataloged,date_cataloged,MARCish,n,UNC,999,a,i1=0 AND i2=0,subelement_to_value,"If necessary, convert to ISO 8601 date/timestamp format",.,date_catalogedUNC999ai1=0 AND i2=0,0,0,y,.,.,,,,,
-derived_work_note,derived_work_note,MARC,n,GEN,581,az3,none,see notes,$3 label; prepend ISBN to $z value,x,derived_work_noteGEN581az3none,0,0,y,,,,,,,
 donor,donor[value],MARC,n,UNC,790,abcdgqu,ind 1 = 0,concat_subelements,"Prepend: ""Donated by """,.,donor[value]UNC790abcdgquind 1 = 0,0,0,y,y,y,,,,,
 donor,donor[value],MARC,n,UNC,791,abcdfg,ind 1 = 2,concat_subelements,"Prepend: ""Purchased using funds from the """,.,donor[value]UNC791abcdfgind 1 = 2,0,0,y,y,y,,,,,
 edition,edition[label],MARC,n,GEN,250,3,none,concat_subelements,x,Removes : from end of label value in data. Separating punctuation is provided in the display.,edition[label]GEN2503none,0,0,y,y,y,,,,,
